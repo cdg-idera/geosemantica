@@ -805,6 +805,16 @@ Algunas consideraciones adicionales a las expresadas al principio del capítulo:
 * En los resultados de clasificación supervisada pueden aparecer falsos negativos en la clase vid debido a la similitud espectral con áreas de terreno desnudo o con cubierta vegetal escasa. En determinadas etapas fenológicas, especialmente durante la poda o previo a la brotación, los viñedos presentan baja reflectancia en el infrarrojo cercano y altos valores en el rojo, patrones que pueden asemejarse a los suelos expuestos. 
 * Asimismo, las clases manzana y pera tienden a confundirse entre sí debido a su composición foliar y estructura de copa semejante, lo que genera solapamiento espectral en las bandas ópticas de Sentinel-2. Estas confusiones se agravan en el Alto Valle, donde existen chacras con cultivos mixtos o intercalados, lo cual dificulta la delimitación precisa de las parcelas puras y puede inducir errores de clasificación en los bordes o zonas de transición.
 
+### Esquema
+
+$$
+\text{Imágenes satelitales} \xrightarrow[\text{preproc. (nubes, índices, ROI)}]{} 
+\text{Foundation Model (Embeddings)} \xrightarrow[\text{muestras etiquetadas}]{\text{entrenamiento RF}} 
+\text{Clasificación ROI} \xrightarrow[\text{limpieza, reglas}]{\text{post-procesado}} 
+\text{Métricas/QA} \xrightarrow{} \text{Vectorización/Exportación} \xrightarrow{} \text{Visualización UI}
+$$
+
+
 ### **Lógica general del script**
 
 El objetivo es entrenar un modelo supervisado (Random Forest) que clasifique diferentes tipos de cultivos —Vid, Manzana, Pera, Alfalfa, Horticultura— combinando *embeddings satelitales* con índices espectrales y máscaras agrícolas.
