@@ -1,12 +1,8 @@
+# Capítulo 1: **Embeddings satelitales: una nueva semántica del territorio**
 
+## **Introducción conceptual**
 
-# Capítulo 1: Embeddings satelitales
-
-**Embeddings satelitales: una nueva semántica del territorio**
-
-**1. Introducción conceptual**
-
-**En los últimos años, la inteligencia artificial ha permitido construir
+En los últimos años, la inteligencia artificial ha permitido construir
 modelos de representación del mundo que trascienden los píxeles y los
 valores espectrales. Los *embeddings* ---representaciones numéricas
 densas de información compleja--- constituyen una de las innovaciones
@@ -17,32 +13,33 @@ vectores que capturan su significado contextual; del mismo modo, en el
 dominio geoespacial, los *embeddings satelitales* traducen la
 información espectral, temporal y contextual de cada píxel o región en
 un vector semántico que codifica patrones de superficie, contextos
-ambientales y relaciones espaciales.**
+ambientales y relaciones espaciales. Luego, podemos decir que los *Embeddings satelitales: nos permiten explorar el campo de una semántica geoespacial aprendida*.
 
-**Embeddings satelitales: hacia una semántica geoespacial aprendida**
+## **Introducción: del píxel al concepto**
 
-**1. Introducción: del píxel al concepto**
-
-**Durante décadas, el análisis de imágenes satelitales se ha basado en
+Durante décadas, el análisis de imágenes satelitales se ha basado en
 valores radiométricos y en la interpretación de índices derivados (NDVI,
 NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación,
 el agua o lo urbano.\
 Sin embargo, la revolución del *deep learning* ha transformado la forma
 en que representamos la información. Hoy, la pregunta ya no es "¿qué
 valor tiene este píxel en la banda 4?", sino "¿a qué se parece este
-píxel en términos de su significado latente?".**
+píxel en términos de su significado latente?".
 
-**Los embeddings satelitales representan ese salto conceptual: son una
+Los embeddings satelitales representan ese salto conceptual: son una
 forma de *codificar semánticamente el territorio*.\
 Cada píxel o región es proyectado a un espacio vectorial de alta
 dimensión donde la distancia matemática refleja similitud contextual y
 semántica, no solo espectral.\
 De este modo, el planeta deja de ser una grilla de reflectancias y se
-convierte en un espacio continuo de conceptos aprendidos.**
+convierte en un espacio continuo de conceptos aprendidos.
 
-**2. Fundamento teórico: qué es un embedding**
+## **Fundamento teórico: ¿Qué es un embedding?*
 
-**En términos formales, un *embedding* es una función:**
+````{admonition} ¿Qué es un embedding?
+:class: tip 
+
+En términos formales, un *embedding* es una función:
 
 **f:X→Rnf: X \\rightarrow \\mathbb{R}\^nf:X→Rn**
 
@@ -52,27 +49,29 @@ y Rn\\mathbb{R}\^nRn es un espacio vectorial latente.\
 La función fff se aprende a partir de grandes volúmenes de datos
 mediante redes neuronales profundas. Su objetivo no es clasificar
 directamente, sino aprender una representación comprimida y
-significativa de los datos.**
+significativa de los datos.
 
-**En el dominio de la Observación de la Tierra (EO), esto significa
-que:**
+En el dominio de la Observación de la Tierra (EO), esto significa
+que:
 
--   **Cada píxel o parche satelital se codifica en un vector de, por
-    ejemplo, 256 dimensiones.**
+-   Cada píxel o parche satelital se codifica en un vector de, por
+    ejemplo, 256 dimensiones
 
--   **Las relaciones espaciales y espectrales se preservan de modo que
+-   Las relaciones espaciales y espectrales se preservan de modo que
     píxeles *similares en contexto* quedan *cercanos en el espacio
-    latente*.**
+    latente*.
 
--   **Los *embeddings* permiten medir similitud coseno entre lugares,
+-   Los *embeddings* permiten medir similitud coseno entre lugares,
     como se mide similitud semántica entre palabras en modelos como
-    Word2Vec o BERT.**
+    Word2Vec o BERT.
+    
+````
 
-**Esta idea, proveniente del procesamiento del lenguaje natural,
+Esta idea, proveniente del procesamiento del lenguaje natural,
 encuentra en las imágenes satelitales una analogía poderosa:\
 así como los modelos lingüísticos aprenden que *"rey" - "hombre" +
 "mujer" ≈ "reina"*, los modelos de EO aprenden que *"vegetación densa" -
-"verde" + "suelo desnudo" ≈ "zona urbana"*.**
+"verde" + "suelo desnudo" ≈ "zona urbana"*.
 
 **3. Modelos fundacionales y embeddings satelitales**
 

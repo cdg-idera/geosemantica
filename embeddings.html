@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Capítulo 1: Embeddings satelitales &#8212; Geosemántica</title>
+    <title>1. Capítulo 1: Embeddings satelitales: una nueva semántica del territorio &#8212; Geosemántica</title>
   
   
   
@@ -176,7 +176,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Capítulo 1: Embeddings satelitales</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Capítulo 1: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a></li>
 
 
 
@@ -369,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Capítulo 1: Embeddings satelitales</h1>
+    <h1>Capítulo 1: Embeddings satelitales: una nueva semántica del territorio</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,7 +379,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: Embeddings satelitales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-conceptual">1.1. <strong>Introducción conceptual</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">1.2. <strong>Introducción: del píxel al concepto</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">1.3. *<em>Fundamento teórico: ¿Qué es un embedding?</em></a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">2. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-deteccion-por-similitud">2.1. <strong>Ejemplos de detección por similitud</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oceano-grandes-cuerpos-de-agua">2.1.1. 🌊 <strong>Océano / grandes cuerpos de agua</strong></a></li>
@@ -472,11 +477,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-embeddings-satelitales">
-<h1><span class="section-number">1. </span>Capítulo 1: Embeddings satelitales<a class="headerlink" href="#capitulo-1-embeddings-satelitales" title="Link to this heading">#</a></h1>
-<p><strong>Embeddings satelitales: una nueva semántica del territorio</strong></p>
-<p><strong>1. Introducción conceptual</strong></p>
-<p><strong>En los últimos años, la inteligencia artificial ha permitido construir
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-embeddings-satelitales-una-nueva-semantica-del-territorio">
+<h1><span class="section-number">1. </span>Capítulo 1: <strong>Embeddings satelitales: una nueva semántica del territorio</strong><a class="headerlink" href="#capitulo-1-embeddings-satelitales-una-nueva-semantica-del-territorio" title="Link to this heading">#</a></h1>
+<section id="introduccion-conceptual">
+<h2><span class="section-number">1.1. </span><strong>Introducción conceptual</strong><a class="headerlink" href="#introduccion-conceptual" title="Link to this heading">#</a></h2>
+<p>En los últimos años, la inteligencia artificial ha permitido construir
 modelos de representación del mundo que trascienden los píxeles y los
 valores espectrales. Los <em>embeddings</em> —representaciones numéricas
 densas de información compleja— constituyen una de las innovaciones
@@ -487,51 +492,57 @@ vectores que capturan su significado contextual; del mismo modo, en el
 dominio geoespacial, los <em>embeddings satelitales</em> traducen la
 información espectral, temporal y contextual de cada píxel o región en
 un vector semántico que codifica patrones de superficie, contextos
-ambientales y relaciones espaciales.</strong></p>
-<p><strong>Embeddings satelitales: hacia una semántica geoespacial aprendida</strong></p>
-<p><strong>1. Introducción: del píxel al concepto</strong></p>
-<p><strong>Durante décadas, el análisis de imágenes satelitales se ha basado en
+ambientales y relaciones espaciales. Luego, podemos decir que los <em>Embeddings satelitales: nos permiten explorar el campo de una semántica geoespacial aprendida</em>.</p>
+</section>
+<section id="introduccion-del-pixel-al-concepto">
+<h2><span class="section-number">1.2. </span><strong>Introducción: del píxel al concepto</strong><a class="headerlink" href="#introduccion-del-pixel-al-concepto" title="Link to this heading">#</a></h2>
+<p>Durante décadas, el análisis de imágenes satelitales se ha basado en
 valores radiométricos y en la interpretación de índices derivados (NDVI,
 NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación,
 el agua o lo urbano.<br />
 Sin embargo, la revolución del <em>deep learning</em> ha transformado la forma
 en que representamos la información. Hoy, la pregunta ya no es “¿qué
 valor tiene este píxel en la banda 4?”, sino “¿a qué se parece este
-píxel en términos de su significado latente?”.</strong></p>
-<p><strong>Los embeddings satelitales representan ese salto conceptual: son una
+píxel en términos de su significado latente?”.</p>
+<p>Los embeddings satelitales representan ese salto conceptual: son una
 forma de <em>codificar semánticamente el territorio</em>.<br />
 Cada píxel o región es proyectado a un espacio vectorial de alta
 dimensión donde la distancia matemática refleja similitud contextual y
 semántica, no solo espectral.<br />
 De este modo, el planeta deja de ser una grilla de reflectancias y se
-convierte en un espacio continuo de conceptos aprendidos.</strong></p>
-<p><strong>2. Fundamento teórico: qué es un embedding</strong></p>
-<p><strong>En términos formales, un <em>embedding</em> es una función:</strong></p>
+convierte en un espacio continuo de conceptos aprendidos.</p>
+</section>
+<section id="fundamento-teorico-que-es-un-embedding">
+<h2><span class="section-number">1.3. </span>*<em>Fundamento teórico: ¿Qué es un embedding?</em><a class="headerlink" href="#fundamento-teorico-que-es-un-embedding" title="Link to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">¿Qué es un embedding?</p>
+<p>En términos formales, un <em>embedding</em> es una función:</p>
 <p><strong>f:X→Rnf: X \rightarrow \mathbb{R}^nf:X→Rn</strong></p>
-<p><strong>donde XXX representa un conjunto de observaciones complejas
+<p>**donde XXX representa un conjunto de observaciones complejas
 —imágenes multiespectrales, series temporales, o escenas completas—,
 y Rn\mathbb{R}^nRn es un espacio vectorial latente.<br />
 La función fff se aprende a partir de grandes volúmenes de datos
 mediante redes neuronales profundas. Su objetivo no es clasificar
 directamente, sino aprender una representación comprimida y
-significativa de los datos.</strong></p>
-<p><strong>En el dominio de la Observación de la Tierra (EO), esto significa
-que:</strong></p>
+significativa de los datos.</p>
+<p>En el dominio de la Observación de la Tierra (EO), esto significa
+que:</p>
 <ul class="simple">
-<li><p><strong>Cada píxel o parche satelital se codifica en un vector de, por
-ejemplo, 256 dimensiones.</strong></p></li>
-<li><p><strong>Las relaciones espaciales y espectrales se preservan de modo que
+<li><p>Cada píxel o parche satelital se codifica en un vector de, por
+ejemplo, 256 dimensiones</p></li>
+<li><p>Las relaciones espaciales y espectrales se preservan de modo que
 píxeles <em>similares en contexto</em> quedan <em>cercanos en el espacio
-latente</em>.</strong></p></li>
-<li><p><strong>Los <em>embeddings</em> permiten medir similitud coseno entre lugares,
+latente</em>.</p></li>
+<li><p>Los <em>embeddings</em> permiten medir similitud coseno entre lugares,
 como se mide similitud semántica entre palabras en modelos como
-Word2Vec o BERT.</strong></p></li>
+Word2Vec o BERT.</p></li>
 </ul>
-<p><strong>Esta idea, proveniente del procesamiento del lenguaje natural,
+</div>
+<p>Esta idea, proveniente del procesamiento del lenguaje natural,
 encuentra en las imágenes satelitales una analogía poderosa:<br />
 así como los modelos lingüísticos aprenden que <em>“rey” - “hombre” +
 “mujer” ≈ “reina”</em>, los modelos de EO aprenden que <em>“vegetación densa” -
-“verde” + “suelo desnudo” ≈ “zona urbana”</em>.</strong></p>
+“verde” + “suelo desnudo” ≈ “zona urbana”</em>.</p>
 <p><strong>3. Modelos fundacionales y embeddings satelitales</strong></p>
 <p><strong>Los modelos fundacionales para Observación de la Tierra (FM4EO) como
 OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google,
@@ -565,6 +576,7 @@ a este humedal”) en lugar de por valor (“NDWI &gt; 0.4”).</strong></p></li
 <li><p><strong>Cada comparación en este espacio vectorial actúa como un
 <em>razonamiento semántico</em> entre regiones.</strong></p></li>
 </ul>
+</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">
 <h1><span class="section-number">2. </span><strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong><a class="headerlink" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales" title="Link to this heading">#</a></h1>
@@ -2227,7 +2239,12 @@ Integra aprendizaje automático, teledetección clásica y visualización intera
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: Embeddings satelitales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-conceptual">1.1. <strong>Introducción conceptual</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">1.2. <strong>Introducción: del píxel al concepto</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">1.3. *<em>Fundamento teórico: ¿Qué es un embedding?</em></a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">2. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-deteccion-por-similitud">2.1. <strong>Ejemplos de detección por similitud</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oceano-grandes-cuerpos-de-agua">2.1.1. 🌊 <strong>Océano / grandes cuerpos de agua</strong></a></li>
