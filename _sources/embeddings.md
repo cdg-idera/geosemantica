@@ -1,47 +1,33 @@
 
 
-# Introduccion
+# Capítulo 1: Embeddings satelitales
 
 Embeddings satelitales: una nueva semántica del territorio
 
-1. Introducción conceptual
+## Introducción conceptual
 
-En los últimos años, la inteligencia artificial ha permitido construir modelos de representación del mundo que trascienden los píxeles y los valores espectrales. Los embeddings —representaciones numéricas densas de información compleja— constituyen una de las innovaciones más profundas en la intersección entre aprendizaje profundo y Observación de la Tierra (EO).
-En el dominio lingüístico, un embedding transforma palabras en vectores que capturan su significado contextual; del mismo modo, en el dominio geoespacial, los embeddings satelitales traducen la información espectral, temporal y contextual de cada píxel o región en un vector semántico que codifica patrones de superficie, contextos ambientales y relaciones espaciales.
+En los últimos años, la inteligencia artificial ha permitido construir modelos de representación del mundo que *trascienden los píxeles y los valores espectrales*. Los **embeddings** —representaciones numéricas densas de información compleja— constituyen una de las *innovaciones más profundas* en la *intersección entre aprendizaje profundo y Observación de la Tierra (EO)*.
+En el dominio lingüístico, un **embedding** *transforma palabras en vectores* que *capturan su significado contextual*; del mismo modo, en el dominio geoespacial, los **embeddings satelitales** traducen la *información espectral, temporal y contextual de cada píxel o región* en *un vector semántico que codifica patrones de superficie, contextos ambientales y relaciones espaciales*. De este modo los embeddings satelitales, nos posibilitan explorar un nuevo espacio asociado a la semántica geoespacial aprendida.
 
-Embeddings satelitales: hacia una semántica geoespacial aprendida
-1. Introducción: del píxel al concepto
+## Introducción: del píxel al concepto
 
 Durante décadas, el análisis de imágenes satelitales se ha basado en valores radiométricos y en la interpretación de índices derivados (NDVI, NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación, el agua o lo urbano.
-Sin embargo, la revolución del deep learning ha transformado la forma en que representamos la información. Hoy, la pregunta ya no es “¿qué valor tiene este píxel en la banda 4?”, sino “¿a qué se parece este píxel en términos de su significado latente?”.
+Sin embargo, la revolución del **deep learning** ha transformado la forma en que representamos la información. Hoy, la pregunta ya no es *“¿qué valor tiene este píxel en la banda 4?”*, sino *“¿a qué se parece este píxel en términos de su significado latente?”*.
 
-Los embeddings satelitales representan ese salto conceptual: son una forma de codificar semánticamente el territorio.
-Cada píxel o región es proyectado a un espacio vectorial de alta dimensión donde la distancia matemática refleja similitud contextual y semántica, no solo espectral.
-De este modo, el planeta deja de ser una grilla de reflectancias y se convierte en un espacio continuo de conceptos aprendidos.
+Los embeddings satelitales representan ese salto conceptual: son **una forma de codificar semánticamente el territorio**.
+Cada píxel o región es *proyectado* a *un espacio vectorial de alta dimensión* donde la *distancia matemática refleja similitud contextual y semántica*, *no solo espectral*.
+De este modo, el planeta *deja de ser una grilla de reflectancias* y *se convierte en un espacio continuo de conceptos aprendidos*.
 
-2. Fundamento teórico: qué es un embedding
+## Fundamento teórico: ¿qué es un embedding?
 
 En términos formales, un embedding es una función:
 
-𝑓
-:
-𝑋
-→
-𝑅
-𝑛
-f:X→R
-n
+f:X→Rnf: X \rightarrow \mathbb{R}^nf:X→Rn 
 
 donde 
 𝑋
-X representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y 
-𝑅
-𝑛
-R
-n
- es un espacio vectorial latente.
-La función 
-𝑓
+X representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.
+La función f
 f se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.
 
 En el dominio de la Observación de la Tierra (EO), esto significa que:
