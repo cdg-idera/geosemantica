@@ -37,19 +37,26 @@ convierte en un espacio continuo de conceptos aprendidos.
 ## **Fundamento teórico: ¿Qué es un embedding?*
 
 ````{admonition} ¿Qué es un embedding?
-:class: tip 
+:class: tip
 
 En términos formales, un *embedding* es una función:
 
-**f:X→Rnf: X \\rightarrow \\mathbb{R}\^nf:X→Rn**
+```{math}
+f: X \rightarrow \mathbb{R}^n
+```
 
-**donde XXX representa un conjunto de observaciones complejas
----imágenes multiespectrales, series temporales, o escenas completas---,
-y Rn\\mathbb{R}\^nRn es un espacio vectorial latente.\
-La función fff se aprende a partir de grandes volúmenes de datos
-mediante redes neuronales profundas. Su objetivo no es clasificar
-directamente, sino aprender una representación comprimida y
-significativa de los datos.
+donde \( X \) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales o escenas completas—,  
+y \( \mathbb{R}^n \) es un espacio vectorial latente.  
+La función \( f \) se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas.  
+
+Su objetivo no es clasificar directamente, sino **aprender una representación comprimida y significativa** de los datos.
+
+En el dominio de la **Observación de la Tierra (EO)**, esto significa que:
+
+- Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.  
+- Las relaciones espaciales y espectrales se preservan de modo que píxeles *similares en contexto* quedan *cercanos en el espacio latente*.  
+- Los *embeddings* permiten medir similitud coseno entre lugares, como se mide similitud semántica entre palabras en modelos como Word2Vec o BERT.
+````
 
 En el dominio de la Observación de la Tierra (EO), esto significa
 que:
@@ -64,8 +71,7 @@ que:
 -   Los *embeddings* permiten medir similitud coseno entre lugares,
     como se mide similitud semántica entre palabras en modelos como
     Word2Vec o BERT.
-    
-````
+
 
 Esta idea, proveniente del procesamiento del lenguaje natural,
 encuentra en las imágenes satelitales una analogía poderosa:\

@@ -517,14 +517,19 @@ convierte en un espacio continuo de conceptos aprendidos.</p>
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es un embedding?</p>
 <p>En términos formales, un <em>embedding</em> es una función:</p>
-<p><strong>f:X→Rnf: X \rightarrow \mathbb{R}^nf:X→Rn</strong></p>
-<p>**donde XXX representa un conjunto de observaciones complejas
-—imágenes multiespectrales, series temporales, o escenas completas—,
-y Rn\mathbb{R}^nRn es un espacio vectorial latente.<br />
-La función fff se aprende a partir de grandes volúmenes de datos
-mediante redes neuronales profundas. Su objetivo no es clasificar
-directamente, sino aprender una representación comprimida y
-significativa de los datos.</p>
+<div class="math notranslate nohighlight">
+\[f: X \rightarrow \mathbb{R}^n\]</div>
+<p>donde ( X ) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales o escenas completas—,<br />
+y ( \mathbb{R}^n ) es un espacio vectorial latente.<br />
+La función ( f ) se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas.</p>
+<p>Su objetivo no es clasificar directamente, sino <strong>aprender una representación comprimida y significativa</strong> de los datos.</p>
+<p>En el dominio de la <strong>Observación de la Tierra (EO)</strong>, esto significa que:</p>
+<ul class="simple">
+<li><p>Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.</p></li>
+<li><p>Las relaciones espaciales y espectrales se preservan de modo que píxeles <em>similares en contexto</em> quedan <em>cercanos en el espacio latente</em>.</p></li>
+<li><p>Los <em>embeddings</em> permiten medir similitud coseno entre lugares, como se mide similitud semántica entre palabras en modelos como Word2Vec o BERT.</p></li>
+</ul>
+</div>
 <p>En el dominio de la Observación de la Tierra (EO), esto significa
 que:</p>
 <ul class="simple">
@@ -537,7 +542,6 @@ latente</em>.</p></li>
 como se mide similitud semántica entre palabras en modelos como
 Word2Vec o BERT.</p></li>
 </ul>
-</div>
 <p>Esta idea, proveniente del procesamiento del lenguaje natural,
 encuentra en las imágenes satelitales una analogía poderosa:<br />
 así como los modelos lingüísticos aprenden que <em>“rey” - “hombre” +
