@@ -2,362 +2,302 @@
 
 # Capítulo 1: Embeddings satelitales
 
-Embeddings satelitales: una nueva semántica del territorio
+**Embeddings satelitales: una nueva semántica del territorio**
 
-## Introducción conceptual
+**1. Introducción conceptual**
 
-En los últimos años, la inteligencia artificial ha permitido construir modelos de representación del mundo que *trascienden los píxeles y los valores espectrales*. Los **embeddings** —representaciones numéricas densas de información compleja— constituyen una de las *innovaciones más profundas* en la *intersección entre aprendizaje profundo y Observación de la Tierra (EO)*.
-En el dominio lingüístico, un **embedding** *transforma palabras en vectores* que *capturan su significado contextual*; del mismo modo, en el dominio geoespacial, los **embeddings satelitales** traducen la *información espectral, temporal y contextual de cada píxel o región* en *un vector semántico que codifica patrones de superficie, contextos ambientales y relaciones espaciales*. De este modo los embeddings satelitales, nos posibilitan explorar un nuevo espacio asociado a la semántica geoespacial aprendida.
+**En los últimos años, la inteligencia artificial ha permitido construir
+modelos de representación del mundo que trascienden los píxeles y los
+valores espectrales. Los *embeddings* ---representaciones numéricas
+densas de información compleja--- constituyen una de las innovaciones
+más profundas en la intersección entre aprendizaje profundo y
+Observación de la Tierra (EO).\
+En el dominio lingüístico, un *embedding* transforma palabras en
+vectores que capturan su significado contextual; del mismo modo, en el
+dominio geoespacial, los *embeddings satelitales* traducen la
+información espectral, temporal y contextual de cada píxel o región en
+un vector semántico que codifica patrones de superficie, contextos
+ambientales y relaciones espaciales.**
 
-## Introducción: del píxel al concepto
+**Embeddings satelitales: hacia una semántica geoespacial aprendida**
 
-Durante décadas, el análisis de imágenes satelitales se ha basado en valores radiométricos y en la interpretación de índices derivados (NDVI, NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación, el agua o lo urbano.
-Sin embargo, la revolución del **deep learning** ha transformado la forma en que representamos la información. Hoy, la pregunta ya no es *“¿qué valor tiene este píxel en la banda 4?”*, sino *“¿a qué se parece este píxel en términos de su significado latente?”*.
+**1. Introducción: del píxel al concepto**
 
-Los embeddings satelitales representan ese salto conceptual: son **una forma de codificar semánticamente el territorio**.
-Cada píxel o región es *proyectado* a *un espacio vectorial de alta dimensión* donde la *distancia matemática refleja similitud contextual y semántica*, *no solo espectral*.
-De este modo, el planeta *deja de ser una grilla de reflectancias* y *se convierte en un espacio continuo de conceptos aprendidos*.
+**Durante décadas, el análisis de imágenes satelitales se ha basado en
+valores radiométricos y en la interpretación de índices derivados (NDVI,
+NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación,
+el agua o lo urbano.\
+Sin embargo, la revolución del *deep learning* ha transformado la forma
+en que representamos la información. Hoy, la pregunta ya no es "¿qué
+valor tiene este píxel en la banda 4?", sino "¿a qué se parece este
+píxel en términos de su significado latente?".**
 
-## Fundamento teórico: ¿qué es un embedding?
+**Los embeddings satelitales representan ese salto conceptual: son una
+forma de *codificar semánticamente el territorio*.\
+Cada píxel o región es proyectado a un espacio vectorial de alta
+dimensión donde la distancia matemática refleja similitud contextual y
+semántica, no solo espectral.\
+De este modo, el planeta deja de ser una grilla de reflectancias y se
+convierte en un espacio continuo de conceptos aprendidos.**
 
-En términos formales, un embedding es una función:
+**2. Fundamento teórico: qué es un embedding**
 
-```{math}
-f: X \rightarrow \mathbb{R}^n
+**En términos formales, un *embedding* es una función:**
+
+**f:X→Rnf: X \\rightarrow \\mathbb{R}\^nf:X→Rn**
+
+**donde XXX representa un conjunto de observaciones complejas
+---imágenes multiespectrales, series temporales, o escenas completas---,
+y Rn\\mathbb{R}\^nRn es un espacio vectorial latente.\
+La función fff se aprende a partir de grandes volúmenes de datos
+mediante redes neuronales profundas. Su objetivo no es clasificar
+directamente, sino aprender una representación comprimida y
+significativa de los datos.**
+
+**En el dominio de la Observación de la Tierra (EO), esto significa
+que:**
+
+-   **Cada píxel o parche satelital se codifica en un vector de, por
+    ejemplo, 256 dimensiones.**
+
+-   **Las relaciones espaciales y espectrales se preservan de modo que
+    píxeles *similares en contexto* quedan *cercanos en el espacio
+    latente*.**
+
+-   **Los *embeddings* permiten medir similitud coseno entre lugares,
+    como se mide similitud semántica entre palabras en modelos como
+    Word2Vec o BERT.**
+
+**Esta idea, proveniente del procesamiento del lenguaje natural,
+encuentra en las imágenes satelitales una analogía poderosa:\
+así como los modelos lingüísticos aprenden que *"rey" - "hombre" +
+"mujer" ≈ "reina"*, los modelos de EO aprenden que *"vegetación densa" -
+"verde" + "suelo desnudo" ≈ "zona urbana"*.**
+
+**3. Modelos fundacionales y embeddings satelitales**
+
+**Los modelos fundacionales para Observación de la Tierra (FM4EO) como
+OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google,
+fueron entrenados sobre millones de escenas multitemporales de
+Sentinel-2, Landsat y MODIS.\
+Estos modelos aprenden a generar vectores invariantes a cambios
+atmosféricos, de estación o de sensor, capturando así *la esencia
+estadística del paisaje*.**
+
+**El dataset GOOGLE/SATELLITE_EMBEDDING/V1 disponible en Google Earth
+Engine representa la primera implementación global de este paradigma: un
+mapa latente del planeta donde cada píxel está asociado a un vector de
+256 dimensiones que codifica su identidad semántica.**
+
+**4. Estructura matemática y significado de la similitud**
+
+**La similitud coseno se utiliza como métrica fundamental en este
+espacio latente.\
+Dado un vector de referencia s\\mathbf{s}s (por ejemplo, el promedio de
+los embeddings de un conjunto de polígonos de agua) y un vector de píxel
+x\\mathbf{x}x, la similitud se define como:**
+
+**sim(s,x)=s⋅x∣∣s∣∣ ∣∣x∣∣\\text{sim}(\\mathbf{s}, \\mathbf{x}) =
+\\frac{\\mathbf{s} \\cdot \\mathbf{x}}{\|\|\\mathbf{s}\|\| \\,
+\|\|\\mathbf{x}\|\|}sim(s,x)=∣∣s∣∣∣∣x∣∣s⋅x​**
+
+**Este valor se reescala a \[0,1\], donde 1 indica máxima similitud
+semántica.\
+Lo notable es que esta similitud no depende de índices espectrales
+fijos, sino de representaciones *aprendidas* que capturan patrones
+espaciales, texturales y de contexto ambiental.**
+
+**En consecuencia:**
+
+-   **Los *embeddings* permiten buscar por concepto ("lugares similares
+    a este humedal") en lugar de por valor ("NDWI \> 0.4").**
+
+-   **Cada comparación en este espacio vectorial actúa como un
+    *razonamiento semántico* entre regiones.**
+
+
+
+# **Más: Contexto y patrones espaciales en embeddings satelitales**
+
+El *embedding* captura **contexto más que forma fina**, lo que lo hace especialmente útil para detectar patrones espaciales amplios y coherentes.  
+A continuación se detallan ejemplos de tipologías geográficas y sugerencias prácticas de uso.
+
+---
+
+## **Ejemplos de detección por similitud**
+
+### 🌊 **Océano / grandes cuerpos de agua**
+- Muy distintivos y homogéneos.  
+- **Tip:** máscara *JRC Water* (occurrence ≥ 10–30%).
+
+### 🏞️ **Lagos / embalses medianos–grandes**
+- Formas estables y contraste claro con tierra.  
+- **Tip:** *JRC Water* + picos locales sobre el mapa de similitud.
+
+### 🌆 **Áreas urbanas densas (CBD, manzanas compactas)**
+- Textura “gruesa”, patrones de calles y edificios.  
+- **Tip:** NDBI alto, NDVI bajo para recortar candidatos.
+
+### 🏭 **Zonas industriales / portuarias grandes**
+- Superficies duras, depósitos, muelles, contenedores.  
+- **Tip:** NDBI↑, NDVI↓, Sentinel-1 VV/VH moderado–alto.
+
+### 🌾 **Mosaicos agrícolas extensos (parcelas, pivotes)**
+- Geometría repetitiva; muy “aprendible”.  
+- **Tip:** recortar a áreas rurales y usar época anual similar.
+
+### ⛏️ **Canteras / minas a cielo abierto**
+- Texturas minerales, taludes, caminos internos.  
+- **Tip:** NDBI↑, NDVI↓, SWIR↑, S1 VV/VH↑.
+
+### 🌳 **Bosques densos / masas forestales**
+- Textura homogénea y patrón regional.  
+- **Tip:** NDVI↑ para filtrar no-vegetación.
+
+### 🧂 **Salinas / salares**
+- Reflectancia y textura características, grandes extensiones.  
+- **Tip:** SWIR/NIR peculiar; conviene recortar con máscara de suelo desnudo.
+
+### 🐦 **Humedales extensos**
+- Mezcla agua-vegetación con patrón espacial distintivo.  
+- **Tip:** JRC (occurrence medio) + NDVI medio/alto.
+
+### 🚗 **Infraestructura lineal grande (autopistas, aeropuertos)**
+- Linealidad clara a escala 10–20 m.  
+- **Tip:** detectar por similitud + postprocesar con filtros morfológicos.
+
+### ⚡ **Parques eólicos / solares grandes**
+- Patrón repetitivo (aerogeneradores, filas de paneles).  
+- **Tip:** S1 ayuda (estructuras metálicas dispersas), NDBI↑, NDVI↓.
+
+### 🏡 **Barrios privados / countries característicos**
+- Huella y traza interna repetida, lagunas artificiales.  
+- **Tip:** recortar con urbano (NDBI↑) y usar varias muestras.
+
+### 🏖️ **Playas / dunas extensas**
+- Textura y tonalidad de arena, bordes costeros.  
+- **Tip:** excluir agua con JRC y vegetación con NDVI↓.
+
+---
+
+# **Búsqueda: Agua (explicación del script)**
+
+## **0) Entradas**
+
+El bloque asume dos insumos principales:
+- **roi:** región de estudio (*Geometry* o *FeatureCollection*).  
+- **samples:** polígonos de referencia que representan agua.
+
+```javascript
+var geometry = roi.geometry();
+Map.setOptions('SATELLITE');
+Map.addLayer(roi, {color: 'red'}, 'ROI');
+Map.addLayer(samples, {color: 'deepskyblue'}, 'Samples (agua)');
+Map.centerObject(geometry, 7);
 ```
 
-donde:
-- \( X \) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.
-- \( \mathbb{R}^n \) es el espacio vectorial de características latentes.
-- Cada punto \( f(x) \) es un vector que codifica información contextual de \( x \).
+---
 
-La similitud entre dos vectores \( \mathbf{s} \) y \( \mathbf{x} \) puede calcularse mediante la **similitud coseno**, una medida clásica de semántica estadística:
+## **1) Parámetros**
+Define los controles del análisis temporal y espacial:
 
-```{math}
-\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }
+- Año de referencia (2024).  
+- `scale`: resolución de trabajo (20 m).  
+- `USE_JRC_MASK`: si `true`, aplica máscara JRC Global Surface Water.  
+- `JRC_OCC_MIN`: umbral mínimo de ocurrencia de agua.  
+- `MIN_AREA_SQM`: área mínima para descartar polígonos pequeños.
+
+---
+
+## **2) Embedding anual**
+Carga la colección y recorta a la región de interés:
+
+```javascript
+var embeddings = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL');
+var mosaic = embeddings.filterDate(startDate, endDate).mosaic().clip(geometry);
+var bandNames = mosaic.bandNames();
 ```
 
-Esta métrica cuantifica el grado de afinidad semántica entre dos regiones del espacio geográfico, independientemente de su escala o magnitud.
+---
 
-La función $f$ se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.
+## **3) Máscara JRC opcional**
+Si `USE_JRC_MASK` es `true`, enmascara los píxeles con baja ocurrencia de agua:
 
-En el dominio de la Observación de la Tierra (EO), esto significa que:
+```javascript
+var mosaicMasked = ee.Image(ee.Algorithms.If(
+  USE_JRC_MASK,
+  mosaic.updateMask(ee.Image('JRC/GSW1_4/GlobalSurfaceWater')
+    .select('occurrence').gte(JRC_OCC_MIN)),
+  mosaic
+));
+```
 
-Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.
+Luego se rellenan valores nulos con ceros (`unmask(0)`) para evitar problemas en los reductores.
 
-Las relaciones espaciales y espectrales se preservan de modo que píxeles similares en contexto quedan cercanos en el espacio latente.
+---
 
-Los embeddings permiten medir similitud coseno entre lugares, como se mide similitud semántica entre palabras en modelos como Word2Vec o BERT.
+## **4) Vector de referencia por polígono**
+Cada polígono de muestra genera un vector promedio del embedding, evitando `nulls`:
 
-Esta idea, proveniente del procesamiento del lenguaje natural, encuentra en las imágenes satelitales una analogía poderosa:
-así como los modelos lingüísticos aprenden que “rey” - “hombre” + “mujer” ≈ “reina”, los modelos de EO aprenden que “vegetación densa” - “verde” + “suelo desnudo” ≈ “zona urbana”.
+```javascript
+var samplesMeanVec = samples.map(function(f){
+  var d = refImage.reduceRegion({
+    reducer: ee.Reducer.mean(),
+    geometry: f.geometry(),
+    scale: scale
+  });
+  return f.set(fillNullsWithZeros(d, bandNames));
+});
+```
 
-3. Modelos fundacionales y embeddings satelitales
+---
 
-Los modelos fundacionales para Observación de la Tierra (FM4EO) como OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.
-Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, de estación o de sensor, capturando así la esencia estadística del paisaje.
+## **5) Similitud coseno**
+La similitud coseno mide la afinidad entre cada píxel y los vectores de muestra:
 
-El dataset GOOGLE/SATELLITE_EMBEDDING/V1 disponible en Google Earth Engine representa la primera implementación global de este paradigma: un mapa latente del planeta donde cada píxel está asociado a un vector de 256 dimensiones que codifica su identidad semántica.
+```{math}
+\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}
+```
 
-4. Estructura matemática y significado de la similitud
+Se calcula por píxel, normalizando ambos vectores a norma 1 y quedándose con el máximo de similitud.
 
-La similitud coseno se utiliza como métrica fundamental en este espacio latente.
-Dado un vector de referencia 
-𝑠
-s (por ejemplo, el promedio de los embeddings de un conjunto de polígonos de agua) y un vector de píxel 
-𝑥
-x, la similitud se define como:
+---
 
-$$\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }$$
+## **6) Polígonos por umbral**
+La función `areasAtThreshold()` vectoriza regiones según distintos niveles de similitud:
 
+- **≥ 0.98:** coincidencia alta.  
+- **≥ 0.99:** coincidencia muy alta.  
+- **≈ 1.00:** coincidencia casi perfecta.
 
+```javascript
+var poly98  = areasAtThreshold(cosineMax, 0.98);
+var poly99  = areasAtThreshold(cosineMax, 0.99);
+var poly100 = areasAtThreshold(cosineMax, 0.999);
+```
 
-Este valor se reescala a [0,1], donde 1 indica máxima similitud semántica.
-Lo notable es que esta similitud no depende de índices espectrales fijos, sino de representaciones aprendidas que capturan patrones espaciales, texturales y de contexto ambiental.
+---
 
-En consecuencia:
+## **7) Visualización**
+Se muestran los resultados por color:
 
-Los embeddings permiten buscar por concepto (“lugares similares a este humedal”) en lugar de por valor (“NDWI > 0.4”).
+- Amarillo → ≥ 98 %  
+- Naranja → ≥ 99 %  
+- Cian → ≈ 100 %
 
-Cada comparación en este espacio vectorial actúa como un razonamiento semántico entre regiones.
+---
 
-5. Aplicaciones ejemplificadas: tres casos de estudio
-Caso 1: Detección de cuerpos de agua
+## **8) Exportación opcional**
+Permite guardar el resultado como `FeatureCollection` para reutilizar en otros flujos:
 
-El primer script aplica la similitud coseno entre un embedding mosaico anual y vectores promedio derivados de polígonos de agua.
-Las zonas con similitud ≥ 0.98, 0.99 y ≈1.0 representan gradientes de confianza en la detección de superficies acuáticas.
-Este enfoque elimina la necesidad de índices espectrales ad-hoc y permite detectar agua aún bajo condiciones atmosféricas o de iluminación variables, al capturar su firma semántica global.
+```javascript
+var polysAll = ee.FeatureCollection(poly98.merge(poly99).merge(poly100));
+// Export.table.toAsset({ ... });
+```
 
-Didácticamente, este ejemplo introduce los conceptos de:
+---
 
-Espacio latente
-
-Vector de referencia
-
-Similitud coseno
-
-Umbral semántico probabilístico
-
-Caso 2: Identificación de ladrilleras y áreas industriales
-
-Aquí se introduce una noción más sofisticada: los filtros post fail-open.
-El procedimiento parte de una similitud coseno inicial —que indica qué zonas del ROI “se parecen” a las ladrilleras conocidas— y la refina con criterios físicos:
-
-NDVI para vegetación baja,
-
-NDBI para superficies construidas,
-
-BSI para suelo desnudo,
-
-S1 VV/VH para textura radar coherente.
-
-El sistema fail-open aplica un filtro solo si mantiene cobertura suficiente, garantizando robustez.
-De este modo, el embedding aporta la capa semántica, mientras los índices ópticos y radar aportan la validación física, logrando una integración GeoIA de segunda generación.
-
-Conceptos formativos aquí:
-
-Embeddings como filtros semánticos primarios.
-
-Fusión multimodal: espectral + radar + latente.
-
-Estrategias de control de falsos negativos en detección.
-
-Caso 3: Clasificación supervisada de cultivos
-
-El tercer caso extiende los embeddings hacia el aprendizaje supervisado.
-En lugar de calcular similitudes, los vectores de embedding se utilizan como features para entrenar clasificadores como Random Forest o SVM.
-Cada muestra agrícola (vid, manzana, pera, alfalfa, horticultura) se representa como un punto en el espacio latente, y el modelo aprende fronteras de decisión entre clases.
-
-La ventaja es que los embeddings:
-
-ya están pre-entrenados globalmente (no hace falta calibrar índices locales),
-
-reducen la variabilidad interanual,
-
-y permiten entrenar modelos robustos con pocas muestras.
-
-Este ejemplo articula:
-
-Transfer learning en EO,
-
-Representación universal de la superficie terrestre,
-
-Reutilización semántica de embeddings para clasificación.
-
-6. Perspectiva epistemológica: hacia una geosemántica del territorio
-
-Los embeddings implican un cambio de paradigma epistemológico en la geografía digital.
-Ya no trabajamos con valores brutos ni índices espectrales, sino con vectores que representan significados aprendidos.
-Este cambio aproxima la Observación de la Tierra al campo del lenguaje y la cognición: los píxeles “hablan entre sí” en un idioma estadístico de 256 dimensiones.
-
-Podemos entonces hablar de una geosemántica latente, donde el territorio se interpreta como un texto y el embedding como su gramática.
-Cada lugar posee un “significado distribuido” en el espacio vectorial, lo que permite realizar búsquedas conceptuales, analogías espaciales y análisis de cambio semántico.
-
-Por ejemplo:
-
-“¿Qué zonas se están desplazando semánticamente desde ‘vegetación natural’ hacia ‘cultivos’?”
-
-“¿Qué regiones urbanas presentan una firma latente similar a Rosario?”
-
-Este enfoque abre un campo nuevo: la GeoIA semántica, que combina fundamentos de la lingüística estadística, la visión por computadora y la geografía cuantitativa.
-
-7. Síntesis y conclusiones
-
-Los embeddings satelitales no reemplazan a los métodos tradicionales, sino que los trascienden: integran lo espectral, lo espacial y lo contextual en una representación unificada.
-En los tres ejemplos —agua, ladrilleras, cultivos— vemos cómo la similitud coseno actúa como una métrica de “familiaridad territorial”.
-
-Su potencial radica en permitir:
-
-búsquedas semánticas planetarias,
-
-clasificación auto-supervisada,
-
-detección de cambios multiescala,
-
-y la construcción de datacubes semánticos.
-
-Así como los modelos de lenguaje transformaron la comunicación, los embeddings están transformando nuestra forma de leer el territorio.
-Ya no observamos bandas: interpretamos significados.
-El desafío científico y didáctico consiste ahora en enseñar a pensar el territorio en clave semántica, es decir, en un espacio de relaciones aprendidas.
-
-Referencias sugeridas
-
-Google Research (2024). Satellite Embedding V1: A Foundation Model for Planetary Understanding.
-
-Zhu et al. (2023). Prithvi: Self-Supervised Learning for Earth Observation. IEEE TGRS.
-
-Tuia, D. et al. (2022). Deep Learning in Earth Observation: Foundations and Trends.
-
-Montero, C. (2024). GeoIA y Datacubes en la era semántica. IDE Iberoamérica.
-
-Lillesand, T., Kiefer, R., & Chipman, J. (2015). Remote Sensing and Image Interpretation. Wiley.
-
-# Mas
-
-El embedding captura contexto más que forma fina.
-
-Util para detectar por ejemplo: 
-
-* Océano / grandes cuerpos de agua
-Muy distintivos y homogéneos.
-Tip: máscara JRC Water (occurrence ≥ 10–30%).
-
-* Lagos/embalses medianos–grandes
-Formas estables, contraste claro con tierra.
-Tip: JRC Water + picos locales sobre el mapa de similitud.
-
-* Áreas urbanas densas (CBD, manzanas compactas)
-Textura “gruesa”, patrones de calles/edificios.
-Tip: NDBI alto, NDVI bajo para recortar candidatos.
-
-* Zonas industriales/portuarias grandes
-Superficies duras, depósitos, muelles, contenedores.
-Tip: NDBI↑, NDVI↓, Sentinel-1 VV/VH moderado–alto.
-
-* Mosaicos agrícolas extensos (parcelas, pivotes)
-Geometría repetitiva; muy “aprendible”.
-Tip: recortar a áreas rurales y usar época anual similar.
-
-* Canteras / minas a cielo abierto
-Texturas minerales, taludes, caminos internos.
-Tip: NDBI↑, NDVI↓, SWIR↑, S1 VV/VH↑.
-
-* Bosques densos / masas forestales
-Textura homogénea y patrón regional.
-Tip: NDVI↑ para filtrar no-vegetación.
-
-* Salinas / salar
-Reflectancia y textura características, grandes extensiones.
-Tip: SWIR/NIR peculiar; conviene recortar con máscara de suelo desnudo.
-
-* Humedales extensos
-Mezcla agua-vegetación pero patrón espacial distintivo.
-Tip: JRC (occurrence medio) + NDVI medio/alto.
-
-* Infraestructura lineal grande (autopistas anchas, pistas de aeropuertos)
-Linealidad clara a escala 10–20 m.
-Tip: detectar por similitud + post-procesar con filtros morfológicos.
-
-* Parques eólicos / solares grandes
-Patrón repetitivo (aerogeneradores/filas de paneles).
-Tip: S1 ayuda (estructuras metálicas dispersas), NDBI↑, NDVI↓.
-
-* Barrios privados / countries con diseño característico
-Huella y traza interna repetida, lagunas artificiales.
-Tip: recortar con urbano (NDBI↑) y usar varias muestras.
-
-* Playas / dunas extensas
-Textura/tonalidad de arena, bordes costeros.
-Tip: excluir agua con JRC y vegetación con NDVI↓.
-
-
-
-# Busqueda: Agua
-
-0) Entradas
-
-Este bloque asume que ya existen dos insumos:
-
-roi: tu región de estudio (Geometry o FeatureCollection).
-
-samples: polígonos de referencia que representan agua.
-
-Se extrae la geometría con var geometry = roi.geometry(); y se arma una vista rápida en el mapa:
-
-Map.setOptions('SATELLITE') para usar el fondo satelital.
-
-Map.addLayer(roi, …) dibuja el área de estudio.
-
-Map.addLayer(samples, …) muestra tus polígonos de agua en celeste.
-
-Map.centerObject(geometry, 7) centra el mapa en la zona.
-
-1) Parámetros
-
-Define los controles del análisis:
-
-Ventana temporal del año 2024 (startDate, endDate).
-
-scale: resolución de trabajo para los reductores y vectorización (20 m es un buen punto medio para cuerpos de agua no muy pequeños).
-
-USE_JRC_MASK: si true, se enmascara el embedding con la capa JRC Global Surface Water, útil para descartar píxeles no acuáticos.
-
-JRC_OCC_MIN: umbral mínimo de “ocurrencia de agua” (0–100). A mayor valor, más conservador.
-
-MIN_AREA_SQM: área mínima para filtrar polígonos pequeños (“slivers”) en la vectorización final.
-
-2) Embedding anual
-
-Carga la colección de embeddings anuales de Google:
-
-ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL').
-Filtra por fechas, hace un mosaic() (apila y toma el primer pixel válido por banda en el período) y recorta a geometry.
-Se guarda la lista de bandas en bandNames porque luego se necesitan para construir vectores y para asegurarse de alinear nombres al convertir a arrays.
-
-3) (Opcional) Máscara de agua JRC
-
-Si USE_JRC_MASK es true, se enmascaran todos los píxeles cuyo occurrence (JRC/GSW1_4) sea menor que JRC_OCC_MIN. Esto reduce ruido y acelera el cálculo enfocando sólo en áreas con probabilidad de agua.
-Luego, refImage = mosaicMasked.unmask(0) rellena con 0 donde la máscara dejó huecos, evitando nulls en los reductores (muy importante para construir vectores sin valores faltantes).
-
-4) Vector de referencia por POLÍGONO (promedio)
-
-Se calcula un vector de referencia por cada polígono de muestra:
-
-La función fillNullsWithZeros reemplaza valores null por 0 para todas las bandas (así cada polígono termina con un vector completo).
-
-reduceRegion({reducer: ee.Reducer.mean(), geometry: f.geometry(), …}) promedia el embedding sobre todo el polígono de muestra (no sólo un punto).
-
-Se agregan esos promedios como propiedades al feature (return f.set(dFilled)).
-El resultado samplesMeanVec es una FC donde cada feature representa un polígono de agua y, además, contiene un vector promedio del embedding (una dimensión por banda).
-
-5) Similitud coseno y “máximo por muestra”
-
-Se normaliza el mosaico a norma-1 por píxel:
-
-mosaicUnit = mosaicMasked / ||mosaicMasked||, donde ||·|| es la norma euclídea por píxel (raíz de la suma de cuadrados de todas las bandas).
-Para cada polígono de muestra:
-
-Se convierte el diccionario de bandas del feature a imagen (f.toArray(bandNames) → arrayFlatten) y se normaliza a unidad (sUnit).
-
-La similitud coseno es el producto punto entre ambos vectores normalizados: sUnit * mosaicUnit reducido por suma → rango [-1, 1].
-
-Se reescala a [0, 1] con (cos + 1) / 2 y se llama cosine_closeness.
-Se queda con el máximo de todas las similitudes por píxel (cosinePerSample.max()), es decir, qué tan parecido es cada píxel a al menos uno de tus polígonos de agua. Esto captura la mejor coincidencia en lugar del promedio.
-
-(Se incluye una capa opcional continua para visualizar cosineMax en el mapa con una paleta perceptual).
-
-6) Polígonos por umbral
-
-La función areasAtThreshold(img, th):
-
-Umbraliza img (por ejemplo cosineMax >= 0.98) y genera una máscara binaria.
-
-Vectoriza con reduceToVectors, respetando geometry, scale y conectividad de 8 vecinos.
-
-Calcula atributos útiles:
-
-cosine_close: el máximo de closeness dentro del polígono (sirve para ordenar o filtrar después).
-
-area_m2: área en m² del polígono (f.geometry().area(scale)).
-
-(Opcional) filtra por MIN_AREA_SQM si lo definiste > 0.
-Luego se generan tres colecciones de polígonos: poly98 (≥ 0.98), poly99 (≥ 0.99) y poly100 (≥ 0.999). El 1.0 exacto es raro por precisión numérica, por eso ≈100% se modela con 0.999.
-
-7) Mostrar polígonos
-
-Se agregan al mapa las tres capas vectoriales:
-
-Amarillo: ≥ 98%
-
-Naranja: ≥ 99%
-
-Cian: ≈ 100%
-Se imprime además la cantidad de polígonos en cada umbral para una verificación rápida del resultado.
-
-8) (Opcional) Exportar a Asset
-
-Une todas las capas (poly98.merge(poly99).merge(poly100)) en una sola FeatureCollection y deja listo un bloque de Export.table.toAsset (comentado) para guardar los polígonos resultantes en tu proyecto (edita assetId y description según corresponda).
-Esto permite versionar y reutilizar los resultados sin recalcular toda la tubería.
+**En resumen**, este procedimiento aplica embeddings satelitales como una forma de *búsqueda semántica geográfica*, comparando cada píxel con ejemplos de referencia y extrayendo regiones del territorio que “se parecen” estadísticamente a tus muestras.
 
 ```javascript
 // ============================================================
@@ -522,148 +462,179 @@ var polysAll = ee.FeatureCollection(poly98.merge(poly99).merge(poly100));
 // });
 
 ```
+# **Búsqueda: Hornos de Ladrillo**
 
-# Busqueda: Hornos de Ladrillo
+## **0) Entradas**
 
-0) Entradas
+La primera etapa prepara la geometría de trabajo y la vista del mapa.
 
-Se prepara la geometría de trabajo y la vista del mapa.
+```javascript
+var geometry = ee.FeatureCollection(roi).geometry(1);
+```
 
-var geometry = ee.FeatureCollection(roi).geometry(1); toma tu roi (puede ser Geometry o FC), lo convierte en FeatureCollection y extrae su geometría con un margen (tolerancia) de 1 metro para evitar topologías “degeneradas”.
+Esta instrucción toma tu `roi` (que puede ser una `Geometry` o `FeatureCollection`), la convierte en colección y extrae su geometría con un margen de 1 m, evitando topologías degeneradas.  
 
-Se configura el fondo satelital y se dibujan dos capas: el ROI en rojo y las muestras (polígonos de ladrilleras) en amarillo.
+Luego, se configura el fondo satelital y se dibujan dos capas:
+- El ROI en **rojo**.  
+- Las muestras (polígonos de ladrilleras) en **amarillo**.
 
-Map.centerObject(roi, 10); centra la vista directamente sobre tu roi.
-Las dos líneas comentadas son un plan B para ROIs complejos: hacen la unión de todas las piezas con margen y aplican buffer(0) para “sanear” topología si hubiera geometrías auto-intersectadas.
+```javascript
+Map.setOptions('SATELLITE');
+Map.addLayer(roi, {color: 'red'}, 'ROI');
+Map.addLayer(samples, {color: 'yellow'}, 'Samples (ladrilleras)');
+Map.centerObject(roi, 10);
+```
 
-1) Parámetros
+> 💡 *Las líneas comentadas ofrecen un “plan B” para ROIs complejos: aplican una unión con margen y un `buffer(0)` para sanear geometrías auto-intersectadas.*
+
+---
+
+## **1) Parámetros**
 
 Define la ventana temporal, la escala de análisis y los controles de filtrado.
 
-year, startDate, endDate: trabajarás sobre todo 2024.
+- `year`, `startDate`, `endDate`: trabajo sobre el año **2024**.  
+- `scale = 20`: resolución para reducción y vectorización (usar 10 m para sitios pequeños).  
+- `USE_FILTERS`: activa o desactiva todos los filtros *POST* de una vez.
 
-scale = 20: resolución para reducir, vectorizar y medir áreas (ajústalo a 10 m si los sitios son chicos, sabiendo que puede costar más).
+**Umbrales de índices:**
+- `NDVI_MAX`: vegetación baja → ladrilleras suelen ser suelos desnudos o construcciones.  
+- `NDBI_MIN`, `BSI_MIN`: realzan zonas construidas o de suelo desnudo.  
+- `S1_VV_MINdB`, `S1_VH_MINdB`: mínimos radar (dB) para descartar superficies muy lisas o húmedas.  
+- `EXCLUDE_WATER`: excluye agua si es `true`.  
+- `MIN_AREA_SQM`, `MAX_AREA_SQM`: filtro de área (en m²).  
+- `T98`, `T99`, `T100`: umbrales fijos de similitud coseno reescalada (0.98, 0.99, ≈1.0).
 
-USE_FILTERS: activa o desactiva todos los filtros POST a la vez.
+---
 
-Umbrales de índices:
+## **2) Embedding (sin máscara previa)**
 
-NDVI_MAX: vegetación baja (ladrilleras suelen ser suelos desnudos/superficies construidas).
+Se carga el embedding anual de Google y se construye un mosaico del período:
 
-NDBI_MIN, BSI_MIN: realzan lo construido/suelo desnudo.
+```javascript
+var embeddings = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL');
+var mosaic = embeddings.filterDate(startDate, endDate).mosaic().clip(geometry);
+var bandNames = mosaic.bandNames();
+```
 
-S1_VV_MINdB, S1_VH_MINdB: mínimos de retrodispersión radar (en dB) para descartar superficies muy lisas/húmedas que no correspondan.
+> 🛰️ No se aplica máscara de agua ni nubes aún; esto se realiza luego mediante filtros *POST*.
 
-EXCLUDE_WATER: si true, excluye agua con JRC.
+---
 
-MIN_AREA_SQM/MAX_AREA_SQM: filtro de área final en m² para quitar “miguitas” y polígonos exageradamente grandes.
+## **3) Vector de referencia (promedio en polígono)**
 
-T98, T99, T100: umbrales fijos de similitud coseno reescalada (0.98, 0.99, ~1.0).
+Cada polígono de muestra se transforma en un vector promedio del embedding.  
+Primero se rellenan valores nulos con cero para evitar errores:
 
-2) Embedding (sin máscara previa)
+```javascript
+var refImage = mosaic.unmask(0);
+```
 
-Carga el embedding anual de Google y arma un mosaico del periodo.
+La función `fillNullsWithZeros` reemplaza valores `null` por 0 en el diccionario resultante de `reduceRegion`.  
+El promedio por banda sobre cada polígono se obtiene mediante:
 
-GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL → filterDate(...).mosaic().clip(geometry).
+```javascript
+reduceRegion({
+  reducer: ee.Reducer.mean(),
+  geometry: f.geometry(),
+  scale: scale
+});
+```
 
-bandNames guarda la lista de bandas para usarla al convertir features a imágenes y asegurar alineación de nombres.
-Nota: acá no se aplica máscara de agua ni nubes al embedding (se filtra después con los POST-filtros).
+El resultado (`samplesMeanVec`) es una colección donde cada muestra incluye su vector promedio del embedding.
 
-3) Vector de referencia (promedio en polígono, robusto)
+---
 
-Construye, para cada polígono de muestra, un vector promedio de embedding.
+## **4) Similitud coseno (0..1) en todo el ROI**
 
-refImage = mosaic.unmask(0) rellena con 0 donde falten datos para evitar nulls.
+Se calcula qué tan parecido es cada píxel del ROI a las muestras.
 
-fillNullsWithZeros recorre todas las bandas y reemplaza nulos por 0 en el diccionario resultante del reduceRegion.
+```{math}
+\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}
+```
 
-reduceRegion({ reducer: mean, geometry: f.geometry(), ... }) calcula el promedio por banda sobre todo el polígono (mejor que muestrear un punto).
+La similitud coseno se reescala a [0,1] y se denomina `cosine_closeness`.  
+Se toma el máximo entre todas las muestras (`cosinePerSample.max()`), quedándose con la mejor coincidencia por píxel.
 
-El resultado (samplesMeanVec) es una FC donde cada feature (muestra) tiene, además de su geometría, todas las bandas del embedding como propiedades con el promedio correspondiente.
-Esto hace el “prototipo” de cada ladrillera a partir de sus polígonos.
+---
 
-4) Similitud coseno (0..1) en todo el ROI
+## **5) Filtros POST con “fail-open”**
 
-Calcula qué tan parecido es cada píxel del ROI a alguna de tus muestras.
+Se construye una máscara candidata multiplicando filtros sin destruir cobertura útil.
 
-Se normaliza el mosaico: mosaicUnit = mosaic / ||mosaic||.
+`candidateMask` comienza como 1 (todo permitido).  
+`maskCoverage(img)` evalúa la cobertura media (0–1).  
+`safeAnd(baseMask, newMask, label)` aplica un AND seguro, evitando eliminar toda la región.
 
-Para cada muestra:
+**Filtros aplicados:**  
+- **Sentinel‑2:** cálculo de NDVI, NDBI, BSI tras mediana sin nubes (QA60).  
+- **Sentinel‑1:** conversión a dB y aplicación de VV/VH mínimos.  
+- **JRC Water:** excluye agua si `EXCLUDE_WATER = true` (occurrence < 10 %).
 
-Convierte sus propiedades (bandas) en imagen (toArray → arrayFlatten) y normaliza a unidad (sUnit).
+Se imprime la cobertura resultante y se agrega la máscara como capa de diagnóstico.
 
-Similitud coseno = producto punto entre sUnit y mosaicUnit, reducido por suma → [-1, 1].
+---
 
-Se reescala a [0, 1] con (cos+1)/2 y se llama cosine_closeness.
+## **6) Aplicar máscara POST a la similitud**
 
-Se toma el máximo entre todas las muestras por píxel (cosinePerSample.max()), para quedarnos con la mejor coincidencia posible.
+```javascript
+var cosMasked = cosineMax.updateMask(candidateMask);
+```
 
-reduceRegion saca estadísticas globales (min, max, percentiles) dentro del ROI para conocer el rango típico de similitudes.
+Esto limita la similitud a zonas plausibles de ladrilleras.  
+Luego se calculan estadísticas (min, max, p90..p99) dentro de la máscara para verificar la distribución de similitudes.
 
-Se añade una capa opcional continua de cosineMax para inspección visual.
+---
 
-5) Filtros POST con “fail-open”
+## **7) Polygonización y filtro de área**
 
-Construye una máscara candidata multiplicando filtros, pero solo si no destruyen la cobertura.
+Convierte zonas con alta similitud en polígonos aplicando:
 
-candidateMask arranca como 1 (todo pasa).
+```javascript
+areasAtThreshold(img, th)
+```
 
-maskCoverage(img) estima la cobertura (promedio 0/1) de una máscara sobre el ROI.
+Esta función vectoriza las regiones y calcula:
+- `area_m2`: área en metros cuadrados.  
+- `cosine_close`: similitud máxima dentro del polígono.
 
-safeAnd(baseMask, newMask, label): intenta aplicar AND con el filtro nuevo; si la cobertura resultante cae ~0, no aplica el filtro (se queda “abierto”, fail-open). Se imprime la cobertura tentativa de cada filtro para diagnóstico.
+Se filtra por área y se generan tres capas: ≥ 0.98, ≥ 0.99 y ≈ 1.0.
 
-Sentinel-2 (si hay datos en la ventana):
+---
 
-Se hace una mediana libre de nubes (QA60).
+## **8) Umbral adaptativo (respaldo)**
 
-Se calculan NDVI, NDBI, BSI.
+Cuando los umbrales fijos no funcionan bien, se calcula un percentil dinámico (por defecto, P99).
 
-Se proponen máscaras laxas (NDVI<..., NDBI>..., BSI>...) y se aplican con safeAnd.
+```javascript
+var percDict = cosMasked.reduceRegion({
+  reducer: ee.Reducer.percentile([99]),
+  geometry: geometry,
+  scale: scale
+});
+```
 
-Sentinel-1 (si hay VV y VH):
+Si no hay datos suficientes, se usa 0.95 como respaldo.  
+La capa adaptativa se vectoriza y añade para comparación.
 
-Se pasa a dB, se arma una máscara VV>... && VH>... y se aplica con safeAnd.
+---
 
-Agua (JRC): si EXCLUDE_WATER, enmascara occurrence < 10%.
+## **9) Exportación opcional**
 
-Se normaliza y renombra la máscara final y se imprime su cobertura 0..1. También se agrega como capa de diagnóstico.
-Resultado: una máscara que intenta recortar la similitud a áreas plausibles de ladrilleras sin arriesgarse a borrar todo por un filtro mal seteado.
+Finalmente, se combinan las colecciones o se exporta la adaptativa:
 
-6) Aplicar mask POST a la similitud
+```javascript
+var allPolys = ee.FeatureCollection(poly98.merge(poly99).merge(poly100));
+// Export.table.toAsset({...});
+```
 
-cosMasked = cosineMax.updateMask(candidateMask) limita la similitud a las zonas que pasaron los filtros POST.
-Se calculan estadísticas (min, max, p90..p99) dentro de la máscara para ver cómo se comportan las similitudes ya filtradas y, por ejemplo, confirmar que los percentiles altos son suficientemente elevados para umbrales fijos (0.98/0.99).
+Esto permite versionar y reutilizar los resultados sin recalcular toda la pipeline.
 
-7) Polygonización + filtro de área
+---
 
-Convierte zonas con similitud alta en polígonos y aplica filtros de área.
-
-areasAtThreshold(img, th) umbraliza (img >= th), autoselecciona (selfMask), vectoriza con reduceToVectors y calcula:
-
-area_m2 del polígono,
-
-cosine_close máximo dentro de ese polígono (sirve para ordenar/filtrar luego).
-
-Luego filtra por MIN_AREA_SQM y MAX_AREA_SQM.
-
-Se generan tres capas: ≥0.98, ≥0.99 y ≈1.0, y se agregan al mapa con colores distintos. También se imprimen los conteos para chequeos rápidos.
-
-8) Umbral adaptativo (respaldo)
-
-Calcula un percentil de la distribución de similitud dentro de la máscara y lo usa como umbral dinámico cuando los fijos no funcionan bien.
-
-perc = 99 (puedes subir/bajar).
-
-reduceRegion obtiene P99; si por alguna razón es null (datos escasos), se cae a 0.95 como respaldo.
-
-Se vectoriza con ese umbral y se añade como capa “≥ P99 (adaptativo)”.
-Útil cuando la firma de ladrilleras varía por zona o año y los 0.98/0.99 quedan demasiado estrictos o laxos.
-
-9) (Opcional) Export
-
-Une las colecciones (o la que elijas, p.ej. la adaptativa) y deja listo el bloque de Export.table.toAsset.
-
-Edita description y assetId y ejecuta para persistir resultados, versionarlos y reutilizarlos sin recalcular toda la pipeline.
+**Conclusión:**  
+El procedimiento usa embeddings satelitales como modelo semántico del territorio, permitiendo detectar ladrilleras por *similitud estadística* y no por umbrales fijos de bandas.  
+La integración con filtros espectrales y radar asegura robustez ante ruido y variabilidad regional.
 
 ```javascript
 // ============================================================
@@ -938,50 +909,175 @@ print('≥ P' + perc + ':', polyP.size());
 
 ```
 
+# **Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)**
 
-# Busqueda: Entrenamiento supervisado para cultivos (una aproximación)
+## **Lógica general del script**
 
-La lógica del script:
+El objetivo es entrenar un modelo supervisado (Random Forest) que clasifique diferentes tipos de cultivos —Vid, Manzana, Pera, Alfalfa, Horticultura— combinando *embeddings satelitales* con índices espectrales y máscaras agrícolas.
 
-*  **Crear muestras de entrenamiento**: 
-    * Define una lista data con puntos etiquetados por clase (Vid, Manzana, Pera, Alfalfa, Horticultura) y sus coordenadas. Esa lista es tu “verdad de campo”: cada fila representa un punto conocido de cierta categoría que después se usará para entrenar y validar el clasificador.
-    * **Conversión a FeatureCollection**
-    * Toma cada fila de data, arma una geometría ee.Geometry.Point (en orden lon/lat) y la convierte en un ee.Feature con propiedades categoria, latitud y longitud. Con todos esos features construye una ee.FeatureCollection llamada samples, que es el insumo geoespacial estándar para el resto del flujo.
-    * **Sanidad:** filtrar por bounding box + vista inicial
-    Crea un rectángulo grande que cubre Neuquén/Alto Valle y filtra las muestras a ese recinto (si el filtro deja cero, usa todas para no romper el pipeline). Después setea el mapa en modo “SATELLITE”, agrega los puntos en amarillo y centra la vista en ellos para una verificación visual rápida.
-    * **ROI desde muestras (robusto)**
-    A partir de todas las muestras, construye una región de interés (ROI) creando un buffer de 10 km alrededor de su geometría unida. Ese polígono (en rojo) es el “ámbito de trabajo” al que luego se recortan máscaras, imágenes y resultados, y el mapa se centra sobre él.
+---
 
-* 1) Parámetros
-Define el año de análisis (2024) y el rango temporal completo (1 de enero a 31 de diciembre). También fija parámetros de escala espacial (SCALE), área mínima para vectorizar polígonos (MIN_POLY_M2) y TILE_SCALE para operaciones pesadas, que controlan resolución y performance.
-* 2) Máscara agrícola (ESA+MODIS+Dynamic World)
-Construye una máscara de “probable área agrícola” combinando: (a) WorldCover (clase 40 Cropland), (b) MODIS Land Cover permitiendo cropland y mosaico agro–natural, excluyendo urbano, bosques, agua, barren y grass donde corresponde, y (c) Dynamic World (medianas del año) favoreciendo píxeles con alta probabilidad de cultivo o árboles y penalizando grass/bare. También quita explícitamente WorldCover bare (clase 60). El resultado agMask (en verde) es la máscara agrícola final, y se agregan capas de control para inspección.
-* 3) Embeddings
-Carga el embedding anual GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL para el año de interés, lo mosaica y recorta a la ROI. Luego añade como bandas extra las probabilidades de Dynamic World para crops y trees (renombradas dw_crops, dw_trees) para darle pistas adicionales al clasificador sobre patrones agrícolas/arbóreos.
-Features extra: índices S2 estacionales
-Arma una colección Sentinel-2 para la “temporada productiva” (sep–abr en hemisferio sur), enmascara nubes, calcula NDVI, EVI, NDRE y NDWI por imagen y luego resume por estadísticos robustos (mediana, p90 y desvío estándar) por índice. Concatena todo (extraFeat) y lo agrega a emb, de modo que el modelo no dependa solo de embeddings sino también de rasgos fenológicos clásicos. Además guarda ndvi_med y ndvi_std para un refinamiento posterior de “Vid”.
-* 4) Preparar muestras
-Filtra las muestras a las clases de interés, mapea cada categoria a un entero (label) y deja pronta una colección de puntos etiquetados (trainPts) lista para muestrear valores de las bandas (embeddings + features) y entrenar.
-4B) Espaciar muestras por clase
-Para evitar sobre-representación espacial de puntos muy cercanos, “cuadricula” el espacio en celdas (en EPSG:3857) del tamaño elegido (MIN_DIST_M) y conserva, aleatoriamente, un solo punto por celda y por clase. Así se reduce el sesgo y se mejora la generalización del modelo.
-* 5) Extraer embeddings/features en puntos
-Muestrea (sampleRegions) los valores de todas las bandas de emb en los puntos espaciados, conservando propiedades label y categoria. Filtra filas con valores nulos. El resultado (trainSam) es una tabla de entrenamiento con X = bandas e Y = etiqueta numérica.
-* 6) Split 80/20, balanceo en TRAIN y entrenamiento RF
-Separa estratificadamente 80% para entrenamiento y 20% para validación (hold-out). Para el set de entrenamiento, aplica un “capping” por clase (CAP_PER_CLASS) para que las mayoritarias no dominen, sin forzar a reducir todo al mínimo absoluto. Con ese balancedTrain entrena un Random Forest (500 árboles, bagging 0.7), usando todas las bandas disponibles.
-6B) Evaluación en validación
-Clasifica el 20% de validación, calcula matriz de confusión, accuracy, Kappa, precision/recall por clase y F1 (macro y ponderado por soporte). También construye una tabla “por clase” pensada para inspección en la consola, de modo de entender qué categorías rinden mejor/peor.
-* 7) Clasificar la ROI: 
-Aplica el clasificador entrenado a todas las bandas en emb para producir un raster de clases, y enmascara el resultado con agMask (para recortar a zonas agrícolas probables). Así se obtiene el mapa de cultivos sobre toda la región de interés.
-Post-procesado específico para “Vid”
-Calcula una condición adicional con Dynamic World completo (crops alto, grass/built/bare bajos) y con señales fenológicas (NDVI medio > 0.20 y variación estacional > 0.03) para refinar la clase “Vid”. Hace una limpieza espacial con focal_mode, reemplaza solo donde corresponde y recompone el raster clasificado final con esa “Vid” más estricta.
-Visualización de la clasificación
-Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera amarillo, Alfalfa verde, Horticultura blanco) y agrega la capa clasificada al mapa con ese estilo, lista para inspección visual.
+## **0) Crear muestras de entrenamiento**
 
-* 8) **Vectorizar por clase**: Para cada clase presente, convierte el raster clasificado en polígonos vectoriales (conectividad de 8 vecinos), calcula el área por polígono y filtra por un umbral mínimo (MIN_POLY_M2). El resultado es una FeatureCollection con polígonos limpios y atributos class_id, categoria y area_m2, útil para análisis y exportaciones.
+### **Definición de datos base**
+Se define una lista `data` con puntos etiquetados por clase (Vid, Manzana, Pera, Alfalfa, Horticultura) y sus coordenadas.  
+Cada fila representa un punto de campo conocido que se usará como **verdad de terreno**.
 
-* 9) **Leyenda (UI)**: Crea un panel ui.Panel en la esquina inferior izquierda con título y filas color-nombre que reflejan exactamente la paleta del raster. Es una leyenda “anclada” al mapa para contextualizar la visualización.
+### **Conversión a FeatureCollection**
+Cada fila se transforma en un `ee.Feature` con:
+- Geometría `ee.Geometry.Point(lon, lat)`
+- Propiedades: `categoria`, `latitud`, `longitud`
 
-* **Gráfico de barras (UI)**: Arma otro panel en la esquina inferior derecha que muestra barras horizontales con la superficie (hectáreas) por clase, calculadas del raster clasificado (pixelArea agregado por clase dentro de la ROI). Ordena y pinta las barras con los mismos colores de la leyenda, ajusta el ancho relativo según el máximo y renderiza todo del lado del cliente para tener un resumen cuantitativo directo en el mapa.
+Luego, todos los `Feature` se agrupan en una `ee.FeatureCollection(samples)`, insumo estándar para el resto del flujo.
+
+### **Sanidad y vista inicial**
+Se filtran las muestras dentro de un rectángulo que cubre Neuquén/Alto Valle.  
+Si el filtro deja 0 muestras, se mantienen todas.  
+El mapa se configura con fondo satelital y muestra las muestras en amarillo para verificación rápida.
+
+### **ROI desde muestras**
+Se genera la **región de interés (ROI)** creando un buffer de 10 km alrededor de las muestras unidas.  
+Ese polígono (en rojo) define el ámbito de trabajo para recortar imágenes y resultados.
+
+---
+
+## **1) Parámetros**
+
+- Año: 2024  
+- Rango temporal: 1 de enero → 31 de diciembre  
+- `SCALE`: resolución de análisis espacial  
+- `MIN_POLY_M2`: área mínima para vectorizar polígonos  
+- `TILE_SCALE`: factor para manejar operaciones pesadas
+
+---
+
+## **2) Máscara agrícola (ESA + MODIS + Dynamic World)**
+
+Construye una máscara `agMask` de áreas agrícolas combinando tres fuentes:
+
+1. **ESA WorldCover** (clase 40 = Cropland).  
+2. **MODIS Land Cover**: permite cropland y mosaico agro–natural; excluye urbano, bosques, agua, barren, grass.  
+3. **Dynamic World** (medianas anuales): favorece *crops* y *trees*, penaliza *grass* y *bare*.
+
+Además, se eliminan explícitamente píxeles *bare* (clase 60 de WorldCover).  
+El resultado se visualiza en verde e incluye capas de control.
+
+---
+
+## **3) Embeddings y características adicionales**
+
+Se carga el embedding anual:
+
+```javascript
+var emb = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL')
+  .filterDate(startDate, endDate)
+  .mosaic()
+  .clip(roi);
+```
+
+Luego se añaden:
+
+- Bandas de probabilidad **Dynamic World** para *crops* y *trees*.  
+- Índices **Sentinel‑2** estacionales (NDVI, EVI, NDRE, NDWI), calculados sobre imágenes limpias de nubes.  
+- Estadísticos agregados: mediana, percentil 90 y desvío estándar.  
+
+Estos rasgos complementan al embedding con información fenológica clásica.
+
+---
+
+## **4) Preparar muestras**
+
+- Se filtran las clases de interés.  
+- Se mapea `categoria → label` numérico.  
+- Se obtiene una colección `trainPts` lista para muestrear bandas del embedding y entrenar.
+
+### **4B) Espaciar muestras por clase**
+Para evitar sesgo espacial, se cuadricula el territorio (en EPSG:3857) y se conserva un solo punto por celda y clase, asegurando representatividad espacial.
+
+---
+
+## **5) Extraer embeddings/features en puntos**
+
+Se ejecuta `sampleRegions` sobre los puntos espaciados, obteniendo una tabla con:
+- **X:** bandas del embedding e índices adicionales.  
+- **Y:** etiqueta numérica (`label`).  
+
+Se filtran filas con valores nulos → `trainSam`.
+
+---
+
+## **6) División y entrenamiento del modelo**
+
+### **6A) Split 80/20**
+Se divide la muestra estratificadamente: 80 % entrenamiento / 20 % validación.
+
+### **6B) Balanceo**
+En el conjunto de entrenamiento se aplica *capping* por clase (`CAP_PER_CLASS`) para evitar dominancia de clases frecuentes.
+
+### **Entrenamiento**
+Se entrena un **Random Forest** de 500 árboles con *bagging* = 0.7.
+
+---
+
+## **6C) Evaluación en validación**
+
+Se clasifica el 20 % de validación y se calculan:
+
+- Matriz de confusión.  
+- Exactitud global y Kappa.  
+- Precisión, Recall, F1 (macro y ponderado).  
+
+Se genera además una tabla “por clase” para inspección detallada en consola.
+
+---
+
+## **7) Clasificar la ROI**
+
+El clasificador se aplica a todas las bandas del embedding dentro de la ROI:
+
+```javascript
+var classified = emb.classify(rfModel).updateMask(agMask);
+```
+
+El resultado es un **mapa de cultivos** recortado a zonas agrícolas probables.
+
+### **Post‑procesado específico (“Vid”)**
+Se refina la clase **Vid** aplicando condiciones:
+- Alta probabilidad *crops* en Dynamic World.  
+- NDVI > 0.20 y variación > 0.03.  
+- Limpieza espacial con `focal_mode()`.
+
+El raster final integra esta “Vid” ajustada.
+
+---
+
+## **8) Vectorizar por clase**
+
+Cada clase se convierte en polígonos (8‑conectividad).  
+Se calcula el área (`area_m2`) y se filtra por `MIN_POLY_M2`.  
+El resultado es una `FeatureCollection` con atributos `class_id`, `categoria` y `area_m2`, lista para análisis o exportación.
+
+---
+
+## **9) Interfaz (UI)**
+
+### **Leyenda**
+Un panel (`ui.Panel`) en la esquina inferior izquierda muestra la paleta de colores y nombres por clase:
+
+- Vid → azul  
+- Manzana → rojo  
+- Pera → amarillo  
+- Alfalfa → verde  
+- Horticultura → blanco  
+
+### **Gráfico de barras**
+Otro panel (`ui.Panel`) en la esquina inferior derecha muestra la superficie por clase (hectáreas), calculada desde el raster clasificado, representando la proporción visualmente mediante barras horizontales.
+
+---
+
+**Conclusión**  
+Este flujo implementa una clasificación supervisada robusta basada en *embeddings satelitales*, complementada con índices espectrales y máscaras contextuales.  
+Integra aprendizaje automático, teledetección clásica y visualización interactiva, logrando un enfoque reproducible y científicamente sólido para el mapeo agrícola regional.
 
 
 ```javascript

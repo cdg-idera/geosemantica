@@ -379,16 +379,87 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: Embeddings satelitales</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-conceptual">1.1. Introducción conceptual</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">1.2. Introducción: del píxel al concepto</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">1.3. Fundamento teórico: ¿qué es un embedding?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: Embeddings satelitales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">2. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-deteccion-por-similitud">2.1. <strong>Ejemplos de detección por similitud</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oceano-grandes-cuerpos-de-agua">2.1.1. 🌊 <strong>Océano / grandes cuerpos de agua</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagos-embalses-medianosgrandes">2.1.2. 🏞️ <strong>Lagos / embalses medianos–grandes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#areas-urbanas-densas-cbd-manzanas-compactas">2.1.3. 🌆 <strong>Áreas urbanas densas (CBD, manzanas compactas)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonas-industriales-portuarias-grandes">2.1.4. 🏭 <strong>Zonas industriales / portuarias grandes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mosaicos-agricolas-extensos-parcelas-pivotes">2.1.5. 🌾 <strong>Mosaicos agrícolas extensos (parcelas, pivotes)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canteras-minas-a-cielo-abierto">2.1.6. ⛏️ <strong>Canteras / minas a cielo abierto</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bosques-densos-masas-forestales">2.1.7. 🌳 <strong>Bosques densos / masas forestales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salinas-salares">2.1.8. 🧂 <strong>Salinas / salares</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#humedales-extensos">2.1.9. 🐦 <strong>Humedales extensos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-lineal-grande-autopistas-aeropuertos">2.1.10. 🚗 <strong>Infraestructura lineal grande (autopistas, aeropuertos)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parques-eolicos-solares-grandes">2.1.11. ⚡ <strong>Parques eólicos / solares grandes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barrios-privados-countries-caracteristicos">2.1.12. 🏡 <strong>Barrios privados / countries característicos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#playas-dunas-extensas">2.1.13. 🏖️ <strong>Playas / dunas extensas</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">2. Mas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">3. Busqueda: Agua</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">4. Busqueda: Hornos de Ladrillo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua-explicacion-del-script">3. <strong>Búsqueda: Agua (explicación del script)</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas">3.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">3.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-anual">3.3. <strong>2) Embedding anual</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-jrc-opcional">3.4. <strong>3) Máscara JRC opcional</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-por-poligono">3.5. <strong>4) Vector de referencia por polígono</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno">3.6. <strong>5) Similitud coseno</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poligonos-por-umbral">3.7. <strong>6) Polígonos por umbral</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion">3.8. <strong>7) Visualización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-opcional">3.9. <strong>8) Exportación opcional</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">4. <strong>Búsqueda: Hornos de Ladrillo</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-sin-mascara-previa">4.3. <strong>2) Embedding (sin máscara previa)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-promedio-en-poligono">4.4. <strong>3) Vector de referencia (promedio en polígono)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno-0-1-en-todo-el-roi">4.5. <strong>4) Similitud coseno (0..1) en todo el ROI</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-post-con-fail-open">4.6. <strong>5) Filtros POST con “fail-open”</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-mascara-post-a-la-similitud">4.7. <strong>6) Aplicar máscara POST a la similitud</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonizacion-y-filtro-de-area">4.8. <strong>7) Polygonización y filtro de área</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-adaptativo-respaldo">4.9. <strong>8) Umbral adaptativo (respaldo)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.10. <strong>9) Exportación opcional</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. <strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logica-general-del-script">5.1. <strong>Lógica general del script</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-muestras-de-entrenamiento">5.2. <strong>0) Crear muestras de entrenamiento</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-datos-base">5.2.1. <strong>Definición de datos base</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-featurecollection">5.2.2. <strong>Conversión a FeatureCollection</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sanidad-y-vista-inicial">5.2.3. <strong>Sanidad y vista inicial</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-desde-muestras">5.2.4. <strong>ROI desde muestras</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.3. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-agricola-esa-modis-dynamic-world">5.4. <strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-caracteristicas-adicionales">5.5. <strong>3) Embeddings y características adicionales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-muestras">5.6. <strong>4) Preparar muestras</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-espaciar-muestras-por-clase">5.6.1. <strong>4B) Espaciar muestras por clase</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-embeddings-features-en-puntos">5.7. <strong>5) Extraer embeddings/features en puntos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#division-y-entrenamiento-del-modelo">5.8. <strong>6) División y entrenamiento del modelo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-split-80-20">5.8.1. <strong>6A) Split 80/20</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-balanceo">5.8.2. <strong>6B) Balanceo</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento">5.8.3. <strong>Entrenamiento</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-evaluacion-en-validacion">5.9. <strong>6C) Evaluación en validación</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-la-roi">5.10. <strong>7) Clasificar la ROI</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocesado-especifico-vid">5.10.1. <strong>Post‑procesado específico (“Vid”)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizar-por-clase">5.11. <strong>8) Vectorizar por clase</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-ui">5.12. <strong>9) Interfaz (UI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leyenda">5.12.1. <strong>Leyenda</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras">5.12.2. <strong>Gráfico de barras</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -403,257 +474,310 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-1-embeddings-satelitales">
 <h1><span class="section-number">1. </span>Capítulo 1: Embeddings satelitales<a class="headerlink" href="#capitulo-1-embeddings-satelitales" title="Link to this heading">#</a></h1>
-<p>Embeddings satelitales: una nueva semántica del territorio</p>
-<section id="introduccion-conceptual">
-<h2><span class="section-number">1.1. </span>Introducción conceptual<a class="headerlink" href="#introduccion-conceptual" title="Link to this heading">#</a></h2>
-<p>En los últimos años, la inteligencia artificial ha permitido construir modelos de representación del mundo que <em>trascienden los píxeles y los valores espectrales</em>. Los <strong>embeddings</strong> —representaciones numéricas densas de información compleja— constituyen una de las <em>innovaciones más profundas</em> en la <em>intersección entre aprendizaje profundo y Observación de la Tierra (EO)</em>.
-En el dominio lingüístico, un <strong>embedding</strong> <em>transforma palabras en vectores</em> que <em>capturan su significado contextual</em>; del mismo modo, en el dominio geoespacial, los <strong>embeddings satelitales</strong> traducen la <em>información espectral, temporal y contextual de cada píxel o región</em> en <em>un vector semántico que codifica patrones de superficie, contextos ambientales y relaciones espaciales</em>. De este modo los embeddings satelitales, nos posibilitan explorar un nuevo espacio asociado a la semántica geoespacial aprendida.</p>
-</section>
-<section id="introduccion-del-pixel-al-concepto">
-<h2><span class="section-number">1.2. </span>Introducción: del píxel al concepto<a class="headerlink" href="#introduccion-del-pixel-al-concepto" title="Link to this heading">#</a></h2>
-<p>Durante décadas, el análisis de imágenes satelitales se ha basado en valores radiométricos y en la interpretación de índices derivados (NDVI, NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación, el agua o lo urbano.
-Sin embargo, la revolución del <strong>deep learning</strong> ha transformado la forma en que representamos la información. Hoy, la pregunta ya no es <em>“¿qué valor tiene este píxel en la banda 4?”</em>, sino <em>“¿a qué se parece este píxel en términos de su significado latente?”</em>.</p>
-<p>Los embeddings satelitales representan ese salto conceptual: son <strong>una forma de codificar semánticamente el territorio</strong>.
-Cada píxel o región es <em>proyectado</em> a <em>un espacio vectorial de alta dimensión</em> donde la <em>distancia matemática refleja similitud contextual y semántica</em>, <em>no solo espectral</em>.
-De este modo, el planeta <em>deja de ser una grilla de reflectancias</em> y <em>se convierte en un espacio continuo de conceptos aprendidos</em>.</p>
-</section>
-<section id="fundamento-teorico-que-es-un-embedding">
-<h2><span class="section-number">1.3. </span>Fundamento teórico: ¿qué es un embedding?<a class="headerlink" href="#fundamento-teorico-que-es-un-embedding" title="Link to this heading">#</a></h2>
-<p>En términos formales, un embedding es una función:</p>
-<div class="math notranslate nohighlight">
-\[f: X \rightarrow \mathbb{R}^n\]</div>
-<p>donde:</p>
+<p><strong>Embeddings satelitales: una nueva semántica del territorio</strong></p>
+<p><strong>1. Introducción conceptual</strong></p>
+<p><strong>En los últimos años, la inteligencia artificial ha permitido construir
+modelos de representación del mundo que trascienden los píxeles y los
+valores espectrales. Los <em>embeddings</em> —representaciones numéricas
+densas de información compleja— constituyen una de las innovaciones
+más profundas en la intersección entre aprendizaje profundo y
+Observación de la Tierra (EO).<br />
+En el dominio lingüístico, un <em>embedding</em> transforma palabras en
+vectores que capturan su significado contextual; del mismo modo, en el
+dominio geoespacial, los <em>embeddings satelitales</em> traducen la
+información espectral, temporal y contextual de cada píxel o región en
+un vector semántico que codifica patrones de superficie, contextos
+ambientales y relaciones espaciales.</strong></p>
+<p><strong>Embeddings satelitales: hacia una semántica geoespacial aprendida</strong></p>
+<p><strong>1. Introducción: del píxel al concepto</strong></p>
+<p><strong>Durante décadas, el análisis de imágenes satelitales se ha basado en
+valores radiométricos y en la interpretación de índices derivados (NDVI,
+NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación,
+el agua o lo urbano.<br />
+Sin embargo, la revolución del <em>deep learning</em> ha transformado la forma
+en que representamos la información. Hoy, la pregunta ya no es “¿qué
+valor tiene este píxel en la banda 4?”, sino “¿a qué se parece este
+píxel en términos de su significado latente?”.</strong></p>
+<p><strong>Los embeddings satelitales representan ese salto conceptual: son una
+forma de <em>codificar semánticamente el territorio</em>.<br />
+Cada píxel o región es proyectado a un espacio vectorial de alta
+dimensión donde la distancia matemática refleja similitud contextual y
+semántica, no solo espectral.<br />
+De este modo, el planeta deja de ser una grilla de reflectancias y se
+convierte en un espacio continuo de conceptos aprendidos.</strong></p>
+<p><strong>2. Fundamento teórico: qué es un embedding</strong></p>
+<p><strong>En términos formales, un <em>embedding</em> es una función:</strong></p>
+<p><strong>f:X→Rnf: X \rightarrow \mathbb{R}^nf:X→Rn</strong></p>
+<p><strong>donde XXX representa un conjunto de observaciones complejas
+—imágenes multiespectrales, series temporales, o escenas completas—,
+y Rn\mathbb{R}^nRn es un espacio vectorial latente.<br />
+La función fff se aprende a partir de grandes volúmenes de datos
+mediante redes neuronales profundas. Su objetivo no es clasificar
+directamente, sino aprender una representación comprimida y
+significativa de los datos.</strong></p>
+<p><strong>En el dominio de la Observación de la Tierra (EO), esto significa
+que:</strong></p>
 <ul class="simple">
-<li><p>( X ) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.</p></li>
-<li><p>( \mathbb{R}^n ) es el espacio vectorial de características latentes.</p></li>
-<li><p>Cada punto ( f(x) ) es un vector que codifica información contextual de ( x ).</p></li>
+<li><p><strong>Cada píxel o parche satelital se codifica en un vector de, por
+ejemplo, 256 dimensiones.</strong></p></li>
+<li><p><strong>Las relaciones espaciales y espectrales se preservan de modo que
+píxeles <em>similares en contexto</em> quedan <em>cercanos en el espacio
+latente</em>.</strong></p></li>
+<li><p><strong>Los <em>embeddings</em> permiten medir similitud coseno entre lugares,
+como se mide similitud semántica entre palabras en modelos como
+Word2Vec o BERT.</strong></p></li>
 </ul>
-<p>La similitud entre dos vectores ( \mathbf{s} ) y ( \mathbf{x} ) puede calcularse mediante la <strong>similitud coseno</strong>, una medida clásica de semántica estadística:</p>
-<div class="math notranslate nohighlight">
-\[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }\]</div>
-<p>Esta métrica cuantifica el grado de afinidad semántica entre dos regiones del espacio geográfico, independientemente de su escala o magnitud.</p>
-<p>La función <span class="math notranslate nohighlight">\(f\)</span> se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.</p>
-<p>En el dominio de la Observación de la Tierra (EO), esto significa que:</p>
-<p>Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.</p>
-<p>Las relaciones espaciales y espectrales se preservan de modo que píxeles similares en contexto quedan cercanos en el espacio latente.</p>
-<p>Los embeddings permiten medir similitud coseno entre lugares, como se mide similitud semántica entre palabras en modelos como Word2Vec o BERT.</p>
-<p>Esta idea, proveniente del procesamiento del lenguaje natural, encuentra en las imágenes satelitales una analogía poderosa:
-así como los modelos lingüísticos aprenden que “rey” - “hombre” + “mujer” ≈ “reina”, los modelos de EO aprenden que “vegetación densa” - “verde” + “suelo desnudo” ≈ “zona urbana”.</p>
-<ol class="arabic simple" start="3">
-<li><p>Modelos fundacionales y embeddings satelitales</p></li>
-</ol>
-<p>Los modelos fundacionales para Observación de la Tierra (FM4EO) como OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.
-Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, de estación o de sensor, capturando así la esencia estadística del paisaje.</p>
-<p>El dataset GOOGLE/SATELLITE_EMBEDDING/V1 disponible en Google Earth Engine representa la primera implementación global de este paradigma: un mapa latente del planeta donde cada píxel está asociado a un vector de 256 dimensiones que codifica su identidad semántica.</p>
-<ol class="arabic simple" start="4">
-<li><p>Estructura matemática y significado de la similitud</p></li>
-</ol>
-<p>La similitud coseno se utiliza como métrica fundamental en este espacio latente.
-Dado un vector de referencia
-𝑠
-s (por ejemplo, el promedio de los embeddings de un conjunto de polígonos de agua) y un vector de píxel
-𝑥
-x, la similitud se define como:</p>
-<div class="math notranslate nohighlight">
-\[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }\]</div>
-<p>Este valor se reescala a [0,1], donde 1 indica máxima similitud semántica.
-Lo notable es que esta similitud no depende de índices espectrales fijos, sino de representaciones aprendidas que capturan patrones espaciales, texturales y de contexto ambiental.</p>
-<p>En consecuencia:</p>
-<p>Los embeddings permiten buscar por concepto (“lugares similares a este humedal”) en lugar de por valor (“NDWI &gt; 0.4”).</p>
-<p>Cada comparación en este espacio vectorial actúa como un razonamiento semántico entre regiones.</p>
-<ol class="arabic simple" start="5">
-<li><p>Aplicaciones ejemplificadas: tres casos de estudio
-Caso 1: Detección de cuerpos de agua</p></li>
-</ol>
-<p>El primer script aplica la similitud coseno entre un embedding mosaico anual y vectores promedio derivados de polígonos de agua.
-Las zonas con similitud ≥ 0.98, 0.99 y ≈1.0 representan gradientes de confianza en la detección de superficies acuáticas.
-Este enfoque elimina la necesidad de índices espectrales ad-hoc y permite detectar agua aún bajo condiciones atmosféricas o de iluminación variables, al capturar su firma semántica global.</p>
-<p>Didácticamente, este ejemplo introduce los conceptos de:</p>
-<p>Espacio latente</p>
-<p>Vector de referencia</p>
-<p>Similitud coseno</p>
-<p>Umbral semántico probabilístico</p>
-<p>Caso 2: Identificación de ladrilleras y áreas industriales</p>
-<p>Aquí se introduce una noción más sofisticada: los filtros post fail-open.
-El procedimiento parte de una similitud coseno inicial —que indica qué zonas del ROI “se parecen” a las ladrilleras conocidas— y la refina con criterios físicos:</p>
-<p>NDVI para vegetación baja,</p>
-<p>NDBI para superficies construidas,</p>
-<p>BSI para suelo desnudo,</p>
-<p>S1 VV/VH para textura radar coherente.</p>
-<p>El sistema fail-open aplica un filtro solo si mantiene cobertura suficiente, garantizando robustez.
-De este modo, el embedding aporta la capa semántica, mientras los índices ópticos y radar aportan la validación física, logrando una integración GeoIA de segunda generación.</p>
-<p>Conceptos formativos aquí:</p>
-<p>Embeddings como filtros semánticos primarios.</p>
-<p>Fusión multimodal: espectral + radar + latente.</p>
-<p>Estrategias de control de falsos negativos en detección.</p>
-<p>Caso 3: Clasificación supervisada de cultivos</p>
-<p>El tercer caso extiende los embeddings hacia el aprendizaje supervisado.
-En lugar de calcular similitudes, los vectores de embedding se utilizan como features para entrenar clasificadores como Random Forest o SVM.
-Cada muestra agrícola (vid, manzana, pera, alfalfa, horticultura) se representa como un punto en el espacio latente, y el modelo aprende fronteras de decisión entre clases.</p>
-<p>La ventaja es que los embeddings:</p>
-<p>ya están pre-entrenados globalmente (no hace falta calibrar índices locales),</p>
-<p>reducen la variabilidad interanual,</p>
-<p>y permiten entrenar modelos robustos con pocas muestras.</p>
-<p>Este ejemplo articula:</p>
-<p>Transfer learning en EO,</p>
-<p>Representación universal de la superficie terrestre,</p>
-<p>Reutilización semántica de embeddings para clasificación.</p>
-<ol class="arabic simple" start="6">
-<li><p>Perspectiva epistemológica: hacia una geosemántica del territorio</p></li>
-</ol>
-<p>Los embeddings implican un cambio de paradigma epistemológico en la geografía digital.
-Ya no trabajamos con valores brutos ni índices espectrales, sino con vectores que representan significados aprendidos.
-Este cambio aproxima la Observación de la Tierra al campo del lenguaje y la cognición: los píxeles “hablan entre sí” en un idioma estadístico de 256 dimensiones.</p>
-<p>Podemos entonces hablar de una geosemántica latente, donde el territorio se interpreta como un texto y el embedding como su gramática.
-Cada lugar posee un “significado distribuido” en el espacio vectorial, lo que permite realizar búsquedas conceptuales, analogías espaciales y análisis de cambio semántico.</p>
-<p>Por ejemplo:</p>
-<p>“¿Qué zonas se están desplazando semánticamente desde ‘vegetación natural’ hacia ‘cultivos’?”</p>
-<p>“¿Qué regiones urbanas presentan una firma latente similar a Rosario?”</p>
-<p>Este enfoque abre un campo nuevo: la GeoIA semántica, que combina fundamentos de la lingüística estadística, la visión por computadora y la geografía cuantitativa.</p>
-<ol class="arabic simple" start="7">
-<li><p>Síntesis y conclusiones</p></li>
-</ol>
-<p>Los embeddings satelitales no reemplazan a los métodos tradicionales, sino que los trascienden: integran lo espectral, lo espacial y lo contextual en una representación unificada.
-En los tres ejemplos —agua, ladrilleras, cultivos— vemos cómo la similitud coseno actúa como una métrica de “familiaridad territorial”.</p>
-<p>Su potencial radica en permitir:</p>
-<p>búsquedas semánticas planetarias,</p>
-<p>clasificación auto-supervisada,</p>
-<p>detección de cambios multiescala,</p>
-<p>y la construcción de datacubes semánticos.</p>
-<p>Así como los modelos de lenguaje transformaron la comunicación, los embeddings están transformando nuestra forma de leer el territorio.
-Ya no observamos bandas: interpretamos significados.
-El desafío científico y didáctico consiste ahora en enseñar a pensar el territorio en clave semántica, es decir, en un espacio de relaciones aprendidas.</p>
-<p>Referencias sugeridas</p>
-<p>Google Research (2024). Satellite Embedding V1: A Foundation Model for Planetary Understanding.</p>
-<p>Zhu et al. (2023). Prithvi: Self-Supervised Learning for Earth Observation. IEEE TGRS.</p>
-<p>Tuia, D. et al. (2022). Deep Learning in Earth Observation: Foundations and Trends.</p>
-<p>Montero, C. (2024). GeoIA y Datacubes en la era semántica. IDE Iberoamérica.</p>
-<p>Lillesand, T., Kiefer, R., &amp; Chipman, J. (2015). Remote Sensing and Image Interpretation. Wiley.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="mas">
-<h1><span class="section-number">2. </span>Mas<a class="headerlink" href="#mas" title="Link to this heading">#</a></h1>
-<p>El embedding captura contexto más que forma fina.</p>
-<p>Util para detectar por ejemplo:</p>
+<p><strong>Esta idea, proveniente del procesamiento del lenguaje natural,
+encuentra en las imágenes satelitales una analogía poderosa:<br />
+así como los modelos lingüísticos aprenden que <em>“rey” - “hombre” +
+“mujer” ≈ “reina”</em>, los modelos de EO aprenden que <em>“vegetación densa” -
+“verde” + “suelo desnudo” ≈ “zona urbana”</em>.</strong></p>
+<p><strong>3. Modelos fundacionales y embeddings satelitales</strong></p>
+<p><strong>Los modelos fundacionales para Observación de la Tierra (FM4EO) como
+OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google,
+fueron entrenados sobre millones de escenas multitemporales de
+Sentinel-2, Landsat y MODIS.<br />
+Estos modelos aprenden a generar vectores invariantes a cambios
+atmosféricos, de estación o de sensor, capturando así <em>la esencia
+estadística del paisaje</em>.</strong></p>
+<p><strong>El dataset GOOGLE/SATELLITE_EMBEDDING/V1 disponible en Google Earth
+Engine representa la primera implementación global de este paradigma: un
+mapa latente del planeta donde cada píxel está asociado a un vector de
+256 dimensiones que codifica su identidad semántica.</strong></p>
+<p><strong>4. Estructura matemática y significado de la similitud</strong></p>
+<p><strong>La similitud coseno se utiliza como métrica fundamental en este
+espacio latente.<br />
+Dado un vector de referencia s\mathbf{s}s (por ejemplo, el promedio de
+los embeddings de un conjunto de polígonos de agua) y un vector de píxel
+x\mathbf{x}x, la similitud se define como:</strong></p>
+<p><strong>sim(s,x)=s⋅x∣∣s∣∣ ∣∣x∣∣\text{sim}(\mathbf{s}, \mathbf{x}) =
+\frac{\mathbf{s} \cdot \mathbf{x}}{||\mathbf{s}|| \,
+||\mathbf{x}||}sim(s,x)=∣∣s∣∣∣∣x∣∣s⋅x​</strong></p>
+<p><strong>Este valor se reescala a [0,1], donde 1 indica máxima similitud
+semántica.<br />
+Lo notable es que esta similitud no depende de índices espectrales
+fijos, sino de representaciones <em>aprendidas</em> que capturan patrones
+espaciales, texturales y de contexto ambiental.</strong></p>
+<p><strong>En consecuencia:</strong></p>
 <ul class="simple">
-<li><p>Océano / grandes cuerpos de agua
-Muy distintivos y homogéneos.
-Tip: máscara JRC Water (occurrence ≥ 10–30%).</p></li>
-<li><p>Lagos/embalses medianos–grandes
-Formas estables, contraste claro con tierra.
-Tip: JRC Water + picos locales sobre el mapa de similitud.</p></li>
-<li><p>Áreas urbanas densas (CBD, manzanas compactas)
-Textura “gruesa”, patrones de calles/edificios.
-Tip: NDBI alto, NDVI bajo para recortar candidatos.</p></li>
-<li><p>Zonas industriales/portuarias grandes
-Superficies duras, depósitos, muelles, contenedores.
-Tip: NDBI↑, NDVI↓, Sentinel-1 VV/VH moderado–alto.</p></li>
-<li><p>Mosaicos agrícolas extensos (parcelas, pivotes)
-Geometría repetitiva; muy “aprendible”.
-Tip: recortar a áreas rurales y usar época anual similar.</p></li>
-<li><p>Canteras / minas a cielo abierto
-Texturas minerales, taludes, caminos internos.
-Tip: NDBI↑, NDVI↓, SWIR↑, S1 VV/VH↑.</p></li>
-<li><p>Bosques densos / masas forestales
-Textura homogénea y patrón regional.
-Tip: NDVI↑ para filtrar no-vegetación.</p></li>
-<li><p>Salinas / salar
-Reflectancia y textura características, grandes extensiones.
-Tip: SWIR/NIR peculiar; conviene recortar con máscara de suelo desnudo.</p></li>
-<li><p>Humedales extensos
-Mezcla agua-vegetación pero patrón espacial distintivo.
-Tip: JRC (occurrence medio) + NDVI medio/alto.</p></li>
-<li><p>Infraestructura lineal grande (autopistas anchas, pistas de aeropuertos)
-Linealidad clara a escala 10–20 m.
-Tip: detectar por similitud + post-procesar con filtros morfológicos.</p></li>
-<li><p>Parques eólicos / solares grandes
-Patrón repetitivo (aerogeneradores/filas de paneles).
-Tip: S1 ayuda (estructuras metálicas dispersas), NDBI↑, NDVI↓.</p></li>
-<li><p>Barrios privados / countries con diseño característico
-Huella y traza interna repetida, lagunas artificiales.
-Tip: recortar con urbano (NDBI↑) y usar varias muestras.</p></li>
-<li><p>Playas / dunas extensas
-Textura/tonalidad de arena, bordes costeros.
-Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
+<li><p><strong>Los <em>embeddings</em> permiten buscar por concepto (“lugares similares
+a este humedal”) en lugar de por valor (“NDWI &gt; 0.4”).</strong></p></li>
+<li><p><strong>Cada comparación en este espacio vectorial actúa como un
+<em>razonamiento semántico</em> entre regiones.</strong></p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="busqueda-agua">
-<h1><span class="section-number">3. </span>Busqueda: Agua<a class="headerlink" href="#busqueda-agua" title="Link to this heading">#</a></h1>
-<ol class="arabic simple" start="0">
-<li><p>Entradas</p></li>
-</ol>
-<p>Este bloque asume que ya existen dos insumos:</p>
-<p>roi: tu región de estudio (Geometry o FeatureCollection).</p>
-<p>samples: polígonos de referencia que representan agua.</p>
-<p>Se extrae la geometría con var geometry = roi.geometry(); y se arma una vista rápida en el mapa:</p>
-<p>Map.setOptions(‘SATELLITE’) para usar el fondo satelital.</p>
-<p>Map.addLayer(roi, …) dibuja el área de estudio.</p>
-<p>Map.addLayer(samples, …) muestra tus polígonos de agua en celeste.</p>
-<p>Map.centerObject(geometry, 7) centra el mapa en la zona.</p>
-<ol class="arabic simple">
-<li><p>Parámetros</p></li>
-</ol>
-<p>Define los controles del análisis:</p>
-<p>Ventana temporal del año 2024 (startDate, endDate).</p>
-<p>scale: resolución de trabajo para los reductores y vectorización (20 m es un buen punto medio para cuerpos de agua no muy pequeños).</p>
-<p>USE_JRC_MASK: si true, se enmascara el embedding con la capa JRC Global Surface Water, útil para descartar píxeles no acuáticos.</p>
-<p>JRC_OCC_MIN: umbral mínimo de “ocurrencia de agua” (0–100). A mayor valor, más conservador.</p>
-<p>MIN_AREA_SQM: área mínima para filtrar polígonos pequeños (“slivers”) en la vectorización final.</p>
-<ol class="arabic simple" start="2">
-<li><p>Embedding anual</p></li>
-</ol>
-<p>Carga la colección de embeddings anuales de Google:</p>
-<p>ee.ImageCollection(‘GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL’).
-Filtra por fechas, hace un mosaic() (apila y toma el primer pixel válido por banda en el período) y recorta a geometry.
-Se guarda la lista de bandas en bandNames porque luego se necesitan para construir vectores y para asegurarse de alinear nombres al convertir a arrays.</p>
-<ol class="arabic simple" start="3">
-<li><p>(Opcional) Máscara de agua JRC</p></li>
-</ol>
-<p>Si USE_JRC_MASK es true, se enmascaran todos los píxeles cuyo occurrence (JRC/GSW1_4) sea menor que JRC_OCC_MIN. Esto reduce ruido y acelera el cálculo enfocando sólo en áreas con probabilidad de agua.
-Luego, refImage = mosaicMasked.unmask(0) rellena con 0 donde la máscara dejó huecos, evitando nulls en los reductores (muy importante para construir vectores sin valores faltantes).</p>
-<ol class="arabic simple" start="4">
-<li><p>Vector de referencia por POLÍGONO (promedio)</p></li>
-</ol>
-<p>Se calcula un vector de referencia por cada polígono de muestra:</p>
-<p>La función fillNullsWithZeros reemplaza valores null por 0 para todas las bandas (así cada polígono termina con un vector completo).</p>
-<p>reduceRegion({reducer: ee.Reducer.mean(), geometry: f.geometry(), …}) promedia el embedding sobre todo el polígono de muestra (no sólo un punto).</p>
-<p>Se agregan esos promedios como propiedades al feature (return f.set(dFilled)).
-El resultado samplesMeanVec es una FC donde cada feature representa un polígono de agua y, además, contiene un vector promedio del embedding (una dimensión por banda).</p>
-<ol class="arabic simple" start="5">
-<li><p>Similitud coseno y “máximo por muestra”</p></li>
-</ol>
-<p>Se normaliza el mosaico a norma-1 por píxel:</p>
-<p>mosaicUnit = mosaicMasked / ||mosaicMasked||, donde ||·|| es la norma euclídea por píxel (raíz de la suma de cuadrados de todas las bandas).
-Para cada polígono de muestra:</p>
-<p>Se convierte el diccionario de bandas del feature a imagen (f.toArray(bandNames) → arrayFlatten) y se normaliza a unidad (sUnit).</p>
-<p>La similitud coseno es el producto punto entre ambos vectores normalizados: sUnit * mosaicUnit reducido por suma → rango [-1, 1].</p>
-<p>Se reescala a [0, 1] con (cos + 1) / 2 y se llama cosine_closeness.
-Se queda con el máximo de todas las similitudes por píxel (cosinePerSample.max()), es decir, qué tan parecido es cada píxel a al menos uno de tus polígonos de agua. Esto captura la mejor coincidencia en lugar del promedio.</p>
-<p>(Se incluye una capa opcional continua para visualizar cosineMax en el mapa con una paleta perceptual).</p>
-<ol class="arabic simple" start="6">
-<li><p>Polígonos por umbral</p></li>
-</ol>
-<p>La función areasAtThreshold(img, th):</p>
-<p>Umbraliza img (por ejemplo cosineMax &gt;= 0.98) y genera una máscara binaria.</p>
-<p>Vectoriza con reduceToVectors, respetando geometry, scale y conectividad de 8 vecinos.</p>
-<p>Calcula atributos útiles:</p>
-<p>cosine_close: el máximo de closeness dentro del polígono (sirve para ordenar o filtrar después).</p>
-<p>area_m2: área en m² del polígono (f.geometry().area(scale)).</p>
-<p>(Opcional) filtra por MIN_AREA_SQM si lo definiste &gt; 0.
-Luego se generan tres colecciones de polígonos: poly98 (≥ 0.98), poly99 (≥ 0.99) y poly100 (≥ 0.999). El 1.0 exacto es raro por precisión numérica, por eso ≈100% se modela con 0.999.</p>
-<ol class="arabic simple" start="7">
-<li><p>Mostrar polígonos</p></li>
-</ol>
-<p>Se agregan al mapa las tres capas vectoriales:</p>
-<p>Amarillo: ≥ 98%</p>
-<p>Naranja: ≥ 99%</p>
-<p>Cian: ≈ 100%
-Se imprime además la cantidad de polígonos en cada umbral para una verificación rápida del resultado.</p>
-<ol class="arabic simple" start="8">
-<li><p>(Opcional) Exportar a Asset</p></li>
-</ol>
-<p>Une todas las capas (poly98.merge(poly99).merge(poly100)) en una sola FeatureCollection y deja listo un bloque de Export.table.toAsset (comentado) para guardar los polígonos resultantes en tu proyecto (edita assetId y description según corresponda).
-Esto permite versionar y reutilizar los resultados sin recalcular toda la tubería.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">
+<h1><span class="section-number">2. </span><strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong><a class="headerlink" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales" title="Link to this heading">#</a></h1>
+<p>El <em>embedding</em> captura <strong>contexto más que forma fina</strong>, lo que lo hace especialmente útil para detectar patrones espaciales amplios y coherentes.<br />
+A continuación se detallan ejemplos de tipologías geográficas y sugerencias prácticas de uso.</p>
+<hr class="docutils" />
+<section id="ejemplos-de-deteccion-por-similitud">
+<h2><span class="section-number">2.1. </span><strong>Ejemplos de detección por similitud</strong><a class="headerlink" href="#ejemplos-de-deteccion-por-similitud" title="Link to this heading">#</a></h2>
+<section id="oceano-grandes-cuerpos-de-agua">
+<h3><span class="section-number">2.1.1. </span>🌊 <strong>Océano / grandes cuerpos de agua</strong><a class="headerlink" href="#oceano-grandes-cuerpos-de-agua" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Muy distintivos y homogéneos.</p></li>
+<li><p><strong>Tip:</strong> máscara <em>JRC Water</em> (occurrence ≥ 10–30%).</p></li>
+</ul>
+</section>
+<section id="lagos-embalses-medianosgrandes">
+<h3><span class="section-number">2.1.2. </span>🏞️ <strong>Lagos / embalses medianos–grandes</strong><a class="headerlink" href="#lagos-embalses-medianosgrandes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Formas estables y contraste claro con tierra.</p></li>
+<li><p><strong>Tip:</strong> <em>JRC Water</em> + picos locales sobre el mapa de similitud.</p></li>
+</ul>
+</section>
+<section id="areas-urbanas-densas-cbd-manzanas-compactas">
+<h3><span class="section-number">2.1.3. </span>🌆 <strong>Áreas urbanas densas (CBD, manzanas compactas)</strong><a class="headerlink" href="#areas-urbanas-densas-cbd-manzanas-compactas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Textura “gruesa”, patrones de calles y edificios.</p></li>
+<li><p><strong>Tip:</strong> NDBI alto, NDVI bajo para recortar candidatos.</p></li>
+</ul>
+</section>
+<section id="zonas-industriales-portuarias-grandes">
+<h3><span class="section-number">2.1.4. </span>🏭 <strong>Zonas industriales / portuarias grandes</strong><a class="headerlink" href="#zonas-industriales-portuarias-grandes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Superficies duras, depósitos, muelles, contenedores.</p></li>
+<li><p><strong>Tip:</strong> NDBI↑, NDVI↓, Sentinel-1 VV/VH moderado–alto.</p></li>
+</ul>
+</section>
+<section id="mosaicos-agricolas-extensos-parcelas-pivotes">
+<h3><span class="section-number">2.1.5. </span>🌾 <strong>Mosaicos agrícolas extensos (parcelas, pivotes)</strong><a class="headerlink" href="#mosaicos-agricolas-extensos-parcelas-pivotes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Geometría repetitiva; muy “aprendible”.</p></li>
+<li><p><strong>Tip:</strong> recortar a áreas rurales y usar época anual similar.</p></li>
+</ul>
+</section>
+<section id="canteras-minas-a-cielo-abierto">
+<h3><span class="section-number">2.1.6. </span>⛏️ <strong>Canteras / minas a cielo abierto</strong><a class="headerlink" href="#canteras-minas-a-cielo-abierto" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Texturas minerales, taludes, caminos internos.</p></li>
+<li><p><strong>Tip:</strong> NDBI↑, NDVI↓, SWIR↑, S1 VV/VH↑.</p></li>
+</ul>
+</section>
+<section id="bosques-densos-masas-forestales">
+<h3><span class="section-number">2.1.7. </span>🌳 <strong>Bosques densos / masas forestales</strong><a class="headerlink" href="#bosques-densos-masas-forestales" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Textura homogénea y patrón regional.</p></li>
+<li><p><strong>Tip:</strong> NDVI↑ para filtrar no-vegetación.</p></li>
+</ul>
+</section>
+<section id="salinas-salares">
+<h3><span class="section-number">2.1.8. </span>🧂 <strong>Salinas / salares</strong><a class="headerlink" href="#salinas-salares" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Reflectancia y textura características, grandes extensiones.</p></li>
+<li><p><strong>Tip:</strong> SWIR/NIR peculiar; conviene recortar con máscara de suelo desnudo.</p></li>
+</ul>
+</section>
+<section id="humedales-extensos">
+<h3><span class="section-number">2.1.9. </span>🐦 <strong>Humedales extensos</strong><a class="headerlink" href="#humedales-extensos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Mezcla agua-vegetación con patrón espacial distintivo.</p></li>
+<li><p><strong>Tip:</strong> JRC (occurrence medio) + NDVI medio/alto.</p></li>
+</ul>
+</section>
+<section id="infraestructura-lineal-grande-autopistas-aeropuertos">
+<h3><span class="section-number">2.1.10. </span>🚗 <strong>Infraestructura lineal grande (autopistas, aeropuertos)</strong><a class="headerlink" href="#infraestructura-lineal-grande-autopistas-aeropuertos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Linealidad clara a escala 10–20 m.</p></li>
+<li><p><strong>Tip:</strong> detectar por similitud + postprocesar con filtros morfológicos.</p></li>
+</ul>
+</section>
+<section id="parques-eolicos-solares-grandes">
+<h3><span class="section-number">2.1.11. </span>⚡ <strong>Parques eólicos / solares grandes</strong><a class="headerlink" href="#parques-eolicos-solares-grandes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Patrón repetitivo (aerogeneradores, filas de paneles).</p></li>
+<li><p><strong>Tip:</strong> S1 ayuda (estructuras metálicas dispersas), NDBI↑, NDVI↓.</p></li>
+</ul>
+</section>
+<section id="barrios-privados-countries-caracteristicos">
+<h3><span class="section-number">2.1.12. </span>🏡 <strong>Barrios privados / countries característicos</strong><a class="headerlink" href="#barrios-privados-countries-caracteristicos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Huella y traza interna repetida, lagunas artificiales.</p></li>
+<li><p><strong>Tip:</strong> recortar con urbano (NDBI↑) y usar varias muestras.</p></li>
+</ul>
+</section>
+<section id="playas-dunas-extensas">
+<h3><span class="section-number">2.1.13. </span>🏖️ <strong>Playas / dunas extensas</strong><a class="headerlink" href="#playas-dunas-extensas" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Textura y tonalidad de arena, bordes costeros.</p></li>
+<li><p><strong>Tip:</strong> excluir agua con JRC y vegetación con NDVI↓.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="busqueda-agua-explicacion-del-script">
+<h1><span class="section-number">3. </span><strong>Búsqueda: Agua (explicación del script)</strong><a class="headerlink" href="#busqueda-agua-explicacion-del-script" title="Link to this heading">#</a></h1>
+<section id="entradas">
+<h2><span class="section-number">3.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#entradas" title="Link to this heading">#</a></h2>
+<p>El bloque asume dos insumos principales:</p>
+<ul class="simple">
+<li><p><strong>roi:</strong> región de estudio (<em>Geometry</em> o <em>FeatureCollection</em>).</p></li>
+<li><p><strong>samples:</strong> polígonos de referencia que representan agua.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">roi</span><span class="p">.</span><span class="nx">geometry</span><span class="p">();</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="s1">&#39;SATELLITE&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">roi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">},</span><span class="w"> </span><span class="s1">&#39;ROI&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">samples</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;deepskyblue&#39;</span><span class="p">},</span><span class="w"> </span><span class="s1">&#39;Samples (agua)&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span><span class="w"> </span><span class="mf">7</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="parametros">
+<h2><span class="section-number">3.2. </span><strong>1) Parámetros</strong><a class="headerlink" href="#parametros" title="Link to this heading">#</a></h2>
+<p>Define los controles del análisis temporal y espacial:</p>
+<ul class="simple">
+<li><p>Año de referencia (2024).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code>: resolución de trabajo (20 m).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USE_JRC_MASK</span></code>: si <code class="docutils literal notranslate"><span class="pre">true</span></code>, aplica máscara JRC Global Surface Water.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JRC_OCC_MIN</span></code>: umbral mínimo de ocurrencia de agua.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN_AREA_SQM</span></code>: área mínima para descartar polígonos pequeños.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="embedding-anual">
+<h2><span class="section-number">3.3. </span><strong>2) Embedding anual</strong><a class="headerlink" href="#embedding-anual" title="Link to this heading">#</a></h2>
+<p>Carga la colección y recorta a la región de interés:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">).</span><span class="nx">mosaic</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">bandNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mosaic</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="mascara-jrc-opcional">
+<h2><span class="section-number">3.4. </span><strong>3) Máscara JRC opcional</strong><a class="headerlink" href="#mascara-jrc-opcional" title="Link to this heading">#</a></h2>
+<p>Si <code class="docutils literal notranslate"><span class="pre">USE_JRC_MASK</span></code> es <code class="docutils literal notranslate"><span class="pre">true</span></code>, enmascara los píxeles con baja ocurrencia de agua:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">mosaicMasked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Algorithms</span><span class="p">.</span><span class="nx">If</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">USE_JRC_MASK</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">mosaic</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;JRC/GSW1_4/GlobalSurfaceWater&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;occurrence&#39;</span><span class="p">).</span><span class="nx">gte</span><span class="p">(</span><span class="nx">JRC_OCC_MIN</span><span class="p">)),</span>
+<span class="w">  </span><span class="nx">mosaic</span>
+<span class="p">));</span>
+</pre></div>
+</div>
+<p>Luego se rellenan valores nulos con ceros (<code class="docutils literal notranslate"><span class="pre">unmask(0)</span></code>) para evitar problemas en los reductores.</p>
+</section>
+<hr class="docutils" />
+<section id="vector-de-referencia-por-poligono">
+<h2><span class="section-number">3.5. </span><strong>4) Vector de referencia por polígono</strong><a class="headerlink" href="#vector-de-referencia-por-poligono" title="Link to this heading">#</a></h2>
+<p>Cada polígono de muestra genera un vector promedio del embedding, evitando <code class="docutils literal notranslate"><span class="pre">nulls</span></code>:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">samplesMeanVec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">refImage</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mean</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">geometry</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">scale</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">fillNullsWithZeros</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="w"> </span><span class="nx">bandNames</span><span class="p">));</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="similitud-coseno">
+<h2><span class="section-number">3.6. </span><strong>5) Similitud coseno</strong><a class="headerlink" href="#similitud-coseno" title="Link to this heading">#</a></h2>
+<p>La similitud coseno mide la afinidad entre cada píxel y los vectores de muestra:</p>
+<div class="math notranslate nohighlight">
+\[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}\]</div>
+<p>Se calcula por píxel, normalizando ambos vectores a norma 1 y quedándose con el máximo de similitud.</p>
+</section>
+<hr class="docutils" />
+<section id="poligonos-por-umbral">
+<h2><span class="section-number">3.7. </span><strong>6) Polígonos por umbral</strong><a class="headerlink" href="#poligonos-por-umbral" title="Link to this heading">#</a></h2>
+<p>La función <code class="docutils literal notranslate"><span class="pre">areasAtThreshold()</span></code> vectoriza regiones según distintos niveles de similitud:</p>
+<ul class="simple">
+<li><p><strong>≥ 0.98:</strong> coincidencia alta.</p></li>
+<li><p><strong>≥ 0.99:</strong> coincidencia muy alta.</p></li>
+<li><p><strong>≈ 1.00:</strong> coincidencia casi perfecta.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">poly98</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">areasAtThreshold</span><span class="p">(</span><span class="nx">cosineMax</span><span class="p">,</span><span class="w"> </span><span class="mf">0.98</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">poly99</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nx">areasAtThreshold</span><span class="p">(</span><span class="nx">cosineMax</span><span class="p">,</span><span class="w"> </span><span class="mf">0.99</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">poly100</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">areasAtThreshold</span><span class="p">(</span><span class="nx">cosineMax</span><span class="p">,</span><span class="w"> </span><span class="mf">0.999</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="visualizacion">
+<h2><span class="section-number">3.8. </span><strong>7) Visualización</strong><a class="headerlink" href="#visualizacion" title="Link to this heading">#</a></h2>
+<p>Se muestran los resultados por color:</p>
+<ul class="simple">
+<li><p>Amarillo → ≥ 98 %</p></li>
+<li><p>Naranja → ≥ 99 %</p></li>
+<li><p>Cian → ≈ 100 %</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="exportacion-opcional">
+<h2><span class="section-number">3.9. </span><strong>8) Exportación opcional</strong><a class="headerlink" href="#exportacion-opcional" title="Link to this heading">#</a></h2>
+<p>Permite guardar el resultado como <code class="docutils literal notranslate"><span class="pre">FeatureCollection</span></code> para reutilizar en otros flujos:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">polysAll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">poly98</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly99</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly100</span><span class="p">));</span>
+<span class="c1">// Export.table.toAsset({ ... });</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>En resumen</strong>, este procedimiento aplica embeddings satelitales como una forma de <em>búsqueda semántica geográfica</em>, comparando cada píxel con ejemplos de referencia y extrayendo regiones del territorio que “se parecen” estadísticamente a tus muestras.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ============================================================</span>
 <span class="c1">// DETECCIÓN DE CUERPOS DE AGUA POR SIMILARIDAD DE EMBEDDINGS</span>
 <span class="c1">// Requiere: &#39;roi&#39; (Geometry/FC) y &#39;samples&#39; (FC de POLÍGONOS de agua)</span>
@@ -817,101 +941,156 @@ Esto permite versionar y reutilizar los resultados sin recalcular toda la tuber�
 </pre></div>
 </div>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-hornos-de-ladrillo">
-<h1><span class="section-number">4. </span>Busqueda: Hornos de Ladrillo<a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h1>
-<ol class="arabic simple" start="0">
-<li><p>Entradas</p></li>
-</ol>
-<p>Se prepara la geometría de trabajo y la vista del mapa.</p>
-<p>var geometry = ee.FeatureCollection(roi).geometry(1); toma tu roi (puede ser Geometry o FC), lo convierte en FeatureCollection y extrae su geometría con un margen (tolerancia) de 1 metro para evitar topologías “degeneradas”.</p>
-<p>Se configura el fondo satelital y se dibujan dos capas: el ROI en rojo y las muestras (polígonos de ladrilleras) en amarillo.</p>
-<p>Map.centerObject(roi, 10); centra la vista directamente sobre tu roi.
-Las dos líneas comentadas son un plan B para ROIs complejos: hacen la unión de todas las piezas con margen y aplican buffer(0) para “sanear” topología si hubiera geometrías auto-intersectadas.</p>
-<ol class="arabic simple">
-<li><p>Parámetros</p></li>
-</ol>
+<h1><span class="section-number">4. </span><strong>Búsqueda: Hornos de Ladrillo</strong><a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2><span class="section-number">4.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>La primera etapa prepara la geometría de trabajo y la vista del mapa.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">roi</span><span class="p">).</span><span class="nx">geometry</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Esta instrucción toma tu <code class="docutils literal notranslate"><span class="pre">roi</span></code> (que puede ser una <code class="docutils literal notranslate"><span class="pre">Geometry</span></code> o <code class="docutils literal notranslate"><span class="pre">FeatureCollection</span></code>), la convierte en colección y extrae su geometría con un margen de 1 m, evitando topologías degeneradas.</p>
+<p>Luego, se configura el fondo satelital y se dibujan dos capas:</p>
+<ul class="simple">
+<li><p>El ROI en <strong>rojo</strong>.</p></li>
+<li><p>Las muestras (polígonos de ladrilleras) en <strong>amarillo</strong>.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">Map</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="s1">&#39;SATELLITE&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">roi</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;red&#39;</span><span class="p">},</span><span class="w"> </span><span class="s1">&#39;ROI&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">samples</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;yellow&#39;</span><span class="p">},</span><span class="w"> </span><span class="s1">&#39;Samples (ladrilleras)&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">roi</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">);</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>💡 <em>Las líneas comentadas ofrecen un “plan B” para ROIs complejos: aplican una unión con margen y un <code class="docutils literal notranslate"><span class="pre">buffer(0)</span></code> para sanear geometrías auto-intersectadas.</em></p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2><span class="section-number">4.2. </span><strong>1) Parámetros</strong><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Define la ventana temporal, la escala de análisis y los controles de filtrado.</p>
-<p>year, startDate, endDate: trabajarás sobre todo 2024.</p>
-<p>scale = 20: resolución para reducir, vectorizar y medir áreas (ajústalo a 10 m si los sitios son chicos, sabiendo que puede costar más).</p>
-<p>USE_FILTERS: activa o desactiva todos los filtros POST a la vez.</p>
-<p>Umbrales de índices:</p>
-<p>NDVI_MAX: vegetación baja (ladrilleras suelen ser suelos desnudos/superficies construidas).</p>
-<p>NDBI_MIN, BSI_MIN: realzan lo construido/suelo desnudo.</p>
-<p>S1_VV_MINdB, S1_VH_MINdB: mínimos de retrodispersión radar (en dB) para descartar superficies muy lisas/húmedas que no correspondan.</p>
-<p>EXCLUDE_WATER: si true, excluye agua con JRC.</p>
-<p>MIN_AREA_SQM/MAX_AREA_SQM: filtro de área final en m² para quitar “miguitas” y polígonos exageradamente grandes.</p>
-<p>T98, T99, T100: umbrales fijos de similitud coseno reescalada (0.98, 0.99, ~1.0).</p>
-<ol class="arabic simple" start="2">
-<li><p>Embedding (sin máscara previa)</p></li>
-</ol>
-<p>Carga el embedding anual de Google y arma un mosaico del periodo.</p>
-<p>GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL → filterDate(…).mosaic().clip(geometry).</p>
-<p>bandNames guarda la lista de bandas para usarla al convertir features a imágenes y asegurar alineación de nombres.
-Nota: acá no se aplica máscara de agua ni nubes al embedding (se filtra después con los POST-filtros).</p>
-<ol class="arabic simple" start="3">
-<li><p>Vector de referencia (promedio en polígono, robusto)</p></li>
-</ol>
-<p>Construye, para cada polígono de muestra, un vector promedio de embedding.</p>
-<p>refImage = mosaic.unmask(0) rellena con 0 donde falten datos para evitar nulls.</p>
-<p>fillNullsWithZeros recorre todas las bandas y reemplaza nulos por 0 en el diccionario resultante del reduceRegion.</p>
-<p>reduceRegion({ reducer: mean, geometry: f.geometry(), … }) calcula el promedio por banda sobre todo el polígono (mejor que muestrear un punto).</p>
-<p>El resultado (samplesMeanVec) es una FC donde cada feature (muestra) tiene, además de su geometría, todas las bandas del embedding como propiedades con el promedio correspondiente.
-Esto hace el “prototipo” de cada ladrillera a partir de sus polígonos.</p>
-<ol class="arabic simple" start="4">
-<li><p>Similitud coseno (0..1) en todo el ROI</p></li>
-</ol>
-<p>Calcula qué tan parecido es cada píxel del ROI a alguna de tus muestras.</p>
-<p>Se normaliza el mosaico: mosaicUnit = mosaic / ||mosaic||.</p>
-<p>Para cada muestra:</p>
-<p>Convierte sus propiedades (bandas) en imagen (toArray → arrayFlatten) y normaliza a unidad (sUnit).</p>
-<p>Similitud coseno = producto punto entre sUnit y mosaicUnit, reducido por suma → [-1, 1].</p>
-<p>Se reescala a [0, 1] con (cos+1)/2 y se llama cosine_closeness.</p>
-<p>Se toma el máximo entre todas las muestras por píxel (cosinePerSample.max()), para quedarnos con la mejor coincidencia posible.</p>
-<p>reduceRegion saca estadísticas globales (min, max, percentiles) dentro del ROI para conocer el rango típico de similitudes.</p>
-<p>Se añade una capa opcional continua de cosineMax para inspección visual.</p>
-<ol class="arabic simple" start="5">
-<li><p>Filtros POST con “fail-open”</p></li>
-</ol>
-<p>Construye una máscara candidata multiplicando filtros, pero solo si no destruyen la cobertura.</p>
-<p>candidateMask arranca como 1 (todo pasa).</p>
-<p>maskCoverage(img) estima la cobertura (promedio 0/1) de una máscara sobre el ROI.</p>
-<p>safeAnd(baseMask, newMask, label): intenta aplicar AND con el filtro nuevo; si la cobertura resultante cae ~0, no aplica el filtro (se queda “abierto”, fail-open). Se imprime la cobertura tentativa de cada filtro para diagnóstico.</p>
-<p>Sentinel-2 (si hay datos en la ventana):</p>
-<p>Se hace una mediana libre de nubes (QA60).</p>
-<p>Se calculan NDVI, NDBI, BSI.</p>
-<p>Se proponen máscaras laxas (NDVI&lt;…, NDBI&gt;…, BSI&gt;…) y se aplican con safeAnd.</p>
-<p>Sentinel-1 (si hay VV y VH):</p>
-<p>Se pasa a dB, se arma una máscara VV&gt;… &amp;&amp; VH&gt;… y se aplica con safeAnd.</p>
-<p>Agua (JRC): si EXCLUDE_WATER, enmascara occurrence &lt; 10%.</p>
-<p>Se normaliza y renombra la máscara final y se imprime su cobertura 0..1. También se agrega como capa de diagnóstico.
-Resultado: una máscara que intenta recortar la similitud a áreas plausibles de ladrilleras sin arriesgarse a borrar todo por un filtro mal seteado.</p>
-<ol class="arabic simple" start="6">
-<li><p>Aplicar mask POST a la similitud</p></li>
-</ol>
-<p>cosMasked = cosineMax.updateMask(candidateMask) limita la similitud a las zonas que pasaron los filtros POST.
-Se calculan estadísticas (min, max, p90..p99) dentro de la máscara para ver cómo se comportan las similitudes ya filtradas y, por ejemplo, confirmar que los percentiles altos son suficientemente elevados para umbrales fijos (0.98/0.99).</p>
-<ol class="arabic simple" start="7">
-<li><p>Polygonización + filtro de área</p></li>
-</ol>
-<p>Convierte zonas con similitud alta en polígonos y aplica filtros de área.</p>
-<p>areasAtThreshold(img, th) umbraliza (img &gt;= th), autoselecciona (selfMask), vectoriza con reduceToVectors y calcula:</p>
-<p>area_m2 del polígono,</p>
-<p>cosine_close máximo dentro de ese polígono (sirve para ordenar/filtrar luego).</p>
-<p>Luego filtra por MIN_AREA_SQM y MAX_AREA_SQM.</p>
-<p>Se generan tres capas: ≥0.98, ≥0.99 y ≈1.0, y se agregan al mapa con colores distintos. También se imprimen los conteos para chequeos rápidos.</p>
-<ol class="arabic simple" start="8">
-<li><p>Umbral adaptativo (respaldo)</p></li>
-</ol>
-<p>Calcula un percentil de la distribución de similitud dentro de la máscara y lo usa como umbral dinámico cuando los fijos no funcionan bien.</p>
-<p>perc = 99 (puedes subir/bajar).</p>
-<p>reduceRegion obtiene P99; si por alguna razón es null (datos escasos), se cae a 0.95 como respaldo.</p>
-<p>Se vectoriza con ese umbral y se añade como capa “≥ P99 (adaptativo)”.
-Útil cuando la firma de ladrilleras varía por zona o año y los 0.98/0.99 quedan demasiado estrictos o laxos.</p>
-<ol class="arabic simple" start="9">
-<li><p>(Opcional) Export</p></li>
-</ol>
-<p>Une las colecciones (o la que elijas, p.ej. la adaptativa) y deja listo el bloque de Export.table.toAsset.</p>
-<p>Edita description y assetId y ejecuta para persistir resultados, versionarlos y reutilizarlos sin recalcular toda la pipeline.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">startDate</span></code>, <code class="docutils literal notranslate"><span class="pre">endDate</span></code>: trabajo sobre el año <strong>2024</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span> <span class="pre">=</span> <span class="pre">20</span></code>: resolución para reducción y vectorización (usar 10 m para sitios pequeños).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">USE_FILTERS</span></code>: activa o desactiva todos los filtros <em>POST</em> de una vez.</p></li>
+</ul>
+<p><strong>Umbrales de índices:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NDVI_MAX</span></code>: vegetación baja → ladrilleras suelen ser suelos desnudos o construcciones.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NDBI_MIN</span></code>, <code class="docutils literal notranslate"><span class="pre">BSI_MIN</span></code>: realzan zonas construidas o de suelo desnudo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S1_VV_MINdB</span></code>, <code class="docutils literal notranslate"><span class="pre">S1_VH_MINdB</span></code>: mínimos radar (dB) para descartar superficies muy lisas o húmedas.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EXCLUDE_WATER</span></code>: excluye agua si es <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN_AREA_SQM</span></code>, <code class="docutils literal notranslate"><span class="pre">MAX_AREA_SQM</span></code>: filtro de área (en m²).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T98</span></code>, <code class="docutils literal notranslate"><span class="pre">T99</span></code>, <code class="docutils literal notranslate"><span class="pre">T100</span></code>: umbrales fijos de similitud coseno reescalada (0.98, 0.99, ≈1.0).</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="embedding-sin-mascara-previa">
+<h2><span class="section-number">4.3. </span><strong>2) Embedding (sin máscara previa)</strong><a class="headerlink" href="#embedding-sin-mascara-previa" title="Link to this heading">#</a></h2>
+<p>Se carga el embedding anual de Google y se construye un mosaico del período:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">).</span><span class="nx">mosaic</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">bandNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mosaic</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">();</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>🛰️ No se aplica máscara de agua ni nubes aún; esto se realiza luego mediante filtros <em>POST</em>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="vector-de-referencia-promedio-en-poligono">
+<h2><span class="section-number">4.4. </span><strong>3) Vector de referencia (promedio en polígono)</strong><a class="headerlink" href="#vector-de-referencia-promedio-en-poligono" title="Link to this heading">#</a></h2>
+<p>Cada polígono de muestra se transforma en un vector promedio del embedding.<br />
+Primero se rellenan valores nulos con cero para evitar errores:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">refImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mosaic</span><span class="p">.</span><span class="nx">unmask</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">fillNullsWithZeros</span></code> reemplaza valores <code class="docutils literal notranslate"><span class="pre">null</span></code> por 0 en el diccionario resultante de <code class="docutils literal notranslate"><span class="pre">reduceRegion</span></code>.<br />
+El promedio por banda sobre cada polígono se obtiene mediante:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">reduceRegion</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mean</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">f</span><span class="p">.</span><span class="nx">geometry</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">scale</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>El resultado (<code class="docutils literal notranslate"><span class="pre">samplesMeanVec</span></code>) es una colección donde cada muestra incluye su vector promedio del embedding.</p>
+</section>
+<hr class="docutils" />
+<section id="similitud-coseno-0-1-en-todo-el-roi">
+<h2><span class="section-number">4.5. </span><strong>4) Similitud coseno (0..1) en todo el ROI</strong><a class="headerlink" href="#similitud-coseno-0-1-en-todo-el-roi" title="Link to this heading">#</a></h2>
+<p>Se calcula qué tan parecido es cada píxel del ROI a las muestras.</p>
+<div class="math notranslate nohighlight">
+\[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}\]</div>
+<p>La similitud coseno se reescala a [0,1] y se denomina <code class="docutils literal notranslate"><span class="pre">cosine_closeness</span></code>.<br />
+Se toma el máximo entre todas las muestras (<code class="docutils literal notranslate"><span class="pre">cosinePerSample.max()</span></code>), quedándose con la mejor coincidencia por píxel.</p>
+</section>
+<hr class="docutils" />
+<section id="filtros-post-con-fail-open">
+<h2><span class="section-number">4.6. </span><strong>5) Filtros POST con “fail-open”</strong><a class="headerlink" href="#filtros-post-con-fail-open" title="Link to this heading">#</a></h2>
+<p>Se construye una máscara candidata multiplicando filtros sin destruir cobertura útil.</p>
+<p><code class="docutils literal notranslate"><span class="pre">candidateMask</span></code> comienza como 1 (todo permitido).<br />
+<code class="docutils literal notranslate"><span class="pre">maskCoverage(img)</span></code> evalúa la cobertura media (0–1).<br />
+<code class="docutils literal notranslate"><span class="pre">safeAnd(baseMask,</span> <span class="pre">newMask,</span> <span class="pre">label)</span></code> aplica un AND seguro, evitando eliminar toda la región.</p>
+<p><strong>Filtros aplicados:</strong></p>
+<ul class="simple">
+<li><p><strong>Sentinel‑2:</strong> cálculo de NDVI, NDBI, BSI tras mediana sin nubes (QA60).</p></li>
+<li><p><strong>Sentinel‑1:</strong> conversión a dB y aplicación de VV/VH mínimos.</p></li>
+<li><p><strong>JRC Water:</strong> excluye agua si <code class="docutils literal notranslate"><span class="pre">EXCLUDE_WATER</span> <span class="pre">=</span> <span class="pre">true</span></code> (occurrence &lt; 10 %).</p></li>
+</ul>
+<p>Se imprime la cobertura resultante y se agrega la máscara como capa de diagnóstico.</p>
+</section>
+<hr class="docutils" />
+<section id="aplicar-mascara-post-a-la-similitud">
+<h2><span class="section-number">4.7. </span><strong>6) Aplicar máscara POST a la similitud</strong><a class="headerlink" href="#aplicar-mascara-post-a-la-similitud" title="Link to this heading">#</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cosMasked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cosineMax</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">candidateMask</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Esto limita la similitud a zonas plausibles de ladrilleras.<br />
+Luego se calculan estadísticas (min, max, p90..p99) dentro de la máscara para verificar la distribución de similitudes.</p>
+</section>
+<hr class="docutils" />
+<section id="polygonizacion-y-filtro-de-area">
+<h2><span class="section-number">4.8. </span><strong>7) Polygonización y filtro de área</strong><a class="headerlink" href="#polygonizacion-y-filtro-de-area" title="Link to this heading">#</a></h2>
+<p>Convierte zonas con alta similitud en polígonos aplicando:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">areasAtThreshold</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span><span class="w"> </span><span class="nx">th</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esta función vectoriza las regiones y calcula:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">area_m2</span></code>: área en metros cuadrados.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosine_close</span></code>: similitud máxima dentro del polígono.</p></li>
+</ul>
+<p>Se filtra por área y se generan tres capas: ≥ 0.98, ≥ 0.99 y ≈ 1.0.</p>
+</section>
+<hr class="docutils" />
+<section id="umbral-adaptativo-respaldo">
+<h2><span class="section-number">4.9. </span><strong>8) Umbral adaptativo (respaldo)</strong><a class="headerlink" href="#umbral-adaptativo-respaldo" title="Link to this heading">#</a></h2>
+<p>Cuando los umbrales fijos no funcionan bien, se calcula un percentil dinámico (por defecto, P99).</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">percDict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cosMasked</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">99</span><span class="p">]),</span>
+<span class="w">  </span><span class="nx">geometry</span><span class="o">:</span><span class="w"> </span><span class="nx">geometry</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="nx">scale</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Si no hay datos suficientes, se usa 0.95 como respaldo.<br />
+La capa adaptativa se vectoriza y añade para comparación.</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2><span class="section-number">4.10. </span><strong>9) Exportación opcional</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>Finalmente, se combinan las colecciones o se exporta la adaptativa:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">allPolys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">poly98</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly99</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly100</span><span class="p">));</span>
+<span class="c1">// Export.table.toAsset({...});</span>
+</pre></div>
+</div>
+<p>Esto permite versionar y reutilizar los resultados sin recalcular toda la pipeline.</p>
+<hr class="docutils" />
+<p><strong>Conclusión:</strong><br />
+El procedimiento usa embeddings satelitales como modelo semántico del territorio, permitiendo detectar ladrilleras por <em>similitud estadística</em> y no por umbrales fijos de bandas.<br />
+La integración con filtros espectrales y radar asegura robustez ante ruido y variabilidad regional.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ============================================================</span>
 <span class="c1">// LADRILLERAS con Embeddings + Filtros POST &quot;fail-open&quot;</span>
 <span class="c1">// Si un filtro deja cobertura ~0, se omite automáticamente.</span>
@@ -1183,76 +1362,180 @@ Se calculan estadísticas (min, max, p90..p99) dentro de la máscara para ver c�
 </pre></div>
 </div>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">
-<h1><span class="section-number">5. </span>Busqueda: Entrenamiento supervisado para cultivos (una aproximación)<a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h1>
-<p>La lógica del script:</p>
+<h1><span class="section-number">5. </span><strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong><a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h1>
+<section id="logica-general-del-script">
+<h2><span class="section-number">5.1. </span><strong>Lógica general del script</strong><a class="headerlink" href="#logica-general-del-script" title="Link to this heading">#</a></h2>
+<p>El objetivo es entrenar un modelo supervisado (Random Forest) que clasifique diferentes tipos de cultivos —Vid, Manzana, Pera, Alfalfa, Horticultura— combinando <em>embeddings satelitales</em> con índices espectrales y máscaras agrícolas.</p>
+</section>
+<hr class="docutils" />
+<section id="crear-muestras-de-entrenamiento">
+<h2><span class="section-number">5.2. </span><strong>0) Crear muestras de entrenamiento</strong><a class="headerlink" href="#crear-muestras-de-entrenamiento" title="Link to this heading">#</a></h2>
+<section id="definicion-de-datos-base">
+<h3><span class="section-number">5.2.1. </span><strong>Definición de datos base</strong><a class="headerlink" href="#definicion-de-datos-base" title="Link to this heading">#</a></h3>
+<p>Se define una lista <code class="docutils literal notranslate"><span class="pre">data</span></code> con puntos etiquetados por clase (Vid, Manzana, Pera, Alfalfa, Horticultura) y sus coordenadas.<br />
+Cada fila representa un punto de campo conocido que se usará como <strong>verdad de terreno</strong>.</p>
+</section>
+<section id="conversion-a-featurecollection">
+<h3><span class="section-number">5.2.2. </span><strong>Conversión a FeatureCollection</strong><a class="headerlink" href="#conversion-a-featurecollection" title="Link to this heading">#</a></h3>
+<p>Cada fila se transforma en un <code class="docutils literal notranslate"><span class="pre">ee.Feature</span></code> con:</p>
 <ul class="simple">
-<li><p><strong>Crear muestras de entrenamiento</strong>:</p>
-<ul>
-<li><p>Define una lista data con puntos etiquetados por clase (Vid, Manzana, Pera, Alfalfa, Horticultura) y sus coordenadas. Esa lista es tu “verdad de campo”: cada fila representa un punto conocido de cierta categoría que después se usará para entrenar y validar el clasificador.</p></li>
-<li><p><strong>Conversión a FeatureCollection</strong></p></li>
-<li><p>Toma cada fila de data, arma una geometría ee.Geometry.Point (en orden lon/lat) y la convierte en un ee.Feature con propiedades categoria, latitud y longitud. Con todos esos features construye una ee.FeatureCollection llamada samples, que es el insumo geoespacial estándar para el resto del flujo.</p></li>
-<li><p><strong>Sanidad:</strong> filtrar por bounding box + vista inicial
-Crea un rectángulo grande que cubre Neuquén/Alto Valle y filtra las muestras a ese recinto (si el filtro deja cero, usa todas para no romper el pipeline). Después setea el mapa en modo “SATELLITE”, agrega los puntos en amarillo y centra la vista en ellos para una verificación visual rápida.</p></li>
-<li><p><strong>ROI desde muestras (robusto)</strong>
-A partir de todas las muestras, construye una región de interés (ROI) creando un buffer de 10 km alrededor de su geometría unida. Ese polígono (en rojo) es el “ámbito de trabajo” al que luego se recortan máscaras, imágenes y resultados, y el mapa se centra sobre él.</p></li>
+<li><p>Geometría <code class="docutils literal notranslate"><span class="pre">ee.Geometry.Point(lon,</span> <span class="pre">lat)</span></code></p></li>
+<li><p>Propiedades: <code class="docutils literal notranslate"><span class="pre">categoria</span></code>, <code class="docutils literal notranslate"><span class="pre">latitud</span></code>, <code class="docutils literal notranslate"><span class="pre">longitud</span></code></p></li>
 </ul>
-</li>
-<li><ol class="arabic simple">
-<li><p>Parámetros
-Define el año de análisis (2024) y el rango temporal completo (1 de enero a 31 de diciembre). También fija parámetros de escala espacial (SCALE), área mínima para vectorizar polígonos (MIN_POLY_M2) y TILE_SCALE para operaciones pesadas, que controlan resolución y performance.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="2">
-<li><p>Máscara agrícola (ESA+MODIS+Dynamic World)
-Construye una máscara de “probable área agrícola” combinando: (a) WorldCover (clase 40 Cropland), (b) MODIS Land Cover permitiendo cropland y mosaico agro–natural, excluyendo urbano, bosques, agua, barren y grass donde corresponde, y (c) Dynamic World (medianas del año) favoreciendo píxeles con alta probabilidad de cultivo o árboles y penalizando grass/bare. También quita explícitamente WorldCover bare (clase 60). El resultado agMask (en verde) es la máscara agrícola final, y se agregan capas de control para inspección.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="3">
-<li><p>Embeddings
-Carga el embedding anual GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL para el año de interés, lo mosaica y recorta a la ROI. Luego añade como bandas extra las probabilidades de Dynamic World para crops y trees (renombradas dw_crops, dw_trees) para darle pistas adicionales al clasificador sobre patrones agrícolas/arbóreos.
-Features extra: índices S2 estacionales
-Arma una colección Sentinel-2 para la “temporada productiva” (sep–abr en hemisferio sur), enmascara nubes, calcula NDVI, EVI, NDRE y NDWI por imagen y luego resume por estadísticos robustos (mediana, p90 y desvío estándar) por índice. Concatena todo (extraFeat) y lo agrega a emb, de modo que el modelo no dependa solo de embeddings sino también de rasgos fenológicos clásicos. Además guarda ndvi_med y ndvi_std para un refinamiento posterior de “Vid”.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="4">
-<li><p>Preparar muestras
-Filtra las muestras a las clases de interés, mapea cada categoria a un entero (label) y deja pronta una colección de puntos etiquetados (trainPts) lista para muestrear valores de las bandas (embeddings + features) y entrenar.
-4B) Espaciar muestras por clase
-Para evitar sobre-representación espacial de puntos muy cercanos, “cuadricula” el espacio en celdas (en EPSG:3857) del tamaño elegido (MIN_DIST_M) y conserva, aleatoriamente, un solo punto por celda y por clase. Así se reduce el sesgo y se mejora la generalización del modelo.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="5">
-<li><p>Extraer embeddings/features en puntos
-Muestrea (sampleRegions) los valores de todas las bandas de emb en los puntos espaciados, conservando propiedades label y categoria. Filtra filas con valores nulos. El resultado (trainSam) es una tabla de entrenamiento con X = bandas e Y = etiqueta numérica.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="6">
-<li><p>Split 80/20, balanceo en TRAIN y entrenamiento RF
-Separa estratificadamente 80% para entrenamiento y 20% para validación (hold-out). Para el set de entrenamiento, aplica un “capping” por clase (CAP_PER_CLASS) para que las mayoritarias no dominen, sin forzar a reducir todo al mínimo absoluto. Con ese balancedTrain entrena un Random Forest (500 árboles, bagging 0.7), usando todas las bandas disponibles.
-6B) Evaluación en validación
-Clasifica el 20% de validación, calcula matriz de confusión, accuracy, Kappa, precision/recall por clase y F1 (macro y ponderado por soporte). También construye una tabla “por clase” pensada para inspección en la consola, de modo de entender qué categorías rinden mejor/peor.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="7">
-<li><p>Clasificar la ROI:
-Aplica el clasificador entrenado a todas las bandas en emb para producir un raster de clases, y enmascara el resultado con agMask (para recortar a zonas agrícolas probables). Así se obtiene el mapa de cultivos sobre toda la región de interés.
-Post-procesado específico para “Vid”
-Calcula una condición adicional con Dynamic World completo (crops alto, grass/built/bare bajos) y con señales fenológicas (NDVI medio &gt; 0.20 y variación estacional &gt; 0.03) para refinar la clase “Vid”. Hace una limpieza espacial con focal_mode, reemplaza solo donde corresponde y recompone el raster clasificado final con esa “Vid” más estricta.
-Visualización de la clasificación
-Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera amarillo, Alfalfa verde, Horticultura blanco) y agrega la capa clasificada al mapa con ese estilo, lista para inspección visual.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="8">
-<li><p><strong>Vectorizar por clase</strong>: Para cada clase presente, convierte el raster clasificado en polígonos vectoriales (conectividad de 8 vecinos), calcula el área por polígono y filtra por un umbral mínimo (MIN_POLY_M2). El resultado es una FeatureCollection con polígonos limpios y atributos class_id, categoria y area_m2, útil para análisis y exportaciones.</p></li>
-</ol>
-</li>
-<li><ol class="arabic simple" start="9">
-<li><p><strong>Leyenda (UI)</strong>: Crea un panel ui.Panel en la esquina inferior izquierda con título y filas color-nombre que reflejan exactamente la paleta del raster. Es una leyenda “anclada” al mapa para contextualizar la visualización.</p></li>
-</ol>
-</li>
-<li><p><strong>Gráfico de barras (UI)</strong>: Arma otro panel en la esquina inferior derecha que muestra barras horizontales con la superficie (hectáreas) por clase, calculadas del raster clasificado (pixelArea agregado por clase dentro de la ROI). Ordena y pinta las barras con los mismos colores de la leyenda, ajusta el ancho relativo según el máximo y renderiza todo del lado del cliente para tener un resumen cuantitativo directo en el mapa.</p></li>
+<p>Luego, todos los <code class="docutils literal notranslate"><span class="pre">Feature</span></code> se agrupan en una <code class="docutils literal notranslate"><span class="pre">ee.FeatureCollection(samples)</span></code>, insumo estándar para el resto del flujo.</p>
+</section>
+<section id="sanidad-y-vista-inicial">
+<h3><span class="section-number">5.2.3. </span><strong>Sanidad y vista inicial</strong><a class="headerlink" href="#sanidad-y-vista-inicial" title="Link to this heading">#</a></h3>
+<p>Se filtran las muestras dentro de un rectángulo que cubre Neuquén/Alto Valle.<br />
+Si el filtro deja 0 muestras, se mantienen todas.<br />
+El mapa se configura con fondo satelital y muestra las muestras en amarillo para verificación rápida.</p>
+</section>
+<section id="roi-desde-muestras">
+<h3><span class="section-number">5.2.4. </span><strong>ROI desde muestras</strong><a class="headerlink" href="#roi-desde-muestras" title="Link to this heading">#</a></h3>
+<p>Se genera la <strong>región de interés (ROI)</strong> creando un buffer de 10 km alrededor de las muestras unidas.<br />
+Ese polígono (en rojo) define el ámbito de trabajo para recortar imágenes y resultados.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2><span class="section-number">5.3. </span><strong>1) Parámetros</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Año: 2024</p></li>
+<li><p>Rango temporal: 1 de enero → 31 de diciembre</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SCALE</span></code>: resolución de análisis espacial</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN_POLY_M2</span></code>: área mínima para vectorizar polígonos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TILE_SCALE</span></code>: factor para manejar operaciones pesadas</p></li>
 </ul>
+</section>
+<hr class="docutils" />
+<section id="mascara-agricola-esa-modis-dynamic-world">
+<h2><span class="section-number">5.4. </span><strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong><a class="headerlink" href="#mascara-agricola-esa-modis-dynamic-world" title="Link to this heading">#</a></h2>
+<p>Construye una máscara <code class="docutils literal notranslate"><span class="pre">agMask</span></code> de áreas agrícolas combinando tres fuentes:</p>
+<ol class="arabic simple">
+<li><p><strong>ESA WorldCover</strong> (clase 40 = Cropland).</p></li>
+<li><p><strong>MODIS Land Cover</strong>: permite cropland y mosaico agro–natural; excluye urbano, bosques, agua, barren, grass.</p></li>
+<li><p><strong>Dynamic World</strong> (medianas anuales): favorece <em>crops</em> y <em>trees</em>, penaliza <em>grass</em> y <em>bare</em>.</p></li>
+</ol>
+<p>Además, se eliminan explícitamente píxeles <em>bare</em> (clase 60 de WorldCover).<br />
+El resultado se visualiza en verde e incluye capas de control.</p>
+</section>
+<hr class="docutils" />
+<section id="embeddings-y-caracteristicas-adicionales">
+<h2><span class="section-number">5.5. </span><strong>3) Embeddings y características adicionales</strong><a class="headerlink" href="#embeddings-y-caracteristicas-adicionales" title="Link to this heading">#</a></h2>
+<p>Se carga el embedding anual:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">emb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">mosaic</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">roi</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Luego se añaden:</p>
+<ul class="simple">
+<li><p>Bandas de probabilidad <strong>Dynamic World</strong> para <em>crops</em> y <em>trees</em>.</p></li>
+<li><p>Índices <strong>Sentinel‑2</strong> estacionales (NDVI, EVI, NDRE, NDWI), calculados sobre imágenes limpias de nubes.</p></li>
+<li><p>Estadísticos agregados: mediana, percentil 90 y desvío estándar.</p></li>
+</ul>
+<p>Estos rasgos complementan al embedding con información fenológica clásica.</p>
+</section>
+<hr class="docutils" />
+<section id="preparar-muestras">
+<h2><span class="section-number">5.6. </span><strong>4) Preparar muestras</strong><a class="headerlink" href="#preparar-muestras" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Se filtran las clases de interés.</p></li>
+<li><p>Se mapea <code class="docutils literal notranslate"><span class="pre">categoria</span> <span class="pre">→</span> <span class="pre">label</span></code> numérico.</p></li>
+<li><p>Se obtiene una colección <code class="docutils literal notranslate"><span class="pre">trainPts</span></code> lista para muestrear bandas del embedding y entrenar.</p></li>
+</ul>
+<section id="b-espaciar-muestras-por-clase">
+<h3><span class="section-number">5.6.1. </span><strong>4B) Espaciar muestras por clase</strong><a class="headerlink" href="#b-espaciar-muestras-por-clase" title="Link to this heading">#</a></h3>
+<p>Para evitar sesgo espacial, se cuadricula el territorio (en EPSG:3857) y se conserva un solo punto por celda y clase, asegurando representatividad espacial.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="extraer-embeddings-features-en-puntos">
+<h2><span class="section-number">5.7. </span><strong>5) Extraer embeddings/features en puntos</strong><a class="headerlink" href="#extraer-embeddings-features-en-puntos" title="Link to this heading">#</a></h2>
+<p>Se ejecuta <code class="docutils literal notranslate"><span class="pre">sampleRegions</span></code> sobre los puntos espaciados, obteniendo una tabla con:</p>
+<ul class="simple">
+<li><p><strong>X:</strong> bandas del embedding e índices adicionales.</p></li>
+<li><p><strong>Y:</strong> etiqueta numérica (<code class="docutils literal notranslate"><span class="pre">label</span></code>).</p></li>
+</ul>
+<p>Se filtran filas con valores nulos → <code class="docutils literal notranslate"><span class="pre">trainSam</span></code>.</p>
+</section>
+<hr class="docutils" />
+<section id="division-y-entrenamiento-del-modelo">
+<h2><span class="section-number">5.8. </span><strong>6) División y entrenamiento del modelo</strong><a class="headerlink" href="#division-y-entrenamiento-del-modelo" title="Link to this heading">#</a></h2>
+<section id="a-split-80-20">
+<h3><span class="section-number">5.8.1. </span><strong>6A) Split 80/20</strong><a class="headerlink" href="#a-split-80-20" title="Link to this heading">#</a></h3>
+<p>Se divide la muestra estratificadamente: 80 % entrenamiento / 20 % validación.</p>
+</section>
+<section id="b-balanceo">
+<h3><span class="section-number">5.8.2. </span><strong>6B) Balanceo</strong><a class="headerlink" href="#b-balanceo" title="Link to this heading">#</a></h3>
+<p>En el conjunto de entrenamiento se aplica <em>capping</em> por clase (<code class="docutils literal notranslate"><span class="pre">CAP_PER_CLASS</span></code>) para evitar dominancia de clases frecuentes.</p>
+</section>
+<section id="entrenamiento">
+<h3><span class="section-number">5.8.3. </span><strong>Entrenamiento</strong><a class="headerlink" href="#entrenamiento" title="Link to this heading">#</a></h3>
+<p>Se entrena un <strong>Random Forest</strong> de 500 árboles con <em>bagging</em> = 0.7.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="c-evaluacion-en-validacion">
+<h2><span class="section-number">5.9. </span><strong>6C) Evaluación en validación</strong><a class="headerlink" href="#c-evaluacion-en-validacion" title="Link to this heading">#</a></h2>
+<p>Se clasifica el 20 % de validación y se calculan:</p>
+<ul class="simple">
+<li><p>Matriz de confusión.</p></li>
+<li><p>Exactitud global y Kappa.</p></li>
+<li><p>Precisión, Recall, F1 (macro y ponderado).</p></li>
+</ul>
+<p>Se genera además una tabla “por clase” para inspección detallada en consola.</p>
+</section>
+<hr class="docutils" />
+<section id="clasificar-la-roi">
+<h2><span class="section-number">5.10. </span><strong>7) Clasificar la ROI</strong><a class="headerlink" href="#clasificar-la-roi" title="Link to this heading">#</a></h2>
+<p>El clasificador se aplica a todas las bandas del embedding dentro de la ROI:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">classified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">emb</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="nx">rfModel</span><span class="p">).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">agMask</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>El resultado es un <strong>mapa de cultivos</strong> recortado a zonas agrícolas probables.</p>
+<section id="postprocesado-especifico-vid">
+<h3><span class="section-number">5.10.1. </span><strong>Post‑procesado específico (“Vid”)</strong><a class="headerlink" href="#postprocesado-especifico-vid" title="Link to this heading">#</a></h3>
+<p>Se refina la clase <strong>Vid</strong> aplicando condiciones:</p>
+<ul class="simple">
+<li><p>Alta probabilidad <em>crops</em> en Dynamic World.</p></li>
+<li><p>NDVI &gt; 0.20 y variación &gt; 0.03.</p></li>
+<li><p>Limpieza espacial con <code class="docutils literal notranslate"><span class="pre">focal_mode()</span></code>.</p></li>
+</ul>
+<p>El raster final integra esta “Vid” ajustada.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vectorizar-por-clase">
+<h2><span class="section-number">5.11. </span><strong>8) Vectorizar por clase</strong><a class="headerlink" href="#vectorizar-por-clase" title="Link to this heading">#</a></h2>
+<p>Cada clase se convierte en polígonos (8‑conectividad).<br />
+Se calcula el área (<code class="docutils literal notranslate"><span class="pre">area_m2</span></code>) y se filtra por <code class="docutils literal notranslate"><span class="pre">MIN_POLY_M2</span></code>.<br />
+El resultado es una <code class="docutils literal notranslate"><span class="pre">FeatureCollection</span></code> con atributos <code class="docutils literal notranslate"><span class="pre">class_id</span></code>, <code class="docutils literal notranslate"><span class="pre">categoria</span></code> y <code class="docutils literal notranslate"><span class="pre">area_m2</span></code>, lista para análisis o exportación.</p>
+</section>
+<hr class="docutils" />
+<section id="interfaz-ui">
+<h2><span class="section-number">5.12. </span><strong>9) Interfaz (UI)</strong><a class="headerlink" href="#interfaz-ui" title="Link to this heading">#</a></h2>
+<section id="leyenda">
+<h3><span class="section-number">5.12.1. </span><strong>Leyenda</strong><a class="headerlink" href="#leyenda" title="Link to this heading">#</a></h3>
+<p>Un panel (<code class="docutils literal notranslate"><span class="pre">ui.Panel</span></code>) en la esquina inferior izquierda muestra la paleta de colores y nombres por clase:</p>
+<ul class="simple">
+<li><p>Vid → azul</p></li>
+<li><p>Manzana → rojo</p></li>
+<li><p>Pera → amarillo</p></li>
+<li><p>Alfalfa → verde</p></li>
+<li><p>Horticultura → blanco</p></li>
+</ul>
+</section>
+<section id="grafico-de-barras">
+<h3><span class="section-number">5.12.2. </span><strong>Gráfico de barras</strong><a class="headerlink" href="#grafico-de-barras" title="Link to this heading">#</a></h3>
+<p>Otro panel (<code class="docutils literal notranslate"><span class="pre">ui.Panel</span></code>) en la esquina inferior derecha muestra la superficie por clase (hectáreas), calculada desde el raster clasificado, representando la proporción visualmente mediante barras horizontales.</p>
+<hr class="docutils" />
+<p><strong>Conclusión</strong><br />
+Este flujo implementa una clasificación supervisada robusta basada en <em>embeddings satelitales</em>, complementada con índices espectrales y máscaras contextuales.<br />
+Integra aprendizaje automático, teledetección clásica y visualización interactiva, logrando un enfoque reproducible y científicamente sólido para el mapeo agrícola regional.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ============================================================</span>
 <span class="c1">// MAPA CATEGÓRICO DE CULTIVOS CON EMBEDDINGS + RF + LEYENDA</span>
 <span class="c1">// ============================================================</span>
@@ -1877,6 +2160,8 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
 </pre></div>
 </div>
 </section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1942,16 +2227,87 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: Embeddings satelitales</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-conceptual">1.1. Introducción conceptual</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">1.2. Introducción: del píxel al concepto</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">1.3. Fundamento teórico: ¿qué es un embedding?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Capítulo 1: Embeddings satelitales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">2. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplos-de-deteccion-por-similitud">2.1. <strong>Ejemplos de detección por similitud</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oceano-grandes-cuerpos-de-agua">2.1.1. 🌊 <strong>Océano / grandes cuerpos de agua</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagos-embalses-medianosgrandes">2.1.2. 🏞️ <strong>Lagos / embalses medianos–grandes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#areas-urbanas-densas-cbd-manzanas-compactas">2.1.3. 🌆 <strong>Áreas urbanas densas (CBD, manzanas compactas)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonas-industriales-portuarias-grandes">2.1.4. 🏭 <strong>Zonas industriales / portuarias grandes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mosaicos-agricolas-extensos-parcelas-pivotes">2.1.5. 🌾 <strong>Mosaicos agrícolas extensos (parcelas, pivotes)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canteras-minas-a-cielo-abierto">2.1.6. ⛏️ <strong>Canteras / minas a cielo abierto</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bosques-densos-masas-forestales">2.1.7. 🌳 <strong>Bosques densos / masas forestales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salinas-salares">2.1.8. 🧂 <strong>Salinas / salares</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#humedales-extensos">2.1.9. 🐦 <strong>Humedales extensos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infraestructura-lineal-grande-autopistas-aeropuertos">2.1.10. 🚗 <strong>Infraestructura lineal grande (autopistas, aeropuertos)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parques-eolicos-solares-grandes">2.1.11. ⚡ <strong>Parques eólicos / solares grandes</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#barrios-privados-countries-caracteristicos">2.1.12. 🏡 <strong>Barrios privados / countries característicos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#playas-dunas-extensas">2.1.13. 🏖️ <strong>Playas / dunas extensas</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">2. Mas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">3. Busqueda: Agua</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">4. Busqueda: Hornos de Ladrillo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua-explicacion-del-script">3. <strong>Búsqueda: Agua (explicación del script)</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas">3.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">3.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-anual">3.3. <strong>2) Embedding anual</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-jrc-opcional">3.4. <strong>3) Máscara JRC opcional</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-por-poligono">3.5. <strong>4) Vector de referencia por polígono</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno">3.6. <strong>5) Similitud coseno</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#poligonos-por-umbral">3.7. <strong>6) Polígonos por umbral</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion">3.8. <strong>7) Visualización</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-opcional">3.9. <strong>8) Exportación opcional</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">4. <strong>Búsqueda: Hornos de Ladrillo</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-sin-mascara-previa">4.3. <strong>2) Embedding (sin máscara previa)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-promedio-en-poligono">4.4. <strong>3) Vector de referencia (promedio en polígono)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno-0-1-en-todo-el-roi">4.5. <strong>4) Similitud coseno (0..1) en todo el ROI</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-post-con-fail-open">4.6. <strong>5) Filtros POST con “fail-open”</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-mascara-post-a-la-similitud">4.7. <strong>6) Aplicar máscara POST a la similitud</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonizacion-y-filtro-de-area">4.8. <strong>7) Polygonización y filtro de área</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-adaptativo-respaldo">4.9. <strong>8) Umbral adaptativo (respaldo)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.10. <strong>9) Exportación opcional</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. <strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logica-general-del-script">5.1. <strong>Lógica general del script</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-muestras-de-entrenamiento">5.2. <strong>0) Crear muestras de entrenamiento</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-datos-base">5.2.1. <strong>Definición de datos base</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-featurecollection">5.2.2. <strong>Conversión a FeatureCollection</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sanidad-y-vista-inicial">5.2.3. <strong>Sanidad y vista inicial</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-desde-muestras">5.2.4. <strong>ROI desde muestras</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">5.3. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-agricola-esa-modis-dynamic-world">5.4. <strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-caracteristicas-adicionales">5.5. <strong>3) Embeddings y características adicionales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-muestras">5.6. <strong>4) Preparar muestras</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-espaciar-muestras-por-clase">5.6.1. <strong>4B) Espaciar muestras por clase</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-embeddings-features-en-puntos">5.7. <strong>5) Extraer embeddings/features en puntos</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#division-y-entrenamiento-del-modelo">5.8. <strong>6) División y entrenamiento del modelo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-split-80-20">5.8.1. <strong>6A) Split 80/20</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-balanceo">5.8.2. <strong>6B) Balanceo</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento">5.8.3. <strong>Entrenamiento</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-evaluacion-en-validacion">5.9. <strong>6C) Evaluación en validación</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-la-roi">5.10. <strong>7) Clasificar la ROI</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocesado-especifico-vid">5.10.1. <strong>Post‑procesado específico (“Vid”)</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizar-por-clase">5.11. <strong>8) Vectorizar por clase</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-ui">5.12. <strong>9) Interfaz (UI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leyenda">5.12.1. <strong>Leyenda</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras">5.12.2. <strong>Gráfico de barras</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
