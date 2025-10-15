@@ -1,5 +1,225 @@
 
 
+# Introduccion
+
+Embeddings satelitales: una nueva semántica del territorio
+
+1. Introducción conceptual
+
+En los últimos años, la inteligencia artificial ha permitido construir modelos de representación del mundo que trascienden los píxeles y los valores espectrales. Los embeddings —representaciones numéricas densas de información compleja— constituyen una de las innovaciones más profundas en la intersección entre aprendizaje profundo y Observación de la Tierra (EO).
+En el dominio lingüístico, un embedding transforma palabras en vectores que capturan su significado contextual; del mismo modo, en el dominio geoespacial, los embeddings satelitales traducen la información espectral, temporal y contextual de cada píxel o región en un vector semántico que codifica patrones de superficie, contextos ambientales y relaciones espaciales.
+
+Embeddings satelitales: hacia una semántica geoespacial aprendida
+1. Introducción: del píxel al concepto
+
+Durante décadas, el análisis de imágenes satelitales se ha basado en valores radiométricos y en la interpretación de índices derivados (NDVI, NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación, el agua o lo urbano.
+Sin embargo, la revolución del deep learning ha transformado la forma en que representamos la información. Hoy, la pregunta ya no es “¿qué valor tiene este píxel en la banda 4?”, sino “¿a qué se parece este píxel en términos de su significado latente?”.
+
+Los embeddings satelitales representan ese salto conceptual: son una forma de codificar semánticamente el territorio.
+Cada píxel o región es proyectado a un espacio vectorial de alta dimensión donde la distancia matemática refleja similitud contextual y semántica, no solo espectral.
+De este modo, el planeta deja de ser una grilla de reflectancias y se convierte en un espacio continuo de conceptos aprendidos.
+
+2. Fundamento teórico: qué es un embedding
+
+En términos formales, un embedding es una función:
+
+𝑓
+:
+𝑋
+→
+𝑅
+𝑛
+f:X→R
+n
+
+donde 
+𝑋
+X representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y 
+𝑅
+𝑛
+R
+n
+ es un espacio vectorial latente.
+La función 
+𝑓
+f se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.
+
+En el dominio de la Observación de la Tierra (EO), esto significa que:
+
+Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.
+
+Las relaciones espaciales y espectrales se preservan de modo que píxeles similares en contexto quedan cercanos en el espacio latente.
+
+Los embeddings permiten medir similitud coseno entre lugares, como se mide similitud semántica entre palabras en modelos como Word2Vec o BERT.
+
+Esta idea, proveniente del procesamiento del lenguaje natural, encuentra en las imágenes satelitales una analogía poderosa:
+así como los modelos lingüísticos aprenden que “rey” - “hombre” + “mujer” ≈ “reina”, los modelos de EO aprenden que “vegetación densa” - “verde” + “suelo desnudo” ≈ “zona urbana”.
+
+3. Modelos fundacionales y embeddings satelitales
+
+Los modelos fundacionales para Observación de la Tierra (FM4EO) como OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.
+Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, de estación o de sensor, capturando así la esencia estadística del paisaje.
+
+El dataset GOOGLE/SATELLITE_EMBEDDING/V1 disponible en Google Earth Engine representa la primera implementación global de este paradigma: un mapa latente del planeta donde cada píxel está asociado a un vector de 256 dimensiones que codifica su identidad semántica.
+
+4. Estructura matemática y significado de la similitud
+
+La similitud coseno se utiliza como métrica fundamental en este espacio latente.
+Dado un vector de referencia 
+𝑠
+s (por ejemplo, el promedio de los embeddings de un conjunto de polígonos de agua) y un vector de píxel 
+𝑥
+x, la similitud se define como:
+
+sim
+(
+𝑠
+,
+𝑥
+)
+=
+𝑠
+⋅
+𝑥
+∣
+∣
+𝑠
+∣
+∣
+ 
+∣
+∣
+𝑥
+∣
+∣
+sim(s,x)=
+∣∣s∣∣∣∣x∣∣
+s⋅x
+	​
+
+
+Este valor se reescala a [0,1], donde 1 indica máxima similitud semántica.
+Lo notable es que esta similitud no depende de índices espectrales fijos, sino de representaciones aprendidas que capturan patrones espaciales, texturales y de contexto ambiental.
+
+En consecuencia:
+
+Los embeddings permiten buscar por concepto (“lugares similares a este humedal”) en lugar de por valor (“NDWI > 0.4”).
+
+Cada comparación en este espacio vectorial actúa como un razonamiento semántico entre regiones.
+
+5. Aplicaciones ejemplificadas: tres casos de estudio
+Caso 1: Detección de cuerpos de agua
+
+El primer script aplica la similitud coseno entre un embedding mosaico anual y vectores promedio derivados de polígonos de agua.
+Las zonas con similitud ≥ 0.98, 0.99 y ≈1.0 representan gradientes de confianza en la detección de superficies acuáticas.
+Este enfoque elimina la necesidad de índices espectrales ad-hoc y permite detectar agua aún bajo condiciones atmosféricas o de iluminación variables, al capturar su firma semántica global.
+
+Didácticamente, este ejemplo introduce los conceptos de:
+
+Espacio latente
+
+Vector de referencia
+
+Similitud coseno
+
+Umbral semántico probabilístico
+
+Caso 2: Identificación de ladrilleras y áreas industriales
+
+Aquí se introduce una noción más sofisticada: los filtros post fail-open.
+El procedimiento parte de una similitud coseno inicial —que indica qué zonas del ROI “se parecen” a las ladrilleras conocidas— y la refina con criterios físicos:
+
+NDVI para vegetación baja,
+
+NDBI para superficies construidas,
+
+BSI para suelo desnudo,
+
+S1 VV/VH para textura radar coherente.
+
+El sistema fail-open aplica un filtro solo si mantiene cobertura suficiente, garantizando robustez.
+De este modo, el embedding aporta la capa semántica, mientras los índices ópticos y radar aportan la validación física, logrando una integración GeoIA de segunda generación.
+
+Conceptos formativos aquí:
+
+Embeddings como filtros semánticos primarios.
+
+Fusión multimodal: espectral + radar + latente.
+
+Estrategias de control de falsos negativos en detección.
+
+Caso 3: Clasificación supervisada de cultivos
+
+El tercer caso extiende los embeddings hacia el aprendizaje supervisado.
+En lugar de calcular similitudes, los vectores de embedding se utilizan como features para entrenar clasificadores como Random Forest o SVM.
+Cada muestra agrícola (vid, manzana, pera, alfalfa, horticultura) se representa como un punto en el espacio latente, y el modelo aprende fronteras de decisión entre clases.
+
+La ventaja es que los embeddings:
+
+ya están pre-entrenados globalmente (no hace falta calibrar índices locales),
+
+reducen la variabilidad interanual,
+
+y permiten entrenar modelos robustos con pocas muestras.
+
+Este ejemplo articula:
+
+Transfer learning en EO,
+
+Representación universal de la superficie terrestre,
+
+Reutilización semántica de embeddings para clasificación.
+
+6. Perspectiva epistemológica: hacia una geosemántica del territorio
+
+Los embeddings implican un cambio de paradigma epistemológico en la geografía digital.
+Ya no trabajamos con valores brutos ni índices espectrales, sino con vectores que representan significados aprendidos.
+Este cambio aproxima la Observación de la Tierra al campo del lenguaje y la cognición: los píxeles “hablan entre sí” en un idioma estadístico de 256 dimensiones.
+
+Podemos entonces hablar de una geosemántica latente, donde el territorio se interpreta como un texto y el embedding como su gramática.
+Cada lugar posee un “significado distribuido” en el espacio vectorial, lo que permite realizar búsquedas conceptuales, analogías espaciales y análisis de cambio semántico.
+
+Por ejemplo:
+
+“¿Qué zonas se están desplazando semánticamente desde ‘vegetación natural’ hacia ‘cultivos’?”
+
+“¿Qué regiones urbanas presentan una firma latente similar a Rosario?”
+
+Este enfoque abre un campo nuevo: la GeoIA semántica, que combina fundamentos de la lingüística estadística, la visión por computadora y la geografía cuantitativa.
+
+7. Síntesis y conclusiones
+
+Los embeddings satelitales no reemplazan a los métodos tradicionales, sino que los trascienden: integran lo espectral, lo espacial y lo contextual en una representación unificada.
+En los tres ejemplos —agua, ladrilleras, cultivos— vemos cómo la similitud coseno actúa como una métrica de “familiaridad territorial”.
+
+Su potencial radica en permitir:
+
+búsquedas semánticas planetarias,
+
+clasificación auto-supervisada,
+
+detección de cambios multiescala,
+
+y la construcción de datacubes semánticos.
+
+Así como los modelos de lenguaje transformaron la comunicación, los embeddings están transformando nuestra forma de leer el territorio.
+Ya no observamos bandas: interpretamos significados.
+El desafío científico y didáctico consiste ahora en enseñar a pensar el territorio en clave semántica, es decir, en un espacio de relaciones aprendidas.
+
+Referencias sugeridas
+
+Google Research (2024). Satellite Embedding V1: A Foundation Model for Planetary Understanding.
+
+Zhu et al. (2023). Prithvi: Self-Supervised Learning for Earth Observation. IEEE TGRS.
+
+Tuia, D. et al. (2022). Deep Learning in Earth Observation: Foundations and Trends.
+
+Montero, C. (2024). GeoIA y Datacubes en la era semántica. IDE Iberoamérica.
+
+Lillesand, T., Kiefer, R., & Chipman, J. (2015). Remote Sensing and Image Interpretation. Wiley.
+
+# Mas
+
 El embedding captura contexto más que forma fina.
 
 Util para detectar por ejemplo: 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AI-powered pixels: Introducing Google’s Satellite Embedding dataset &#8212; GeoIA aplicado a Imágenes Satelitales</title>
+    <title>1. Introduccion &#8212; Geosemántica</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'embeddings';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Prólogo e Introducción" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -149,7 +148,7 @@
   
   
   
-    <p class="title logo__title">GeoIA aplicado a Imágenes Satelitales</p>
+    <p class="title logo__title">Geosemántica</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -173,7 +172,17 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introduccion</a></li>
+
+
+
+
+
+
+
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -226,7 +235,7 @@
       
       
       
-      <li><a href="https://github.com/cdg-idera/PAT_INT_GEE" target="_blank"
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -243,7 +252,7 @@
       
       
       
-      <li><a href="https://github.com/cdg-idera/PAT_INT_GEE/issues/new?title=Issue%20on%20page%20%2Fembeddings.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2Fembeddings.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>AI-powered pixels: Introducing Google’s Satellite Embedding dataset</h1>
+    <h1>Introduccion</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,28 +376,36 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AI-powered pixels: Introducing Google’s Satellite Embedding dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-incrusta-en-una-incrustacion">¿Qué se incrusta en una incrustación?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tierra-en-64-dimensiones-coordenadas-versus-bandas">La Tierra en 64 dimensiones: Coordenadas versus bandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital">¿Qué puedes hacer con el conjunto de datos de incrustación satelital?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuentra-otros-lugares-como-este-busqueda-por-similitud">Encuentra otros lugares como este: Búsqueda por similitud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion">Detección de cambios: Seguimiento de cambios en el espacio de incrustación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descubra-patrones-ocultos-agrupamiento-automatico">Descubra patrones ocultos: Agrupamiento automático</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cree-mapas-detallados-con-menos-etiquetado-manual">Cree mapas detallados con menos etiquetado manual.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporando-la-ia-a-earth-engine">Incorporando la IA a Earth Engine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Introduccion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sim-s-x">2. sim
+(
+𝑠
+,
+𝑥
+)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">3. Mas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-powered-pixels-introducing-googles-satellite-embedding-dataset">4. AI-powered pixels: Introducing Google’s Satellite Embedding dataset</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-incrusta-en-una-incrustacion">4.1. ¿Qué se incrusta en una incrustación?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tierra-en-64-dimensiones-coordenadas-versus-bandas">4.2. La Tierra en 64 dimensiones: Coordenadas versus bandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital">4.3. ¿Qué puedes hacer con el conjunto de datos de incrustación satelital?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuentra-otros-lugares-como-este-busqueda-por-similitud">4.4. Encuentra otros lugares como este: Búsqueda por similitud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion">4.5. Detección de cambios: Seguimiento de cambios en el espacio de incrustación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descubra-patrones-ocultos-agrupamiento-automatico">4.6. Descubra patrones ocultos: Agrupamiento automático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cree-mapas-detallados-con-menos-etiquetado-manual">4.7. Cree mapas detallados con menos etiquetado manual.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporando-la-ia-a-earth-engine">4.8. Incorporando la IA a Earth Engine</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-gee-introduction-to-the-satellite-embedding-dataset">Tutorial GEE: Introduction to the Satellite Embedding Dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprendiendo-los-embeddings">Comprendiendo los embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-conjunto-de-datos-de-incrustacion-de-satelites">Acceso al conjunto de datos de incrustación de satélites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccionar-una-region">Seleccionar una región</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-el-conjunto-de-datos-de-incrustacion-satelital">Preparar el conjunto de datos de incrustación satelital</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizar-el-conjunto-de-datos-de-incrustacion-satelital">Visualizar el conjunto de datos de incrustación satelital</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-gee-introduction-to-the-satellite-embedding-dataset">5. Tutorial GEE: Introduction to the Satellite Embedding Dataset</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprendiendo-los-embeddings">5.1. Comprendiendo los embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-conjunto-de-datos-de-incrustacion-de-satelites">5.2. Acceso al conjunto de datos de incrustación de satélites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccionar-una-region">5.3. Seleccionar una región</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-el-conjunto-de-datos-de-incrustacion-satelital">5.4. Preparar el conjunto de datos de incrustación satelital</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizar-el-conjunto-de-datos-de-incrustacion-satelital">5.5. Visualizar el conjunto de datos de incrustación satelital</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">Busqueda: Agua</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">Busqueda: Hornos de Ladrillo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">6. Busqueda: Agua</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">7. Busqueda: Hornos de Ladrillo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">8. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
 </ul>
 
             </nav>
@@ -401,7 +418,170 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>El embedding captura contexto más que forma fina.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion">
+<h1><span class="section-number">1. </span>Introduccion<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
+<p>Embeddings satelitales: una nueva semántica del territorio</p>
+<ol class="arabic simple">
+<li><p>Introducción conceptual</p></li>
+</ol>
+<p>En los últimos años, la inteligencia artificial ha permitido construir modelos de representación del mundo que trascienden los píxeles y los valores espectrales. Los embeddings —representaciones numéricas densas de información compleja— constituyen una de las innovaciones más profundas en la intersección entre aprendizaje profundo y Observación de la Tierra (EO).
+En el dominio lingüístico, un embedding transforma palabras en vectores que capturan su significado contextual; del mismo modo, en el dominio geoespacial, los embeddings satelitales traducen la información espectral, temporal y contextual de cada píxel o región en un vector semántico que codifica patrones de superficie, contextos ambientales y relaciones espaciales.</p>
+<p>Embeddings satelitales: hacia una semántica geoespacial aprendida</p>
+<ol class="arabic simple">
+<li><p>Introducción: del píxel al concepto</p></li>
+</ol>
+<p>Durante décadas, el análisis de imágenes satelitales se ha basado en valores radiométricos y en la interpretación de índices derivados (NDVI, NDWI, NDBI, etc.), que reflejan fenómenos biofísicos como la vegetación, el agua o lo urbano.
+Sin embargo, la revolución del deep learning ha transformado la forma en que representamos la información. Hoy, la pregunta ya no es “¿qué valor tiene este píxel en la banda 4?”, sino “¿a qué se parece este píxel en términos de su significado latente?”.</p>
+<p>Los embeddings satelitales representan ese salto conceptual: son una forma de codificar semánticamente el territorio.
+Cada píxel o región es proyectado a un espacio vectorial de alta dimensión donde la distancia matemática refleja similitud contextual y semántica, no solo espectral.
+De este modo, el planeta deja de ser una grilla de reflectancias y se convierte en un espacio continuo de conceptos aprendidos.</p>
+<ol class="arabic simple" start="2">
+<li><p>Fundamento teórico: qué es un embedding</p></li>
+</ol>
+<p>En términos formales, un embedding es una función:</p>
+<p>𝑓
+:
+𝑋
+→
+𝑅
+𝑛
+f:X→R
+n</p>
+<p>donde
+𝑋
+X representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y
+𝑅
+𝑛
+R
+n
+es un espacio vectorial latente.
+La función
+𝑓
+f se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.</p>
+<p>En el dominio de la Observación de la Tierra (EO), esto significa que:</p>
+<p>Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.</p>
+<p>Las relaciones espaciales y espectrales se preservan de modo que píxeles similares en contexto quedan cercanos en el espacio latente.</p>
+<p>Los embeddings permiten medir similitud coseno entre lugares, como se mide similitud semántica entre palabras en modelos como Word2Vec o BERT.</p>
+<p>Esta idea, proveniente del procesamiento del lenguaje natural, encuentra en las imágenes satelitales una analogía poderosa:
+así como los modelos lingüísticos aprenden que “rey” - “hombre” + “mujer” ≈ “reina”, los modelos de EO aprenden que “vegetación densa” - “verde” + “suelo desnudo” ≈ “zona urbana”.</p>
+<ol class="arabic simple" start="3">
+<li><p>Modelos fundacionales y embeddings satelitales</p></li>
+</ol>
+<p>Los modelos fundacionales para Observación de la Tierra (FM4EO) como OneVision, Prithvi, AlphaHertz o el Satellite Embedding V1 de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.
+Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, de estación o de sensor, capturando así la esencia estadística del paisaje.</p>
+<p>El dataset GOOGLE/SATELLITE_EMBEDDING/V1 disponible en Google Earth Engine representa la primera implementación global de este paradigma: un mapa latente del planeta donde cada píxel está asociado a un vector de 256 dimensiones que codifica su identidad semántica.</p>
+<ol class="arabic simple" start="4">
+<li><p>Estructura matemática y significado de la similitud</p></li>
+</ol>
+<p>La similitud coseno se utiliza como métrica fundamental en este espacio latente.
+Dado un vector de referencia
+𝑠
+s (por ejemplo, el promedio de los embeddings de un conjunto de polígonos de agua) y un vector de píxel
+𝑥
+x, la similitud se define como:</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sim-s-x">
+<h1><span class="section-number">2. </span>sim
+(
+𝑠
+,
+𝑥
+)<a class="headerlink" href="#sim-s-x" title="Link to this heading">#</a></h1>
+<p>𝑠
+⋅
+𝑥
+∣
+∣
+𝑠
+∣
+∣
+ 
+∣
+∣
+𝑥
+∣
+∣
+sim(s,x)=
+∣∣s∣∣∣∣x∣∣
+s⋅x
+​</p>
+<p>Este valor se reescala a [0,1], donde 1 indica máxima similitud semántica.
+Lo notable es que esta similitud no depende de índices espectrales fijos, sino de representaciones aprendidas que capturan patrones espaciales, texturales y de contexto ambiental.</p>
+<p>En consecuencia:</p>
+<p>Los embeddings permiten buscar por concepto (“lugares similares a este humedal”) en lugar de por valor (“NDWI &gt; 0.4”).</p>
+<p>Cada comparación en este espacio vectorial actúa como un razonamiento semántico entre regiones.</p>
+<ol class="arabic simple" start="5">
+<li><p>Aplicaciones ejemplificadas: tres casos de estudio
+Caso 1: Detección de cuerpos de agua</p></li>
+</ol>
+<p>El primer script aplica la similitud coseno entre un embedding mosaico anual y vectores promedio derivados de polígonos de agua.
+Las zonas con similitud ≥ 0.98, 0.99 y ≈1.0 representan gradientes de confianza en la detección de superficies acuáticas.
+Este enfoque elimina la necesidad de índices espectrales ad-hoc y permite detectar agua aún bajo condiciones atmosféricas o de iluminación variables, al capturar su firma semántica global.</p>
+<p>Didácticamente, este ejemplo introduce los conceptos de:</p>
+<p>Espacio latente</p>
+<p>Vector de referencia</p>
+<p>Similitud coseno</p>
+<p>Umbral semántico probabilístico</p>
+<p>Caso 2: Identificación de ladrilleras y áreas industriales</p>
+<p>Aquí se introduce una noción más sofisticada: los filtros post fail-open.
+El procedimiento parte de una similitud coseno inicial —que indica qué zonas del ROI “se parecen” a las ladrilleras conocidas— y la refina con criterios físicos:</p>
+<p>NDVI para vegetación baja,</p>
+<p>NDBI para superficies construidas,</p>
+<p>BSI para suelo desnudo,</p>
+<p>S1 VV/VH para textura radar coherente.</p>
+<p>El sistema fail-open aplica un filtro solo si mantiene cobertura suficiente, garantizando robustez.
+De este modo, el embedding aporta la capa semántica, mientras los índices ópticos y radar aportan la validación física, logrando una integración GeoIA de segunda generación.</p>
+<p>Conceptos formativos aquí:</p>
+<p>Embeddings como filtros semánticos primarios.</p>
+<p>Fusión multimodal: espectral + radar + latente.</p>
+<p>Estrategias de control de falsos negativos en detección.</p>
+<p>Caso 3: Clasificación supervisada de cultivos</p>
+<p>El tercer caso extiende los embeddings hacia el aprendizaje supervisado.
+En lugar de calcular similitudes, los vectores de embedding se utilizan como features para entrenar clasificadores como Random Forest o SVM.
+Cada muestra agrícola (vid, manzana, pera, alfalfa, horticultura) se representa como un punto en el espacio latente, y el modelo aprende fronteras de decisión entre clases.</p>
+<p>La ventaja es que los embeddings:</p>
+<p>ya están pre-entrenados globalmente (no hace falta calibrar índices locales),</p>
+<p>reducen la variabilidad interanual,</p>
+<p>y permiten entrenar modelos robustos con pocas muestras.</p>
+<p>Este ejemplo articula:</p>
+<p>Transfer learning en EO,</p>
+<p>Representación universal de la superficie terrestre,</p>
+<p>Reutilización semántica de embeddings para clasificación.</p>
+<ol class="arabic simple" start="6">
+<li><p>Perspectiva epistemológica: hacia una geosemántica del territorio</p></li>
+</ol>
+<p>Los embeddings implican un cambio de paradigma epistemológico en la geografía digital.
+Ya no trabajamos con valores brutos ni índices espectrales, sino con vectores que representan significados aprendidos.
+Este cambio aproxima la Observación de la Tierra al campo del lenguaje y la cognición: los píxeles “hablan entre sí” en un idioma estadístico de 256 dimensiones.</p>
+<p>Podemos entonces hablar de una geosemántica latente, donde el territorio se interpreta como un texto y el embedding como su gramática.
+Cada lugar posee un “significado distribuido” en el espacio vectorial, lo que permite realizar búsquedas conceptuales, analogías espaciales y análisis de cambio semántico.</p>
+<p>Por ejemplo:</p>
+<p>“¿Qué zonas se están desplazando semánticamente desde ‘vegetación natural’ hacia ‘cultivos’?”</p>
+<p>“¿Qué regiones urbanas presentan una firma latente similar a Rosario?”</p>
+<p>Este enfoque abre un campo nuevo: la GeoIA semántica, que combina fundamentos de la lingüística estadística, la visión por computadora y la geografía cuantitativa.</p>
+<ol class="arabic simple" start="7">
+<li><p>Síntesis y conclusiones</p></li>
+</ol>
+<p>Los embeddings satelitales no reemplazan a los métodos tradicionales, sino que los trascienden: integran lo espectral, lo espacial y lo contextual en una representación unificada.
+En los tres ejemplos —agua, ladrilleras, cultivos— vemos cómo la similitud coseno actúa como una métrica de “familiaridad territorial”.</p>
+<p>Su potencial radica en permitir:</p>
+<p>búsquedas semánticas planetarias,</p>
+<p>clasificación auto-supervisada,</p>
+<p>detección de cambios multiescala,</p>
+<p>y la construcción de datacubes semánticos.</p>
+<p>Así como los modelos de lenguaje transformaron la comunicación, los embeddings están transformando nuestra forma de leer el territorio.
+Ya no observamos bandas: interpretamos significados.
+El desafío científico y didáctico consiste ahora en enseñar a pensar el territorio en clave semántica, es decir, en un espacio de relaciones aprendidas.</p>
+<p>Referencias sugeridas</p>
+<p>Google Research (2024). Satellite Embedding V1: A Foundation Model for Planetary Understanding.</p>
+<p>Zhu et al. (2023). Prithvi: Self-Supervised Learning for Earth Observation. IEEE TGRS.</p>
+<p>Tuia, D. et al. (2022). Deep Learning in Earth Observation: Foundations and Trends.</p>
+<p>Montero, C. (2024). GeoIA y Datacubes en la era semántica. IDE Iberoamérica.</p>
+<p>Lillesand, T., Kiefer, R., &amp; Chipman, J. (2015). Remote Sensing and Image Interpretation. Wiley.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mas">
+<h1><span class="section-number">3. </span>Mas<a class="headerlink" href="#mas" title="Link to this heading">#</a></h1>
+<p>El embedding captura contexto más que forma fina.</p>
 <p>Util para detectar por ejemplo:</p>
 <ul class="simple">
 <li><p>Océano / grandes cuerpos de agua
@@ -444,8 +624,9 @@ Tip: recortar con urbano (NDBI↑) y usar varias muestras.</p></li>
 Textura/tonalidad de arena, bordes costeros.
 Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </ul>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="ai-powered-pixels-introducing-googles-satellite-embedding-dataset">
-<h1>AI-powered pixels: Introducing Google’s Satellite Embedding dataset<a class="headerlink" href="#ai-powered-pixels-introducing-googles-satellite-embedding-dataset" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>AI-powered pixels: Introducing Google’s Satellite Embedding dataset<a class="headerlink" href="#ai-powered-pixels-introducing-googles-satellite-embedding-dataset" title="Link to this heading">#</a></h1>
 <p>Valerie Pasquarella, AI-powered pixels: Introducing Google’s Satellite Embedding dataset, Research Scientist and Emily Schechter, Product Manager, Google, accesible en:
 <a class="reference external" href="https://medium.com/google-earth/ai-powered-pixels-introducing-googles-satellite-embedding-dataset-31744c1f4650">https://medium.com/google-earth/ai-powered-pixels-introducing-googles-satellite-embedding-dataset-31744c1f4650</a></p>
 <p>url: <a class="reference external" href="https://medium.com/google-earth/ai-powered-pixels-introducing-googles-satellite-embedding-dataset-31744c1f4650">https://medium.com/google-earth/ai-powered-pixels-introducing-googles-satellite-embedding-dataset-31744c1f4650</a></p>
@@ -454,23 +635,23 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 <p>Hoy nos complace presentar nuestro nuevo conjunto de datos de incrustación satelital, producido en colaboración con Google DeepMind. Este conjunto de datos, pionero en su tipo, se generó utilizando AlphaEarth Foundations, el nuevo modelo de IA geoespacial de Google DeepMind, que integra observaciones de diversas fuentes de información geoespacial, incluyendo imágenes ópticas y térmicas de los satélites Sentinel-2 y Landsat, datos de radar capaces de ver a través de las nubes, mediciones 3D de propiedades superficiales, modelos de elevación global, información climática, campos de gravedad y texto descriptivo. A diferencia de los modelos tradicionales de aprendizaje profundo, que requieren que los usuarios ajusten las ponderaciones y ejecuten sus propias inferencias en clústeres de ordenadores de alta gama, AlphaEarth Foundations se diseñó para producir incrustaciones geoespaciales de 64 dimensiones, ricas en información, compatibles con los clasificadores de aprendizaje automático integrados de Earth Engine y otros análisis basados ​​en píxeles.</p>
 <p>Hemos ejecutado AlphaEarth Foundations a gran escala para producir un conjunto de datos global de embeddings precalculadas y listas para el análisis, con una resolución de 10 metros, para cada año desde 2017. Si bien esto puede parecer una colección de imágenes estándar de Earth Engine, hemos integrado eficazmente la extracción de características con IA en cada píxel, y puedes usar estas “imágenes” de embeddings en lugar de composiciones de imágenes más convencionales y características diseñadas, como índices espectrales y ajustes armónicos. Lo mejor es que las capas de embeddings están listas para el análisis; no se requieren correcciones atmosféricas, enmascaramiento de nubes, transformaciones espectrales, filtrado de moteado ni otras técnicas de caracterización; solo resultados superiores con menor esfuerzo y complejidad.</p>
 <section id="que-se-incrusta-en-una-incrustacion">
-<h2>¿Qué se incrusta en una incrustación?<a class="headerlink" href="#que-se-incrusta-en-una-incrustacion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>¿Qué se incrusta en una incrustación?<a class="headerlink" href="#que-se-incrusta-en-una-incrustacion" title="Link to this heading">#</a></h2>
 <p><em>Mediciones.</em> Las embeddings geoespaciales generadas por AlphaEarth Foundations se aprenden a partir de diversas fuentes de datos del Catálogo de Datos de Earth Engine y etiquetas de texto geotemporales. El modelo utiliza un enfoque autosupervisado que permite el aprendizaje de diversos tipos de datos simultáneamente sin necesidad de anotaciones manuales en los datos de entrenamiento. Al asimilar información de múltiples fuentes y modos de descripción, incluyendo el SAR de banda C de Sentinel-1, el multiespectral Sentinel-2 y observaciones multiespectrales, pancromáticas y térmicas de Landsat 8 y Landsat 9, las métricas de altura de dosel ráster de GEDI, el DEM GLO-30, los agregados mensuales de reanálisis terrestre de ERA5, el ScanSAR de ALOS PALSAR-2, las cuadrículas de masa mensuales de GRACE y diversas fuentes de texto, AlphaEarth Foundations puede aprender una representación más compacta de las propiedades y la semántica de los píxeles.</p>
 <p><em>Contexto espacial y temporal.</em> AlphaEarth Foundations se entrenó con más de 3 mil millones de fotogramas de imágenes individuales muestreados en más de 5 millones de ubicaciones a nivel mundial. Al tratar las imágenes satelitales de una ubicación dada a lo largo del tiempo como si fueran fotogramas de un video, el modelo puede aprender a través del espacio, el tiempo y el modo de medición para producir incrustaciones que capturan el contexto espacial y preservan las trayectorias temporales. Esto significa que cada vector de incrustación en el conjunto de datos de incrustación satelital proporciona una representación altamente compacta, pero semánticamente rica, de las condiciones de la superficie para cada área de 10 metros de píxel (100 metros cuadrados) de la superficie terrestre de la Tierra. Los embeddings de cada píxel de 10 metros también captura información sobre el área alrededor de ese píxel, de modo que áreas que parecen muy similares cuando se consideran de forma aislada, por ejemplo, las superficies de asfalto de un estacionamiento o una autopista, tendrán embeddings bastante distintas. Y en el caso de nuestra colección GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL, las incrustaciones resumen un año completo de adquisiciones de imágenes, lo que significa que incluyen señales estacionales, como la fenología de la vegetación o la cubierta de nieve estacional y otros eventos de cambio dentro del año.</p>
 <p>Alpha foundations paper: <a class="reference external" href="https://arxiv.org/pdf/2507.22291">https://arxiv.org/pdf/2507.22291</a></p>
 </section>
 <section id="la-tierra-en-64-dimensiones-coordenadas-versus-bandas">
-<h2>La Tierra en 64 dimensiones: Coordenadas versus bandas<a class="headerlink" href="#la-tierra-en-64-dimensiones-coordenadas-versus-bandas" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>La Tierra en 64 dimensiones: Coordenadas versus bandas<a class="headerlink" href="#la-tierra-en-64-dimensiones-coordenadas-versus-bandas" title="Link to this heading">#</a></h2>
 <p>Las imágenes del conjunto de datos de incrustación de satélites tienen 64 bandas, pero no son como las clásicas de reflectancia óptica o retornos de radar. Más bien, las 64 “bandas” de un solo píxel en nuestra incrustación de AlphaEarth Foundations representan una coordenada de 64 dimensiones en la superficie de una “esfera” de 64 dimensiones. De forma similar a como necesitamos la latitud, la longitud y la elevación para describir con mayor precisión nuestra posición en la superficie de la Tierra, necesitamos los 64 ejes de la representación de AlphaEarth Foundations para definir con precisión una coordenada de incrustación de satélites. Si bien es tentador querer explicar estos ejes, es importante recordar que las incrustaciones se aprenden mediante un modelo de aprendizaje profundo. Si bien matemáticamente son muy explicativas, son representaciones de un espacio de mediciones de dimensiones mucho mayores, no mediciones en sí mismas.</p>
 <figure class="align-default" id="fig-64dimensions">
 <a class="reference internal image-reference" href="_images/64dimensions.png"><img alt="_images/64dimensions.png" src="_images/64dimensions.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">A Satellite Embedding is essentially a coordinate on the surface of a 64-dimensional “sphere”</span><a class="headerlink" href="#fig-64dimensions" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">A Satellite Embedding is essentially a coordinate on the surface of a 64-dimensional “sphere”</span><a class="headerlink" href="#fig-64dimensions" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital">
-<h2>¿Qué puedes hacer con el conjunto de datos de incrustación satelital?<a class="headerlink" href="#que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>¿Qué puedes hacer con el conjunto de datos de incrustación satelital?<a class="headerlink" href="#que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital" title="Link to this heading">#</a></h2>
 <p>Para inspirarte, aquí tienes algunas cosas que nos entusiasman:</p>
 <ul class="simple">
 <li><p><strong>Búsqueda por similitud:</strong> Puedes elegir un punto en cualquier lugar de la Tierra (por ejemplo, en un tipo específico de tierra de cultivo o bosque) y encontrar y mapear al instante todas las demás ubicaciones con condiciones ambientales y de superficie similares en cualquier parte del mundo.</p></li>
@@ -480,12 +661,12 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </ul>
 </section>
 <section id="encuentra-otros-lugares-como-este-busqueda-por-similitud">
-<h2>Encuentra otros lugares como este: Búsqueda por similitud<a class="headerlink" href="#encuentra-otros-lugares-como-este-busqueda-por-similitud" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>Encuentra otros lugares como este: Búsqueda por similitud<a class="headerlink" href="#encuentra-otros-lugares-como-este-busqueda-por-similitud" title="Link to this heading">#</a></h2>
 <p>Las búsquedas por similitud son una forma sencilla de comparar vectores de incrustación de diferentes ubicaciones e identificar rápidamente píxeles con condiciones ambientales y de superficie similares a las de una ubicación de interés. Por ejemplo, el vector de incrustación de un píxel de 100 metros cuadrados (10 m x 10 m) en el denso paisaje urbano de la ciudad de Nueva York revela una gran similitud con otros centros urbanos altamente desarrollados del mundo.</p>
 <p>¿Quieres probar tus propios ejemplos? Explora interactivamente con nuestra demostración de búsqueda de similitud con incrustaciones de satélite (<a class="reference external" href="https://earthengine-ai.projects.earthengine.app/view/embedding-similarity-search#year=2024;">https://earthengine-ai.projects.earthengine.app/view/embedding-similarity-search#year=2024;</a>) y aprende más sobre cómo usar un simple cálculo de producto escalar (<a class="reference external" href="https://en.wikipedia.org/wiki/Dot_product">https://en.wikipedia.org/wiki/Dot_product</a>) para implementar tu propia búsqueda de similitud en nuestro nuevo tutorial de Búsqueda de Similitud con Incrustaciones de Satélite (<a class="reference external" href="https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-05-similarity-search">https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-05-similarity-search</a>).</p>
 </section>
 <section id="deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion">
-<h2>Detección de cambios: Seguimiento de cambios en el espacio de incrustación<a class="headerlink" href="#deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.5. </span>Detección de cambios: Seguimiento de cambios en el espacio de incrustación<a class="headerlink" href="#deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion" title="Link to this heading">#</a></h2>
 <p>Las comparaciones basadas en similitud también funcionan a lo largo del tiempo y pueden utilizarse para la detección de cambios basados ​​en la incrustación y el monitoreo de la estabilidad. El espacio de incrustación de AlphaEarth Foundations se diseñó para ser consistente temporalmente, por lo que las ubicaciones relativamente estables deberían tener vectores de incrustación similares a lo largo de los años en el conjunto de datos, mientras que los cambios interanuales en los vectores de incrustación para una ubicación determinada indican cambios en las propiedades de la superficie, las condiciones ambientales o su dinámica temporal. Al calcular el ángulo entre los vectores de incrustación anuales de diferentes años, se puede monitorear la estabilidad a largo plazo y los cambios catastróficos, y comenzar a explorar y comprender los factores que impulsan estos cambios.</p>
 <p>Las figuras a continuación muestran algunos ejemplos de cambios entre 2020 y 2024, tal como se observan en el espacio de incrustación. La imagen final de cada fila muestra la similitud de cada píxel consigo mismo (los valores más brillantes indican una mayor disimilitud) para los siguientes tipos de cambio:</p>
 <ul class="simple">
@@ -496,19 +677,19 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </ul>
 </section>
 <section id="descubra-patrones-ocultos-agrupamiento-automatico">
-<h2>Descubra patrones ocultos: Agrupamiento automático<a class="headerlink" href="#descubra-patrones-ocultos-agrupamiento-automatico" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.6. </span>Descubra patrones ocultos: Agrupamiento automático<a class="headerlink" href="#descubra-patrones-ocultos-agrupamiento-automatico" title="Link to this heading">#</a></h2>
 <p>Si desea explorar agrupaciones más complejas y otros patrones ocultos en el espacio de incrustación, los algoritmos ee.Clusterer son un buen punto de partida, especialmente si no dispone de datos de etiquetas o mediciones. A diferencia de las visualizaciones RGB de tres canales, el agrupamiento permite visualizar patrones utilizando las 64 dimensiones del espacio de incrustación simultáneamente.</p>
 <p>Para agrupar incrustaciones de satélite mediante la API de Earth Engine, seleccione una región de interés y genere un número determinado de muestras aleatorias. Muestree las incrustaciones de cualquier año en el conjunto de datos de incrustación de satélite y utilice esta muestra aleatoria para entrenar un algoritmo de agrupamiento kMeans que varíe el número de clústeres y aplique los clústeres entrenados a la región de interés más amplia. Al observar los mapas resultantes de los identificadores de clúster, podemos observar que surgen patrones interesantes del espacio de incrustación, incluyendo la diferenciación entre tipos de superficie terrestre y fenologías, así como topografía e hidrología. Obtenga más información sobre la clasificación no supervisada utilizando el conjunto de datos de incrustación de satélites, incluida la visualización básica de clústeres y cómo asignar etiquetas a los clústeres, en nuestros tutoriales Introducción al conjunto de datos de incrustación de satélites (<a class="reference external" href="https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-01-introduction">https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-01-introduction</a>) y Clasificación no supervisada con incrustación de satélites: mapeo de tipos de cultivos (<a class="reference external" href="https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-02-unsupervised-classification">https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-02-unsupervised-classification</a>).</p>
 </section>
 <section id="cree-mapas-detallados-con-menos-etiquetado-manual">
-<h2>Cree mapas detallados con menos etiquetado manual.<a class="headerlink" href="#cree-mapas-detallados-con-menos-etiquetado-manual" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.7. </span>Cree mapas detallados con menos etiquetado manual.<a class="headerlink" href="#cree-mapas-detallados-con-menos-etiquetado-manual" title="Link to this heading">#</a></h2>
 <p>Explorar patrones subyacentes y etiquetar manualmente los clústeres es un paso hacia el análisis del conjunto de datos de incrustación satelital. Sin embargo, las incrustaciones se diseñaron para la interpolación efectiva de etiquetas y mediciones existentes, es decir, problemas de clasificación y regresión supervisados.</p>
 <p>Si cuenta con un conjunto de datos de etiquetas, es fácil usar Earth Engine para muestrear vectores de incrustación satelital para ubicaciones etiquetadas, entrenar un ee.Classifier integrado y aplicar el clasificador entrenado a escala para generar mosaicos de mapas. El espacio de incrustación de bajo ruido significa que necesitará menos etiquetas para obtener resultados de alta calidad. Por ejemplo, las incrustaciones satelitales se pueden usar para representar 87 tipos de cultivos y clases de cobertura terrestre de la capa de datos de tierras de cultivo del USDA NASS de 2024 con solo 150 muestras por clase.</p>
 <p>Las incrustaciones satelitales se diseñaron para funcionar bien en agrupamientos y clasificaciones basadas en árboles, como kNN (<a class="reference external" href="https://developers.google.com/earth-engine/apidocs/ee-classifier-smileknn">https://developers.google.com/earth-engine/apidocs/ee-classifier-smileknn</a>) o Random Forest (<a class="reference external" href="https://developers.google.com/earth-engine/apidocs/ee-classifier-smilerandomforest">https://developers.google.com/earth-engine/apidocs/ee-classifier-smilerandomforest</a>), pero puede sustituirlas por entradas de imágenes sin procesar u otras características diseñadas, como composiciones o estadísticas agregadas, en cualquier flujo de trabajo de clasificación existente. Además, las imágenes de incrustación satelital están listas para el análisis, con una cobertura completa y sin interrupciones, y se alojan como mosaicos proyectados en su zona UTM local, sin necesidad de preprocesamiento adicional. Así, en lugar de dedicar tiempo a procesar datos, puede centrarse en lo importante: buenos datos de entrenamiento y un resultado mapeado de alta calidad.</p>
 <p>Obtenga más información sobre la clasificación supervisada y la regresión utilizando el conjunto de datos de incrustación satelital en nuestros tutoriales “Clasificación supervisada con incrustación satelital: mapeo de manglares” (<a class="reference external" href="https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-03-supervised-classification">https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-03-supervised-classification</a>) y “Regresión con incrustación satelital: predicción de la biomasa aérea (AGB)” (<a class="reference external" href="https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-04-regression">https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-04-regression</a>).</p>
 </section>
 <section id="incorporando-la-ia-a-earth-engine">
-<h2>Incorporando la IA a Earth Engine<a class="headerlink" href="#incorporando-la-ia-a-earth-engine" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.8. </span>Incorporando la IA a Earth Engine<a class="headerlink" href="#incorporando-la-ia-a-earth-engine" title="Link to this heading">#</a></h2>
 <p>El lanzamiento del conjunto de datos de incrustación de satélites en el Catálogo de Datos de Earth Engine marca un nuevo paso en la misión de Earth Engine de hacer que los datos geoespaciales sean más accesibles y útiles para comprender nuestro planeta en constante cambio. Al incorporar las incrustaciones de satélites de AlphaEarth Foundations a Earth Engine como una colección de imágenes, ofrecemos el poder de la IA como un conjunto de datos listo para el análisis que se integra directamente con la API de Earth Engine y un ecosistema más amplio.</p>
 <p>¡Estamos deseando ver cómo utilizas esta nueva capacidad de IA en Earth Engine! Consulta el conjunto de datos de incrustación de satélites en el Catálogo de Datos de Earth Engine para empezar a usarlo hoy mismo. Si aún no eres usuario de Earth Engine, empieza a usar la Guía de inicio rápido del Editor de código.</p>
 <p>¿Quieres saber más sobre cómo usar el conjunto de datos de incrustación de satélites, tienes preguntas o te interesa compartir un caso práctico? Contáctanos en <a class="reference external" href="mailto:aefrequests-external&#37;&#52;&#48;google&#46;com">aefrequests-external<span>&#64;</span>google<span>&#46;</span>com</a>.</p>
@@ -516,7 +697,7 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="tutorial-gee-introduction-to-the-satellite-embedding-dataset">
-<h1>Tutorial GEE: Introduction to the Satellite Embedding Dataset<a class="headerlink" href="#tutorial-gee-introduction-to-the-satellite-embedding-dataset" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Tutorial GEE: Introduction to the Satellite Embedding Dataset<a class="headerlink" href="#tutorial-gee-introduction-to-the-satellite-embedding-dataset" title="Link to this heading">#</a></h1>
 <p>Este tutorial forma parte de una serie de tutoriales sobre el conjunto de datos de embedding satelital. Consulte también Clasificación no supervisada, Clasificación supervisada, Regresión y Búsqueda por similitud.</p>
 <p>AlphaEarth Foundations de Google es un modelo de incrustación geoespacial entrenado con diversos conjuntos de datos de observación de la Tierra (EO). El modelo se ha ejecutado con series temporales anuales de imágenes y las incrustaciones resultantes están disponibles como un conjunto de datos listo para su análisis en Earth Engine. Este conjunto de datos permite a los usuarios crear cualquier cantidad de aplicaciones de ajuste u otras tareas sin ejecutar modelos de aprendizaje profundo de alto coste computacional. El resultado es un conjunto de datos de propósito general que puede utilizarse para diversas tareas posteriores, como:</p>
 <ul class="simple">
@@ -527,26 +708,26 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </ul>
 <p>En este tutorial, comprenderemos cómo funcionan las incrustaciones y aprenderemos a acceder y visualizar el conjunto de datos de incrustación satelital.</p>
 <section id="comprendiendo-los-embeddings">
-<h2>Comprendiendo los embeddings<a class="headerlink" href="#comprendiendo-los-embeddings" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.1. </span>Comprendiendo los embeddings<a class="headerlink" href="#comprendiendo-los-embeddings" title="Link to this heading">#</a></h2>
 <p>Las incrustaciones son una forma de comprimir grandes cantidades de información en un conjunto más pequeño de características que representan una semántica significativa. El modelo AlphaEarth Foundations toma series temporales de imágenes de sensores como Sentinel-2, Sentinel-1 y Landsat y aprende a representar de forma única la información mutua entre fuentes y objetivos con tan solo 64 números (más información en el artículo). El flujo de datos de entrada contiene miles de bandas de imágenes de múltiples sensores y el modelo toma esta entrada de alta dimensión y la convierte en una representación de menor dimensión.</p>
 <p>Un buen modelo mental para comprender el funcionamiento de AlphaEarth Foundations es una técnica denominada Análisis de Componentes Principales (PCA). El PCA también ayuda a reducir la dimensionalidad de los datos para aplicaciones de aprendizaje automático. Mientras que el PCA es una técnica estadística que permite comprimir decenas de bandas de entrada en unos pocos componentes principales, AlphaEarth Foundations es un modelo de aprendizaje profundo que puede tomar miles de dimensiones de entrada de conjuntos de datos de series temporales multisensor y aprende a crear una representación de 64 bandas que captura de forma única la variabilidad espacial y temporal de ese píxel.</p>
 <p>Un campo de embedding es la matriz continua o “campo” de embeddings aprendidas. Las imágenes de las colecciones de campos de embedding representan trayectorias espacio-temporales que abarcan un año completo y tienen 64 bandas (una para cada dimensión de incrustación).</p>
 <figure class="align-default" id="fig-embeddingfield">
 <a class="reference internal image-reference" href="_images/embedding_field_1.jpg"><img alt="_images/embedding_field_1.jpg" src="_images/embedding_field_1.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">vector de incrustación n-dimensional muestreado de un campo de incrustación <em>embedding</em></span><a class="headerlink" href="#fig-embeddingfield" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">vector de incrustación n-dimensional muestreado de un campo de incrustación <em>embedding</em></span><a class="headerlink" href="#fig-embeddingfield" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="acceso-al-conjunto-de-datos-de-incrustacion-de-satelites">
-<h2>Acceso al conjunto de datos de incrustación de satélites<a class="headerlink" href="#acceso-al-conjunto-de-datos-de-incrustacion-de-satelites" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.2. </span>Acceso al conjunto de datos de incrustación de satélites<a class="headerlink" href="#acceso-al-conjunto-de-datos-de-incrustacion-de-satelites" title="Link to this heading">#</a></h2>
 <p>El conjunto de datos de incrustación de satélites es una colección de imágenes anuales desde 2017 en adelante (p. ej., 2017, 2018, 2019, etc.). Cada imagen tiene 64 bandas, donde cada píxel es el vector de incrustación que representa la serie temporal multisensor para el año en cuestión.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </section>
 <section id="seleccionar-una-region">
-<h2>Seleccionar una región<a class="headerlink" href="#seleccionar-una-region" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.3. </span>Seleccionar una región<a class="headerlink" href="#seleccionar-una-region" title="Link to this heading">#</a></h2>
 <p>Comencemos por definir una región de interés. En este tutorial, seleccionaremos una región alrededor del embalse Krishna Raja Sagara (KRS) en India y definiremos un polígono como variable geométrica. También puede usar las Herramientas de Dibujo del Editor de Código para dibujar un polígono alrededor de la región de interés, que se guardará como variable geométrica en las Importaciones.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Use the satellite basemap</span>
 <span class="nb">Map</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="s1">&#39;SATELLITE&#39;</span><span class="p">);</span>
@@ -563,7 +744,7 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </div>
 </section>
 <section id="preparar-el-conjunto-de-datos-de-incrustacion-satelital">
-<h2>Preparar el conjunto de datos de incrustación satelital<a class="headerlink" href="#preparar-el-conjunto-de-datos-de-incrustacion-satelital" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.4. </span>Preparar el conjunto de datos de incrustación satelital<a class="headerlink" href="#preparar-el-conjunto-de-datos-de-incrustacion-satelital" title="Link to this heading">#</a></h2>
 <p>Las imágenes de cada año se dividen en mosaicos para facilitar el acceso. Aplicamos filtros y buscamos las imágenes del año y la región seleccionados.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2024</span><span class="p">;</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">startDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nb">Date</span><span class="p">.</span><span class="nx">fromYMD</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
@@ -586,12 +767,12 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 <figure class="align-default" id="id1">
 <a class="reference internal image-reference" href="_images/2_1440.jpg"><img alt="_images/2_1440.jpg" src="_images/2_1440.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">64 bands de la imagen satelital embedding</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text">64 bands de la imagen satelital embedding</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="visualizar-el-conjunto-de-datos-de-incrustacion-satelital">
-<h2>Visualizar el conjunto de datos de incrustación satelital<a class="headerlink" href="#visualizar-el-conjunto-de-datos-de-incrustacion-satelital" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">5.5. </span>Visualizar el conjunto de datos de incrustación satelital<a class="headerlink" href="#visualizar-el-conjunto-de-datos-de-incrustacion-satelital" title="Link to this heading">#</a></h2>
 <p>Como acabamos de ver, nuestra imagen contiene 64 bandas. No es fácil visualizar toda la información contenida en cada banda, ya que solo podemos ver una combinación de tres bandas a la vez.</p>
 <p>Podemos seleccionar tres bandas cualesquiera para visualizar tres ejes del espacio de incrustación como una imagen RGB.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">visParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;A01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A16&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A09&#39;</span><span class="p">]};</span>
@@ -614,7 +795,7 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 <figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="_images/4_1440.jpg"><img alt="_images/4_1440.jpg" src="_images/4_1440.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure: Extracted embedding vector</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Figure: Extracted embedding vector</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Ahora podemos entrenar un modelo no supervisado para agrupar las muestras en el número deseado de clústeres. Cada clúster representaría píxeles con embeddings similares.</p>
@@ -639,7 +820,7 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 <figure class="align-default" id="fig-6-1440">
 <a class="reference internal image-reference" href="_images/6_1440.jpg"><img alt="_images/6_1440.jpg" src="_images/6_1440.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure: Satellite Embedding image with 3 clusters</span><a class="headerlink" href="#fig-6-1440" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text">Figure: Satellite Embedding image with 3 clusters</span><a class="headerlink" href="#fig-6-1440" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Observará que los clústeres resultantes tienen límites muy precisos. Esto se debe a que las incrustaciones incluyen inherentemente un contexto espacial: se esperaría que los píxeles dentro del mismo objeto tuvieran vectores de incrustación relativamente similares. Además, uno de los clústeres incluye áreas con agua estacional alrededor del embalse principal. Esto se debe al contexto temporal capturado en el vector de incrustación, que nos permite detectar dichos píxeles con patrones temporales similares.</p>
@@ -651,7 +832,7 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 <figure class="align-default" id="fig-7-1440">
 <a class="reference internal image-reference" href="_images/7_1440.jpg"><img alt="_images/7_1440.jpg" src="_images/7_1440.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure: Satellite Embedding image with 5 clusters</span><a class="headerlink" href="#fig-7-1440" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Figure: Satellite Embedding image with 5 clusters</span><a class="headerlink" href="#fig-7-1440" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Podemos seguir refinando las imágenes en grupos más especializados aumentando el número de grupos. Así se ve la imagen con 10 grupos.</p>
@@ -662,14 +843,14 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 <figure class="align-default" id="fig-8-1440">
 <a class="reference internal image-reference" href="_images/8_1440.jpg"><img alt="_images/8_1440.jpg" src="_images/8_1440.jpg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">Figure: Satellite Embedding image with 10 clusters</span><a class="headerlink" href="#fig-8-1440" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 5.6 </span><span class="caption-text">Figure: Satellite Embedding image with 10 clusters</span><a class="headerlink" href="#fig-8-1440" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Se están revelando muchos detalles y podemos ver diferentes tipos de cultivos agrupados en diferentes grupos. Dado que la Integración Satelital captura la fenología del cultivo junto con las variables climáticas, es ideal para el mapeo de tipos de cultivos. En el siguiente tutorial (Clasificación No Supervisada), veremos cómo crear un mapa de tipos de cultivos con datos de Integración Satelital con pocas o ninguna etiqueta a nivel de campo.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-agua">
-<h1>Busqueda: Agua<a class="headerlink" href="#busqueda-agua" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Busqueda: Agua<a class="headerlink" href="#busqueda-agua" title="Link to this heading">#</a></h1>
 <ol class="arabic simple" start="0">
 <li><p>Entradas</p></li>
 </ol>
@@ -909,7 +1090,7 @@ Esto permite versionar y reutilizar los resultados sin recalcular toda la tuber�
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-hornos-de-ladrillo">
-<h1>Busqueda: Hornos de Ladrillo<a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Busqueda: Hornos de Ladrillo<a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h1>
 <ol class="arabic simple" start="0">
 <li><p>Entradas</p></li>
 </ol>
@@ -1275,7 +1456,7 @@ Se calculan estadísticas (min, max, p90..p99) dentro de la máscara para ver c�
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">
-<h1>Busqueda: Entrenamiento supervisado para cultivos (una aproximación)<a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">8. </span>Busqueda: Entrenamiento supervisado para cultivos (una aproximación)<a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h1>
 <p>La lógica del script:</p>
 <ul class="simple">
 <li><p><strong>Crear muestras de entrenamiento</strong>:</p>
@@ -1973,7 +2154,7 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
     {
         requestKernel: true,
         binderOptions: {
-            repo: "cdg-idera/PAT_INT_GEE",
+            repo: "cdg-idera/geosemantica",
             ref: "main",
         },
         codeMirrorConfig: {
@@ -1999,6 +2180,15 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Prólogo e Introducción</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -2015,28 +2205,36 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">AI-powered pixels: Introducing Google’s Satellite Embedding dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-incrusta-en-una-incrustacion">¿Qué se incrusta en una incrustación?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tierra-en-64-dimensiones-coordenadas-versus-bandas">La Tierra en 64 dimensiones: Coordenadas versus bandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital">¿Qué puedes hacer con el conjunto de datos de incrustación satelital?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuentra-otros-lugares-como-este-busqueda-por-similitud">Encuentra otros lugares como este: Búsqueda por similitud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion">Detección de cambios: Seguimiento de cambios en el espacio de incrustación</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descubra-patrones-ocultos-agrupamiento-automatico">Descubra patrones ocultos: Agrupamiento automático</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cree-mapas-detallados-con-menos-etiquetado-manual">Cree mapas detallados con menos etiquetado manual.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporando-la-ia-a-earth-engine">Incorporando la IA a Earth Engine</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. Introduccion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sim-s-x">2. sim
+(
+𝑠
+,
+𝑥
+)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">3. Mas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-powered-pixels-introducing-googles-satellite-embedding-dataset">4. AI-powered pixels: Introducing Google’s Satellite Embedding dataset</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-se-incrusta-en-una-incrustacion">4.1. ¿Qué se incrusta en una incrustación?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-tierra-en-64-dimensiones-coordenadas-versus-bandas">4.2. La Tierra en 64 dimensiones: Coordenadas versus bandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-puedes-hacer-con-el-conjunto-de-datos-de-incrustacion-satelital">4.3. ¿Qué puedes hacer con el conjunto de datos de incrustación satelital?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encuentra-otros-lugares-como-este-busqueda-por-similitud">4.4. Encuentra otros lugares como este: Búsqueda por similitud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteccion-de-cambios-seguimiento-de-cambios-en-el-espacio-de-incrustacion">4.5. Detección de cambios: Seguimiento de cambios en el espacio de incrustación</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descubra-patrones-ocultos-agrupamiento-automatico">4.6. Descubra patrones ocultos: Agrupamiento automático</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cree-mapas-detallados-con-menos-etiquetado-manual">4.7. Cree mapas detallados con menos etiquetado manual.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporando-la-ia-a-earth-engine">4.8. Incorporando la IA a Earth Engine</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-gee-introduction-to-the-satellite-embedding-dataset">Tutorial GEE: Introduction to the Satellite Embedding Dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprendiendo-los-embeddings">Comprendiendo los embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-conjunto-de-datos-de-incrustacion-de-satelites">Acceso al conjunto de datos de incrustación de satélites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccionar-una-region">Seleccionar una región</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-el-conjunto-de-datos-de-incrustacion-satelital">Preparar el conjunto de datos de incrustación satelital</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizar-el-conjunto-de-datos-de-incrustacion-satelital">Visualizar el conjunto de datos de incrustación satelital</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-gee-introduction-to-the-satellite-embedding-dataset">5. Tutorial GEE: Introduction to the Satellite Embedding Dataset</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprendiendo-los-embeddings">5.1. Comprendiendo los embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-conjunto-de-datos-de-incrustacion-de-satelites">5.2. Acceso al conjunto de datos de incrustación de satélites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccionar-una-region">5.3. Seleccionar una región</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-el-conjunto-de-datos-de-incrustacion-satelital">5.4. Preparar el conjunto de datos de incrustación satelital</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizar-el-conjunto-de-datos-de-incrustacion-satelital">5.5. Visualizar el conjunto de datos de incrustación satelital</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">Busqueda: Agua</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">Busqueda: Hornos de Ladrillo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">6. Busqueda: Agua</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">7. Busqueda: Hornos de Ladrillo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">8. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
 </ul>
 
   </nav></div>
