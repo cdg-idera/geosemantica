@@ -528,6 +528,19 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <section id="busqueda-agua-explicacion-del-script">
 <h2><span class="section-number">5.7. </span><strong>Búsqueda: Agua (explicación del script)</strong><a class="headerlink" href="#busqueda-agua-explicacion-del-script" title="Link to this heading">#</a></h2>
+<p>El esquema para este algoritmo es:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{ROI, Samples} \to 
+\text{Parámetros} \to 
+\text{Embedding anual } (\mathbf{X}) \to 
+\text{Máscara JRC opcional } (\mathbf{X}_{\text{mask}}) \to 
+\{\mathbf{s}_i\} \to 
+\max_i\,\cos(\mathbf{s}_i,\mathbf{x}) \in [0,1] \to
+\text{Vectorizar }(\ge 0.98,\ \ge 0.99,\ \approx 1.0) \to
+\text{Polígonos} \to
+\text{Export/UI}
+\]</div>
 <section id="entradas">
 <h3><span class="section-number">5.7.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#entradas" title="Link to this heading">#</a></h3>
 <p>El bloque asume dos insumos principales:</p>
@@ -803,6 +816,17 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <section id="busqueda-hornos-de-ladrillo">
 <h2><span class="section-number">5.8. </span><strong>Búsqueda: Hornos de Ladrillo</strong><a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h2>
+<p>El esquema del algoritmo es:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{ROI} \xrightarrow[]{\text{Entradas}} 
+\text{Parámetros} \xrightarrow[]{\text{Embedding anual}} 
+\mathbf{X} \xrightarrow[]{\text{ref. }\mathbf{s}_i} 
+\cos(\mathbf{s}_i,\mathbf{x}) \xrightarrow[]{\max}
+\text{similitud} \xrightarrow[]{\text{POST fail-open}}
+\text{similitud enmasc.} \xrightarrow[\ge 0.98, \ge 0.99, \approx 1.0]{\text{vectorizar}}
+\text{polígonos} \xrightarrow[]{\text{P99 / 0.95}} \text{final} \xrightarrow[]{} \text{export/UI}
+\]</div>
 <section id="id3">
 <h3><span class="section-number">5.8.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>La primera etapa prepara la geometría de trabajo y la vista del mapa.</p>

@@ -71,6 +71,22 @@ Esta secuencia ilustra una idea central: **los embeddings expanden lo que podemo
 
 ## **Búsqueda: Agua (explicación del script)**
 
+El esquema para este algoritmo es:
+
+$$
+\text{ROI, Samples} \to 
+\text{Parámetros} \to 
+\text{Embedding anual } (\mathbf{X}) \to 
+\text{Máscara JRC opcional } (\mathbf{X}_{\text{mask}}) \to 
+\{\mathbf{s}_i\} \to 
+\max_i\,\cos(\mathbf{s}_i,\mathbf{x}) \in [0,1] \to
+\text{Vectorizar }(\ge 0.98,\ \ge 0.99,\ \approx 1.0) \to
+\text{Polígonos} \to
+\text{Export/UI}
+$$
+
+
+
 ### **0) Entradas**
 
 El bloque asume dos insumos principales:
@@ -352,6 +368,19 @@ var polysAll = ee.FeatureCollection(poly98.merge(poly99).merge(poly100));
 
 ```
 ## **Búsqueda: Hornos de Ladrillo**
+
+El esquema del algoritmo es:
+
+$$
+\text{ROI} \xrightarrow[]{\text{Entradas}} 
+\text{Parámetros} \xrightarrow[]{\text{Embedding anual}} 
+\mathbf{X} \xrightarrow[]{\text{ref. }\mathbf{s}_i} 
+\cos(\mathbf{s}_i,\mathbf{x}) \xrightarrow[]{\max}
+\text{similitud} \xrightarrow[]{\text{POST fail-open}}
+\text{similitud enmasc.} \xrightarrow[\ge 0.98, \ge 0.99, \approx 1.0]{\text{vectorizar}}
+\text{polígonos} \xrightarrow[]{\text{P99 / 0.95}} \text{final} \xrightarrow[]{} \text{export/UI}
+$$
+
 
 ### **0) Entradas**
 
