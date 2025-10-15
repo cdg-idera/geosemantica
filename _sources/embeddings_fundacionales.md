@@ -1,5 +1,62 @@
 # FM4EO
 
+# Modelos Fundacionales en Observación de la Tierra
+
+Los modelos **OneVision**, **Prithvi** y **AlphaHertz** constituyen ejemplos destacados de **modelos fundacionales (foundational models)** aplicados al campo de la **Observación de la Tierra (EO, Earth Observation)**.
+
+---
+
+## ¿Qué es un modelo fundacional?
+
+Un **modelo fundacional** (*foundational model*) es aquel que:
+- Se **entrena a gran escala** (en millones de imágenes o señales).  
+- Aprende **representaciones generales** (no una tarea específica).  
+- Luego puede **ajustarse o especializarse (fine-tuning)** para tareas concretas: clasificación, segmentación, detección de cambios, etc.
+
+En el contexto de la EO, estos modelos aprenden **patrones espaciales, espectrales y temporales** a partir de datos satelitales (Sentinel, Landsat, MODIS, etc.), convirtiéndose en infraestructuras de inteligencia geoespacial reutilizables.
+
+---
+
+## Ejemplos destacados
+
+### 🛰️ OneVision (Google Research, 2024)
+- **Tipo:** Modelo fundacional de visión satelital global.  
+- **Entrenamiento:** Billones de píxeles de imágenes ópticas y radar.  
+- **Capacidades:** Embeddings multiespectrales y multimodales.  
+- **Usos:** Clasificación de cobertura, detección de cambios, segmentación.  
+- **Institución:** Google Research.
+
+### 🌎 Prithvi (NASA–IBM, 2024–2025)
+- **Tipo:** Modelo fundacional para ciencia climática.  
+- **Entrenamiento:** Petabytes de datos satelitales NASA (MODIS, VIIRS, Landsat).  
+- **Capacidades:** Fine-tuning para incendios, sequías e inundaciones.  
+- **Usos:** Modelos base para investigación ambiental y climática.  
+- **Institución:** NASA–IBM.
+
+### 🌐 AlphaHertz (Up42, 2024)
+- **Tipo:** Modelo fundacional geoespacial.  
+- **Entrenamiento:** Series multitemporales Sentinel-1 y Sentinel-2.  
+- **Capacidades:** Embeddings satelitales para búsqueda por similitud semántica.  
+- **Usos:** Detección de patrones espaciales y análisis multitemporal.  
+- **Institución:** Up42.
+
+---
+
+## 📊 Tabla comparativa de modelos fundacionales EO
+
+| Modelo       | Institución        | Año | Tipo de Datos              | Capacidades principales                                           | Aplicaciones principales                                      |
+|---------------|--------------------|-----|-----------------------------|------------------------------------------------------------------|---------------------------------------------------------------|
+| **OneVision** | Google Research    | 2024 | Ópticos + Radar (globales) | Embeddings multimodales; visión satelital global                 | Clasificación, detección de cambios, segmentación             |
+| **Prithvi**   | NASA–IBM           | 2024–2025 | MODIS, VIIRS, Landsat       | Fine-tuning para eventos climáticos                              | Incendios, sequías, inundaciones, predicción ambiental         |
+| **AlphaHertz**| Up42               | 2024 | Sentinel-1 y Sentinel-2     | Embeddings geosemánticos; búsqueda por similitud                 | Análisis multitemporal, patrones espaciales, búsqueda semántica |
+
+---
+
+## 📘 En resumen académico
+
+> **OneVision (Google Research), Prithvi (NASA–IBM) y AlphaHertz (Up42)** son efectivamente **modelos fundacionales para Observación de la Tierra**, entrenados a gran escala sobre datos satelitales multimodales, diseñados para servir como base adaptable a múltiples tareas geoespaciales mediante *fine-tuning* o *transfer learning*.
+
+
 ## 🧠 1. Definición relacional básica
 
 Los **embeddings** son *productos intermedios* o *representaciones aprendidas* dentro de un **modelo fundacional** (*foundation model*).  
