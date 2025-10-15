@@ -104,9 +104,10 @@ Por ejemplo:
 
 En un esquema conceptual:
 
-\[
+$$
 \text{Datos crudos} \xrightarrow[\text{auto-supervisión}]{\text{Foundation Model}} \text{Embeddings} \xrightarrow[\text{transferencia}]{\text{Fine-tuning / Similaridad}} \text{Tareas downstream}
-\]
+$$
+
 
 - Los **datos crudos** (imágenes ópticas, radar, multitemporales) son la entrada.  
 - El **modelo fundacional** actúa como codificador semántico auto-supervisado.  

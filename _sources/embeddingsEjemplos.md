@@ -13,10 +13,12 @@ Este capítulo muestra **cómo operacionalizar embeddings** en flujos de trabajo
    La similitud latente aporta un **mapa continuo de afinidad** con muestras de ladrilleras. Para robustecer, se añaden filtros espectrales (NDVI/NDBI/BSI), de **radar Sentinel-1** y de **agua (JRC)** bajo una lógica *fail-open*: se incorpora cada filtro **solo si** no elimina prácticamente toda la cobertura candidata. Esto reduce **falsos positivos** sin destruir hallazgos reales.
 
 3) **Clasificación supervisada de cultivos (RF + embeddings).**  
-   Combinamos embeddings anuales con **fenología Sentinel-2** (NDVI/EVI/NDRE/NDWI), probabilidades de **Dynamic World** (crops/trees) [@Brown2022_DynamicWorld] y una **máscara agrícola** (ESA WorldCover + MODIS + DW). Con puntos de campo etiquetados entrenamos un **Random Forest**, evaluamos con *hold-out* y generamos un **mapa categórico de cultivos** con vectorización por clase y elementos de UI (leyenda y gráfico de barras).
+   Combinamos embeddings anuales con **fenología Sentinel-2** (NDVI/EVI/NDRE/NDWI), probabilidades de **Dynamic World** (crops/trees) {cite}`Brown2022_DynamicWorld` y una **máscara agrícola** (ESA WorldCover + MODIS + DW). Con puntos de campo etiquetados entrenamos un **Random Forest**, evaluamos con *hold-out* y generamos un **mapa categórico de cultivos** con vectorización por clase y elementos de UI (leyenda y gráfico de barras).
 
 
-Los ejemplos mostrados en este capítulos están basados en los tutoriales de GEE sobre Embeddings y en los ejemplos de [@Gandhi2025_SatelliteEmbedding].
+Los ejemplos mostrados en este capítulo están basados en los tutoriales de GEE sobre Embeddings y en los ejemplos de {cite}`Gandhi2025_SatelliteEmbedding`.
+
+
 ---
 
 ## Aporte metodológico
