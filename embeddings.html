@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'embeddings';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
-    <link rel="prev" title="Prólogo e Introducción" href="intro.html" />
+    <link rel="next" title="6. AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
+    <link rel="prev" title="Introducción" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,7 +171,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Prólogo e Introducción
+                    Introducción
                 </a>
             </li>
         </ul>
@@ -179,10 +181,9 @@
 
 
 
-
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">9. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">6. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">7. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">8. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -384,16 +385,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">1.3. Fundamento teórico: ¿qué es un embedding?</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sim-s-x">2. sim
-(
-𝑠
-,
-𝑥
-)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">3. Mas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">4. Busqueda: Agua</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">5. Busqueda: Hornos de Ladrillo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">6. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">2. Mas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">3. Busqueda: Agua</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">4. Busqueda: Hornos de Ladrillo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
 </ul>
 
             </nav>
@@ -425,12 +420,19 @@ De este modo, el planeta <em>deja de ser una grilla de reflectancias</em> y <em>
 <section id="fundamento-teorico-que-es-un-embedding">
 <h2><span class="section-number">1.3. </span>Fundamento teórico: ¿qué es un embedding?<a class="headerlink" href="#fundamento-teorico-que-es-un-embedding" title="Link to this heading">#</a></h2>
 <p>En términos formales, un embedding es una función:</p>
-<p>f:X→Rnf: X \rightarrow \mathbb{R}^nf:X→Rn</p>
-<p>donde
-𝑋
-X representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.
-La función f
-f se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.</p>
+<div class="math notranslate nohighlight">
+\[f: X \rightarrow \mathbb{R}^n\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p>( X ) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.</p></li>
+<li><p>( \mathbb{R}^n ) es el espacio vectorial de características latentes.</p></li>
+<li><p>Cada punto ( f(x) ) es un vector que codifica información contextual de ( x ).</p></li>
+</ul>
+<p>La similitud entre dos vectores ( \mathbf{s} ) y ( \mathbf{x} ) puede calcularse mediante la <strong>similitud coseno</strong>, una medida clásica de semántica estadística:</p>
+<div class="math notranslate nohighlight">
+\[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }\]</div>
+<p>Esta métrica cuantifica el grado de afinidad semántica entre dos regiones del espacio geográfico, independientemente de su escala o magnitud.</p>
+<p>La función <span class="math notranslate nohighlight">\(f\)</span> se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.</p>
 <p>En el dominio de la Observación de la Tierra (EO), esto significa que:</p>
 <p>Cada píxel o parche satelital se codifica en un vector de, por ejemplo, 256 dimensiones.</p>
 <p>Las relaciones espaciales y espectrales se preservan de modo que píxeles similares en contexto quedan cercanos en el espacio latente.</p>
@@ -452,33 +454,8 @@ Dado un vector de referencia
 s (por ejemplo, el promedio de los embeddings de un conjunto de polígonos de agua) y un vector de píxel
 𝑥
 x, la similitud se define como:</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="sim-s-x">
-<h1><span class="section-number">2. </span>sim
-(
-𝑠
-,
-𝑥
-)<a class="headerlink" href="#sim-s-x" title="Link to this heading">#</a></h1>
-<p>𝑠
-⋅
-𝑥
-∣
-∣
-𝑠
-∣
-∣
- 
-∣
-∣
-𝑥
-∣
-∣
-sim(s,x)=
-∣∣s∣∣∣∣x∣∣
-s⋅x
-​</p>
+<div class="math notranslate nohighlight">
+\[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }\]</div>
 <p>Este valor se reescala a [0,1], donde 1 indica máxima similitud semántica.
 Lo notable es que esta similitud no depende de índices espectrales fijos, sino de representaciones aprendidas que capturan patrones espaciales, texturales y de contexto ambiental.</p>
 <p>En consecuencia:</p>
@@ -553,8 +530,9 @@ El desafío científico y didáctico consiste ahora en enseñar a pensar el terr
 <p>Montero, C. (2024). GeoIA y Datacubes en la era semántica. IDE Iberoamérica.</p>
 <p>Lillesand, T., Kiefer, R., &amp; Chipman, J. (2015). Remote Sensing and Image Interpretation. Wiley.</p>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="mas">
-<h1><span class="section-number">3. </span>Mas<a class="headerlink" href="#mas" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2. </span>Mas<a class="headerlink" href="#mas" title="Link to this heading">#</a></h1>
 <p>El embedding captura contexto más que forma fina.</p>
 <p>Util para detectar por ejemplo:</p>
 <ul class="simple">
@@ -600,7 +578,7 @@ Tip: excluir agua con JRC y vegetación con NDVI↓.</p></li>
 </ul>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-agua">
-<h1><span class="section-number">4. </span>Busqueda: Agua<a class="headerlink" href="#busqueda-agua" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3. </span>Busqueda: Agua<a class="headerlink" href="#busqueda-agua" title="Link to this heading">#</a></h1>
 <ol class="arabic simple" start="0">
 <li><p>Entradas</p></li>
 </ol>
@@ -840,7 +818,7 @@ Esto permite versionar y reutilizar los resultados sin recalcular toda la tuber�
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-hornos-de-ladrillo">
-<h1><span class="section-number">5. </span>Busqueda: Hornos de Ladrillo<a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Busqueda: Hornos de Ladrillo<a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h1>
 <ol class="arabic simple" start="0">
 <li><p>Entradas</p></li>
 </ol>
@@ -1206,7 +1184,7 @@ Se calculan estadísticas (min, max, p90..p99) dentro de la máscara para ver c�
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">
-<h1><span class="section-number">6. </span>Busqueda: Entrenamiento supervisado para cultivos (una aproximación)<a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">5. </span>Busqueda: Entrenamiento supervisado para cultivos (una aproximación)<a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h1>
 <p>La lógica del script:</p>
 <ul class="simple">
 <li><p><strong>Crear muestras de entrenamiento</strong>:</p>
@@ -1936,7 +1914,7 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Prólogo e Introducción</p>
+        <p class="prev-next-title">Introducción</p>
       </div>
     </a>
     <a class="right-next"
@@ -1944,7 +1922,7 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1970,16 +1948,10 @@ Define una paleta de colores consistente por clase (Vid azul, Manzana rojo, Pera
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">1.3. Fundamento teórico: ¿qué es un embedding?</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sim-s-x">2. sim
-(
-𝑠
-,
-𝑥
-)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">3. Mas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">4. Busqueda: Agua</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">5. Busqueda: Hornos de Ladrillo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">6. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas">2. Mas</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua">3. Busqueda: Agua</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">4. Busqueda: Hornos de Ladrillo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
 </ul>
 
   </nav></div>

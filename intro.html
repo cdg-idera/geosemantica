@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Prólogo e Introducción &#8212; Geosemántica</title>
+    <title>Introducción &#8212; Geosemántica</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -170,7 +172,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Prólogo e Introducción
+                    Introducción
                 </a>
             </li>
         </ul>
@@ -180,10 +182,9 @@
 
 
 
-
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">9. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">6. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">7. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">8. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -369,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Prólogo e Introducción</h1>
+    <h1>Introducción</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,7 +380,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Prólogo e Introducción</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-geosemantica-estadistica"><strong>Embeddings y Geosemántica Estadística</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>1. Los embeddings como fenómeno geosemántico</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-general"><strong>2. Introducción general</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica"><strong>3. Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>4. La semántica estadística como fundamento</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica"><strong>6. Hacia una geosemántica estadística</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>7. Comparación epistemológica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas"><strong>8. Implicaciones científicas y aplicadas</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>9. Conclusión</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">Agradecimientos</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-este-libro">Sobre este libro</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#requerimientos">Requerimientos</a></li>
@@ -396,9 +408,141 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="prologo-e-introduccion">
-<h1>Prólogo e Introducción<a class="headerlink" href="#prologo-e-introduccion" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion">
+<h1>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="embeddings-y-geosemantica-estadistica">
+<h1><strong>Embeddings y Geosemántica Estadística</strong><a class="headerlink" href="#embeddings-y-geosemantica-estadistica" title="Link to this heading">#</a></h1>
+<section id="los-embeddings-como-fenomeno-geosemantico">
+<h2><strong>1. Los embeddings como fenómeno geosemántico</strong><a class="headerlink" href="#los-embeddings-como-fenomeno-geosemantico" title="Link to this heading">#</a></h2>
+<p>La <strong>geosemántica</strong> estudia cómo el significado (semántica) se representa y se procesa en relación con el espacio geográfico.<br />
+En este marco, los <em>embeddings</em> pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que <strong>preservan relaciones de similitud semántica</strong> entre regiones del territorio.</p>
+<p>Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.<br />
+Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.</p>
+</section>
+<hr class="docutils" />
+<section id="introduccion-general">
+<h2><strong>2. Introducción general</strong><a class="headerlink" href="#introduccion-general" title="Link to this heading">#</a></h2>
+<p>Los <em>embeddings satelitales</em> constituyen una nueva frontera en la representación digital del territorio.<br />
+En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de <strong>vectores de significado latente</strong> aprendidos por modelos de <em>deep learning</em> sobre grandes volúmenes de datos satelitales.</p>
+<p>Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una <strong>manifestación de la geosemántica</strong>: una forma de codificar el <em>significado geográfico</em> directamente en el espacio matemático.</p>
+</section>
+<hr class="docutils" />
+<section id="los-tres-niveles-de-la-geosemantica">
+<h2><strong>3. Los tres niveles de la geosemántica</strong><a class="headerlink" href="#los-tres-niveles-de-la-geosemantica" title="Link to this heading">#</a></h2>
+<p>La geosemántica contemporánea puede dividirse, de manera general, en tres niveles complementarios:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nivel</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Ejemplo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Formal o ontológico</strong></p></td>
+<td><p>Basado en vocabularios controlados, ontologías y modelos conceptuales normalizados (p. ej. ISO 19150, INSPIRE, Catálogo de Objetos Geográficos de IDERA).</p></td>
+<td><p>Ontologías de objetos geográficos, taxonomías de coberturas.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Lingüístico o textual</strong></p></td>
+<td><p>Derivado del análisis de textos, descripciones o metadatos.</p></td>
+<td><p>Extracción de entidades geográficas en corpus de texto.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Estadístico o latente</strong></p></td>
+<td><p>Aprendido a partir de datos numéricos o imágenes mediante técnicas de aprendizaje automático.</p></td>
+<td><p>Embeddings espectrales, espaciales o espacio-temporales.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los <em>embeddings satelitales</em> pertenecen claramente al <strong>tercer nivel</strong>, el de la <strong>semántica estadística o latente</strong>, donde el significado no se define explícitamente, sino que <strong>emerge de los patrones de correlación y coocurrencia</strong> observados en los datos.</p>
+</section>
+<hr class="docutils" />
+<section id="la-semantica-estadistica-como-fundamento">
+<h2><strong>4. La semántica estadística como fundamento</strong><a class="headerlink" href="#la-semantica-estadistica-como-fundamento" title="Link to this heading">#</a></h2>
+<p>El concepto de <strong>semántica estadística</strong> se origina en la lingüística computacional a mediados del siglo XX.<br />
+Autores como <strong>Zellig Harris (1954)</strong> y <strong>J. R. Firth (1957)</strong> formularon la hipótesis de distribución:</p>
+<blockquote>
+<div><p><em>“El significado de una palabra puede inferirse de los contextos en los que aparece.”</em></p>
+</div></blockquote>
+<p>En el dominio geoespacial, esta idea se traduce en una analogía poderosa:</p>
+<blockquote>
+<div><p><em>El significado de un píxel o región puede inferirse del contexto espectral, temporal y espacial que lo rodea.</em></p>
+</div></blockquote>
+<p>Los modelos modernos de embeddings —como <strong>Google Satellite Embedding V1</strong>, <strong>AlphaHertz</strong> o <strong>OneVision</strong>— aprenden precisamente ese contexto.<br />
+Cada vector no representa ya un valor físico, sino una <strong>posición semántica</strong> en un espacio n-dimensional que captura similitudes de paisaje, uso, textura y dinámica ambiental.</p>
+<p>La noción de semántica estadística tiene su origen en la lingüística computacional,
+particularmente en los trabajos pioneros de <span id="id1">[<a class="reference internal" href="Referencias.html#id39" title="Zellig Harris. Distributional structure. Word, 10(2-3):146–162, 1954. doi:10.1080/00437956.1954.11659520.">Harris, 1954</a>]</span> y <span id="id2">[<a class="reference internal" href="Referencias.html#id40" title="John Rupert Firth. A synopsis of linguistic theory 1930–1955. In Studies in Linguistic Analysis. Philological Society, Oxford, 1957.">Firth, 1957</a>]</span>.<br />
+En el campo geoespacial, esta idea ha sido retomada recientemente por <span id="id3">[<a class="reference internal" href="Referencias.html#id41" title="Michael F. Goodchild. Reimagining the semantic geography of the earth. International Journal of Geographical Information Science, 35(6):1181–1197, 2021. doi:10.1080/13658816.2021.1893331.">Goodchild, 2021</a>]</span>
+para conceptualizar una “geografía semántica” de la Tierra.</p>
+<p>Los modelos de representación latente basados en observación satelital,
+como <span id="id4">[<a class="reference internal" href="Referencias.html#id42" title="Google Research. Satellite embeddings v1: a global, multimodal representation of the planet. Technical Report, 2024. Available at: https://research.google/.">Google Research, 2024</a>]</span>, materializan esa visión en la práctica contemporánea.<br />
+En la comunidad latinoamericana, enfoques emergentes como <span id="id5">[<a class="reference internal" href="Referencias.html#id43" title="C. Montero, L. Reynoso, and P. Cardozo. Geoia y la semántica del territorio: del píxel al concepto. (En preparación), 2025.">Montero <em>et al.</em>, 2025</a>]</span>
+proponen una integración conceptual entre geosemántica y aprendizaje automático.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="hacia-una-geosemantica-estadistica">
+<h1><strong>6. Hacia una geosemántica estadística</strong><a class="headerlink" href="#hacia-una-geosemantica-estadistica" title="Link to this heading">#</a></h1>
+<p>Podemos hablar entonces de un nuevo subcampo: la <strong>geosemántica estadística</strong>, también denominada <strong>semántica latente geoespacial</strong>.<br />
+En este marco:</p>
+<ul class="simple">
+<li><p>Los <em>embeddings</em> son las <strong>unidades básicas de significado</strong>.</p></li>
+<li><p>Las relaciones de <strong>similitud coseno</strong> sustituyen las jerarquías ontológicas.</p></li>
+<li><p>Las operaciones algebraicas (distancias, agrupamientos, proyecciones) permiten <strong>razonar cuantitativamente sobre el significado del territorio</strong>.</p></li>
+</ul>
+<p>Desde esta perspectiva, un píxel deja de ser una muestra de reflectancia: se convierte en un <strong>vector de sentido geográfico</strong>.<br />
+El análisis del territorio pasa de lo físico a lo semántico.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="comparacion-epistemologica">
+<h1><strong>7. Comparación epistemológica</strong><a class="headerlink" href="#comparacion-epistemologica" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Enfoque</p></th>
+<th class="head"><p>Naturaleza del significado</p></th>
+<th class="head"><p>Mecanismo de inferencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Geosemántica clásica</strong></p></td>
+<td><p>Definido explícitamente por expertos o estándares (ontologías, taxonomías).</p></td>
+<td><p>Declarativo (conceptos definidos manualmente).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Geosemántica estadística</strong></p></td>
+<td><p>Aprendido implícitamente a partir de correlaciones en datos geoespaciales.</p></td>
+<td><p>Inductivo (patrones descubiertos por aprendizaje automático).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ambos enfoques son complementarios:</p>
+<ul class="simple">
+<li><p>La <strong>geosemántica formal</strong> proporciona interpretabilidad y trazabilidad.</p></li>
+<li><p>La <strong>geosemántica estadística</strong> aporta capacidad de descubrimiento y generalización.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="implicaciones-cientificas-y-aplicadas">
+<h1><strong>8. Implicaciones científicas y aplicadas</strong><a class="headerlink" href="#implicaciones-cientificas-y-aplicadas" title="Link to this heading">#</a></h1>
+<p>Los embeddings permiten crear <strong>espacios semánticos del planeta</strong>, donde cada vector describe el “contexto” de un punto de la superficie terrestre.<br />
+En este sentido, constituyen una infraestructura cognitiva que:</p>
+<ul class="simple">
+<li><p>Facilita búsquedas semánticas (<em>“lugares similares a estos humedales”</em>).</p></li>
+<li><p>Permite detectar cambios contextuales (<em>“esta región ha derivado hacia la semántica de cultivos”</em>).</p></li>
+<li><p>Mejora la interoperabilidad entre datos físicos y conceptuales.</p></li>
+<li><p>Integra la visión por computadora con la ontología geográfica.</p></li>
+</ul>
+<p>Estas capacidades abren el camino hacia una <strong>GeoIA semántica</strong>, capaz de interpretar, clasificar y predecir fenómenos territoriales desde un marco conceptual y no meramente espectral.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1><strong>9. Conclusión</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<p>En conclusión, los embeddings constituyen una expresión avanzada del campo de la geosemántica, específicamente dentro de la <strong>semántica estadística geoespacial</strong>.<br />
+A través de ellos, el territorio adquiere una representación vectorial en la que el significado se <strong>aprende de los datos</strong> y <strong>se mide como proximidad matemática</strong>.</p>
+<p>Este paradigma redefine la forma de hacer cartografía y análisis espacial:<br />
+ya no se trata solo de ver el territorio, sino de <strong>comprender su significado latente</strong> en el espacio vectorial del conocimiento geográfico.</p>
+</section>
+<hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="agradecimientos">
 <h1>Agradecimientos<a class="headerlink" href="#agradecimientos" title="Link to this heading">#</a></h1>
 <p>Este libro y recursos didácticos han sido desarrollados en el marco del grupo de investigación <strong>04/F023: Tecnologías de Datos Espaciales, Visualización y Realidad Virtual</strong>, Facultad de Informática, Universidad Nacional del Comahue.</p>
@@ -418,7 +562,7 @@ document.write(`
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Videos</p>
-<p>Los videos asociados a los distintos capítulos se produjeron con componentes de <strong>Adobe Creative Cloud</strong> <span id="id1">[<a class="reference internal" href="Referencias.html#id15" title="Adobe Inc. Adobe creative cloud. https://www.adobe.com/creativecloud.html, 2025. Suite de aplicaciones creativas. Especifique versión/plan utilizado.">Inc., 2025</a>]</span> —<strong>After Effects</strong> <span id="id2">[<a class="reference internal" href="Referencias.html#id16" title="Adobe Inc. Adobe after effects. https://www.adobe.com/products/aftereffects.html, 2025. Composición y motion graphics. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Illustrator</strong> <span id="id3">[<a class="reference internal" href="Referencias.html#id17" title="Adobe Inc. Adobe illustrator. https://www.adobe.com/products/illustrator.html, 2025. Diseño y gráficos vectoriales. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Audition</strong> <span id="id4">[<a class="reference internal" href="Referencias.html#id18" title="Adobe Inc. Adobe audition. https://www.adobe.com/products/audition.html, 2025. Edición y mezcla de audio. Indique versión utilizada.">Inc., 2025</a>]</span> y <strong>Media Encoder</strong> <span id="id5">[<a class="reference internal" href="Referencias.html#id19" title="Adobe Inc. Adobe media encoder. https://www.adobe.com/products/media-encoder.html, 2025. Ingesta, transcodificación y publicación. Indique versión utilizada.">Inc., 2025</a>]</span>—: <strong>After Effects</strong> para <em>animación</em> y <em>composición de gráficos en movimiento</em>; <strong>Illustrator</strong> para la <em>preparación de arte vectorial</em>; <strong>Audition</strong> para la <em>edición y mezcla de audio</em>; y <strong>Media Encoder</strong> para la <em>transcodificación</em> y <em>publicación de los másteres finales</em>. Adicionalmente, se utilizó <strong>Adobe Stock</strong> <span id="id6">[<a class="reference internal" href="Referencias.html#id20" title="Adobe Inc. Adobe stock. https://stock.adobe.com/, 2025. Banco de imágenes, videos y plantillas. Indique recursos/licencias utilizados.">Inc., 2025</a>]</span>; no obstante, una parte sustancial del trabajo consistió en la <em>adaptación de imágenes</em>, la <em>generación de nuevas</em> a partir de <em>material base</em> y la <em>integración de diversos recursos</em> durante la <em>edición de video</em>.</p>
+<p>Los videos asociados a los distintos capítulos se produjeron con componentes de <strong>Adobe Creative Cloud</strong> <span id="id6">[<a class="reference internal" href="Referencias.html#id15" title="Adobe Inc. Adobe creative cloud. https://www.adobe.com/creativecloud.html, 2025. Suite de aplicaciones creativas. Especifique versión/plan utilizado.">Inc., 2025</a>]</span> —<strong>After Effects</strong> <span id="id7">[<a class="reference internal" href="Referencias.html#id16" title="Adobe Inc. Adobe after effects. https://www.adobe.com/products/aftereffects.html, 2025. Composición y motion graphics. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Illustrator</strong> <span id="id8">[<a class="reference internal" href="Referencias.html#id17" title="Adobe Inc. Adobe illustrator. https://www.adobe.com/products/illustrator.html, 2025. Diseño y gráficos vectoriales. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Audition</strong> <span id="id9">[<a class="reference internal" href="Referencias.html#id18" title="Adobe Inc. Adobe audition. https://www.adobe.com/products/audition.html, 2025. Edición y mezcla de audio. Indique versión utilizada.">Inc., 2025</a>]</span> y <strong>Media Encoder</strong> <span id="id10">[<a class="reference internal" href="Referencias.html#id19" title="Adobe Inc. Adobe media encoder. https://www.adobe.com/products/media-encoder.html, 2025. Ingesta, transcodificación y publicación. Indique versión utilizada.">Inc., 2025</a>]</span>—: <strong>After Effects</strong> para <em>animación</em> y <em>composición de gráficos en movimiento</em>; <strong>Illustrator</strong> para la <em>preparación de arte vectorial</em>; <strong>Audition</strong> para la <em>edición y mezcla de audio</em>; y <strong>Media Encoder</strong> para la <em>transcodificación</em> y <em>publicación de los másteres finales</em>. Adicionalmente, se utilizó <strong>Adobe Stock</strong> <span id="id11">[<a class="reference internal" href="Referencias.html#id20" title="Adobe Inc. Adobe stock. https://stock.adobe.com/, 2025. Banco de imágenes, videos y plantillas. Indique recursos/licencias utilizados.">Inc., 2025</a>]</span>; no obstante, una parte sustancial del trabajo consistió en la <em>adaptación de imágenes</em>, la <em>generación de nuevas</em> a partir de <em>material base</em> y la <em>integración de diversos recursos</em> durante la <em>edición de video</em>.</p>
 </div>
 </div>
 </section>
@@ -438,19 +582,13 @@ document.write(`
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="embeddings.html">1. Capítulo 1: Embeddings satelitales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html#sim-s-x">2. sim
-(
-𝑠
-,
-𝑥
-)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html#mas">3. Mas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html#busqueda-agua">4. Busqueda: Agua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html#busqueda-hornos-de-ladrillo">5. Busqueda: Hornos de Ladrillo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">6. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">9. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#mas">2. Mas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#busqueda-agua">3. Busqueda: Agua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#busqueda-hornos-de-ladrillo">4. Busqueda: Hornos de Ladrillo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">5. Busqueda: Entrenamiento supervisado para cultivos (una aproximación)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">6. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">7. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">8. Bibliografía</a></li>
 </ul>
 </div>
 </section>
@@ -510,7 +648,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Prólogo e Introducción</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introducción</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-geosemantica-estadistica"><strong>Embeddings y Geosemántica Estadística</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>1. Los embeddings como fenómeno geosemántico</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-general"><strong>2. Introducción general</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica"><strong>3. Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>4. La semántica estadística como fundamento</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica"><strong>6. Hacia una geosemántica estadística</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>7. Comparación epistemológica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas"><strong>8. Implicaciones científicas y aplicadas</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>9. Conclusión</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">Agradecimientos</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sobre-este-libro">Sobre este libro</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#requerimientos">Requerimientos</a></li>

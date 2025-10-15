@@ -1,4 +1,119 @@
-# Prólogo e Introducción
+# Introducción
+
+
+# **Embeddings y Geosemántica Estadística**
+
+
+## **1. Los embeddings como fenómeno geosemántico**
+
+La **geosemántica** estudia cómo el significado (semántica) se representa y se procesa en relación con el espacio geográfico.  
+En este marco, los *embeddings* pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que **preservan relaciones de similitud semántica** entre regiones del territorio.
+
+Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.  
+Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.
+
+---
+
+## **2. Introducción general**
+
+Los *embeddings satelitales* constituyen una nueva frontera en la representación digital del territorio.  
+En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de **vectores de significado latente** aprendidos por modelos de *deep learning* sobre grandes volúmenes de datos satelitales.
+
+Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una **manifestación de la geosemántica**: una forma de codificar el *significado geográfico* directamente en el espacio matemático.
+
+---
+
+## **3. Los tres niveles de la geosemántica**
+
+La geosemántica contemporánea puede dividirse, de manera general, en tres niveles complementarios:
+
+| Nivel | Descripción | Ejemplo |
+|-------|--------------|----------|
+| **Formal o ontológico** | Basado en vocabularios controlados, ontologías y modelos conceptuales normalizados (p. ej. ISO 19150, INSPIRE, Catálogo de Objetos Geográficos de IDERA). | Ontologías de objetos geográficos, taxonomías de coberturas. |
+| **Lingüístico o textual** | Derivado del análisis de textos, descripciones o metadatos. | Extracción de entidades geográficas en corpus de texto. |
+| **Estadístico o latente** | Aprendido a partir de datos numéricos o imágenes mediante técnicas de aprendizaje automático. | Embeddings espectrales, espaciales o espacio-temporales. |
+
+Los *embeddings satelitales* pertenecen claramente al **tercer nivel**, el de la **semántica estadística o latente**, donde el significado no se define explícitamente, sino que **emerge de los patrones de correlación y coocurrencia** observados en los datos.
+
+---
+
+## **4. La semántica estadística como fundamento**
+
+El concepto de **semántica estadística** se origina en la lingüística computacional a mediados del siglo XX.  
+Autores como **Zellig Harris (1954)** y **J. R. Firth (1957)** formularon la hipótesis de distribución:  
+
+> *“El significado de una palabra puede inferirse de los contextos en los que aparece.”*
+
+En el dominio geoespacial, esta idea se traduce en una analogía poderosa:
+
+> *El significado de un píxel o región puede inferirse del contexto espectral, temporal y espacial que lo rodea.*
+
+Los modelos modernos de embeddings —como **Google Satellite Embedding V1**, **AlphaHertz** o **OneVision**— aprenden precisamente ese contexto.  
+Cada vector no representa ya un valor físico, sino una **posición semántica** en un espacio n-dimensional que captura similitudes de paisaje, uso, textura y dinámica ambiental.
+
+
+La noción de semántica estadística tiene su origen en la lingüística computacional, 
+particularmente en los trabajos pioneros de {cite}`harris1954distributional` y {cite}`firth1957linguistic`.  
+En el campo geoespacial, esta idea ha sido retomada recientemente por {cite}`goodchild2021semantic` 
+para conceptualizar una “geografía semántica” de la Tierra.  
+
+Los modelos de representación latente basados en observación satelital, 
+como {cite}`googleresearch2024satellite`, materializan esa visión en la práctica contemporánea.  
+En la comunidad latinoamericana, enfoques emergentes como {cite}`montero2025geoia` 
+proponen una integración conceptual entre geosemántica y aprendizaje automático.
+
+---
+
+
+# **6. Hacia una geosemántica estadística**
+
+Podemos hablar entonces de un nuevo subcampo: la **geosemántica estadística**, también denominada **semántica latente geoespacial**.  
+En este marco:
+- Los *embeddings* son las **unidades básicas de significado**.  
+- Las relaciones de **similitud coseno** sustituyen las jerarquías ontológicas.  
+- Las operaciones algebraicas (distancias, agrupamientos, proyecciones) permiten **razonar cuantitativamente sobre el significado del territorio**.
+
+Desde esta perspectiva, un píxel deja de ser una muestra de reflectancia: se convierte en un **vector de sentido geográfico**.  
+El análisis del territorio pasa de lo físico a lo semántico.
+
+---
+
+# **7. Comparación epistemológica**
+
+| Enfoque | Naturaleza del significado | Mecanismo de inferencia |
+|----------|-----------------------------|--------------------------|
+| **Geosemántica clásica** | Definido explícitamente por expertos o estándares (ontologías, taxonomías). | Declarativo (conceptos definidos manualmente). |
+| **Geosemántica estadística** | Aprendido implícitamente a partir de correlaciones en datos geoespaciales. | Inductivo (patrones descubiertos por aprendizaje automático). |
+
+Ambos enfoques son complementarios:  
+- La **geosemántica formal** proporciona interpretabilidad y trazabilidad.  
+- La **geosemántica estadística** aporta capacidad de descubrimiento y generalización.
+
+---
+
+# **8. Implicaciones científicas y aplicadas**
+
+Los embeddings permiten crear **espacios semánticos del planeta**, donde cada vector describe el “contexto” de un punto de la superficie terrestre.  
+En este sentido, constituyen una infraestructura cognitiva que:
+- Facilita búsquedas semánticas (*“lugares similares a estos humedales”*).  
+- Permite detectar cambios contextuales (*“esta región ha derivado hacia la semántica de cultivos”*).  
+- Mejora la interoperabilidad entre datos físicos y conceptuales.  
+- Integra la visión por computadora con la ontología geográfica.
+
+Estas capacidades abren el camino hacia una **GeoIA semántica**, capaz de interpretar, clasificar y predecir fenómenos territoriales desde un marco conceptual y no meramente espectral.
+
+---
+
+# **9. Conclusión**
+
+En conclusión, los embeddings constituyen una expresión avanzada del campo de la geosemántica, específicamente dentro de la **semántica estadística geoespacial**.  
+A través de ellos, el territorio adquiere una representación vectorial en la que el significado se **aprende de los datos** y **se mide como proximidad matemática**.
+
+Este paradigma redefine la forma de hacer cartografía y análisis espacial:  
+ya no se trata solo de ver el territorio, sino de **comprender su significado latente** en el espacio vectorial del conocimiento geográfico.
+
+---
+
 
 
 # Agradecimientos

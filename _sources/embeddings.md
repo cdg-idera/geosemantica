@@ -22,13 +22,24 @@ De este modo, el planeta *deja de ser una grilla de reflectancias* y *se convier
 
 En términos formales, un embedding es una función:
 
-f:X→Rnf: X \rightarrow \mathbb{R}^nf:X→Rn 
+```{math}
+f: X \rightarrow \mathbb{R}^n
+```
 
-donde 
-𝑋
-X representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.
-La función f
-f se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.
+donde:
+- \( X \) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales, o escenas completas—, y Rn\mathbb{R}^nRn es un espacio vectorial latente.
+- \( \mathbb{R}^n \) es el espacio vectorial de características latentes.
+- Cada punto \( f(x) \) es un vector que codifica información contextual de \( x \).
+
+La similitud entre dos vectores \( \mathbf{s} \) y \( \mathbf{x} \) puede calcularse mediante la **similitud coseno**, una medida clásica de semántica estadística:
+
+```{math}
+\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }
+```
+
+Esta métrica cuantifica el grado de afinidad semántica entre dos regiones del espacio geográfico, independientemente de su escala o magnitud.
+
+La función $f$ se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas. Su objetivo no es clasificar directamente, sino aprender una representación comprimida y significativa de los datos.
 
 En el dominio de la Observación de la Tierra (EO), esto significa que:
 
@@ -57,31 +68,8 @@ s (por ejemplo, el promedio de los embeddings de un conjunto de polígonos de ag
 𝑥
 x, la similitud se define como:
 
-sim
-(
-𝑠
-,
-𝑥
-)
-=
-𝑠
-⋅
-𝑥
-∣
-∣
-𝑠
-∣
-∣
- 
-∣
-∣
-𝑥
-∣
-∣
-sim(s,x)=
-∣∣s∣∣∣∣x∣∣
-s⋅x
-	​
+$$\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{ \| \mathbf{s} \| \, \| \mathbf{x} \| }$$
+
 
 
 Este valor se reescala a [0,1], donde 1 indica máxima similitud semántica.
