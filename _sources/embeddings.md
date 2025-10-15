@@ -45,9 +45,9 @@ En términos formales, un *embedding* es una función:
 f: X \rightarrow \mathbb{R}^n
 ```
 
-donde \( X \) representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales o escenas completas—,  
-y \( \mathbb{R}^n \) es un espacio vectorial latente.  
-La función \( f \) se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas.  
+donde $X$ representa un conjunto de observaciones complejas —imágenes multiespectrales, series temporales o escenas completas—,  
+y $\mathbb{R}^n$ es un espacio vectorial latente.  
+La función $f$ se aprende a partir de grandes volúmenes de datos mediante redes neuronales profundas.  
 
 Su objetivo no es clasificar directamente, sino **aprender una representación comprimida y significativa** de los datos.
 
