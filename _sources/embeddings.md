@@ -67,6 +67,14 @@ así como los modelos lingüísticos aprenden que *"rey" - "hombre" + "mujer" �
 concepto de embeddings en un espacio multidimensional
 ```
 
+Un **campo de embedding** es la *matriz continua* o *“campo” de embeddings aprendidas*. Las imágenes de las colecciones de campos de embedding representan trayectorias espacio-temporales que abarcan un año completo y tienen 64 bandas (una para cada dimensión de incrustación).
+
+```{figure} imagenes/embedding_field_1.jpg
+:name: fig-embeddingfield1
+:width: 80%
+
+vector de incrustación n-dimensional muestreado de un campo de incrustación *embedding*
+```
 
 **3. Modelos fundacionales y embeddings satelitales**
 
