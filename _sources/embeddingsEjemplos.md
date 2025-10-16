@@ -1,4 +1,4 @@
-# Capítulo 3: Algunas Aplicaciones de Embeddings
+# Capítulo 4: Algunas Aplicaciones de Embeddings
 
 ## Embeddings satelitales como puente entre percepción y semántica
 

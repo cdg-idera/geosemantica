@@ -1,4 +1,4 @@
-# Entrenamiento no supervisado
+# Capítulo 3: Entrenamiento no supervisado
 
 En este capítulo aplicaremos un algoritmo de clustering no supervisado (basado en el algoritmo K-means) modificando ligeramente el código de un tutorial de GEE.
 
