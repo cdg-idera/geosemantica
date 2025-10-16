@@ -1,4 +1,4 @@
-# Capítulo 1: Modelos Fundacionales en Observación de la Tierra (FM4EO)
+# Capítulo 1: **Modelos Fundacionales en Observación de la Tierra (FM4EO)**
 
 Los modelos **OneVision**, **Prithvi** y **AlphaHertz** constituyen ejemplos destacados de **modelos fundacionales (foundational models)** aplicados al campo de la **Observación de la Tierra (EO, Earth Observation)**.
 

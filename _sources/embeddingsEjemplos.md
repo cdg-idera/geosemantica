@@ -1,4 +1,4 @@
-# Capítulo 4: Entrenamientos Supervisados con Embeddings
+# Capítulo 4: **Entrenamientos Supervisados con Embeddings**
 
 ## Embeddings satelitales como puente entre percepción y semántica
 
