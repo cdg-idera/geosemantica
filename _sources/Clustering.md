@@ -239,13 +239,14 @@ El siguiente fragmento define la región de interés (ROI) correspondiente al De
 ````
 
 
-## Propuesta metodológica sobre la representación del pipeline algorítmico
+## Propuesta metodológica: Representación del pipeline algorítmico
 
-En el campo de la Observación de la Tierra (EO), representar formalmente el flujo algorítmico mediante **pipelines matemáticos** permite articular la lógica computacional con el razonamiento analítico.  
-Este tipo de esquemas no solo sintetiza la **secuencia de operaciones** del algoritmo, sino que también **explicita las dependencias entre variables**, los objetos intermedios del proceso (\(\mathbf{X}_t\), \(\tilde{\mathbf{X}}_t\), \(\mathcal{D}\), \(\mathcal{C}\)), y la estructura conceptual que subyace al aprendizaje no supervisado.  
+En el campo de la Observación de la Tierra (EO), representar formalmente el flujo algorítmico mediante **pipelines matemáticos** permite *articular la lógica computacional con el razonamiento analítico*.  
+Este tipo de esquemas no solo sintetiza la **secuencia de operaciones** del algoritmo, sino que también **explicita las dependencias entre variables**, los objetos intermedios del proceso ($\mathbf{X}_t$, $\tilde{\mathbf{X}}_t$, $\mathcal{D}$, $\mathcal{C}$), y la estructura conceptual que subyace al aprendizaje no supervisado.  
 
-Desde una perspectiva metodológica, esta representación fomenta una **comprensión abstracta y reproducible** del procedimiento: facilita la trazabilidad, el análisis comparativo entre enfoques y la integración de distintas fuentes o niveles de representación.  
-En última instancia, el pipeline actúa como un **puente entre el pensamiento matemático y el pensamiento algorítmico**, contribuyendo a formalizar las etapas del análisis geosemántico y a consolidar un lenguaje común entre la ciencia de datos y la geoinformática.
+Desde una perspectiva metodológica, esta representación fomenta una **comprensión abstracta y reproducible** del procedimiento: *facilita la trazabilidad*, el *análisis comparativo entre enfoques* y la *integración de distintas fuentes o niveles de representación*.  
+
+En última instancia, el pipeline actúa como un **puente entre el pensamiento matemático y el pensamiento algorítmico**, contribuyendo a formalizar las etapas del análisis geosemántico y a consolidar un lenguaje común entre la **ciencia de datos geoespaciales** y la **geoAI**.
 
 ### Esquema/Pipeline del Algoritmo
 
