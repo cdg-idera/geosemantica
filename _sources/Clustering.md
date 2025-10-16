@@ -296,7 +296,7 @@ y donde $\mathcal{D}$ y de $\mathcal{C}$ significan:
 | $\mathcal{D}$ | Conjunto de datos de entrenamiento obtenido por muestreo aleatorio de píxeles del mosaico $\tilde{\mathbf{X}}_t$. Contiene los vectores de embedding usados para ajustar el modelo de *clustering*. |
 | $\mathcal{C}$ | Modelo de *clustering* no supervisado (K-Means) entrenado sobre $\mathcal{D}$, que define los centroides y asignaciones de cada grupo en el espacio semántico. |
 
+## Cierre
 
-
-
-Es, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.
+El algoritmo mostrado en este capítulo, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.
+A su vez, la **representación formal del pipeline subyacente** aporta un componente metodológico clave: permite **visualizar y modelar la secuencia lógica del algoritmo**, conectar sus etapas con los objetos matemáticos intermedios y establecer un marco reproducible que *fortalece la comprensión conceptual* del *proceso de aprendizaje no supervisado en Observación de la Tierra (EO)*.
