@@ -46,7 +46,7 @@ En el dominio geoespacial, esta idea se traduce en una analogía poderosa:
 
 > *El significado de un píxel o región puede inferirse del contexto espectral, temporal y espacial que lo rodea.*
 
-Los modelos modernos de embeddings —como **Google Satellite Embedding V1**, **AlphaHertz** o **OneVision**— aprenden precisamente ese contexto.  
+Los modelos modernos de embeddings —como **Google Satellite Embedding V1** {cite}`Brown2025AlphaEarth`, **AlphaHertz** o **OneVision**— aprenden precisamente ese contexto.  
 Cada vector no representa ya un valor físico, sino una **posición semántica** en un espacio n-dimensional que captura similitudes de paisaje, uso, textura y dinámica ambiental.
 
 

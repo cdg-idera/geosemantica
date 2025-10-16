@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -181,10 +181,11 @@
 
 <li class="toctree-l1"><a class="reference internal" href="embeddings.html">3. Capítulo 2: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">5. Capítulo 3 · Ejemplos de Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">6. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">7. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">8. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">5. Capítulo 2 · Entrenamiento no-supervisado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">6. Capítulo 3 · Ejemplos de Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">9. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -464,15 +465,15 @@ Autores como <strong>Zellig Harris (1954)</strong> y <strong>J. R. Firth (1957)<
 <blockquote>
 <div><p><em>El significado de un píxel o región puede inferirse del contexto espectral, temporal y espacial que lo rodea.</em></p>
 </div></blockquote>
-<p>Los modelos modernos de embeddings —como <strong>Google Satellite Embedding V1</strong>, <strong>AlphaHertz</strong> o <strong>OneVision</strong>— aprenden precisamente ese contexto.<br />
+<p>Los modelos modernos de embeddings —como <strong>Google Satellite Embedding V1</strong> <span id="id1">[]</span>, <strong>AlphaHertz</strong> o <strong>OneVision</strong>— aprenden precisamente ese contexto.<br />
 Cada vector no representa ya un valor físico, sino una <strong>posición semántica</strong> en un espacio n-dimensional que captura similitudes de paisaje, uso, textura y dinámica ambiental.</p>
 <p>La noción de semántica estadística tiene su origen en la lingüística computacional,
-particularmente en los trabajos pioneros de <span id="id1">[<a class="reference internal" href="Referencias.html#id39" title="Zellig Harris. Distributional structure. Word, 10(2-3):146–162, 1954. doi:10.1080/00437956.1954.11659520.">Harris, 1954</a>]</span> y <span id="id2">[<a class="reference internal" href="Referencias.html#id40" title="John Rupert Firth. A synopsis of linguistic theory 1930–1955. In Studies in Linguistic Analysis. Philological Society, Oxford, 1957.">Firth, 1957</a>]</span>.<br />
-En el campo geoespacial, esta idea ha sido retomada recientemente por <span id="id3">[<a class="reference internal" href="Referencias.html#id41" title="Michael F. Goodchild. Reimagining the semantic geography of the earth. International Journal of Geographical Information Science, 35(6):1181–1197, 2021. doi:10.1080/13658816.2021.1893331.">Goodchild, 2021</a>]</span>
+particularmente en los trabajos pioneros de <span id="id2">[<a class="reference internal" href="Referencias.html#id39" title="Zellig Harris. Distributional structure. Word, 10(2-3):146–162, 1954. doi:10.1080/00437956.1954.11659520.">Harris, 1954</a>]</span> y <span id="id3">[<a class="reference internal" href="Referencias.html#id40" title="John Rupert Firth. A synopsis of linguistic theory 1930–1955. In Studies in Linguistic Analysis. Philological Society, Oxford, 1957.">Firth, 1957</a>]</span>.<br />
+En el campo geoespacial, esta idea ha sido retomada recientemente por <span id="id4">[<a class="reference internal" href="Referencias.html#id41" title="Michael F. Goodchild. Reimagining the semantic geography of the earth. International Journal of Geographical Information Science, 35(6):1181–1197, 2021. doi:10.1080/13658816.2021.1893331.">Goodchild, 2021</a>]</span>
 para conceptualizar una “geografía semántica” de la Tierra.</p>
 <p>Los modelos de representación latente basados en observación satelital,
-como <span id="id4">[<a class="reference internal" href="Referencias.html#id42" title="Google Research. Satellite embeddings v1: a global, multimodal representation of the planet. Technical Report, 2024. Available at: https://research.google/.">Google Research, 2024</a>]</span>, materializan esa visión en la práctica contemporánea.<br />
-En la comunidad latinoamericana, enfoques emergentes como <span id="id5">[]</span>
+como <span id="id5">[<a class="reference internal" href="Referencias.html#id42" title="Google Research. Satellite embeddings v1: a global, multimodal representation of the planet. Technical Report, 2024. Available at: https://research.google/.">Google Research, 2024</a>]</span>, materializan esa visión en la práctica contemporánea.<br />
+En la comunidad latinoamericana, enfoques emergentes como <span id="id6">[]</span>
 proponen una integración conceptual entre geosemántica y aprendizaje automático.</p>
 </section>
 </section>
@@ -558,7 +559,7 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Videos</p>
-<p>Los videos asociados a los distintos capítulos se produjeron con componentes de <strong>Adobe Creative Cloud</strong> <span id="id6">[<a class="reference internal" href="Referencias.html#id15" title="Adobe Inc. Adobe creative cloud. https://www.adobe.com/creativecloud.html, 2025. Suite de aplicaciones creativas. Especifique versión/plan utilizado.">Inc., 2025</a>]</span> —<strong>After Effects</strong> <span id="id7">[<a class="reference internal" href="Referencias.html#id16" title="Adobe Inc. Adobe after effects. https://www.adobe.com/products/aftereffects.html, 2025. Composición y motion graphics. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Illustrator</strong> <span id="id8">[<a class="reference internal" href="Referencias.html#id17" title="Adobe Inc. Adobe illustrator. https://www.adobe.com/products/illustrator.html, 2025. Diseño y gráficos vectoriales. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Audition</strong> <span id="id9">[<a class="reference internal" href="Referencias.html#id18" title="Adobe Inc. Adobe audition. https://www.adobe.com/products/audition.html, 2025. Edición y mezcla de audio. Indique versión utilizada.">Inc., 2025</a>]</span> y <strong>Media Encoder</strong> <span id="id10">[<a class="reference internal" href="Referencias.html#id19" title="Adobe Inc. Adobe media encoder. https://www.adobe.com/products/media-encoder.html, 2025. Ingesta, transcodificación y publicación. Indique versión utilizada.">Inc., 2025</a>]</span>—: <strong>After Effects</strong> para <em>animación</em> y <em>composición de gráficos en movimiento</em>; <strong>Illustrator</strong> para la <em>preparación de arte vectorial</em>; <strong>Audition</strong> para la <em>edición y mezcla de audio</em>; y <strong>Media Encoder</strong> para la <em>transcodificación</em> y <em>publicación de los másteres finales</em>. Adicionalmente, se utilizó <strong>Adobe Stock</strong> <span id="id11">[<a class="reference internal" href="Referencias.html#id20" title="Adobe Inc. Adobe stock. https://stock.adobe.com/, 2025. Banco de imágenes, videos y plantillas. Indique recursos/licencias utilizados.">Inc., 2025</a>]</span>; no obstante, una parte sustancial del trabajo consistió en la <em>adaptación de imágenes</em>, la <em>generación de nuevas</em> a partir de <em>material base</em> y la <em>integración de diversos recursos</em> durante la <em>edición de video</em>.</p>
+<p>Los videos asociados a los distintos capítulos se produjeron con componentes de <strong>Adobe Creative Cloud</strong> <span id="id7">[<a class="reference internal" href="Referencias.html#id15" title="Adobe Inc. Adobe creative cloud. https://www.adobe.com/creativecloud.html, 2025. Suite de aplicaciones creativas. Especifique versión/plan utilizado.">Inc., 2025</a>]</span> —<strong>After Effects</strong> <span id="id8">[<a class="reference internal" href="Referencias.html#id16" title="Adobe Inc. Adobe after effects. https://www.adobe.com/products/aftereffects.html, 2025. Composición y motion graphics. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Illustrator</strong> <span id="id9">[<a class="reference internal" href="Referencias.html#id17" title="Adobe Inc. Adobe illustrator. https://www.adobe.com/products/illustrator.html, 2025. Diseño y gráficos vectoriales. Indique versión utilizada.">Inc., 2025</a>]</span>, <strong>Audition</strong> <span id="id10">[<a class="reference internal" href="Referencias.html#id18" title="Adobe Inc. Adobe audition. https://www.adobe.com/products/audition.html, 2025. Edición y mezcla de audio. Indique versión utilizada.">Inc., 2025</a>]</span> y <strong>Media Encoder</strong> <span id="id11">[<a class="reference internal" href="Referencias.html#id19" title="Adobe Inc. Adobe media encoder. https://www.adobe.com/products/media-encoder.html, 2025. Ingesta, transcodificación y publicación. Indique versión utilizada.">Inc., 2025</a>]</span>—: <strong>After Effects</strong> para <em>animación</em> y <em>composición de gráficos en movimiento</em>; <strong>Illustrator</strong> para la <em>preparación de arte vectorial</em>; <strong>Audition</strong> para la <em>edición y mezcla de audio</em>; y <strong>Media Encoder</strong> para la <em>transcodificación</em> y <em>publicación de los másteres finales</em>. Adicionalmente, se utilizó <strong>Adobe Stock</strong> <span id="id12">[<a class="reference internal" href="Referencias.html#id20" title="Adobe Inc. Adobe stock. https://stock.adobe.com/, 2025. Banco de imágenes, videos y plantillas. Indique recursos/licencias utilizados.">Inc., 2025</a>]</span>; no obstante, una parte sustancial del trabajo consistió en la <em>adaptación de imágenes</em>, la <em>generación de nuevas</em> a partir de <em>material base</em> y la <em>integración de diversos recursos</em> durante la <em>edición de video</em>.</p>
 </div>
 </div>
 </section>
@@ -581,10 +582,11 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
 <li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html#modelos-fundacionales-en-observacion-de-la-tierra">2. Modelos Fundacionales en Observación de la Tierra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embeddings.html">3. Capítulo 2: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="embeddings.html#consideraciones-metodologicas-y-recomendaciones-practicas">4. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">5. Capítulo 3 · Ejemplos de Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">6. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">7. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">8. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">5. Capítulo 2 · Entrenamiento no-supervisado</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">6. Capítulo 3 · Ejemplos de Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">9. Bibliografía</a></li>
 </ul>
 </div>
 </section>

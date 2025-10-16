@@ -4,7 +4,7 @@
 
 En teledetección, la transición **del píxel al concepto** exige representaciones que capten no solo reflectancias puntuales sino también **patrones espaciales, temporales y contextuales**. Los *embeddings satelitales* cumplen ese rol: proyectan cada píxel/región a un **espacio latente** de dimensión fija donde **proximidad geométrica ≈ similitud semántica**. Esta capa intermedia —aprendida mediante auto-supervisión a gran escala— habilita operaciones que antes dependían de umbrales rígidos o reglas ad-hoc: **búsqueda por similitud**, **transferencia a nuevas zonas/fechas** y **clasificación con menos etiquetas**.
 
-Este capítulo muestra **cómo operacionalizar embeddings** en flujos de trabajo reproducibles sobre Google Earth Engine (GEE), combinándolos con índices espectrales, radar y máscaras temáticas. Reúne tres casos complementarios:
+Este capítulo muestra **cómo operacionalizar embeddings** {cite}`Brown2025AlphaEarth` de GEE en flujos de trabajo reproducibles sobre Google Earth Engine (GEE), combinándolos con índices espectrales, radar y máscaras temáticas. Reúne tres casos complementarios:
 
 1) **Búsqueda: Agua por similitud coseno.**  
    Usamos un conjunto de polígonos de referencia (lagos/embalses) para construir vectores de “prototipo” y localizar, por **similitud coseno**, regiones del territorio que “se parecen” estadísticamente al agua. El resultado se expresa como **isócronas de similitud** (≥ 98 %, ≥ 99 %, ≈ 100 %), con opción de enmascarar usando **JRC Global Surface Water**.

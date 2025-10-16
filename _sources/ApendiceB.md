@@ -1,8 +1,10 @@
 # Tutorial GEE: Introduction to the Satellite Embedding Dataset
 
-Este tutorial forma parte de una serie de tutoriales sobre el conjunto de datos de embedding satelital. Consulte también Clasificación no supervisada, Clasificación supervisada, Regresión y Búsqueda por similitud.
+El presente apéndice es una traducción de tutoriales de Google Earth Engine sobre Embeddings, con el objetivo de facilitar la lectura y aplicación de los mismos. url: https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-01-introduction
 
-AlphaEarth Foundations de Google es un modelo de incrustación geoespacial entrenado con diversos conjuntos de datos de observación de la Tierra (EO). El modelo se ha ejecutado con series temporales anuales de imágenes y las incrustaciones resultantes están disponibles como un conjunto de datos listo para su análisis en Earth Engine. Este conjunto de datos permite a los usuarios crear cualquier cantidad de aplicaciones de ajuste u otras tareas sin ejecutar modelos de aprendizaje profundo de alto coste computacional. El resultado es un conjunto de datos de propósito general que puede utilizarse para diversas tareas posteriores, como:
+Este tutorial forma parte de una serie de tutoriales sobre el conjunto de datos de embedding satelital. Consulte también *Clasificación no supervisada*, *Clasificación supervisada*, *Regresión* y *Búsqueda por similitud*.
+
+**AlphaEarth Foundations** de *Google* es un modelo de embedding geoespacial *entrenado* con diversos conjuntos de datos de observación de la Tierra (EO). El modelo se ha ejecutado con series temporales anuales de imágenes y los embeddings resultantes están disponibles como un *conjunto de datos* listo para su análisis en **Earth Engine**. Este conjunto de datos permite a los usuarios crear cualquier cantidad de aplicaciones de ajuste (*fine-tunning applications*) u otras tareas *sin ejecutar modelos de aprendizaje profundo de alto coste computacional*. El resultado es un conjunto de datos de propósito general que puede utilizarse para diversas tareas posteriores, como:
 
 * Clasificación
 * Regresión
@@ -13,11 +15,11 @@ En este tutorial, comprenderemos cómo funcionan las incrustaciones y aprenderem
 
 ## Comprendiendo los embeddings
 
-Las incrustaciones son una forma de comprimir grandes cantidades de información en un conjunto más pequeño de características que representan una semántica significativa. El modelo AlphaEarth Foundations toma series temporales de imágenes de sensores como Sentinel-2, Sentinel-1 y Landsat y aprende a representar de forma única la información mutua entre fuentes y objetivos con tan solo 64 números (más información en el artículo). El flujo de datos de entrada contiene miles de bandas de imágenes de múltiples sensores y el modelo toma esta entrada de alta dimensión y la convierte en una representación de menor dimensión.
+Las incrustaciones son una forma de comprimir grandes cantidades de información en un conjunto más pequeño de características que representan una semántica significativa. El modelo **AlphaEarth Foundations** toma *series temporales* de *imágenes de sensores* como *Sentinel-2*, *Sentinel-1* y *Landsat* y aprende a representar de forma única la información mutua entre fuentes y objetivos con tan solo 64 números (más información en el artículo). El flujo de datos de entrada contiene miles de bandas de imágenes de múltiples sensores y el modelo toma esta entrada de alta dimensión y la convierte en una representación de menor dimensión.
 
-Un buen modelo mental para comprender el funcionamiento de AlphaEarth Foundations es una técnica denominada Análisis de Componentes Principales (PCA). El PCA también ayuda a reducir la dimensionalidad de los datos para aplicaciones de aprendizaje automático. Mientras que el PCA es una técnica estadística que permite comprimir decenas de bandas de entrada en unos pocos componentes principales, AlphaEarth Foundations es un modelo de aprendizaje profundo que puede tomar miles de dimensiones de entrada de conjuntos de datos de series temporales multisensor y aprende a crear una representación de 64 bandas que captura de forma única la variabilidad espacial y temporal de ese píxel.
+Un buen modelo mental para comprender el funcionamiento de AlphaEarth Foundations es una técnica denominada Análisis de Componentes Principales (PCA). El PCA también ayuda a reducir la dimensionalidad de los datos para aplicaciones de aprendizaje automático. Mientras que el PCA es una técnica estadística que permite comprimir decenas de bandas de entrada en unos pocos componentes principales, AlphaEarth Foundations es un **modelo de aprendizaje profundo** que puede tomar miles de dimensiones de entrada de conjuntos de datos de series temporales multisensor y aprende a crear una representación de 64 bandas que captura de forma única la variabilidad espacial y temporal de ese píxel.
 
-Un campo de embedding es la matriz continua o "campo" de embeddings aprendidas. Las imágenes de las colecciones de campos de embedding representan trayectorias espacio-temporales que abarcan un año completo y tienen 64 bandas (una para cada dimensión de incrustación).
+Un **campo de embedding** es la *matriz continua* o "campo" de embeddings aprendidas. Las imágenes de las colecciones de campos de embedding representan trayectorias espacio-temporales que abarcan un año completo y tienen 64 bandas (una para cada dimensión de incrustación).
 
 ```{figure} imagenes/embedding_field_1.jpg
 :name: fig-embeddingfield1
@@ -29,7 +31,7 @@ vector de incrustación n-dimensional muestreado de un campo de incrustación *e
 
 ## Acceso al conjunto de datos de incrustación de satélites
 
-El conjunto de datos de incrustación de satélites es una colección de imágenes anuales desde 2017 en adelante (p. ej., 2017, 2018, 2019, etc.). Cada imagen tiene 64 bandas, donde cada píxel es el vector de incrustación que representa la serie temporal multisensor para el año en cuestión.
+El conjunto de datos de incrustación de satélites {cite}`Brown2025AlphaEarth` es una colección de imágenes anuales desde 2017 en adelante (p. ej., 2017, 2018, 2019, etc.). Cada imagen tiene 64 bandas, donde cada píxel es el vector de incrustación que representa la serie temporal multisensor para el año en cuestión.
 
 ```javascript
 var embeddings = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL');
