@@ -37,7 +37,7 @@ var embeddings = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL');
 
 ### Definición de la región de estudio (ROI)
 
-* Se utiliza la capa **GAUL (FAO)** {cite}`FAO_GAUL_2015` de divisiones administrativas **nivel 1** para seleccionar la provincia de Neuquén.
+* Se utiliza la capa **GAUL (FAO)** {cite}`FAOGAUL2015` de divisiones administrativas **nivel 1** para seleccionar la provincia de Neuquén.
 
 * Este geometry será el **área de estudio** para filtrar el embedding y extraer muestras.
 
@@ -206,7 +206,7 @@ Map.addLayer(cluster10.randomVisualizer().clip(geometry), {}, ' 10 clusters');
 ````{admonition} ¿Te interesa hacer un *clustering* para otras provincias?
 :class: tip 
 
-El siguiente script te permite listar los nombres de las provincias según la base de FAO {cite}`FAO_GAUL_2015`, simplemente modificá el nombre de la provincia y volvé a ejecutar el código.
+El siguiente script te permite listar los nombres de las provincias según la base de FAO {cite}`FAOGAUL2015`, simplemente modificá el nombre de la provincia y volvé a ejecutar el código.
 
 ```javascript
 // Colección GAUL nivel 1 (provincias)
@@ -226,7 +226,7 @@ print('Provincias de Argentina:', provinceNames);
 ````{admonition} ¿Te interesa hacer un *clustering* por Departamento de una provincia?
 :class: tip 
 
-El script **EmbeddingsClusterDepartamento** te permite analizar el *clustering* por departamentos de la base FAO {cite}`FAO_GAUL_2015`.  
+El script **EmbeddingsClusterDepartamento** te permite analizar el *clustering* por departamentos de la base FAO {cite}`FAOGAUL2015`.  
 El siguiente fragmento define la región de interés (ROI) correspondiente al Departamento **Confluencia** de la provincia de **Neuquén**.
 
 ```javascript
