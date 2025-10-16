@@ -16,67 +16,6 @@ Este código:
 * Aplica clustering K-Means no supervisado.
 * Visualiza distintas segmentaciones (3, 5, 10 grupos).
 
-## Esquema/Pipeline del Algoritmo
-
-$$
-\underbrace{(\text{ROI},\ t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
-\xrightarrow[\text{filter}(t),\ \text{bounds(ROI)}]{\text{SATELLITE\_EMBEDDING V1 (ANNUAL)}}
-\mathbf{X}_t
-\xrightarrow[\text{mosaic}]{}
-\tilde{\mathbf{X}}_t
-\xrightarrow[\text{sample}(n_{\text{samples}},\ \text{scale}=10)]{}
-\mathcal{D}
-\xrightarrow[\text{train}]{\text{K-Means}(k)}
-\mathcal{C}
-\xrightarrow[\text{cluster}]{\mathcal{C}(\tilde{\mathbf{X}}_t)}
-\text{Raster de clústeres }(k\in\{3,5,10\})
-\xrightarrow[\text{randomVisualizer(), clip(ROI)}]{\text{Map.addLayer}}
-\text{Visualización}
-$$
-
-
-Donde: 
-
-$$
-\underbrace{(\text{ROI},\ \text{año }t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
-$$
-
-
-| **Símbolo** | **Significado en el pipeline** |
-|:-------------|:-------------------------------|
-| $ROI$ | Región de interés: la geometría espacial filtrada por provincia o departamento (variable `geometry`). |
-| $t$ | Año seleccionado del embedding satelital (por ejemplo, `year = 2024`). |
-| $k$ | Número de clústeres definidos para el algoritmo K-Means (`nClusters = 3, 5, 10`). |
-| $n_{\mathrm{samples}}$ | Cantidad de muestras aleatorias extraídas para entrenar el modelo (`numPixels = 1000`). |
-
-y  $\mathbf{X}_t$ y $\tilde{\mathbf{X}}_t$ significan:
-
-| **Símbolo** | **Significado** |
-|:-------------|:----------------|
-| $\mathbf{X}_t$ | Embedding satelital anual filtrado por tiempo \(t\) y región ROI. |
-| $\tilde{\mathbf{X}}_t$ | Mosaico del embedding anual en la ROI, usado para muestreo y *clustering*. |
-
-
-y donde $\mathcal{D}$ y de $\mathcal{C}$ significan:
-
-| **Símbolo** | **Significado** |
-|:-------------|:----------------|
-| $\mathcal{D}$ | Conjunto de datos de entrenamiento obtenido por muestreo aleatorio de píxeles del mosaico $\tilde{\mathbf{X}}_t$. Contiene los vectores de embedding usados para ajustar el modelo de *clustering*. |
-| $\mathcal{C}$ | Modelo de *clustering* no supervisado (K-Means) entrenado sobre $\mathcal{D}$, que define los centroides y asignaciones de cada grupo en el espacio semántico. |
-
-
-```{admonition} 💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?
-:class: tip
-
-En un *clustering* no supervisado no se necesitan etiquetas, sino **muestras representativas** del territorio.  
-El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.  
-Aplicar *K-Means* sobre toda la imagen sería **computacionalmente costoso e innecesario**, ya que muchos píxeles vecinos comparten valores muy similares.  
-Con una muestra bien distribuida, el algoritmo puede estimar **centroides robustos** y luego asignar cada píxel de la imagen completa al clúster más cercano.
-```
-
-
-Es, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.
-
 ## El algoritmo de clustering (entrenamiento no supervisado)
 
 ### Acceso al dataset de *Satellite Embeddings*
@@ -288,3 +227,73 @@ El siguiente fragmento define la región de interés (ROI) correspondiente al De
 ```
 
 ````
+
+
+## Propuesta metodológica sobre la representación del pipeline algorítmico
+
+En el campo de la Observación de la Tierra (EO), representar formalmente el flujo algorítmico mediante **pipelines matemáticos** permite articular la lógica computacional con el razonamiento analítico.  
+Este tipo de esquemas no solo sintetiza la **secuencia de operaciones** del algoritmo, sino que también **explicita las dependencias entre variables**, los objetos intermedios del proceso (\(\mathbf{X}_t\), \(\tilde{\mathbf{X}}_t\), \(\mathcal{D}\), \(\mathcal{C}\)), y la estructura conceptual que subyace al aprendizaje no supervisado.  
+
+Desde una perspectiva metodológica, esta representación fomenta una **comprensión abstracta y reproducible** del procedimiento: facilita la trazabilidad, el análisis comparativo entre enfoques y la integración de distintas fuentes o niveles de representación.  
+En última instancia, el pipeline actúa como un **puente entre el pensamiento matemático y el pensamiento algorítmico**, contribuyendo a formalizar las etapas del análisis geosemántico y a consolidar un lenguaje común entre la ciencia de datos y la geoinformática.
+
+### Esquema/Pipeline del Algoritmo
+
+$$
+\underbrace{(\text{ROI},\ t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
+\xrightarrow[\text{filter}(t),\ \text{bounds(ROI)}]{\text{SATELLITE\_EMBEDDING V1 (ANNUAL)}}
+\mathbf{X}_t
+\xrightarrow[\text{mosaic}]{}
+\tilde{\mathbf{X}}_t
+\xrightarrow[\text{sample}(n_{\text{samples}},\ \text{scale}=10)]{}
+\mathcal{D}
+\xrightarrow[\text{train}]{\text{K-Means}(k)}
+\mathcal{C}
+\xrightarrow[\text{cluster}]{\mathcal{C}(\tilde{\mathbf{X}}_t)}
+\text{Raster de clústeres }(k\in\{3,5,10\})
+\xrightarrow[\text{randomVisualizer(), clip(ROI)}]{\text{Map.addLayer}}
+\text{Visualización}
+$$
+
+
+Donde: 
+
+$$
+\underbrace{(\text{ROI},\ \text{año }t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
+$$
+
+
+| **Símbolo** | **Significado en el pipeline** |
+|:-------------|:-------------------------------|
+| $ROI$ | Región de interés: la geometría espacial filtrada por provincia o departamento (variable `geometry`). |
+| $t$ | Año seleccionado del embedding satelital (por ejemplo, `year = 2024`). |
+| $k$ | Número de clústeres definidos para el algoritmo K-Means (`nClusters = 3, 5, 10`). |
+| $n_{\mathrm{samples}}$ | Cantidad de muestras aleatorias extraídas para entrenar el modelo (`numPixels = 1000`). |
+
+y  $\mathbf{X}_t$ y $\tilde{\mathbf{X}}_t$ significan:
+
+| **Símbolo** | **Significado** |
+|:-------------|:----------------|
+| $\mathbf{X}_t$ | Embedding satelital anual filtrado por tiempo \(t\) y región ROI. |
+| $\tilde{\mathbf{X}}_t$ | Mosaico del embedding anual en la ROI, usado para muestreo y *clustering*. |
+
+
+y donde $\mathcal{D}$ y de $\mathcal{C}$ significan:
+
+| **Símbolo** | **Significado** |
+|:-------------|:----------------|
+| $\mathcal{D}$ | Conjunto de datos de entrenamiento obtenido por muestreo aleatorio de píxeles del mosaico $\tilde{\mathbf{X}}_t$. Contiene los vectores de embedding usados para ajustar el modelo de *clustering*. |
+| $\mathcal{C}$ | Modelo de *clustering* no supervisado (K-Means) entrenado sobre $\mathcal{D}$, que define los centroides y asignaciones de cada grupo en el espacio semántico. |
+
+
+```{admonition} 💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?
+:class: tip
+
+En un *clustering* no supervisado no se necesitan etiquetas, sino **muestras representativas** del territorio.  
+El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.  
+Aplicar *K-Means* sobre toda la imagen sería **computacionalmente costoso e innecesario**, ya que muchos píxeles vecinos comparten valores muy similares.  
+Con una muestra bien distribuida, el algoritmo puede estimar **centroides robustos** y luego asignar cada píxel de la imagen completa al clúster más cercano.
+```
+
+
+Es, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.

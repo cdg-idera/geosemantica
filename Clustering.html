@@ -380,18 +380,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">5.1. Esquema/Pipeline del Algoritmo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">5.2. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">5.2.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">5.2.2. Definición de la región de estudio (ROI)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">5.2.3. Filtrado temporal y espacial del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">5.2.4. Visualización RGB de componentes del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">5.2.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">5.2.5.1. a) Muestreo de píxeles</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">5.2.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">5.1. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">5.1.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">5.1.2. Definición de la región de estudio (ROI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">5.1.3. Filtrado temporal y espacial del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">5.1.4. Visualización RGB de componentes del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">5.1.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">5.1.5.1. a) Muestreo de píxeles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">5.1.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">5.2.6. Generación de distintas segmentaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">5.1.6. Generación de distintas segmentaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-metodologica-sobre-la-representacion-del-pipeline-algoritmico">5.2. Propuesta metodológica sobre la representación del pipeline algorítmico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">5.2.1. Esquema/Pipeline del Algoritmo</a></li>
 </ul>
 </li>
 </ul>
@@ -419,8 +422,206 @@ document.write(`
 <li><p>Aplica clustering K-Means no supervisado.</p></li>
 <li><p>Visualiza distintas segmentaciones (3, 5, 10 grupos).</p></li>
 </ul>
+<section id="el-algoritmo-de-clustering-entrenamiento-no-supervisado">
+<h2><span class="section-number">5.1. </span>El algoritmo de clustering (entrenamiento no supervisado)<a class="headerlink" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado" title="Link to this heading">#</a></h2>
+<section id="acceso-al-dataset-de-satellite-embeddings">
+<h3><span class="section-number">5.1.1. </span>Acceso al dataset de <em>Satellite Embeddings</em><a class="headerlink" href="#acceso-al-dataset-de-satellite-embeddings" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Este <em>ImageCollection</em> contiene <strong>vectores de representación (embeddings)</strong> generados por un <strong>modelo fundacional</strong> <span id="id1">[]</span> entrenado con millones de imágenes satelitales globales.</p></li>
+<li><p>Cada píxel tiene un <strong>vector</strong> de 64 dimensiones (A01, A02, … A256) que resume de forma <em>semántica</em> la apariencia y el contexto del territorio (no solo NDVI, sino también <em>textura</em>, <em>morfología</em>, <em>patrones urbanos</em>, etc.).</p></li>
+<li><p>“ANNUAL” indica que el dataset representa una media anual del embedding por píxel.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Tutorial: Introduction to the Satellite Embedding Dataset</span>
+<span class="c1">// *********************************************************</span>
+
+<span class="c1">// Access the Satellite Embedding Dataset</span>
+<span class="c1">// *********************************************************</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="definicion-de-la-region-de-estudio-roi">
+<h3><span class="section-number">5.1.2. </span>Definición de la región de estudio (ROI)<a class="headerlink" href="#definicion-de-la-region-de-estudio-roi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Se utiliza la capa <strong>GAUL (FAO)</strong> <span id="id2">[]</span> de divisiones administrativas <strong>nivel 1</strong> para seleccionar la provincia de Neuquén.</p></li>
+<li><p>Este geometry será el <strong>área de estudio</strong> para filtrar el embedding y extraer muestras.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Select a region</span>
+<span class="c1">// ****************************************************</span>
+<span class="c1">// Definir roi (region de interés o estudio): Podes cambiar el nombre de provincia</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;FAO/GAUL/2015/level1&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM0_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argentina&#39;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">inList</span><span class="p">(</span><span class="s1">&#39;ADM1_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Neuquen&#39;</span><span class="p">]));</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Configura el mapa en vista satelital y centra el zoom sobre la provincia.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Use the satellite basemap</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="s1">&#39;SATELLITE&#39;</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="filtrado-temporal-y-espacial-del-embedding">
+<h3><span class="section-number">5.1.3. </span>Filtrado temporal y espacial del embedding<a class="headerlink" href="#filtrado-temporal-y-espacial-del-embedding" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Se selecciona el <strong>embedding correspondiente al año 2024</strong> dentro del área de Neuquén.</p></li>
+<li><p><strong>.mosaic()</strong> combina posibles tiles superpuestos en una sola imagen continua.</p></li>
+<li><p>El resultado (embeddingsImage) es una imagen multibanda con los vectores del modelo para cada píxel de Neuquén.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Prepare the Satellite Embedding dataset</span>
+<span class="c1">// ****************************************************</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2024</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">startDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nb">Date</span><span class="p">.</span><span class="nx">fromYMD</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">endDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">startDate</span><span class="p">.</span><span class="nx">advance</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;year&#39;</span><span class="p">);</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">filteredEmbeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">date</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">geometry</span><span class="p">));</span>
+
+<span class="kd">var</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">filteredEmbeddings</span><span class="p">.</span><span class="nx">mosaic</span><span class="p">();</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Satellite Embeddings Image&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="visualizacion-rgb-de-componentes-del-embedding">
+<h3><span class="section-number">5.1.4. </span>Visualización RGB de componentes del embedding<a class="headerlink" href="#visualizacion-rgb-de-componentes-del-embedding" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Dado que el embedding tiene muchas bandas, se eligen tres (A01, A16 y A09) para mostrarlas como un <strong>RGB sintético</strong>. Sin embargo, es posible elegir cualquier otra combinación de tres bandas (son 64 en total). Se denomina <strong>sintético</strong> porque estas bandas no corresponden a los canales ópticos reales de una imagen satelital (como rojo, verde o azul), sino a <strong>componentes abstractas del espacio de representación</strong> aprendidas por el modelo, que <em>sintetizan</em> <strong>información espectral, espacial y contextual del territorio</strong>.</p></li>
+<li><p>Esto genera una visualización pseudo-color donde los tonos representan variaciones semánticas del territorio (urbano, vegetación, agua, etc.) detectadas por el modelo.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Visualize the Satellite Embedding Dataset</span>
+<span class="c1">// *********************************************************</span>
+
+<span class="c1">// Visualize three axes of the embedding space as an RGB.</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">visParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;A01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A16&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A09&#39;</span><span class="p">]};</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">embeddingsImage</span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="nx">visParams</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Embeddings Image&#39;</span><span class="p">);</span>
+<span class="c1">// Make the training dataset for unsupervised clustering</span>
+</pre></div>
+</div>
+<figure class="align-default" id="fig-eimage">
+<a class="reference internal image-reference" href="_images/Eimage.png"><img alt="_images/Eimage.png" src="_images/Eimage.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">RGB sintético de un subconjunto del campo de Embedding</span><a class="headerlink" href="#fig-eimage" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="muestreo-y-clustering-no-supervisado-k-means">
+<h3><span class="section-number">5.1.5. </span>Muestreo y clustering no supervisado (K-Means)<a class="headerlink" href="#muestreo-y-clustering-no-supervisado-k-means" title="Link to this heading">#</a></h3>
+<section id="a-muestreo-de-pixeles">
+<h4><span class="section-number">5.1.5.1. </span>a) Muestreo de píxeles<a class="headerlink" href="#a-muestreo-de-pixeles" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Se extraen 1000 píxeles aleatorios del área de Neuquén a 10 m de resolución.</p></li>
+<li><p>Cada muestra contiene 64 variables (los valores de las bandas A00–A63).</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">nSamples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="p">.</span><span class="nx">sample</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="nx">geometry</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">numPixels</span><span class="o">:</span><span class="w"> </span><span class="nx">nSamples</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">seed</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span>
+<span class="p">});</span>
+<span class="nx">print</span><span class="p">(</span><span class="nx">training</span><span class="p">.</span><span class="nx">first</span><span class="p">());</span>
+</pre></div>
+</div>
+</section>
+<section id="b-definicion-de-la-funcion-getclusters">
+<h4><span class="section-number">5.1.5.2. </span>b) Definición de la función <strong>getClusters()</strong><a class="headerlink" href="#b-definicion-de-la-funcion-getclusters" title="Link to this heading">#</a></h4>
+<p>Define una función que:</p>
+<ul class="simple">
+<li><p>Entrena un modelo <strong>K-Means</strong> no supervisado con el número de grupos deseado (‘nClusters’).</p></li>
+<li><p>Aplica el modelo al embedding completo (‘embeddingsImage’) para clasificar todos los píxeles en esos grupos.</p></li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to train a model for desired number of clusters</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">getClusters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">nClusters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">clusterer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Clusterer</span><span class="p">.</span><span class="nx">wekaKMeans</span><span class="p">({</span><span class="nx">nClusters</span><span class="o">:</span><span class="w"> </span><span class="nx">nClusters</span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">train</span><span class="p">(</span><span class="nx">training</span><span class="p">);</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="c1">// Cluster the image</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">clustered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="p">.</span><span class="nx">cluster</span><span class="p">(</span><span class="nx">clusterer</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">clustered</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="generacion-de-distintas-segmentaciones">
+<h3><span class="section-number">5.1.6. </span>Generación de distintas segmentaciones<a class="headerlink" href="#generacion-de-distintas-segmentaciones" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Se prueban tres segmentaciones con distinto número de clústeres (3, 5, 10).</p></li>
+<li><p><strong>.randomVisualizer()</strong> asigna colores aleatorios para distinguir los grupos.</p></li>
+<li><p>En el mapa podés observar cómo los embeddings agrupan áreas similares según sus características espectrales y contextuales aprendidas por el modelo.</p></li>
+</ul>
+<p>Resultado del clustering no supervisado sobre el Satellite Embedding (2024) utilizando el algoritmo K-Means con k = 3. Cada color representa un grupo de píxeles con similitud semántica dentro del espacio de representación del modelo. Se trata de una segmentación sintética, ya que los clústeres se derivan de variables latentes aprendidas por el modelo fundacional, y no de bandas ópticas o índices espectrales reales.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cluster3</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39; 3 clusters&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-default" id="fig-k3">
+<a class="reference internal image-reference" href="_images/K3.png"><img alt="_images/K3.png" src="_images/K3.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 3) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cluster5</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39; 5 clusters&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-default" id="fig-k5">
+<a class="reference internal image-reference" href="_images/K5.png"><img alt="_images/K5.png" src="_images/K5.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 5) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cluster10</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39; 10 clusters&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/K10.png"><img alt="_images/K10.png" src="_images/K10.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 10) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">¿Te interesa hacer un <em>clustering</em> para otras provincias?</p>
+<p>El siguiente script te permite listar los nombres de las provincias según la base de FAO <span id="id4">[]</span>, simplemente modificá el nombre de la provincia y volvé a ejecutar el código.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Colección GAUL nivel 1 (provincias)</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">provinces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;FAO/GAUL/2015/level1&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM0_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argentina&#39;</span><span class="p">));</span>
+
+<span class="c1">// Extraer los nombres únicos de las provincias</span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">provinceNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">provinces</span><span class="p">.</span><span class="nx">aggregate_array</span><span class="p">(</span><span class="s1">&#39;ADM1_NAME&#39;</span><span class="p">).</span><span class="nx">distinct</span><span class="p">();</span>
+
+<span class="c1">// Mostrar en la consola</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Provincias de Argentina:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">provinceNames</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">¿Te interesa hacer un <em>clustering</em> por Departamento de una provincia?</p>
+<p>El script <strong>EmbeddingsClusterDepartamento</strong> te permite analizar el <em>clustering</em> por departamentos de la base FAO <span id="id5">[]</span>.<br />
+El siguiente fragmento define la región de interés (ROI) correspondiente al Departamento <strong>Confluencia</strong> de la provincia de <strong>Neuquén</strong>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;FAO/GAUL/2015/level2&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM0_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argentina&#39;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM1_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Neuquen&#39;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM2_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Confluencia&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="propuesta-metodologica-sobre-la-representacion-del-pipeline-algoritmico">
+<h2><span class="section-number">5.2. </span>Propuesta metodológica sobre la representación del pipeline algorítmico<a class="headerlink" href="#propuesta-metodologica-sobre-la-representacion-del-pipeline-algoritmico" title="Link to this heading">#</a></h2>
+<p>En el campo de la Observación de la Tierra (EO), representar formalmente el flujo algorítmico mediante <strong>pipelines matemáticos</strong> permite articular la lógica computacional con el razonamiento analítico.<br />
+Este tipo de esquemas no solo sintetiza la <strong>secuencia de operaciones</strong> del algoritmo, sino que también <strong>explicita las dependencias entre variables</strong>, los objetos intermedios del proceso ((\mathbf{X}_t), (\tilde{\mathbf{X}}_t), (\mathcal{D}), (\mathcal{C})), y la estructura conceptual que subyace al aprendizaje no supervisado.</p>
+<p>Desde una perspectiva metodológica, esta representación fomenta una <strong>comprensión abstracta y reproducible</strong> del procedimiento: facilita la trazabilidad, el análisis comparativo entre enfoques y la integración de distintas fuentes o niveles de representación.<br />
+En última instancia, el pipeline actúa como un <strong>puente entre el pensamiento matemático y el pensamiento algorítmico</strong>, contribuyendo a formalizar las etapas del análisis geosemántico y a consolidar un lenguaje común entre la ciencia de datos y la geoinformática.</p>
 <section id="esquema-pipeline-del-algoritmo">
-<h2><span class="section-number">5.1. </span>Esquema/Pipeline del Algoritmo<a class="headerlink" href="#esquema-pipeline-del-algoritmo" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">5.2.1. </span>Esquema/Pipeline del Algoritmo<a class="headerlink" href="#esquema-pipeline-del-algoritmo" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 \underbrace{(\text{ROI},\ t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
@@ -507,197 +708,6 @@ Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides 
 </div>
 <p>Es, en esencia, una <strong>demostración de análisis geosemántico estadístico</strong>, donde el modelo fundacional ya <em>“comprende”</em> el territorio y el clustering revela su estructura interna sin etiquetas humanas.</p>
 </section>
-<section id="el-algoritmo-de-clustering-entrenamiento-no-supervisado">
-<h2><span class="section-number">5.2. </span>El algoritmo de clustering (entrenamiento no supervisado)<a class="headerlink" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado" title="Link to this heading">#</a></h2>
-<section id="acceso-al-dataset-de-satellite-embeddings">
-<h3><span class="section-number">5.2.1. </span>Acceso al dataset de <em>Satellite Embeddings</em><a class="headerlink" href="#acceso-al-dataset-de-satellite-embeddings" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Este <em>ImageCollection</em> contiene <strong>vectores de representación (embeddings)</strong> generados por un <strong>modelo fundacional</strong> <span id="id1">[]</span> entrenado con millones de imágenes satelitales globales.</p></li>
-<li><p>Cada píxel tiene un <strong>vector</strong> de 64 dimensiones (A01, A02, … A256) que resume de forma <em>semántica</em> la apariencia y el contexto del territorio (no solo NDVI, sino también <em>textura</em>, <em>morfología</em>, <em>patrones urbanos</em>, etc.).</p></li>
-<li><p>“ANNUAL” indica que el dataset representa una media anual del embedding por píxel.</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Tutorial: Introduction to the Satellite Embedding Dataset</span>
-<span class="c1">// *********************************************************</span>
-
-<span class="c1">// Access the Satellite Embedding Dataset</span>
-<span class="c1">// *********************************************************</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</section>
-<section id="definicion-de-la-region-de-estudio-roi">
-<h3><span class="section-number">5.2.2. </span>Definición de la región de estudio (ROI)<a class="headerlink" href="#definicion-de-la-region-de-estudio-roi" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Se utiliza la capa <strong>GAUL (FAO)</strong> <span id="id2">[]</span> de divisiones administrativas <strong>nivel 1</strong> para seleccionar la provincia de Neuquén.</p></li>
-<li><p>Este geometry será el <strong>área de estudio</strong> para filtrar el embedding y extraer muestras.</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Select a region</span>
-<span class="c1">// ****************************************************</span>
-<span class="c1">// Definir roi (region de interés o estudio): Podes cambiar el nombre de provincia</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;FAO/GAUL/2015/level1&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM0_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argentina&#39;</span><span class="p">))</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">inList</span><span class="p">(</span><span class="s1">&#39;ADM1_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Neuquen&#39;</span><span class="p">]));</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Configura el mapa en vista satelital y centra el zoom sobre la provincia.</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Use the satellite basemap</span>
-<span class="nb">Map</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">(</span><span class="s1">&#39;SATELLITE&#39;</span><span class="p">);</span>
-<span class="nb">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">geometry</span><span class="p">,</span><span class="w"> </span><span class="mf">12</span><span class="p">);</span>
-</pre></div>
-</div>
-</section>
-<section id="filtrado-temporal-y-espacial-del-embedding">
-<h3><span class="section-number">5.2.3. </span>Filtrado temporal y espacial del embedding<a class="headerlink" href="#filtrado-temporal-y-espacial-del-embedding" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Se selecciona el <strong>embedding correspondiente al año 2024</strong> dentro del área de Neuquén.</p></li>
-<li><p><strong>.mosaic()</strong> combina posibles tiles superpuestos en una sola imagen continua.</p></li>
-<li><p>El resultado (embeddingsImage) es una imagen multibanda con los vectores del modelo para cada píxel de Neuquén.</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Prepare the Satellite Embedding dataset</span>
-<span class="c1">// ****************************************************</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2024</span><span class="p">;</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">startDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nb">Date</span><span class="p">.</span><span class="nx">fromYMD</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">endDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">startDate</span><span class="p">.</span><span class="nx">advance</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;year&#39;</span><span class="p">);</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">filteredEmbeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">date</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">))</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">bounds</span><span class="p">(</span><span class="nx">geometry</span><span class="p">));</span>
-
-<span class="kd">var</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">filteredEmbeddings</span><span class="p">.</span><span class="nx">mosaic</span><span class="p">();</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Satellite Embeddings Image&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="p">);</span>
-</pre></div>
-</div>
-</section>
-<section id="visualizacion-rgb-de-componentes-del-embedding">
-<h3><span class="section-number">5.2.4. </span>Visualización RGB de componentes del embedding<a class="headerlink" href="#visualizacion-rgb-de-componentes-del-embedding" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Dado que el embedding tiene muchas bandas, se eligen tres (A01, A16 y A09) para mostrarlas como un <strong>RGB sintético</strong>. Sin embargo, es posible elegir cualquier otra combinación de tres bandas (son 64 en total). Se denomina <strong>sintético</strong> porque estas bandas no corresponden a los canales ópticos reales de una imagen satelital (como rojo, verde o azul), sino a <strong>componentes abstractas del espacio de representación</strong> aprendidas por el modelo, que <em>sintetizan</em> <strong>información espectral, espacial y contextual del territorio</strong>.</p></li>
-<li><p>Esto genera una visualización pseudo-color donde los tonos representan variaciones semánticas del territorio (urbano, vegetación, agua, etc.) detectadas por el modelo.</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Visualize the Satellite Embedding Dataset</span>
-<span class="c1">// *********************************************************</span>
-
-<span class="c1">// Visualize three axes of the embedding space as an RGB.</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">visParams</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">bands</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;A01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A16&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;A09&#39;</span><span class="p">]};</span>
-<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">embeddingsImage</span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="nx">visParams</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Embeddings Image&#39;</span><span class="p">);</span>
-<span class="c1">// Make the training dataset for unsupervised clustering</span>
-</pre></div>
-</div>
-<figure class="align-default" id="fig-eimage">
-<a class="reference internal image-reference" href="_images/Eimage.png"><img alt="_images/Eimage.png" src="_images/Eimage.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.1 </span><span class="caption-text">RGB sintético de un subconjunto del campo de Embedding</span><a class="headerlink" href="#fig-eimage" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="muestreo-y-clustering-no-supervisado-k-means">
-<h3><span class="section-number">5.2.5. </span>Muestreo y clustering no supervisado (K-Means)<a class="headerlink" href="#muestreo-y-clustering-no-supervisado-k-means" title="Link to this heading">#</a></h3>
-<section id="a-muestreo-de-pixeles">
-<h4><span class="section-number">5.2.5.1. </span>a) Muestreo de píxeles<a class="headerlink" href="#a-muestreo-de-pixeles" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Se extraen 1000 píxeles aleatorios del área de Neuquén a 10 m de resolución.</p></li>
-<li><p>Cada muestra contiene 64 variables (los valores de las bandas A00–A63).</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">nSamples</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000</span><span class="p">;</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">training</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="p">.</span><span class="nx">sample</span><span class="p">({</span>
-<span class="w">  </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="nx">geometry</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">numPixels</span><span class="o">:</span><span class="w"> </span><span class="nx">nSamples</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">seed</span><span class="o">:</span><span class="w"> </span><span class="mf">100</span>
-<span class="p">});</span>
-<span class="nx">print</span><span class="p">(</span><span class="nx">training</span><span class="p">.</span><span class="nx">first</span><span class="p">());</span>
-</pre></div>
-</div>
-</section>
-<section id="b-definicion-de-la-funcion-getclusters">
-<h4><span class="section-number">5.2.5.2. </span>b) Definición de la función <strong>getClusters()</strong><a class="headerlink" href="#b-definicion-de-la-funcion-getclusters" title="Link to this heading">#</a></h4>
-<p>Define una función que:</p>
-<ul class="simple">
-<li><p>Entrena un modelo <strong>K-Means</strong> no supervisado con el número de grupos deseado (‘nClusters’).</p></li>
-<li><p>Aplica el modelo al embedding completo (‘embeddingsImage’) para clasificar todos los píxeles en esos grupos.</p></li>
-</ul>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Function to train a model for desired number of clusters</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">getClusters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">nClusters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">clusterer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Clusterer</span><span class="p">.</span><span class="nx">wekaKMeans</span><span class="p">({</span><span class="nx">nClusters</span><span class="o">:</span><span class="w"> </span><span class="nx">nClusters</span><span class="p">})</span>
-<span class="w">    </span><span class="p">.</span><span class="nx">train</span><span class="p">(</span><span class="nx">training</span><span class="p">);</span>
-<span class="w">  </span>
-<span class="w">  </span><span class="c1">// Cluster the image</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">clustered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddingsImage</span><span class="p">.</span><span class="nx">cluster</span><span class="p">(</span><span class="nx">clusterer</span><span class="p">);</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">clustered</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="generacion-de-distintas-segmentaciones">
-<h3><span class="section-number">5.2.6. </span>Generación de distintas segmentaciones<a class="headerlink" href="#generacion-de-distintas-segmentaciones" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Se prueban tres segmentaciones con distinto número de clústeres (3, 5, 10).</p></li>
-<li><p><strong>.randomVisualizer()</strong> asigna colores aleatorios para distinguir los grupos.</p></li>
-<li><p>En el mapa podés observar cómo los embeddings agrupan áreas similares según sus características espectrales y contextuales aprendidas por el modelo.</p></li>
-</ul>
-<p>Resultado del clustering no supervisado sobre el Satellite Embedding (2024) utilizando el algoritmo K-Means con k = 3. Cada color representa un grupo de píxeles con similitud semántica dentro del espacio de representación del modelo. Se trata de una segmentación sintética, ya que los clústeres se derivan de variables latentes aprendidas por el modelo fundacional, y no de bandas ópticas o índices espectrales reales.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">3</span><span class="p">);</span>
-<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cluster3</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39; 3 clusters&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<figure class="align-default" id="fig-k3">
-<a class="reference internal image-reference" href="_images/K3.png"><img alt="_images/K3.png" src="_images/K3.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.2 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 3) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k3" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
-<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cluster5</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39; 5 clusters&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<figure class="align-default" id="fig-k5">
-<a class="reference internal image-reference" href="_images/K5.png"><img alt="_images/K5.png" src="_images/K5.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.3 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 5) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k5" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
-<span class="nb">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">cluster10</span><span class="p">.</span><span class="nx">randomVisualizer</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">),</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="s1">&#39; 10 clusters&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="_images/K10.png"><img alt="_images/K10.png" src="_images/K10.png" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.4 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 10) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="tip admonition">
-<p class="admonition-title">¿Te interesa hacer un <em>clustering</em> para otras provincias?</p>
-<p>El siguiente script te permite listar los nombres de las provincias según la base de FAO <span id="id4">[]</span>, simplemente modificá el nombre de la provincia y volvé a ejecutar el código.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Colección GAUL nivel 1 (provincias)</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">provinces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;FAO/GAUL/2015/level1&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM0_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argentina&#39;</span><span class="p">));</span>
-
-<span class="c1">// Extraer los nombres únicos de las provincias</span>
-<span class="kd">var</span><span class="w"> </span><span class="nx">provinceNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">provinces</span><span class="p">.</span><span class="nx">aggregate_array</span><span class="p">(</span><span class="s1">&#39;ADM1_NAME&#39;</span><span class="p">).</span><span class="nx">distinct</span><span class="p">();</span>
-
-<span class="c1">// Mostrar en la consola</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Provincias de Argentina:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">provinceNames</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">¿Te interesa hacer un <em>clustering</em> por Departamento de una provincia?</p>
-<p>El script <strong>EmbeddingsClusterDepartamento</strong> te permite analizar el <em>clustering</em> por departamentos de la base FAO <span id="id5">[]</span>.<br />
-El siguiente fragmento define la región de interés (ROI) correspondiente al Departamento <strong>Confluencia</strong> de la provincia de <strong>Neuquén</strong>.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;FAO/GAUL/2015/level2&quot;</span><span class="p">)</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM0_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Argentina&#39;</span><span class="p">))</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM1_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Neuquen&#39;</span><span class="p">))</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;ADM2_NAME&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Confluencia&#39;</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -765,18 +775,21 @@ El siguiente fragmento define la región de interés (ROI) correspondiente al De
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">5.1. Esquema/Pipeline del Algoritmo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">5.2. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">5.2.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">5.2.2. Definición de la región de estudio (ROI)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">5.2.3. Filtrado temporal y espacial del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">5.2.4. Visualización RGB de componentes del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">5.2.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">5.2.5.1. a) Muestreo de píxeles</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">5.2.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">5.1. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">5.1.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">5.1.2. Definición de la región de estudio (ROI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">5.1.3. Filtrado temporal y espacial del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">5.1.4. Visualización RGB de componentes del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">5.1.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">5.1.5.1. a) Muestreo de píxeles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">5.1.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">5.2.6. Generación de distintas segmentaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">5.1.6. Generación de distintas segmentaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-metodologica-sobre-la-representacion-del-pipeline-algoritmico">5.2. Propuesta metodológica sobre la representación del pipeline algorítmico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">5.2.1. Esquema/Pipeline del Algoritmo</a></li>
 </ul>
 </li>
 </ul>
