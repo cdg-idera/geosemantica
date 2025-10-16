@@ -13,6 +13,13 @@ Un **modelo fundacional** (*foundational model*) es aquel que:
 
 En el contexto de la EO, estos modelos aprenden **patrones espaciales, espectrales y temporales** a partir de datos satelitales (ej. Sentinel, Landsat, MODIS, etc.), convirtiéndose en **infraestructuras de inteligencia geoespacial** reutilizables.
 
+
+```{figure} imagenes/fm4eo.png
+:name: fig-fm4eo
+:width: 80%
+
+Esquema de modelo fundacional y embeddings
+```
 ---
 
 ## Ejemplos destacados
@@ -45,8 +52,6 @@ En el contexto de la EO, estos modelos aprenden **patrones espaciales, espectral
 ---
 
 ## 📊 Tabla comparativa de modelos fundacionales EO
-
-## 📊 Tabla comparativa de modelos fundacionales EO (verificados)
 
 | Modelo                     | Institución                 | Año        | Tipo de datos (entrenamiento)                     | Capacidades principales                                                                 | Aplicaciones principales                                       |
 |---------------------------|-----------------------------|------------|---------------------------------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------|
@@ -132,6 +137,25 @@ $$
 - A partir de ellos, se puede hacer *fine-tuning*, búsqueda por similitud, *clustering* o clasificación supervisada.
 
 En este sentido, los **embeddings** son la **capa intermedia universal** entre la percepción y el razonamiento.
+
+```{admonition} 🎯 ¿Qué son las *tareas downstream*?
+:class: tip
+
+**Tareas *downstream*** son las **tareas específicas o aplicaciones finales** que se desarrollan **después** del modelo fundacional o del proceso de *embedding*.  
+En otras palabras, son las tareas que utilizan las representaciones aprendidas (embeddings) para resolver problemas concretos del dominio geoespacial.
+
+| **Tipo de tarea downstream** | **Ejemplo en Observación de la Tierra (EO)** |
+|:------------------------------|:---------------------------------------------|
+| **Clasificación supervisada** | Identificar coberturas de suelo (urbano, agua, vegetación, nieve). |
+| **Segmentación semántica** | Delimitar polígonos de uso/cobertura o cultivos. |
+| **Detección de cambios** | Comparar embeddings de distintos años para localizar áreas transformadas. |
+| **Regresión geoespacial** | Estimar variables continuas (biomasa, NDVI, humedad del suelo). |
+| **Búsqueda por similitud** | Encontrar regiones con patrones espectrales o contextuales similares. |
+
+En síntesis, las *tareas downstream* representan la **aplicación práctica** del conocimiento aprendido por el modelo fundacional, transformando los *embeddings* en resultados analíticos o mapas temáticos.
+```
+
+
 
 ---
 
