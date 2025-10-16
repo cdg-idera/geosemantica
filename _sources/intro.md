@@ -1,4 +1,4 @@
-# **Geosemántica y Embeddings**
+# **Geosemántica y GeoAI**
 
 
 ## **Introducción a Geosemántica**
@@ -57,8 +57,9 @@ para conceptualizar una “geografía semántica” de la Tierra.
 
 Los modelos de representación latente basados en observación satelital, 
 como {cite}`googleresearch2024satellite`, materializan esa visión en la práctica contemporánea.  
-En la comunidad latinoamericana, enfoques emergentes como {cite}`montero2025geoia` 
-proponen una integración conceptual entre geosemántica y aprendizaje automático.
+En la comunidad latinoamericana, enfoques emergentes como {cite}`montReynoso2025geoAI` 
+proponen una integración conceptual entre geoAI y aprendizaje automático, lo cual se puede ver fortalecido empleando modelos fundacionales en Observación
+de la tierra (FM4EO).
 
 ---
 
