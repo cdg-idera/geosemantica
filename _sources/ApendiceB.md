@@ -1,4 +1,4 @@
-# Tutorial GEE: Introduction to the Satellite Embedding Dataset
+#  **Apéndice B:** Tutorial GEE Introduction to the Satellite Embedding Dataset
 
 El presente apéndice es una traducción de tutoriales de Google Earth Engine sobre Embeddings, con el objetivo de facilitar la lectura y aplicación de los mismos. url: https://developers.google.com/earth-engine/tutorials/community/satellite-embedding-01-introduction
 

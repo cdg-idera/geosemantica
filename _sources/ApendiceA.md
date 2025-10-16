@@ -1,5 +1,4 @@
-
-# AI-powered pixels: Introducing Google’s Satellite Embedding dataset
+# **Apéndice A:** AI-powered pixels: Introducing Google’s Satellite Embedding dataset
 
 Este apéndice ofrece una traducción del trabajo: 
 
