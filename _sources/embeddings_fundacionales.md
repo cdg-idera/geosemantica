@@ -11,48 +11,67 @@ Un **modelo fundacional** (*foundational model*) es aquel que:
 - Aprende **representaciones generales** (no una tarea específica).  
 - Luego puede **ajustarse o especializarse (fine-tuning)** para tareas concretas: clasificación, segmentación, detección de cambios, etc.
 
-En el contexto de la EO, estos modelos aprenden **patrones espaciales, espectrales y temporales** a partir de datos satelitales (Sentinel, Landsat, MODIS, etc.), convirtiéndose en infraestructuras de inteligencia geoespacial reutilizables.
+En el contexto de la EO, estos modelos aprenden **patrones espaciales, espectrales y temporales** a partir de datos satelitales (ej. Sentinel, Landsat, MODIS, etc.), convirtiéndose en **infraestructuras de inteligencia geoespacial** reutilizables.
 
 ---
 
 ## Ejemplos destacados
 
-### 🛰️ OneVision (Google Research, 2024)
-- **Tipo:** Modelo fundacional de visión satelital global.  
-- **Entrenamiento:** Billones de píxeles de imágenes ópticas y radar.  
-- **Capacidades:** Embeddings multiespectrales y multimodales.  
-- **Usos:** Clasificación de cobertura, detección de cambios, segmentación.  
-- **Institución:** Google Research.
+### 1.2.1. 🛰️ AlphaEarth Foundations (Google DeepMind, 2025)
+**Tipo:** Modelo fundacional geoespacial (*embedding field*).  
+**Entrenamiento:** Multifuente (óptico, radar, térmico, DEMs, clima...), miles de millones de *frames* globales.  
+**Capacidades:** Embeddings anuales de 64 dimensiones (10 m) listos para clasificación, regresión, detección de cambios y búsqueda por similitud.  
+**Usos:** Dataset público **Satellite Embedding V1** en Earth Engine (2017–2024).  
+**Institución:** Google DeepMind (en colaboración con Google Research/Earth Engine).
 
-### 🌎 Prithvi (NASA–IBM, 2024–2025)
-- **Tipo:** Modelo fundacional para ciencia climática.  
-- **Entrenamiento:** Petabytes de datos satelitales NASA (MODIS, VIIRS, Landsat).  
-- **Capacidades:** Fine-tuning para incendios, sequías e inundaciones.  
-- **Usos:** Modelos base para investigación ambiental y climática.  
-- **Institución:** NASA–IBM.
+---
 
-### 🌐 AlphaHertz (Up42, 2024)
-- **Tipo:** Modelo fundacional geoespacial.  
-- **Entrenamiento:** Series multitemporales Sentinel-1 y Sentinel-2.  
-- **Capacidades:** Embeddings satelitales para búsqueda por similitud semántica.  
-- **Usos:** Detección de patrones espaciales y análisis multitemporal.  
-- **Institución:** Up42.
+### 1.2.2. 🌎 Prithvi (NASA–IBM, 2024–2025)
+**Tipo:** Familia de modelos fundacionales para EO y clima.  
+**Entrenamiento:** Petabytes de datos NASA (HLS, MODIS/VIIRS) y variantes Wx/Climate.  
+**Capacidades:** *Fine-tuning* para incendios, sequías, inundaciones; mapeo y series temporales.  
+**Usos:** Investigación ambiental y climática; modelos publicados y *checkpoints* abiertos.  
+**Institución:** NASA–IBM (con aliados académicos).
+
+---
+
+### 1.2.3. 🔁 TerraMind (IBM Research, 2025)
+**Tipo:** Modelos ligeros para EO (versiones *tiny/small* para *edge computing*).  
+**Capacidades/Usos:** Inferencia en dispositivos modestos con mínima degradación frente a modelos mayores.  
+**Institución:** IBM Research (ecosistema NASA–IBM).
+
+> **Nota:** Evitá presentar *OneVision (Google Research, 2024)* como modelo satelital. Si se menciona, aclarar que **LLaVA-OneVision** es un modelo multimodal de visión-lenguaje, **no** específico de Observación de la Tierra.
 
 ---
 
 ## 📊 Tabla comparativa de modelos fundacionales EO
 
-| Modelo       | Institución        | Año | Tipo de Datos              | Capacidades principales                                           | Aplicaciones principales                                      |
-|---------------|--------------------|-----|-----------------------------|------------------------------------------------------------------|---------------------------------------------------------------|
-| **OneVision** | Google Research    | 2024 | Ópticos + Radar (globales) | Embeddings multimodales; visión satelital global                 | Clasificación, detección de cambios, segmentación             |
-| **Prithvi**   | NASA–IBM           | 2024–2025 | MODIS, VIIRS, Landsat       | Fine-tuning para eventos climáticos                              | Incendios, sequías, inundaciones, predicción ambiental         |
-| **AlphaHertz**| Up42               | 2024 | Sentinel-1 y Sentinel-2     | Embeddings geosemánticos; búsqueda por similitud                 | Análisis multitemporal, patrones espaciales, búsqueda semántica |
+## 📊 Tabla comparativa de modelos fundacionales EO (verificados)
+
+| Modelo                     | Institución                 | Año        | Tipo de datos (entrenamiento)                     | Capacidades principales                                                                 | Aplicaciones principales                                       |
+|---------------------------|-----------------------------|------------|---------------------------------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------|
+| **AlphaEarth Foundations**| Google DeepMind / Research  | 2025       | Multifuente (Sentinel-1/2, Landsat, clima, etc.)  | Embeddings anuales de **64 dims** a 10 m; búsqueda por similitud; base para tareas EO   | Mapeo global, cambio, clasificación; dataset **Satellite Embedding V1** (2017–2024) |
+| **Prithvi**               | NASA–IBM (+ socios)         | 2024–2025  | Petabytes NASA (HLS, MODIS/VIIRS; variantes Wx/Climate) | Fine-tuning para incendios, sequías, inundaciones; series temporales y clima            | Investigación ambiental y climática; modelos abiertos en HF     |
+| **TerraMind** *(ligero)*  | IBM Research                | 2025       | EO multifuente (versiones tiny/small)             | Inferencia en **edge** (laptops/smartphones) con mínima pérdida vs. modelos grandes     | Casos de campo con recursos limitados; despliegue local         |
+
 
 ---
 
 ## 📘 En resumen académico
 
-> **OneVision (Google Research), Prithvi (NASA–IBM) y AlphaHertz (Up42)** son efectivamente **modelos fundacionales para Observación de la Tierra**, entrenados a gran escala sobre datos satelitales multimodales, diseñados para servir como base adaptable a múltiples tareas geoespaciales mediante *fine-tuning* o *transfer learning*.
+> **AlphaEarth Foundations (Google DeepMind)** y **Prithvi (NASA\u2013IBM)** son modelos fundacionales **verificados** para EO, entrenados a gran escala con datos satelitales y diseñados como bases reutilizables para múltiples tareas geoespaciales mediante *fine-tuning* o *transfer learning*.  
+> En algunos contextos tambi\u00e9n se mencionan l\u00edneas de trabajo de **modelos ligeros para *edge computing*** (por ejemplo, IBM Research), pero su inclusi\u00f3n depende del foco de la presentación o aplicación específica.
+
+```{admonition} 🔍 ¿Cuál es la diferencia entre *fine-tuning* y *transfer learning*?
+:class: tip
+
+Ambos enfoques aprovechan el conocimiento de un modelo preentrenado, pero difieren en **cuánto** y **cómo** se ajusta:  
+
+- **Transfer learning:** se usa el modelo como **extractor de características**; las capas preentrenadas permanecen fijas y solo se entrena un nuevo clasificador o capa final sobre los datos locales.  
+- **Fine-tuning:** implica **ajustar parcialmente** (o completamente) los pesos del modelo preentrenado usando datos específicos del nuevo dominio, permitiendo una adaptación más profunda al contexto de la tarea.  
+
+En síntesis, el *transfer learning* **reutiliza**, mientras que el *fine-tuning* **especializa**.
+```
 
 
 ## 🧠 1. Definición relacional básica
