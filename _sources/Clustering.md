@@ -127,6 +127,16 @@ var training = embeddingsImage.sample({
 print(training.first());
 ```
 
+```{admonition} 💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?
+:class: tip
+
+En un *clustering* no supervisado no se necesitan etiquetas, sino **muestras representativas** del territorio.  
+El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.  
+Aplicar *K-Means* sobre toda la imagen sería **computacionalmente costoso e innecesario**, ya que muchos píxeles vecinos comparten valores muy similares.  
+Con una muestra bien distribuida, el algoritmo puede estimar **centroides robustos** y luego asignar cada píxel de la imagen completa al clúster más cercano.
+```
+
+
 #### b) Definición de la función **getClusters()**
 
 Define una función que:
@@ -286,14 +296,6 @@ y donde $\mathcal{D}$ y de $\mathcal{C}$ significan:
 | $\mathcal{C}$ | Modelo de *clustering* no supervisado (K-Means) entrenado sobre $\mathcal{D}$, que define los centroides y asignaciones de cada grupo en el espacio semántico. |
 
 
-```{admonition} 💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?
-:class: tip
-
-En un *clustering* no supervisado no se necesitan etiquetas, sino **muestras representativas** del territorio.  
-El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.  
-Aplicar *K-Means* sobre toda la imagen sería **computacionalmente costoso e innecesario**, ya que muchos píxeles vecinos comparten valores muy similares.  
-Con una muestra bien distribuida, el algoritmo puede estimar **centroides robustos** y luego asignar cada píxel de la imagen completa al clúster más cercano.
-```
 
 
 Es, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.

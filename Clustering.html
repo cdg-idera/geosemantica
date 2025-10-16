@@ -527,6 +527,13 @@ document.write(`
 <span class="nx">print</span><span class="p">(</span><span class="nx">training</span><span class="p">.</span><span class="nx">first</span><span class="p">());</span>
 </pre></div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?</p>
+<p>En un <em>clustering</em> no supervisado no se necesitan etiquetas, sino <strong>muestras representativas</strong> del territorio.<br />
+El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.<br />
+Aplicar <em>K-Means</em> sobre toda la imagen sería <strong>computacionalmente costoso e innecesario</strong>, ya que muchos píxeles vecinos comparten valores muy similares.<br />
+Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides robustos</strong> y luego asignar cada píxel de la imagen completa al clúster más cercano.</p>
+</div>
 </section>
 <section id="b-definicion-de-la-funcion-getclusters">
 <h4><span class="section-number">5.1.5.2. </span>b) Definición de la función <strong>getClusters()</strong><a class="headerlink" href="#b-definicion-de-la-funcion-getclusters" title="Link to this heading">#</a></h4>
@@ -698,13 +705,6 @@ En última instancia, el pipeline actúa como un <strong>puente entre el pensami
 </tr>
 </tbody>
 </table>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?</p>
-<p>En un <em>clustering</em> no supervisado no se necesitan etiquetas, sino <strong>muestras representativas</strong> del territorio.<br />
-El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.<br />
-Aplicar <em>K-Means</em> sobre toda la imagen sería <strong>computacionalmente costoso e innecesario</strong>, ya que muchos píxeles vecinos comparten valores muy similares.<br />
-Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides robustos</strong> y luego asignar cada píxel de la imagen completa al clúster más cercano.</p>
 </div>
 <p>Es, en esencia, una <strong>demostración de análisis geosemántico estadístico</strong>, donde el modelo fundacional ya <em>“comprende”</em> el territorio y el clustering revela su estructura interna sin etiquetas humanas.</p>
 </section>
