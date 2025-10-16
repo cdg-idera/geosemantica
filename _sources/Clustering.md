@@ -16,9 +16,70 @@ Este código:
 * Aplica clustering K-Means no supervisado.
 * Visualiza distintas segmentaciones (3, 5, 10 grupos).
 
+## Esquema/Pipeline del Algoritmo
+
+$$
+\underbrace{(\text{ROI},\ t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
+\xrightarrow[\text{filter}(t),\ \text{bounds(ROI)}]{\text{SATELLITE\_EMBEDDING V1 (ANNUAL)}}
+\mathbf{X}_t
+\xrightarrow[\text{mosaic}]{}
+\tilde{\mathbf{X}}_t
+\xrightarrow[\text{sample}(n_{\text{samples}},\ \text{scale}=10)]{}
+\mathcal{D}
+\xrightarrow[\text{train}]{\text{K-Means}(k)}
+\mathcal{C}
+\xrightarrow[\text{cluster}]{\mathcal{C}(\tilde{\mathbf{X}}_t)}
+\text{Raster de clústeres }(k\in\{3,5,10\})
+\xrightarrow[\text{randomVisualizer(), clip(ROI)}]{\text{Map.addLayer}}
+\text{Visualización}
+$$
+
+
+Donde: 
+
+$$
+\underbrace{(\text{ROI},\ \text{año }t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
+$$
+
+
+| **Símbolo** | **Significado en el pipeline** |
+|:-------------|:-------------------------------|
+| $ROI$ | Región de interés: la geometría espacial filtrada por provincia o departamento (variable `geometry`). |
+| $t$ | Año seleccionado del embedding satelital (por ejemplo, `year = 2024`). |
+| $k$ | Número de clústeres definidos para el algoritmo K-Means (`nClusters = 3, 5, 10`). |
+| $n_{\mathrm{samples}}$ | Cantidad de muestras aleatorias extraídas para entrenar el modelo (`numPixels = 1000`). |
+
+y  $\mathbf{X}_t$ y $\tilde{\mathbf{X}}_t$ significan:
+
+| **Símbolo** | **Significado** |
+|:-------------|:----------------|
+| $\mathbf{X}_t$ | Embedding satelital anual filtrado por tiempo \(t\) y región ROI. |
+| $\tilde{\mathbf{X}}_t$ | Mosaico del embedding anual en la ROI, usado para muestreo y *clustering*. |
+
+
+y donde $\mathcal{D}$ y de $\mathcal{C}$ significan:
+
+| **Símbolo** | **Significado** |
+|:-------------|:----------------|
+| $\mathcal{D}$ | Conjunto de datos de entrenamiento obtenido por muestreo aleatorio de píxeles del mosaico $\tilde{\mathbf{X}}_t$. Contiene los vectores de embedding usados para ajustar el modelo de *clustering*. |
+| $\mathcal{C}$ | Modelo de *clustering* no supervisado (K-Means) entrenado sobre $\mathcal{D}$, que define los centroides y asignaciones de cada grupo en el espacio semántico. |
+
+
+```{admonition} 💡 ¿Por qué se toman muestras aleatorias en un entrenamiento no supervisado?
+:class: tip
+
+En un *clustering* no supervisado no se necesitan etiquetas, sino **muestras representativas** del territorio.  
+El muestreo aleatorio reduce la cantidad de píxeles procesados sin perder la diversidad espectral y semántica del área de estudio.  
+Aplicar *K-Means* sobre toda la imagen sería **computacionalmente costoso e innecesario**, ya que muchos píxeles vecinos comparten valores muy similares.  
+Con una muestra bien distribuida, el algoritmo puede estimar **centroides robustos** y luego asignar cada píxel de la imagen completa al clúster más cercano.
+```
+
+
 Es, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.
 
-## Acceso al dataset de *Satellite Embeddings*
+## El algoritmo de clustering (entrenamiento no supervisado)
+
+### Acceso al dataset de *Satellite Embeddings*
 
 * Este *ImageCollection* contiene **vectores de representación (embeddings)** generados por un **modelo fundacional** {cite}`Brown2025AlphaEarth` entrenado con millones de imágenes satelitales globales.
 
@@ -35,7 +96,7 @@ Es, en esencia, una **demostración de análisis geosemántico estadístico**, d
 var embeddings = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL');
 ```
 
-## Definición de la región de estudio (ROI)
+### Definición de la región de estudio (ROI)
 
 * Se utiliza la capa **GAUL (FAO)** {cite}`FAO_GAUL_2015` de divisiones administrativas **nivel 1** para seleccionar la provincia de Neuquén.
 
@@ -57,7 +118,7 @@ var geometry = ee.FeatureCollection("FAO/GAUL/2015/level1")
 Map.setOptions('SATELLITE');
 Map.centerObject(geometry, 12);
 ```
-## Filtrado temporal y espacial del embedding
+### Filtrado temporal y espacial del embedding
 
 * Se selecciona el **embedding correspondiente al año 2024** dentro del área de Neuquén.
 
@@ -83,7 +144,7 @@ var embeddingsImage = filteredEmbeddings.mosaic();
 print('Satellite Embeddings Image', embeddingsImage);
 ```
 
-## Visualización RGB de componentes del embedding
+### Visualización RGB de componentes del embedding
 
 
 * Dado que el embedding tiene muchas bandas, se eligen tres (A01, A16 y A09) para mostrarlas como un **RGB sintético**. Sin embargo, es posible elegir cualquier otra combinación de tres bandas (son 64 en total). Se denomina **sintético** porque estas bandas no corresponden a los canales ópticos reales de una imagen satelital (como rojo, verde o azul), sino a **componentes abstractas del espacio de representación** aprendidas por el modelo, que *sintetizan* **información espectral, espacial y contextual del territorio**.
@@ -109,9 +170,9 @@ Map.addLayer(embeddingsImage.clip(geometry), visParams, 'Embeddings Image');
 RGB sintético de un subconjunto del campo de Embedding
 ```
 
-## Muestreo y clustering no supervisado (K-Means)
+### Muestreo y clustering no supervisado (K-Means)
 
-### a) Muestreo de píxeles
+#### a) Muestreo de píxeles
 
 * Se extraen 1000 píxeles aleatorios del área de Neuquén a 10 m de resolución.
 * Cada muestra contiene 64 variables (los valores de las bandas A00–A63).
@@ -127,7 +188,7 @@ var training = embeddingsImage.sample({
 print(training.first());
 ```
 
-### b) Definición de la función **getClusters()**
+#### b) Definición de la función **getClusters()**
 
 Define una función que:
 
