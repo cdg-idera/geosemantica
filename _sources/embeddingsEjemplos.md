@@ -930,15 +930,15 @@ El resultado se visualiza en verde e incluye capas de control.
 
 | Nº | Clase                | Descripción general                                                                 | Ejemplo visual o semántico                              |
 |-----|-----------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| 0   | Water                 | Cuerpos de agua permanentes o estacionales (ríos, lagos, lagunas)                  | Azul, áreas inundadas o represas                         |
-| 1   | Trees                 | Vegetación arbórea: bosques primarios, secundarios o plantaciones grandes            | Verde oscuro, copas densas                               |
-| 2   | Grass                 | Praderas, pastizales, vegetación herbácea                                           | Verde claro, campos abiertos                             |
-| 3   | Flooded vegetation    | Vegetación inundada o pantanosa (manglares, juncos)                                 | Verde azulado, zonas entre agua y tierra                 |
-| 4   | Crops                 | Cultivos agrícolas (arroz, maíz, soja, etc.)                                        | Tonos amarillentos o verdes agrícolas                    |
-| 5   | Shrub & Scrub         | Vegetación arbustiva, matorrales o vegetación baja densa                            | Verde oliva, matorrales dispersos                        |
-| 6   | Built Area             | Zonas urbanas o construidas: edificios, infraestructuras                           | Gris, telhados, calles, construcciones                   |
-| 7   | Bare Ground            | Suelo desnudo: rocas, suelos áridos, terrenos sin vegetación                        | Marrón claro, rocas, arenas                              |
-| 8   | Snow & Ice             | Cobertura de nieve o hielo, permanentes o estacionales                              | Blanco, glaciares, nevado                                |
+| 0   | **Water**             | Cuerpos de agua permanentes o estacionales (ríos, lagos, lagunas)                  | Azul, áreas inundadas o represas                         |
+| 1   | **Trees**             | Vegetación arbórea: bosques primarios, secundarios o plantaciones grandes            | Verde oscuro, copas densas                               |
+| 2   | **Grass**             | Praderas, pastizales, vegetación herbácea                                           | Verde claro, campos abiertos                             |
+| 3   | **Flooded vegetation**  | Vegetación inundada o pantanosa (manglares, juncos)                                 | Verde azulado, zonas entre agua y tierra                 |
+| 4   | **Crops**             | Cultivos agrícolas (arroz, maíz, soja, etc.)                                        | Tonos amarillentos o verdes agrícolas                    |
+| 5   | **Shrub & Scrub**     | Vegetación arbustiva, matorrales o vegetación baja densa                            | Verde oliva, matorrales dispersos                        |
+| 6   | **Built Area**        | Zonas urbanas o construidas: edificios, infraestructuras                           | Gris, telhados, calles, construcciones                   |
+| 7   | **Bare Ground**       | Suelo desnudo: rocas, suelos áridos, terrenos sin vegetación                        | Marrón claro, rocas, arenas                              |
+| 8   | **Snow & Ice**        | Cobertura de nieve o hielo, permanentes o estacionales                              | Blanco, glaciares, nevado                                |
 
 ````
 
