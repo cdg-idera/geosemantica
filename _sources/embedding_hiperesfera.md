@@ -15,7 +15,7 @@ Por ejemplo:
 | 3D | Esfera unitaria | $x^2 + y^2 + z^2 = 1$ | 🟢 |
 | $d$D | Hiperesfera unitaria | $x_1^2 + \cdots + x_d^2 = 1$ | (no visualizable) |
 
-En el contexto de **embeddings**, un dato se representa por un vector $x \in \mathbb{R}^d$. Para comparar por **dirección** (semántica) y no por magnitud, se **normaliza L2** y se proyecta sobre la hiperesfera unitaria:
+En el contexto de **embeddings**, un dato se representa por un vector $x \in \mathbb{R}^d$. Para comparar por **dirección** (semántica) y no por magnitud, se **normaliza L2** (norma L2 o norma euclideana) y se proyecta sobre la hiperesfera unitaria:
 
 $\hat{x} = \dfrac{x}{\|x\|}$
 
@@ -43,10 +43,33 @@ $\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)$
 
 **Normalización**: $\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]$.
 
-Ahora $\|\hat{x}\| = 1$, por lo que $\hat{x}$ está sobre la **esfera unitaria** en $\mathbb{R}^3$.
+Cálculo de la norma del vector normalizado:
+$|\hat{x}| = \sqrt{0.829^2 + 0.296^2 + (-0.474)^2} = \sqrt{0.687 + 0.088 + 0.225} = \sqrt{1.000} = 1.000$, por lo que $\hat{x}$ está sobre la **esfera unitaria** en $\mathbb{R}^3$.
+
+
 
 **Interpretación**: si tuviéramos dos embeddings normalizados $\hat{u}$ y $\hat{v}$, su similitud coseno $\hat{u}\cdot\hat{v}$ mide cuán **alineados** están (qué tan similares son), independientemente de la magnitud original de $u$ y $v$.
 
+### Coordenadas del punto en la hiperesfera unitaria
+
+Luego, el punto en el espacio tridimensional es: $P = (x, y, z) = (0.829,\ 0.296,\ -0.474)$
+
+Esto significa geométricamente que:
+
+Desde el **centro del sistema de coordenadas** $(0, 0, 0)$ trazamos una flecha que apunta hacia la dirección $(0.829, 0.296, -0.474)$.  
+
+Esa flecha tiene **longitud 1**, por lo tanto su extremo **toca exactamente la superficie de la esfera unitaria**.  
+
+En otras palabras, el vector $\hat{x}$ indica **dirección**, mientras que su norma unitaria ($\|\hat{x}\| = 1$) garantiza que el punto se encuentra **sobre la superficie** y no dentro del volumen de la hiperesfera.
+
+````{admonition} ¿La norma es siempre 1?
+:class: tip
+
+La norma de todos los vectores normalizados es igual a 1.
+
+Eso significa que todos los puntos normalizados se ubican sobre la superficie de la hiperesfera unitaria, y no dentro ni fuera.
+
+````
 ---
 
 ## 4) Resumen

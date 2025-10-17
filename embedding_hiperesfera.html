@@ -389,7 +389,10 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">9.1. 1) Descripción general (definición y marco geométrico)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">9.2. 2) Flujo práctico para visualizar embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-del-punto-en-la-hiperesfera-unitaria">9.3.1. Coordenadas del punto en la hiperesfera unitaria</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.4. 4) Resumen</a></li>
 </ul>
             </nav>
@@ -441,7 +444,7 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>En el contexto de <strong>embeddings</strong>, un dato se representa por un vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^d\)</span>. Para comparar por <strong>dirección</strong> (semántica) y no por magnitud, se <strong>normaliza L2</strong> y se proyecta sobre la hiperesfera unitaria:</p>
+<p>En el contexto de <strong>embeddings</strong>, un dato se representa por un vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^d\)</span>. Para comparar por <strong>dirección</strong> (semántica) y no por magnitud, se <strong>normaliza L2</strong> (norma L2 o norma euclideana) y se proyecta sobre la hiperesfera unitaria:</p>
 <p><span class="math notranslate nohighlight">\(\hat{x} = \dfrac{x}{\|x\|}\)</span></p>
 <p>Después de normalizar, se cumple <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>. Así, la similitud entre embeddings se evalúa por su <strong>ángulo</strong> sobre la hiperesfera, típicamente vía <strong>similitud coseno</strong>:</p>
 <p><span class="math notranslate nohighlight">\(\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)\)</span></p>
@@ -463,8 +466,22 @@ document.write(`
 <p><strong>Vector original</strong>: <span class="math notranslate nohighlight">\(x = [1.4,\ 0.5,\ -0.8]\)</span>.</p>
 <p><strong>Norma L2</strong>: <span class="math notranslate nohighlight">\(\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688\)</span>.</p>
 <p><strong>Normalización</strong>: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]\)</span>.</p>
-<p>Ahora <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>, por lo que <span class="math notranslate nohighlight">\(\hat{x}\)</span> está sobre la <strong>esfera unitaria</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
+<p>Cálculo de la norma del vector normalizado:
+<span class="math notranslate nohighlight">\(|\hat{x}| = \sqrt{0.829^2 + 0.296^2 + (-0.474)^2} = \sqrt{0.687 + 0.088 + 0.225} = \sqrt{1.000} = 1.000\)</span>, por lo que <span class="math notranslate nohighlight">\(\hat{x}\)</span> está sobre la <strong>esfera unitaria</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
 <p><strong>Interpretación</strong>: si tuviéramos dos embeddings normalizados <span class="math notranslate nohighlight">\(\hat{u}\)</span> y <span class="math notranslate nohighlight">\(\hat{v}\)</span>, su similitud coseno <span class="math notranslate nohighlight">\(\hat{u}\cdot\hat{v}\)</span> mide cuán <strong>alineados</strong> están (qué tan similares son), independientemente de la magnitud original de <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<section id="coordenadas-del-punto-en-la-hiperesfera-unitaria">
+<h3><span class="section-number">9.3.1. </span>Coordenadas del punto en la hiperesfera unitaria<a class="headerlink" href="#coordenadas-del-punto-en-la-hiperesfera-unitaria" title="Link to this heading">#</a></h3>
+<p>Luego, el punto en el espacio tridimensional es: <span class="math notranslate nohighlight">\(P = (x, y, z) = (0.829,\ 0.296,\ -0.474)\)</span></p>
+<p>Esto significa geométricamente que:</p>
+<p>Desde el <strong>centro del sistema de coordenadas</strong> <span class="math notranslate nohighlight">\((0, 0, 0)\)</span> trazamos una flecha que apunta hacia la dirección <span class="math notranslate nohighlight">\((0.829, 0.296, -0.474)\)</span>.</p>
+<p>Esa flecha tiene <strong>longitud 1</strong>, por lo tanto su extremo <strong>toca exactamente la superficie de la esfera unitaria</strong>.</p>
+<p>En otras palabras, el vector <span class="math notranslate nohighlight">\(\hat{x}\)</span> indica <strong>dirección</strong>, mientras que su norma unitaria (<span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>) garantiza que el punto se encuentra <strong>sobre la superficie</strong> y no dentro del volumen de la hiperesfera.</p>
+<div class="tip admonition">
+<p class="admonition-title">¿La norma es siempre 1?</p>
+<p>La norma de todos los vectores normalizados es igual a 1.</p>
+<p>Eso significa que todos los puntos normalizados se ubican sobre la superficie de la hiperesfera unitaria, y no dentro ni fuera.</p>
+</div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="resumen">
@@ -543,7 +560,10 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">9.1. 1) Descripción general (definición y marco geométrico)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">9.2. 2) Flujo práctico para visualizar embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-del-punto-en-la-hiperesfera-unitaria">9.3.1. Coordenadas del punto en la hiperesfera unitaria</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.4. 4) Resumen</a></li>
 </ul>
   </nav></div>
