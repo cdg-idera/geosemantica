@@ -216,6 +216,13 @@ Se muestran los resultados por color:
 
 ---
 
+```{figure} imagenes/AguaA.png
+:name: fig-aguaA
+:width: 40%
+
+Busqueda por similitud coseno para detectar Agua
+```
+
 ### **8) Exportación opcional**
 Permite guardar el resultado como `FeatureCollection` para reutilizar en otros flujos:
 
@@ -565,6 +572,15 @@ Si no hay datos suficientes, se usa 0.95 como respaldo.
 La capa adaptativa se vectoriza y añade para comparación.
 
 ---
+
+
+
+```{figure} imagenes/hornos.png
+:name: fig-hornos
+:width: 40%
+
+Busqueda por similitud Hornos de Ladrillo
+```
 
 ### **9) Exportación opcional**
 
@@ -1055,6 +1071,14 @@ Categorías de cultivos
 
 #### **Gráfico de barras**
 Otro panel (`ui.Panel`) en la esquina inferior derecha muestra la superficie por clase (hectáreas), calculada desde el raster clasificado, representando la proporción visualmente mediante barras horizontales.
+
+
+```{figure} imagenes/CultivosC.png
+:name: fig-catculC
+:width: 40%
+
+Categorización por Cultivos con Embeddings y filtros de datasets 
+```
 
 ---
 
