@@ -28,10 +28,18 @@ $\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)$
 ## 2) Flujo práctico para visualizar embeddings
 
 1. **Normalización L2** por vector: $\hat{x} = x/\|x\|$.
-2. **Reducción de dimensionalidad** si $d > 3$ (PCA/UMAP/t\text{-}SNE) para obtener $x_{\text{proj}} \in \mathbb{R}^3$ o $\mathbb{R}^2$.
+2. **Reducción de dimensionalidad** si $d > 3$ (PCA/UMAP/t-SNE) para obtener $x_{\text{proj}} \in \mathbb{R}^3$ o $\mathbb{R}^2$.
 3. **Re-normalización en el espacio reducido** para que los puntos queden sobre la esfera/circunferencia unitaria: $\tilde{x} = x_{\text{proj}}/\|x_{\text{proj}}\|$.
 4. **Gráfica**: dibujar la esfera/circunferencia unitaria y superponer los puntos $\tilde{x}$.
 5. (Opcional) **Medir proximidad** entre embeddings con $\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v}$ o el **ángulo** $\arccos(\hat{u}\cdot\hat{v})$.
+
+
+| Método | Nombre completo | Tipo de proyección | Qué preserva |
+|---------|------------------|--------------------|--------------|
+| **PCA** | *Principal Component Analysis* | Lineal | La varianza global |
+| **UMAP** | *Uniform Manifold Approximation and Projection* | No lineal | La estructura local y global |
+| **t-SNE** | *t-Distributed Stochastic Neighbor Embedding* | No lineal | Las vecindades locales (clústeres) |
+
 
 ---
 
