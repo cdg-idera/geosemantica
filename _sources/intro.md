@@ -25,13 +25,15 @@ Estos vectores condensan relaciones espectrales, espaciales y temporales complej
 
 La geosemántica contemporánea puede dividirse, de manera general, en tres niveles complementarios:
 
-| Nivel | Descripción | Ejemplo |
-|-------|--------------|----------|
-| **Formal o ontológico** | Basado en vocabularios controlados, ontologías y modelos conceptuales normalizados (p. ej. ISO 19150, INSPIRE, Catálogo de Objetos Geográficos de IDERA). | Ontologías de objetos geográficos, taxonomías de coberturas. |
-| **Lingüístico o textual** | Derivado del análisis de textos, descripciones o metadatos. | Extracción de entidades geográficas en corpus de texto. |
-| **Estadístico o latente** | Aprendido a partir de datos numéricos o imágenes mediante técnicas de aprendizaje automático. | Embeddings espectrales, espaciales o espacio-temporales. |
+## **Tres niveles complementarios de geosemántica**
 
-Los *embeddings satelitales* pertenecen claramente al **tercer nivel**, el de la **semántica estadística o latente**, donde el significado no se define explícitamente, sino que **emerge de los patrones de correlación y coocurrencia** observados en los datos.
+| Nivel | Descripción | Ejemplos típicos |
+|---|---|---|
+| **Formal u ontológico** | Significado **definido explícitamente** mediante vocabularios controlados, ontologías y modelos conceptuales normalizados. Permite **inferencia lógica**, validación y alineación semántica. | ISO 19150 (Geographic information — Ontology), INSPIRE ontologies, Catálogo de Objetos Geográficos de IDERA, SKOS/OWL, **bases de grafo** (GraphDB, RDF triplestores). |
+| **Estadístico o latente** | Significado **aprendido de datos numéricos/imaginería** vía ML/auto-supervisión (sin reglas semánticas explícitas). Produce **representaciones latentes** que capturan similitudes y patrones. | **Embeddings** satelitales (p. ej., AlphaEarth/SE-V1), embeddings espacio-temporales, PCA/autoencoders; **búsqueda por similitud**, *clustering*, detección de cambios. |
+| **Lingüístico o textual** | Significado **derivado de textos** (descripciones, metadatos, documentos) mediante técnicas de PLN; no hay ontologías formales, pero sí **entidades y relaciones extraídas** del lenguaje. | Reconocimiento de topónimos y entidades, linking con gazetteers, análisis de metadatos, topic modeling en corpus de planes y normas. |
+
+Los *embeddings satelitales* pertenecen claramente al **segundo nivel**, el de la **semántica estadística o latente**, donde el significado no está definido de forma explícita, sino que **emerge de los patrones de correlación y coocurrencia** observados en los datos.
 
 ---
 
@@ -134,7 +136,7 @@ Propiciar la incorporación enfoques innovadores y paradigmas de ciencias de dat
 
 ```{admonition} Libro (Jupyter Book)
 :class: tip
-Este libro interactivo digital está siendo desarrollado con [**Jupyter Book**](https://jupyterbook.org) y tendrá ISBN tramitado por IDERA-IGN.
+Este libro interactivo digital está siendo desarrollado con [**Jupyter Book**](https://jupyterbook.org) y tendrá ISBN tramitado por alguna institución estatal.
 ```
 
 ```{admonition} Videos

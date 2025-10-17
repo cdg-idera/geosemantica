@@ -22,6 +22,20 @@ Esquema de modelo fundacional y embeddings
 ```
 ---
 
+```{admonition} 🔍 ¿Qué significa *auto-supervisión*?
+:class: tip
+
+La auto-supervisión es un enfoque de aprendizaje donde el modelo se entrena sin etiquetas humanas, generando sus propias tareas predictivas (por ejemplo, reconstruir, comparar o predecir partes de una imagen) para aprender representaciones latentes.
+```
+
+```{admonition} 🔍 ¿Porqué se denominan *representaciones latenes*?
+:class: tip
+
+Se denominan representaciones latentes porque codifican la información interna o no observable directamente de los datos —es decir, sus patrones subyacentes o características abstractas— en un espacio matemático comprimido (espacio latente).
+
+En los embeddings satelitales, ese espacio latente representa relaciones semánticas entre píxeles o regiones, más allá de los valores espectrales visibles.
+```
+
 ## Ejemplos destacados
 
 ### 1.2.1. 🛰️ AlphaEarth Foundations (Google DeepMind, 2025)

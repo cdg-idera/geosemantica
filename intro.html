@@ -390,6 +390,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-geosemantica"><strong>Introducción a Geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica"><strong>Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica"><strong>Tres niveles complementarios de geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>La semántica estadística como fundamento</strong></a></li>
 </ul>
 </li>
@@ -433,30 +434,33 @@ En lugar de describir el espacio mediante variables físicas aisladas —como re
 <section id="los-tres-niveles-de-la-geosemantica">
 <h2><strong>Los tres niveles de la geosemántica</strong><a class="headerlink" href="#los-tres-niveles-de-la-geosemantica" title="Link to this heading">#</a></h2>
 <p>La geosemántica contemporánea puede dividirse, de manera general, en tres niveles complementarios:</p>
+</section>
+<section id="tres-niveles-complementarios-de-geosemantica">
+<h2><strong>Tres niveles complementarios de geosemántica</strong><a class="headerlink" href="#tres-niveles-complementarios-de-geosemantica" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Nivel</p></th>
 <th class="head"><p>Descripción</p></th>
-<th class="head"><p>Ejemplo</p></th>
+<th class="head"><p>Ejemplos típicos</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Formal o ontológico</strong></p></td>
-<td><p>Basado en vocabularios controlados, ontologías y modelos conceptuales normalizados (p. ej. ISO 19150, INSPIRE, Catálogo de Objetos Geográficos de IDERA).</p></td>
-<td><p>Ontologías de objetos geográficos, taxonomías de coberturas.</p></td>
+<tr class="row-even"><td><p><strong>Formal u ontológico</strong></p></td>
+<td><p>Significado <strong>definido explícitamente</strong> mediante vocabularios controlados, ontologías y modelos conceptuales normalizados. Permite <strong>inferencia lógica</strong>, validación y alineación semántica.</p></td>
+<td><p>ISO 19150 (Geographic information — Ontology), INSPIRE ontologies, Catálogo de Objetos Geográficos de IDERA, SKOS/OWL, <strong>bases de grafo</strong> (GraphDB, RDF triplestores).</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Lingüístico o textual</strong></p></td>
-<td><p>Derivado del análisis de textos, descripciones o metadatos.</p></td>
-<td><p>Extracción de entidades geográficas en corpus de texto.</p></td>
+<tr class="row-odd"><td><p><strong>Estadístico o latente</strong></p></td>
+<td><p>Significado <strong>aprendido de datos numéricos/imaginería</strong> vía ML/auto-supervisión (sin reglas semánticas explícitas). Produce <strong>representaciones latentes</strong> que capturan similitudes y patrones.</p></td>
+<td><p><strong>Embeddings</strong> satelitales (p. ej., AlphaEarth/SE-V1), embeddings espacio-temporales, PCA/autoencoders; <strong>búsqueda por similitud</strong>, <em>clustering</em>, detección de cambios.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>Estadístico o latente</strong></p></td>
-<td><p>Aprendido a partir de datos numéricos o imágenes mediante técnicas de aprendizaje automático.</p></td>
-<td><p>Embeddings espectrales, espaciales o espacio-temporales.</p></td>
+<tr class="row-even"><td><p><strong>Lingüístico o textual</strong></p></td>
+<td><p>Significado <strong>derivado de textos</strong> (descripciones, metadatos, documentos) mediante técnicas de PLN; no hay ontologías formales, pero sí <strong>entidades y relaciones extraídas</strong> del lenguaje.</p></td>
+<td><p>Reconocimiento de topónimos y entidades, linking con gazetteers, análisis de metadatos, topic modeling en corpus de planes y normas.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Los <em>embeddings satelitales</em> pertenecen claramente al <strong>tercer nivel</strong>, el de la <strong>semántica estadística o latente</strong>, donde el significado no se define explícitamente, sino que <strong>emerge de los patrones de correlación y coocurrencia</strong> observados en los datos.</p>
+<p>Los <em>embeddings satelitales</em> pertenecen claramente al <strong>segundo nivel</strong>, el de la <strong>semántica estadística o latente</strong>, donde el significado no está definido de forma explícita, sino que <strong>emerge de los patrones de correlación y coocurrencia</strong> observados en los datos.</p>
 </section>
 <hr class="docutils" />
 <section id="la-semantica-estadistica-como-fundamento">
@@ -561,7 +565,7 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
 <p class="admonition-title">Producción del libro y de los videos</p>
 <div class="tip admonition">
 <p class="admonition-title">Libro (Jupyter Book)</p>
-<p>Este libro interactivo digital está siendo desarrollado con <a class="reference external" href="https://jupyterbook.org"><strong>Jupyter Book</strong></a> y tendrá ISBN tramitado por IDERA-IGN.</p>
+<p>Este libro interactivo digital está siendo desarrollado con <a class="reference external" href="https://jupyterbook.org"><strong>Jupyter Book</strong></a> y tendrá ISBN tramitado por alguna institución estatal.</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Videos</p>
@@ -655,6 +659,7 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-geosemantica"><strong>Introducción a Geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica"><strong>Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica"><strong>Tres niveles complementarios de geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>La semántica estadística como fundamento</strong></a></li>
 </ul>
 </li>
