@@ -46,7 +46,7 @@ En machine learning, el *espacio latente* es un espacio matemático (generalment
 **Entrenamiento:** Multifuente (óptico, radar, térmico, DEMs, clima...), miles de millones de *frames* globales.  
 **Capacidades:** Embeddings anuales de 64 dimensiones (10 m) listos para clasificación, regresión, detección de cambios y búsqueda por similitud.  
 **Usos:** Dataset público **Satellite Embedding V1** en Earth Engine (2017–2024).  
-**Institución:** Google DeepMind (en colaboración con Google Research/Earth Engine).
+**Institución:** Google DeepMind (en colaboración con Google Research/Earth Engine) {cite}`Brown2025AlphaEarth`.
 
 ---
 
@@ -55,14 +55,14 @@ En machine learning, el *espacio latente* es un espacio matemático (generalment
 **Entrenamiento:** Petabytes de datos NASA (HLS, MODIS/VIIRS) y variantes Wx/Climate.  
 **Capacidades:** *Fine-tuning* para incendios, sequías, inundaciones; mapeo y series temporales.  
 **Usos:** Investigación ambiental y climática; modelos publicados y *checkpoints* abiertos.  
-**Institución:** NASA–IBM (con aliados académicos).
+**Institución:** NASA–IBM (con aliados académicos) {cite}`szwarcman2024prithvio`.
 
 ---
 
 ### 1.2.3. 🔁 TerraMind (IBM Research, 2025)
 **Tipo:** Modelos ligeros para EO (versiones *tiny/small* para *edge computing*).  
 **Capacidades/Usos:** Inferencia en dispositivos modestos con mínima degradación frente a modelos mayores.  
-**Institución:** IBM Research (ecosistema NASA–IBM).
+**Institución:** IBM Research (ecosistema NASA–IBM) {cite}`jakubik2025terramind`.
 
 > **Nota:** Evitá presentar *OneVision (Google Research, 2024)* como modelo satelital. Si se menciona, aclarar que **LLaVA-OneVision** es un modelo multimodal de visión-lenguaje, **no** específico de Observación de la Tierra.
 
