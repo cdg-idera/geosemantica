@@ -253,7 +253,7 @@ A continuación se detallan ejemplos de tipologías geográficas y sugerencias p
 
 ---
 
-# 🛰️ Consideraciones metodológicas y recomendaciones prácticas
+# Consideraciones metodológicas y recomendaciones prácticas
 
 El dataset **`GOOGLE/SATELLITE_EMBEDDING/V1`** constituye una representación semántica de la superficie terrestre aprendida a partir de millones de escenas multitemporales, pero su naturaleza **latente y abstracta** impone ciertas limitaciones operativas.  
 En primer lugar, es importante reconocer que estos embeddings **no codifican objetos discretos ni detalles finos** —como vehículos, edificaciones individuales o elementos de pequeña escala—, ya que su resolución espacial de **10 metros** y su entrenamiento auto-supervisado están orientados a **capturar patrones espaciales amplios, contextos ambientales y estructuras territoriales coherentes**.  
@@ -263,7 +263,7 @@ Estas categorías presentan **huellas espaciales y texturales persistentes** que
 
 ---
 
-## 🌐 Integración con índices espectrales y capas complementarias
+## Integración con índices espectrales y capas complementarias
 
 Un aspecto metodológico crucial consiste en **combinar los embeddings con indicadores derivados** (espectrales o radar) que aportan *atributos físicos o biofísicos interpretables*.  
 La **semántica latente** del embedding debe complementarse con información **radiométrica y temática explícita**, de modo que el análisis se apoye tanto en patrones aprendidos como en métricas observables.
@@ -281,7 +281,7 @@ En síntesis, los embeddings deben entenderse como un **componente de una arquit
 
 ---
 
-## 🧩 Usos avanzados de embeddings satelitales
+## Usos avanzados de embeddings satelitales
 
 Los *embeddings satelitales* son una herramienta versátil que puede integrarse en múltiples flujos de trabajo de análisis geoespacial, tanto supervisados como no supervisados.  
 A continuación se resumen los principales enfoques de aplicación:
@@ -309,7 +309,7 @@ Estos análisis permiten **descubrir clústeres naturales** que revelan tipolog�
 
 ---
 
-### 🧭 Síntesis epistemológica
+### Síntesis epistemológica
 
 En definitiva, los embeddings satelitales constituyen un **nuevo lenguaje estadístico del territorio**, en el que cada vector representa una *unidad mínima de conocimiento geoespacial*.  
 El modelo **no “ve” colores o bandas**, sino que **razona en términos de patrones latentes aprendidos** a partir de la co-ocurrencia espacial, temporal y contextual de los datos.  

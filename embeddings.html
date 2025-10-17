@@ -404,14 +404,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.3. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">4.1. 🌐 Integración con índices espectrales y capas complementarias</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">4.2. 🧩 Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">4.1. Integración con índices espectrales y capas complementarias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">4.2. Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentacion-semantica">4.2.1. 🔹 1. Segmentación semántica</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-supervisada">4.2.2. 🔹 2. Clasificación supervisada</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-semantica-y-analisis-de-similitud">4.2.3. 🔹 3. Búsqueda semántica y análisis de similitud</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones">4.2.4. 🔹 4. Entrenamiento no supervisado y exploración de patrones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">4.2.5. 🧭 Síntesis epistemológica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">4.2.5. Síntesis epistemológica</a></li>
 </ul>
 </li>
 </ul>
@@ -748,14 +748,14 @@ A continuación se detallan ejemplos de tipologías geográficas y sugerencias p
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="consideraciones-metodologicas-y-recomendaciones-practicas">
-<h1><span class="section-number">4. </span>🛰️ Consideraciones metodológicas y recomendaciones prácticas<a class="headerlink" href="#consideraciones-metodologicas-y-recomendaciones-practicas" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Consideraciones metodológicas y recomendaciones prácticas<a class="headerlink" href="#consideraciones-metodologicas-y-recomendaciones-practicas" title="Link to this heading">#</a></h1>
 <p>El dataset <strong><code class="docutils literal notranslate"><span class="pre">GOOGLE/SATELLITE_EMBEDDING/V1</span></code></strong> constituye una representación semántica de la superficie terrestre aprendida a partir de millones de escenas multitemporales, pero su naturaleza <strong>latente y abstracta</strong> impone ciertas limitaciones operativas.<br />
 En primer lugar, es importante reconocer que estos embeddings <strong>no codifican objetos discretos ni detalles finos</strong> —como vehículos, edificaciones individuales o elementos de pequeña escala—, ya que su resolución espacial de <strong>10 metros</strong> y su entrenamiento auto-supervisado están orientados a <strong>capturar patrones espaciales amplios, contextos ambientales y estructuras territoriales coherentes</strong>.</p>
 <p>Por esta razón, su mayor potencial se manifiesta en la <strong>detección y comparación de tipologías geográficas o paisajísticas</strong>, tales como zonas agrícolas, humedales, cuerpos de agua, áreas urbanas densas, salinas o minas a cielo abierto.<br />
 Estas categorías presentan <strong>huellas espaciales y texturales persistentes</strong> que el modelo logra representar en su espacio vectorial de 64 dimensiones.</p>
 <hr class="docutils" />
 <section id="integracion-con-indices-espectrales-y-capas-complementarias">
-<h2><span class="section-number">4.1. </span>🌐 Integración con índices espectrales y capas complementarias<a class="headerlink" href="#integracion-con-indices-espectrales-y-capas-complementarias" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Integración con índices espectrales y capas complementarias<a class="headerlink" href="#integracion-con-indices-espectrales-y-capas-complementarias" title="Link to this heading">#</a></h2>
 <p>Un aspecto metodológico crucial consiste en <strong>combinar los embeddings con indicadores derivados</strong> (espectrales o radar) que aportan <em>atributos físicos o biofísicos interpretables</em>.<br />
 La <strong>semántica latente</strong> del embedding debe complementarse con información <strong>radiométrica y temática explícita</strong>, de modo que el análisis se apoye tanto en patrones aprendidos como en métricas observables.</p>
 <p>Entre las estrategias más efectivas se encuentran:</p>
@@ -769,7 +769,7 @@ Por ejemplo, la detección de zonas industriales o ladrilleras se beneficia de u
 </section>
 <hr class="docutils" />
 <section id="usos-avanzados-de-embeddings-satelitales">
-<h2><span class="section-number">4.2. </span>🧩 Usos avanzados de embeddings satelitales<a class="headerlink" href="#usos-avanzados-de-embeddings-satelitales" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Usos avanzados de embeddings satelitales<a class="headerlink" href="#usos-avanzados-de-embeddings-satelitales" title="Link to this heading">#</a></h2>
 <p>Los <em>embeddings satelitales</em> son una herramienta versátil que puede integrarse en múltiples flujos de trabajo de análisis geoespacial, tanto supervisados como no supervisados.<br />
 A continuación se resumen los principales enfoques de aplicación:</p>
 <section id="segmentacion-semantica">
@@ -795,7 +795,7 @@ Estos análisis permiten <strong>descubrir clústeres naturales</strong> que rev
 </section>
 <hr class="docutils" />
 <section id="sintesis-epistemologica">
-<h3><span class="section-number">4.2.5. </span>🧭 Síntesis epistemológica<a class="headerlink" href="#sintesis-epistemologica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.5. </span>Síntesis epistemológica<a class="headerlink" href="#sintesis-epistemologica" title="Link to this heading">#</a></h3>
 <p>En definitiva, los embeddings satelitales constituyen un <strong>nuevo lenguaje estadístico del territorio</strong>, en el que cada vector representa una <em>unidad mínima de conocimiento geoespacial</em>.<br />
 El modelo <strong>no “ve” colores o bandas</strong>, sino que <strong>razona en términos de patrones latentes aprendidos</strong> a partir de la co-ocurrencia espacial, temporal y contextual de los datos.</p>
 <p>Sin embargo, la potencia de esta representación no radica en sustituir los índices o modelos clásicos, sino en <strong>integrarse con ellos</strong>.<br />
@@ -886,14 +886,14 @@ La sinergia entre <em>semántica latente (embeddings)</em> y <em>semántica expl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.3. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">4.1. 🌐 Integración con índices espectrales y capas complementarias</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">4.2. 🧩 Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">4.1. Integración con índices espectrales y capas complementarias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">4.2. Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentacion-semantica">4.2.1. 🔹 1. Segmentación semántica</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-supervisada">4.2.2. 🔹 2. Clasificación supervisada</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-semantica-y-analisis-de-similitud">4.2.3. 🔹 3. Búsqueda semántica y análisis de similitud</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones">4.2.4. 🔹 4. Entrenamiento no supervisado y exploración de patrones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">4.2.5. 🧭 Síntesis epistemológica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">4.2.5. Síntesis epistemológica</a></li>
 </ul>
 </li>
 </ul>
