@@ -51,6 +51,23 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
 
 ````
 
+
+````{admonition} Proyección sobre la hiperesfera unitaria
+:class: tip
+
+La proyeccción sobre la hiperesfera unitaria se denomina **normalización L2**, también llamada **proyección sobre la hiperesfera unitaria** o **mapa radial**, y convierte un vector cualquiera en un **vector unitario** que conserva su dirección original.
+
+Interpretación geométrica:
+
+* El proceso transforma todo el espacio $\mathbb{R}^d$ (excepto el origen) en la superficie de la esfera $S^{d-1}$:
+
+$$
+\mathbb{R}^d \setminus \{0\} \xrightarrow{\text{normalización L2}} S^{d-1}
+$$
+
+Cada punto se **proyecta radialmente** sobre la superficie, manteniendo su dirección y descartando la magnitud.
+````
+
 ---
 
 ## 3) Ejemplo numérico con un embedding 3D

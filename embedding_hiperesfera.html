@@ -493,6 +493,19 @@ Para representarlo gráficamente, se aplica una <strong>reducción de dimensiona
 <p>De este modo, se muestran solo tres componentes —las tres primeras componentes principales— que capturan la <strong>estructura dominante</strong> del conjunto de embeddings.<br />
 Así, cada punto del gráfico tridimensional es una proyección aproximada de su posición original en el espacio de 64 dimensiones.</p>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Proyección sobre la hiperesfera unitaria</p>
+<p>La proyeccción sobre la hiperesfera unitaria se denomina <strong>normalización L2</strong>, también llamada <strong>proyección sobre la hiperesfera unitaria</strong> o <strong>mapa radial</strong>, y convierte un vector cualquiera en un <strong>vector unitario</strong> que conserva su dirección original.</p>
+<p>Interpretación geométrica:</p>
+<ul class="simple">
+<li><p>El proceso transforma todo el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^d\)</span> (excepto el origen) en la superficie de la esfera <span class="math notranslate nohighlight">\(S^{d-1}\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{R}^d \setminus \{0\} \xrightarrow{\text{normalización L2}} S^{d-1}
+\]</div>
+<p>Cada punto se <strong>proyecta radialmente</strong> sobre la superficie, manteniendo su dirección y descartando la magnitud.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="ejemplo-numerico-con-un-embedding-3d">
