@@ -40,6 +40,16 @@ $\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)$
 | **UMAP** | *Uniform Manifold Approximation and Projection* | No lineal | La estructura local y global |
 | **t-SNE** | *t-Distributed Stochastic Neighbor Embedding* | No lineal | Las vecindades locales (clústeres) |
 
+````{admonition} Conclusiones de la representación de un embedding $\mathbb{R}^{n}$
+:class: tip
+
+En términos prácticos, un *embedding* en $\mathbb{R}^{64}$ no puede visualizarse directamente.  
+Para representarlo gráficamente, se aplica una **reducción de dimensionalidad**, como el **Análisis de Componentes Principales (PCA)**, que transforma los vectores de $\mathbb{R}^{64}$ en un nuevo espacio de $\mathbb{R}^3$ conservando la mayor varianza posible.  
+
+De este modo, se muestran solo tres componentes —las tres primeras componentes principales— que capturan la **estructura dominante** del conjunto de embeddings.  
+Así, cada punto del gráfico tridimensional es una proyección aproximada de su posición original en el espacio de 64 dimensiones.
+
+````
 
 ---
 

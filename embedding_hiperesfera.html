@@ -486,6 +486,13 @@ document.write(`
 </tbody>
 </table>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Conclusiones de la representación de un embedding <span class="math notranslate nohighlight">\(\mathbb{R}^{n}\)</span></p>
+<p>En términos prácticos, un <em>embedding</em> en <span class="math notranslate nohighlight">\(\mathbb{R}^{64}\)</span> no puede visualizarse directamente.<br />
+Para representarlo gráficamente, se aplica una <strong>reducción de dimensionalidad</strong>, como el <strong>Análisis de Componentes Principales (PCA)</strong>, que transforma los vectores de <span class="math notranslate nohighlight">\(\mathbb{R}^{64}\)</span> en un nuevo espacio de <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> conservando la mayor varianza posible.</p>
+<p>De este modo, se muestran solo tres componentes —las tres primeras componentes principales— que capturan la <strong>estructura dominante</strong> del conjunto de embeddings.<br />
+Así, cada punto del gráfico tridimensional es una proyección aproximada de su posición original en el espacio de 64 dimensiones.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="ejemplo-numerico-con-un-embedding-3d">
