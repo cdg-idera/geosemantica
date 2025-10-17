@@ -573,13 +573,18 @@ La capa adaptativa se vectoriza y añade para comparación.
 
 ---
 
+```{figure} imagenes/hornosSamples.png
+:name: fig-hornos1
+:width: 100%
 
+Muestras de entrenamiento de Ladrilleras en Allen (Rio Negro)
+```
 
 ```{figure} imagenes/hornos.png
 :name: fig-hornos
 :width: 100%
 
-Busqueda por similitud Hornos de Ladrillo
+Busqueda por similitud Ladrilleras
 ```
 
 ### **9) Exportación opcional**
