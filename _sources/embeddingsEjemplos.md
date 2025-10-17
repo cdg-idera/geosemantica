@@ -158,13 +158,37 @@ var samplesMeanVec = samples.map(function(f){
 ---
 
 ### **5) Similitud coseno**
+
 La similitud coseno mide la afinidad entre cada píxel y los vectores de muestra:
 
 ```{math}
 \text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}
 ```
 
+donde:
+
+* $x$ * $y$ es el **producto punto** entre los vectores x e y.
+* $\|x\|$ y $\|y\|$ son las **normas (magnitudes)** de cada vector.
+
 Se calcula por píxel, normalizando ambos vectores a norma 1 y quedándose con el máximo de similitud.
+
+```{admonition} 🔍 ¿Qué mide la *similitud coseno*?
+:class: tip
+
+La similitud coseno (cosine similarity) mide cuán parecidos son dos vectores en un espacio multidimensional, comparando el ángulo entre ellos.
+
+🔹 Intuición geométrica:
+
+* Si los vectores apuntan en la misma dirección, el coseno del ángulo entre ellos es 1 → máxima similitud.
+
+* Si son ortogonales, el coseno es 0 → no hay similitud.
+
+* Si apuntan en direcciones opuestas, el coseno es –1 → totalmente opuestos.
+
+Por eso se interpreta como una **medida de orientación**, **no de magnitud**.
+
+
+```
 
 ---
 

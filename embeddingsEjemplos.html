@@ -620,7 +620,23 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 <p>La similitud coseno mide la afinidad entre cada píxel y los vectores de muestra:</p>
 <div class="math notranslate nohighlight">
 \[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> * <span class="math notranslate nohighlight">\(y\)</span> es el <strong>producto punto</strong> entre los vectores x e y.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\|x\|\)</span> y <span class="math notranslate nohighlight">\(\|y\|\)</span> son las <strong>normas (magnitudes)</strong> de cada vector.</p></li>
+</ul>
 <p>Se calcula por píxel, normalizando ambos vectores a norma 1 y quedándose con el máximo de similitud.</p>
+<div class="tip admonition">
+<p class="admonition-title">🔍 ¿Qué mide la <em>similitud coseno</em>?</p>
+<p>La similitud coseno (cosine similarity) mide cuán parecidos son dos vectores en un espacio multidimensional, comparando el ángulo entre ellos.</p>
+<p>🔹 Intuición geométrica:</p>
+<ul class="simple">
+<li><p>Si los vectores apuntan en la misma dirección, el coseno del ángulo entre ellos es 1 → máxima similitud.</p></li>
+<li><p>Si son ortogonales, el coseno es 0 → no hay similitud.</p></li>
+<li><p>Si apuntan en direcciones opuestas, el coseno es –1 → totalmente opuestos.</p></li>
+</ul>
+<p>Por eso se interpreta como una <strong>medida de orientación</strong>, <strong>no de magnitud</strong>.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="poligonos-por-umbral">
