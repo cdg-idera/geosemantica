@@ -1,65 +1,56 @@
-# Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada
+# Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada?
 
-## 1) Descripción general
+## 1) Descripción general (definición y marco geométrico)
 
-Un **embedding** es un vector en un espacio latente de dimensión \(d\), por ejemplo, \(x \in \mathbb{R}^d\). Para compararlo geométricamente por **orientación** (y no por magnitud), se **normaliza L2** y se proyecta sobre la **hiperesfera unitaria**:
+Una **hiperesfera unitaria** en dimensión $n$ es el conjunto de todos los vectores con **norma euclidiana 1**:
 
-$\hat{x} = \frac{x}{\|x\|}$
+$S^{n-1} = \{\, x \in \mathbb{R}^n \mid \|x\| = 1 \,\}$
 
-donde $\|x\|$ es la norma euclidiana (longitud) del vector. Tras la normalización, $\|\hat{x}\| = 1$, por lo que $\hat{x}$ vive sobre la **superficie** de la hiperesfera de radio 1 en dimensión $d$.
+Por ejemplo:
 
-### Flujo típico para visualizar embeddings
-1. **Normalizá L2** cada vector: $\hat{x} = x/\|x\|$.
-2. **Reducí dimensionalidad** si $d > 3$ (PCA/UMAP/t-SNE) a 2D/3D para poder graficar.
-3. **Re-normalizá en el espacio reducido** para ubicar los puntos exactamente sobre la esfera/circunferencia unitaria: $\tilde{x} = x_{\text{proj}}/\|x_{\text{proj}}\|$.
-4. **Graficá** los puntos normalizados junto con la esfera/circunferencia unitaria.
-5. (Opcional) Medí **similitud coseno** entre embeddings normalizados: $\text{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)$.
+| Dimensión | Nombre geométrico | Ecuación | Representación |
+|---|---|---|---|
+| 1D | Dos puntos ($-1$, $+1$) | $x^2 = 1$ | 🔹🔹 |
+| 2D | Circunferencia unitaria | $x^2 + y^2 = 1$ | ⭕ |
+| 3D | Esfera unitaria | $x^2 + y^2 + z^2 = 1$ | 🟢 |
+| $d$D | Hiperesfera unitaria | $x_1^2 + \cdots + x_d^2 = 1$ | (no visualizable) |
 
-> Idea central: la comparación semántica entre embeddings ocurre por **ángulos** (direcciones) sobre la hiperesfera, no por magnitudes.
+En el contexto de **embeddings**, un dato se representa por un vector $x \in \mathbb{R}^d$. Para comparar por **dirección** (semántica) y no por magnitud, se **normaliza L2** y se proyecta sobre la hiperesfera unitaria:
 
----
+$\hat{x} = \dfrac{x}{\|x\|}$
 
-## 2) Ejemplo con un embedding 3D (paso a paso)
+Después de normalizar, se cumple $\|\hat{x}\| = 1$. Así, la similitud entre embeddings se evalúa por su **ángulo** sobre la hiperesfera, típicamente vía **similitud coseno**:
 
-### 2.1 Vector original
-Supongamos un embedding 3D: $x = [1.4,\ 0.5,\ -0.8]$.
-
-### 2.2 Norma L2
-$\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688$
-
-### 2.3 Normalización a la esfera unitaria
-$\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]$
-
-Ahora $\|\hat{x}\| = 1$. Geométricamente, $\hat{x}$ es un punto sobre la **esfera unitaria** en 3D.
-
-### 2.4 Cómo graficarlo (idea práctica)
-- Dibujá una **malla de esfera unitaria** (radio 1).  
-- Graficá el **punto normalizado** $\hat{x}$ como un marcador sobre esa esfera.  
-- Si tuvieras varios embeddings, repetís el proceso para cada uno y comparás las **distancias angulares** (o la **similitud coseno**).
-
-### 2.5 Pseudocódigo (Python)
-```python
-import numpy as np
-
-# Vector 3D
-x = np.array([1.4, 0.5, -0.8], dtype=float)
-
-# 1) Normalización L2
-x_hat = x / np.linalg.norm(x)   # vive sobre la esfera unitaria
-
-# 2) (Opcional) Para muchos vectores: stack, normalizar fila a fila
-# X = np.stack([...])  # (n, 3)
-# X_hat = X / np.linalg.norm(X, axis=1, keepdims=True)
-
-# 3) Graficar: usar matplotlib 3D, dibujar malla de esfera y scatter de x_hat
-```
-
-> Nota: si tu embedding fuera de 64D (como en Satellite Embeddings V1), primero normalizás en 64D, luego reducís a 3D con PCA/UMAP/t-SNE, y **volvés a normalizar** ese 3D antes de graficar para ubicar los puntos exactamente sobre la esfera unitaria.
+$\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)$
 
 ---
 
-## 3) Resumen
+## 2) Flujo práctico para visualizar embeddings
 
-- **Normalización L2**: $\hat{x} = x/\|x\|$ coloca el embedding sobre la **hiperesfera unitaria**.  
-- **Visualización**: si $d \le 3$, graficás directamente; si $d > 3$, **proyectás** a 2D/3D y **re-normalizás**.  
-- **Comparación**: la **similitud coseno** $\hat{u} \cdot \hat{v}$ (o el **ángulo** $\arccos(\hat{u}\cdot\hat{v})$) mide proximidad semántica en la hiperesfera.
+1. **Normalización L2** por vector: $\hat{x} = x/\|x\|$.
+2. **Reducción de dimensionalidad** si $d > 3$ (PCA/UMAP/t\text{-}SNE) para obtener $x_{\text{proj}} \in \mathbb{R}^3$ o $\mathbb{R}^2$.
+3. **Re-normalización en el espacio reducido** para que los puntos queden sobre la esfera/circunferencia unitaria: $\tilde{x} = x_{\text{proj}}/\|x_{\text{proj}}\|$.
+4. **Gráfica**: dibujar la esfera/circunferencia unitaria y superponer los puntos $\tilde{x}$.
+5. (Opcional) **Medir proximidad** entre embeddings con $\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v}$ o el **ángulo** $\arccos(\hat{u}\cdot\hat{v})$.
+
+---
+
+## 3) Ejemplo numérico con un embedding 3D
+
+**Vector original**: $x = [1.4,\ 0.5,\ -0.8]$.
+
+**Norma L2**: $\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688$.
+
+**Normalización**: $\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]$.
+
+Ahora $\|\hat{x}\| = 1$, por lo que $\hat{x}$ está sobre la **esfera unitaria** en $\mathbb{R}^3$.
+
+**Interpretación**: si tuviéramos dos embeddings normalizados $\hat{u}$ y $\hat{v}$, su similitud coseno $\hat{u}\cdot\hat{v}$ mide cuán **alineados** están (qué tan similares son), independientemente de la magnitud original de $u$ y $v$.
+
+---
+
+## 4) Resumen
+
+- Un embedding $x$ se **proyecta** a la hiperesfera unitaria con $\hat{x} = x/\|x\|$.
+- Para visualizar embeddings de alta dimensión ($d>3$), primero se **reduce** (PCA/UMAP/t\text{-}SNE) y luego se **re-normaliza**.
+- La **similitud coseno** $\hat{u}\cdot\hat{v}$ (o el **ángulo** $\arccos(\hat{u}\cdot\hat{v})$) es la métrica natural sobre la hiperesfera.

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>9. Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada &#8212; Geosemántica y GeoAI</title>
+    <title>9. Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada? &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -377,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada</h1>
+    <h1>Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,19 +387,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">9.1. 1) Descripción general</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-tipico-para-visualizar-embeddings">9.1.1. Flujo típico para visualizar embeddings</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-con-un-embedding-3d-paso-a-paso">9.2. 2) Ejemplo con un embedding 3D (paso a paso)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-original">9.2.1. 2.1 Vector original</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norma-l2">9.2.2. 2.2 Norma L2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizacion-a-la-esfera-unitaria">9.2.3. 2.3 Normalización a la esfera unitaria</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-graficarlo-idea-practica">9.2.4. 2.4 Cómo graficarlo (idea práctica)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-python">9.2.5. 2.5 Pseudocódigo (Python)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.3. 3) Resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">9.1. 1) Descripción general (definición y marco geométrico)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">9.2. 2) Flujo práctico para visualizar embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.4. 4) Resumen</a></li>
 </ul>
             </nav>
         </div>
@@ -412,79 +403,76 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada">
-<h1><span class="section-number">9. </span>Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada<a class="headerlink" href="#apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada" title="Link to this heading">#</a></h1>
-<section id="descripcion-general">
-<h2><span class="section-number">9.1. </span>1) Descripción general<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
-<p>Un <strong>embedding</strong> es un vector en un espacio latente de dimensión (d), por ejemplo, (x \in \mathbb{R}^d). Para compararlo geométricamente por <strong>orientación</strong> (y no por magnitud), se <strong>normaliza L2</strong> y se proyecta sobre la <strong>hiperesfera unitaria</strong>:</p>
-<p><span class="math notranslate nohighlight">\(\hat{x} = \frac{x}{\|x\|}\)</span></p>
-<p>donde <span class="math notranslate nohighlight">\(\|x\|\)</span> es la norma euclidiana (longitud) del vector. Tras la normalización, <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>, por lo que <span class="math notranslate nohighlight">\(\hat{x}\)</span> vive sobre la <strong>superficie</strong> de la hiperesfera de radio 1 en dimensión <span class="math notranslate nohighlight">\(d\)</span>.</p>
-<section id="flujo-tipico-para-visualizar-embeddings">
-<h3><span class="section-number">9.1.1. </span>Flujo típico para visualizar embeddings<a class="headerlink" href="#flujo-tipico-para-visualizar-embeddings" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Normalizá L2</strong> cada vector: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
-<li><p><strong>Reducí dimensionalidad</strong> si <span class="math notranslate nohighlight">\(d &gt; 3\)</span> (PCA/UMAP/t-SNE) a 2D/3D para poder graficar.</p></li>
-<li><p><strong>Re-normalizá en el espacio reducido</strong> para ubicar los puntos exactamente sobre la esfera/circunferencia unitaria: <span class="math notranslate nohighlight">\(\tilde{x} = x_{\text{proj}}/\|x_{\text{proj}}\|\)</span>.</p></li>
-<li><p><strong>Graficá</strong> los puntos normalizados junto con la esfera/circunferencia unitaria.</p></li>
-<li><p>(Opcional) Medí <strong>similitud coseno</strong> entre embeddings normalizados: <span class="math notranslate nohighlight">\(\text{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)\)</span>.</p></li>
-</ol>
-<blockquote>
-<div><p>Idea central: la comparación semántica entre embeddings ocurre por <strong>ángulos</strong> (direcciones) sobre la hiperesfera, no por magnitudes.</p>
-</div></blockquote>
-</section>
+<h1><span class="section-number">9. </span>Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada?<a class="headerlink" href="#apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada" title="Link to this heading">#</a></h1>
+<section id="descripcion-general-definicion-y-marco-geometrico">
+<h2><span class="section-number">9.1. </span>1) Descripción general (definición y marco geométrico)<a class="headerlink" href="#descripcion-general-definicion-y-marco-geometrico" title="Link to this heading">#</a></h2>
+<p>Una <strong>hiperesfera unitaria</strong> en dimensión <span class="math notranslate nohighlight">\(n\)</span> es el conjunto de todos los vectores con <strong>norma euclidiana 1</strong>:</p>
+<p><span class="math notranslate nohighlight">\(S^{n-1} = \{\, x \in \mathbb{R}^n \mid \|x\| = 1 \,\}\)</span></p>
+<p>Por ejemplo:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dimensión</p></th>
+<th class="head"><p>Nombre geométrico</p></th>
+<th class="head"><p>Ecuación</p></th>
+<th class="head"><p>Representación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1D</p></td>
+<td><p>Dos puntos (<span class="math notranslate nohighlight">\(-1\)</span>, <span class="math notranslate nohighlight">\(+1\)</span>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2 = 1\)</span></p></td>
+<td><p>🔹🔹</p></td>
+</tr>
+<tr class="row-odd"><td><p>2D</p></td>
+<td><p>Circunferencia unitaria</p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span></p></td>
+<td><p>⭕</p></td>
+</tr>
+<tr class="row-even"><td><p>3D</p></td>
+<td><p>Esfera unitaria</p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 1\)</span></p></td>
+<td><p>🟢</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(d\)</span>D</p></td>
+<td><p>Hiperesfera unitaria</p></td>
+<td><p><span class="math notranslate nohighlight">\(x_1^2 + \cdots + x_d^2 = 1\)</span></p></td>
+<td><p>(no visualizable)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En el contexto de <strong>embeddings</strong>, un dato se representa por un vector <span class="math notranslate nohighlight">\(x \in \mathbb{R}^d\)</span>. Para comparar por <strong>dirección</strong> (semántica) y no por magnitud, se <strong>normaliza L2</strong> y se proyecta sobre la hiperesfera unitaria:</p>
+<p><span class="math notranslate nohighlight">\(\hat{x} = \dfrac{x}{\|x\|}\)</span></p>
+<p>Después de normalizar, se cumple <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>. Así, la similitud entre embeddings se evalúa por su <strong>ángulo</strong> sobre la hiperesfera, típicamente vía <strong>similitud coseno</strong>:</p>
+<p><span class="math notranslate nohighlight">\(\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)\)</span></p>
 </section>
 <hr class="docutils" />
-<section id="ejemplo-con-un-embedding-3d-paso-a-paso">
-<h2><span class="section-number">9.2. </span>2) Ejemplo con un embedding 3D (paso a paso)<a class="headerlink" href="#ejemplo-con-un-embedding-3d-paso-a-paso" title="Link to this heading">#</a></h2>
-<section id="vector-original">
-<h3><span class="section-number">9.2.1. </span>2.1 Vector original<a class="headerlink" href="#vector-original" title="Link to this heading">#</a></h3>
-<p>Supongamos un embedding 3D: <span class="math notranslate nohighlight">\(x = [1.4,\ 0.5,\ -0.8]\)</span>.</p>
+<section id="flujo-practico-para-visualizar-embeddings">
+<h2><span class="section-number">9.2. </span>2) Flujo práctico para visualizar embeddings<a class="headerlink" href="#flujo-practico-para-visualizar-embeddings" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Normalización L2</strong> por vector: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
+<li><p><strong>Reducción de dimensionalidad</strong> si <span class="math notranslate nohighlight">\(d &gt; 3\)</span> (PCA/UMAP/t\text{-}SNE) para obtener <span class="math notranslate nohighlight">\(x_{\text{proj}} \in \mathbb{R}^3\)</span> o <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p></li>
+<li><p><strong>Re-normalización en el espacio reducido</strong> para que los puntos queden sobre la esfera/circunferencia unitaria: <span class="math notranslate nohighlight">\(\tilde{x} = x_{\text{proj}}/\|x_{\text{proj}}\|\)</span>.</p></li>
+<li><p><strong>Gráfica</strong>: dibujar la esfera/circunferencia unitaria y superponer los puntos <span class="math notranslate nohighlight">\(\tilde{x}\)</span>.</p></li>
+<li><p>(Opcional) <strong>Medir proximidad</strong> entre embeddings con <span class="math notranslate nohighlight">\(\operatorname{sim}(u,v) = \hat{u} \cdot \hat{v}\)</span> o el <strong>ángulo</strong> <span class="math notranslate nohighlight">\(\arccos(\hat{u}\cdot\hat{v})\)</span>.</p></li>
+</ol>
 </section>
-<section id="norma-l2">
-<h3><span class="section-number">9.2.2. </span>2.2 Norma L2<a class="headerlink" href="#norma-l2" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688\)</span></p>
-</section>
-<section id="normalizacion-a-la-esfera-unitaria">
-<h3><span class="section-number">9.2.3. </span>2.3 Normalización a la esfera unitaria<a class="headerlink" href="#normalizacion-a-la-esfera-unitaria" title="Link to this heading">#</a></h3>
-<p><span class="math notranslate nohighlight">\(\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]\)</span></p>
-<p>Ahora <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>. Geométricamente, <span class="math notranslate nohighlight">\(\hat{x}\)</span> es un punto sobre la <strong>esfera unitaria</strong> en 3D.</p>
-</section>
-<section id="como-graficarlo-idea-practica">
-<h3><span class="section-number">9.2.4. </span>2.4 Cómo graficarlo (idea práctica)<a class="headerlink" href="#como-graficarlo-idea-practica" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Dibujá una <strong>malla de esfera unitaria</strong> (radio 1).</p></li>
-<li><p>Graficá el <strong>punto normalizado</strong> <span class="math notranslate nohighlight">\(\hat{x}\)</span> como un marcador sobre esa esfera.</p></li>
-<li><p>Si tuvieras varios embeddings, repetís el proceso para cada uno y comparás las <strong>distancias angulares</strong> (o la <strong>similitud coseno</strong>).</p></li>
-</ul>
-</section>
-<section id="pseudocodigo-python">
-<h3><span class="section-number">9.2.5. </span>2.5 Pseudocódigo (Python)<a class="headerlink" href="#pseudocodigo-python" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Vector 3D</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
-
-<span class="c1"># 1) Normalización L2</span>
-<span class="n">x_hat</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># vive sobre la esfera unitaria</span>
-
-<span class="c1"># 2) (Opcional) Para muchos vectores: stack, normalizar fila a fila</span>
-<span class="c1"># X = np.stack([...])  # (n, 3)</span>
-<span class="c1"># X_hat = X / np.linalg.norm(X, axis=1, keepdims=True)</span>
-
-<span class="c1"># 3) Graficar: usar matplotlib 3D, dibujar malla de esfera y scatter de x_hat</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Nota: si tu embedding fuera de 64D (como en Satellite Embeddings V1), primero normalizás en 64D, luego reducís a 3D con PCA/UMAP/t-SNE, y <strong>volvés a normalizar</strong> ese 3D antes de graficar para ubicar los puntos exactamente sobre la esfera unitaria.</p>
-</div></blockquote>
-</section>
+<hr class="docutils" />
+<section id="ejemplo-numerico-con-un-embedding-3d">
+<h2><span class="section-number">9.3. </span>3) Ejemplo numérico con un embedding 3D<a class="headerlink" href="#ejemplo-numerico-con-un-embedding-3d" title="Link to this heading">#</a></h2>
+<p><strong>Vector original</strong>: <span class="math notranslate nohighlight">\(x = [1.4,\ 0.5,\ -0.8]\)</span>.</p>
+<p><strong>Norma L2</strong>: <span class="math notranslate nohighlight">\(\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688\)</span>.</p>
+<p><strong>Normalización</strong>: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]\)</span>.</p>
+<p>Ahora <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>, por lo que <span class="math notranslate nohighlight">\(\hat{x}\)</span> está sobre la <strong>esfera unitaria</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
+<p><strong>Interpretación</strong>: si tuviéramos dos embeddings normalizados <span class="math notranslate nohighlight">\(\hat{u}\)</span> y <span class="math notranslate nohighlight">\(\hat{v}\)</span>, su similitud coseno <span class="math notranslate nohighlight">\(\hat{u}\cdot\hat{v}\)</span> mide cuán <strong>alineados</strong> están (qué tan similares son), independientemente de la magnitud original de <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span>.</p>
 </section>
 <hr class="docutils" />
 <section id="resumen">
-<h2><span class="section-number">9.3. </span>3) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.4. </span>4) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Normalización L2</strong>: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span> coloca el embedding sobre la <strong>hiperesfera unitaria</strong>.</p></li>
-<li><p><strong>Visualización</strong>: si <span class="math notranslate nohighlight">\(d \le 3\)</span>, graficás directamente; si <span class="math notranslate nohighlight">\(d &gt; 3\)</span>, <strong>proyectás</strong> a 2D/3D y <strong>re-normalizás</strong>.</p></li>
-<li><p><strong>Comparación</strong>: la <strong>similitud coseno</strong> <span class="math notranslate nohighlight">\(\hat{u} \cdot \hat{v}\)</span> (o el <strong>ángulo</strong> <span class="math notranslate nohighlight">\(\arccos(\hat{u}\cdot\hat{v})\)</span>) mide proximidad semántica en la hiperesfera.</p></li>
+<li><p>Un embedding <span class="math notranslate nohighlight">\(x\)</span> se <strong>proyecta</strong> a la hiperesfera unitaria con <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
+<li><p>Para visualizar embeddings de alta dimensión (<span class="math notranslate nohighlight">\(d&gt;3\)</span>), primero se <strong>reduce</strong> (PCA/UMAP/t\text{-}SNE) y luego se <strong>re-normaliza</strong>.</p></li>
+<li><p>La <strong>similitud coseno</strong> <span class="math notranslate nohighlight">\(\hat{u}\cdot\hat{v}\)</span> (o el <strong>ángulo</strong> <span class="math notranslate nohighlight">\(\arccos(\hat{u}\cdot\hat{v})\)</span>) es la métrica natural sobre la hiperesfera.</p></li>
 </ul>
 </section>
 </section>
@@ -553,19 +541,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">9.1. 1) Descripción general</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-tipico-para-visualizar-embeddings">9.1.1. Flujo típico para visualizar embeddings</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-con-un-embedding-3d-paso-a-paso">9.2. 2) Ejemplo con un embedding 3D (paso a paso)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-original">9.2.1. 2.1 Vector original</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norma-l2">9.2.2. 2.2 Norma L2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizacion-a-la-esfera-unitaria">9.2.3. 2.3 Normalización a la esfera unitaria</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-graficarlo-idea-practica">9.2.4. 2.4 Cómo graficarlo (idea práctica)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-python">9.2.5. 2.5 Pseudocódigo (Python)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.3. 3) Resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">9.1. 1) Descripción general (definición y marco geométrico)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">9.2. 2) Flujo práctico para visualizar embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.4. 4) Resumen</a></li>
 </ul>
   </nav></div>
 
