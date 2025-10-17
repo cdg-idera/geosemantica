@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Bibliografía &#8212; Geosemántica y GeoAI</title>
+    <title>9. Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -57,10 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Referencias';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'embedding_hiperesfera';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="9. Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada" href="embedding_hiperesfera.html" />
+    <link rel="next" title="10. Bibliografía" href="Referencias.html" />
+    <link rel="prev" title="8. Apéndice B: Tutorial GEE Introduction to the Satellite Embedding Dataset" href="ApendiceB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,8 +190,8 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">6. Capítulo 4 · Entrenamientos Supervisados con Embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">9. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Bibliografía</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">10. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -260,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FReferencias.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2Fembedding_hiperesfera.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +293,7 @@
       
       
       
-      <li><a href="_sources/Referencias.md" target="_blank"
+      <li><a href="_sources/embedding_hiperesfera.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +364,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -372,11 +377,31 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Bibliografía</h1>
+    <h1>Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">9.1. 1) Descripción general</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-tipico-para-visualizar-embeddings">9.1.1. Flujo típico para visualizar embeddings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-con-un-embedding-3d-paso-a-paso">9.2. 2) Ejemplo con un embedding 3D (paso a paso)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-original">9.2.1. 2.1 Vector original</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norma-l2">9.2.2. 2.2 Norma L2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizacion-a-la-esfera-unitaria">9.2.3. 2.3 Normalización a la esfera unitaria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-graficarlo-idea-practica">9.2.4. 2.4 Cómo graficarlo (idea práctica)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-python">9.2.5. 2.5 Pseudocódigo (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.3. 3) Resumen</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -386,80 +411,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bibliografia">
-<h1><span class="section-number">10. </span><strong>Bibliografía</strong><a class="headerlink" href="#bibliografia" title="Link to this heading">#</a></h1>
-<div class="docutils container" id="id1">
-<div role="list" class="citation-list">
-<div class="citation" id="id4" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<p>C. F. Brown, M. R. Kazmierski, V. J. Pasquarella, W. J. Rucklidge, M. Samsikova, C. Zhang, E. Shelhamer, E. Lahera, O. Wiles, S. Ilyushchenko, N. Gorelick, L. L. Zhang, S. Alj, E. Schechter, S. Askay, O. Guinan, R. Moore, A. Boukouvalas, and P. Kohli. Alphaearth foundations: an embedding field model for accurate and efficient global mapping from sparse label data. <em>arXiv preprint</em>, 2025. URL: <a class="reference external" href="https://doi.org/10.48550/arXiv.2507.22291">https://doi.org/10.48550/arXiv.2507.22291</a>, <a class="reference external" href="https://arxiv.org/abs/2507.22291">arXiv:2507.22291</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.2507.22291">doi:10.48550/arXiv.2507.22291</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada">
+<h1><span class="section-number">9. </span>Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada<a class="headerlink" href="#apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada" title="Link to this heading">#</a></h1>
+<section id="descripcion-general">
+<h2><span class="section-number">9.1. </span>1) Descripción general<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h2>
+<p>Un <strong>embedding</strong> es un vector en un espacio latente de dimensión (d), por ejemplo, (x \in \mathbb{R}^d). Para compararlo geométricamente por <strong>orientación</strong> (y no por magnitud), se <strong>normaliza L2</strong> y se proyecta sobre la <strong>hiperesfera unitaria</strong>:</p>
+<p><span class="math notranslate nohighlight">\(\hat{x} = \frac{x}{\|x\|}\)</span></p>
+<p>donde <span class="math notranslate nohighlight">\(\|x\|\)</span> es la norma euclidiana (longitud) del vector. Tras la normalización, <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>, por lo que <span class="math notranslate nohighlight">\(\hat{x}\)</span> vive sobre la <strong>superficie</strong> de la hiperesfera de radio 1 en dimensión <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<section id="flujo-tipico-para-visualizar-embeddings">
+<h3><span class="section-number">9.1.1. </span>Flujo típico para visualizar embeddings<a class="headerlink" href="#flujo-tipico-para-visualizar-embeddings" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Normalizá L2</strong> cada vector: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
+<li><p><strong>Reducí dimensionalidad</strong> si <span class="math notranslate nohighlight">\(d &gt; 3\)</span> (PCA/UMAP/t-SNE) a 2D/3D para poder graficar.</p></li>
+<li><p><strong>Re-normalizá en el espacio reducido</strong> para ubicar los puntos exactamente sobre la esfera/circunferencia unitaria: <span class="math notranslate nohighlight">\(\tilde{x} = x_{\text{proj}}/\|x_{\text{proj}}\|\)</span>.</p></li>
+<li><p><strong>Graficá</strong> los puntos normalizados junto con la esfera/circunferencia unitaria.</p></li>
+<li><p>(Opcional) Medí <strong>similitud coseno</strong> entre embeddings normalizados: <span class="math notranslate nohighlight">\(\text{sim}(u,v) = \hat{u} \cdot \hat{v} = \cos(\theta)\)</span>.</p></li>
+</ol>
+<blockquote>
+<div><p>Idea central: la comparación semántica entre embeddings ocurre por <strong>ángulos</strong> (direcciones) sobre la hiperesfera, no por magnitudes.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ejemplo-con-un-embedding-3d-paso-a-paso">
+<h2><span class="section-number">9.2. </span>2) Ejemplo con un embedding 3D (paso a paso)<a class="headerlink" href="#ejemplo-con-un-embedding-3d-paso-a-paso" title="Link to this heading">#</a></h2>
+<section id="vector-original">
+<h3><span class="section-number">9.2.1. </span>2.1 Vector original<a class="headerlink" href="#vector-original" title="Link to this heading">#</a></h3>
+<p>Supongamos un embedding 3D: <span class="math notranslate nohighlight">\(x = [1.4,\ 0.5,\ -0.8]\)</span>.</p>
+</section>
+<section id="norma-l2">
+<h3><span class="section-number">9.2.2. </span>2.2 Norma L2<a class="headerlink" href="#norma-l2" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688\)</span></p>
+</section>
+<section id="normalizacion-a-la-esfera-unitaria">
+<h3><span class="section-number">9.2.3. </span>2.3 Normalización a la esfera unitaria<a class="headerlink" href="#normalizacion-a-la-esfera-unitaria" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]\)</span></p>
+<p>Ahora <span class="math notranslate nohighlight">\(\|\hat{x}\| = 1\)</span>. Geométricamente, <span class="math notranslate nohighlight">\(\hat{x}\)</span> es un punto sobre la <strong>esfera unitaria</strong> en 3D.</p>
+</section>
+<section id="como-graficarlo-idea-practica">
+<h3><span class="section-number">9.2.4. </span>2.4 Cómo graficarlo (idea práctica)<a class="headerlink" href="#como-graficarlo-idea-practica" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Dibujá una <strong>malla de esfera unitaria</strong> (radio 1).</p></li>
+<li><p>Graficá el <strong>punto normalizado</strong> <span class="math notranslate nohighlight">\(\hat{x}\)</span> como un marcador sobre esa esfera.</p></li>
+<li><p>Si tuvieras varios embeddings, repetís el proceso para cada uno y comparás las <strong>distancias angulares</strong> (o la <strong>similitud coseno</strong>).</p></li>
+</ul>
+</section>
+<section id="pseudocodigo-python">
+<h3><span class="section-number">9.2.5. </span>2.5 Pseudocódigo (Python)<a class="headerlink" href="#pseudocodigo-python" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Vector 3D</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># 1) Normalización L2</span>
+<span class="n">x_hat</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># vive sobre la esfera unitaria</span>
+
+<span class="c1"># 2) (Opcional) Para muchos vectores: stack, normalizar fila a fila</span>
+<span class="c1"># X = np.stack([...])  # (n, 3)</span>
+<span class="c1"># X_hat = X / np.linalg.norm(X, axis=1, keepdims=True)</span>
+
+<span class="c1"># 3) Graficar: usar matplotlib 3D, dibujar malla de esfera y scatter de x_hat</span>
+</pre></div>
 </div>
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
-<p>Christopher F. Brown, Steven P. Brumby, Brookie Guzder-Williams, Tanya Birch, …, and otros. Dynamic world, near real-time global 10 m land use / land cover mapping. <em>Scientific Data</em>, 9(1):251, 2022. URL: <a class="reference external" href="https://www.nature.com/articles/s41597-022-01307-4">https://www.nature.com/articles/s41597-022-01307-4</a>, <a class="reference external" href="https://doi.org/10.1038/s41597-022-01307-4">doi:10.1038/s41597-022-01307-4</a>.</p>
-</div>
-<div class="citation" id="id47" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
-<p>John Rupert Firth. A synopsis of linguistic theory 1930–1955. In <em>Studies in Linguistic Analysis</em>. Philological Society, Oxford, 1957.</p>
-</div>
-<div class="citation" id="id2" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></span>
-<p>Ujaval Gandhi. Satellite embedding deep dive workshop. Spatial Thoughts, 2025. Accessed: 2025-10-05. URL: <a class="reference external" href="https://courses.spatialthoughts.com/gee-satellite-embedding.html">https://courses.spatialthoughts.com/gee-satellite-embedding.html</a>.</p>
-</div>
-<div class="citation" id="id48" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
-<p>Michael F. Goodchild. Reimagining the semantic geography of the earth. <em>International Journal of Geographical Information Science</em>, 35(6):1181–1197, 2021. <a class="reference external" href="https://doi.org/10.1080/13658816.2021.1893331">doi:10.1080/13658816.2021.1893331</a>.</p>
-</div>
-<div class="citation" id="id46" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>
-<p>Zellig Harris. Distributional structure. <em>Word</em>, 10(2-3):146–162, 1954. <a class="reference external" href="https://doi.org/10.1080/00437956.1954.11659520">doi:10.1080/00437956.1954.11659520</a>.</p>
-</div>
-<div class="citation" id="id23" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></span>
-<p>Adobe Inc. Adobe after effects. <a class="reference external" href="https://www.adobe.com/products/aftereffects.html">https://www.adobe.com/products/aftereffects.html</a>, 2025. Composición y motion graphics. Indique versión utilizada.</p>
-</div>
-<div class="citation" id="id25" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></span>
-<p>Adobe Inc. Adobe audition. <a class="reference external" href="https://www.adobe.com/products/audition.html">https://www.adobe.com/products/audition.html</a>, 2025. Edición y mezcla de audio. Indique versión utilizada.</p>
-</div>
-<div class="citation" id="id22" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
-<p>Adobe Inc. Adobe creative cloud. <a class="reference external" href="https://www.adobe.com/creativecloud.html">https://www.adobe.com/creativecloud.html</a>, 2025. Suite de aplicaciones creativas. Especifique versión/plan utilizado.</p>
-</div>
-<div class="citation" id="id24" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
-<p>Adobe Inc. Adobe illustrator. <a class="reference external" href="https://www.adobe.com/products/illustrator.html">https://www.adobe.com/products/illustrator.html</a>, 2025. Diseño y gráficos vectoriales. Indique versión utilizada.</p>
-</div>
-<div class="citation" id="id26" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
-<p>Adobe Inc. Adobe media encoder. <a class="reference external" href="https://www.adobe.com/products/media-encoder.html">https://www.adobe.com/products/media-encoder.html</a>, 2025. Ingesta, transcodificación y publicación. Indique versión utilizada.</p>
-</div>
-<div class="citation" id="id27" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
-<p>Adobe Inc. Adobe stock. <a class="reference external" href="https://stock.adobe.com/">https://stock.adobe.com/</a>, 2025. Banco de imágenes, videos y plantillas. Indique recursos/licencias utilizados.</p>
-</div>
-<div class="citation" id="id6" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
-<p>Johannes Jakubik, Felix Yang, Benedikt Blumenstiel, Erik Scheurer, Rocco Sedona, Stefano Maurogiovanni, Jente Bosmans, Nikolaos Dionelis, Valerio Marsocci, Niklas Kopp, Rahul Ramachandran, Paolo Fraccaro, Thomas Brunschwiler, Gabriele Cavallaro, Juan Bernabé-Moreno, and Nicolas Longépé. Terramind: large-scale generative multimodality for earth observation. <em>arXiv preprint arXiv:2504.11171</em>, 2025. Disponible en <a class="reference external" href="https://arxiv.org/abs/2504.11171">https://arxiv.org/abs/2504.11171</a>.</p>
-</div>
-<div class="citation" id="id8" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
-<p>L. Reynoso. Geoia. 2025. (En preparación).</p>
-</div>
-<div class="citation" id="id5" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
-<p>Daniela Szwarcman, Sujit Roy, Paolo Fraccaro, Þorsteinn Elí Gíslason, Benedikt Blumenstiel, Rinki Ghosal, Pedro Henrique de Oliveira, João Lucas de Sousa Almeida, Rocco Sedona, Yanghui Kang, Srija Chakraborty, Sizhe Wang, Carlos Gomes, Ankur Kumar, Myscon Truong, Denys Godwin, Hyunho Lee, Chia-Yu Hsu, Ata Akbari Asanjan, Besart Mujeci, Disha Shidham, Trevor Keenan, Paulo Arevalo, Wenwen Li, Hamed Alemohammad, Pontus Olofsson, Christopher Hain, Robert Kennedy, Bianca Zadrozny, David Bell, Gabriele Cavallaro, Campbell Watson, Manil Maskey, Rahul Ramachandran, and Juan Bernabe Moreno. Prithvi-eo-2.0: a versatile multi-temporal foundation model for earth observation applications. arXiv preprint arXiv:2412.02732, 2024. Disponible en línea: <a class="reference external" href="https://arxiv.org/abs/2412.02732">https://arxiv.org/abs/2412.02732</a>.</p>
-</div>
-<div class="citation" id="id7" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
-<p>FAO. Global administrative unit layers (gaul) dataset, level 0–2. <a class="reference external" href="https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/metadata/8e9e12f8-cd32-4a22-a1a5-dbc47f9fa13a">https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/metadata/8e9e12f8-cd32-4a22-a1a5-dbc47f9fa13a</a>, 2015. Food and Agriculture Organization of the United Nations (FAO), Rome. Version 2015. URL: <a class="reference external" href="https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/metadata/8e9e12f8-cd32-4a22-a1a5-dbc47f9fa13a">https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/metadata/8e9e12f8-cd32-4a22-a1a5-dbc47f9fa13a</a>.</p>
-</div>
-<div class="citation" id="id49" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
-<p>Google Research. Satellite embeddings v1: a global, multimodal representation of the planet. Technical Report, 2024. Available at: <a class="reference external" href="https://research.google/">https://research.google/</a>.</p>
-</div>
-</div>
-</div>
+<blockquote>
+<div><p>Nota: si tu embedding fuera de 64D (como en Satellite Embeddings V1), primero normalizás en 64D, luego reducís a 3D con PCA/UMAP/t-SNE, y <strong>volvés a normalizar</strong> ese 3D antes de graficar para ubicar los puntos exactamente sobre la esfera unitaria.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resumen">
+<h2><span class="section-number">9.3. </span>3) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Normalización L2</strong>: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span> coloca el embedding sobre la <strong>hiperesfera unitaria</strong>.</p></li>
+<li><p><strong>Visualización</strong>: si <span class="math notranslate nohighlight">\(d \le 3\)</span>, graficás directamente; si <span class="math notranslate nohighlight">\(d &gt; 3\)</span>, <strong>proyectás</strong> a 2D/3D y <strong>re-normalizás</strong>.</p></li>
+<li><p><strong>Comparación</strong>: la <strong>similitud coseno</strong> <span class="math notranslate nohighlight">\(\hat{u} \cdot \hat{v}\)</span> (o el <strong>ángulo</strong> <span class="math notranslate nohighlight">\(\arccos(\hat{u}\cdot\hat{v})\)</span>) mide proximidad semántica en la hiperesfera.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -493,13 +520,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="embedding_hiperesfera.html"
+       href="ApendiceB.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Apéndice C: Cómo graficar un embedding en una hiperesfera normalizada</p>
+        <p class="prev-next-title"><span class="section-number">8. </span><strong>Apéndice B:</strong> Tutorial GEE Introduction to the Satellite Embedding Dataset</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Referencias.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span><strong>Bibliografía</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -507,6 +543,33 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">9.1. 1) Descripción general</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-tipico-para-visualizar-embeddings">9.1.1. Flujo típico para visualizar embeddings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-con-un-embedding-3d-paso-a-paso">9.2. 2) Ejemplo con un embedding 3D (paso a paso)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-original">9.2.1. 2.1 Vector original</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norma-l2">9.2.2. 2.2 Norma L2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalizacion-a-la-esfera-unitaria">9.2.3. 2.3 Normalización a la esfera unitaria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-graficarlo-idea-practica">9.2.4. 2.4 Cómo graficarlo (idea práctica)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudocodigo-python">9.2.5. 2.5 Pseudocódigo (Python)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.3. 3) Resumen</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
