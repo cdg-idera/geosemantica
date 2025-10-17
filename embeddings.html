@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'embeddings';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Capítulo 3: Entrenamiento no supervisado con Enbeddings" href="Clustering.html" />
+    <link rel="next" title="5. Capítulo 3: Entrenamiento no supervisado con Enbeddings" href="Clustering.html" />
     <link rel="prev" title="1. Capítulo 1: Modelos Fundacionales en Observación de la Tierra (FM4EO)" href="embeddings_fundacionales.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,11 +185,12 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">1. Capítulo 1 · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Capítulo 2: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Clustering.html">4. Capítulo 3 · Entrenamiento no-supervisado con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">5. Capítulo 4 · Entrenamientos Supervisados con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">6. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">7. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">8. Bibliografía</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">5. Capítulo 3 · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">6. Capítulo 4 · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">9. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -390,17 +391,27 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">2.2. <strong>Introducción: del píxel al concepto</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">2.3. *<em>Fundamento teórico: ¿Qué es un embedding?</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-matematica-y-significado-de-la-similitud">2.4. Estructura matemática y significado de la similitud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">2.5. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">3. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">3.1. 🌐 Integración con índices espectrales y capas complementarias</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">3.2. 🧩 Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentacion-semantica">3.2.1. 🔹 1. Segmentación semántica</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-supervisada">3.2.2. 🔹 2. Clasificación supervisada</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-semantica-y-analisis-de-similitud">3.2.3. 🔹 3. Búsqueda semántica y análisis de similitud</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones">3.2.4. 🔹 4. Entrenamiento no supervisado y exploración de patrones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">3.2.5. 🧭 Síntesis epistemológica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hiperesfera-unitaria-y-operaciones-de-normalizacion-en-embeddings">3. Hiperesfera unitaria y operaciones de normalización en embeddings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">3.1. 🔵 Definición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-en-embeddings">3.2. Interpretación en embeddings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-que-normalizan-vectores-al-espacio-de-la-hiperesfera-unitaria">3.2.1. Operaciones que normalizan vectores al espacio de la hiperesfera unitaria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-geometrica">3.2.2. Interpretación geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-resumen">3.2.3. En resumen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.3. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">4.1. 🌐 Integración con índices espectrales y capas complementarias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">4.2. 🧩 Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentacion-semantica">4.2.1. 🔹 1. Segmentación semántica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-supervisada">4.2.2. 🔹 2. Clasificación supervisada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-semantica-y-analisis-de-similitud">4.2.3. 🔹 3. Búsqueda semántica y análisis de similitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones">4.2.4. 🔹 4. Entrenamiento no supervisado y exploración de patrones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">4.2.5. 🧭 Síntesis epistemológica</a></li>
 </ul>
 </li>
 </ul>
@@ -510,13 +521,146 @@ sino porque sus vectores latentes apuntan en direcciones próximas dentro de un 
 Este enfoque habilita la <strong>búsqueda semántica geoespacial</strong>, donde el criterio de comparación es el <em>significado estadístico</em> aprendido por el modelo, y no un índice calculado manualmente.</p>
 <p>En consecuencia:</p>
 <ul class="simple">
-<li><p>Los <em>embeddings</em> permiten buscar por concepto (“lugares similares
-a este humedal”) en lugar de por valor (“NDWI &gt; 0.4”).</p></li>
+<li><p>Los <em>embeddings</em> permiten buscar por concepto (“lugares similares a este humedal”) en lugar de por valor (“NDWI &gt; 0.4”).</p></li>
 <li><p>Cada comparación en este espacio vectorial actúa como un <em>razonamiento semántico</em> entre regiones.</p></li>
 </ul>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="hiperesfera-unitaria-y-operaciones-de-normalizacion-en-embeddings">
+<h1><span class="section-number">3. </span>Hiperesfera unitaria y operaciones de normalización en embeddings<a class="headerlink" href="#hiperesfera-unitaria-y-operaciones-de-normalizacion-en-embeddings" title="Link to this heading">#</a></h1>
+<section id="definicion">
+<h2><span class="section-number">3.1. </span>🔵 Definición<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h2>
+<p>Una <strong>hiperesfera unitaria</strong> es la generalización de una esfera común a espacios de muchas dimensiones.<br />
+En términos matemáticos, se define como el conjunto de todos los vectores cuya <strong>norma (longitud)</strong> es igual a 1:</p>
+<p><span class="math notranslate nohighlight">\(S^{n-1} = \{\, x \in \mathbb{R}^n \; | \; \|x\| = 1 \,\}\)</span></p>
+<p>Por ejemplo:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Dimensión</p></th>
+<th class="head"><p>Nombre geométrico</p></th>
+<th class="head"><p>Ecuación</p></th>
+<th class="head"><p>Representación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1D</p></td>
+<td><p>Dos puntos (–1, +1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2 = 1\)</span></p></td>
+<td><p>🔹🔹</p></td>
+</tr>
+<tr class="row-odd"><td><p>2D</p></td>
+<td><p>Circunferencia unitaria</p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span></p></td>
+<td><p>⭕</p></td>
+</tr>
+<tr class="row-even"><td><p>3D</p></td>
+<td><p>Esfera unitaria</p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 1\)</span></p></td>
+<td><p>🟢</p></td>
+</tr>
+<tr class="row-odd"><td><p>64D</p></td>
+<td><p>Hiperesfera unitaria</p></td>
+<td><p><span class="math notranslate nohighlight">\(x_1^2 + x_2^2 + ... + x_{64}^2 = 1\)</span></p></td>
+<td><p>(no visualizable, pero análoga)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="interpretacion-en-embeddings">
+<h2><span class="section-number">3.2. </span>Interpretación en embeddings<a class="headerlink" href="#interpretacion-en-embeddings" title="Link to this heading">#</a></h2>
+<p>Los <strong>embeddings</strong> (como los de <em>Satellite Embeddings V1</em>, <em>Prithvi</em> o <em>TerraMind</em>) representan entidades —palabras, píxeles, regiones o escenas— como vectores en un espacio latente de alta dimensión.</p>
+<p>Antes de compararlos, los modelos suelen <strong>normalizarlos</strong> a norma 1:</p>
+<p><span class="math notranslate nohighlight">\(\hat{x} = \frac{x}{\|x\|}\)</span></p>
+<p>De este modo, todos los vectores se proyectan sobre la <strong>superficie de la hiperesfera unitaria</strong>.<br />
+Así, su <strong>ángulo relativo</strong> (y no su magnitud) representa su similitud semántica.</p>
+<p><span class="math notranslate nohighlight">\(\text{similitud coseno}(x, y) = \hat{x} \cdot \hat{y} = \cos(\theta)\)</span></p>
+<hr class="docutils" />
+<section id="operaciones-que-normalizan-vectores-al-espacio-de-la-hiperesfera-unitaria">
+<h3><span class="section-number">3.2.1. </span>Operaciones que normalizan vectores al espacio de la hiperesfera unitaria<a class="headerlink" href="#operaciones-que-normalizan-vectores-al-espacio-de-la-hiperesfera-unitaria" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Categoría</p></th>
+<th class="head"><p>Operación o técnica</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Geometría subyacente</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Métrica</strong></p></td>
+<td><p><strong>Cosine similarity</strong></p></td>
+<td><p>Mide el coseno del ángulo entre dos vectores.</p></td>
+<td><p>Comparación angular en la hiperesfera.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Métrica</strong></p></td>
+<td><p><strong>Cosine distance</strong> <em>(1 - cos)</em></p></td>
+<td><p>Evalúa disimilitud angular (más grande = más distintos).</p></td>
+<td><p>Todos los vectores tienen norma 1.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Métrica</strong></p></td>
+<td><p><strong>Angular distance</strong></p></td>
+<td><p>Calcula el ángulo directo <span class="math notranslate nohighlight">\(\arccos(\hat{x}\cdot\hat{y})\)</span>.</p></td>
+<td><p>Distancia geodésica sobre la hiperesfera.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Agrupamiento</strong></p></td>
+<td><p><strong>Spherical k-means</strong></p></td>
+<td><p>Variante del k-means que usa similitud coseno en lugar de distancia euclídea.</p></td>
+<td><p>Clustering sobre la superficie de la hiperesfera.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Aprendizaje contrastivo</strong></p></td>
+<td><p><strong>InfoNCE / SimCLR / CLIP</strong></p></td>
+<td><p>Pérdidas contrastivas que comparan pares de embeddings normalizados.</p></td>
+<td><p>Proyección L2 → todos los vectores tienen norma 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Aprendizaje contrastivo</strong></p></td>
+<td><p><strong>NT-Xent Loss</strong></p></td>
+<td><p>Pérdida usada en <em>self-supervised learning</em> para maximizar similitud angular.</p></td>
+<td><p>Espacio latente esférico.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Aprendizaje de métricas</strong></p></td>
+<td><p><strong>Triplet Loss (Anchor–Positive–Negative)</strong></p></td>
+<td><p>Obliga a que los embeddings similares estén más próximos que los distintos.</p></td>
+<td><p>Distancias angulares en la hiperesfera.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Aprendizaje de métricas</strong></p></td>
+<td><p><strong>ArcFace / CosFace / SphereFace</strong></p></td>
+<td><p>Modelos que aprenden en el espacio angular (común en reconocimiento facial).</p></td>
+<td><p>Embeddings confinados a una hiperesfera unitaria.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Modelos fundacionales EO</strong></p></td>
+<td><p><strong>Prithvi, TerraMind, Satellite Embeddings V1</strong></p></td>
+<td><p>Embeddings multiespectrales y temporales normalizados para similitud coseno.</p></td>
+<td><p>Espacio semántico latente sobre una hiperesfera de 64D.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="interpretacion-geometrica">
+<h3><span class="section-number">3.2.2. </span>Interpretación geométrica<a class="headerlink" href="#interpretacion-geometrica" title="Link to this heading">#</a></h3>
+<p>En la hiperesfera unitaria:</p>
+<ul class="simple">
+<li><p>Todos los vectores tienen la <strong>misma longitud (1)</strong>.</p></li>
+<li><p>Solo importa su <strong>dirección</strong>, que define su posición sobre la superficie.</p></li>
+<li><p>Dos vectores cercanos (pequeño ángulo) representan <strong>fenómenos similares</strong>.</p></li>
+<li><p>Dos vectores ortogonales (90°) representan <strong>fenómenos distintos o no relacionados</strong>.</p></li>
+</ul>
+<p>Así, la <strong>distancia angular</strong> se convierte en una medida directa de <strong>similitud semántica o geofísica</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="en-resumen">
+<h3><span class="section-number">3.2.3. </span>En resumen<a class="headerlink" href="#en-resumen" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>La <strong>hiperesfera unitaria</strong> es el espacio geométrico donde viven los <strong>embeddings normalizados</strong>.<br />
+Allí, las operaciones basadas en ángulo o coseno comparan significado, no magnitud.<br />
+En modelos fundacionales de Observación de la Tierra, esta geometría es la base de la <strong>similitud coseno</strong> y de todo el aprendizaje contrastivo que permite mapear el planeta en el espacio latente.</p>
+</div></blockquote>
+</section>
+</section>
 <section id="mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">
-<h2><span class="section-number">2.5. </span><strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong><a class="headerlink" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.3. </span><strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong><a class="headerlink" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales" title="Link to this heading">#</a></h2>
 <p>El <em>embedding</em> captura <strong>contexto más que forma fina</strong>, lo que lo hace especialmente útil para detectar patrones espaciales amplios y coherentes.<br />
 A continuación se detallan ejemplos de tipologías geográficas y sugerencias prácticas de uso.</p>
 <p><strong>Ejemplos de detección por similitud</strong></p>
@@ -604,14 +748,14 @@ A continuación se detallan ejemplos de tipologías geográficas y sugerencias p
 </section>
 <hr class="docutils" />
 <section class="tex2jax_ignore mathjax_ignore" id="consideraciones-metodologicas-y-recomendaciones-practicas">
-<h1><span class="section-number">3. </span>🛰️ Consideraciones metodológicas y recomendaciones prácticas<a class="headerlink" href="#consideraciones-metodologicas-y-recomendaciones-practicas" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>🛰️ Consideraciones metodológicas y recomendaciones prácticas<a class="headerlink" href="#consideraciones-metodologicas-y-recomendaciones-practicas" title="Link to this heading">#</a></h1>
 <p>El dataset <strong><code class="docutils literal notranslate"><span class="pre">GOOGLE/SATELLITE_EMBEDDING/V1</span></code></strong> constituye una representación semántica de la superficie terrestre aprendida a partir de millones de escenas multitemporales, pero su naturaleza <strong>latente y abstracta</strong> impone ciertas limitaciones operativas.<br />
 En primer lugar, es importante reconocer que estos embeddings <strong>no codifican objetos discretos ni detalles finos</strong> —como vehículos, edificaciones individuales o elementos de pequeña escala—, ya que su resolución espacial de <strong>10 metros</strong> y su entrenamiento auto-supervisado están orientados a <strong>capturar patrones espaciales amplios, contextos ambientales y estructuras territoriales coherentes</strong>.</p>
 <p>Por esta razón, su mayor potencial se manifiesta en la <strong>detección y comparación de tipologías geográficas o paisajísticas</strong>, tales como zonas agrícolas, humedales, cuerpos de agua, áreas urbanas densas, salinas o minas a cielo abierto.<br />
 Estas categorías presentan <strong>huellas espaciales y texturales persistentes</strong> que el modelo logra representar en su espacio vectorial de 64 dimensiones.</p>
 <hr class="docutils" />
 <section id="integracion-con-indices-espectrales-y-capas-complementarias">
-<h2><span class="section-number">3.1. </span>🌐 Integración con índices espectrales y capas complementarias<a class="headerlink" href="#integracion-con-indices-espectrales-y-capas-complementarias" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>🌐 Integración con índices espectrales y capas complementarias<a class="headerlink" href="#integracion-con-indices-espectrales-y-capas-complementarias" title="Link to this heading">#</a></h2>
 <p>Un aspecto metodológico crucial consiste en <strong>combinar los embeddings con indicadores derivados</strong> (espectrales o radar) que aportan <em>atributos físicos o biofísicos interpretables</em>.<br />
 La <strong>semántica latente</strong> del embedding debe complementarse con información <strong>radiométrica y temática explícita</strong>, de modo que el análisis se apoye tanto en patrones aprendidos como en métricas observables.</p>
 <p>Entre las estrategias más efectivas se encuentran:</p>
@@ -625,33 +769,33 @@ Por ejemplo, la detección de zonas industriales o ladrilleras se beneficia de u
 </section>
 <hr class="docutils" />
 <section id="usos-avanzados-de-embeddings-satelitales">
-<h2><span class="section-number">3.2. </span>🧩 Usos avanzados de embeddings satelitales<a class="headerlink" href="#usos-avanzados-de-embeddings-satelitales" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>🧩 Usos avanzados de embeddings satelitales<a class="headerlink" href="#usos-avanzados-de-embeddings-satelitales" title="Link to this heading">#</a></h2>
 <p>Los <em>embeddings satelitales</em> son una herramienta versátil que puede integrarse en múltiples flujos de trabajo de análisis geoespacial, tanto supervisados como no supervisados.<br />
 A continuación se resumen los principales enfoques de aplicación:</p>
 <section id="segmentacion-semantica">
-<h3><span class="section-number">3.2.1. </span>🔹 1. Segmentación semántica<a class="headerlink" href="#segmentacion-semantica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.1. </span>🔹 1. Segmentación semántica<a class="headerlink" href="#segmentacion-semantica" title="Link to this heading">#</a></h3>
 <p>Los vectores de embeddings pueden servir como <strong>atributos de entrada</strong> para algoritmos de segmentación (por ejemplo, <em>k-means</em>, <em>Mean-Shift</em>, <em>Spectral Clustering</em> o <em>DBSCAN</em>), permitiendo agrupar píxeles o regiones con similaridad semántica en lugar de simple proximidad espectral.<br />
 Esta estrategia es útil para generar <strong>mapas de regiones homogéneas</strong> sin necesidad de etiquetas previas, abriendo la posibilidad de descubrir patrones emergentes.</p>
 </section>
 <section id="clasificacion-supervisada">
-<h3><span class="section-number">3.2.2. </span>🔹 2. Clasificación supervisada<a class="headerlink" href="#clasificacion-supervisada" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>🔹 2. Clasificación supervisada<a class="headerlink" href="#clasificacion-supervisada" title="Link to this heading">#</a></h3>
 <p>Los embeddings actúan como una <strong>capa intermedia de alto nivel</strong> sobre la cual puede entrenarse un clasificador tradicional (Random Forest, SVM, redes neuronales ligeras) utilizando muestras de entrenamiento definidas por el analista.<br />
 Esto reduce el ruido, mejora la generalización y permite transferir conocimiento entre regiones o épocas distintas.<br />
 Ejemplos prácticos son la detección de <strong>ladrilleras, cultivos específicos o áreas degradadas</strong>, donde la similitud latente se combina con información espectral y radar para obtener una discriminación más precisa.</p>
 </section>
 <section id="busqueda-semantica-y-analisis-de-similitud">
-<h3><span class="section-number">3.2.3. </span>🔹 3. Búsqueda semántica y análisis de similitud<a class="headerlink" href="#busqueda-semantica-y-analisis-de-similitud" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.3. </span>🔹 3. Búsqueda semántica y análisis de similitud<a class="headerlink" href="#busqueda-semantica-y-analisis-de-similitud" title="Link to this heading">#</a></h3>
 <p>Uno de los usos más innovadores es la <strong>búsqueda por similitud</strong> (“find places like this”), en la cual un vector de referencia —derivado de un polígono o muestra representativa— se compara con el embedding completo del territorio mediante la <strong>similitud coseno</strong>.<br />
 Este procedimiento permite <strong>detectar lugares análogos en su estructura semántica</strong>, facilitando la identificación de ambientes similares, expansión de cultivos o detección de anomalías espaciales.</p>
 </section>
 <section id="entrenamiento-no-supervisado-y-exploracion-de-patrones">
-<h3><span class="section-number">3.2.4. </span>🔹 4. Entrenamiento no supervisado y exploración de patrones<a class="headerlink" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.4. </span>🔹 4. Entrenamiento no supervisado y exploración de patrones<a class="headerlink" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones" title="Link to this heading">#</a></h3>
 <p>A partir del espacio latente generado por los embeddings, pueden aplicarse técnicas de <strong>reducción de dimensionalidad</strong> (PCA, t-SNE, UMAP) para visualizar y explorar relaciones entre regiones.<br />
 Estos análisis permiten <strong>descubrir clústeres naturales</strong> que revelan tipologías de paisaje, transiciones ecológicas o gradientes urbanos-rurales sin requerir etiquetas previas.</p>
 </section>
 <hr class="docutils" />
 <section id="sintesis-epistemologica">
-<h3><span class="section-number">3.2.5. </span>🧭 Síntesis epistemológica<a class="headerlink" href="#sintesis-epistemologica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.2.5. </span>🧭 Síntesis epistemológica<a class="headerlink" href="#sintesis-epistemologica" title="Link to this heading">#</a></h3>
 <p>En definitiva, los embeddings satelitales constituyen un <strong>nuevo lenguaje estadístico del territorio</strong>, en el que cada vector representa una <em>unidad mínima de conocimiento geoespacial</em>.<br />
 El modelo <strong>no “ve” colores o bandas</strong>, sino que <strong>razona en términos de patrones latentes aprendidos</strong> a partir de la co-ocurrencia espacial, temporal y contextual de los datos.</p>
 <p>Sin embargo, la potencia de esta representación no radica en sustituir los índices o modelos clásicos, sino en <strong>integrarse con ellos</strong>.<br />
@@ -704,7 +848,7 @@ La sinergia entre <em>semántica latente (embeddings)</em> y <em>semántica expl
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Capítulo 3: <strong>Entrenamiento no supervisado con Enbeddings</strong></p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Capítulo 3: <strong>Entrenamiento no supervisado con Enbeddings</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -729,17 +873,27 @@ La sinergia entre <em>semántica latente (embeddings)</em> y <em>semántica expl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">2.2. <strong>Introducción: del píxel al concepto</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">2.3. *<em>Fundamento teórico: ¿Qué es un embedding?</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-matematica-y-significado-de-la-similitud">2.4. Estructura matemática y significado de la similitud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">2.5. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">3. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">3.1. 🌐 Integración con índices espectrales y capas complementarias</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">3.2. 🧩 Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentacion-semantica">3.2.1. 🔹 1. Segmentación semántica</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-supervisada">3.2.2. 🔹 2. Clasificación supervisada</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-semantica-y-analisis-de-similitud">3.2.3. 🔹 3. Búsqueda semántica y análisis de similitud</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones">3.2.4. 🔹 4. Entrenamiento no supervisado y exploración de patrones</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">3.2.5. 🧭 Síntesis epistemológica</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hiperesfera-unitaria-y-operaciones-de-normalizacion-en-embeddings">3. Hiperesfera unitaria y operaciones de normalización en embeddings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">3.1. 🔵 Definición</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-en-embeddings">3.2. Interpretación en embeddings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-que-normalizan-vectores-al-espacio-de-la-hiperesfera-unitaria">3.2.1. Operaciones que normalizan vectores al espacio de la hiperesfera unitaria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-geometrica">3.2.2. Interpretación geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-resumen">3.2.3. En resumen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.3. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. 🛰️ Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-con-indices-espectrales-y-capas-complementarias">4.1. 🌐 Integración con índices espectrales y capas complementarias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usos-avanzados-de-embeddings-satelitales">4.2. 🧩 Usos avanzados de embeddings satelitales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentacion-semantica">4.2.1. 🔹 1. Segmentación semántica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-supervisada">4.2.2. 🔹 2. Clasificación supervisada</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-semantica-y-analisis-de-similitud">4.2.3. 🔹 3. Búsqueda semántica y análisis de similitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento-no-supervisado-y-exploracion-de-patrones">4.2.4. 🔹 4. Entrenamiento no supervisado y exploración de patrones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-epistemologica">4.2.5. 🧭 Síntesis epistemológica</a></li>
 </ul>
 </li>
 </ul>

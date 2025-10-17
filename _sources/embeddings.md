@@ -117,10 +117,80 @@ Este enfoque habilita la **búsqueda semántica geoespacial**, donde el criterio
 
 En consecuencia:
 
--   Los *embeddings* permiten buscar por concepto ("lugares similares
-    a este humedal") en lugar de por valor ("NDWI \> 0.4").
+-   Los *embeddings* permiten buscar por concepto ("lugares similares a este humedal") en lugar de por valor ("NDWI \> 0.4").
 
 -   Cada comparación en este espacio vectorial actúa como un *razonamiento semántico* entre regiones.
+
+# Hiperesfera unitaria y operaciones de normalización en embeddings
+
+## 🔵 Definición
+
+Una **hiperesfera unitaria** es la generalización de una esfera común a espacios de muchas dimensiones.  
+En términos matemáticos, se define como el conjunto de todos los vectores cuya **norma (longitud)** es igual a 1:
+
+$S^{n-1} = \{\, x \in \mathbb{R}^n \; | \; \|x\| = 1 \,\}$
+
+Por ejemplo:
+
+| Dimensión | Nombre geométrico | Ecuación | Representación |
+|------------|------------------|-----------|----------------|
+| 1D | Dos puntos (–1, +1) | $x^2 = 1$ | 🔹🔹 |
+| 2D | Circunferencia unitaria | $x^2 + y^2 = 1$ | ⭕ |
+| 3D | Esfera unitaria | $x^2 + y^2 + z^2 = 1$ | 🟢 |
+| 64D | Hiperesfera unitaria | $x_1^2 + x_2^2 + ... + x_{64}^2 = 1$ | (no visualizable, pero análoga) |
+
+---
+
+## Interpretación en embeddings
+
+Los **embeddings** (como los de *Satellite Embeddings V1*, *Prithvi* o *TerraMind*) representan entidades —palabras, píxeles, regiones o escenas— como vectores en un espacio latente de alta dimensión.
+
+Antes de compararlos, los modelos suelen **normalizarlos** a norma 1:
+
+$\hat{x} = \frac{x}{\|x\|}$
+
+De este modo, todos los vectores se proyectan sobre la **superficie de la hiperesfera unitaria**.  
+Así, su **ángulo relativo** (y no su magnitud) representa su similitud semántica.
+
+$\text{similitud coseno}(x, y) = \hat{x} \cdot \hat{y} = \cos(\theta)$
+
+---
+
+### Operaciones que normalizan vectores al espacio de la hiperesfera unitaria
+
+| Categoría | Operación o técnica | Descripción | Geometría subyacente |
+|------------|---------------------|--------------|----------------------|
+| **Métrica** | **Cosine similarity** | Mide el coseno del ángulo entre dos vectores. | Comparación angular en la hiperesfera. |
+| **Métrica** | **Cosine distance** *(1 - cos)* | Evalúa disimilitud angular (más grande = más distintos). | Todos los vectores tienen norma 1. |
+| **Métrica** | **Angular distance** | Calcula el ángulo directo $\arccos(\hat{x}\cdot\hat{y})$. | Distancia geodésica sobre la hiperesfera. |
+| **Agrupamiento** | **Spherical k-means** | Variante del k-means que usa similitud coseno en lugar de distancia euclídea. | Clustering sobre la superficie de la hiperesfera. |
+| **Aprendizaje contrastivo** | **InfoNCE / SimCLR / CLIP** | Pérdidas contrastivas que comparan pares de embeddings normalizados. | Proyección L2 → todos los vectores tienen norma 1. |
+| **Aprendizaje contrastivo** | **NT-Xent Loss** | Pérdida usada en *self-supervised learning* para maximizar similitud angular. | Espacio latente esférico. |
+| **Aprendizaje de métricas** | **Triplet Loss (Anchor–Positive–Negative)** | Obliga a que los embeddings similares estén más próximos que los distintos. | Distancias angulares en la hiperesfera. |
+| **Aprendizaje de métricas** | **ArcFace / CosFace / SphereFace** | Modelos que aprenden en el espacio angular (común en reconocimiento facial). | Embeddings confinados a una hiperesfera unitaria. |
+| **Modelos fundacionales EO** | **Prithvi, TerraMind, Satellite Embeddings V1** | Embeddings multiespectrales y temporales normalizados para similitud coseno. | Espacio semántico latente sobre una hiperesfera de 64D. |
+
+---
+
+### Interpretación geométrica
+
+En la hiperesfera unitaria:
+
+- Todos los vectores tienen la **misma longitud (1)**.  
+- Solo importa su **dirección**, que define su posición sobre la superficie.  
+- Dos vectores cercanos (pequeño ángulo) representan **fenómenos similares**.  
+- Dos vectores ortogonales (90°) representan **fenómenos distintos o no relacionados**.
+
+Así, la **distancia angular** se convierte en una medida directa de **similitud semántica o geofísica**.
+
+---
+
+### En resumen
+
+> La **hiperesfera unitaria** es el espacio geométrico donde viven los **embeddings normalizados**.  
+> Allí, las operaciones basadas en ángulo o coseno comparan significado, no magnitud.  
+> En modelos fundacionales de Observación de la Tierra, esta geometría es la base de la **similitud coseno** y de todo el aprendizaje contrastivo que permite mapear el planeta en el espacio latente.
+
 
 ## **Más: Contexto y patrones espaciales en embeddings satelitales**
 

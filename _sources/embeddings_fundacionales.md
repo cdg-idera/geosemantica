@@ -10,6 +10,7 @@ Observación de la Tierra (EO) es el proceso de recopilar información sobre la 
 Los datos adquiridos son procesados y analizados para extraer distintos tipos de información que pueden usarse para monitorear y evaluar el estado y los cambios tanto en los entornos naturales como en los creados por el ser humano  {cite}`euspa2024earthobservation`.
 Los datos de EO sirven a una amplia gama de aplicaciones e industrias, incluyendo: protección ambiental, energía, gestión de áreas urbanas, planificación regional y local, agricultura, silvicultura, pesca, salud, transporte, cambio climático, desarrollo sostenible, protección civil, turismo — y más  {cite}`euspa2024earthobservation`.
 
+```
 ---
 
 ## ¿Qué es un **modelo fundacional**?
@@ -29,6 +30,7 @@ En el contexto de la EO, estos modelos aprenden **patrones espaciales, espectral
 
 Esquema de modelo fundacional y embeddings
 ```
+
 ---
 
 ```{admonition} 🔍 ¿Qué significa *auto-supervisión*?
@@ -56,6 +58,15 @@ En machine learning, el *espacio latente* es un espacio matemático (generalment
 **Capacidades:** Embeddings anuales de 64 dimensiones (10 m) listos para clasificación, regresión, detección de cambios y búsqueda por similitud.  
 **Usos:** Dataset público **Satellite Embedding V1** en Earth Engine (2017–2024).  
 **Institución:** Google DeepMind (en colaboración con Google Research/Earth Engine) {cite}`Brown2025AlphaEarth`.
+
+
+```{figure} imagenes/googleDM.jpg
+:name: fig-fm4eo2
+:width: 80%
+
+AlphaEarth Fundacional de Google y Satellite Embeddings V1
+```
+
 
 ---
 
