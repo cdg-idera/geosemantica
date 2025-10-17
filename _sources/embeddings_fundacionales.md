@@ -196,3 +196,41 @@ de una **ontología física** (valores radiométricos) a una **ontología estad�
 
 Así, los **modelos fundacionales** son, en última instancia, *modelos de significado*,  
 y los **embeddings**, las *unidades mínimas de sentido* en ese lenguaje.
+
+
+## Analogia entre LLM y FM4EO
+
+### Fundamento conceptual: “aprendizaje universal”
+
+| Aspecto | LLM (Large Language Models) | Modelos Fundacionales EO (Earth Observation) |
+|----------|-----------------------------|----------------------------------------------|
+| **Dominio** | Lenguaje natural | Imágenes satelitales, series temporales y variables geofísicas |
+| **Entrenamiento** | Trillones de palabras y contextos textuales | Petabytes de datos multiespectrales y climáticos (MODIS, Sentinel, Landsat, HLS, etc.) |
+| **Metaaprendizaje** | Captura patrones sintácticos y semánticos del lenguaje | Captura patrones espaciales, espectrales y temporales del planeta |
+| **Resultado** | Representaciones vectoriales de significado lingüístico | Embeddings geoespaciales de fenómenos naturales y antrópicos |
+
+En ambos casos, el modelo **aprende una representación latente general del dominio**, capaz de transferirse a tareas específicas mediante *fine-tuning* o *prompting*.
+
+### Arquitectura y representación
+
+* Los LLM utilizan transformers para modelar relaciones entre tokens (palabras).
+* Los foundation models geoespaciales (como Prithvi, AlphaEarth o TerraMind) usan arquitecturas análogas (Vision Transformers, Spatio-Temporal Transformers), pero sobre píxeles, espectros y tiempos en lugar de texto.
+* En ambos casos, los *embeddings producidos* son **vectores latentes** que **condensan conocimiento contextual**
+    * En LLM: “semántica lingüística”.
+    * En EO: “semántica geofísica del territorio”.
+
+### Transferencia y adaptabilidad
+
+* Los LLM pueden especializarse con fine-tuning para tareas como resumen, traducción o razonamiento.
+* Los modelos fundacionales EO se ajustan a tareas como clasificación de coberturas, detección de incendios, estimación de humedad o monitoreo de cambios.
+
+Am* bos funcionan bajo el principio de “pre-entrenar en todo, adaptar en algo”.
+
+### Naturaleza multimodal
+
+Tanto los LLM como los modelos fundacionales tienden hacia la multimodalidad:
+
+* LLM → texto + imágenes + audio + video
+* EO foundation models → radar + óptico + elevación + clima + series temporales
+
+Ambos buscan una representación unificada del conocimiento, ya sea del lenguaje o del planeta.

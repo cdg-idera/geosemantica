@@ -398,6 +398,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-contexto-de-la-observacion-de-la-tierra-eo">1.6. 🌍 3. En el contexto de la Observación de la Tierra (EO)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-jerarquica-el-embedding-como-capa-latente">1.7. ⚙️ 4. Relación jerárquica: el embedding como capa latente</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perspectiva-epistemologica">1.8. 🧭 5. Perspectiva epistemológica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogia-entre-llm-y-fm4eo">1.9. Analogia entre LLM y FM4EO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-conceptual-aprendizaje-universal">1.9.1. Fundamento conceptual: “aprendizaje universal”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-y-representacion">1.9.2. Arquitectura y representación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferencia-y-adaptabilidad">1.9.3. Transferencia y adaptabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naturaleza-multimodal">1.9.4. Naturaleza multimodal</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -650,6 +657,70 @@ de una <strong>ontología física</strong> (valores radiométricos) a una <stron
 <p>Así, los <strong>modelos fundacionales</strong> son, en última instancia, <em>modelos de significado</em>,<br />
 y los <strong>embeddings</strong>, las <em>unidades mínimas de sentido</em> en ese lenguaje.</p>
 </section>
+<section id="analogia-entre-llm-y-fm4eo">
+<h2><span class="section-number">1.9. </span>Analogia entre LLM y FM4EO<a class="headerlink" href="#analogia-entre-llm-y-fm4eo" title="Link to this heading">#</a></h2>
+<section id="fundamento-conceptual-aprendizaje-universal">
+<h3><span class="section-number">1.9.1. </span>Fundamento conceptual: “aprendizaje universal”<a class="headerlink" href="#fundamento-conceptual-aprendizaje-universal" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspecto</p></th>
+<th class="head"><p>LLM (Large Language Models)</p></th>
+<th class="head"><p>Modelos Fundacionales EO (Earth Observation)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Dominio</strong></p></td>
+<td><p>Lenguaje natural</p></td>
+<td><p>Imágenes satelitales, series temporales y variables geofísicas</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Entrenamiento</strong></p></td>
+<td><p>Trillones de palabras y contextos textuales</p></td>
+<td><p>Petabytes de datos multiespectrales y climáticos (MODIS, Sentinel, Landsat, HLS, etc.)</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Metaaprendizaje</strong></p></td>
+<td><p>Captura patrones sintácticos y semánticos del lenguaje</p></td>
+<td><p>Captura patrones espaciales, espectrales y temporales del planeta</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Resultado</strong></p></td>
+<td><p>Representaciones vectoriales de significado lingüístico</p></td>
+<td><p>Embeddings geoespaciales de fenómenos naturales y antrópicos</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En ambos casos, el modelo <strong>aprende una representación latente general del dominio</strong>, capaz de transferirse a tareas específicas mediante <em>fine-tuning</em> o <em>prompting</em>.</p>
+</section>
+<section id="arquitectura-y-representacion">
+<h3><span class="section-number">1.9.2. </span>Arquitectura y representación<a class="headerlink" href="#arquitectura-y-representacion" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Los LLM utilizan transformers para modelar relaciones entre tokens (palabras).</p></li>
+<li><p>Los foundation models geoespaciales (como Prithvi, AlphaEarth o TerraMind) usan arquitecturas análogas (Vision Transformers, Spatio-Temporal Transformers), pero sobre píxeles, espectros y tiempos en lugar de texto.</p></li>
+<li><p>En ambos casos, los <em>embeddings producidos</em> son <strong>vectores latentes</strong> que <strong>condensan conocimiento contextual</strong></p>
+<ul>
+<li><p>En LLM: “semántica lingüística”.</p></li>
+<li><p>En EO: “semántica geofísica del territorio”.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="transferencia-y-adaptabilidad">
+<h3><span class="section-number">1.9.3. </span>Transferencia y adaptabilidad<a class="headerlink" href="#transferencia-y-adaptabilidad" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Los LLM pueden especializarse con fine-tuning para tareas como resumen, traducción o razonamiento.</p></li>
+<li><p>Los modelos fundacionales EO se ajustan a tareas como clasificación de coberturas, detección de incendios, estimación de humedad o monitoreo de cambios.</p></li>
+</ul>
+<p>Am* bos funcionan bajo el principio de “pre-entrenar en todo, adaptar en algo”.</p>
+</section>
+<section id="naturaleza-multimodal">
+<h3><span class="section-number">1.9.4. </span>Naturaleza multimodal<a class="headerlink" href="#naturaleza-multimodal" title="Link to this heading">#</a></h3>
+<p>Tanto los LLM como los modelos fundacionales tienden hacia la multimodalidad:</p>
+<ul class="simple">
+<li><p>LLM → texto + imágenes + audio + video</p></li>
+<li><p>EO foundation models → radar + óptico + elevación + clima + series temporales</p></li>
+</ul>
+<p>Ambos buscan una representación unificada del conocimiento, ya sea del lenguaje o del planeta.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -729,6 +800,13 @@ y los <strong>embeddings</strong>, las <em>unidades mínimas de sentido</em> en 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-el-contexto-de-la-observacion-de-la-tierra-eo">1.6. 🌍 3. En el contexto de la Observación de la Tierra (EO)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-jerarquica-el-embedding-como-capa-latente">1.7. ⚙️ 4. Relación jerárquica: el embedding como capa latente</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perspectiva-epistemologica">1.8. 🧭 5. Perspectiva epistemológica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analogia-entre-llm-y-fm4eo">1.9. Analogia entre LLM y FM4EO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-conceptual-aprendizaje-universal">1.9.1. Fundamento conceptual: “aprendizaje universal”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-y-representacion">1.9.2. Arquitectura y representación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferencia-y-adaptabilidad">1.9.3. Transferencia y adaptabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naturaleza-multimodal">1.9.4. Naturaleza multimodal</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
