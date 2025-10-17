@@ -1,12 +1,21 @@
 # Capítulo 1: **Modelos Fundacionales en Observación de la Tierra (FM4EO)**
 
-Los modelos **OneVision**, **Prithvi** y **AlphaHertz** constituyen ejemplos destacados de **modelos fundacionales (foundational models)** aplicados al campo de la **Observación de la Tierra (EO, Earth Observation)**.
+Los modelos **AlphaEarth Foundations**, **Prithvi** y **AlphaHertz** constituyen ejemplos destacados de **modelos fundacionales (foundational models)** aplicados al campo de la **Observación de la Tierra (EO, Earth Observation)**.
+
+
+```{admonition} 🔍 ¿Qué es la *Observación de la Tierra (EO)*?
+:class: tip
+
+Observación de la Tierra (EO) es el proceso de recopilar información sobre la superficie terrestre, las aguas y la atmósfera mediante plataformas de teledetección terrestres, aéreas y/o satelitales {cite}`euspa2024earthobservation`.
+Los datos adquiridos son procesados y analizados para extraer distintos tipos de información que pueden usarse para monitorear y evaluar el estado y los cambios tanto en los entornos naturales como en los creados por el ser humano  {cite}`euspa2024earthobservation`.
+Los datos de EO sirven a una amplia gama de aplicaciones e industrias, incluyendo: protección ambiental, energía, gestión de áreas urbanas, planificación regional y local, agricultura, silvicultura, pesca, salud, transporte, cambio climático, desarrollo sostenible, protección civil, turismo — y más  {cite}`euspa2024earthobservation`.
 
 ---
 
-## ¿Qué es un modelo fundacional?
+## ¿Qué es un **modelo fundacional**?
 
 Un **modelo fundacional** (*foundational model*) es aquel que:
+
 - Se **entrena a gran escala** (en millones de imágenes o señales).  
 - Aprende **representaciones generales** (no una tarea específica).  
 - Luego puede **ajustarse o especializarse (fine-tuning)** para tareas concretas: clasificación, segmentación, detección de cambios, etc.
@@ -25,7 +34,7 @@ Esquema de modelo fundacional y embeddings
 ```{admonition} 🔍 ¿Qué significa *auto-supervisión*?
 :class: tip
 
-La auto-supervisión es un enfoque de aprendizaje donde el modelo se entrena sin etiquetas humanas, generando sus propias tareas predictivas (por ejemplo, reconstruir, comparar o predecir partes de una imagen) para aprender representaciones latentes.
+La auto-supervisión es un enfoque de aprendizaje donde *el modelo se entrena sin etiquetas humanas*, generando sus propias tareas predictivas (por ejemplo, reconstruir, comparar o predecir partes de una imagen) para *aprender representaciones latentes*.
 ```
 
 ```{admonition} 🔍 ¿Porqué se denominan *representaciones latenes*?
@@ -35,7 +44,7 @@ Se denominan representaciones latentes porque codifican la información interna 
 
 En los embeddings satelitales, ese espacio latente representa relaciones semánticas entre píxeles o regiones, más allá de los valores espectrales visibles.
 
-En machine learning, el *espacio latente* es un espacio matemático (generalmente continuo y de muchas dimensiones) donde los datos se representan de manera comprimida. Por ejemplo: Una red neuronal *autoencoder* transforma imágenes en vectores en un espacio latente.
+En machine learning, el *espacio latente* es un espacio matemático (generalmente continuo y de muchas dimensiones) donde los datos se representan de manera comprimida. Por ejemplo: Una red neuronal *autoencoder* **transforma** *imágenes* en *vectores* en un espacio latente.
 
 ```
 
@@ -64,7 +73,6 @@ En machine learning, el *espacio latente* es un espacio matemático (generalment
 **Capacidades/Usos:** Inferencia en dispositivos modestos con mínima degradación frente a modelos mayores.  
 **Institución:** IBM Research (ecosistema NASA–IBM) {cite}`jakubik2025terramind`.
 
-> **Nota:** Evitá presentar *OneVision (Google Research, 2024)* como modelo satelital. Si se menciona, aclarar que **LLaVA-OneVision** es un modelo multimodal de visión-lenguaje, **no** específico de Observación de la Tierra.
 
 ---
 
