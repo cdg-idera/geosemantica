@@ -218,7 +218,7 @@ Se muestran los resultados por color:
 
 ```{figure} imagenes/AguaA.png
 :name: fig-aguaA
-:width: 40%
+:width: 100%
 
 Busqueda por similitud coseno para detectar Agua
 ```
@@ -577,7 +577,7 @@ La capa adaptativa se vectoriza y añade para comparación.
 
 ```{figure} imagenes/hornos.png
 :name: fig-hornos
-:width: 40%
+:width: 100%
 
 Busqueda por similitud Hornos de Ladrillo
 ```
@@ -1075,7 +1075,7 @@ Otro panel (`ui.Panel`) en la esquina inferior derecha muestra la superficie por
 
 ```{figure} imagenes/CultivosC.png
 :name: fig-catculC
-:width: 40%
+:width: 100%
 
 Categorización por Cultivos con Embeddings y filtros de datasets 
 ```
