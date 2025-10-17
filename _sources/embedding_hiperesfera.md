@@ -83,5 +83,5 @@ Eso significa que todos los puntos normalizados se ubican sobre la superficie de
 ## 4) Resumen
 
 - Un embedding $x$ se **proyecta** a la hiperesfera unitaria con $\hat{x} = x/\|x\|$.
-- Para visualizar embeddings de alta dimensión ($d>3$), primero se **reduce** (PCA/UMAP/t\text{-}SNE) y luego se **re-normaliza**.
+- Para visualizar embeddings de alta dimensión ($d>3$), primero se **reduce** (PCA/UMAP/t-SNE) y luego se **re-normaliza**.
 - La **similitud coseno** $\hat{u}\cdot\hat{v}$ (o el **ángulo** $\arccos(\hat{u}\cdot\hat{v})$) es la métrica natural sobre la hiperesfera.
