@@ -170,6 +170,15 @@ $\text{similitud coseno}(x, y) = \hat{x} \cdot \hat{y} = \cos(\theta)$
 | **Aprendizaje de métricas** | **ArcFace / CosFace / SphereFace** | Modelos que aprenden en el espacio angular (común en reconocimiento facial). | Embeddings confinados a una hiperesfera unitaria. |
 | **Modelos fundacionales EO** | **Prithvi, TerraMind, Satellite Embeddings V1** | Embeddings multiespectrales y temporales normalizados para similitud coseno. | Espacio semántico latente sobre una hiperesfera de 64D. |
 
+
+````{admonition} ¿Te interesa conocer como graficar un embedding en la **hiperesfera unitaria**?
+:class: tip
+
+El **Apéndice C** explica cómo graficar un *embedding* en $\mathbb{R}^{64}$  
+y lo ejemplifica en el espacio tridimensional $\mathbb{R}^3$.
+
+````
+
 ---
 
 ### Interpretación geométrica
@@ -191,6 +200,34 @@ Así, la **distancia angular** se convierte en una medida directa de **similitud
 > Allí, las operaciones basadas en ángulo o coseno comparan significado, no magnitud.  
 > En modelos fundacionales de Observación de la Tierra, esta geometría es la base de la **similitud coseno** y de todo el aprendizaje contrastivo que permite mapear el planeta en el espacio latente.
 
+```{figure} imagenes/embedding_sphere.png
+:name: fig-hiperesferaUnitaria
+:width: 80%
+
+Ejemplo 300 *embedding* normalizados en la hiperesfera unitaria
+```
+
+## Cambios de paradigmas
+
+> “La *teledetección* **basada en reflectancias** se *apoya* en **firmas espectrales por píxel**, mientras que la *geosemántica estadística* se *fundamenta* en **firmas semánticas latentes** aprendidas por los modelos.”
+
+Esa frase tiene potencia porque:
+
+* **Marca un cambio de paradigma:** Pasamos de medir energía reflejada (nivel físico-radiométrico) a medir significado (nivel semántico-latente).
+
+* **Conecta dos mundos con una metáfora común**: Ambas usan el concepto de firma, pero en espacios distintos:
+
+    * **Espectral** → espacio de reflectancias.
+    * **Semántico** → espacio de embeddings o representaciones latentes.
+
+* Es clara para cualquier lector técnico o científico:
+    * Quien venga de la teledetección clásica entiende “firma espectral”;
+    * quien venga del aprendizaje profundo entiende “embedding” o “espacio latente”.
+
+* Sintetiza la transición epistemológica:
+    * De una visión físico-determinista a una representación estadístico-distribucional del territorio.
+
+> La teledetección tradicional se basa en **firmas espectrales** obtenidas a partir de reflectancias por píxel, mientras que la **geosemántica estadística** se apoya en **firmas semánticas latentes**, aprendidas por modelos que capturan patrones y significados distribuidos en el espacio.”
 
 ## **Más: Contexto y patrones espaciales en embeddings satelitales**
 

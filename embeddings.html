@@ -402,7 +402,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-resumen">3.2.3. En resumen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.3. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambios-de-paradigmas">3.3. Cambios de paradigmas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.4. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
@@ -637,6 +638,11 @@ Así, su <strong>ángulo relativo</strong> (y no su magnitud) representa su simi
 </tbody>
 </table>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">¿Te interesa conocer como graficar un embedding en la <strong>hiperesfera unitaria</strong>?</p>
+<p>El <strong>Apéndice C</strong> explica cómo graficar un <em>embedding</em> en <span class="math notranslate nohighlight">\(\mathbb{R}^{64}\)</span><br />
+y lo ejemplifica en el espacio tridimensional <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="interpretacion-geometrica">
@@ -658,10 +664,46 @@ Así, su <strong>ángulo relativo</strong> (y no su magnitud) representa su simi
 Allí, las operaciones basadas en ángulo o coseno comparan significado, no magnitud.<br />
 En modelos fundacionales de Observación de la Tierra, esta geometría es la base de la <strong>similitud coseno</strong> y de todo el aprendizaje contrastivo que permite mapear el planeta en el espacio latente.</p>
 </div></blockquote>
+<figure class="align-default" id="fig-hiperesferaunitaria">
+<a class="reference internal image-reference" href="_images/embedding_sphere.png"><img alt="_images/embedding_sphere.png" src="_images/embedding_sphere.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Ejemplo 300 <em>embedding</em> normalizados en la hiperesfera unitaria</span><a class="headerlink" href="#fig-hiperesferaunitaria" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
+</section>
+<section id="cambios-de-paradigmas">
+<h2><span class="section-number">3.3. </span>Cambios de paradigmas<a class="headerlink" href="#cambios-de-paradigmas" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>“La <em>teledetección</em> <strong>basada en reflectancias</strong> se <em>apoya</em> en <strong>firmas espectrales por píxel</strong>, mientras que la <em>geosemántica estadística</em> se <em>fundamenta</em> en <strong>firmas semánticas latentes</strong> aprendidas por los modelos.”</p>
+</div></blockquote>
+<p>Esa frase tiene potencia porque:</p>
+<ul class="simple">
+<li><p><strong>Marca un cambio de paradigma:</strong> Pasamos de medir energía reflejada (nivel físico-radiométrico) a medir significado (nivel semántico-latente).</p></li>
+<li><p><strong>Conecta dos mundos con una metáfora común</strong>: Ambas usan el concepto de firma, pero en espacios distintos:</p>
+<ul>
+<li><p><strong>Espectral</strong> → espacio de reflectancias.</p></li>
+<li><p><strong>Semántico</strong> → espacio de embeddings o representaciones latentes.</p></li>
+</ul>
+</li>
+<li><p>Es clara para cualquier lector técnico o científico:</p>
+<ul>
+<li><p>Quien venga de la teledetección clásica entiende “firma espectral”;</p></li>
+<li><p>quien venga del aprendizaje profundo entiende “embedding” o “espacio latente”.</p></li>
+</ul>
+</li>
+<li><p>Sintetiza la transición epistemológica:</p>
+<ul>
+<li><p>De una visión físico-determinista a una representación estadístico-distribucional del territorio.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p>La teledetección tradicional se basa en <strong>firmas espectrales</strong> obtenidas a partir de reflectancias por píxel, mientras que la <strong>geosemántica estadística</strong> se apoya en <strong>firmas semánticas latentes</strong>, aprendidas por modelos que capturan patrones y significados distribuidos en el espacio.”</p>
+</div></blockquote>
 </section>
 <section id="mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">
-<h2><span class="section-number">3.3. </span><strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong><a class="headerlink" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.4. </span><strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong><a class="headerlink" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales" title="Link to this heading">#</a></h2>
 <p>El <em>embedding</em> captura <strong>contexto más que forma fina</strong>, lo que lo hace especialmente útil para detectar patrones espaciales amplios y coherentes.<br />
 A continuación se detallan ejemplos de tipologías geográficas y sugerencias prácticas de uso.</p>
 <p><strong>Ejemplos de detección por similitud</strong></p>
@@ -884,7 +926,8 @@ La sinergia entre <em>semántica latente (embeddings)</em> y <em>semántica expl
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-resumen">3.2.3. En resumen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.3. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambios-de-paradigmas">3.3. Cambios de paradigmas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-contexto-y-patrones-espaciales-en-embeddings-satelitales">3.4. <strong>Más: Contexto y patrones espaciales en embeddings satelitales</strong></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-metodologicas-y-recomendaciones-practicas">4. Consideraciones metodológicas y recomendaciones prácticas</a><ul class="visible nav section-nav flex-column">
