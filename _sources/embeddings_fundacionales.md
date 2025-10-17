@@ -67,7 +67,6 @@ En machine learning, el *espacio latente* es un espacio matemático (generalment
 AlphaEarth Fundacional de Google y Satellite Embeddings V1
 ```
 
-
 ---
 
 ### 1.2.2. 🌎 Prithvi (NASA–IBM, 2024–2025)
@@ -235,7 +234,7 @@ En ambos casos, el modelo **aprende una representación latente general del domi
 * Los LLM pueden especializarse con fine-tuning para tareas como resumen, traducción o razonamiento.
 * Los modelos fundacionales EO se ajustan a tareas como clasificación de coberturas, detección de incendios, estimación de humedad o monitoreo de cambios.
 
-Am* bos funcionan bajo el principio de “pre-entrenar en todo, adaptar en algo”.
+Ambos funcionan bajo el principio de “pre-entrenar en todo, adaptar en algo”.
 
 ### Naturaleza multimodal
 

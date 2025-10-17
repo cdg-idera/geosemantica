@@ -62,11 +62,27 @@ Interpretación geométrica:
 * El proceso transforma todo el espacio $\mathbb{R}^d$ (excepto el origen) en la superficie de la esfera $S^{d-1}$:
 
 $$
-\mathbb{R}^d \setminus \{0\} \xrightarrow{\text{normalización L2}} S^{d-1}
+\mathbb{R}^d - \{0\} \xrightarrow{\text{normalización L2}} S^{d-1}
 $$
 
-Cada punto se **proyecta radialmente** sobre la superficie, manteniendo su dirección y descartando la magnitud.
+Cada punto se **proyecta radialmente** sobre la superficie, **manteniendo su dirección** y **descartando la magnitud**.
 ````
+
+
+
+````{admonition} Interpretación conceptual en embeddings de píxeles
+
+* Cada píxel tiene su embedding $\hat{x}_i$ —un vector que codifica su firma semántica latente: su textura, su respuesta espectral, su contexto geográfico o incluso patrones aprendidos por el modelo fundacional.
+
+* La similitud coseno entre dos embeddings $\hat{x}_i$ y $\hat{x}_j$ mide:
+
+* cuánto se parecen semánticamente las representaciones de esos dos píxeles.
+
+* Si $\text{sim}(\hat{x}_i, \hat{x}_j) \approx 1$ → están muy alineados → los píxeles representan fenómenos muy similares.
+
+* Si $\text{sim}(\hat{x}_i, \hat{x}_j) \approx 0$ → ortogonales → los píxeles son independientes o distintos.
+
+* Si $\text{sim}(\hat{x}_i, \hat{x}_j) < 0$ → opuestos → los embeddings codifican características contrastantes.
 
 ---
 

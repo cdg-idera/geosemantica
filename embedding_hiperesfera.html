@@ -389,11 +389,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">9.1. 1) Descripción general (definición y marco geométrico)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">9.2. 2) Flujo práctico para visualizar embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-del-punto-en-la-hiperesfera-unitaria">9.3.1. Coordenadas del punto en la hiperesfera unitaria</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.4. 4) Resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.3. 4) Resumen</a></li>
 </ul>
             </nav>
         </div>
@@ -502,22 +498,29 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
 </ul>
 <div class="math notranslate nohighlight">
 \[
-\mathbb{R}^d \setminus \{0\} \xrightarrow{\text{normalización L2}} S^{d-1}
+\mathbb{R}^d - \{0\} \xrightarrow{\text{normalización L2}} S^{d-1}
 \]</div>
-<p>Cada punto se <strong>proyecta radialmente</strong> sobre la superficie, manteniendo su dirección y descartando la magnitud.</p>
+<p>Cada punto se <strong>proyecta radialmente</strong> sobre la superficie, <strong>manteniendo su dirección</strong> y <strong>descartando la magnitud</strong>.</p>
 </div>
-</section>
+<div class="admonition-interpretacion-conceptual-en-embeddings-de-pixeles admonition">
+<p class="admonition-title">Interpretación conceptual en embeddings de píxeles</p>
+<ul class="simple">
+<li><p>Cada píxel tiene su embedding <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> —un vector que codifica su firma semántica latente: su textura, su respuesta espectral, su contexto geográfico o incluso patrones aprendidos por el modelo fundacional.</p></li>
+<li><p>La similitud coseno entre dos embeddings <span class="math notranslate nohighlight">\(\hat{x}_i\)</span> y <span class="math notranslate nohighlight">\(\hat{x}_j\)</span> mide:</p></li>
+<li><p>cuánto se parecen semánticamente las representaciones de esos dos píxeles.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\text{sim}(\hat{x}_i, \hat{x}_j) \approx 1\)</span> → están muy alineados → los píxeles representan fenómenos muy similares.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\text{sim}(\hat{x}_i, \hat{x}_j) \approx 0\)</span> → ortogonales → los píxeles son independientes o distintos.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(\text{sim}(\hat{x}_i, \hat{x}_j) &lt; 0\)</span> → opuestos → los embeddings codifican características contrastantes.</p></li>
+</ul>
 <hr class="docutils" />
-<section id="ejemplo-numerico-con-un-embedding-3d">
-<h2><span class="section-number">9.3. </span>3) Ejemplo numérico con un embedding 3D<a class="headerlink" href="#ejemplo-numerico-con-un-embedding-3d" title="Link to this heading">#</a></h2>
+<h2 class="rubric" id="ejemplo-numerico-con-un-embedding-3d">3) Ejemplo numérico con un embedding 3D</h2>
 <p><strong>Vector original</strong>: <span class="math notranslate nohighlight">\(x = [1.4,\ 0.5,\ -0.8]\)</span>.</p>
 <p><strong>Norma L2</strong>: <span class="math notranslate nohighlight">\(\|x\| = \sqrt{1.4^2 + 0.5^2 + (-0.8)^2} = \sqrt{1.96 + 0.25 + 0.64} = \sqrt{2.85} \approx 1.688\)</span>.</p>
 <p><strong>Normalización</strong>: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\| \approx [1.4/1.688,\ 0.5/1.688,\ -0.8/1.688] \approx [0.829,\ 0.296,\ -0.474]\)</span>.</p>
 <p>Cálculo de la norma del vector normalizado:
 <span class="math notranslate nohighlight">\(|\hat{x}| = \sqrt{0.829^2 + 0.296^2 + (-0.474)^2} = \sqrt{0.687 + 0.088 + 0.225} = \sqrt{1.000} = 1.000\)</span>, por lo que <span class="math notranslate nohighlight">\(\hat{x}\)</span> está sobre la <strong>esfera unitaria</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>.</p>
 <p><strong>Interpretación</strong>: si tuviéramos dos embeddings normalizados <span class="math notranslate nohighlight">\(\hat{u}\)</span> y <span class="math notranslate nohighlight">\(\hat{v}\)</span>, su similitud coseno <span class="math notranslate nohighlight">\(\hat{u}\cdot\hat{v}\)</span> mide cuán <strong>alineados</strong> están (qué tan similares son), independientemente de la magnitud original de <span class="math notranslate nohighlight">\(u\)</span> y <span class="math notranslate nohighlight">\(v\)</span>.</p>
-<section id="coordenadas-del-punto-en-la-hiperesfera-unitaria">
-<h3><span class="section-number">9.3.1. </span>Coordenadas del punto en la hiperesfera unitaria<a class="headerlink" href="#coordenadas-del-punto-en-la-hiperesfera-unitaria" title="Link to this heading">#</a></h3>
+<h3 class="rubric" id="coordenadas-del-punto-en-la-hiperesfera-unitaria">Coordenadas del punto en la hiperesfera unitaria</h3>
 <p>Luego, el punto en el espacio tridimensional es: <span class="math notranslate nohighlight">\(P = (x, y, z) = (0.829,\ 0.296,\ -0.474)\)</span></p>
 <p>Esto significa geométricamente que:</p>
 <p>Desde el <strong>centro del sistema de coordenadas</strong> <span class="math notranslate nohighlight">\((0, 0, 0)\)</span> trazamos una flecha que apunta hacia la dirección <span class="math notranslate nohighlight">\((0.829, 0.296, -0.474)\)</span>.</p>
@@ -528,11 +531,11 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
 <p>La norma de todos los vectores normalizados es igual a 1.</p>
 <p>Eso significa que todos los puntos normalizados se ubican sobre la superficie de la hiperesfera unitaria, y no dentro ni fuera.</p>
 </div>
-</section>
+</div>
 </section>
 <hr class="docutils" />
 <section id="resumen">
-<h2><span class="section-number">9.4. </span>4) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.3. </span>4) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un embedding <span class="math notranslate nohighlight">\(x\)</span> se <strong>proyecta</strong> a la hiperesfera unitaria con <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
 <li><p>Para visualizar embeddings de alta dimensión (<span class="math notranslate nohighlight">\(d&gt;3\)</span>), primero se <strong>reduce</strong> (PCA/UMAP/t-SNE) y luego se <strong>re-normaliza</strong>.</p></li>
@@ -607,11 +610,7 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">9.1. 1) Descripción general (definición y marco geométrico)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">9.2. 2) Flujo práctico para visualizar embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-numerico-con-un-embedding-3d">9.3. 3) Ejemplo numérico con un embedding 3D</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordenadas-del-punto-en-la-hiperesfera-unitaria">9.3.1. Coordenadas del punto en la hiperesfera unitaria</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.4. 4) Resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">9.3. 4) Resumen</a></li>
 </ul>
   </nav></div>
 

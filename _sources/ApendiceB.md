@@ -83,7 +83,7 @@ Verá que la imagen tiene 64 bandas, denominadas A00, A01, …, A63. Cada banda 
 
 ```{figure} imagenes/2_1440.jpg
 :name: fig-embeddingfield2
-:width: 80%
+:width: 60%
 
 64 bands de la imagen satelital embedding
 ```
@@ -118,7 +118,7 @@ Si imprime los valores de la primera muestra, verá que tiene 64 valores de band
 
 ```{figure} imagenes/4_1440.jpg
 :name: fig-embeddingfield3
-:width: 80%
+:width: 60%
 
 Figure: Extracted embedding vector
 ```
