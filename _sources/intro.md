@@ -1,23 +1,7 @@
 # **Geosemántica y GeoAI**
 
 
-## **Introducción a Geosemántica**
-
-La **geosemántica** estudia cómo el significado (semántica) se representa y se procesa en relación con el espacio geográfico.  
-En este marco, los *embeddings* pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que **preservan relaciones de similitud semántica** entre regiones del territorio.
-
-Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.  
-Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.
-
----
-
-## **Los embeddings como fenómeno geosemántico**
-
-
-Los *embeddings satelitales* constituyen una nueva frontera en la representación digital del territorio.  
-En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de **vectores de significado latente** aprendidos por modelos de *deep learning* sobre grandes volúmenes de datos satelitales.
-
-Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una **manifestación de la geosemántica**: una forma de codificar el *significado geográfico* directamente en el espacio matemático.
+La **geosemántica** estudia **cómo el significado (semántica) *se representa y se procesa* en relación con el espacio geográfico**.  
 
 ---
 
@@ -90,6 +74,23 @@ Ambos enfoques son complementarios:
 - La **geosemántica estadística** aporta capacidad de descubrimiento y generalización.
 
 ---
+
+
+## **Los embeddings como fenómeno geosemántico**
+
+
+En este marco, los *embeddings* pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que **preservan relaciones de similitud semántica** entre regiones del territorio.
+
+Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.  
+Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.
+
+
+Los *embeddings satelitales* constituyen una nueva frontera en la representación digital del territorio.  
+En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de **vectores de significado latente** aprendidos por modelos de *deep learning* sobre grandes volúmenes de datos satelitales.
+
+Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una **manifestación de la geosemántica**: una forma de codificar el *significado geográfico* directamente en el espacio matemático.
+
+
 
 # **Implicaciones científicas y aplicadas**
 

@@ -34,6 +34,9 @@ La auto-supervisión es un enfoque de aprendizaje donde el modelo se entrena sin
 Se denominan representaciones latentes porque codifican la información interna o no observable directamente de los datos —es decir, sus patrones subyacentes o características abstractas— en un espacio matemático comprimido (espacio latente).
 
 En los embeddings satelitales, ese espacio latente representa relaciones semánticas entre píxeles o regiones, más allá de los valores espectrales visibles.
+
+En machine learning, el *espacio latente* es un espacio matemático (generalmente continuo y de muchas dimensiones) donde los datos se representan de manera comprimida. Por ejemplo: Una red neuronal *autoencoder* transforma imágenes en vectores en un espacio latente.
+
 ```
 
 ## Ejemplos destacados

@@ -387,15 +387,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Geosemántica y GeoAI</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-geosemantica"><strong>Introducción a Geosemántica</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica"><strong>Los tres niveles de la geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica"><strong>Tres niveles complementarios de geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>La semántica estadística como fundamento</strong></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica"><strong>Hacia una geosemántica estadística</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>Comparación epistemológica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>Comparación epistemológica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas"><strong>Implicaciones científicas y aplicadas</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusión</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">Agradecimientos</a></li>
@@ -416,20 +417,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="geosemantica-y-geoai">
 <h1><strong>Geosemántica y GeoAI</strong><a class="headerlink" href="#geosemantica-y-geoai" title="Link to this heading">#</a></h1>
-<section id="introduccion-a-geosemantica">
-<h2><strong>Introducción a Geosemántica</strong><a class="headerlink" href="#introduccion-a-geosemantica" title="Link to this heading">#</a></h2>
-<p>La <strong>geosemántica</strong> estudia cómo el significado (semántica) se representa y se procesa en relación con el espacio geográfico.<br />
-En este marco, los <em>embeddings</em> pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que <strong>preservan relaciones de similitud semántica</strong> entre regiones del territorio.</p>
-<p>Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.<br />
-Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.</p>
-</section>
-<hr class="docutils" />
-<section id="los-embeddings-como-fenomeno-geosemantico">
-<h2><strong>Los embeddings como fenómeno geosemántico</strong><a class="headerlink" href="#los-embeddings-como-fenomeno-geosemantico" title="Link to this heading">#</a></h2>
-<p>Los <em>embeddings satelitales</em> constituyen una nueva frontera en la representación digital del territorio.<br />
-En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de <strong>vectores de significado latente</strong> aprendidos por modelos de <em>deep learning</em> sobre grandes volúmenes de datos satelitales.</p>
-<p>Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una <strong>manifestación de la geosemántica</strong>: una forma de codificar el <em>significado geográfico</em> directamente en el espacio matemático.</p>
-</section>
+<p>La <strong>geosemántica</strong> estudia <strong>cómo el significado (semántica) <em>se representa y se procesa</em> en relación con el espacio geográfico</strong>.</p>
 <hr class="docutils" />
 <section id="los-tres-niveles-de-la-geosemantica">
 <h2><strong>Los tres niveles de la geosemántica</strong><a class="headerlink" href="#los-tres-niveles-de-la-geosemantica" title="Link to this heading">#</a></h2>
@@ -527,8 +515,17 @@ El análisis del territorio pasa de lo físico a lo semántico.</p>
 <li><p>La <strong>geosemántica formal</strong> proporciona interpretabilidad y trazabilidad.</p></li>
 <li><p>La <strong>geosemántica estadística</strong> aporta capacidad de descubrimiento y generalización.</p></li>
 </ul>
-</section>
 <hr class="docutils" />
+<section id="los-embeddings-como-fenomeno-geosemantico">
+<h2><strong>Los embeddings como fenómeno geosemántico</strong><a class="headerlink" href="#los-embeddings-como-fenomeno-geosemantico" title="Link to this heading">#</a></h2>
+<p>En este marco, los <em>embeddings</em> pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que <strong>preservan relaciones de similitud semántica</strong> entre regiones del territorio.</p>
+<p>Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.<br />
+Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.</p>
+<p>Los <em>embeddings satelitales</em> constituyen una nueva frontera en la representación digital del territorio.<br />
+En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de <strong>vectores de significado latente</strong> aprendidos por modelos de <em>deep learning</em> sobre grandes volúmenes de datos satelitales.</p>
+<p>Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una <strong>manifestación de la geosemántica</strong>: una forma de codificar el <em>significado geográfico</em> directamente en el espacio matemático.</p>
+</section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="implicaciones-cientificas-y-aplicadas">
 <h1><strong>Implicaciones científicas y aplicadas</strong><a class="headerlink" href="#implicaciones-cientificas-y-aplicadas" title="Link to this heading">#</a></h1>
 <p>Los embeddings permiten crear <strong>espacios semánticos del planeta</strong>, donde cada vector describe el “contexto” de un punto de la superficie terrestre.<br />
@@ -656,15 +653,16 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Geosemántica y GeoAI</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-geosemantica"><strong>Introducción a Geosemántica</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica"><strong>Los tres niveles de la geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica"><strong>Tres niveles complementarios de geosemántica</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>La semántica estadística como fundamento</strong></a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica"><strong>Hacia una geosemántica estadística</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>Comparación epistemológica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>Comparación epistemológica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas"><strong>Implicaciones científicas y aplicadas</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusión</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">Agradecimientos</a></li>
