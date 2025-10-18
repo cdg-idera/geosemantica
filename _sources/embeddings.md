@@ -111,6 +111,27 @@ Lo notable es que esta similitud no depende de índices espectrales fijos, sino 
 
 ---
 
+# Relación entre embeddings geoespaciales
+
+Esta tabla resume los tipos de relaciones posibles entre embeddings geoespaciales en función de su **similitud coseno**, junto con ejemplos concretos de fenómenos del territorio.
+
+| Tipo de relación | Similitud coseno | Significado geoespacial | Ejemplos geoespaciales |
+|------------------|------------------|--------------------------|-------------------------|
+| **Sinónimos / similares** | ≈ +1 | Fenómenos del mismo tipo o clase; comparten estructura espectral o semántica. | Bosque templado 🌳 ↔ Selva subtropical 🌿  •  Cultivo de soja 🌾 ↔ Cultivo de maíz 🌽  •  Asentamiento urbano compacto 🏙️ ↔ Núcleo urbano denso 🧱 |
+| **Ortogonales** | ≈ 0 | Fenómenos sin relación semántica ni espectral directa; independientes en el espacio latente. | Bosque templado 🌳 ↔ Ciudad 🏙️  •  Lago andino 💧 ↔ Zona industrial 🏭  •  Desierto 🏜️ ↔ Glaciar ❄️ |
+| **Antónimos** | ≈ –1 | Fenómenos opuestos dentro de una misma dimensión latente (humedad, temperatura, cobertura, textura, etc.). | Vegetación densa 🌲 ↔ Suelo desnudo 🪨  •  Humedal 🌾 ↔ Desierto árido 🏜️  •  Superficie fría de nieve ❄️ ↔ Asfalto cálido 🌡️ |
+
+---
+
+## Interpretación general
+
+- **Similares (≈ +1):** comparten “firma semántica latente”; pertenecen a la misma familia de coberturas o patrones espectrales.  
+- **Ortogonales (≈ 0):** no comparten dimensiones semánticas; describen contextos o procesos totalmente distintos.  
+- **Antónimos (≈ –1):** representan extremos opuestos en un mismo eje latente (por ejemplo, humedad ↔ sequedad, natural ↔ artificial).
+
+
+
+
 En otras palabras, dos píxeles o regiones son “similares” no porque compartan el mismo valor de reflectancia o NDVI, 
 sino porque sus vectores latentes apuntan en direcciones próximas dentro de un espacio multidimensional de significado.  
 Este enfoque habilita la **búsqueda semántica geoespacial**, donde el criterio de comparación es el *significado estadístico* aprendido por el modelo, y no un índice calculado manualmente.

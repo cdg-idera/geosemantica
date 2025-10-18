@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>6. Capítulo 4: Entrenamientos Supervisados con Embeddings &#8212; Geosemántica y GeoAI</title>
+    <title>7. Capítulo 4: Entrenamientos Supervisados con Embeddings &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'embeddingsEjemplos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
-    <link rel="prev" title="5. Capítulo 3: Entrenamiento no supervisado con Enbeddings" href="Clustering.html" />
+    <link rel="next" title="8. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
+    <link rel="prev" title="6. Capítulo 3: Entrenamiento no supervisado con Enbeddings" href="Clustering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,12 +186,13 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddings.html">2. Capítulo 2: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="Clustering.html">5. Capítulo 3 · Entrenamiento no-supervisado con Embeddings</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Capítulo 4 · Entrenamientos Supervisados con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">7. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">8. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">9. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">10. Bibliografía</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">6. Capítulo 3 · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Capítulo 4 · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">8. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">9. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">10. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">11. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -387,70 +388,70 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-satelitales-como-puente-entre-percepcion-y-semantica">6.1. Embeddings satelitales como puente entre percepción y semántica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aporte-metodologico">6.2. Aporte metodológico</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aprenderas-learning-outcomes">6.3. ¿Qué aprenderás (learning outcomes)?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-y-supuestos">6.4. Requisitos y supuestos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-que-atraviesan-los-ejemplos">6.5. Buenas prácticas que atraviesan los ejemplos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-del-capitulo">6.6. Lectura del capítulo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua-explicacion-del-script">6.7. <strong>Búsqueda: Agua (explicación del script)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas">6.7.1. <strong>0) Entradas</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">6.7.2. <strong>1) Parámetros</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-anual">6.7.3. <strong>2) Embedding anual</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-jrc-opcional">6.7.4. <strong>3) Máscara JRC opcional</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-por-poligono">6.7.5. <strong>4) Vector de referencia por polígono</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno">6.7.6. <strong>5) Similitud coseno</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poligonos-por-umbral">6.7.7. <strong>6) Polígonos por umbral</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion">6.7.8. <strong>7) Visualización</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-opcional">6.7.9. <strong>8) Exportación opcional</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-satelitales-como-puente-entre-percepcion-y-semantica">7.1. Embeddings satelitales como puente entre percepción y semántica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aporte-metodologico">7.2. Aporte metodológico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aprenderas-learning-outcomes">7.3. ¿Qué aprenderás (learning outcomes)?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-y-supuestos">7.4. Requisitos y supuestos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-que-atraviesan-los-ejemplos">7.5. Buenas prácticas que atraviesan los ejemplos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-del-capitulo">7.6. Lectura del capítulo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua-explicacion-del-script">7.7. <strong>Búsqueda: Agua (explicación del script)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas">7.7.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">7.7.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-anual">7.7.3. <strong>2) Embedding anual</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-jrc-opcional">7.7.4. <strong>3) Máscara JRC opcional</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-por-poligono">7.7.5. <strong>4) Vector de referencia por polígono</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno">7.7.6. <strong>5) Similitud coseno</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poligonos-por-umbral">7.7.7. <strong>6) Polígonos por umbral</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion">7.7.8. <strong>7) Visualización</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-opcional">7.7.9. <strong>8) Exportación opcional</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">6.8. <strong>Búsqueda: Hornos de Ladrillo</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.8.1. <strong>0) Entradas</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.8.2. <strong>1) Parámetros</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-sin-mascara-previa">6.8.3. <strong>2) Embedding (sin máscara previa)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-promedio-en-poligono">6.8.4. <strong>3) Vector de referencia (promedio en polígono)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno-0-1-en-todo-el-roi">6.8.5. <strong>4) Similitud coseno (0..1) en todo el ROI</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-post-con-fail-open">6.8.6. <strong>5) Filtros POST con “fail-open”</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-mascara-post-a-la-similitud">6.8.7. <strong>6) Aplicar máscara POST a la similitud</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonizacion-y-filtro-de-area">6.8.8. <strong>7) Polygonización y filtro de área</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-adaptativo-respaldo">6.8.9. <strong>8) Umbral adaptativo (respaldo)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.8.10. <strong>9) Exportación opcional</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">7.8. <strong>Búsqueda: Hornos de Ladrillo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.8.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.8.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-sin-mascara-previa">7.8.3. <strong>2) Embedding (sin máscara previa)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-promedio-en-poligono">7.8.4. <strong>3) Vector de referencia (promedio en polígono)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno-0-1-en-todo-el-roi">7.8.5. <strong>4) Similitud coseno (0..1) en todo el ROI</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-post-con-fail-open">7.8.6. <strong>5) Filtros POST con “fail-open”</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-mascara-post-a-la-similitud">7.8.7. <strong>6) Aplicar máscara POST a la similitud</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonizacion-y-filtro-de-area">7.8.8. <strong>7) Polygonización y filtro de área</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-adaptativo-respaldo">7.8.9. <strong>8) Umbral adaptativo (respaldo)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.8.10. <strong>9) Exportación opcional</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">6.9. <strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema">6.9.1. Esquema</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logica-general-del-script">6.9.2. <strong>Lógica general del script</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-muestras-de-entrenamiento">6.9.3. <strong>0) Crear muestras de entrenamiento</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-datos-base">6.9.3.1. <strong>Definición de datos base</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-featurecollection">6.9.3.2. <strong>Conversión a FeatureCollection</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sanidad-y-vista-inicial">6.9.3.3. <strong>Sanidad y vista inicial</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-desde-muestras">6.9.3.4. <strong>ROI desde muestras</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">7.9. <strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema">7.9.1. Esquema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logica-general-del-script">7.9.2. <strong>Lógica general del script</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-muestras-de-entrenamiento">7.9.3. <strong>0) Crear muestras de entrenamiento</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-datos-base">7.9.3.1. <strong>Definición de datos base</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-featurecollection">7.9.3.2. <strong>Conversión a FeatureCollection</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sanidad-y-vista-inicial">7.9.3.3. <strong>Sanidad y vista inicial</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-desde-muestras">7.9.3.4. <strong>ROI desde muestras</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.9.4. <strong>1) Parámetros</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-agricola-esa-modis-dynamic-world">6.9.5. <strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-caracteristicas-adicionales">6.9.6. <strong>3) Embeddings y características adicionales</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-muestras">6.9.7. <strong>4) Preparar muestras</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-espaciar-muestras-por-clase">6.9.7.1. <strong>4B) Espaciar muestras por clase</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.9.4. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-agricola-esa-modis-dynamic-world">7.9.5. <strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-caracteristicas-adicionales">7.9.6. <strong>3) Embeddings y características adicionales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-muestras">7.9.7. <strong>4) Preparar muestras</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-espaciar-muestras-por-clase">7.9.7.1. <strong>4B) Espaciar muestras por clase</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-embeddings-features-en-puntos">6.9.8. <strong>5) Extraer embeddings/features en puntos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division-y-entrenamiento-del-modelo">6.9.9. <strong>6) División y entrenamiento del modelo</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-split-80-20">6.9.9.1. <strong>6A) Split 80/20</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-balanceo">6.9.9.2. <strong>6B) Balanceo</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento">6.9.9.3. <strong>Entrenamiento</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-evaluacion-en-validacion">6.9.9.4. <strong>6C) Evaluación en validación</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-embeddings-features-en-puntos">7.9.8. <strong>5) Extraer embeddings/features en puntos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division-y-entrenamiento-del-modelo">7.9.9. <strong>6) División y entrenamiento del modelo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-split-80-20">7.9.9.1. <strong>6A) Split 80/20</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-balanceo">7.9.9.2. <strong>6B) Balanceo</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento">7.9.9.3. <strong>Entrenamiento</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-evaluacion-en-validacion">7.9.9.4. <strong>6C) Evaluación en validación</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-la-roi">6.9.10. <strong>7) Clasificar la ROI</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocesado-especifico-vid">6.9.10.1. <strong>Post‑procesado específico (“Vid”)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-la-roi">7.9.10. <strong>7) Clasificar la ROI</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocesado-especifico-vid">7.9.10.1. <strong>Post‑procesado específico (“Vid”)</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizar-por-clase">6.9.11. <strong>8) Vectorizar por clase</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-ui">6.9.12. <strong>9) Interfaz (UI)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#leyenda">6.9.12.1. <strong>Leyenda</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras">6.9.12.2. <strong>Gráfico de barras</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizar-por-clase">7.9.11. <strong>8) Vectorizar por clase</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-ui">7.9.12. <strong>9) Interfaz (UI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#leyenda">7.9.12.1. <strong>Leyenda</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras">7.9.12.2. <strong>Gráfico de barras</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -467,9 +468,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-4-entrenamientos-supervisados-con-embeddings">
-<h1><span class="section-number">6. </span>Capítulo 4: <strong>Entrenamientos Supervisados con Embeddings</strong><a class="headerlink" href="#capitulo-4-entrenamientos-supervisados-con-embeddings" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">7. </span>Capítulo 4: <strong>Entrenamientos Supervisados con Embeddings</strong><a class="headerlink" href="#capitulo-4-entrenamientos-supervisados-con-embeddings" title="Link to this heading">#</a></h1>
 <section id="embeddings-satelitales-como-puente-entre-percepcion-y-semantica">
-<h2><span class="section-number">6.1. </span>Embeddings satelitales como puente entre percepción y semántica<a class="headerlink" href="#embeddings-satelitales-como-puente-entre-percepcion-y-semantica" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.1. </span>Embeddings satelitales como puente entre percepción y semántica<a class="headerlink" href="#embeddings-satelitales-como-puente-entre-percepcion-y-semantica" title="Link to this heading">#</a></h2>
 <p>En teledetección, la transición <strong>del píxel al concepto</strong> exige representaciones que capten no solo reflectancias puntuales sino también <strong>patrones espaciales, temporales y contextuales</strong>. Los <em>embeddings satelitales</em> cumplen ese rol: proyectan cada píxel/región a un <strong>espacio latente</strong> de dimensión fija donde <strong>proximidad geométrica ≈ similitud semántica</strong>. Esta capa intermedia —aprendida mediante auto-supervisión a gran escala— habilita operaciones que antes dependían de umbrales rígidos o reglas ad-hoc: <strong>búsqueda por similitud</strong>, <strong>transferencia a nuevas zonas/fechas</strong> y <strong>clasificación con menos etiquetas</strong>.</p>
 <p>Este capítulo muestra <strong>cómo operacionalizar embeddings</strong> <span id="id1">[<a class="reference internal" href="Referencias.html#id4" title="C. F. Brown, M. R. Kazmierski, V. J. Pasquarella, W. J. Rucklidge, M. Samsikova, C. Zhang, E. Shelhamer, E. Lahera, O. Wiles, S. Ilyushchenko, N. Gorelick, L. L. Zhang, S. Alj, E. Schechter, S. Askay, O. Guinan, R. Moore, A. Boukouvalas, and P. Kohli. Alphaearth foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv preprint, 2025. URL: https://doi.org/10.48550/arXiv.2507.22291, arXiv:2507.22291, doi:10.48550/arXiv.2507.22291.">Brown <em>et al.</em>, 2025</a>]</span> de GEE en flujos de trabajo reproducibles sobre Google Earth Engine (GEE), combinándolos con índices espectrales, radar y máscaras temáticas. Reúne tres casos complementarios:</p>
 <ol class="arabic simple">
@@ -484,7 +485,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="aporte-metodologico">
-<h2><span class="section-number">6.2. </span>Aporte metodológico<a class="headerlink" href="#aporte-metodologico" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.2. </span>Aporte metodológico<a class="headerlink" href="#aporte-metodologico" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Métrica de significado:</strong> La <strong>similitud coseno</strong> entre un prototipo de clase (promedio de embeddings sobre polígonos) y cada píxel del mosaico latente da un <strong>continuo semántico</strong> más estable que índices únicos.</p></li>
 <li><p><strong>Combinación de evidencias:</strong> Los embeddings no sustituyen a la teledetección clásica; la <strong>síntesis espectral-radar-temática</strong> (S2, S1, JRC, Dynamic World, WorldCover, MODIS) <strong>aumenta precisión</strong> y <strong>capacidad de generalización</strong>.</p></li>
@@ -494,7 +495,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="que-aprenderas-learning-outcomes">
-<h2><span class="section-number">6.3. </span>¿Qué aprenderás (learning outcomes)?<a class="headerlink" href="#que-aprenderas-learning-outcomes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.3. </span>¿Qué aprenderás (learning outcomes)?<a class="headerlink" href="#que-aprenderas-learning-outcomes" title="Link to this heading">#</a></h2>
 <p>Al finalizar, podrás:</p>
 <ul class="simple">
 <li><p>Construir vectores de referencia a partir de <strong>muestras poligonales</strong> y aplicarlos a <strong>búsqueda por similitud</strong> (agua, ladrilleras, etc.).</p></li>
@@ -505,7 +506,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="requisitos-y-supuestos">
-<h2><span class="section-number">6.4. </span>Requisitos y supuestos<a class="headerlink" href="#requisitos-y-supuestos" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.4. </span>Requisitos y supuestos<a class="headerlink" href="#requisitos-y-supuestos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Conocimientos de <strong>GEE (JavaScript API)</strong>, <strong>índices espectrales</strong> y <strong>radar</strong> a nivel intermedio.</p></li>
 <li><p>Etiquetas de entrenamiento (puntos o polígonos) de calidad y <strong>representatividad espacial</strong>.</p></li>
@@ -514,7 +515,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="buenas-practicas-que-atraviesan-los-ejemplos">
-<h2><span class="section-number">6.5. </span>Buenas prácticas que atraviesan los ejemplos<a class="headerlink" href="#buenas-practicas-que-atraviesan-los-ejemplos" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.5. </span>Buenas prácticas que atraviesan los ejemplos<a class="headerlink" href="#buenas-practicas-que-atraviesan-los-ejemplos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Normalización y saneo:</strong> controlar <em>no-data</em> con <code class="docutils literal notranslate"><span class="pre">unmask(0)</span></code> antes de reducir; verificar coberturas.</p></li>
 <li><p><strong>Umbrales interpretables:</strong> exponer <strong>≥ 0.98/0.99/≈ 1.0</strong> para interpretabilidad; complementar con <strong>percentil adaptativo</strong> en escenarios complejos.</p></li>
@@ -526,7 +527,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="lectura-del-capitulo">
-<h2><span class="section-number">6.6. </span>Lectura del capítulo<a class="headerlink" href="#lectura-del-capitulo" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.6. </span>Lectura del capítulo<a class="headerlink" href="#lectura-del-capitulo" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Búsqueda: Agua por similitud</strong> — construye el concepto de “prototipo de clase” y muestra su lectura como isócronas de similitud.</p></li>
 <li><p><strong>Búsqueda: Ladrilleras + <em>fail-open</em></strong> — enseña a <strong>endurecer</strong> hipótesis con filtros espectrales/radar sin perder hallazgos.</p></li>
@@ -535,7 +536,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 <p>Esta secuencia ilustra una idea central: <strong>los embeddings expanden lo que podemos “preguntarle” a las imágenes</strong>. No reemplazan la física de la señal; <strong>la organizan</strong> en un espacio donde <strong>buscar, transferir y clasificar</strong> se vuelve más <strong>estable y componible</strong>.</p>
 </section>
 <section id="busqueda-agua-explicacion-del-script">
-<h2><span class="section-number">6.7. </span><strong>Búsqueda: Agua (explicación del script)</strong><a class="headerlink" href="#busqueda-agua-explicacion-del-script" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.7. </span><strong>Búsqueda: Agua (explicación del script)</strong><a class="headerlink" href="#busqueda-agua-explicacion-del-script" title="Link to this heading">#</a></h2>
 <p>El esquema para este algoritmo es:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -551,7 +552,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 \xrightarrow[]{\text{Exportación / UI}}
 \]</div>
 <section id="entradas">
-<h3><span class="section-number">6.7.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#entradas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#entradas" title="Link to this heading">#</a></h3>
 <p>El bloque asume dos insumos principales:</p>
 <ul class="simple">
 <li><p><strong>roi:</strong> región de estudio (<em>Geometry</em> o <em>FeatureCollection</em>).</p></li>
@@ -567,7 +568,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="parametros">
-<h3><span class="section-number">6.7.2. </span><strong>1) Parámetros</strong><a class="headerlink" href="#parametros" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.2. </span><strong>1) Parámetros</strong><a class="headerlink" href="#parametros" title="Link to this heading">#</a></h3>
 <p>Define los controles del análisis temporal y espacial:</p>
 <ul class="simple">
 <li><p>Año de referencia (2024).</p></li>
@@ -579,7 +580,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="embedding-anual">
-<h3><span class="section-number">6.7.3. </span><strong>2) Embedding anual</strong><a class="headerlink" href="#embedding-anual" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.3. </span><strong>2) Embedding anual</strong><a class="headerlink" href="#embedding-anual" title="Link to this heading">#</a></h3>
 <p>Carga la colección y recorta a la región de interés:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">).</span><span class="nx">mosaic</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">);</span>
@@ -589,7 +590,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="mascara-jrc-opcional">
-<h3><span class="section-number">6.7.4. </span><strong>3) Máscara JRC opcional</strong><a class="headerlink" href="#mascara-jrc-opcional" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.4. </span><strong>3) Máscara JRC opcional</strong><a class="headerlink" href="#mascara-jrc-opcional" title="Link to this heading">#</a></h3>
 <p>Si <code class="docutils literal notranslate"><span class="pre">USE_JRC_MASK</span></code> es <code class="docutils literal notranslate"><span class="pre">true</span></code>, enmascara los píxeles con baja ocurrencia de agua:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">mosaicMasked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Algorithms</span><span class="p">.</span><span class="nx">If</span><span class="p">(</span>
 <span class="w">  </span><span class="nx">USE_JRC_MASK</span><span class="p">,</span>
@@ -603,7 +604,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="vector-de-referencia-por-poligono">
-<h3><span class="section-number">6.7.5. </span><strong>4) Vector de referencia por polígono</strong><a class="headerlink" href="#vector-de-referencia-por-poligono" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.5. </span><strong>4) Vector de referencia por polígono</strong><a class="headerlink" href="#vector-de-referencia-por-poligono" title="Link to this heading">#</a></h3>
 <p>Cada polígono de muestra genera un vector promedio del embedding, evitando <code class="docutils literal notranslate"><span class="pre">nulls</span></code>:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">samplesMeanVec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">samples</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">){</span>
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">refImage</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
@@ -618,7 +619,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="similitud-coseno">
-<h3><span class="section-number">6.7.6. </span><strong>5) Similitud coseno</strong><a class="headerlink" href="#similitud-coseno" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.6. </span><strong>5) Similitud coseno</strong><a class="headerlink" href="#similitud-coseno" title="Link to this heading">#</a></h3>
 <p>La similitud coseno mide la afinidad entre cada píxel y los vectores de muestra:</p>
 <div class="math notranslate nohighlight">
 \[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}\]</div>
@@ -642,7 +643,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="poligonos-por-umbral">
-<h3><span class="section-number">6.7.7. </span><strong>6) Polígonos por umbral</strong><a class="headerlink" href="#poligonos-por-umbral" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.7. </span><strong>6) Polígonos por umbral</strong><a class="headerlink" href="#poligonos-por-umbral" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">areasAtThreshold()</span></code> vectoriza regiones según distintos niveles de similitud:</p>
 <ul class="simple">
 <li><p><strong>≥ 0.98:</strong> coincidencia alta.</p></li>
@@ -657,7 +658,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="visualizacion">
-<h3><span class="section-number">6.7.8. </span><strong>7) Visualización</strong><a class="headerlink" href="#visualizacion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.8. </span><strong>7) Visualización</strong><a class="headerlink" href="#visualizacion" title="Link to this heading">#</a></h3>
 <p>Se muestran los resultados por color:</p>
 <ul class="simple">
 <li><p>Amarillo → ≥ 98 %</p></li>
@@ -668,12 +669,12 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 <figure class="align-default" id="fig-aguaa">
 <a class="reference internal image-reference" href="_images/AguaA.png"><img alt="_images/AguaA.png" src="_images/AguaA.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Busqueda por similitud coseno para detectar Agua</span><a class="headerlink" href="#fig-aguaa" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.1 </span><span class="caption-text">Busqueda por similitud coseno para detectar Agua</span><a class="headerlink" href="#fig-aguaa" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="exportacion-opcional">
-<h3><span class="section-number">6.7.9. </span><strong>8) Exportación opcional</strong><a class="headerlink" href="#exportacion-opcional" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.7.9. </span><strong>8) Exportación opcional</strong><a class="headerlink" href="#exportacion-opcional" title="Link to this heading">#</a></h3>
 <p>Permite guardar el resultado como <code class="docutils literal notranslate"><span class="pre">FeatureCollection</span></code> para reutilizar en otros flujos:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">polysAll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">poly98</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly99</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly100</span><span class="p">));</span>
 <span class="c1">// Export.table.toAsset({ ... });</span>
@@ -846,7 +847,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 </section>
 <section id="busqueda-hornos-de-ladrillo">
-<h2><span class="section-number">6.8. </span><strong>Búsqueda: Hornos de Ladrillo</strong><a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.8. </span><strong>Búsqueda: Hornos de Ladrillo</strong><a class="headerlink" href="#busqueda-hornos-de-ladrillo" title="Link to this heading">#</a></h2>
 <p>El esquema del algoritmo es:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -864,7 +865,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 \xrightarrow[]{\text{Exportación / UI}}
 \]</div>
 <section id="id4">
-<h3><span class="section-number">6.8.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.1. </span><strong>0) Entradas</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>La primera etapa prepara la geometría de trabajo y la vista del mapa.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">roi</span><span class="p">).</span><span class="nx">geometry</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
 </pre></div>
@@ -887,7 +888,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="id5">
-<h3><span class="section-number">6.8.2. </span><strong>1) Parámetros</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.2. </span><strong>1) Parámetros</strong><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>Define la ventana temporal, la escala de análisis y los controles de filtrado.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">startDate</span></code>, <code class="docutils literal notranslate"><span class="pre">endDate</span></code>: trabajo sobre el año <strong>2024</strong>.</p></li>
@@ -906,7 +907,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="embedding-sin-mascara-previa">
-<h3><span class="section-number">6.8.3. </span><strong>2) Embedding (sin máscara previa)</strong><a class="headerlink" href="#embedding-sin-mascara-previa" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.3. </span><strong>2) Embedding (sin máscara previa)</strong><a class="headerlink" href="#embedding-sin-mascara-previa" title="Link to this heading">#</a></h3>
 <p>Se carga el embedding anual de Google y se construye un mosaico del período:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">mosaic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">).</span><span class="nx">mosaic</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">geometry</span><span class="p">);</span>
@@ -919,7 +920,7 @@ Combinamos embeddings anuales con <strong>fenología Sentinel-2</strong> (NDVI/E
 </section>
 <hr class="docutils" />
 <section id="vector-de-referencia-promedio-en-poligono">
-<h3><span class="section-number">6.8.4. </span><strong>3) Vector de referencia (promedio en polígono)</strong><a class="headerlink" href="#vector-de-referencia-promedio-en-poligono" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.4. </span><strong>3) Vector de referencia (promedio en polígono)</strong><a class="headerlink" href="#vector-de-referencia-promedio-en-poligono" title="Link to this heading">#</a></h3>
 <p>Cada polígono de muestra se transforma en un vector promedio del embedding.<br />
 Primero se rellenan valores nulos con cero para evitar errores:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">refImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mosaic</span><span class="p">.</span><span class="nx">unmask</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
@@ -938,7 +939,7 @@ El promedio por banda sobre cada polígono se obtiene mediante:</p>
 </section>
 <hr class="docutils" />
 <section id="similitud-coseno-0-1-en-todo-el-roi">
-<h3><span class="section-number">6.8.5. </span><strong>4) Similitud coseno (0..1) en todo el ROI</strong><a class="headerlink" href="#similitud-coseno-0-1-en-todo-el-roi" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.5. </span><strong>4) Similitud coseno (0..1) en todo el ROI</strong><a class="headerlink" href="#similitud-coseno-0-1-en-todo-el-roi" title="Link to this heading">#</a></h3>
 <p>Se calcula qué tan parecido es cada píxel del ROI a las muestras.</p>
 <div class="math notranslate nohighlight">
 \[\text{sim}(\mathbf{s}, \mathbf{x}) = \frac{\mathbf{s} \cdot \mathbf{x}}{\|\mathbf{s}\|\,\|\mathbf{x}\|}\]</div>
@@ -947,7 +948,7 @@ Se toma el máximo entre todas las muestras (<code class="docutils literal notra
 </section>
 <hr class="docutils" />
 <section id="filtros-post-con-fail-open">
-<h3><span class="section-number">6.8.6. </span><strong>5) Filtros POST con “fail-open”</strong><a class="headerlink" href="#filtros-post-con-fail-open" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.6. </span><strong>5) Filtros POST con “fail-open”</strong><a class="headerlink" href="#filtros-post-con-fail-open" title="Link to this heading">#</a></h3>
 <p>Se construye una máscara candidata multiplicando filtros sin destruir cobertura útil.</p>
 <p><code class="docutils literal notranslate"><span class="pre">candidateMask</span></code> comienza como 1 (todo permitido).<br />
 <code class="docutils literal notranslate"><span class="pre">maskCoverage(img)</span></code> evalúa la cobertura media (0–1).<br />
@@ -962,7 +963,7 @@ Se toma el máximo entre todas las muestras (<code class="docutils literal notra
 </section>
 <hr class="docutils" />
 <section id="aplicar-mascara-post-a-la-similitud">
-<h3><span class="section-number">6.8.7. </span><strong>6) Aplicar máscara POST a la similitud</strong><a class="headerlink" href="#aplicar-mascara-post-a-la-similitud" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.7. </span><strong>6) Aplicar máscara POST a la similitud</strong><a class="headerlink" href="#aplicar-mascara-post-a-la-similitud" title="Link to this heading">#</a></h3>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cosMasked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cosineMax</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">candidateMask</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -971,7 +972,7 @@ Luego se calculan estadísticas (min, max, p90..p99) dentro de la máscara para 
 </section>
 <hr class="docutils" />
 <section id="polygonizacion-y-filtro-de-area">
-<h3><span class="section-number">6.8.8. </span><strong>7) Polygonización y filtro de área</strong><a class="headerlink" href="#polygonizacion-y-filtro-de-area" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.8. </span><strong>7) Polygonización y filtro de área</strong><a class="headerlink" href="#polygonizacion-y-filtro-de-area" title="Link to this heading">#</a></h3>
 <p>Convierte zonas con alta similitud en polígonos aplicando:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">areasAtThreshold</span><span class="p">(</span><span class="nx">img</span><span class="p">,</span><span class="w"> </span><span class="nx">th</span><span class="p">)</span>
 </pre></div>
@@ -985,7 +986,7 @@ Luego se calculan estadísticas (min, max, p90..p99) dentro de la máscara para 
 </section>
 <hr class="docutils" />
 <section id="umbral-adaptativo-respaldo">
-<h3><span class="section-number">6.8.9. </span><strong>8) Umbral adaptativo (respaldo)</strong><a class="headerlink" href="#umbral-adaptativo-respaldo" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.9. </span><strong>8) Umbral adaptativo (respaldo)</strong><a class="headerlink" href="#umbral-adaptativo-respaldo" title="Link to this heading">#</a></h3>
 <p>Cuando los umbrales fijos no funcionan bien, se calcula un percentil dinámico (por defecto, P99).</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">percDict</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cosMasked</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">reducer</span><span class="o">:</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">percentile</span><span class="p">([</span><span class="mf">99</span><span class="p">]),</span>
@@ -1000,18 +1001,18 @@ La capa adaptativa se vectoriza y añade para comparación.</p>
 <figure class="align-default" id="fig-hornos1">
 <a class="reference internal image-reference" href="_images/hornosSamples.png"><img alt="_images/hornosSamples.png" src="_images/hornosSamples.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Muestras de entrenamiento de Ladrilleras en Allen (Rio Negro)</span><a class="headerlink" href="#fig-hornos1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">Muestras de entrenamiento de Ladrilleras en Allen (Rio Negro)</span><a class="headerlink" href="#fig-hornos1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="fig-hornos">
 <a class="reference internal image-reference" href="_images/hornos.png"><img alt="_images/hornos.png" src="_images/hornos.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Busqueda por similitud Ladrilleras</span><a class="headerlink" href="#fig-hornos" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.3 </span><span class="caption-text">Busqueda por similitud Ladrilleras</span><a class="headerlink" href="#fig-hornos" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="id6">
-<h3><span class="section-number">6.8.10. </span><strong>9) Exportación opcional</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.8.10. </span><strong>9) Exportación opcional</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>Finalmente, se combinan las colecciones o se exporta la adaptativa:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">allPolys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">poly98</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly99</span><span class="p">).</span><span class="nx">merge</span><span class="p">(</span><span class="nx">poly100</span><span class="p">));</span>
 <span class="c1">// Export.table.toAsset({...});</span>
@@ -1295,14 +1296,14 @@ La integración con filtros espectrales y radar asegura robustez ante ruido y va
 </section>
 </section>
 <section id="busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">
-<h2><span class="section-number">6.9. </span><strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong><a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">7.9. </span><strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong><a class="headerlink" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion" title="Link to this heading">#</a></h2>
 <p>Algunas consideraciones adicionales a las expresadas al principio del capítulo:</p>
 <ul class="simple">
 <li><p>En los resultados de clasificación supervisada pueden aparecer falsos negativos en la clase vid debido a la similitud espectral con áreas de terreno desnudo o con cubierta vegetal escasa. En determinadas etapas fenológicas, especialmente durante la poda o previo a la brotación, los viñedos presentan baja reflectancia en el infrarrojo cercano y altos valores en el rojo, patrones que pueden asemejarse a los suelos expuestos.</p></li>
 <li><p>Asimismo, las clases manzana y pera tienden a confundirse entre sí debido a su composición foliar y estructura de copa semejante, lo que genera solapamiento espectral en las bandas ópticas de Sentinel-2. Estas confusiones se agravan en el Alto Valle, donde existen chacras con cultivos mixtos o intercalados, lo cual dificulta la delimitación precisa de las parcelas puras y puede inducir errores de clasificación en los bordes o zonas de transición.</p></li>
 </ul>
 <section id="esquema">
-<h3><span class="section-number">6.9.1. </span>Esquema<a class="headerlink" href="#esquema" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.1. </span>Esquema<a class="headerlink" href="#esquema" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 \text{Imágenes satelitales} \xrightarrow[\text{preproc. (nubes, índices, ROI)}]{} 
@@ -1312,19 +1313,19 @@ La integración con filtros espectrales y radar asegura robustez ante ruido y va
 \]</div>
 </section>
 <section id="logica-general-del-script">
-<h3><span class="section-number">6.9.2. </span><strong>Lógica general del script</strong><a class="headerlink" href="#logica-general-del-script" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.2. </span><strong>Lógica general del script</strong><a class="headerlink" href="#logica-general-del-script" title="Link to this heading">#</a></h3>
 <p>El objetivo es entrenar un modelo supervisado (Random Forest) que clasifique diferentes tipos de cultivos —Vid, Manzana, Pera, Alfalfa, Horticultura— combinando <em>embeddings satelitales</em> con índices espectrales y máscaras agrícolas.</p>
 </section>
 <hr class="docutils" />
 <section id="crear-muestras-de-entrenamiento">
-<h3><span class="section-number">6.9.3. </span><strong>0) Crear muestras de entrenamiento</strong><a class="headerlink" href="#crear-muestras-de-entrenamiento" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.3. </span><strong>0) Crear muestras de entrenamiento</strong><a class="headerlink" href="#crear-muestras-de-entrenamiento" title="Link to this heading">#</a></h3>
 <section id="definicion-de-datos-base">
-<h4><span class="section-number">6.9.3.1. </span><strong>Definición de datos base</strong><a class="headerlink" href="#definicion-de-datos-base" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.3.1. </span><strong>Definición de datos base</strong><a class="headerlink" href="#definicion-de-datos-base" title="Link to this heading">#</a></h4>
 <p>Se define una lista <code class="docutils literal notranslate"><span class="pre">data</span></code> con puntos etiquetados por clase (Vid, Manzana, Pera, Alfalfa, Horticultura) y sus coordenadas.<br />
 Cada fila representa un punto de campo conocido que se usará como <strong>verdad de terreno</strong>.</p>
 </section>
 <section id="conversion-a-featurecollection">
-<h4><span class="section-number">6.9.3.2. </span><strong>Conversión a FeatureCollection</strong><a class="headerlink" href="#conversion-a-featurecollection" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.3.2. </span><strong>Conversión a FeatureCollection</strong><a class="headerlink" href="#conversion-a-featurecollection" title="Link to this heading">#</a></h4>
 <p>Cada fila se transforma en un <code class="docutils literal notranslate"><span class="pre">ee.Feature</span></code> con:</p>
 <ul class="simple">
 <li><p>Geometría <code class="docutils literal notranslate"><span class="pre">ee.Geometry.Point(lon,</span> <span class="pre">lat)</span></code></p></li>
@@ -1333,20 +1334,20 @@ Cada fila representa un punto de campo conocido que se usará como <strong>verda
 <p>Luego, todos los <code class="docutils literal notranslate"><span class="pre">Feature</span></code> se agrupan en una <code class="docutils literal notranslate"><span class="pre">ee.FeatureCollection(samples)</span></code>, insumo estándar para el resto del flujo.</p>
 </section>
 <section id="sanidad-y-vista-inicial">
-<h4><span class="section-number">6.9.3.3. </span><strong>Sanidad y vista inicial</strong><a class="headerlink" href="#sanidad-y-vista-inicial" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.3.3. </span><strong>Sanidad y vista inicial</strong><a class="headerlink" href="#sanidad-y-vista-inicial" title="Link to this heading">#</a></h4>
 <p>Se filtran las muestras dentro de un rectángulo que cubre Neuquén/Alto Valle.<br />
 Si el filtro deja 0 muestras, se mantienen todas.<br />
 El mapa se configura con fondo satelital y muestra las muestras en amarillo para verificación rápida.</p>
 </section>
 <section id="roi-desde-muestras">
-<h4><span class="section-number">6.9.3.4. </span><strong>ROI desde muestras</strong><a class="headerlink" href="#roi-desde-muestras" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.3.4. </span><strong>ROI desde muestras</strong><a class="headerlink" href="#roi-desde-muestras" title="Link to this heading">#</a></h4>
 <p>Se genera la <strong>región de interés (ROI)</strong> creando un buffer de 10 km alrededor de las muestras unidas.<br />
 Ese polígono (en rojo) define el ámbito de trabajo para recortar imágenes y resultados.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="id7">
-<h3><span class="section-number">6.9.4. </span><strong>1) Parámetros</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.4. </span><strong>1) Parámetros</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Año: 2024</p></li>
 <li><p>Rango temporal: 1 de enero → 31 de diciembre</p></li>
@@ -1357,7 +1358,7 @@ Ese polígono (en rojo) define el ámbito de trabajo para recortar imágenes y r
 </section>
 <hr class="docutils" />
 <section id="mascara-agricola-esa-modis-dynamic-world">
-<h3><span class="section-number">6.9.5. </span><strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong><a class="headerlink" href="#mascara-agricola-esa-modis-dynamic-world" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.5. </span><strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong><a class="headerlink" href="#mascara-agricola-esa-modis-dynamic-world" title="Link to this heading">#</a></h3>
 <p>Construye una máscara <code class="docutils literal notranslate"><span class="pre">agMask</span></code> de áreas agrícolas combinando tres fuentes:</p>
 <ol class="arabic simple">
 <li><p><strong>ESA WorldCover</strong> (clase 40 = Cropland).</p></li>
@@ -1429,7 +1430,7 @@ El resultado se visualiza en verde e incluye capas de control.</p>
 </section>
 <hr class="docutils" />
 <section id="embeddings-y-caracteristicas-adicionales">
-<h3><span class="section-number">6.9.6. </span><strong>3) Embeddings y características adicionales</strong><a class="headerlink" href="#embeddings-y-caracteristicas-adicionales" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.6. </span><strong>3) Embeddings y características adicionales</strong><a class="headerlink" href="#embeddings-y-caracteristicas-adicionales" title="Link to this heading">#</a></h3>
 <p>Se carga el embedding anual:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">emb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">)</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span><span class="w"> </span><span class="nx">endDate</span><span class="p">)</span>
@@ -1447,20 +1448,20 @@ El resultado se visualiza en verde e incluye capas de control.</p>
 </section>
 <hr class="docutils" />
 <section id="preparar-muestras">
-<h3><span class="section-number">6.9.7. </span><strong>4) Preparar muestras</strong><a class="headerlink" href="#preparar-muestras" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.7. </span><strong>4) Preparar muestras</strong><a class="headerlink" href="#preparar-muestras" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Se filtran las clases de interés.</p></li>
 <li><p>Se mapea <code class="docutils literal notranslate"><span class="pre">categoria</span> <span class="pre">→</span> <span class="pre">label</span></code> numérico.</p></li>
 <li><p>Se obtiene una colección <code class="docutils literal notranslate"><span class="pre">trainPts</span></code> lista para muestrear bandas del embedding y entrenar.</p></li>
 </ul>
 <section id="b-espaciar-muestras-por-clase">
-<h4><span class="section-number">6.9.7.1. </span><strong>4B) Espaciar muestras por clase</strong><a class="headerlink" href="#b-espaciar-muestras-por-clase" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.7.1. </span><strong>4B) Espaciar muestras por clase</strong><a class="headerlink" href="#b-espaciar-muestras-por-clase" title="Link to this heading">#</a></h4>
 <p>Para evitar sesgo espacial, se cuadricula el territorio (en EPSG:3857) y se conserva un solo punto por celda y clase, asegurando representatividad espacial.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="extraer-embeddings-features-en-puntos">
-<h3><span class="section-number">6.9.8. </span><strong>5) Extraer embeddings/features en puntos</strong><a class="headerlink" href="#extraer-embeddings-features-en-puntos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.8. </span><strong>5) Extraer embeddings/features en puntos</strong><a class="headerlink" href="#extraer-embeddings-features-en-puntos" title="Link to this heading">#</a></h3>
 <p>Se ejecuta <code class="docutils literal notranslate"><span class="pre">sampleRegions</span></code> sobre los puntos espaciados, obteniendo una tabla con:</p>
 <ul class="simple">
 <li><p><strong>X:</strong> bandas del embedding e índices adicionales.</p></li>
@@ -1470,22 +1471,22 @@ El resultado se visualiza en verde e incluye capas de control.</p>
 </section>
 <hr class="docutils" />
 <section id="division-y-entrenamiento-del-modelo">
-<h3><span class="section-number">6.9.9. </span><strong>6) División y entrenamiento del modelo</strong><a class="headerlink" href="#division-y-entrenamiento-del-modelo" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.9. </span><strong>6) División y entrenamiento del modelo</strong><a class="headerlink" href="#division-y-entrenamiento-del-modelo" title="Link to this heading">#</a></h3>
 <section id="a-split-80-20">
-<h4><span class="section-number">6.9.9.1. </span><strong>6A) Split 80/20</strong><a class="headerlink" href="#a-split-80-20" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.9.1. </span><strong>6A) Split 80/20</strong><a class="headerlink" href="#a-split-80-20" title="Link to this heading">#</a></h4>
 <p>Se divide la muestra estratificadamente: 80 % entrenamiento / 20 % validación.</p>
 </section>
 <section id="b-balanceo">
-<h4><span class="section-number">6.9.9.2. </span><strong>6B) Balanceo</strong><a class="headerlink" href="#b-balanceo" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.9.2. </span><strong>6B) Balanceo</strong><a class="headerlink" href="#b-balanceo" title="Link to this heading">#</a></h4>
 <p>En el conjunto de entrenamiento se aplica <em>capping</em> por clase (<code class="docutils literal notranslate"><span class="pre">CAP_PER_CLASS</span></code>) para evitar dominancia de clases frecuentes.</p>
 </section>
 <section id="entrenamiento">
-<h4><span class="section-number">6.9.9.3. </span><strong>Entrenamiento</strong><a class="headerlink" href="#entrenamiento" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.9.3. </span><strong>Entrenamiento</strong><a class="headerlink" href="#entrenamiento" title="Link to this heading">#</a></h4>
 <p>Se entrena un <strong>Random Forest</strong> de 500 árboles con <em>bagging</em> = 0.7.</p>
 </section>
 <hr class="docutils" />
 <section id="c-evaluacion-en-validacion">
-<h4><span class="section-number">6.9.9.4. </span><strong>6C) Evaluación en validación</strong><a class="headerlink" href="#c-evaluacion-en-validacion" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.9.4. </span><strong>6C) Evaluación en validación</strong><a class="headerlink" href="#c-evaluacion-en-validacion" title="Link to this heading">#</a></h4>
 <p>Se clasifica el 20 % de validación y se calculan:</p>
 <ul class="simple">
 <li><p>Matriz de confusión.</p></li>
@@ -1497,14 +1498,14 @@ El resultado se visualiza en verde e incluye capas de control.</p>
 </section>
 <hr class="docutils" />
 <section id="clasificar-la-roi">
-<h3><span class="section-number">6.9.10. </span><strong>7) Clasificar la ROI</strong><a class="headerlink" href="#clasificar-la-roi" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.10. </span><strong>7) Clasificar la ROI</strong><a class="headerlink" href="#clasificar-la-roi" title="Link to this heading">#</a></h3>
 <p>El clasificador se aplica a todas las bandas del embedding dentro de la ROI:</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">classified</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">emb</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="nx">rfModel</span><span class="p">).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">agMask</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>El resultado es un <strong>mapa de cultivos</strong> recortado a zonas agrícolas probables.</p>
 <section id="postprocesado-especifico-vid">
-<h4><span class="section-number">6.9.10.1. </span><strong>Post‑procesado específico (“Vid”)</strong><a class="headerlink" href="#postprocesado-especifico-vid" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.10.1. </span><strong>Post‑procesado específico (“Vid”)</strong><a class="headerlink" href="#postprocesado-especifico-vid" title="Link to this heading">#</a></h4>
 <p>Se refina la clase <strong>Vid</strong> aplicando condiciones:</p>
 <ul class="simple">
 <li><p>Alta probabilidad <em>crops</em> en Dynamic World.</p></li>
@@ -1516,31 +1517,31 @@ El resultado se visualiza en verde e incluye capas de control.</p>
 </section>
 <hr class="docutils" />
 <section id="vectorizar-por-clase">
-<h3><span class="section-number">6.9.11. </span><strong>8) Vectorizar por clase</strong><a class="headerlink" href="#vectorizar-por-clase" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.11. </span><strong>8) Vectorizar por clase</strong><a class="headerlink" href="#vectorizar-por-clase" title="Link to this heading">#</a></h3>
 <p>Cada clase se convierte en polígonos (8‑conectividad).<br />
 Se calcula el área (<code class="docutils literal notranslate"><span class="pre">area_m2</span></code>) y se filtra por <code class="docutils literal notranslate"><span class="pre">MIN_POLY_M2</span></code>.<br />
 El resultado es una <code class="docutils literal notranslate"><span class="pre">FeatureCollection</span></code> con atributos <code class="docutils literal notranslate"><span class="pre">class_id</span></code>, <code class="docutils literal notranslate"><span class="pre">categoria</span></code> y <code class="docutils literal notranslate"><span class="pre">area_m2</span></code>, lista para análisis o exportación.</p>
 </section>
 <hr class="docutils" />
 <section id="interfaz-ui">
-<h3><span class="section-number">6.9.12. </span><strong>9) Interfaz (UI)</strong><a class="headerlink" href="#interfaz-ui" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">7.9.12. </span><strong>9) Interfaz (UI)</strong><a class="headerlink" href="#interfaz-ui" title="Link to this heading">#</a></h3>
 <section id="leyenda">
-<h4><span class="section-number">6.9.12.1. </span><strong>Leyenda</strong><a class="headerlink" href="#leyenda" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.12.1. </span><strong>Leyenda</strong><a class="headerlink" href="#leyenda" title="Link to this heading">#</a></h4>
 <p>Un panel (<code class="docutils literal notranslate"><span class="pre">ui.Panel</span></code>) en la esquina inferior izquierda muestra la paleta de colores y nombres por clase:</p>
 <figure class="align-default" id="fig-catcul">
 <a class="reference internal image-reference" href="_images/leyenda.png"><img alt="_images/leyenda.png" src="_images/leyenda.png" style="width: 40%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">Categorías de cultivos</span><a class="headerlink" href="#fig-catcul" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.4 </span><span class="caption-text">Categorías de cultivos</span><a class="headerlink" href="#fig-catcul" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="grafico-de-barras">
-<h4><span class="section-number">6.9.12.2. </span><strong>Gráfico de barras</strong><a class="headerlink" href="#grafico-de-barras" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">7.9.12.2. </span><strong>Gráfico de barras</strong><a class="headerlink" href="#grafico-de-barras" title="Link to this heading">#</a></h4>
 <p>Otro panel (<code class="docutils literal notranslate"><span class="pre">ui.Panel</span></code>) en la esquina inferior derecha muestra la superficie por clase (hectáreas), calculada desde el raster clasificado, representando la proporción visualmente mediante barras horizontales.</p>
 <figure class="align-default" id="fig-catculc">
 <a class="reference internal image-reference" href="_images/CultivosC.png"><img alt="_images/CultivosC.png" src="_images/CultivosC.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.5 </span><span class="caption-text">Categorización por Cultivos con Embeddings y filtros de datasets</span><a class="headerlink" href="#fig-catculc" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 7.5 </span><span class="caption-text">Categorización por Cultivos con Embeddings y filtros de datasets</span><a class="headerlink" href="#fig-catculc" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <hr class="docutils" />
@@ -2211,7 +2212,7 @@ Integra aprendizaje automático, teledetección clásica y visualización intera
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Capítulo 3: <strong>Entrenamiento no supervisado con Enbeddings</strong></p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Capítulo 3: <strong>Entrenamiento no supervisado con Enbeddings</strong></p>
       </div>
     </a>
     <a class="right-next"
@@ -2219,7 +2220,7 @@ Integra aprendizaje automático, teledetección clásica y visualización intera
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
+        <p class="prev-next-title"><span class="section-number">8. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2239,70 +2240,70 @@ Integra aprendizaje automático, teledetección clásica y visualización intera
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-satelitales-como-puente-entre-percepcion-y-semantica">6.1. Embeddings satelitales como puente entre percepción y semántica</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aporte-metodologico">6.2. Aporte metodológico</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aprenderas-learning-outcomes">6.3. ¿Qué aprenderás (learning outcomes)?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-y-supuestos">6.4. Requisitos y supuestos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-que-atraviesan-los-ejemplos">6.5. Buenas prácticas que atraviesan los ejemplos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-del-capitulo">6.6. Lectura del capítulo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua-explicacion-del-script">6.7. <strong>Búsqueda: Agua (explicación del script)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas">6.7.1. <strong>0) Entradas</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">6.7.2. <strong>1) Parámetros</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-anual">6.7.3. <strong>2) Embedding anual</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-jrc-opcional">6.7.4. <strong>3) Máscara JRC opcional</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-por-poligono">6.7.5. <strong>4) Vector de referencia por polígono</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno">6.7.6. <strong>5) Similitud coseno</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poligonos-por-umbral">6.7.7. <strong>6) Polígonos por umbral</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion">6.7.8. <strong>7) Visualización</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-opcional">6.7.9. <strong>8) Exportación opcional</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-satelitales-como-puente-entre-percepcion-y-semantica">7.1. Embeddings satelitales como puente entre percepción y semántica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aporte-metodologico">7.2. Aporte metodológico</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aprenderas-learning-outcomes">7.3. ¿Qué aprenderás (learning outcomes)?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requisitos-y-supuestos">7.4. Requisitos y supuestos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buenas-practicas-que-atraviesan-los-ejemplos">7.5. Buenas prácticas que atraviesan los ejemplos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lectura-del-capitulo">7.6. Lectura del capítulo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-agua-explicacion-del-script">7.7. <strong>Búsqueda: Agua (explicación del script)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entradas">7.7.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametros">7.7.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-anual">7.7.3. <strong>2) Embedding anual</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-jrc-opcional">7.7.4. <strong>3) Máscara JRC opcional</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-por-poligono">7.7.5. <strong>4) Vector de referencia por polígono</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno">7.7.6. <strong>5) Similitud coseno</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poligonos-por-umbral">7.7.7. <strong>6) Polígonos por umbral</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion">7.7.8. <strong>7) Visualización</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exportacion-opcional">7.7.9. <strong>8) Exportación opcional</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">6.8. <strong>Búsqueda: Hornos de Ladrillo</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6.8.1. <strong>0) Entradas</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">6.8.2. <strong>1) Parámetros</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-sin-mascara-previa">6.8.3. <strong>2) Embedding (sin máscara previa)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-promedio-en-poligono">6.8.4. <strong>3) Vector de referencia (promedio en polígono)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno-0-1-en-todo-el-roi">6.8.5. <strong>4) Similitud coseno (0..1) en todo el ROI</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-post-con-fail-open">6.8.6. <strong>5) Filtros POST con “fail-open”</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-mascara-post-a-la-similitud">6.8.7. <strong>6) Aplicar máscara POST a la similitud</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonizacion-y-filtro-de-area">6.8.8. <strong>7) Polygonización y filtro de área</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-adaptativo-respaldo">6.8.9. <strong>8) Umbral adaptativo (respaldo)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">6.8.10. <strong>9) Exportación opcional</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-hornos-de-ladrillo">7.8. <strong>Búsqueda: Hornos de Ladrillo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">7.8.1. <strong>0) Entradas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">7.8.2. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embedding-sin-mascara-previa">7.8.3. <strong>2) Embedding (sin máscara previa)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-referencia-promedio-en-poligono">7.8.4. <strong>3) Vector de referencia (promedio en polígono)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#similitud-coseno-0-1-en-todo-el-roi">7.8.5. <strong>4) Similitud coseno (0..1) en todo el ROI</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-post-con-fail-open">7.8.6. <strong>5) Filtros POST con “fail-open”</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicar-mascara-post-a-la-similitud">7.8.7. <strong>6) Aplicar máscara POST a la similitud</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polygonizacion-y-filtro-de-area">7.8.8. <strong>7) Polygonización y filtro de área</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umbral-adaptativo-respaldo">7.8.9. <strong>8) Umbral adaptativo (respaldo)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">7.8.10. <strong>9) Exportación opcional</strong></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">6.9. <strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema">6.9.1. Esquema</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logica-general-del-script">6.9.2. <strong>Lógica general del script</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-muestras-de-entrenamiento">6.9.3. <strong>0) Crear muestras de entrenamiento</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-datos-base">6.9.3.1. <strong>Definición de datos base</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-featurecollection">6.9.3.2. <strong>Conversión a FeatureCollection</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sanidad-y-vista-inicial">6.9.3.3. <strong>Sanidad y vista inicial</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-desde-muestras">6.9.3.4. <strong>ROI desde muestras</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-entrenamiento-supervisado-para-cultivos-una-aproximacion">7.9. <strong>Búsqueda: Entrenamiento supervisado para cultivos (una aproximación)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema">7.9.1. Esquema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logica-general-del-script">7.9.2. <strong>Lógica general del script</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-muestras-de-entrenamiento">7.9.3. <strong>0) Crear muestras de entrenamiento</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-datos-base">7.9.3.1. <strong>Definición de datos base</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-featurecollection">7.9.3.2. <strong>Conversión a FeatureCollection</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sanidad-y-vista-inicial">7.9.3.3. <strong>Sanidad y vista inicial</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#roi-desde-muestras">7.9.3.4. <strong>ROI desde muestras</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">6.9.4. <strong>1) Parámetros</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-agricola-esa-modis-dynamic-world">6.9.5. <strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-caracteristicas-adicionales">6.9.6. <strong>3) Embeddings y características adicionales</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-muestras">6.9.7. <strong>4) Preparar muestras</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-espaciar-muestras-por-clase">6.9.7.1. <strong>4B) Espaciar muestras por clase</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">7.9.4. <strong>1) Parámetros</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mascara-agricola-esa-modis-dynamic-world">7.9.5. <strong>2) Máscara agrícola (ESA + MODIS + Dynamic World)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#embeddings-y-caracteristicas-adicionales">7.9.6. <strong>3) Embeddings y características adicionales</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparar-muestras">7.9.7. <strong>4) Preparar muestras</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-espaciar-muestras-por-clase">7.9.7.1. <strong>4B) Espaciar muestras por clase</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-embeddings-features-en-puntos">6.9.8. <strong>5) Extraer embeddings/features en puntos</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division-y-entrenamiento-del-modelo">6.9.9. <strong>6) División y entrenamiento del modelo</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-split-80-20">6.9.9.1. <strong>6A) Split 80/20</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-balanceo">6.9.9.2. <strong>6B) Balanceo</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento">6.9.9.3. <strong>Entrenamiento</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-evaluacion-en-validacion">6.9.9.4. <strong>6C) Evaluación en validación</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extraer-embeddings-features-en-puntos">7.9.8. <strong>5) Extraer embeddings/features en puntos</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division-y-entrenamiento-del-modelo">7.9.9. <strong>6) División y entrenamiento del modelo</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-split-80-20">7.9.9.1. <strong>6A) Split 80/20</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-balanceo">7.9.9.2. <strong>6B) Balanceo</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenamiento">7.9.9.3. <strong>Entrenamiento</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#c-evaluacion-en-validacion">7.9.9.4. <strong>6C) Evaluación en validación</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-la-roi">6.9.10. <strong>7) Clasificar la ROI</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocesado-especifico-vid">6.9.10.1. <strong>Post‑procesado específico (“Vid”)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificar-la-roi">7.9.10. <strong>7) Clasificar la ROI</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#postprocesado-especifico-vid">7.9.10.1. <strong>Post‑procesado específico (“Vid”)</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizar-por-clase">6.9.11. <strong>8) Vectorizar por clase</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-ui">6.9.12. <strong>9) Interfaz (UI)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#leyenda">6.9.12.1. <strong>Leyenda</strong></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras">6.9.12.2. <strong>Gráfico de barras</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectorizar-por-clase">7.9.11. <strong>8) Vectorizar por clase</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaz-ui">7.9.12. <strong>9) Interfaz (UI)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#leyenda">7.9.12.1. <strong>Leyenda</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-de-barras">7.9.12.2. <strong>Gráfico de barras</strong></a></li>
 </ul>
 </li>
 </ul>
