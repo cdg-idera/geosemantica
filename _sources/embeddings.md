@@ -76,6 +76,43 @@ Un **campo de embedding** es la *matriz continua* o *“campo” de embeddings a
 vector de incrustación n-dimensional muestreado de un campo de incrustación *embedding*
 ```
 
+## Relación entre \(\mathbb{R}^n\) y la hiperesfera unitaria \(S^{n-1}\)
+
+### Definición
+La **hiperesfera unitaria** en \(\mathbb{R}^n\) se define como:
+\[
+S^{n-1} = \{\, \mathbf{x} \in \mathbb{R}^n \mid \lVert \mathbf{x} \rVert_2 = 1 \,\}
+\]
+Es decir, el conjunto de todos los **vectores de norma 1** en \(\mathbb{R}^n\).
+
+- \(\mathbb{R}^n\): espacio euclídeo n-dimensional completo (todas las magnitudes y direcciones).
+- \(S^{n-1}\): **superficie** (de dimensión \(n-1\)) de la esfera unitaria contenida en \(\mathbb{R}^n\).
+
+### Proyección radial (normalización L2)
+Todo vector no nulo \(\mathbf{x} \in \mathbb{R}^n \setminus \{0\}\) puede **proyectarse** sobre \(S^{n-1}\) mediante la normalización L2:
+\[
+\hat{\mathbf{x}} = \frac{\mathbf{x}}{\lVert \mathbf{x} \rVert_2}
+\]
+Esta transformación **conserva la dirección** y elimina la magnitud, mapeando:
+\[
+\mathbb{R}^n - \{0\} \xrightarrow[\text{normalización L2}]{\text{proyección radial}} S^{n-1}
+\]
+
+### Interpretación geométrica
+- \(\mathbb{R}^n\) contiene **todas** las direcciones y longitudes posibles.
+- \(S^{n-1}\) captura **solo las direcciones unitarias** (el “esqueleto angular” de \(\mathbb{R}^n\)).
+
+## Aplicación en embeddings
+En modelos fundacionales y análisis de *embeddings*:
+- Se normaliza a norma unitaria para comparar vectores por **dirección** (no por longitud).
+- La **similitud coseno** entre embeddings \(\mathbf{u},\mathbf{v}\) coincide con el producto interno de sus versiones unitarias:
+\[
+\cos(\theta) = \frac{\langle \mathbf{u},\mathbf{v} \rangle}{\lVert \mathbf{u} \rVert_2\, \lVert \mathbf{v} \rVert_2} = \langle \hat{\mathbf{u}},\hat{\mathbf{v}} \rangle
+\]
+
+## Resumen
+> \(\mathbb{R}^n\) describe el espacio de **todas** las representaciones posibles; \(S^{n-1}\) describe \textbf{sus direcciones puras}. La normalización L2 proyecta \(\mathbb{R}^n \setminus \{0\}\) sobre \(S^{n-1}\), habilitando comparaciones angulares (similitud coseno) entre embeddings.
+
 **3. Modelos fundacionales y embeddings satelitales**
 
 Los **modelos fundacionales para Observación de la Tierra (FM4EO)** como *OneVision*, *Prithvi*, *AlphaHertz* o el *Satellite Embedding V1* de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.\
