@@ -240,7 +240,7 @@ $\text{similitud coseno}(x, y) = \hat{x} \cdot \hat{y} = \cos(\theta)$
 
 
 
-```{figure} imagenes/embedding_op.jpg
+```{figure} imagenes/embedding_op.png
 :name: fig-embedding_op
 :width: 80%
 
