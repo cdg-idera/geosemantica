@@ -392,15 +392,15 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-conceptual">2.1. <strong>Introducción conceptual</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">2.2. <strong>Introducción: del píxel al concepto</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">2.3. *<em>Fundamento teórico: ¿Qué es un embedding?</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1">2.4. Relación entre (\mathbb{R}^n) y la hiperesfera unitaria (S^{n-1})</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1">2.4. Relación entre <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> y la hiperesfera unitaria <span class="math notranslate nohighlight">\(S^{n-1}\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">2.4.1. Definición</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proyeccion-radial-normalizacion-l2">2.4.2. Proyección radial (normalización L2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-geometrica">2.4.3. Interpretación geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-embeddings">2.4.4. Aplicación en embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">2.4.5. Resumen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-embeddings">2.5. Aplicación en embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">2.6. Resumen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-matematica-y-significado-de-la-similitud">2.7. Estructura matemática y significado de la similitud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-matematica-y-significado-de-la-similitud">2.5. Estructura matemática y significado de la similitud</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-embeddings-geoespaciales">3. Relación entre embeddings geoespaciales</a><ul class="visible nav section-nav flex-column">
@@ -508,53 +508,53 @@ así como los modelos lingüísticos aprenden que <em>“rey” - “hombre” +
 </figure>
 </section>
 <section id="relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1">
-<h2><span class="section-number">2.4. </span>Relación entre (\mathbb{R}^n) y la hiperesfera unitaria (S^{n-1})<a class="headerlink" href="#relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>Relación entre <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> y la hiperesfera unitaria <span class="math notranslate nohighlight">\(S^{n-1}\)</span><a class="headerlink" href="#relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1" title="Link to this heading">#</a></h2>
 <section id="definicion">
 <h3><span class="section-number">2.4.1. </span>Definición<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h3>
-<p>La <strong>hiperesfera unitaria</strong> en (\mathbb{R}^n) se define como:
-[
-S^{n-1} = {, \mathbf{x} \in \mathbb{R}^n \mid \lVert \mathbf{x} \rVert_2 = 1 ,}
-]
-Es decir, el conjunto de todos los <strong>vectores de norma 1</strong> en (\mathbb{R}^n).</p>
+<p>La <strong>hiperesfera unitaria</strong> en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> se define como:
+$<span class="math notranslate nohighlight">\(
+S^{n-1} = \{\, \mathbf{x} \in \mathbb{R}^n \mid \lVert \mathbf{x} \rVert_2 = 1 \,\}
+\)</span><span class="math notranslate nohighlight">\(
+Es decir, el conjunto de todos los **vectores de norma 1** en \)</span>\mathbb{R}^n$.</p>
 <ul class="simple">
-<li><p>(\mathbb{R}^n): espacio euclídeo n-dimensional completo (todas las magnitudes y direcciones).</p></li>
-<li><p>(S^{n-1}): <strong>superficie</strong> (de dimensión (n-1)) de la esfera unitaria contenida en (\mathbb{R}^n).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>: espacio euclídeo <span class="math notranslate nohighlight">\(n\)</span>-dimensional completo (todas las magnitudes y direcciones).</p></li>
+<li><p><span class="math notranslate nohighlight">\(S^{n-1}\)</span>: <strong>superficie</strong> (de dimensión <span class="math notranslate nohighlight">\(n-1\)</span>) de la esfera unitaria contenida en <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>.</p></li>
 </ul>
 </section>
 <section id="proyeccion-radial-normalizacion-l2">
 <h3><span class="section-number">2.4.2. </span>Proyección radial (normalización L2)<a class="headerlink" href="#proyeccion-radial-normalizacion-l2" title="Link to this heading">#</a></h3>
-<p>Todo vector no nulo (\mathbf{x} \in \mathbb{R}^n \setminus {0}) puede <strong>proyectarse</strong> sobre (S^{n-1}) mediante la normalización L2:
-[
+<p>Todo vector no nulo <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^n \setminus \{0\}\)</span> puede <strong>proyectarse</strong> sobre <span class="math notranslate nohighlight">\(S^{n-1}\)</span> mediante la normalización L2:
+$<span class="math notranslate nohighlight">\(
 \hat{\mathbf{x}} = \frac{\mathbf{x}}{\lVert \mathbf{x} \rVert_2}
-]
-Esta transformación <strong>conserva la dirección</strong> y elimina la magnitud, mapeando:
-[
-\mathbb{R}^n - {0} \xrightarrow[\text{normalización L2}]{\text{proyección radial}} S^{n-1}
-]</p>
+\)</span><span class="math notranslate nohighlight">\(
+Esta transformación **conserva la dirección** y elimina la magnitud, mapeando:
+\)</span><span class="math notranslate nohighlight">\(
+\mathbb{R}^n \setminus \{0\} \xrightarrow[\text{normalización L2}]{\text{proyección radial}} S^{n-1}
+\)</span>$</p>
 </section>
 <section id="interpretacion-geometrica">
 <h3><span class="section-number">2.4.3. </span>Interpretación geométrica<a class="headerlink" href="#interpretacion-geometrica" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>(\mathbb{R}^n) contiene <strong>todas</strong> las direcciones y longitudes posibles.</p></li>
-<li><p>(S^{n-1}) captura <strong>solo las direcciones unitarias</strong> (el “esqueleto angular” de (\mathbb{R}^n)).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> contiene <strong>todas</strong> las direcciones y longitudes posibles.</p></li>
+<li><p><span class="math notranslate nohighlight">\(S^{n-1}\)</span> captura <strong>solo las direcciones unitarias</strong> (el “esqueleto angular” de <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>).</p></li>
 </ul>
 </section>
-</section>
 <section id="aplicacion-en-embeddings">
-<h2><span class="section-number">2.5. </span>Aplicación en embeddings<a class="headerlink" href="#aplicacion-en-embeddings" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.4.4. </span>Aplicación en embeddings<a class="headerlink" href="#aplicacion-en-embeddings" title="Link to this heading">#</a></h3>
 <p>En modelos fundacionales y análisis de <em>embeddings</em>:</p>
 <ul class="simple">
 <li><p>Se normaliza a norma unitaria para comparar vectores por <strong>dirección</strong> (no por longitud).</p></li>
-<li><p>La <strong>similitud coseno</strong> entre embeddings (\mathbf{u},\mathbf{v}) coincide con el producto interno de sus versiones unitarias:
-[
-\cos(\theta) = \frac{\langle \mathbf{u},\mathbf{v} \rangle}{\lVert \mathbf{u} \rVert_2, \lVert \mathbf{v} \rVert_2} = \langle \hat{\mathbf{u}},\hat{\mathbf{v}} \rangle
-]</p></li>
+<li><p>La <strong>similitud coseno</strong> entre embeddings <span class="math notranslate nohighlight">\(\mathbf{u},\mathbf{v}\)</span> coincide con el producto interno de sus versiones unitarias:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+\cos(\theta) = \frac{\langle \mathbf{u},\mathbf{v} \rangle}{\lVert \mathbf{u} \rVert_2\, \lVert \mathbf{v} \rVert_2} = \langle \hat{\mathbf{u}},\hat{\mathbf{v}} \rangle
+\]</div>
 </section>
 <section id="resumen">
-<h2><span class="section-number">2.6. </span>Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
+<h3><span class="section-number">2.4.5. </span>Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p>(\mathbb{R}^n) describe el espacio de <strong>todas</strong> las representaciones posibles; (S^{n-1}) describe \textbf{sus direcciones puras}. La normalización L2 proyecta (\mathbb{R}^n \setminus {0}) sobre (S^{n-1}), habilitando comparaciones angulares (similitud coseno) entre embeddings.</p>
+<div><p><span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> describe el espacio de <strong>todas</strong> las representaciones posibles; <span class="math notranslate nohighlight">\(S^{n-1}\)</span> describe <strong>sus direcciones puras</strong>. La normalización L2 proyecta <span class="math notranslate nohighlight">\(\mathbb{R}^n \setminus \{0\}\)</span> sobre <span class="math notranslate nohighlight">\(S^{n-1}\)</span>, habilitando comparaciones angulares (similitud coseno) entre embeddings.</p>
 </div></blockquote>
 <p><strong>3. Modelos fundacionales y embeddings satelitales</strong></p>
 <p>Los <strong>modelos fundacionales para Observación de la Tierra (FM4EO)</strong> como <em>OneVision</em>, <em>Prithvi</em>, <em>AlphaHertz</em> o el <em>Satellite Embedding V1</em> de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.<br />
@@ -570,8 +570,9 @@ Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, d
 </div>
 </div>
 </section>
+</section>
 <section id="estructura-matematica-y-significado-de-la-similitud">
-<h2><span class="section-number">2.7. </span>Estructura matemática y significado de la similitud<a class="headerlink" href="#estructura-matematica-y-significado-de-la-similitud" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Estructura matemática y significado de la similitud<a class="headerlink" href="#estructura-matematica-y-significado-de-la-similitud" title="Link to this heading">#</a></h2>
 <p>La <strong>similitud coseno</strong> se utiliza como métrica fundamental en este espacio latente.</p>
 <p>Dado un vector de referencia <span class="math notranslate nohighlight">\(\mathbf{s}\)</span> (por ejemplo, el promedio de los <em>embeddings</em> de un conjunto de polígonos de agua) y un vector de píxel <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, la similitud se define como:</p>
 <div class="math notranslate nohighlight">
@@ -1018,15 +1019,15 @@ La sinergia entre <em>semántica latente (embeddings)</em> y <em>semántica expl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-conceptual">2.1. <strong>Introducción conceptual</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-del-pixel-al-concepto">2.2. <strong>Introducción: del píxel al concepto</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamento-teorico-que-es-un-embedding">2.3. *<em>Fundamento teórico: ¿Qué es un embedding?</em></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1">2.4. Relación entre (\mathbb{R}^n) y la hiperesfera unitaria (S^{n-1})</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-mathbb-r-n-y-la-hiperesfera-unitaria-s-n-1">2.4. Relación entre <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> y la hiperesfera unitaria <span class="math notranslate nohighlight">\(S^{n-1}\)</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">2.4.1. Definición</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proyeccion-radial-normalizacion-l2">2.4.2. Proyección radial (normalización L2)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-geometrica">2.4.3. Interpretación geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-embeddings">2.4.4. Aplicación en embeddings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">2.4.5. Resumen</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicacion-en-embeddings">2.5. Aplicación en embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">2.6. Resumen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-matematica-y-significado-de-la-similitud">2.7. Estructura matemática y significado de la similitud</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-matematica-y-significado-de-la-similitud">2.5. Estructura matemática y significado de la similitud</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-embeddings-geoespaciales">3. Relación entre embeddings geoespaciales</a><ul class="visible nav section-nav flex-column">
