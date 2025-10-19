@@ -81,9 +81,10 @@ vector de incrustación n-dimensional muestreado de un campo de incrustación *e
 ### Definición
 
 La **hiperesfera unitaria** en $\mathbb{R}^n$ se define como:
-$$
+$
 S^{n-1} = \{\, \mathbf{x} \in \mathbb{R}^n \mid \lVert \mathbf{x} \rVert_2 = 1 \,\}
-$$
+$
+
 Es decir, el conjunto de todos los **vectores de norma 1** en $\mathbb{R}^n$.
 
 - $\mathbb{R}^n$: espacio euclídeo $n$-dimensional completo (todas las magnitudes y direcciones).
@@ -91,14 +92,16 @@ Es decir, el conjunto de todos los **vectores de norma 1** en $\mathbb{R}^n$.
 
 ### Proyección radial (normalización L2)
 
-Todo vector no nulo $\mathbf{x} \in \mathbb{R}^n \setminus \{0\}$ puede **proyectarse** sobre $S^{n-1}$ mediante la normalización L2:
-$$
+Todo vector no nulo $\mathbf{x} \in \mathbb{R}^n - \{0\}$ puede **proyectarse** sobre $S^{n-1}$ mediante la normalización L2:
+
+$
 \hat{\mathbf{x}} = \frac{\mathbf{x}}{\lVert \mathbf{x} \rVert_2}
-$$
+$
+
 Esta transformación **conserva la dirección** y elimina la magnitud, mapeando:
-$$
-\mathbb{R}^n \setminus \{0\} \xrightarrow[\text{normalización L2}]{\text{proyección radial}} S^{n-1}
-$$
+$
+\mathbb{R}^n - \{0\} \xrightarrow[\text{normalización L2}]{\text{proyección radial}} S^{n-1}
+$
 
 ### Interpretación geométrica
 
