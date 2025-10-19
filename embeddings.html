@@ -411,7 +411,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 🔵 Definición</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-en-embeddings">4.2. Interpretación en embeddings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-que-normalizan-vectores-al-espacio-de-la-hiperesfera-unitaria">4.2.1. Operaciones que normalizan vectores al espacio de la hiperesfera unitaria</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2.2. Interpretación geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2.2. Interpretación geométrica</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-resumen">4.2.3. En resumen</a></li>
 </ul>
 </li>
@@ -554,15 +554,15 @@ S^{n-1} = \{\, \mathbf{x} \in \mathbb{R}^n \mid \lVert \mathbf{x} \rVert_2 = 1 \
 <section id="resumen">
 <h3><span class="section-number">2.4.5. </span>Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h3>
 <blockquote>
-<div><p><span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> describe el espacio de <strong>todas</strong> las representaciones posibles; <span class="math notranslate nohighlight">\(S^{n-1}\)</span> describe <strong>sus direcciones puras</strong>. La normalización L2 proyecta <span class="math notranslate nohighlight">\(\mathbb{R}^n \setminus \{0\}\)</span> sobre <span class="math notranslate nohighlight">\(S^{n-1}\)</span>, habilitando comparaciones angulares (similitud coseno) entre embeddings.</p>
+<div><p><span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> describe el espacio de <strong>todas</strong> las representaciones posibles; <span class="math notranslate nohighlight">\(S^{n-1}\)</span> describe <strong>sus direcciones puras</strong>. La normalización L2 proyecta <span class="math notranslate nohighlight">\(\mathbb{R}^n - \{0\}\)</span> sobre <span class="math notranslate nohighlight">\(S^{n-1}\)</span>, habilitando comparaciones angulares (similitud coseno) entre embeddings.</p>
 </div></blockquote>
 <p><strong>3. Modelos fundacionales y embeddings satelitales</strong></p>
-<p>Los <strong>modelos fundacionales para Observación de la Tierra (FM4EO)</strong> como <em>OneVision</em>, <em>Prithvi</em>, <em>AlphaHertz</em> o el <em>Satellite Embedding V1</em> de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.<br />
+<p>Los <strong>modelos fundacionales para Observación de la Tierra (FM4EO)</strong> como <em>Prithvi</em>, <em>TerraMind</em> o el <em>Satellite Embedding V1</em> de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.<br />
 Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, de estación o de sensor, capturando así <em>la esencia estadística del paisaje</em>.</p>
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es un embedding?</p>
 <p>El dataset <strong><code class="docutils literal notranslate"><span class="pre">GOOGLE/SATELLITE_EMBEDDING/V1</span></code></strong>, disponible en <em>Google Earth Engine</em>, representa la <strong>primera implementación global del paradigma de embeddings satelitales</strong>: un <strong>mapa latente del planeta</strong> donde cada píxel, con resolución espacial de <strong>10 metros</strong>, está asociado a un <strong>vector de 64 dimensiones</strong> que codifica su <strong>identidad semántica aprendida</strong>.</p>
-<p>Cada una de esas 64 dimensiones sintetiza patrones espectrales, espaciales y contextuales extraídos mediante aprendizaje auto-supervisado, lo que permite comparar regiones por su <em>significado estadístico</em> más que por su mera reflectancia espectral.</p>
+<p>Cada una de esas 64 dimensiones sintetiza <strong>patrones espectrales, espaciales y contextuales</strong> extraídos mediante aprendizaje auto-supervisado**, lo que permite comparar regiones por su <em>significado estadístico</em> más que por su mera reflectancia espectral.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">embeddings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL&#39;</span><span class="p">);</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">img</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">embeddings</span><span class="p">.</span><span class="nx">first</span><span class="p">();</span><span class="w">         </span><span class="c1">// o .mosaic() para el año filtrado</span>
 <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;N° de bandas (dim del embedding):&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">img</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">().</span><span class="nx">size</span><span class="p">());</span>
@@ -742,6 +742,12 @@ Así, su <strong>ángulo relativo</strong> (y no su magnitud) representa su simi
 </tbody>
 </table>
 </div>
+<figure class="align-default" id="fig-embedding-op">
+<a class="reference internal image-reference" href="imagenes/embedding_op.jpg"><img alt="imagenes/embedding_op.jpg" src="imagenes/embedding_op.jpg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Operaciones: Distancia, Similitud Coseno y dot product. Fuente: <span id="id2">[<a class="reference internal" href="Referencias.html#id2" title="Marta Fernández García. ¿por qué los modelos de ia suelen utilizar la similitud coseno? June 2024. LinkedIn Top Voice 2024. Publicado el 11 de junio de 2024. URL: https://www.linkedin.com/pulse/por-qu%C3%A9-los-modelos-de-ia-suelen-utilizar-la-coseno-fern%C3%A1ndez-garc%C3%ADa-shwlf/ (visited on 2025-10-19).">Fernández García, 2024</a>]</span></span><a class="headerlink" href="#fig-embedding-op" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="tip admonition">
 <p class="admonition-title">¿Te interesa conocer como graficar un embedding en la <strong>hiperesfera unitaria</strong>?</p>
 <p>El <strong>Apéndice C</strong> explica cómo graficar un <em>embedding</em> en <span class="math notranslate nohighlight">\(\mathbb{R}^{64}\)</span><br />
@@ -749,8 +755,8 @@ y lo ejemplifica en el espacio tridimensional <span class="math notranslate nohi
 </div>
 </section>
 <hr class="docutils" />
-<section id="id2">
-<h3><span class="section-number">4.2.2. </span>Interpretación geométrica<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h3><span class="section-number">4.2.2. </span>Interpretación geométrica<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>En la hiperesfera unitaria:</p>
 <ul class="simple">
 <li><p>Todos los vectores tienen la <strong>misma longitud (1)</strong>.</p></li>
@@ -771,7 +777,7 @@ En modelos fundacionales de Observación de la Tierra, esta geometría es la bas
 <figure class="align-default" id="fig-hiperesferaunitaria">
 <a class="reference internal image-reference" href="_images/embedding_sphere.png"><img alt="_images/embedding_sphere.png" src="_images/embedding_sphere.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Ejemplo 300 <em>embedding</em> normalizados en la hiperesfera unitaria</span><a class="headerlink" href="#fig-hiperesferaunitaria" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Ejemplo 300 <em>embedding</em> normalizados en la hiperesfera unitaria</span><a class="headerlink" href="#fig-hiperesferaunitaria" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1038,7 +1044,7 @@ La sinergia entre <em>semántica latente (embeddings)</em> y <em>semántica expl
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.1. 🔵 Definición</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-en-embeddings">4.2. Interpretación en embeddings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-que-normalizan-vectores-al-espacio-de-la-hiperesfera-unitaria">4.2.1. Operaciones que normalizan vectores al espacio de la hiperesfera unitaria</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.2.2. Interpretación geométrica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.2.2. Interpretación geométrica</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#en-resumen">4.2.3. En resumen</a></li>
 </ul>
 </li>

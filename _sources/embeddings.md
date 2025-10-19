@@ -121,11 +121,11 @@ $$
 
 ### Resumen
 
-> $\mathbb{R}^n$ describe el espacio de **todas** las representaciones posibles; $S^{n-1}$ describe **sus direcciones puras**. La normalización L2 proyecta $\mathbb{R}^n \setminus \{0\}$ sobre $S^{n-1}$, habilitando comparaciones angulares (similitud coseno) entre embeddings.
+> $\mathbb{R}^n$ describe el espacio de **todas** las representaciones posibles; $S^{n-1}$ describe **sus direcciones puras**. La normalización L2 proyecta $\mathbb{R}^n - \{0\}$ sobre $S^{n-1}$, habilitando comparaciones angulares (similitud coseno) entre embeddings.
 
 **3. Modelos fundacionales y embeddings satelitales**
 
-Los **modelos fundacionales para Observación de la Tierra (FM4EO)** como *OneVision*, *Prithvi*, *AlphaHertz* o el *Satellite Embedding V1* de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.\
+Los **modelos fundacionales para Observación de la Tierra (FM4EO)** como *Prithvi*, *TerraMind* o el *Satellite Embedding V1* de Google, fueron entrenados sobre millones de escenas multitemporales de Sentinel-2, Landsat y MODIS.\
 Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, de estación o de sensor, capturando así *la esencia estadística del paisaje*.
 
 
@@ -134,7 +134,7 @@ Estos modelos aprenden a generar vectores invariantes a cambios atmosféricos, d
 
 El dataset **`GOOGLE/SATELLITE_EMBEDDING/V1`**, disponible en *Google Earth Engine*, representa la **primera implementación global del paradigma de embeddings satelitales**: un **mapa latente del planeta** donde cada píxel, con resolución espacial de **10 metros**, está asociado a un **vector de 64 dimensiones** que codifica su **identidad semántica aprendida**.  
 
-Cada una de esas 64 dimensiones sintetiza patrones espectrales, espaciales y contextuales extraídos mediante aprendizaje auto-supervisado, lo que permite comparar regiones por su *significado estadístico* más que por su mera reflectancia espectral.
+Cada una de esas 64 dimensiones sintetiza **patrones espectrales, espaciales y contextuales** extraídos mediante aprendizaje auto-supervisado**, lo que permite comparar regiones por su *significado estadístico* más que por su mera reflectancia espectral.
 
 ```javascript
 var embeddings = ee.ImageCollection('GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL');
@@ -237,6 +237,15 @@ $\text{similitud coseno}(x, y) = \hat{x} \cdot \hat{y} = \cos(\theta)$
 | **Aprendizaje de métricas** | **Triplet Loss (Anchor–Positive–Negative)** | Obliga a que los embeddings similares estén más próximos que los distintos. | Distancias angulares en la hiperesfera. |
 | **Aprendizaje de métricas** | **ArcFace / CosFace / SphereFace** | Modelos que aprenden en el espacio angular (común en reconocimiento facial). | Embeddings confinados a una hiperesfera unitaria. |
 | **Modelos fundacionales EO** | **Prithvi, TerraMind, Satellite Embeddings V1** | Embeddings multiespectrales y temporales normalizados para similitud coseno. | Espacio semántico latente sobre una hiperesfera de 64D. |
+
+
+
+```{figure} imagenes/embedding_op.jpg
+:name: fig-embedding_op
+:width: 80%
+
+Operaciones: Distancia, Similitud Coseno y dot product. Fuente: {cite}`fernandez2024similitudcoseno`
+```
 
 
 ````{admonition} ¿Te interesa conocer como graficar un embedding en la **hiperesfera unitaria**?
