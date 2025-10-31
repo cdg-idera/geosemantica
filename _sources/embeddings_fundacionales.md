@@ -74,7 +74,7 @@ AlphaEarth Fundacional de Google y Satellite Embeddings V1
 **Entrenamiento:** Petabytes de datos NASA (HLS, MODIS/VIIRS) y variantes Wx/Climate.  
 **Capacidades:** *Fine-tuning* para incendios, sequías, inundaciones; mapeo y series temporales.  
 **Usos:** Investigación ambiental y climática; modelos publicados y *checkpoints* abiertos.  
-**Institución:** NASA–IBM (con aliados académicos) {cite}`szwarcman2024prithvio`.
+**Institución:** NASA–IBM (con aliados académicos) {cite}`Prithvi-100M`, {cite}`Prithvi-100M-preprint`, {cite}`szwarcman2024prithvio`.
 
 ---
 
