@@ -158,7 +158,7 @@ Lo notable es que esta similitud no depende de índices espectrales fijos, sino 
 
 ---
 
-# Relación entre embeddings geoespaciales
+## Relación entre embeddings geoespaciales
 
 Esta tabla resume los tipos de relaciones posibles entre embeddings geoespaciales en función de su **similitud coseno**, junto con ejemplos concretos de fenómenos del territorio.
 
@@ -189,7 +189,7 @@ En consecuencia:
 
 -   Cada comparación en este espacio vectorial actúa como un *razonamiento semántico* entre regiones.
 
-# Hiperesfera unitaria y operaciones de normalización en embeddings
+## Hiperesfera unitaria y operaciones de normalización en embeddings
 
 ## 🔵 Definición
 
@@ -367,7 +367,7 @@ A continuación se detallan ejemplos de tipologías geográficas y sugerencias p
 
 ---
 
-# Consideraciones metodológicas y recomendaciones prácticas
+## Consideraciones metodológicas y recomendaciones prácticas
 
 El dataset **`GOOGLE/SATELLITE_EMBEDDING/V1`** constituye una representación semántica de la superficie terrestre aprendida a partir de millones de escenas multitemporales, pero su naturaleza **latente y abstracta** impone ciertas limitaciones operativas.  
 En primer lugar, es importante reconocer que estos embeddings **no codifican objetos discretos ni detalles finos** —como vehículos, edificaciones individuales o elementos de pequeña escala—, ya que su resolución espacial de **10 metros** y su entrenamiento auto-supervisado están orientados a **capturar patrones espaciales amplios, contextos ambientales y estructuras territoriales coherentes**.  
