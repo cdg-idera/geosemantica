@@ -773,7 +773,7 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <li><p>Stride 1, sin padding (valid)</p></li>
 </ul>
 <figure class="align-default" id="id7">
-<a class="reference internal image-reference" href="_images/I3Dcnn_stride2_1.gif"><img alt="_images/I3Dcnn_stride2_1.gif" src="_images/I3Dcnn_stride2_1.gif" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/I3Dcnn_stride1_valid.gif"><img alt="_images/I3Dcnn_stride1_valid.gif" src="_images/I3Dcnn_stride1_valid.gif" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.8 </span><span class="caption-text">Stride 1, sin padding (valid)</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
 </figcaption>
@@ -782,7 +782,7 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <li><p>Stride 1, con padding (same)</p></li>
 </ul>
 <figure class="align-default" id="id8">
-<a class="reference internal image-reference" href="_images/I3Dcnn_stride2_2.gif"><img alt="_images/I3Dcnn_stride2_2.gif" src="_images/I3Dcnn_stride2_2.gif" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/I3Dcnn_stride1_same.gif"><img alt="_images/I3Dcnn_stride1_same.gif" src="_images/I3Dcnn_stride1_same.gif" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.9 </span><span class="caption-text">Stride 1, con padding (same)</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
 </figcaption>
@@ -791,16 +791,16 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <li><p>Stride 2, sin padding (valid)</p></li>
 </ul>
 <figure class="align-default" id="id9">
-<a class="reference internal image-reference" href="_images/I3Dcnn_stride1_2.gif"><img alt="_images/I3Dcnn_stride1_2.gif" src="_images/I3Dcnn_stride1_2.gif" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/I3Dcnn_stride2_valid.gif"><img alt="_images/I3Dcnn_stride2_valid.gif" src="_images/I3Dcnn_stride2_valid.gif" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">Stride 2, sin padding (valid)</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>Stride 1, con padding (same)</p></li>
+<li><p>Stride 2, con padding (same)</p></li>
 </ul>
 <figure class="align-default" id="id10">
-<a class="reference internal image-reference" href="_images/I3Dcnn_stride1_1.gif"><img alt="_images/I3Dcnn_stride1_1.gif" src="_images/I3Dcnn_stride1_1.gif" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/I3Dcnn_stride2_same.gif"><img alt="_images/I3Dcnn_stride2_same.gif" src="_images/I3Dcnn_stride2_same.gif" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">Stride 2, con padding (same)</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
 </figcaption>
@@ -854,7 +854,7 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 </ul>
 <p>Para visualizar esto, mostramos un GIF 3D en el que:</p>
 <ul class="simple">
-<li><p>cada panel de la cadena (I_0, O_1, O_2, O_3) tiene <strong>tres canales</strong>, representados por bloques con colores distintos (por ejemplo, rojizo, verdoso y azulado),</p></li>
+<li><p>cada panel de la cadena <span class="math notranslate nohighlight">\(I_0, O_1, O_2, O_3\)</span> tiene <strong>tres canales</strong>, representados por bloques con colores distintos (por ejemplo, rojizo, verdoso y azulado),</p></li>
 <li><p>el filtro se ve actuando sobre los tres canales,</p></li>
 <li><p>y el resultado de cada etapa combina esa información multicanal en un nuevo bloque.</p></li>
 </ul>
