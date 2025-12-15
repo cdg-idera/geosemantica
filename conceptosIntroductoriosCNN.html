@@ -748,7 +748,7 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <li><p>Stride 1, con padding (same)</p></li>
 </ul>
 <figure class="align-default" id="id6">
-<a class="reference internal image-reference" href="magenes/I_stride2_same.gif"><img alt="magenes/I_stride2_same.gif" src="magenes/I_stride2_same.gif" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/I_stride2_same.gif"><img alt="_images/I_stride2_same.gif" src="_images/I_stride2_same.gif" style="width: 50%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6.7 </span><span class="caption-text">Stride 2, con padding (same)</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>
@@ -892,30 +892,20 @@ Hasta ahora, el énfasis estuvo puesto en la estructura de la operación y en el
 <section id="definicion-matematica-de-activacion">
 <h3><span class="section-number">6.17.1. </span>Definición matemática de activación<a class="headerlink" href="#definicion-matematica-de-activacion" title="Link to this heading">#</a></h3>
 <p>Sea una imagen de entrada<br />
-[
-\mathbf{X} \in \mathbb{R}^{H \times W \times C}
-]
-y un filtro convolucional aprendido<br />
-[
-\mathbf{W}^{(k)} \in \mathbb{R}^{m \times m \times C}
-]
-donde (k) indexa al filtro dentro de una capa.</p>
+<span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{H \times W \times C}\)</span></p>
+<p>y un filtro convolucional aprendido</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{W}^{(k)} \in \mathbb{R}^{m \times m \times C}\)</span></p>
+<p>donde (k) indexa al filtro dentro de una capa.</p>
 <p>La <strong>activación</strong> asociada al filtro (k) se define como:</p>
-<p>[
-\mathbf{A}^{(k)} = \mathbf{X} * \mathbf{W}^{(k)}
-]</p>
-<p>donde (*) denota la operación de convolución discreta.<br />
+<p><span class="math notranslate nohighlight">\(\mathbf{A}^{(k)} = \mathbf{X} * \mathbf{W}^{(k)}\)</span></p>
+<p>donde <span class="math notranslate nohighlight">\(*\)</span> denota la operación de convolución discreta.<br />
 El resultado es un mapa bidimensional:</p>
-<p>[
-\mathbf{A}^{(k)} \in \mathbb{R}^{H’ \times W’}
-]</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{A}^{(k)} \in \mathbb{R}^{H' \times W'}\)</span></p>
 <p>cuyo valor en cada posición espacial indica la intensidad de respuesta del filtro.</p>
 <p>En forma explícita:</p>
-<p>[
-\mathbf{A}^{(k)}(x,y) =
+<p><span class="math notranslate nohighlight">\(\mathbf{A}^{(k)}(x,y) =
 \sum_{i,j,c}
-\mathbf{W}^{(k)}(i,j,c),\mathbf{X}(x+i, y+j, c)
-]</p>
+\mathbf{W}^{(k)}(i,j,c)\,\mathbf{X}(x+i, y+j, c)\)</span></p>
 </section>
 <section id="interpretacion-conceptual">
 <h3><span class="section-number">6.17.2. </span>Interpretación conceptual<a class="headerlink" href="#interpretacion-conceptual" title="Link to this heading">#</a></h3>
@@ -935,11 +925,9 @@ La numeración de los filtros es un índice interno y no implica orden temporal 
 <section id="aporte-conceptual">
 <h3><span class="section-number">6.17.4. </span>Aporte conceptual<a class="headerlink" href="#aporte-conceptual" title="Link to this heading">#</a></h3>
 <p>Esta sección explicita el paso desde los datos crudos a una representación funcional:</p>
-<p>[
-\mathbf{X}
-;\longrightarrow;
-{\mathbf{A}^{(k)}}_{k=1}^{N}
-]</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{X}
+\;\longrightarrow\;
+\{\mathbf{A}^{(k)}\}_{k=1}^{N}\)</span></p>
 <p>La imagen deja de ser un conjunto de píxeles y pasa a representarse como un conjunto de funciones espaciales sensibles a distintos patrones visuales.</p>
 <p>En el contexto de imágenes satelitales, estas funciones suelen responder a bordes, texturas, patrones geométricos y transiciones agua–tierra, sentando las bases para representaciones jerárquicas más complejas en capas posteriores.</p>
 </section>
