@@ -456,6 +456,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-3d-del-kernel-33-al-kernel-33c">6.14. 13. Filtros 3D: del kernel 3×3 al kernel 3×3×C</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">6.15. 14. <em>Pooling</em>: reducción espacial y robustez frente a traslaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-cimientos-conceptuales-para-cnn-en-teledeteccion">6.16. 15. Conclusión: cimientos conceptuales para CNN en teledetección</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activaciones-de-filtros-aprendidos">6.17. Activaciones de filtros aprendidos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-matematica-de-activacion">6.17.1. Definición matemática de activación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-conceptual">6.17.2. Interpretación conceptual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-representa-la-visualizacion">6.17.3. Qué representa la visualización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aporte-conceptual">6.17.4. Aporte conceptual</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -872,6 +879,66 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <p>No es toda su matemática, porque una CNN completa involucra funciones de activación, capas densas, embeddings, propagación hacia adelante, retropropagación del error, optimización y regularización. Pero sin comprender la convolución y estas operaciones asociadas resulta imposible entender cómo las CNN procesan <strong>imágenes satelitales</strong>.</p>
 <p>Este video establece, por lo tanto, los <strong>cimientos conceptuales</strong> necesarios para avanzar hacia arquitecturas más complejas. En los próximos materiales veremos cómo estas operaciones se encadenan, cómo se aprenden los filtros, cómo emergen representaciones internas de múltiples niveles y cómo, a partir de una operación local tan simple como la que acabamos de analizar, surge la capacidad de interpretar escenas satelitales completas con notable precisión.</p>
 </section>
+<section id="activaciones-de-filtros-aprendidos">
+<h2><span class="section-number">6.17. </span>Activaciones de filtros aprendidos<a class="headerlink" href="#activaciones-de-filtros-aprendidos" title="Link to this heading">#</a></h2>
+<p>En las secciones anteriores se introdujo la <strong>convolución</strong> como una operación matemática fundamental en las redes neuronales convolucionales, mediante la cual una imagen es transformada por un conjunto de filtros aprendidos.<br />
+Hasta ahora, el énfasis estuvo puesto en la estructura de la operación y en el rol de los filtros como parámetros entrenables.</p>
+<p>En esta sección se introduce un nuevo concepto clave: <strong>el mapa de activación</strong>, que permite observar el efecto concreto de esos filtros sobre una imagen real.</p>
+<section id="definicion-matematica-de-activacion">
+<h3><span class="section-number">6.17.1. </span>Definición matemática de activación<a class="headerlink" href="#definicion-matematica-de-activacion" title="Link to this heading">#</a></h3>
+<p>Sea una imagen de entrada<br />
+[
+\mathbf{X} \in \mathbb{R}^{H \times W \times C}
+]
+y un filtro convolucional aprendido<br />
+[
+\mathbf{W}^{(k)} \in \mathbb{R}^{m \times m \times C}
+]
+donde (k) indexa al filtro dentro de una capa.</p>
+<p>La <strong>activación</strong> asociada al filtro (k) se define como:</p>
+<p>[
+\mathbf{A}^{(k)} = \mathbf{X} * \mathbf{W}^{(k)}
+]</p>
+<p>donde (*) denota la operación de convolución discreta.<br />
+El resultado es un mapa bidimensional:</p>
+<p>[
+\mathbf{A}^{(k)} \in \mathbb{R}^{H’ \times W’}
+]</p>
+<p>cuyo valor en cada posición espacial indica la intensidad de respuesta del filtro.</p>
+<p>En forma explícita:</p>
+<p>[
+\mathbf{A}^{(k)}(x,y) =
+\sum_{i,j,c}
+\mathbf{W}^{(k)}(i,j,c),\mathbf{X}(x+i, y+j, c)
+]</p>
+</section>
+<section id="interpretacion-conceptual">
+<h3><span class="section-number">6.17.2. </span>Interpretación conceptual<a class="headerlink" href="#interpretacion-conceptual" title="Link to this heading">#</a></h3>
+<p>Esta expresión formaliza una idea central:</p>
+<blockquote>
+<div><p>Un filtro convolucional define <em>qué patrón buscar</em>; el mapa de activación indica <em>dónde aparece</em> y <em>con qué intensidad</em>.</p>
+</div></blockquote>
+</section>
+<section id="que-representa-la-visualizacion">
+<h3><span class="section-number">6.17.3. </span>Qué representa la visualización<a class="headerlink" href="#que-representa-la-visualizacion" title="Link to this heading">#</a></h3>
+<p>El GIF asociado a esta sección muestra el conjunto de mapas de activación:</p>
+<p><span class="math notranslate nohighlight">\(\{\mathbf{A}^{(1)}, \mathbf{A}^{(2)}, \dots, \mathbf{A}^{(N)}\}\)</span></p>
+<p>correspondientes a los filtros de la primera capa convolucional de una red ResNet18 preentrenada.</p>
+<p>Todos los mapas se calculan <strong>en paralelo</strong> a partir de la misma imagen de entrada.<br />
+La numeración de los filtros es un índice interno y no implica orden temporal ni jerarquía de aprendizaje.</p>
+</section>
+<section id="aporte-conceptual">
+<h3><span class="section-number">6.17.4. </span>Aporte conceptual<a class="headerlink" href="#aporte-conceptual" title="Link to this heading">#</a></h3>
+<p>Esta sección explicita el paso desde los datos crudos a una representación funcional:</p>
+<p>[
+\mathbf{X}
+;\longrightarrow;
+{\mathbf{A}^{(k)}}_{k=1}^{N}
+]</p>
+<p>La imagen deja de ser un conjunto de píxeles y pasa a representarse como un conjunto de funciones espaciales sensibles a distintos patrones visuales.</p>
+<p>En el contexto de imágenes satelitales, estas funciones suelen responder a bordes, texturas, patrones geométricos y transiciones agua–tierra, sentando las bases para representaciones jerárquicas más complejas en capas posteriores.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -958,6 +1025,13 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-3d-del-kernel-33-al-kernel-33c">6.14. 13. Filtros 3D: del kernel 3×3 al kernel 3×3×C</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">6.15. 14. <em>Pooling</em>: reducción espacial y robustez frente a traslaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-cimientos-conceptuales-para-cnn-en-teledeteccion">6.16. 15. Conclusión: cimientos conceptuales para CNN en teledetección</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activaciones-de-filtros-aprendidos">6.17. Activaciones de filtros aprendidos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-matematica-de-activacion">6.17.1. Definición matemática de activación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretacion-conceptual">6.17.2. Interpretación conceptual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-representa-la-visualizacion">6.17.3. Qué representa la visualización</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aporte-conceptual">6.17.4. Aporte conceptual</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
