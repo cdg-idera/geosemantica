@@ -467,7 +467,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-papel-del-padding">8.9. El papel del <em>padding</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuatro-ejemplos-2d-combinaciones-de-stride-y-padding">8.10. Cuatro ejemplos 2D: combinaciones de <em>stride</em> y <em>padding</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-vision-2d-a-la-perspectiva-3d-tipica-de-las-cnn">8.11. De la visión 2D a la perspectiva 3D típica de las CNN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convoluciones-secuenciales-una-cadena-de-salidas-o">8.12. Convoluciones secuenciales: una cadena de salidas (O)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convoluciones-secuenciales-una-cadena-de-salidas-o">8.12. Convoluciones secuenciales: una cadena de salidas <span class="math notranslate nohighlight">\(O\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-representa-un-canal">8.13. ¿Qué representa un canal?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-3d-del-kernel-33-al-kernel-33c">8.14. Filtros 3D: del kernel 3×3 al kernel 3×3×C</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">8.15. <em>Pooling</em>: reducción espacial y robustez frente a traslaciones</a></li>
@@ -989,7 +989,7 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 </section>
 <hr class="docutils" />
 <section id="convoluciones-secuenciales-una-cadena-de-salidas-o">
-<h2><span class="section-number">8.12. </span>Convoluciones secuenciales: una cadena de salidas (O)<a class="headerlink" href="#convoluciones-secuenciales-una-cadena-de-salidas-o" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">8.12. </span>Convoluciones secuenciales: una cadena de salidas <span class="math notranslate nohighlight">\(O\)</span><a class="headerlink" href="#convoluciones-secuenciales-una-cadena-de-salidas-o" title="Link to this heading">#</a></h2>
 <p>En una CNN real, las convoluciones no aparecen aisladas. Son <strong>capas</strong> que se encadenan: la salida de una se convierte en la entrada de la siguiente.</p>
 <p>Podemos representarlo de forma simplificada como:</p>
 <p><span class="math notranslate nohighlight">\( I_0 \; \xrightarrow{\text{conv}} \; O_1 \; \xrightarrow{\text{conv}} \; O_2 \; \xrightarrow{\text{conv}} \; O_3. \)</span></p>
@@ -1027,7 +1027,7 @@ Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p>
 <hr class="docutils" />
 <section id="filtros-3d-del-kernel-33-al-kernel-33c">
 <h2><span class="section-number">8.14. </span>Filtros 3D: del kernel 3×3 al kernel 3×3×C<a class="headerlink" href="#filtros-3d-del-kernel-33-al-kernel-33c" title="Link to this heading">#</a></h2>
-<p>Cuando una imagen tiene (C) canales, un filtro convolucional deja de ser una simple matriz 2D de tamaño 3×3. Pasa a ser un <strong>tensor 3D</strong> de tamaño 3×3×C:</p>
+<p>Cuando una imagen tiene C$ canales, un filtro convolucional deja de ser una simple matriz 2D de tamaño 3×3. Pasa a ser un <strong>tensor 3D</strong> de tamaño 3×3×C:</p>
 <ul class="simple">
 <li><p>En cada canal, el filtro tiene su propio pequeño kernel 3×3.</p></li>
 <li><p>La convolución se aplica <strong>canal por canal</strong>.</p></li>
@@ -1076,8 +1076,8 @@ Hasta ahora, el énfasis estuvo puesto en la estructura de la operación y en el
 <span class="math notranslate nohighlight">\(\mathbf{X} \in \mathbb{R}^{H \times W \times C}\)</span></p>
 <p>y un filtro convolucional aprendido</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{W}^{(k)} \in \mathbb{R}^{m \times m \times C}\)</span></p>
-<p>donde (k) indexa al filtro dentro de una capa.</p>
-<p>La <strong>activación</strong> asociada al filtro (k) se define como:</p>
+<p>donde <span class="math notranslate nohighlight">\(k\)</span> indexa al filtro dentro de una capa.</p>
+<p>La <strong>activación</strong> asociada al filtro <span class="math notranslate nohighlight">\(k\)</span> se define como:</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{A}^{(k)} = \mathbf{X} * \mathbf{W}^{(k)}\)</span></p>
 <p>donde <span class="math notranslate nohighlight">\(*\)</span> denota la operación de convolución discreta.<br />
 El resultado es un mapa bidimensional:</p>
@@ -1138,12 +1138,12 @@ Gracias a las funciones de activación, las redes neuronales pueden aprender rel
 <ul class="simple">
 <li><p><strong>Arriba (Output)</strong>: la matriz de salida de la convolución (<em>feature map</em> crudo).</p></li>
 <li><p><strong>Abajo (Activation / ReLU)</strong>: el mismo mapa, pero luego de aplicar ReLU <strong>celda por celda</strong>.</p></li>
-<li><p><strong>A la derecha (gráfica de ReLU)</strong>: la curva (\text{ReLU}(x)) y un punto que se mueve para cada celda.</p></li>
+<li><p><strong>A la derecha (gráfica de ReLU)</strong>: la curva <span class="math notranslate nohighlight">\(\text{ReLU}(x)\)</span> y un punto que se mueve para cada celda.</p></li>
 </ul>
 <div class="note admonition">
 <p class="admonition-title">Idea clave</p>
 <p>La activación se aplica <strong>valor por valor</strong> (element-wise).<br />
-No mezcla celdas ni mezcla canales: toma un número (x) y devuelve un número (f(x)).</p>
+No mezcla celdas ni mezcla canales: toma un número <span class="math notranslate nohighlight">\(x\)</span> y devuelve un número <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 <figure class="align-default" id="fig-output-relu-with-graph">
 <a class="reference internal image-reference" href="_images/output_relu_with_graph.gif"><img alt="_images/output_relu_with_graph.gif" src="_images/output_relu_with_graph.gif" style="width: 100%;" /></a>
@@ -1192,7 +1192,7 @@ x &amp; \text{si } x\ge 0 \\
 \alpha x &amp; \text{si } x&lt;0
 \end{cases}
 \)</span></p>
-<p>donde (\alpha) es un número pequeño (por ejemplo (0.1)).</p>
+<p>donde <span class="math notranslate nohighlight">\(\alpha\)</span> es un número pequeño (por ejemplo <span class="math notranslate nohighlight">\(0.1\)</span>).</p>
 </div>
 <figure class="align-default" id="fig-output-leakyrelu-with-graph">
 <a class="reference internal image-reference" href="_images/output_leakyrelu_with_graph.gif"><img alt="_images/output_leakyrelu_with_graph.gif" src="_images/output_leakyrelu_with_graph.gif" style="width: 100%;" /></a>
@@ -1210,7 +1210,7 @@ x &amp; \text{si } x\ge 0 \\
 “En la gráfica (curva fucsia) se ve esa pendiente: del lado negativo la función baja, pero más suavemente. El punto muestra el par <span class="math notranslate nohighlight">\((x, f(x))\)</span> para la celda actual.”</p>
 <div class="note admonition">
 <p class="admonition-title">Mensaje clave</p>
-<p>Leaky ReLU mantiene <strong>flujo de gradiente</strong> en la región negativa (pendiente (\alpha) en vez de 0).<br />
+<p>Leaky ReLU mantiene <strong>flujo de gradiente</strong> en la región negativa (pendiente <span class="math notranslate nohighlight">\(\alpha\)</span> en vez de 0).<br />
 Eso ayuda a evitar el problema de <em>neuronas muertas</em> que puede ocurrir con ReLU.</p>
 </div>
 <p>“En resumen: <strong>ReLU corta negativos a cero</strong>, mientras que <strong>Leaky ReLU deja pasar un poco de señal negativa</strong>, lo que puede mejorar el entrenamiento en algunos modelos.”</p>
@@ -1306,7 +1306,7 @@ Esto ayuda a mantener activaciones más estables y cercanas a cero.</p>
 </figure>
 <section id="definicion">
 <h4><span class="section-number">8.18.5.1. </span>Definición<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h4>
-<p>Para un parámetro (\alpha &gt; 0), ELU se define como:</p>
+<p>Para un parámetro <span class="math notranslate nohighlight">\(\alpha\)</span> <span class="math notranslate nohighlight">\(&gt;\)</span> <span class="math notranslate nohighlight">\(0\)</span>, ELU se define como:</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{ELU}(x) =
 \begin{cases}
 x &amp; \text{si } x \ge 0\\
@@ -1320,7 +1320,7 @@ x &amp; \text{si } x \ge 0\\
 </section>
 <section id="intuicion-por-que-no-solo-relu">
 <h4><span class="section-number">8.18.5.2. </span>Intuición (por qué no solo ReLU)<a class="headerlink" href="#intuicion-por-que-no-solo-relu" title="Link to this heading">#</a></h4>
-<p><strong>ReLU</strong> anula todo lo negativo: (\max(0,x)).<br />
+<p><strong>ReLU</strong> anula todo lo negativo: <span class="math notranslate nohighlight">\(\max(0,x)\)</span>.<br />
 <strong>ELU</strong> en cambio deja pasar negativos pero “controlados”, de forma suave.</p>
 <p>Esto puede ayudar porque:</p>
 <ul class="simple">
@@ -1335,14 +1335,14 @@ x &amp; \text{si } x \ge 0\\
 “Arriba está el <em>feature map</em> antes de la activación. En el ejemplo está centrado/escalado para que sea fácil ver positivos y negativos.”</p>
 <p><strong>2) Activación ELU (abajo)</strong><br />
 “Abajo aplicamos ELU celda por celda. Los positivos quedan prácticamente iguales.<br />
-Los negativos se transforman con una exponencial y se van acercando a un piso: (-\alpha).”</p>
+Los negativos se transforman con una exponencial y se van acercando a un piso: <span class="math notranslate nohighlight">\(-\alpha\)</span>.”</p>
 <p><strong>3) Gráfica (derecha)</strong><br />
 “La curva fucsia muestra la parte lineal en positivos y la parte exponencial en negativos.<br />
-El punto amarillo marca el valor actual (x) y su salida (\mathrm{ELU}(x)).”</p>
+El punto amarillo marca el valor actual <span class="math notranslate nohighlight">\(x\)</span> y su salida <span class="math notranslate nohighlight">\(\mathrm{ELU}(x)\)</span>.”</p>
 <div class="note admonition">
 <p class="admonition-title">Mensaje clave</p>
 <p>ELU es una alternativa a ReLU cuando queremos <strong>suavidad</strong> y un manejo más “amigable” de valores negativos:
-no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hacia un mínimo (-\alpha).</p>
+no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hacia un mínimo <span class="math notranslate nohighlight">\(-\alpha\)</span>.</p>
 </div>
 <p>“En resumen: ELU mantiene la simplicidad de ReLU en positivos, pero reemplaza el corte negativo por una transición exponencial suave, lo que puede mejorar estabilidad y flujo de gradientes en ciertas redes.”</p>
 </section>
@@ -1364,7 +1364,7 @@ no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hac
 <h4><span class="section-number">8.18.6.1. </span>Definición (idea matemática)<a class="headerlink" href="#definicion-idea-matematica" title="Link to this heading">#</a></h4>
 <p>Una forma común de escribir GELU es:</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{GELU}(x) = x\,\Phi(x)\)</span></p>
-<p>donde (\Phi(x)) es la <strong>CDF de una normal estándar</strong> (la probabilidad de que una variable gaussiana sea (\le x)).</p>
+<p>donde <span class="math notranslate nohighlight">\(\Phi(x)\)</span> es la <strong>CDF de una normal estándar</strong> (la probabilidad de que una variable gaussiana sea <span class="math notranslate nohighlight">\(\le x\)</span>).</p>
 <p>Interpretación simple:</p>
 <ul class="simple">
 <li><p>Si <span class="math notranslate nohighlight">\(x\)</span> es muy negativo, <span class="math notranslate nohighlight">\(\Phi(x)\approx 0\)</span> → la salida se acerca a 0.</p></li>
@@ -1421,7 +1421,7 @@ A diferencia de ReLU, no corta los negativos de golpe: los deja pasar atenuados.
 <h4><span class="section-number">8.18.7.1. </span>Definición<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>Swish se define como:</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{Swish}(x) = x \cdot \sigma(x)\)</span></p>
-<p>donde (\sigma(x)) es la función sigmoide:</p>
+<p>donde <span class="math notranslate nohighlight">\(\sigma(x)\)</span> es la función sigmoide:</p>
 <p><span class="math notranslate nohighlight">\(\sigma(x) = \frac{1}{1+e^{-x}}\)</span></p>
 <p>Intuición simple:</p>
 <ul class="simple">
@@ -1607,15 +1607,14 @@ Ambos reducen la dimensión espacial y ayudan a construir representaciones progr
 <h2><span class="section-number">8.21. </span>Estrategias de aplanamiento (Flatten)<a class="headerlink" href="#estrategias-de-aplanamiento-flatten" title="Link to this heading">#</a></h2>
 <p>Sí — hay distintas formas (o “estrategias”) de aplanamiento, aunque la idea básica sea siempre la misma: <strong>convertir un tensor en un vector</strong>.</p>
 <p>No son “fórmulas” distintas en el sentido matemático profundo, sino distintas decisiones de cómo colapsar la información espacial. Las más comunes son:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p><strong>Flatten clásico</strong><br />
-Se reordena todo el tensor (H \times W \times K) en un único vector de longitud:
-[
-H \cdot W \cdot K
-]
-Esto <strong>pierde completamente</strong> la estructura espacial (posición).</p></li>
+Se reordena todo el tensor <span class="math notranslate nohighlight">\(H \times W \times K\)</span> en un único vector de longitud:</p>
+<p><span class="math notranslate nohighlight">\(H \cdot W \cdot K\)</span></p>
+<p>Esto <strong>pierde completamente</strong> la estructura espacial (posición).</p>
+</li>
 <li><p><strong>Global pooling</strong> (<em>average</em> o <em>max</em>)<br />
-Primero se agrega la información espacial y se obtiene un vector de tamaño (K) (un valor por mapa de activación).<br />
+Primero se agrega la información espacial y se obtiene un vector de tamaño <span class="math notranslate nohighlight">\(K\)</span> (un valor por mapa de activación).<br />
 Reduce muchísimo la dimensión y conserva solo la <strong>presencia global</strong> de cada patrón.</p></li>
 <li><p><strong>Variantes intermedias (por bloques / regiones / parches)</strong><br />
 Se aplana por “bloques” o regiones, manteniendo <strong>algo</strong> de estructura espacial.</p></li>
@@ -1645,7 +1644,7 @@ Se aplana por “bloques” o regiones, manteniendo <strong>algo</strong> de est
 <p><span class="math notranslate nohighlight">\(\mathbf{a} = f(\mathbf{z})\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es una capa <em>Fully Connected</em>?</p>
-<p>Una capa <strong>fully connected</strong> (o <strong>dense</strong>) conecta <strong>todas</strong> las neuronas de entrada con <strong>todas</strong> las neuronas de salida. Matemáticamente, es una transformación lineal del tipo (\mathbf{z}=\mathbf{W}\mathbf{x}+\mathbf{b}) seguida (normalmente) por una función de activación (\mathbf{a}=f(\mathbf{z})).</p>
+<p>Una capa <strong>fully connected</strong> (o <strong>dense</strong>) conecta <strong>todas</strong> las neuronas de entrada con <strong>todas</strong> las neuronas de salida. Matemáticamente, es una transformación lineal del tipo <span class="math notranslate nohighlight">\(\mathbf{z}=\mathbf{W}\mathbf{x}+\mathbf{b}\)</span> seguida (normalmente) por una función de activación <span class="math notranslate nohighlight">\(\mathbf{a}=f(\mathbf{z})\)</span>.</p>
 <p>En el GIF, las conexiones dibujadas representan <strong>la topología</strong> (todas con todas), mientras que los valores en las matrices muestran los <strong>pesos reales</strong> usados en los productos.</p>
 </div>
 <section id="vector-de-entrada-el-flatten">
@@ -2281,7 +2280,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-papel-del-padding">8.9. El papel del <em>padding</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuatro-ejemplos-2d-combinaciones-de-stride-y-padding">8.10. Cuatro ejemplos 2D: combinaciones de <em>stride</em> y <em>padding</em></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-vision-2d-a-la-perspectiva-3d-tipica-de-las-cnn">8.11. De la visión 2D a la perspectiva 3D típica de las CNN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convoluciones-secuenciales-una-cadena-de-salidas-o">8.12. Convoluciones secuenciales: una cadena de salidas (O)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convoluciones-secuenciales-una-cadena-de-salidas-o">8.12. Convoluciones secuenciales: una cadena de salidas <span class="math notranslate nohighlight">\(O\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-representa-un-canal">8.13. ¿Qué representa un canal?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-3d-del-kernel-33-al-kernel-33c">8.14. Filtros 3D: del kernel 3×3 al kernel 3×3×C</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">8.15. <em>Pooling</em>: reducción espacial y robustez frente a traslaciones</a></li>
