@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Los tres niveles de la geosemántica &#8212; Geosemántica y GeoAI</title>
+    <title>3. Geosemántica &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Geosemantica';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Capítulo: Modelos Fundacionales en Observación de la Tierra (FM4EO)" href="embeddings_fundacionales.html" />
+    <link rel="next" title="4. Capítulo: Modelos Fundacionales en Observación de la Tierra (FM4EO)" href="embeddings_fundacionales.html" />
     <link rel="prev" title="2. Transformación digital: datos geoespaciales y geoAI" href="Introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,22 +182,16 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Geociencias.html">1. Introducción · Geociencias</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Introduccion.html">2. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. <strong>Los tres niveles de la geosemántica</strong></a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">10. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html">11. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Clustering.html">12. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">13. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">14. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">15. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">16. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">17. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">18. Bibliografía</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Capítulo · Geosemántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">4. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">5. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">6. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">9. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">10. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">11. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">12. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -432,7 +426,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Los tres niveles de la geosemántica</h1>
+    <h1>Geosemántica</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,18 +436,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. <strong>Los tres niveles de la geosemántica</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica">4. <strong>Tres niveles complementarios de geosemántica</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento">5. <strong>La semántica estadística como fundamento</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica">6. <strong>Hacia una geosemántica estadística</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica">7. <strong>Comparación epistemológica</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico">7.1. <strong>Los embeddings como fenómeno geosemántico</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica">3.1. <strong>Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica">3.2. <strong>Tres niveles complementarios de geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento">3.3. <strong>La semántica estadística como fundamento</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica">3.4. <strong>Hacia una geosemántica estadística</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica">3.5. <strong>Comparación epistemológica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico">3.6. <strong>Los embeddings como fenómeno geosemántico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas">3.6.1. <strong>Implicaciones científicas y aplicadas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">3.6.2. <strong>Conclusión</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas">8. <strong>Implicaciones científicas y aplicadas</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">9. <strong>Conclusión</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -464,14 +457,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p>La <strong>geosemántica</strong> estudia <strong>cómo el significado (semántica) <em>se representa y se procesa</em> en relación con el espacio geográfico</strong>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="geosemantica">
+<h1><span class="section-number">3. </span><strong>Geosemántica</strong><a class="headerlink" href="#geosemantica" title="Link to this heading">#</a></h1>
+<p>La <strong>geosemántica</strong> estudia <strong>cómo el significado (semántica) <em>se representa y se procesa</em> en relación con el espacio geográfico</strong>.</p>
 <hr class="docutils" />
 <section id="los-tres-niveles-de-la-geosemantica">
-<h1><span class="section-number">3. </span><strong>Los tres niveles de la geosemántica</strong><a class="headerlink" href="#los-tres-niveles-de-la-geosemantica" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.1. </span><strong>Los tres niveles de la geosemántica</strong><a class="headerlink" href="#los-tres-niveles-de-la-geosemantica" title="Link to this heading">#</a></h2>
 <p>La geosemántica contemporánea puede dividirse, de manera general, en tres niveles complementarios:</p>
 </section>
 <section id="tres-niveles-complementarios-de-geosemantica">
-<h1><span class="section-number">4. </span><strong>Tres niveles complementarios de geosemántica</strong><a class="headerlink" href="#tres-niveles-complementarios-de-geosemantica" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.2. </span><strong>Tres niveles complementarios de geosemántica</strong><a class="headerlink" href="#tres-niveles-complementarios-de-geosemantica" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Nivel</p></th>
@@ -496,10 +491,10 @@ document.write(`
 </table>
 </div>
 <p>Los <em>embeddings satelitales</em> pertenecen claramente al <strong>segundo nivel</strong>, el de la <strong>semántica estadística o latente</strong>, donde el significado no está definido de forma explícita, sino que <strong>emerge de los patrones de correlación y coocurrencia</strong> observados en los datos.</p>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="la-semantica-estadistica-como-fundamento">
-<h1><span class="section-number">5. </span><strong>La semántica estadística como fundamento</strong><a class="headerlink" href="#la-semantica-estadistica-como-fundamento" title="Link to this heading">#</a></h1>
+<h2><span class="section-number">3.3. </span><strong>La semántica estadística como fundamento</strong><a class="headerlink" href="#la-semantica-estadistica-como-fundamento" title="Link to this heading">#</a></h2>
 <p>El concepto de <strong>semántica estadística</strong> se origina en la lingüística computacional a mediados del siglo XX.<br />
 Autores como <strong>Zellig Harris (1954)</strong> y <strong>J. R. Firth (1957)</strong> formularon la hipótesis de distribución:</p>
 <blockquote>
@@ -522,8 +517,8 @@ proponen una integración conceptual entre geoAI y aprendizaje automático, lo c
 de la tierra (FM4EO).</p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="hacia-una-geosemantica-estadistica">
-<h1><span class="section-number">6. </span><strong>Hacia una geosemántica estadística</strong><a class="headerlink" href="#hacia-una-geosemantica-estadistica" title="Link to this heading">#</a></h1>
+<section id="hacia-una-geosemantica-estadistica">
+<h2><span class="section-number">3.4. </span><strong>Hacia una geosemántica estadística</strong><a class="headerlink" href="#hacia-una-geosemantica-estadistica" title="Link to this heading">#</a></h2>
 <p>Podemos hablar entonces de un nuevo subcampo: la <strong>geosemántica estadística</strong>, también denominada <strong>semántica latente geoespacial</strong>.<br />
 En este marco:</p>
 <ul class="simple">
@@ -535,8 +530,8 @@ En este marco:</p>
 El análisis del territorio pasa de lo físico a lo semántico.</p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="comparacion-epistemologica">
-<h1><span class="section-number">7. </span><strong>Comparación epistemológica</strong><a class="headerlink" href="#comparacion-epistemologica" title="Link to this heading">#</a></h1>
+<section id="comparacion-epistemologica">
+<h2><span class="section-number">3.5. </span><strong>Comparación epistemológica</strong><a class="headerlink" href="#comparacion-epistemologica" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Enfoque</p></th>
@@ -561,19 +556,18 @@ El análisis del territorio pasa de lo físico a lo semántico.</p>
 <li><p>La <strong>geosemántica formal</strong> proporciona interpretabilidad y trazabilidad.</p></li>
 <li><p>La <strong>geosemántica estadística</strong> aporta capacidad de descubrimiento y generalización.</p></li>
 </ul>
+</section>
 <hr class="docutils" />
 <section id="los-embeddings-como-fenomeno-geosemantico">
-<h2><span class="section-number">7.1. </span><strong>Los embeddings como fenómeno geosemántico</strong><a class="headerlink" href="#los-embeddings-como-fenomeno-geosemantico" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.6. </span><strong>Los embeddings como fenómeno geosemántico</strong><a class="headerlink" href="#los-embeddings-como-fenomeno-geosemantico" title="Link to this heading">#</a></h2>
 <p>En este marco, los <em>embeddings</em> pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que <strong>preservan relaciones de similitud semántica</strong> entre regiones del territorio.</p>
 <p>Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.<br />
 Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.</p>
 <p>Los <em>embeddings satelitales</em> constituyen una nueva frontera en la representación digital del territorio.<br />
 En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de <strong>vectores de significado latente</strong> aprendidos por modelos de <em>deep learning</em> sobre grandes volúmenes de datos satelitales.</p>
 <p>Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una <strong>manifestación de la geosemántica</strong>: una forma de codificar el <em>significado geográfico</em> directamente en el espacio matemático.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="implicaciones-cientificas-y-aplicadas">
-<h1><span class="section-number">8. </span><strong>Implicaciones científicas y aplicadas</strong><a class="headerlink" href="#implicaciones-cientificas-y-aplicadas" title="Link to this heading">#</a></h1>
+<section id="implicaciones-cientificas-y-aplicadas">
+<h3><span class="section-number">3.6.1. </span><strong>Implicaciones científicas y aplicadas</strong><a class="headerlink" href="#implicaciones-cientificas-y-aplicadas" title="Link to this heading">#</a></h3>
 <p>Los embeddings permiten crear <strong>espacios semánticos del planeta</strong>, donde cada vector describe el “contexto” de un punto de la superficie terrestre.<br />
 En este sentido, constituyen una infraestructura cognitiva que:</p>
 <ul class="simple">
@@ -585,12 +579,14 @@ En este sentido, constituyen una infraestructura cognitiva que:</p>
 <p>Estas capacidades abren el camino hacia una <strong>GeoIA semántica</strong>, capaz de interpretar, clasificar y predecir fenómenos territoriales desde un marco conceptual y no meramente espectral.</p>
 </section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
-<h1><span class="section-number">9. </span><strong>Conclusión</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<section id="conclusion">
+<h3><span class="section-number">3.6.2. </span><strong>Conclusión</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
 <p>En conclusión, los embeddings constituyen una expresión avanzada del campo de la geosemántica, específicamente dentro de la <strong>semántica estadística geoespacial</strong>.<br />
 A través de ellos, el territorio adquiere una representación vectorial en la que el significado se <strong>aprende de los datos</strong> y <strong>se mide como proximidad matemática</strong>.</p>
 <p>Este paradigma redefine la forma de hacer cartografía y análisis espacial:<br />
 ya no se trata solo de ver el territorio, sino de <strong>comprender su significado latente</strong> en el espacio vectorial del conocimiento geográfico.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -637,7 +633,7 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Capítulo: <strong>Modelos Fundacionales en Observación de la Tierra (FM4EO)</strong></p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Capítulo: <strong>Modelos Fundacionales en Observación de la Tierra (FM4EO)</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -657,18 +653,17 @@ ya no se trata solo de ver el territorio, sino de <strong>comprender su signific
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. <strong>Los tres niveles de la geosemántica</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica">4. <strong>Tres niveles complementarios de geosemántica</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento">5. <strong>La semántica estadística como fundamento</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica">6. <strong>Hacia una geosemántica estadística</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica">7. <strong>Comparación epistemológica</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico">7.1. <strong>Los embeddings como fenómeno geosemántico</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-tres-niveles-de-la-geosemantica">3.1. <strong>Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica">3.2. <strong>Tres niveles complementarios de geosemántica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento">3.3. <strong>La semántica estadística como fundamento</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica">3.4. <strong>Hacia una geosemántica estadística</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica">3.5. <strong>Comparación epistemológica</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico">3.6. <strong>Los embeddings como fenómeno geosemántico</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas">3.6.1. <strong>Implicaciones científicas y aplicadas</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">3.6.2. <strong>Conclusión</strong></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas">8. <strong>Implicaciones científicas y aplicadas</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">9. <strong>Conclusión</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
