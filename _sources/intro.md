@@ -7,6 +7,10 @@
 
 Este libro y recursos didácticos han sido desarrollados en el marco del grupo de investigación **04/F023: Tecnologías de Datos Espaciales, Visualización y Realidad Virtual**, Facultad de Informática, Universidad Nacional del Comahue.
 
+# Autor del libro
+
+El autor de libro es el Dr. Luis Reynoso: luis.reynoso@fi.uncoma.edu.ar, [**Curriculum**](https://opendata.fi.uncoma.edu.ar/CVitaeReynosoTemporal.html). Luis es coordinador del grupo técnico de trabajo de Ciencia de Datos Geoespaciales de la [**Infraestructura de Datos Espaciales de la República Argentina**](https://www.idera.gob.ar/)
+
 
 # Sobre este libro
 
