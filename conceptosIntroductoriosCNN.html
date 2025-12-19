@@ -579,7 +579,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propositos-de-una-fully-connected">8.22.3. Propósitos de una fully connected</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">8.22.4. Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-integradores">8.22.4. Tips integradores</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#el-aprendizaje-de-la-cnn">8.22.4.1. El aprendizaje de la CNN</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#backpropagation">8.22.4.1.1. Backpropagation</a></li>
 </ul>
@@ -1635,6 +1635,13 @@ Se aplana por “bloques” o regiones, manteniendo <strong>algo</strong> de est
 </section>
 <section id="capa-fully-connected">
 <h2><span class="section-number">8.22. </span>Capa Fully Connected.<a class="headerlink" href="#capa-fully-connected" title="Link to this heading">#</a></h2>
+<p>En esta sección explicaremos las partes principales de una red fully connected utilizando una arquitectura simple: <strong>Flatten → Dense(10) → Dense(7) → Dense(3)</strong> de neuronas por capa suele ser mucho mayor que diez, esta estructura reducida nos permitirá comprender con claridad todos los componentes de una red totalmente conectada, las operaciones matemáticas que se realizan en cada etapa y cómo fluye la información a través de la red.</p>
+<figure class="align-default" id="fig-fully-connected-architecture-only">
+<a class="reference internal image-reference" href="_images/fully_connected_architecture_only.gif"><img alt="_images/fully_connected_architecture_only.gif" src="_images/fully_connected_architecture_only.gif" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.26 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#fig-fully-connected-architecture-only" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <section id="capa-fully-connected-dense-explicacion-paso-a-paso-con-matrices">
 <h3><span class="section-number">8.22.1. </span>Capa Fully Connected (Dense): explicación paso a paso (con matrices)<a class="headerlink" href="#capa-fully-connected-dense-explicacion-paso-a-paso-con-matrices" title="Link to this heading">#</a></h3>
 <p>En este notebook vas a poder acompañar el GIF del ejemplo <strong>Flatten → Dense(10) → Dense(7) → Dense(3)</strong> y entender qué está pasando en términos de <strong>vectores</strong>, <strong>matrices de pesos</strong> y <strong>bias</strong>.</p>
@@ -1644,7 +1651,11 @@ Se aplana por “bloques” o regiones, manteniendo <strong>algo</strong> de est
 <p><span class="math notranslate nohighlight">\(\mathbf{a} = f(\mathbf{z})\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es una capa <em>Fully Connected</em>?</p>
-<p>Una capa <strong>fully connected</strong> (o <strong>dense</strong>) conecta <strong>todas</strong> las neuronas de entrada con <strong>todas</strong> las neuronas de salida. Matemáticamente, es una transformación lineal del tipo <span class="math notranslate nohighlight">\(\mathbf{z}=\mathbf{W}\mathbf{x}+\mathbf{b}\)</span> seguida (normalmente) por una función de activación <span class="math notranslate nohighlight">\(\mathbf{a}=f(\mathbf{z})\)</span>.</p>
+<p>Una capa <strong>fully connected</strong> (o <strong>dense</strong>) conecta <strong>todas</strong> las neuronas de entrada con <strong>todas</strong> las neuronas de salida. Matemáticamente, es una transformación lineal del tipo</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}=\mathbf{W}\mathbf{x}+\mathbf{b}\]</div>
+<p>seguida (normalmente) por una función de activación</p>
+<p><span class="math notranslate nohighlight">\(\mathbf{a}=f(\mathbf{z})\)</span>.</p>
 <p>En el GIF, las conexiones dibujadas representan <strong>la topología</strong> (todas con todas), mientras que los valores en las matrices muestran los <strong>pesos reales</strong> usados en los productos.</p>
 </div>
 <section id="vector-de-entrada-el-flatten">
@@ -1758,10 +1769,10 @@ b_m
 <div><p>En conjunto, estos mecanismos muestran que las capas convolucionales pueden entenderse como responsables de la extracción de características, mientras que las capas fully connected cumplen el rol de integración, razonamiento y decisión.</p>
 </div></blockquote>
 <p>Todos estos conceptos se operacionalizan mediante herramientas del álgebra lineal, en particular vectores, matrices, productos punto y combinaciones lineales, combinadas con funciones no lineales. Con fines didácticos, en las secciones siguientes se analiza detalladamente la operatoria de una capa fully connected simple, utilizando una arquitectura compuesta por capas densas de 10, 7 y 3 neuronas.</p>
-<figure class="align-default" id="fig-fully-connected-architecture-only">
+<figure class="align-default" id="id20">
 <a class="reference internal image-reference" href="_images/fully_connected_architecture_only.gif"><img alt="_images/fully_connected_architecture_only.gif" src="_images/fully_connected_architecture_only.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8.26 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#fig-fully-connected-architecture-only" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8.27 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En primer lugar, se describe paso a paso el cálculo correspondiente a la transición Flatten → Dense(10), y posteriormente se analiza la transición Dense(10) → Dense(7), ilustrando explícitamente las operaciones matemáticas involucradas mediante visualizaciones animadas.</p>
@@ -1770,7 +1781,7 @@ b_m
 <figure class="align-default" id="fig-flatten-to-dense10-step-by-step">
 <a class="reference internal image-reference" href="_images/flatten_to_dense10_step_by_step.gif"><img alt="_images/flatten_to_dense10_step_by_step.gif" src="_images/flatten_to_dense10_step_by_step.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8.27 </span><span class="caption-text">flatten_to_dense10_step_by_step</span><a class="headerlink" href="#fig-flatten-to-dense10-step-by-step" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8.28 </span><span class="caption-text">flatten_to_dense10_step_by_step</span><a class="headerlink" href="#fig-flatten-to-dense10-step-by-step" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Explicaremos el panel inferior de la imagen. En cada frame se está calculando una neurona <strong><code class="docutils literal notranslate"><span class="pre">j</span></code></strong> de la capa <code class="docutils literal notranslate"><span class="pre">Dense(10)</span></code>.</p>
@@ -1908,7 +1919,7 @@ $<span class="math notranslate nohighlight">\( a_1[j] = \max(0, z_1[j]) \)</span
 <figure class="align-default" id="fig-dense10-to-dense7-step-by-step">
 <a class="reference internal image-reference" href="_images/dense10_to_dense7_step_by_step.gif"><img alt="_images/dense10_to_dense7_step_by_step.gif" src="_images/dense10_to_dense7_step_by_step.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8.28 </span><span class="caption-text">dense10_to_dense7_step_by_step</span><a class="headerlink" href="#fig-dense10-to-dense7-step-by-step" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8.29 </span><span class="caption-text">dense10_to_dense7_step_by_step</span><a class="headerlink" href="#fig-dense10-to-dense7-step-by-step" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2055,7 +2066,7 @@ a_2[j] = \max(0, z_2[j])
 <figure class="align-default" id="fig-fully-connected-demo-with-w">
 <a class="reference internal image-reference" href="_images/fully_connected_demo_with_W.gif"><img alt="_images/fully_connected_demo_with_W.gif" src="_images/fully_connected_demo_with_W.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8.29 </span><span class="caption-text">fully_connected_demo_with_W</span><a class="headerlink" href="#fig-fully-connected-demo-with-w" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8.30 </span><span class="caption-text">fully_connected_demo_with_W</span><a class="headerlink" href="#fig-fully-connected-demo-with-w" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2069,13 +2080,13 @@ a_2[j] = \max(0, z_2[j])
 <p>En definitiva, la etapa fully connected es el puente entre la percepción y la interpretación. Se afirma que la etapa fully connected es el puente entre la percepción y la interpretación porque es el punto de la red donde las características visuales detectadas dejan de ser simples patrones locales y pasan a adquirir significado global. Las capas convolucionales se limitan a responder a estímulos —bordes, texturas, formas— de manera distribuida en el espacio, sin comprender qué representan en conjunto. Al aplanar esa información y procesarla mediante capas densas, la red integra todas esas señales en una única representación abstracta, capaz de sostener una decisión, una estimación o una inferencia. En ese momento, la red deja de “ver” la imagen y comienza a “entenderla” en términos de categorías, valores o probabilidades, convirtiendo la percepción en interpretación.</p>
 <p>Gracias a ella, una red convolucional no se limita a “ver”, sino que puede medir, inferir, anticipar y decidir, adaptando su salida a la naturaleza del problema: categorías, valores numéricos, probabilidades o representaciones abstractas. Es allí donde la visión computacional se transforma en conocimiento accionable.</p>
 </section>
-<section id="tips">
-<h3><span class="section-number">8.22.4. </span>Tips<a class="headerlink" href="#tips" title="Link to this heading">#</a></h3>
+<section id="tips-integradores">
+<h3><span class="section-number">8.22.4. </span>Tips integradores<a class="headerlink" href="#tips-integradores" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Una CNN puede operar sobre imágenes con múltiples canales, donde cada canal puede representar una banda espectral distinta (por ejemplo, en imágenes satelitales).</p></li>
 <li><p>En la primera capa convolucional, se aplican múltiples filtros en forma simultánea sobre todos los canales de la imagen de entrada.</p></li>
-<li><p>Cada filtro genera un mapa de activación, que es la salida espacial resultante de aplicar ese filtro mediante la operación de convolución.*</p></li>
-<li><p>Como los filtros se aplican en forma simultánea, la salida de una capa convolucional es un conjunto de mapas de activación, uno por cada f*iltro.</p></li>
+<li><p>Cada filtro genera un mapa de activación, que es la salida espacial resultante de aplicar ese filtro mediante la operación de convolución.</p></li>
+<li><p>Como los filtros se aplican en forma simultánea, la salida de una capa convolucional es un conjunto de mapas de activación, uno por cada filtro.</p></li>
 <li><p>Ese conjunto de mapas de activación se organiza como un tensor, cuya profundidad coincide con la cantidad de filtros de la capa.</p></li>
 <li><p>A partir de la segunda capa convolucional en adelante, los filtros ya no se aplican sobre una imagen, sino sobre el conjunto completo de mapas de activación producido por la capa anterior, generando nuevos mapas de activación.</p></li>
 <li><p>Un filtro convolucional tiene tantos canales como la profundidad de la entrada a la que se aplica, ya sea una imagen multicanal o un conjunto de mapas de activación.</p></li>
@@ -2142,7 +2153,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 <figure class="align-default" id="fig-fully-connected-backprop-intuition">
 <a class="reference internal image-reference" href="_images/fully_connected_backprop_intuition.gif"><img alt="_images/fully_connected_backprop_intuition.gif" src="_images/fully_connected_backprop_intuition.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8.30 </span><span class="caption-text">fully_connected_backprop_intuition</span><a class="headerlink" href="#fig-fully-connected-backprop-intuition" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 8.31 </span><span class="caption-text">fully_connected_backprop_intuition</span><a class="headerlink" href="#fig-fully-connected-backprop-intuition" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Este ejemplo se ha presentado de forma intencionalmente simplificada. En una CNN completa, la señal de error continúa propagándose hacia atrás a través de las capas convolucionales, ajustando también sus filtros. La fully connected permite fijar la intuición básica del backpropagation, que luego se extiende al caso convolucional incorporando la dimensión espacial y la compartición de pesos.</p>
@@ -2392,7 +2403,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propositos-de-una-fully-connected">8.22.3. Propósitos de una fully connected</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">8.22.4. Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-integradores">8.22.4. Tips integradores</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#el-aprendizaje-de-la-cnn">8.22.4.1. El aprendizaje de la CNN</a><ul class="nav section-nav flex-column">
 <li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#backpropagation">8.22.4.1.1. Backpropagation</a></li>
 </ul>
