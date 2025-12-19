@@ -819,7 +819,6 @@ W_{i+u,\,j+v}\, K_{u,v}
 <p>Como nuestro parche mide 6×6 y el filtro 3×3, y estamos avanzando de a un píxel (<em>stride = 1</em>), el tamaño de la salida será:
 <span class="math notranslate nohighlight">\((6 - 3 + 1) \times (6 - 3 + 1) = 4 \times 4.\)</span></p>
 <p>La salida completa (que aquí podemos precomputar) es:</p>
-<p>$O = \n\begin{bmatrix}\n5 &amp; 0 &amp; -3 &amp; 8\\n1 &amp; 4 &amp; -3 &amp; -1\\n6 &amp; 4 &amp; -2 &amp; -6\\n-9 &amp; -4 &amp; 5 &amp; -10\n\end{bmatrix}\n\]</p>
 <p><span class="math notranslate nohighlight">\(
 O_{4,4} = 
 \begin{bmatrix}
