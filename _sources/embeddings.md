@@ -1,4 +1,4 @@
-# Capítulo 2: **Embeddings satelitales: una nueva semántica del territorio**
+# Capítulo: **Embeddings satelitales: una nueva semántica del territorio**
 
 ## **Introducción conceptual**
 

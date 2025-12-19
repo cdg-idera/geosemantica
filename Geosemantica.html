@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Los tres niveles de la geosemántica &#8212; Geosemántica y GeoAI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Geosemantica';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logoAgua.png" class="logo__image only-light" alt="Geosemántica y GeoAI - Home"/>
+    <script>document.write(`<img src="_static/logoAgua.png" class="logo__image only-dark" alt="Geosemántica y GeoAI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Geosemántica y GeoAI
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">1. Introducción · Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">2. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">3. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">4. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">5. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">6. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">7. Capítulo · Introducción Conceptual a componentes de una CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">8. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">9. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">10. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">11. Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cdg-idera/geosemantica/main?urlpath=tree/./Geosemantica.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FGeosemantica.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Geosemantica.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Los tres niveles de la geosemántica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica"><strong>Tres niveles complementarios de geosemántica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>La semántica estadística como fundamento</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica"><strong>Hacia una geosemántica estadística</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>Comparación epistemológica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas"><strong>Implicaciones científicas y aplicadas</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusión</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>La <strong>geosemántica</strong> estudia <strong>cómo el significado (semántica) <em>se representa y se procesa</em> en relación con el espacio geográfico</strong>.</p>
+<hr class="docutils" />
+<section id="los-tres-niveles-de-la-geosemantica">
+<h1><strong>Los tres niveles de la geosemántica</strong><a class="headerlink" href="#los-tres-niveles-de-la-geosemantica" title="Link to this heading">#</a></h1>
+<p>La geosemántica contemporánea puede dividirse, de manera general, en tres niveles complementarios:</p>
+</section>
+<section id="tres-niveles-complementarios-de-geosemantica">
+<h1><strong>Tres niveles complementarios de geosemántica</strong><a class="headerlink" href="#tres-niveles-complementarios-de-geosemantica" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nivel</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Ejemplos típicos</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Formal u ontológico</strong></p></td>
+<td><p>Significado <strong>definido explícitamente</strong> mediante vocabularios controlados, ontologías y modelos conceptuales normalizados. Permite <strong>inferencia lógica</strong>, validación y alineación semántica.</p></td>
+<td><p>ISO 19150 (Geographic information — Ontology), INSPIRE ontologies, Catálogo de Objetos Geográficos de IDERA, SKOS/OWL, <strong>bases de grafo</strong> (GraphDB, RDF triplestores).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Estadístico o latente</strong></p></td>
+<td><p>Significado <strong>aprendido de datos numéricos/imaginería</strong> vía ML/auto-supervisión (sin reglas semánticas explícitas). Produce <strong>representaciones latentes</strong> que capturan similitudes y patrones.</p></td>
+<td><p><strong>Embeddings</strong> satelitales (p. ej., AlphaEarth/SE-V1), embeddings espacio-temporales, PCA/autoencoders; <strong>búsqueda por similitud</strong>, <em>clustering</em>, detección de cambios.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Lingüístico o textual</strong></p></td>
+<td><p>Significado <strong>derivado de textos</strong> (descripciones, metadatos, documentos) mediante técnicas de PLN; no hay ontologías formales, pero sí <strong>entidades y relaciones extraídas</strong> del lenguaje.</p></td>
+<td><p>Reconocimiento de topónimos y entidades, linking con gazetteers, análisis de metadatos, topic modeling en corpus de planes y normas.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los <em>embeddings satelitales</em> pertenecen claramente al <strong>segundo nivel</strong>, el de la <strong>semántica estadística o latente</strong>, donde el significado no está definido de forma explícita, sino que <strong>emerge de los patrones de correlación y coocurrencia</strong> observados en los datos.</p>
+<hr class="docutils" />
+</section>
+<section id="la-semantica-estadistica-como-fundamento">
+<h1><strong>La semántica estadística como fundamento</strong><a class="headerlink" href="#la-semantica-estadistica-como-fundamento" title="Link to this heading">#</a></h1>
+<p>El concepto de <strong>semántica estadística</strong> se origina en la lingüística computacional a mediados del siglo XX.<br />
+Autores como <strong>Zellig Harris (1954)</strong> y <strong>J. R. Firth (1957)</strong> formularon la hipótesis de distribución:</p>
+<blockquote>
+<div><p><em>“El significado de una palabra puede inferirse de los contextos en los que aparece.”</em></p>
+</div></blockquote>
+<p>En el dominio geoespacial, esta idea se traduce en una analogía poderosa:</p>
+<blockquote>
+<div><p><em>El significado de un píxel o región puede inferirse del contexto espectral, temporal y espacial que lo rodea.</em></p>
+</div></blockquote>
+<p>Los modelos modernos de embeddings —como <strong>Google Satellite Embedding V1</strong> <span id="id1">[<a class="reference internal" href="Referencias.html#id23" title="C. F. Brown, M. R. Kazmierski, V. J. Pasquarella, W. J. Rucklidge, M. Samsikova, C. Zhang, E. Shelhamer, E. Lahera, O. Wiles, S. Ilyushchenko, N. Gorelick, L. L. Zhang, S. Alj, E. Schechter, S. Askay, O. Guinan, R. Moore, A. Boukouvalas, and P. Kohli. Alphaearth foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv preprint, 2025. URL: https://doi.org/10.48550/arXiv.2507.22291, arXiv:2507.22291, doi:10.48550/arXiv.2507.22291.">Brown <em>et al.</em>, 2025</a>]</span>, <strong>AlphaHertz</strong> o <strong>OneVision</strong>— aprenden precisamente ese contexto.<br />
+Cada vector no representa ya un valor físico, sino una <strong>posición semántica</strong> en un espacio n-dimensional que captura similitudes de paisaje, uso, textura y dinámica ambiental.</p>
+<p>La noción de semántica estadística tiene su origen en la lingüística computacional,
+particularmente en los trabajos pioneros de <span id="id2">[<a class="reference internal" href="Referencias.html#id65" title="Zellig Harris. Distributional structure. Word, 10(2-3):146–162, 1954. doi:10.1080/00437956.1954.11659520.">Harris, 1954</a>]</span> y <span id="id3">[<a class="reference internal" href="Referencias.html#id66" title="John Rupert Firth. A synopsis of linguistic theory 1930–1955. In Studies in Linguistic Analysis. Philological Society, Oxford, 1957.">Firth, 1957</a>]</span>.<br />
+En el campo geoespacial, esta idea ha sido retomada recientemente por <span id="id4">[<a class="reference internal" href="Referencias.html#id67" title="Michael F. Goodchild. Reimagining the semantic geography of the earth. International Journal of Geographical Information Science, 35(6):1181–1197, 2021. doi:10.1080/13658816.2021.1893331.">Goodchild, 2021</a>]</span>
+para conceptualizar una “geografía semántica” de la Tierra.</p>
+<p>Los modelos de representación latente basados en observación satelital,
+como <span id="id5">[<a class="reference internal" href="Referencias.html#id68" title="Google Research. Satellite embeddings v1: a global, multimodal representation of the planet. Technical Report, 2024. Available at: https://research.google/.">Google Research, 2024</a>]</span>, materializan esa visión en la práctica contemporánea.<br />
+En la comunidad latinoamericana, enfoques emergentes como <span id="id6">[<a class="reference internal" href="Referencias.html#id27" title="L. Reynoso. Geoia. 2025. (En preparación).">Reynoso, 2025</a>]</span>
+proponen una integración conceptual entre geoAI y aprendizaje automático, lo cual se puede ver fortalecido empleando modelos fundacionales en Observación
+de la tierra (FM4EO).</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="hacia-una-geosemantica-estadistica">
+<h1><strong>Hacia una geosemántica estadística</strong><a class="headerlink" href="#hacia-una-geosemantica-estadistica" title="Link to this heading">#</a></h1>
+<p>Podemos hablar entonces de un nuevo subcampo: la <strong>geosemántica estadística</strong>, también denominada <strong>semántica latente geoespacial</strong>.<br />
+En este marco:</p>
+<ul class="simple">
+<li><p>Los <em>embeddings</em> son las <strong>unidades básicas de significado</strong>.</p></li>
+<li><p>Las relaciones de <strong>similitud coseno</strong> sustituyen las jerarquías ontológicas.</p></li>
+<li><p>Las operaciones algebraicas (distancias, agrupamientos, proyecciones) permiten <strong>razonar cuantitativamente sobre el significado del territorio</strong>.</p></li>
+</ul>
+<p>Desde esta perspectiva, un píxel deja de ser una muestra de reflectancia: se convierte en un <strong>vector de sentido geográfico</strong>.<br />
+El análisis del territorio pasa de lo físico a lo semántico.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="comparacion-epistemologica">
+<h1><strong>Comparación epistemológica</strong><a class="headerlink" href="#comparacion-epistemologica" title="Link to this heading">#</a></h1>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Enfoque</p></th>
+<th class="head"><p>Naturaleza del significado</p></th>
+<th class="head"><p>Mecanismo de inferencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Geosemántica clásica</strong></p></td>
+<td><p>Definido explícitamente por expertos o estándares (ontologías, taxonomías).</p></td>
+<td><p>Declarativo (conceptos definidos manualmente).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Geosemántica estadística</strong></p></td>
+<td><p>Aprendido implícitamente a partir de correlaciones en datos geoespaciales.</p></td>
+<td><p>Inductivo (patrones descubiertos por aprendizaje automático).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ambos enfoques son complementarios:</p>
+<ul class="simple">
+<li><p>La <strong>geosemántica formal</strong> proporciona interpretabilidad y trazabilidad.</p></li>
+<li><p>La <strong>geosemántica estadística</strong> aporta capacidad de descubrimiento y generalización.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="los-embeddings-como-fenomeno-geosemantico">
+<h2><strong>Los embeddings como fenómeno geosemántico</strong><a class="headerlink" href="#los-embeddings-como-fenomeno-geosemantico" title="Link to this heading">#</a></h2>
+<p>En este marco, los <em>embeddings</em> pueden considerarse estructuras semánticas aprendidas, ya que transforman las observaciones geoespaciales en vectores de alta dimensionalidad que <strong>preservan relaciones de similitud semántica</strong> entre regiones del territorio.</p>
+<p>Por ejemplo, dos píxeles correspondientes a lagunas diferentes, pero con firmas espectrales y contextos similares, ocuparán posiciones cercanas en el espacio vectorial.<br />
+Del mismo modo, zonas urbanas o agrícolas formarán clústeres en ese mismo espacio semántico.</p>
+<p>Los <em>embeddings satelitales</em> constituyen una nueva frontera en la representación digital del territorio.<br />
+En lugar de describir el espacio mediante variables físicas aisladas —como reflectancia, temperatura o índices espectrales—, los embeddings lo hacen a través de <strong>vectores de significado latente</strong> aprendidos por modelos de <em>deep learning</em> sobre grandes volúmenes de datos satelitales.</p>
+<p>Estos vectores condensan relaciones espectrales, espaciales y temporales complejas, y por ello pueden interpretarse como una <strong>manifestación de la geosemántica</strong>: una forma de codificar el <em>significado geográfico</em> directamente en el espacio matemático.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="implicaciones-cientificas-y-aplicadas">
+<h1><strong>Implicaciones científicas y aplicadas</strong><a class="headerlink" href="#implicaciones-cientificas-y-aplicadas" title="Link to this heading">#</a></h1>
+<p>Los embeddings permiten crear <strong>espacios semánticos del planeta</strong>, donde cada vector describe el “contexto” de un punto de la superficie terrestre.<br />
+En este sentido, constituyen una infraestructura cognitiva que:</p>
+<ul class="simple">
+<li><p>Facilita búsquedas semánticas (<em>“lugares similares a estos humedales”</em>).</p></li>
+<li><p>Permite detectar cambios contextuales (<em>“esta región ha derivado hacia la semántica de cultivos”</em>).</p></li>
+<li><p>Mejora la interoperabilidad entre datos físicos y conceptuales.</p></li>
+<li><p>Integra la visión por computadora con la ontología geográfica.</p></li>
+</ul>
+<p>Estas capacidades abren el camino hacia una <strong>GeoIA semántica</strong>, capaz de interpretar, clasificar y predecir fenómenos territoriales desde un marco conceptual y no meramente espectral.</p>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="conclusion">
+<h1><strong>Conclusión</strong><a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h1>
+<p>En conclusión, los embeddings constituyen una expresión avanzada del campo de la geosemántica, específicamente dentro de la <strong>semántica estadística geoespacial</strong>.<br />
+A través de ellos, el territorio adquiere una representación vectorial en la que el significado se <strong>aprende de los datos</strong> y <strong>se mide como proximidad matemática</strong>.</p>
+<p>Este paradigma redefine la forma de hacer cartografía y análisis espacial:<br />
+ya no se trata solo de ver el territorio, sino de <strong>comprender su significado latente</strong> en el espacio vectorial del conocimiento geográfico.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdg-idera/geosemantica",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Los tres niveles de la geosemántica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-niveles-complementarios-de-geosemantica"><strong>Tres niveles complementarios de geosemántica</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#la-semantica-estadistica-como-fundamento"><strong>La semántica estadística como fundamento</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hacia-una-geosemantica-estadistica"><strong>Hacia una geosemántica estadística</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-epistemologica"><strong>Comparación epistemológica</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-embeddings-como-fenomeno-geosemantico"><strong>Los embeddings como fenómeno geosemántico</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implicaciones-cientificas-y-aplicadas"><strong>Implicaciones científicas y aplicadas</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>Conclusión</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Luis Reynoso (IDERA-GTT CDG)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

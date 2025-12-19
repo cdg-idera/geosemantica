@@ -1,4 +1,4 @@
-# Introducción
+# Transformación digital: datos geoespaciales y geoAI
 
 En este capítulo brindamos una introducción a la Cartografía Inteligente.
 

@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Transformación digital en geociencias: hacia diseños curriculares integrados en ciencia de datos geoespaciales, Observación de la Tierra y GeoAI. &#8212; Geosemántica y GeoAI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Geociencias';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Transformación digital: datos geoespaciales y geoAI" href="Introduccion.html" />
+    <link rel="prev" title="Geosemántica y GeoAI" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logoAgua.png" class="logo__image only-light" alt="Geosemántica y GeoAI - Home"/>
+    <script>document.write(`<img src="_static/logoAgua.png" class="logo__image only-dark" alt="Geosemántica y GeoAI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Geosemántica y GeoAI
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Introducción · Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">2. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">3. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">4. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">5. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">6. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">7. Capítulo · Introducción Conceptual a componentes de una CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">8. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">9. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">10. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">11. Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cdg-idera/geosemantica/main?urlpath=tree/./Geociencias.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FGeociencias.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Geociencias.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformación digital en geociencias: hacia diseños curriculares integrados en ciencia de datos geoespaciales, Observación de la Tierra y GeoAI.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geociencias-datos-y-estadistica-como-lenguaje-comun-eje-datos-como-infraestructura-cientifica">1.1. Geociencias, datos y estadística como lenguaje común (Eje: datos como infraestructura científica)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observacion-de-la-tierra-como-eje-integrador-datos-tiempo-y-procesos-eje-observacion-de-la-tierra-como-eje-integrador">1.2. Observación de la Tierra como eje integrador: datos, tiempo y procesos (Eje: Observación de la Tierra como eje integrador)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciencia-de-datos-geoespaciales-y-geoai-de-los-algoritmos-clasicos-a-los-modelos-fundacionales">1.3. Ciencia de datos geoespaciales y GeoAI: de los algoritmos clásicos a los modelos fundacionales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interoperabilidad-ide-y-ecosistemas-digitales-de-los-datos-aislados-a-la-infraestructura-cientifica-eje-interoperabilidad-y-gobernanza-institucional">1.4. Interoperabilidad, IDE y ecosistemas digitales: de los datos aislados a la infraestructura científica (Eje: interoperabilidad y gobernanza institucional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicancias-curriculares-metodologias-de-ensenanza-y-cierre-eje-dimension-institucional-etica-y-formativa">1.5. Implicancias curriculares, metodologías de enseñanza y cierre (Eje: dimensión institucional, ética y formativa)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-science-literacy-principles">1.6. Earth Science Literacy Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-conceptual">1.6.1. Síntesis conceptual</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transformacion-digital-en-geociencias-hacia-disenos-curriculares-integrados-en-ciencia-de-datos-geoespaciales-observacion-de-la-tierra-y-geoai">
+<h1><span class="section-number">1. </span>Transformación digital en geociencias: hacia diseños curriculares integrados en ciencia de datos geoespaciales, Observación de la Tierra y GeoAI.<a class="headerlink" href="#transformacion-digital-en-geociencias-hacia-disenos-curriculares-integrados-en-ciencia-de-datos-geoespaciales-observacion-de-la-tierra-y-geoai" title="Link to this heading">#</a></h1>
+<p>Cuando propongo el título “Transformación digital en geociencias: hacia diseños curriculares integrados”, el uso del plural no es retórico ni estilístico, sino conceptual y político-académico. Hablar de “diseños curriculares integrados” implica asumir, desde el inicio, que no existe ni es deseable un único modelo de formación válido para todas las disciplinas vinculadas a las geociencias. Las geociencias constituyen un campo amplio y heterogéneo, que incluye carreras como geografía, geología, ciencias ambientales, agrimensura y otras, cada una con tradiciones académicas, objetivos formativos y perfiles profesionales distintos. Pretender homogeneizar esa diversidad bajo un esquema único no solo sería inviable, sino conceptualmente empobrecedor.</p>
+<p>El enfoque que propongo reconoce explícitamente esa pluralidad de contextos institucionales y disciplinares, y asume que la integración de la transformación digital, la ciencia de datos, la Observación de la Tierra y la GeoAI requiere <strong>distintos niveles de profundidad</strong> según el nivel de la titulación y el perfil de egreso. No es lo mismo formar un geógrafo orientado al análisis territorial que un geólogo con foco en procesos físicos, o un profesional de ciencias ambientales enfocado en gestión y políticas públicas. Sin embargo, todos ellos comparten hoy un núcleo común: trabajan con datos geoespaciales, con procesos digitalizados y con herramientas algorítmicas que median la producción de conocimiento.</p>
+<p>Por eso, el énfasis no está puesto en un modelo curricular cerrado, sino en el <strong>principio de integración</strong>. Integración entre disciplinas, entre escalas, entre tipos de datos, entre enfoques teóricos y computacionales. Este enfoque resulta particularmente pertinente en espacios como este panel internacional, donde confluyen audiencias diversas y donde el objetivo no es prescribir, sino abrir marcos de reflexión académica compartidos.
+Desde esta perspectiva, la transformación digital en geociencias no puede reducirse a la incorporación de software o plataformas tecnológicas. Se trata de un cambio más profundo, que afecta la forma en que conceptualizamos el territorio, la manera en que formulamos preguntas científicas y el modo en que diseñamos los procesos de enseñanza y aprendizaje en el nivel superior. La digitalización del territorio y de los procesos terrestres ha convertido a los datos en un elemento estructural de la disciplina, y eso obliga a repensar los currículos desde sus fundamentos. <span id="id1">[<a class="reference internal" href="Referencias.html#id6" title="UNESCO. Unesco recommendation on open science. 2021. URL: https://www.unesco.org/en/open-science.">UNESCO, 2021</a>]</span></p>
+<section id="geociencias-datos-y-estadistica-como-lenguaje-comun-eje-datos-como-infraestructura-cientifica">
+<h2><span class="section-number">1.1. </span>Geociencias, datos y estadística como lenguaje común (Eje: datos como infraestructura científica)<a class="headerlink" href="#geociencias-datos-y-estadistica-como-lenguaje-comun-eje-datos-como-infraestructura-cientifica" title="Link to this heading">#</a></h2>
+<p>Entender a las geociencias como ciencias de sistemas complejos resulta central para abordar esta transformación. El territorio no es un conjunto estático de capas, sino un sistema dinámico en el que interactúan procesos físicos, ambientales, biológicos y sociales, a múltiples escalas espaciales y temporales. La digitalización de estos procesos —a través de sensores, modelos y bases de datos— ha generado una disponibilidad sin precedentes de información geoespacial, que incluye datos vectoriales, raster, series temporales extensas, nubes de puntos y datos derivados de múltiples plataformas de Observación de la Tierra. <span id="id2">[<a class="reference internal" href="Referencias.html#id4" title="Earth Science Literacy Initiative. Earth science literacy principles: the big ideas and supporting concepts of earth science. 2009. URL: https://www.earthscienceliteracy.org/.">Earth Science Literacy Initiative, 2009</a>]</span></p>
+<p>En este contexto, la alfabetización en datos deja de ser un complemento y pasa a ser un núcleo formativo esencial. No se trata únicamente de saber acceder a los datos, sino de comprender su calidad, su incertidumbre y los sesgos que pueden introducirse en cada etapa del ciclo de vida del dato geoespacial. Desde la adquisición hasta el análisis, la visualización y la publicación, cada decisión metodológica tiene implicancias científicas y, muchas veces, sociales. <span id="id3">[<a class="reference internal" href="Referencias.html#id8" title="OECD. Data-Driven Innovation: Big Data for Growth and Well-Being. OECD Publishing, Paris, 2015. doi:10.1787/9789264229358-en.">OECD, 2015</a>, <a class="reference internal" href="Referencias.html#id9" title="OECD. Enhancing Access to and Sharing of Data. OECD Publishing, Paris, 2021. doi:10.1787/276aaca8-en.">OECD, 2021</a>]</span></p>
+<p>La estadística aplicada al territorio cumple aquí un rol estructurante. La estadística descriptiva permite explorar patrones espaciales, identificar tendencias y detectar anomalías, mientras que la estadística inferencial habilita la formulación y validación de hipótesis. Conceptos como regresión, clasificación, correlación y autocorrelación espacial no son meros contenidos matemáticos, sino herramientas fundamentales para interpretar procesos territoriales y para evaluar modelos predictivos. El análisis multivariado y las bases probabilísticas del modelado espacial y temporal constituyen, además, el lenguaje subyacente de muchas de las técnicas de aprendizaje automático que hoy se aplican en geociencias.</p>
+<p>Este punto es clave desde el punto de vista curricular. Incorporar matemática y estadística en la formación en geociencias no implica desplazar el foco disciplinar, sino dotar a los estudiantes de un marco conceptual que les permita comprender qué hacen los algoritmos, cómo se construyen los modelos y cuáles son sus limitaciones. Sin esta base, el uso de herramientas avanzadas corre el riesgo de convertirse en una práctica acrítica y poco transparente.</p>
+</section>
+<section id="observacion-de-la-tierra-como-eje-integrador-datos-tiempo-y-procesos-eje-observacion-de-la-tierra-como-eje-integrador">
+<h2><span class="section-number">1.2. </span>Observación de la Tierra como eje integrador: datos, tiempo y procesos (Eje: Observación de la Tierra como eje integrador)<a class="headerlink" href="#observacion-de-la-tierra-como-eje-integrador-datos-tiempo-y-procesos-eje-observacion-de-la-tierra-como-eje-integrador" title="Link to this heading">#</a></h2>
+<p>Si hay un componente que hoy actúa como verdadero eje articulador entre geociencias, ciencia de datos e inteligencia artificial, ese es la Observación de la Tierra. Entendida en sentido amplio, la Observación de la Tierra incluye tanto datos provenientes de sensores satelitales como información adquirida mediante plataformas aéreas no tripuladas, y constituye una de las principales fuentes de datos geoespaciales para el análisis territorial contemporáneo. Este tipo de datos no solo amplía la cobertura espacial, sino que introduce de manera estructural la dimensión temporal en el análisis, permitiendo estudiar procesos y dinámicas más que estados aislados del territorio. <span id="id4">[<a class="reference internal" href="Referencias.html#id4" title="Earth Science Literacy Initiative. Earth science literacy principles: the big ideas and supporting concepts of earth science. 2009. URL: https://www.earthscienceliteracy.org/.">Earth Science Literacy Initiative, 2009</a>]</span></p>
+<p>El paso desde el análisis de imágenes individuales hacia el trabajo con series temporales y cubos de datos representa un cambio de paradigma profundo, tanto metodológico como formativo. El uso de cubos de datos de imágenes satelitales implica pensar el territorio como un sistema observado de manera continua en el espacio y en el tiempo, donde cada unidad espacial de observación registra una secuencia de estados asociados a un mismo fragmento del territorio. Este enfoque permite analizar procesos como los cambios de uso del suelo, las dinámicas ambientales o los fenómenos climáticos como hechos históricos y evolutivos, desde una perspectiva continua y multiescalar, pero también exige nuevas competencias conceptuales y computacionales.
+Desde el punto de vista de la formación, esto implica incorporar nociones vinculadas al preprocesamiento, la armonización de datos y la integración de múltiples fuentes, incluyendo datos de Observación de la Tierra y datos in situ. También implica comprender las limitaciones inherentes a estos datos: la resolución espacial y temporal, los efectos atmosféricos, los errores de sensor y las incertidumbres asociadas a los productos derivados. Estas cuestiones no son detalles técnicos, sino aspectos fundamentales para una lectura crítica de los resultados.</p>
+<p>En este contexto, los entornos de análisis algorítmico adquieren un rol central. Plataformas como Google Earth Engine, combinadas con lenguajes como R o Python, permiten trabajar con grandes volúmenes de datos de Observación de la Tierra de manera reproducible y escalable. Desde el punto de vista curricular, estos entornos son especialmente valiosos porque obligan a pensar en términos de colecciones de datos, funciones y flujos de trabajo, en lugar de operaciones manuales sobre archivos individuales. Este cambio de enfoque es clave para formar profesionales capaces de operar en ecosistemas digitales complejos.</p>
+<p>En el contexto de la Observación de la Tierra, el concepto de cubo de datos puede entenderse como una forma estructurada de organizar información geoespacial en múltiples dimensiones, donde el territorio es observado de manera sistemática en el espacio, el tiempo y, en muchos casos, en el dominio espectral. Esta organización multidimensional no constituye únicamente una solución técnica para manejar grandes volúmenes de datos, sino que expresa una forma particular de modelar procesos territoriales, en la que cada unidad espacial de observación se inscribe dentro de una secuencia temporal y de un conjunto de variables que capturan su evolución. Desde una perspectiva formativa, trabajar con cubos de datos implica introducir explícitamente la noción de estructura multidimensional como objeto de análisis, desplazando el foco desde valores aislados hacia configuraciones espaciales y temporales interrelacionadas.</p>
+<p>Esta forma de organizar la información encuentra un claro paralelismo con las estructuras que subyacen a los modelos de aprendizaje profundo utilizados en GeoAI. En particular, las redes neuronales convolucionales operan sobre tensores, que no son otra cosa que generalizaciones multidimensionales de vectores y matrices. Imágenes, series temporales y cubos de datos pueden ser representados como tensores de distinta dimensionalidad, sobre los cuales se aplican transformaciones matemáticas que permiten extraer patrones espaciales, temporales o espectrales. Reconocer esta correspondencia conceptual resulta fundamental para comprender que los modelos de deep learning no operan sobre datos “opacos”, sino sobre estructuras matemáticas bien definidas, cuyo significado está directamente vinculado a la forma en que el territorio es representado digitalmente.</p>
+<p>Desde el punto de vista del pensamiento computacional y del diseño curricular, esta convergencia entre cubos de datos, tensores y modelos algorítmicos refuerza la importancia de los paradigmas de programación orientados a objetos y de la manipulación de colecciones. Tanto en entornos de análisis geoespacial como en frameworks de aprendizaje automático, los datos se organizan como objetos complejos y conjuntos estructurados, sobre los cuales se aplican métodos y operaciones de manera sistemática. Conceptos matemáticos como el álgebra lineal, las transformaciones matriciales y la noción de espacio vectorial constituyen el sustrato común de estas aproximaciones, y su incorporación en la formación permite articular de manera coherente la Observación de la Tierra, la ciencia de datos y la GeoAI dentro de un enfoque integrado y conceptualmente sólido.</p>
+</section>
+<section id="ciencia-de-datos-geoespaciales-y-geoai-de-los-algoritmos-clasicos-a-los-modelos-fundacionales">
+<h2><span class="section-number">1.3. </span>Ciencia de datos geoespaciales y GeoAI: de los algoritmos clásicos a los modelos fundacionales<a class="headerlink" href="#ciencia-de-datos-geoespaciales-y-geoai-de-los-algoritmos-clasicos-a-los-modelos-fundacionales" title="Link to this heading">#</a></h2>
+<p>La integración de la ciencia de datos en las geociencias no puede entenderse sin considerar el rol del aprendizaje automático y, más recientemente, de la GeoAI. En este punto, es importante destacar que los algoritmos clásicos de clasificación y regresión, como los árboles de decisión, los métodos de ensamble —por ejemplo, Random Forest— o las máquinas de soporte vectorial, siguen ocupando un lugar central tanto en la práctica profesional como en la formación académica. Estos algoritmos no solo ofrecen buenos resultados en una amplia variedad de problemas geoespaciales, sino que además permiten discutir aspectos clave como la selección de variables, la interpretabilidad de los modelos, la validación y la evaluación del desempeño.
+Desde una perspectiva formativa, estos métodos constituyen un puente fundamental entre la estadística clásica y las técnicas más avanzadas de aprendizaje profundo. Permiten introducir el razonamiento algorítmico, la noción de entrenamiento y validación de modelos, y la relación entre datos de entrada y resultados, sin perder de vista el contexto territorial que da sentido al análisis. En este sentido, su inclusión en los currículos responde tanto a criterios metodológicos como pedagógicos.</p>
+<p>A partir de estos enfoques, el avance hacia técnicas de deep learning, en particular las redes neuronales convolucionales aplicadas a imágenes y series temporales, plantea nuevos desafíos y oportunidades. Las CNN han demostrado ser especialmente eficaces para el análisis de datos de Observación de la Tierra, permitiendo capturar patrones espaciales complejos y relaciones no lineales difíciles de modelar con enfoques tradicionales. Sin embargo, su uso requiere una comprensión básica de los fundamentos matemáticos que las sustentan, como el álgebra lineal, las operaciones matriciales y los principios básicos de optimización.
+Más recientemente, la aparición de modelos fundacionales introduce una nueva capa de complejidad. Estos modelos, entrenados sobre grandes volúmenes de datos, prometen capacidades de generalización y transferencia inéditas, pero también plantean interrogantes importantes desde el punto de vista científico, ético y educativo. Comprender qué son estos modelos, cómo se entrenan, qué supuestos incorporan y cuáles son sus limitaciones resulta fundamental para evitar usos acríticos y para formar profesionales capaces de evaluar su pertinencia en contextos geoespaciales concretos.</p>
+<p>Desde el punto de vista curricular, el desafío no es formar especialistas en inteligencia artificial, sino integrar estos conceptos de manera coherente con la formación en geociencias. Esto implica articular la enseñanza de algoritmos, matemática y estadística con problemas territoriales reales, de modo que la GeoAI se entienda como una herramienta al servicio del análisis geoespacial y no como un fin en sí mismo.</p>
+</section>
+<section id="interoperabilidad-ide-y-ecosistemas-digitales-de-los-datos-aislados-a-la-infraestructura-cientifica-eje-interoperabilidad-y-gobernanza-institucional">
+<h2><span class="section-number">1.4. </span>Interoperabilidad, IDE y ecosistemas digitales: de los datos aislados a la infraestructura científica (Eje: interoperabilidad y gobernanza institucional)<a class="headerlink" href="#interoperabilidad-ide-y-ecosistemas-digitales-de-los-datos-aislados-a-la-infraestructura-cientifica-eje-interoperabilidad-y-gobernanza-institucional" title="Link to this heading">#</a></h2>
+<p>Hasta aquí he hablado de datos, algoritmos y modelos, pero todo este entramado analítico solo adquiere sentido pleno cuando se inserta en un marco de interoperabilidad geoespacial. En la práctica profesional y académica, uno de los principales límites para el aprovechamiento del potencial de la ciencia de datos y la GeoAI no es la falta de algoritmos, sino la fragmentación de los datos, los sistemas y los flujos de trabajo. La interoperabilidad, en este sentido, no es un aspecto técnico accesorio, sino una condición estructural para la transformación digital en geociencias. <span id="id5">[<a class="reference internal" href="Referencias.html#id10" title="United Nations Committee of Experts on Global Geospatial Information Management. Integrated geospatial information framework. 2019. URL: https://ggim.un.org/IGIF/.">United Nations Committee of Experts on Global Geospatial Information Management, 2019</a>]</span></p>
+<p>Las Infraestructuras de Datos Espaciales constituyen el soporte institucional y tecnológico que permite organizar, documentar, publicar y reutilizar datos geoespaciales de manera sistemática. A través de estándares y servicios como WMS, WFS, WCS, CSW y WPS, es posible desacoplar el acceso a los datos de las herramientas de análisis, permitiendo que distintos usuarios, aplicaciones y algoritmos interactúen sobre una misma base de información. Desde el punto de vista formativo, comprender estos mecanismos implica formar profesionales que no solo sepan consumir datos, sino también producirlos, documentarlos y ponerlos a disposición de otros actores dentro de ecosistemas digitales más amplios.</p>
+<p>En este marco, el rol de los sistemas de información geográfica también se ha transformado. El SIG ha dejado de ser una aplicación de escritorio centrada en el análisis local para convertirse en un componente más de plataformas geoespaciales distribuidas, integradas con servicios web, entornos de análisis en la nube y herramientas de inteligencia artificial. Esta evolución habilita nuevas formas de trabajo colaborativo, análisis escalables y visualizaciones interactivas, pero al mismo tiempo refuerza la necesidad de abordar cuestiones de gobernanza del dato, control de versiones, calidad de la información y trazabilidad de los procesos analíticos.</p>
+<p>Iniciativas como el Marco Integrado de Información Geoespacial, o IGIF, aportan una visión particularmente relevante en este punto, al articular aspectos técnicos, institucionales y normativos de la gestión de la información geoespacial. Desde una perspectiva educativa, esto plantea la necesidad de incorporar en los currículos no solo competencias técnicas, sino también una comprensión más amplia de cómo los datos geoespaciales se integran en procesos de toma de decisiones, políticas públicas y producción de conocimiento a distintas escalas. La interoperabilidad, en definitiva, conecta la dimensión técnica del análisis geoespacial con su dimensión social e institucional.</p>
+<p>En este contexto, resulta fundamental formar profesionales conscientes del rol central que cumplen los metadatos en los ecosistemas geoespaciales interoperables. La producción de datos geoespaciales no se agota en su generación o análisis, sino que se completa con su adecuada documentación, catalogación y publicación en catálogos de metadatos y en catálogos de objetos geográficos. Comprender la estructura, el contenido y la finalidad de estos catálogos implica reconocer que los datos solo adquieren valor pleno cuando pueden ser descubiertos, interpretados y reutilizados por otros actores. Asimismo, la definición de categorías consensuadas en los catálogos de objetos geográficos resulta clave para garantizar la coherencia semántica entre conjuntos de datos producidos por distintas instituciones, disciplinas o países, y para evitar ambigüedades que limiten la integración y el análisis a escala regional o global.</p>
+<p>De manera complementaria, la interoperabilidad geoespacial plantea desafíos más profundos vinculados a la semántica de las bases de datos geográficas. La incorporación de enfoques basados en modelos ontológicos y en estructuras de datos de tipo grafo permite representar no solo entidades geográficas, sino también las relaciones, jerarquías y significados que las conectan. Este campo, conocido como geosemántica, resulta especialmente relevante en el contexto actual de la inteligencia artificial, ya que habilita la construcción de sistemas y agentes capaces de operar sobre hechos y relaciones explícitas, en lugar de depender únicamente de correlaciones estadísticas. En este sentido, el uso de lenguajes de consulta sobre bases de datos grafo permite que asistentes inteligentes, bots o flujos agénticos realicen inferencias consistentes sobre el territorio, respondiendo a preguntas complejas de manera fundamentada y evitando interpretaciones espurias o “alucinaciones”, al anclar sus respuestas en estructuras semánticas y ontológicas bien definidas. <span id="id6">[<a class="reference internal" href="Referencias.html#id10" title="United Nations Committee of Experts on Global Geospatial Information Management. Integrated geospatial information framework. 2019. URL: https://ggim.un.org/IGIF/.">United Nations Committee of Experts on Global Geospatial Information Management, 2019</a>]</span></p>
+</section>
+<section id="implicancias-curriculares-metodologias-de-ensenanza-y-cierre-eje-dimension-institucional-etica-y-formativa">
+<h2><span class="section-number">1.5. </span>Implicancias curriculares, metodologías de enseñanza y cierre (Eje: dimensión institucional, ética y formativa)<a class="headerlink" href="#implicancias-curriculares-metodologias-de-ensenanza-y-cierre-eje-dimension-institucional-etica-y-formativa" title="Link to this heading">#</a></h2>
+<p>Todo lo expuesto hasta aquí nos conduce inevitablemente al plano de la formación universitaria. La transformación digital en geociencias no puede abordarse de manera fragmentada, incorporando contenidos aislados o herramientas específicas, sino que requiere avanzar hacia diseños curriculares integrados que articulen datos, procesos, modelos y contextos de aplicación. Y aquí vuelvo deliberadamente al sentido del título y al uso del plural. Hablar de diseños curriculares integrados implica asumir que no existe una única forma de organizar estos contenidos, sino múltiples trayectorias posibles, adaptadas a distintas carreras, tradiciones académicas y perfiles profesionales.</p>
+<p>Desde esta perspectiva, el desafío curricular no consiste en sumar materias de programación, de ciencia de datos o de inteligencia artificial como compartimentos estancos, sino en integrar estos enfoques dentro de los espacios formativos existentes y en los problemas territoriales que les dan sentido. La enseñanza basada en problemas reales del territorio, el trabajo con datos auténticos, la integración entre teoría, datos y código, y el desarrollo de proyectos interdisciplinarios se vuelven estrategias pedagógicas particularmente potentes en este contexto. Asimismo, la evaluación de procesos —y no solo de resultados finales— resulta clave para formar profesionales capaces de justificar decisiones metodológicas y de reflexionar críticamente sobre sus análisis.</p>
+<p>En este punto, resulta fundamental dotar a los egresados de un sentido crítico y situado, que les permita comprender que los datos de Observación de la Tierra y los productos derivados de plataformas digitales no constituyen representaciones neutrales ni exhaustivas del territorio. La información geoespacial es siempre el resultado de decisiones de diseño, escalas de observación, modelos físicos y supuestos estadísticos. La experiencia muestra, por ejemplo, que ciertos conjuntos de datos climáticos disponibles en plataformas globales pueden presentar diferencias significativas respecto de mediciones locales o de partes meteorológicos oficiales, especialmente cuando se analizan fenómenos de alta variabilidad espacial o eventos extremos. Formar profesionales capaces de comparar fuentes, contrastar escalas, evaluar incertidumbres y contextualizar resultados es esencial para evitar interpretaciones simplificadas o erróneas.</p>
+<p>A este conjunto de capacidades lo denomino pensamiento situacional en geociencias. Se trata de la habilidad para interpretar datos y modelos en función del contexto territorial específico en el que se aplican, reconociendo las condiciones históricas, ambientales, técnicas y sociales que influyen en la producción y el significado de la información. El pensamiento situacional no se opone a la automatización ni a la inteligencia artificial, sino que las complementa, al permitir que los resultados algorítmicos sean evaluados críticamente a la luz del conocimiento del territorio y de la experiencia de campo. En este sentido, el trabajo en geociencias no puede reducirse a la ejecución de modelos, sino que requiere una permanente articulación entre observación remota, medición in situ y juicio experto.</p>
+<p>Este desafío se intensifica en un contexto marcado por la creciente ubicuidad de sensores y dispositivos inteligentes. Satélites, drones, estaciones meteorológicas automáticas, dispositivos móviles con sensores integrados, sistemas GNSS y plataformas de monitoreo continuo generan flujos de datos permanentes que profundizan y aceleran la transformación digital. Cada vez más, el análisis geocientífico se desarrolla en interacción con máquinas —computadoras personales, dispositivos móviles, robots físicos y agentes de software— y mediante procesos de automatización que incrementan la integración y la complejidad de los sistemas analíticos. La proliferación futura de robots físicos y de agentes inteligentes de software plantea escenarios de análisis aún más complejos, donde la capacidad de integrar datos, modelos y contexto será determinante.</p>
+<p>En este marco, aceptar distintos niveles de profundidad en la incorporación de estos contenidos resulta no solo razonable, sino necesario. No todas las carreras ni todos los niveles de formación requieren el mismo grado de especialización en ciencia de datos o GeoAI. Sin embargo, sí resulta fundamental establecer un núcleo común de competencias que permita a los futuros geocientíficos comprender el lenguaje de los datos, dialogar con especialistas de otras disciplinas y participar activamente en equipos interdisciplinarios, manteniendo siempre una actitud crítica frente a los resultados producidos por sistemas automatizados. La formación continua y la actualización profesional dejan de ser opciones para convertirse en componentes estructurales de la práctica en geociencias.</p>
+<p>Para cerrar, me gustaría retomar la idea que atraviesa toda esta exposición. La transformación digital en geociencias no es, en esencia, un proceso tecnológico, sino un proceso epistemológico, metodológico y educativo. Se trata de repensar cómo entendemos el territorio, cómo producimos conocimiento a partir de datos y cómo formamos profesionales capaces de integrar la Observación de la Tierra, la ciencia de datos, la interoperabilidad geoespacial y la inteligencia artificial de manera crítica, responsable y contextualizada. Hablar de diseños curriculares integrados es, en definitiva, reconocer la complejidad del campo, la diversidad de contextos y la necesidad de construir marcos formativos flexibles, abiertos y no prescriptivos, capaces de acompañar los desafíos presentes y futuros de las geociencias. <span id="id7">[<a class="reference internal" href="Referencias.html#id10" title="United Nations Committee of Experts on Global Geospatial Information Management. Integrated geospatial information framework. 2019. URL: https://ggim.un.org/IGIF/.">United Nations Committee of Experts on Global Geospatial Information Management, 2019</a>]</span></p>
+<p>Desde una perspectiva analítica, esta exposición puede leerse a partir de cinco ejes conceptuales interrelacionados, que no constituyen un modelo normativo, sino una síntesis interpretativa derivada de marcos internacionales consolidados en geociencias y transformación digital. Estos ejes estructuran la discusión y permiten articular datos, procesos, modelos y dimensiones institucionales sin perder de vista la complejidad del campo. <span id="id8">[<a class="reference internal" href="Referencias.html#id4" title="Earth Science Literacy Initiative. Earth science literacy principles: the big ideas and supporting concepts of earth science. 2009. URL: https://www.earthscienceliteracy.org/.">Earth Science Literacy Initiative, 2009</a>, <a class="reference internal" href="Referencias.html#id6" title="UNESCO. Unesco recommendation on open science. 2021. URL: https://www.unesco.org/en/open-science.">UNESCO, 2021</a>, <a class="reference internal" href="Referencias.html#id10" title="United Nations Committee of Experts on Global Geospatial Information Management. Integrated geospatial information framework. 2019. URL: https://ggim.un.org/IGIF/.">United Nations Committee of Experts on Global Geospatial Information Management, 2019</a>]</span></p>
+<p>En conjunto, los ejes aquí discutidos —datos como infraestructura científica, pensamiento sistémico y multiescalar, la Observación de la Tierra como eje integrador, la modelización como forma de abstracción y la dimensión institucional y ética de la información geoespacial— permiten comprender la transformación digital en geociencias como un proceso epistemológico y educativo, y no meramente tecnológico. <span id="id9">[<a class="reference internal" href="Referencias.html#id16" title="Luciano Floridi, Josh Cowls, Monica Beltrametti, and others. Ai4people—an ethical framework for a good ai society. Minds and Machines, 28(4):689–707, 2018. doi:10.1007/s11023-018-9482-5.">Floridi <em>et al.</em>, 2018</a>, <a class="reference internal" href="Referencias.html#id6" title="UNESCO. Unesco recommendation on open science. 2021. URL: https://www.unesco.org/en/open-science.">UNESCO, 2021</a>]</span></p>
+</section>
+<section id="earth-science-literacy-principles">
+<h2><span class="section-number">1.6. </span>Earth Science Literacy Principles<a class="headerlink" href="#earth-science-literacy-principles" title="Link to this heading">#</a></h2>
+<p>Los Earth Science Literacy Principles <span id="id10">[<a class="reference internal" href="Referencias.html#id4" title="Earth Science Literacy Initiative. Earth science literacy principles: the big ideas and supporting concepts of earth science. 2009. URL: https://www.earthscienceliteracy.org/.">Earth Science Literacy Initiative, 2009</a>]</span> establecen el núcleo conceptual de las Geociencias, definiendo qué significa <em>comprender científicamente el funcionamiento de la Tierra</em>. El marco se organiza en nueve principios fundamentales, que no son contenidos aislados, sino ideas estructurantes que articulan procesos, escalas y sistemas.</p>
+<ol class="arabic simple">
+<li><p><strong>La Tierra funciona como un sistema complejo</strong></p></li>
+</ol>
+<p>La Tierra está compuesta por esferas interconectadas —geosfera, hidrosfera, atmósfera, biosfera y criosfera— cuyas interacciones determinan los procesos terrestres. Ningún fenómeno puede entenderse de manera aislada, sino como parte de un sistema dinámico y acoplado.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>La Tierra cambia continuamente</strong></p></li>
+</ol>
+<p>El planeta está en constante transformación, tanto por procesos internos como externos. Estos cambios ocurren a múltiples escalas temporales, desde eventos instantáneos hasta procesos que se desarrollan a lo largo de millones de años.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Los procesos geológicos modelan el planeta</strong></p></li>
+</ol>
+<p>La superficie terrestre es el resultado de procesos como la tectónica de placas, la erosión, el vulcanismo y la sedimentación. Estos procesos explican la distribución del relieve, los recursos naturales y muchos riesgos naturales.</p>
+<ol class="arabic simple" start="4">
+<li><p><strong>La historia de la Tierra está registrada en los materiales terrestres</strong></p></li>
+</ol>
+<p>Las rocas, los sedimentos, los fósiles y otros registros naturales constituyen un archivo histórico que permite reconstruir la evolución del planeta y de la vida a lo largo del tiempo geológico.</p>
+<ol class="arabic simple" start="5">
+<li><p><strong>La vida y la Tierra coevolucionan</strong></p></li>
+</ol>
+<p>La vida no solo se adapta a las condiciones terrestres, sino que modifica activamente el planeta, influyendo en la atmósfera, los suelos, los ciclos biogeoquímicos y el clima. La relación entre vida y Tierra es bidireccional.</p>
+<ol class="arabic simple" start="6">
+<li><p><strong>El agua es fundamental para los procesos terrestres</strong></p></li>
+</ol>
+<p>El agua es un agente clave en la modelización del paisaje, el clima, los ecosistemas y los sistemas humanos. El ciclo hidrológico conecta procesos físicos, químicos, biológicos y sociales.</p>
+<ol class="arabic simple" start="7">
+<li><p><strong>La actividad humana forma parte del sistema Tierra</strong></p></li>
+</ol>
+<p>Las sociedades humanas son hoy un agente geológico relevante, capaz de modificar ciclos naturales, paisajes y equilibrios ambientales. Comprender la interacción sociedad–Tierra es central para la gestión del territorio y la sostenibilidad.</p>
+<ol class="arabic simple" start="8">
+<li><p><strong>Los riesgos naturales son parte del funcionamiento normal del planeta</strong></p></li>
+</ol>
+<p>Fenómenos como terremotos, erupciones, inundaciones o sequías no son anomalías, sino expresiones naturales de los procesos terrestres. El riesgo emerge de la interacción entre estos procesos y la ocupación humana del territorio.</p>
+<ol class="arabic simple" start="9">
+<li><p><strong>La observación científica permite comprender la Tierra</strong></p></li>
+</ol>
+<p>El conocimiento geocientífico se basa en observaciones sistemáticas, mediciones, modelos y datos, integrando información espacial y temporal para interpretar procesos complejos y formular explicaciones fundamentadas.</p>
+<hr class="docutils" />
+<section id="sintesis-conceptual">
+<h3><span class="section-number">1.6.1. </span>Síntesis conceptual<a class="headerlink" href="#sintesis-conceptual" title="Link to this heading">#</a></h3>
+<p>En conjunto, los ESLP definen a las geociencias como:</p>
+<p>•	Ciencias de sistemas complejos
+•	Multiescalares (espacio y tiempo)
+•	Basadas en datos, observación y modelización
+•	Intrínsecamente vinculadas a la sociedad</p>
+<p>Este marco no prescribe métodos ni tecnologías, pero establece el suelo epistemológico común sobre el cual se apoyan la Observación de la Tierra, la ciencia de datos geoespaciales y cualquier proceso de transformación digital en geociencias.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdg-idera/geosemantica",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Geosemántica y GeoAI</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Introduccion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Transformación digital: datos geoespaciales y geoAI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geociencias-datos-y-estadistica-como-lenguaje-comun-eje-datos-como-infraestructura-cientifica">1.1. Geociencias, datos y estadística como lenguaje común (Eje: datos como infraestructura científica)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observacion-de-la-tierra-como-eje-integrador-datos-tiempo-y-procesos-eje-observacion-de-la-tierra-como-eje-integrador">1.2. Observación de la Tierra como eje integrador: datos, tiempo y procesos (Eje: Observación de la Tierra como eje integrador)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciencia-de-datos-geoespaciales-y-geoai-de-los-algoritmos-clasicos-a-los-modelos-fundacionales">1.3. Ciencia de datos geoespaciales y GeoAI: de los algoritmos clásicos a los modelos fundacionales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interoperabilidad-ide-y-ecosistemas-digitales-de-los-datos-aislados-a-la-infraestructura-cientifica-eje-interoperabilidad-y-gobernanza-institucional">1.4. Interoperabilidad, IDE y ecosistemas digitales: de los datos aislados a la infraestructura científica (Eje: interoperabilidad y gobernanza institucional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicancias-curriculares-metodologias-de-ensenanza-y-cierre-eje-dimension-institucional-etica-y-formativa">1.5. Implicancias curriculares, metodologías de enseñanza y cierre (Eje: dimensión institucional, ética y formativa)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#earth-science-literacy-principles">1.6. Earth Science Literacy Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis-conceptual">1.6.1. Síntesis conceptual</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Luis Reynoso (IDERA-GTT CDG)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

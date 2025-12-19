@@ -1,4 +1,4 @@
-# Capítulo 3: **Entrenamiento no supervisado con Enbeddings**
+# Capítulo: **Entrenamiento no supervisado con Enbeddings**
 
 En este capítulo aplicaremos un algoritmo de clustering no supervisado (basado en el algoritmo K-means) modificando ligeramente el código de un tutorial de GEE.
 
