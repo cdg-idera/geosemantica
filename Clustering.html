@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>7. Capítulo: Entrenamiento no supervisado con Enbeddings &#8212; Geosemántica y GeoAI</title>
+    <title>6. Capítulo: Entrenamiento no supervisado con Enbeddings &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Clustering';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Capítulo: Entrenamientos Supervisados con Embeddings" href="embeddingsEjemplos.html" />
-    <link rel="prev" title="6. Capítulo: Embeddings satelitales: una nueva semántica del territorio" href="embeddings.html" />
+    <link rel="next" title="7. Capítulo: Entrenamientos Supervisados con Embeddings" href="embeddingsEjemplos.html" />
+    <link rel="prev" title="5. Capítulo: Embeddings satelitales: una nueva semántica del territorio" href="embeddings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,19 +182,18 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">1. Transformación Digital en Geociencias</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">3. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Geosemantica.html">4. Capítulo · Geosemántica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">5. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddings.html">6. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">8. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">9. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">10. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">11. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">12. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">13. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">1. Introducción · Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">2. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geosemantica.html">3. Capítulo · Geosemántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">4. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">5. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">9. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">10. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">11. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">12. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -390,24 +389,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">7.1. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">7.1.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">7.1.2. Definición de la región de estudio (ROI)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">7.1.3. Filtrado temporal y espacial del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">7.1.4. Visualización RGB de componentes del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">7.1.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">7.1.5.1. a) Muestreo de píxeles</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">7.1.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">6.1. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">6.1.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">6.1.2. Definición de la región de estudio (ROI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">6.1.3. Filtrado temporal y espacial del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">6.1.4. Visualización RGB de componentes del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">6.1.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">6.1.5.1. a) Muestreo de píxeles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">6.1.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">7.1.6. Generación de distintas segmentaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">6.1.6. Generación de distintas segmentaciones</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-metodologica-representacion-del-pipeline-algoritmico">7.2. Propuesta metodológica: Representación del pipeline algorítmico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">7.2.1. Esquema/Pipeline del Algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-metodologica-representacion-del-pipeline-algoritmico">6.2. Propuesta metodológica: Representación del pipeline algorítmico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">6.2.1. Esquema/Pipeline del Algoritmo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">7.3. Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">6.3. Cierre</a></li>
 </ul>
             </nav>
         </div>
@@ -420,7 +419,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-entrenamiento-no-supervisado-con-enbeddings">
-<h1><span class="section-number">7. </span>Capítulo: <strong>Entrenamiento no supervisado con Enbeddings</strong><a class="headerlink" href="#capitulo-entrenamiento-no-supervisado-con-enbeddings" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Capítulo: <strong>Entrenamiento no supervisado con Enbeddings</strong><a class="headerlink" href="#capitulo-entrenamiento-no-supervisado-con-enbeddings" title="Link to this heading">#</a></h1>
 <p>En este capítulo aplicaremos un algoritmo de clustering no supervisado (basado en el algoritmo K-means) modificando ligeramente el código de un tutorial de GEE.</p>
 <p>Un algoritmo de aprendizaje no supervisado <strong>no necesita datos de entrenamiento ni etiquetas</strong> conocidas: el algoritmo agrupa los píxeles en k clústeres según su similitud en el espacio de variables.</p>
 <p>El siguiente código combina el nuevo dataset de <strong>Satellite Embeddings</strong> de <em>Google Research</em> (2024) con técnicas de aprendizaje no supervisado (K-Means) para descubrir patrones espaciales a partir de representaciones semánticas del territorio — justamente en la línea de la GeoIA y la geosemántica estadística-.</p>
@@ -434,9 +433,9 @@ document.write(`
 <li><p>Visualiza distintas segmentaciones (3, 5, 10 grupos).</p></li>
 </ul>
 <section id="el-algoritmo-de-clustering-entrenamiento-no-supervisado">
-<h2><span class="section-number">7.1. </span>El algoritmo de clustering (entrenamiento no supervisado)<a class="headerlink" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>El algoritmo de clustering (entrenamiento no supervisado)<a class="headerlink" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado" title="Link to this heading">#</a></h2>
 <section id="acceso-al-dataset-de-satellite-embeddings">
-<h3><span class="section-number">7.1.1. </span>Acceso al dataset de <em>Satellite Embeddings</em><a class="headerlink" href="#acceso-al-dataset-de-satellite-embeddings" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.1. </span>Acceso al dataset de <em>Satellite Embeddings</em><a class="headerlink" href="#acceso-al-dataset-de-satellite-embeddings" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Este <em>ImageCollection</em> contiene <strong>vectores de representación (embeddings)</strong> generados por un <strong>modelo fundacional</strong> <span id="id1">[<a class="reference internal" href="Referencias.html#id40" title="C. F. Brown, M. R. Kazmierski, V. J. Pasquarella, W. J. Rucklidge, M. Samsikova, C. Zhang, E. Shelhamer, E. Lahera, O. Wiles, S. Ilyushchenko, N. Gorelick, L. L. Zhang, S. Alj, E. Schechter, S. Askay, O. Guinan, R. Moore, A. Boukouvalas, and P. Kohli. Alphaearth foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv preprint, 2025. URL: https://doi.org/10.48550/arXiv.2507.22291, arXiv:2507.22291, doi:10.48550/arXiv.2507.22291.">Brown <em>et al.</em>, 2025</a>]</span> entrenado con millones de imágenes satelitales globales.</p></li>
 <li><p>Cada píxel tiene un <strong>vector</strong> de 64 dimensiones (A01, A02, … A256) que resume de forma <em>semántica</em> la apariencia y el contexto del territorio (no solo NDVI, sino también <em>textura</em>, <em>morfología</em>, <em>patrones urbanos</em>, etc.).</p></li>
@@ -452,7 +451,7 @@ document.write(`
 </div>
 </section>
 <section id="definicion-de-la-region-de-estudio-roi">
-<h3><span class="section-number">7.1.2. </span>Definición de la región de estudio (ROI)<a class="headerlink" href="#definicion-de-la-region-de-estudio-roi" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.2. </span>Definición de la región de estudio (ROI)<a class="headerlink" href="#definicion-de-la-region-de-estudio-roi" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Se utiliza la capa <strong>GAUL (FAO)</strong> <span id="id2">[<a class="reference internal" href="Referencias.html#id43" title="FAO. Global administrative unit layers (gaul) dataset, level 0–2. https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/metadata/8e9e12f8-cd32-4a22-a1a5-dbc47f9fa13a, 2015. Food and Agriculture Organization of the United Nations (FAO), Rome. Version 2015. URL: https://data.apps.fao.org/map/catalog/srv/eng/catalog.search#/metadata/8e9e12f8-cd32-4a22-a1a5-dbc47f9fa13a.">FAO, 2015</a>]</span> de divisiones administrativas <strong>nivel 1</strong> para seleccionar la provincia de Neuquén.</p></li>
 <li><p>Este geometry será el <strong>área de estudio</strong> para filtrar el embedding y extraer muestras.</p></li>
@@ -475,7 +474,7 @@ document.write(`
 </div>
 </section>
 <section id="filtrado-temporal-y-espacial-del-embedding">
-<h3><span class="section-number">7.1.3. </span>Filtrado temporal y espacial del embedding<a class="headerlink" href="#filtrado-temporal-y-espacial-del-embedding" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.3. </span>Filtrado temporal y espacial del embedding<a class="headerlink" href="#filtrado-temporal-y-espacial-del-embedding" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Se selecciona el <strong>embedding correspondiente al año 2024</strong> dentro del área de Neuquén.</p></li>
 <li><p><strong>.mosaic()</strong> combina posibles tiles superpuestos en una sola imagen continua.</p></li>
@@ -499,7 +498,7 @@ document.write(`
 </div>
 </section>
 <section id="visualizacion-rgb-de-componentes-del-embedding">
-<h3><span class="section-number">7.1.4. </span>Visualización RGB de componentes del embedding<a class="headerlink" href="#visualizacion-rgb-de-componentes-del-embedding" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.4. </span>Visualización RGB de componentes del embedding<a class="headerlink" href="#visualizacion-rgb-de-componentes-del-embedding" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Dado que el embedding tiene muchas bandas, se eligen tres (A01, A16 y A09) para mostrarlas como un <strong>RGB sintético</strong>. Sin embargo, es posible elegir cualquier otra combinación de tres bandas (son 64 en total). Se denomina <strong>sintético</strong> porque estas bandas no corresponden a los canales ópticos reales de una imagen satelital (como rojo, verde o azul), sino a <strong>componentes abstractas del espacio de representación</strong> aprendidas por el modelo, que <em>sintetizan</em> <strong>información espectral, espacial y contextual del territorio</strong>.</p></li>
 <li><p>Esto genera una visualización pseudo-color donde los tonos representan variaciones semánticas del territorio (urbano, vegetación, agua, etc.) detectadas por el modelo.</p></li>
@@ -516,14 +515,14 @@ document.write(`
 <figure class="align-default" id="fig-eimage">
 <a class="reference internal image-reference" href="_images/Eimage.png"><img alt="_images/Eimage.png" src="_images/Eimage.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7.1 </span><span class="caption-text">RGB sintético de un subconjunto del campo de Embedding</span><a class="headerlink" href="#fig-eimage" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">RGB sintético de un subconjunto del campo de Embedding</span><a class="headerlink" href="#fig-eimage" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="muestreo-y-clustering-no-supervisado-k-means">
-<h3><span class="section-number">7.1.5. </span>Muestreo y clustering no supervisado (K-Means)<a class="headerlink" href="#muestreo-y-clustering-no-supervisado-k-means" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.5. </span>Muestreo y clustering no supervisado (K-Means)<a class="headerlink" href="#muestreo-y-clustering-no-supervisado-k-means" title="Link to this heading">#</a></h3>
 <section id="a-muestreo-de-pixeles">
-<h4><span class="section-number">7.1.5.1. </span>a) Muestreo de píxeles<a class="headerlink" href="#a-muestreo-de-pixeles" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.5.1. </span>a) Muestreo de píxeles<a class="headerlink" href="#a-muestreo-de-pixeles" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Se extraen 1000 píxeles aleatorios del área de Neuquén a 10 m de resolución.</p></li>
 <li><p>Cada muestra contiene 64 variables (los valores de las bandas A00–A63).</p></li>
@@ -547,7 +546,7 @@ Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides 
 </div>
 </section>
 <section id="b-definicion-de-la-funcion-getclusters">
-<h4><span class="section-number">7.1.5.2. </span>b) Definición de la función <strong>getClusters()</strong><a class="headerlink" href="#b-definicion-de-la-funcion-getclusters" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">6.1.5.2. </span>b) Definición de la función <strong>getClusters()</strong><a class="headerlink" href="#b-definicion-de-la-funcion-getclusters" title="Link to this heading">#</a></h4>
 <p>Define una función que:</p>
 <ul class="simple">
 <li><p>Entrena un modelo <strong>K-Means</strong> no supervisado con el número de grupos deseado (‘nClusters’).</p></li>
@@ -567,7 +566,7 @@ Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides 
 </section>
 </section>
 <section id="generacion-de-distintas-segmentaciones">
-<h3><span class="section-number">7.1.6. </span>Generación de distintas segmentaciones<a class="headerlink" href="#generacion-de-distintas-segmentaciones" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.1.6. </span>Generación de distintas segmentaciones<a class="headerlink" href="#generacion-de-distintas-segmentaciones" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Se prueban tres segmentaciones con distinto número de clústeres (3, 5, 10).</p></li>
 <li><p><strong>.randomVisualizer()</strong> asigna colores aleatorios para distinguir los grupos.</p></li>
@@ -581,7 +580,7 @@ Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides 
 <figure class="align-default" id="fig-k3">
 <a class="reference internal image-reference" href="_images/K3.png"><img alt="_images/K3.png" src="_images/K3.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7.2 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 3) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 3) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
@@ -591,7 +590,7 @@ Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides 
 <figure class="align-default" id="fig-k5">
 <a class="reference internal image-reference" href="_images/K5.png"><img alt="_images/K5.png" src="_images/K5.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7.3 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 5) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k5" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 5) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#fig-k5" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="nx">cluster10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getClusters</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
@@ -601,7 +600,7 @@ Con una muestra bien distribuida, el algoritmo puede estimar <strong>centroides 
 <figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/K10.png"><img alt="_images/K10.png" src="_images/K10.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7.4 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 10) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text"><em>Clustering</em> no supervisado (K-Means, k = 10) aplicado al <strong>Satellite Embedding 2024</strong> en Neuquén.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -633,13 +632,13 @@ El siguiente fragmento define la región de interés (ROI) correspondiente al De
 </section>
 </section>
 <section id="propuesta-metodologica-representacion-del-pipeline-algoritmico">
-<h2><span class="section-number">7.2. </span>Propuesta metodológica: Representación del pipeline algorítmico<a class="headerlink" href="#propuesta-metodologica-representacion-del-pipeline-algoritmico" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Propuesta metodológica: Representación del pipeline algorítmico<a class="headerlink" href="#propuesta-metodologica-representacion-del-pipeline-algoritmico" title="Link to this heading">#</a></h2>
 <p>En el campo de la Observación de la Tierra (EO), representar formalmente el flujo algorítmico mediante <strong>pipelines matemáticos</strong> permite <em>articular la lógica computacional con el razonamiento analítico</em>.<br />
 Este tipo de esquemas no solo sintetiza la <strong>secuencia de operaciones</strong> del algoritmo, sino que también <strong>explicita las dependencias entre variables</strong>, los objetos intermedios del proceso (<span class="math notranslate nohighlight">\(\mathbf{X}_t\)</span>, <span class="math notranslate nohighlight">\(\tilde{\mathbf{X}}_t\)</span>, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{C}\)</span>), y la estructura conceptual que subyace al aprendizaje no supervisado.</p>
 <p>Desde una perspectiva metodológica, esta representación fomenta una <strong>comprensión abstracta y reproducible</strong> del procedimiento: <em>facilita la trazabilidad</em>, el <em>análisis comparativo entre enfoques</em> y la <em>integración de distintas fuentes o niveles de representación</em>.</p>
 <p>En última instancia, el pipeline actúa como un <strong>puente entre el pensamiento matemático y el pensamiento algorítmico</strong>, contribuyendo a formalizar las etapas del análisis geosemántico y a consolidar un lenguaje común entre la <strong>ciencia de datos geoespaciales</strong> y la <strong>geoAI</strong>.</p>
 <section id="esquema-pipeline-del-algoritmo">
-<h3><span class="section-number">7.2.1. </span>Esquema/Pipeline del Algoritmo<a class="headerlink" href="#esquema-pipeline-del-algoritmo" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">6.2.1. </span>Esquema/Pipeline del Algoritmo<a class="headerlink" href="#esquema-pipeline-del-algoritmo" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 \underbrace{(\text{ROI},\ t,\ k,\ n_{\text{samples}})}_{\textbf{Entradas}}
@@ -720,7 +719,7 @@ Este tipo de esquemas no solo sintetiza la <strong>secuencia de operaciones</str
 </section>
 </section>
 <section id="cierre">
-<h2><span class="section-number">7.3. </span>Cierre<a class="headerlink" href="#cierre" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Cierre<a class="headerlink" href="#cierre" title="Link to this heading">#</a></h2>
 <p>El algoritmo mostrado en este capítulo, en esencia, una <strong>demostración de análisis geosemántico estadístico</strong>, donde el modelo fundacional ya <em>“comprende”</em> el territorio y el clustering revela su estructura interna sin etiquetas humanas.
 A su vez, la <strong>representación formal del pipeline subyacente</strong> aporta un componente metodológico clave: permite <strong>visualizar y modelar la secuencia lógica del algoritmo</strong>, conectar sus etapas con los objetos matemáticos intermedios y establecer un marco reproducible que <em>fortalece la comprensión conceptual</em> del <em>proceso de aprendizaje no supervisado en Observación de la Tierra (EO)</em>.</p>
 </section>
@@ -762,7 +761,7 @@ A su vez, la <strong>representación formal del pipeline subyacente</strong> apo
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">6. </span>Capítulo: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Capítulo: <strong>Embeddings satelitales: una nueva semántica del territorio</strong></p>
       </div>
     </a>
     <a class="right-next"
@@ -770,7 +769,7 @@ A su vez, la <strong>representación formal del pipeline subyacente</strong> apo
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8. </span>Capítulo: <strong>Entrenamientos Supervisados con Embeddings</strong></p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Capítulo: <strong>Entrenamientos Supervisados con Embeddings</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -790,24 +789,24 @@ A su vez, la <strong>representación formal del pipeline subyacente</strong> apo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">7.1. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">7.1.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">7.1.2. Definición de la región de estudio (ROI)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">7.1.3. Filtrado temporal y espacial del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">7.1.4. Visualización RGB de componentes del embedding</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">7.1.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">7.1.5.1. a) Muestreo de píxeles</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">7.1.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-algoritmo-de-clustering-entrenamiento-no-supervisado">6.1. El algoritmo de clustering (entrenamiento no supervisado)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acceso-al-dataset-de-satellite-embeddings">6.1.1. Acceso al dataset de <em>Satellite Embeddings</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-la-region-de-estudio-roi">6.1.2. Definición de la región de estudio (ROI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrado-temporal-y-espacial-del-embedding">6.1.3. Filtrado temporal y espacial del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-rgb-de-componentes-del-embedding">6.1.4. Visualización RGB de componentes del embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muestreo-y-clustering-no-supervisado-k-means">6.1.5. Muestreo y clustering no supervisado (K-Means)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-muestreo-de-pixeles">6.1.5.1. a) Muestreo de píxeles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-definicion-de-la-funcion-getclusters">6.1.5.2. b) Definición de la función <strong>getClusters()</strong></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">7.1.6. Generación de distintas segmentaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generacion-de-distintas-segmentaciones">6.1.6. Generación de distintas segmentaciones</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-metodologica-representacion-del-pipeline-algoritmico">7.2. Propuesta metodológica: Representación del pipeline algorítmico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">7.2.1. Esquema/Pipeline del Algoritmo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propuesta-metodologica-representacion-del-pipeline-algoritmico">6.2. Propuesta metodológica: Representación del pipeline algorítmico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#esquema-pipeline-del-algoritmo">6.2.1. Esquema/Pipeline del Algoritmo</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">7.3. Cierre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cierre">6.3. Cierre</a></li>
 </ul>
   </nav></div>
 
