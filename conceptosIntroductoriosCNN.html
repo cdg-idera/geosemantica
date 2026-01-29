@@ -1469,10 +1469,20 @@ Convierte ese vector en <strong>probabilidades</strong> que suman 1.</p>
 </figure>
 <section id="id18">
 <h4><span class="section-number">9.13.8.1. </span>Definición<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
-<p>Dado un vector <span class="math notranslate nohighlight">\(\mathbf{z} = [z_1, z_2, \dots, z_K] \)</span>, Softmax es:</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}\)</span></p>
-<p>Propiedad clave:
-<span class="math notranslate nohighlight">\(\sum_i \mathrm{Softmax}(z_i)=1\)</span>  → interpretables como probabilidades.</p>
+<p>Dado un vector</p>
+<p>[
+\mathbf{z} = [z_1, z_2, \dots, z_K],
+]</p>
+<p>la función <strong>Softmax</strong> se define para cada componente (i) como</p>
+<p>[
+\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}},
+\qquad i \in {1,\dots,K}.
+]</p>
+<p><strong>Propiedad clave:</strong></p>
+<p>[
+\sum_{i=1}^{K} \mathrm{Softmax}(z_i)=1,
+]</p>
+<p>por lo que sus salidas pueden interpretarse como probabilidades.</p>
 </section>
 <section id="como-leer-el-gif-guion-de-voz">
 <h4><span class="section-number">9.13.8.2. </span>¿Cómo leer el GIF (guion de voz)<a class="headerlink" href="#como-leer-el-gif-guion-de-voz" title="Link to this heading">#</a></h4>
@@ -1526,9 +1536,6 @@ El pooling actúa como un <strong>resumen local</strong>: en vez de conservar ca
 Conceptualmente, esto equivale a preguntarse: <em>“¿Cuál es la evidencia más fuerte de este patrón en esta región?”</em></p>
 <p>En visión por computadora, esta decisión suele ser efectiva porque las activaciones más altas tienden a corresponder a rasgos distintivos: bordes marcados, esquinas o texturas con fuerte respuesta del filtro.</p>
 <p><strong>Idea clave:</strong> Max Pooling favorece la <strong>preservación de picos</strong> (respuestas fuertes), y por eso es el más popular en muchas CNNs.</p>
-<blockquote>
-<div><p>Inserta aquí tu GIF de <strong>Max Pooling</strong> (ventana recorriendo el feature map y completando la salida).</p>
-</div></blockquote>
 <figure class="align-default" id="fig-maxpool-demo">
 <a class="reference internal image-reference" href="_images/maxpool_demo.gif"><img alt="_images/maxpool_demo.gif" src="_images/maxpool_demo.gif" style="width: 100%;" /></a>
 <figcaption>
