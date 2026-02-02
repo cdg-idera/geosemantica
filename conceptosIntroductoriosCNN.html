@@ -474,7 +474,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-vision-2d-a-la-perspectiva-3d-tipica-de-las-cnn">9.6. De la visión 2D a la perspectiva 3D típica de las CNN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convoluciones-secuenciales-una-cadena-de-salidas-o">9.7. Convoluciones secuenciales: una cadena de salidas <span class="math notranslate nohighlight">\(O\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-representa-un-canal">9.8. ¿Qué representa un canal?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-3d-del-kernel-33-al-kernel-33c">9.9. Filtros 3D: del kernel 3×3 al kernel 3×3×C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiples-filtros-y-mapas-de-activacion">9.9. Múltiples filtros y mapas de activación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">9.10. <em>Pooling</em>: reducción espacial y robustez frente a traslaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-cimientos-conceptuales-para-cnn-en-teledeteccion">9.11. Conclusión: cimientos conceptuales para CNN en teledetección</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activaciones-de-filtros-aprendidos">9.12. Activaciones de filtros aprendidos</a><ul class="nav section-nav flex-column">
@@ -501,29 +501,29 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-tanh">9.13.4. Función de activación Tanh</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-tanh">9.13.4.1. ¿Por qué usar Tanh?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.13.4.2. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.13.4.2. Interpretación del GIF</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-elu">9.13.5. Función de activación ELU</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">9.13.5.1. Definición</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intuicion-por-que-no-solo-relu">9.13.5.2. Intuición (por qué no solo ReLU)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.13.5.3. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.13.5.3. Interpretación del GIF</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-gelu">9.13.6. Función de activación GELU</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-idea-matematica">9.13.6.1. Definición (idea matemática)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-exacta-y-aproximacion-practica">9.13.6.2. Fórmula exacta y aproximación práctica</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.13.6.3. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.13.6.3. Interpretación del GIF</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-se-usa-mucho">9.13.6.4. ¿Dónde se usa mucho?</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-swish">9.13.7. Función de activación Swish</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.13.7.1. Definición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.13.7.2. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.13.7.1. Definición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.13.7.2. Interpretación del GIF</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-softmax">9.13.8. Función de activación Softmax</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">9.13.8.1. Definición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.13.8.1. Definición</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-leer-el-gif-guion-de-voz">9.13.8.2. ¿Cómo leer el GIF (guion de voz)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-aparece-softmax-en-redes">9.13.8.3. ¿Dónde aparece Softmax en redes?</a></li>
 </ul>
@@ -537,7 +537,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-pooling">9.14.3. Average Pooling</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">9.14.3.1. Descripción</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">9.14.3.1. Descripción</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-entre-max-pooling-y-average-pooling">9.14.3.2. Comparación entre <strong>Max Pooling</strong> y <strong>Average Pooling</strong></a></li>
 </ul>
 </li>
@@ -657,13 +657,13 @@ document.write(`
 <p>El objetivo es claro: <strong>capturar información local</strong>.</p>
 <p>Toda CNN, incluso las más profundas, comienza analizando la imagen a través de pequeñas regiones locales. Entender qué es un parche y cómo se procesa es el primer paso para comprender el funcionamiento interno del modelo.</p>
 <figure class="align-default" id="fig-conceptostride">
-<a class="reference internal image-reference" href="_images/parches_no_overlap_.gif"><img alt="_images/parches_no_overlap_.gif" src="_images/parches_no_overlap_.gif" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="imagenes/parches_no_overlap_.gif"><img alt="imagenes/parches_no_overlap_.gif" src="imagenes/parches_no_overlap_.gif" style="width: 100%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.2 </span><span class="caption-text">parches con overlap</span><a class="headerlink" href="#fig-conceptostride" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/parches_overlap_.gif"><img alt="_images/parches_overlap_.gif" src="_images/parches_overlap_.gif" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="imagenes/parches_overlap_.gif"><img alt="imagenes/parches_overlap_.gif" src="imagenes/parches_overlap_.gif" style="width: 100%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8.3 </span><span class="caption-text">parches con overlap</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
@@ -1032,27 +1032,11 @@ O_{4,4} =
 <p>En este contexto, un <strong>canal</strong> es una “capa” de información superpuesta espacialmente a las demás. Cada píxel ya no es un único número, sino un vector de valores, uno por cada canal.</p>
 </section>
 <hr class="docutils" />
-<section id="filtros-3d-del-kernel-33-al-kernel-33c">
-<h2><span class="section-number">9.9. </span>Filtros 3D: del kernel 3×3 al kernel 3×3×C<a class="headerlink" href="#filtros-3d-del-kernel-33-al-kernel-33c" title="Link to this heading">#</a></h2>
-<p>Cuando una imagen tiene C$ canales, un filtro convolucional deja de ser una simple matriz 2D de tamaño 3×3. Pasa a ser un <strong>tensor 3D</strong> de tamaño 3×3×C:</p>
-<ul class="simple">
-<li><p>En cada canal, el filtro tiene su propio pequeño kernel 3×3.</p></li>
-<li><p>La convolución se aplica <strong>canal por canal</strong>.</p></li>
-<li><p>Los resultados parciales se suman para producir un único valor de salida por posición y por filtro.</p></li>
-</ul>
-<p>Para visualizar esto, mostramos un GIF 3D en el que:</p>
-<ul class="simple">
-<li><p>cada panel de la cadena <span class="math notranslate nohighlight">\(I_0, O_1, O_2, O_3\)</span> tiene <strong>tres canales</strong>, representados por bloques con colores distintos (por ejemplo, rojizo, verdoso y azulado),</p></li>
-<li><p>el filtro se ve actuando sobre los tres canales,</p></li>
-<li><p>y el resultado de cada etapa combina esa información multicanal en un nuevo bloque.</p></li>
-</ul>
-<p>Esta representación ayuda a entender cómo una CNN integra, en cada convolución, información proveniente de varias bandas o canales simultáneamente.</p>
-<figure class="align-default" id="id12">
-<a class="reference internal image-reference" href="_images/cnn_4panels_3canales.gif"><img alt="_images/cnn_4panels_3canales.gif" src="_images/cnn_4panels_3canales.gif" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 9.11 </span><span class="caption-text">Multiples canales</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
+<section id="multiples-filtros-y-mapas-de-activacion">
+<h2><span class="section-number">9.9. </span>Múltiples filtros y mapas de activación<a class="headerlink" href="#multiples-filtros-y-mapas-de-activacion" title="Link to this heading">#</a></h2>
+<p>Hasta acá vimos que un filtro sobre un parche multicanal procesa cada canal por separado, suma los resultados y produce un único mapa de activación. Pero una capa convolucional no tiene un solo filtro; tiene muchos, aplicándose en paralelo. Si hay K filtros, cada uno genera un mapa de activación, y en conjunto obtenemos K mapas. La salida de una capa convolucional es un tensor tridimensional: alto por ancho por cantidad de filtros (H x “doble ve” x K), donde K es la nueva profundidad o número de canales.</p>
+<p>Ahora viene un punto clave: la siguiente convolución no recibe una imagen RGB, sino este conjunto de mapas de activación. Es una entrada multicanal donde los canales representan características aprendidas, no colores. Cada mapa codifica respuestas a bordes, texturas o patrones complejos. Así, una capa convolucional transforma canales físicos en canales semánticos, y la siguiente capa opera directamente sobre esas características.</p>
+<p>En síntesis, cada capa aplica múltiples filtros y produce un conjunto de mapas de activación. Estas representaciones son las que la siguiente capa toma para seguir combinando y transformando las características. Sin embargo, la convolución en sí es una operación lineal. Para modelar relaciones complejas, es imprescindible un paso más: las funciones de activación, que transforman estas respuestas inmediatamente después de la convolución y son clave en el aprendizaje profundo. Ahora vamos a abordar ese tema.</p>
 </section>
 <hr class="docutils" />
 <section id="pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">
@@ -1155,7 +1139,7 @@ No mezcla celdas ni mezcla canales: toma un número <span class="math notranslat
 <figure class="align-default" id="fig-output-relu-with-graph">
 <a class="reference internal image-reference" href="_images/output_relu_with_graph.gif"><img alt="_images/output_relu_with_graph.gif" src="_images/output_relu_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.12 </span><span class="caption-text">output_relu_with_graph</span><a class="headerlink" href="#fig-output-relu-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.11 </span><span class="caption-text">output_relu_with_graph</span><a class="headerlink" href="#fig-output-relu-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1204,7 +1188,7 @@ x &amp; \text{si } x\ge 0 \\
 <figure class="align-default" id="fig-output-leakyrelu-with-graph">
 <a class="reference internal image-reference" href="_images/output_leakyrelu_with_graph.gif"><img alt="_images/output_leakyrelu_with_graph.gif" src="_images/output_leakyrelu_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.13 </span><span class="caption-text">output_leakyrelu_with_graph</span><a class="headerlink" href="#fig-output-leakyrelu-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.12 </span><span class="caption-text">output_leakyrelu_with_graph</span><a class="headerlink" href="#fig-output-leakyrelu-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="que-mirar-en-el-gif">
@@ -1234,7 +1218,7 @@ Eso ayuda a evitar el problema de <em>neuronas muertas</em> que puede ocurrir co
 <figure class="align-default" id="fig-output-sigmoid-with-graph">
 <a class="reference internal image-reference" href="_images/output_sigmoid_with_graph.gif"><img alt="_images/output_sigmoid_with_graph.gif" src="_images/output_sigmoid_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.14 </span><span class="caption-text">output_sigmoid_with_graph</span><a class="headerlink" href="#fig-output-sigmoid-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.13 </span><span class="caption-text">output_sigmoid_with_graph</span><a class="headerlink" href="#fig-output-sigmoid-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="interpretacion-del-gif">
@@ -1263,7 +1247,7 @@ Esto es útil para probabilidades, pero en capas profundas puede causar <em>vani
 <figure class="align-default" id="fig-output-tanh-with-graph">
 <a class="reference internal image-reference" href="_images/output_tanh_with_graph.gif"><img alt="_images/output_tanh_with_graph.gif" src="_images/output_tanh_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.15 </span><span class="caption-text">output_tanh_with_graph</span><a class="headerlink" href="#fig-output-tanh-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.14 </span><span class="caption-text">output_tanh_with_graph</span><a class="headerlink" href="#fig-output-tanh-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="por-que-usar-tanh">
@@ -1276,8 +1260,8 @@ Esto es útil para probabilidades, pero en capas profundas puede causar <em>vani
 </ul>
 <p>Históricamente fue muy utilizada en redes neuronales densas y recurrentes.</p>
 </section>
-<section id="id13">
-<h4><span class="section-number">9.13.4.2. </span>Interpretación del GIF<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<section id="id12">
+<h4><span class="section-number">9.13.4.2. </span>Interpretación del GIF<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>En el GIF se observa:</p>
 <ol class="arabic simple">
 <li><p><strong>Output de la convolución</strong><br />
@@ -1308,7 +1292,7 @@ Esto ayuda a mantener activaciones más estables y cercanas a cero.</p>
 <figure class="align-default" id="fig-output-elu-with-graph">
 <a class="reference internal image-reference" href="_images/output_elu_with_graph.gif"><img alt="_images/output_elu_with_graph.gif" src="_images/output_elu_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.16 </span><span class="caption-text">output_elu_with_graph</span><a class="headerlink" href="#fig-output-elu-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.15 </span><span class="caption-text">output_elu_with_graph</span><a class="headerlink" href="#fig-output-elu-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="definicion">
@@ -1336,8 +1320,8 @@ x &amp; \text{si } x \ge 0\\
 <li><p>evita algunas situaciones tipo “neurona muerta” (aunque no siempre la elimina por completo).</p></li>
 </ul>
 </section>
-<section id="id14">
-<h4><span class="section-number">9.13.5.3. </span>Interpretación del GIF<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<section id="id13">
+<h4><span class="section-number">9.13.5.3. </span>Interpretación del GIF<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p><strong>1) Output (arriba)</strong><br />
 “Arriba está el <em>feature map</em> antes de la activación. En el ejemplo está centrado/escalado para que sea fácil ver positivos y negativos.”</p>
 <p><strong>2) Activación ELU (abajo)</strong><br />
@@ -1364,7 +1348,7 @@ no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hac
 <figure class="align-default" id="fig-output-gelu-with-graph">
 <a class="reference internal image-reference" href="_images/output_gelu_with_graph.gif"><img alt="_images/output_gelu_with_graph.gif" src="_images/output_gelu_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.17 </span><span class="caption-text">output_gelu_with_graph</span><a class="headerlink" href="#fig-output-gelu-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.16 </span><span class="caption-text">output_gelu_with_graph</span><a class="headerlink" href="#fig-output-gelu-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="definicion-idea-matematica">
@@ -1386,8 +1370,8 @@ no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hac
 <p>En implementaciones suele usarse esta aproximación (muy habitual en deep learning):</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{GELU}(x) \approx 0.5x\left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}\,(x + 0.044715x^3)\right)\right)\)</span></p>
 </section>
-<section id="id15">
-<h4><span class="section-number">9.13.6.3. </span>Interpretación del GIF<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<section id="id14">
+<h4><span class="section-number">9.13.6.3. </span>Interpretación del GIF<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p><strong>1) Output (arriba)</strong><br />
 “Arriba vemos el <em>feature map</em> (o matriz de salida) antes de activar. Lo ideal es que tenga valores positivos y negativos para ver el efecto.”</p>
 <p><strong>2) Activación GELU (abajo)</strong><br />
@@ -1421,11 +1405,11 @@ A diferencia de ReLU, no corta los negativos de golpe: los deja pasar atenuados.
 <figure class="align-default" id="fig-output-swish-with-graph">
 <a class="reference internal image-reference" href="_images/output_swish_with_graph.gif"><img alt="_images/output_swish_with_graph.gif" src="_images/output_swish_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.18 </span><span class="caption-text">output_swish_with_graph</span><a class="headerlink" href="#fig-output-swish-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.17 </span><span class="caption-text">output_swish_with_graph</span><a class="headerlink" href="#fig-output-swish-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<section id="id16">
-<h4><span class="section-number">9.13.7.1. </span>Definición<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
+<section id="id15">
+<h4><span class="section-number">9.13.7.1. </span>Definición<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <p>Swish se define como:</p>
 <p><span class="math notranslate nohighlight">\(\mathrm{Swish}(x) = x \cdot \sigma(x)\)</span></p>
 <p>donde <span class="math notranslate nohighlight">\(\sigma(x)\)</span> es la función sigmoide:</p>
@@ -1436,8 +1420,8 @@ A diferencia de ReLU, no corta los negativos de golpe: los deja pasar atenuados.
 <li><p>Si <span class="math notranslate nohighlight">\(x\)</span> es muy positivo, <span class="math notranslate nohighlight">\(\sigma(x)\approx 1\)</span> → Swish <span class="math notranslate nohighlight">\(\approx x\)</span>.</p></li>
 </ul>
 </section>
-<section id="id17">
-<h4><span class="section-number">9.13.7.2. </span>Interpretación del GIF<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
+<section id="id16">
+<h4><span class="section-number">9.13.7.2. </span>Interpretación del GIF<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p><strong>1) Output (arriba)</strong><br />
 “Arriba vemos la matriz de salida antes de activar (centrada/escalada para que se vean bien positivos y negativos).”</p>
 <p><strong>2) Activación Swish (abajo)</strong><br />
@@ -1464,11 +1448,11 @@ Convierte ese vector en <strong>probabilidades</strong> que suman 1.</p>
 <figure class="align-default" id="fig-output-softmax-with-graph">
 <a class="reference internal image-reference" href="_images/output_softmax_with_graph.gif"><img alt="_images/output_softmax_with_graph.gif" src="_images/output_softmax_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.19 </span><span class="caption-text">output_softmax_with_graph</span><a class="headerlink" href="#fig-output-softmax-with-graph" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.18 </span><span class="caption-text">output_softmax_with_graph</span><a class="headerlink" href="#fig-output-softmax-with-graph" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<section id="id18">
-<h4><span class="section-number">9.13.8.1. </span>Definición<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<section id="id17">
+<h4><span class="section-number">9.13.8.1. </span>Definición<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <p>Dado un vector</p>
 <p>[
 \mathbf{z} = [z_1, z_2, \dots, z_K],
@@ -1539,21 +1523,21 @@ Conceptualmente, esto equivale a preguntarse: <em>“¿Cuál es la evidencia má
 <figure class="align-default" id="fig-maxpool-demo">
 <a class="reference internal image-reference" href="_images/maxpool_demo.gif"><img alt="_images/maxpool_demo.gif" src="_images/maxpool_demo.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.20 </span><span class="caption-text">maxpool_demo</span><a class="headerlink" href="#fig-maxpool-demo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.19 </span><span class="caption-text">maxpool_demo</span><a class="headerlink" href="#fig-maxpool-demo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="average-pooling">
 <h3><span class="section-number">9.14.3. </span>Average Pooling<a class="headerlink" href="#average-pooling" title="Link to this heading">#</a></h3>
-<section id="id19">
-<h4><span class="section-number">9.14.3.1. </span>Descripción<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<section id="id18">
+<h4><span class="section-number">9.14.3.1. </span>Descripción<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
 <p>El <strong>Average Pooling</strong> calcula el <strong>promedio</strong> dentro de la ventana local.<br />
 En lugar de conservar el pico más intenso, produce un resumen que representa el <em>nivel medio de activación</em> en esa región.</p>
 <figure class="align-default" id="fig-avgpool-demo">
 <a class="reference internal image-reference" href="_images/avgpool_demo.gif"><img alt="_images/avgpool_demo.gif" src="_images/avgpool_demo.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.21 </span><span class="caption-text">avgpool_demo</span><a class="headerlink" href="#fig-avgpool-demo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.20 </span><span class="caption-text">avgpool_demo</span><a class="headerlink" href="#fig-avgpool-demo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Esta estrategia tiende a <strong>suavizar</strong> la señal: reduce el impacto de valores extremos y puede conservar mejor información distribuida, aunque a costa de perder el énfasis en las respuestas más fuertes.</p>
@@ -1601,7 +1585,7 @@ Ambos reducen la dimensión espacial y ayudan a construir representaciones progr
 <figure class="align-default" id="fig-convolution-same-relu-pool">
 <a class="reference internal image-reference" href="_images/convolution_same_relu_pool.gif"><img alt="_images/convolution_same_relu_pool.gif" src="_images/convolution_same_relu_pool.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.22 </span><span class="caption-text">convolution_same_relu_pool</span><a class="headerlink" href="#fig-convolution-same-relu-pool" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.21 </span><span class="caption-text">convolution_same_relu_pool</span><a class="headerlink" href="#fig-convolution-same-relu-pool" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="salida-de-convoluciones">
@@ -1653,12 +1637,12 @@ Se aplana por “bloques” o regiones, manteniendo <strong>algo</strong> de est
 <figure class="align-default" id="fig-fully-connected-architecture-only">
 <a class="reference internal image-reference" href="_images/fully_connected_architecture_only.gif"><img alt="_images/fully_connected_architecture_only.gif" src="_images/fully_connected_architecture_only.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.23 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#fig-fully-connected-architecture-only" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.22 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#fig-fully-connected-architecture-only" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <section id="capa-fully-connected-dense-explicacion-paso-a-paso-con-matrices">
 <h3><span class="section-number">9.17.1. </span>Capa Fully Connected (Dense): explicación paso a paso (con matrices)<a class="headerlink" href="#capa-fully-connected-dense-explicacion-paso-a-paso-con-matrices" title="Link to this heading">#</a></h3>
-<p>En este notebook vas a poder acompañar el GIF del ejemplo <strong>Flatten → Dense(10) → Dense(7) → Dense(3)</strong> y entender qué está pasando en términos de <strong>vectores</strong>, <strong>matrices de pesos</strong> y <strong>bias</strong>.</p>
+<p>En esta sección vamoss a poder acompañar el GIF del ejemplo <strong>Flatten → Dense(10) → Dense(7) → Dense(3)</strong> y entender qué está pasando en términos de <strong>vectores</strong>, <strong>matrices de pesos</strong> y <strong>bias</strong>.</p>
 <p><strong>Idea clave:</strong> una capa fully connected toma un vector de entrada y calcula una combinación lineal:</p>
 <p><span class="math notranslate nohighlight">\(\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}\)</span></p>
 <p>y luego (típicamente) aplica una función de activación:</p>
@@ -1783,10 +1767,10 @@ b_m
 <div><p>En conjunto, estos mecanismos muestran que las capas convolucionales pueden entenderse como responsables de la extracción de características, mientras que las capas fully connected cumplen el rol de integración, razonamiento y decisión.</p>
 </div></blockquote>
 <p>Todos estos conceptos se operacionalizan mediante herramientas del álgebra lineal, en particular vectores, matrices, productos punto y combinaciones lineales, combinadas con funciones no lineales. Con fines didácticos, en las secciones siguientes se analiza detalladamente la operatoria de una capa fully connected simple, utilizando una arquitectura compuesta por capas densas de 10, 7 y 3 neuronas.</p>
-<figure class="align-default" id="id20">
+<figure class="align-default" id="id19">
 <a class="reference internal image-reference" href="_images/fully_connected_architecture_only.gif"><img alt="_images/fully_connected_architecture_only.gif" src="_images/fully_connected_architecture_only.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.24 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.23 </span><span class="caption-text">fully_connected_architecture_only</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>En primer lugar, se describe paso a paso el cálculo correspondiente a la transición Flatten → Dense(10), y posteriormente se analiza la transición Dense(10) → Dense(7), ilustrando explícitamente las operaciones matemáticas involucradas mediante visualizaciones animadas.</p>
@@ -1795,7 +1779,7 @@ b_m
 <figure class="align-default" id="fig-flatten-to-dense10-step-by-step">
 <a class="reference internal image-reference" href="_images/flatten_to_dense10_step_by_step.gif"><img alt="_images/flatten_to_dense10_step_by_step.gif" src="_images/flatten_to_dense10_step_by_step.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.25 </span><span class="caption-text">flatten_to_dense10_step_by_step</span><a class="headerlink" href="#fig-flatten-to-dense10-step-by-step" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.24 </span><span class="caption-text">flatten_to_dense10_step_by_step</span><a class="headerlink" href="#fig-flatten-to-dense10-step-by-step" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Explicaremos el panel inferior de la imagen. En cada frame se está calculando una neurona <strong><code class="docutils literal notranslate"><span class="pre">j</span></code></strong> de la capa <code class="docutils literal notranslate"><span class="pre">Dense(10)</span></code>.</p>
@@ -1933,7 +1917,7 @@ $<span class="math notranslate nohighlight">\( a_1[j] = \max(0, z_1[j]) \)</span
 <figure class="align-default" id="fig-dense10-to-dense7-step-by-step">
 <a class="reference internal image-reference" href="_images/dense10_to_dense7_step_by_step.gif"><img alt="_images/dense10_to_dense7_step_by_step.gif" src="_images/dense10_to_dense7_step_by_step.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.26 </span><span class="caption-text">dense10_to_dense7_step_by_step</span><a class="headerlink" href="#fig-dense10-to-dense7-step-by-step" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.25 </span><span class="caption-text">dense10_to_dense7_step_by_step</span><a class="headerlink" href="#fig-dense10-to-dense7-step-by-step" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2080,7 +2064,7 @@ a_2[j] = \max(0, z_2[j])
 <figure class="align-default" id="fig-fully-connected-demo-with-w">
 <a class="reference internal image-reference" href="_images/fully_connected_demo_with_W.gif"><img alt="_images/fully_connected_demo_with_W.gif" src="_images/fully_connected_demo_with_W.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.27 </span><span class="caption-text">fully_connected_demo_with_W</span><a class="headerlink" href="#fig-fully-connected-demo-with-w" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.26 </span><span class="caption-text">fully_connected_demo_with_W</span><a class="headerlink" href="#fig-fully-connected-demo-with-w" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2167,7 +2151,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 <figure class="align-default" id="fig-fully-connected-backprop-intuition">
 <a class="reference internal image-reference" href="_images/fully_connected_backprop_intuition.gif"><img alt="_images/fully_connected_backprop_intuition.gif" src="_images/fully_connected_backprop_intuition.gif" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9.28 </span><span class="caption-text">fully_connected_backprop_intuition</span><a class="headerlink" href="#fig-fully-connected-backprop-intuition" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.27 </span><span class="caption-text">fully_connected_backprop_intuition</span><a class="headerlink" href="#fig-fully-connected-backprop-intuition" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Este ejemplo se ha presentado de forma intencionalmente simplificada. En una CNN completa, la señal de error continúa propagándose hacia atrás a través de las capas convolucionales, ajustando también sus filtros. La fully connected permite fijar la intuición básica del backpropagation, que luego se extiende al caso convolucional incorporando la dimensión espacial y la compartición de pesos.</p>
@@ -2311,7 +2295,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-vision-2d-a-la-perspectiva-3d-tipica-de-las-cnn">9.6. De la visión 2D a la perspectiva 3D típica de las CNN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convoluciones-secuenciales-una-cadena-de-salidas-o">9.7. Convoluciones secuenciales: una cadena de salidas <span class="math notranslate nohighlight">\(O\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-representa-un-canal">9.8. ¿Qué representa un canal?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtros-3d-del-kernel-33-al-kernel-33c">9.9. Filtros 3D: del kernel 3×3 al kernel 3×3×C</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiples-filtros-y-mapas-de-activacion">9.9. Múltiples filtros y mapas de activación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-reduccion-espacial-y-robustez-frente-a-traslaciones">9.10. <em>Pooling</em>: reducción espacial y robustez frente a traslaciones</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-cimientos-conceptuales-para-cnn-en-teledeteccion">9.11. Conclusión: cimientos conceptuales para CNN en teledetección</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activaciones-de-filtros-aprendidos">9.12. Activaciones de filtros aprendidos</a><ul class="nav section-nav flex-column">
@@ -2338,29 +2322,29 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-tanh">9.13.4. Función de activación Tanh</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#por-que-usar-tanh">9.13.4.1. ¿Por qué usar Tanh?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.13.4.2. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">9.13.4.2. Interpretación del GIF</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-elu">9.13.5. Función de activación ELU</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion">9.13.5.1. Definición</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#intuicion-por-que-no-solo-relu">9.13.5.2. Intuición (por qué no solo ReLU)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.13.5.3. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">9.13.5.3. Interpretación del GIF</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-gelu">9.13.6. Función de activación GELU</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-idea-matematica">9.13.6.1. Definición (idea matemática)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#formula-exacta-y-aproximacion-practica">9.13.6.2. Fórmula exacta y aproximación práctica</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.13.6.3. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">9.13.6.3. Interpretación del GIF</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-se-usa-mucho">9.13.6.4. ¿Dónde se usa mucho?</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-swish">9.13.7. Función de activación Swish</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.13.7.1. Definición</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.13.7.2. Interpretación del GIF</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">9.13.7.1. Definición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">9.13.7.2. Interpretación del GIF</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-activacion-softmax">9.13.8. Función de activación Softmax</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">9.13.8.1. Definición</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">9.13.8.1. Definición</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#como-leer-el-gif-guion-de-voz">9.13.8.2. ¿Cómo leer el GIF (guion de voz)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-aparece-softmax-en-redes">9.13.8.3. ¿Dónde aparece Softmax en redes?</a></li>
 </ul>
@@ -2374,7 +2358,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#average-pooling">9.14.3. Average Pooling</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">9.14.3.1. Descripción</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">9.14.3.1. Descripción</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#comparacion-entre-max-pooling-y-average-pooling">9.14.3.2. Comparación entre <strong>Max Pooling</strong> y <strong>Average Pooling</strong></a></li>
 </ul>
 </li>
