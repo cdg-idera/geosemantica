@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'conceptosIntroductoriosCNN';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
+    <link rel="next" title="10. Capítulo: Ejemplos con Redes Neuronales Convolucionales (CNN)" href="CNN_ejemplos.html" />
     <link rel="prev" title="7. Capítulo: Entrenamientos Supervisados con Embeddings" href="embeddingsEjemplos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,10 +191,11 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong></a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">10. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">11. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">12. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">13. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">10. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">11. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">12. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">13. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">14. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -627,7 +628,7 @@ document.write(`
 <h1><span class="section-number">8. </span>Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
 <p>Las <strong>redes neuronales convolucionales</strong> (<em>Convolutional Neural Networks</em>, CNN) constituyen una clase fundamental de modelos de deep learning diseñados específicamente para procesar datos con <strong>estructura espacial</strong>, como las imágenes. Su funcionamiento se basa en la operación matemática de <strong>convolución</strong>, que puede entenderse intuitivamente como la aplicación sistemática de filtros o máscaras sobre una grilla de datos, permitiendo detectar patrones locales como bordes, texturas y formas. Tal como señalan OpenStax:</p>
 <blockquote>
-<div><p>“Las redes neuronales convolucionales (CNN) son una poderosa clase de modelos de redes neuronales desarrolladas para procesar datos estructurados en forma de grilla, como las imágenes, haciendo uso de la operación matemática de convolución (que es similar a aplicar un filtro o una máscara a una imagen).”— Principles of Data Science, OpenStax (2025) <span id="id1">[<a class="reference internal" href="Referencias.html#id20" title="OpenStax. Principles of Data Science. OpenStax, 2025. Section 7.4: Convolutional Neural Networks. URL: https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks.">OpenStax, 2025</a>]</span></p>
+<div><p>“Las redes neuronales convolucionales (CNN) son una poderosa clase de modelos de redes neuronales desarrolladas para procesar datos estructurados en forma de grilla, como las imágenes, haciendo uso de la operación matemática de convolución (que es similar a aplicar un filtro o una máscara a una imagen).”— Principles of Data Science, OpenStax (2025) <span id="id1">[<a class="reference internal" href="Referencias.html#id32" title="OpenStax. Principles of Data Science. OpenStax, 2025. Section 7.4: Convolutional Neural Networks. URL: https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks.">OpenStax, 2025</a>]</span></p>
 </div></blockquote>
 <p>Desde una perspectiva conceptual, una CNN puede entenderse como un modelo compuesto por <strong>dos grandes etapas funcionales</strong>, claramente diferenciadas y complementarias, como se ilustra en la Figura <a class="reference internal" href="#fig-cnn-feature-learning-plus-fully-connected"><span class="std std-numref">Fig. 8.1</span></a>.</p>
 <p>La primera etapa, conocida como <strong>feature learning stage</strong> o <em>convolutional backbone</em>, está formada por capas convolucionales, funciones de activación y operaciones de <em>pooling</em>. Su objetivo principal es <strong>extraer representaciones jerárquicas</strong> de la entrada: a partir de la imagen original, la red aprende progresivamente <em>features</em> cada vez más abstractas, pasando de patrones simples (como bordes o contrastes) a estructuras más complejas y semánticamente relevantes. En esta fase, la red explota explícitamente la estructura espacial de los datos.</p>
@@ -2258,11 +2259,11 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
       </div>
     </a>
     <a class="right-next"
-       href="ApendiceA.html"
+       href="CNN_ejemplos.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">10. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Capítulo: Ejemplos con <strong>Redes Neuronales Convolucionales (CNN)</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

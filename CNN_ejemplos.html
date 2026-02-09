@@ -1,0 +1,1016 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>10. Capítulo: Ejemplos con Redes Neuronales Convolucionales (CNN) &#8212; Geosemántica y GeoAI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CNN_ejemplos';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
+    <link rel="prev" title="8. Capítulo: Redes Neuronales Convolucionales (CNN)" href="conceptosIntroductoriosCNN.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logoAgua.png" class="logo__image only-light" alt="Geosemántica y GeoAI - Home"/>
+    <script>document.write(`<img src="_static/logoAgua.png" class="logo__image only-dark" alt="Geosemántica y GeoAI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Geosemántica y GeoAI
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">1. Introducción · Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">2. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geosemantica.html">3. Capítulo · Geosemántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">4. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">5. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">6. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong></a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">11. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">12. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">13. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">14. Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/cdg-idera/geosemantica/main?urlpath=tree/./CNN_ejemplos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FCNN_ejemplos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CNN_ejemplos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Capítulo: Ejemplos con Redes Neuronales Convolucionales (CNN)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eurosat">10.1. EuroSAT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-librerias">10.1.1. Carga de Librerías</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-eurosat-y-particion">10.1.2. Carga de Eurosat y Partición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-preparacion-del-dataset">10.1.3. Función de preparación del dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-la-cnn">10.1.4. Entrenar la CNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-de-perdida-y-exactitud">10.1.5. Curva de Pérdida y Exactitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-split-de-test">10.1.6. Evaluar el split de test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-clasicas">10.1.7. Métricas clásicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">10.1.8. Matriz de Confusión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-importancia-de-los-datasets-de-entrenamiento">10.1.9. La importancia de los datasets de entrenamiento</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="capitulo-ejemplos-con-redes-neuronales-convolucionales-cnn">
+<h1><span class="section-number">10. </span>Capítulo: Ejemplos con <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-ejemplos-con-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
+<section id="eurosat">
+<h2><span class="section-number">10.1. </span>EuroSAT<a class="headerlink" href="#eurosat" title="Link to this heading">#</a></h2>
+<p>Este ejemplo está basado en un tutorial de The Python Code y muestra cómo entrenar una red neuronal convolucional utilizando imágenes satelitales del conjunto de datos EuroSAT <span id="id1">[<a class="reference internal" href="Referencias.html#id2" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2019.">Helber <em>et al.</em>, 2019</a>]</span>, <span id="id2">[<a class="reference internal" href="Referencias.html#id3" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Introducing eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. In IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium, 204–207. IEEE, 2018.">Helber <em>et al.</em>, 2018</a>]</span>, el cual se encuentra disponible para su descarga en el repositorio abierto (Zenodo) [<a class="reference external" href="https://zenodo.org/records/7711810#.ZAm3k-zMKEA">https://zenodo.org/records/7711810#.ZAm3k-zMKEA</a>]. El dataset contiene escenas <em>Sentinel-2</em> de <em>64×64</em> píxeles en tres bandas RGB, etiquetadas en distintas clases de cobertura del suelo, lo que permite su uso en tareas de clasificación supervisada.</p>
+<p>El código que vemos en pantalla fue desarrollado y ejecutado en <strong>Google Colab</strong>, un entorno en la nube que nos permite trabajar con Python y deep learning sin necesidad de instalar nada localmente. En esta primera sección se cargan las librerías fundamentales del experimento. Por un lado, <strong>TensorFlow</strong>, que es el framework de deep learning que vamos a usar para construir y entrenar la red neuronal convolucional. Luego, <em>tensorflow datasets</em>, que nos facilita el acceso a conjuntos de datos estandarizados como <strong>EuroSAT</strong>. También se importa <em>tensorflow hub</em>, que permite reutilizar modelos y arquitecturas preentrenadas. Finalmente, se cargan librerías auxiliares como <strong>NumPy</strong>, <strong>Matplotlib</strong> y <strong>Seaborn</strong>, que se utilizan para el manejo de datos y la visualización de resultados. Esta preparación inicial define el entorno sobre el cual se va a construir toda la CNN.</p>
+<section id="carga-de-librerias">
+<h3><span class="section-number">10.1.1. </span>Carga de Librerías<a class="headerlink" href="#carga-de-librerias" title="Link to this heading">#</a></h3>
+<p>“En este bloque se descarga y carga el dataset <strong>EuroSAT (versión RGB)</strong> usando <strong>tensorflow_datasets</strong>. Primero, la función <em>tfds.load</em> no solo trae las imágenes, sino también la información descriptiva del dataset (por ejemplo, sus clases y cantidad total de muestras). En la salida se observa el proceso de descarga, extracción y preparación, quedando almacenado localmente en Colab en la carpeta indicada…; por eso, en ejecuciones posteriores se reutiliza sin volver a descargar. El mensaje WARNING… es una advertencia interna de TFDS sobre un archivo de metadatos, pero no impide que el dataset se prepare correctamente, como confirma la línea ‘Dataset “EuroSAT” downloaded and prepared…’.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================</span>
+<span class="c1"># 1) Instalación de librerías</span>
+<span class="c1"># ==========================</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">tensorflow</span> <span class="n">tensorflow_datasets</span> <span class="n">tensorflow_hub</span> <span class="n">seaborn</span> <span class="n">matplotlib</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">tensorflow_datasets</span> <span class="k">as</span> <span class="nn">tfds</span>
+<span class="kn">import</span> <span class="nn">tensorflow_hub</span> <span class="k">as</span> <span class="nn">hub</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="carga-de-eurosat-y-particion">
+<h3><span class="section-number">10.1.2. </span>Carga de Eurosat y Partición<a class="headerlink" href="#carga-de-eurosat-y-particion" title="Link to this heading">#</a></h3>
+<p>Luego, el código define una partición simple del conjunto: 60% para entrenamiento, 20% para test y 20% para validación, todo a partir del split original llamado train. Finalmente, se imprimen los elementos centrales del problema de clasificación que va a resolver la CNN: las 10 clases (“AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, Pasture, PermanentCrop, Residential, River, SeaLake”) y el total de 27.000 ejemplos. En otras palabras, a partir de aquí el modelo aprenderá a asignar a cada parche satelital RGB una de estas diez categorías de cobertura/uso del suelo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Montar Google Drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="c1"># Carpeta donde está eurosat.zip</span>
+<span class="n">MANUAL_DIR</span> <span class="o">=</span> <span class="s2">&quot;/content/drive/My Drive/EuroSAT&quot;</span>
+
+<span class="c1"># (Opcional) Verificar que el archivo está ahí</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">MANUAL_DIR</span><span class="p">))</span>
+
+<span class="c1"># Configurar TFDS para usar el zip manual</span>
+<span class="n">download_config</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">download</span><span class="o">.</span><span class="n">DownloadConfig</span><span class="p">(</span>
+    <span class="n">manual_dir</span><span class="o">=</span><span class="n">MANUAL_DIR</span>
+<span class="p">)</span>
+
+<span class="c1"># Construir y preparar el dataset</span>
+<span class="n">builder</span> <span class="o">=</span> <span class="n">tfds</span><span class="o">.</span><span class="n">builder</span><span class="p">(</span><span class="s2">&quot;eurosat&quot;</span><span class="p">)</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">download_and_prepare</span><span class="p">(</span><span class="n">download_config</span><span class="o">=</span><span class="n">download_config</span><span class="p">)</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">info</span>
+
+<span class="c1"># splits</span>
+<span class="n">train_raw</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">as_dataset</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="s2">&quot;train[:60%]&quot;</span><span class="p">)</span>
+<span class="n">test_raw</span>  <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">as_dataset</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="s2">&quot;train[60%:80%]&quot;</span><span class="p">)</span>
+<span class="n">val_raw</span>   <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">as_dataset</span><span class="p">(</span><span class="n">split</span><span class="o">=</span><span class="s2">&quot;train[80%:]&quot;</span><span class="p">)</span>
+
+<span class="n">class_names</span>  <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">names</span>
+<span class="n">num_classes</span>  <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+<span class="n">num_examples</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">splits</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_examples</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clases:&quot;</span><span class="p">,</span> <span class="n">class_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Número de clases:&quot;</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total de ejemplos:&quot;</span><span class="p">,</span> <span class="n">num_examples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funcion-de-preparacion-del-dataset">
+<h3><span class="section-number">10.1.3. </span>Función de preparación del dataset<a class="headerlink" href="#funcion-de-preparacion-del-dataset" title="Link to this heading">#</a></h3>
+<p>En este bloque el código prepara los datos para que puedan ser consumidos eficientemente por la red neuronal convolucional. La función “prepare for training” toma el dataset original y realiza una serie de transformaciones típicas en flujos de entrenamiento con CNN: primero normaliza las imágenes, y luego convierte las etiquetas de clase en vectores one-hot, que es el formato que espera el modelo para un problema de clasificación multiclase.</p>
+<p>Además, el dataset se optimiza para el entrenamiento: se mezcla aleatoriamente para evitar sesgos, se agrupa en lotes (en inglés “batches”) de 64 imágenes, y se configura el “prefetch” para que la carga de datos no frene a la GPU. El resultado que vemos en pantalla confirma esto: cada lote contiene 64 parches de 64×64 píxeles con 3 canales (RGB) y, para cada imagen, un vector de 10 valores, uno por cada clase de “EuroSAT”. A partir de aquí, la CNN ya no trabaja con imágenes sueltas, sino con bloques de datos listos para aprender patrones espaciales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_for_training</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span>
+                         <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+                         <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                         <span class="n">shuffle_buffer_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c1"># Opcionalmente cachea para que no reprocese en cada epoch</span>
+    <span class="k">if</span> <span class="n">cache</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span>
+
+    <span class="c1"># (imagen, etiqueta one-hot)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">one_hot</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">],</span> <span class="n">num_classes</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Mezcla, repite, divide en batches y prefetch</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">shuffle_buffer_size</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">repeat</span><span class="p">()</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ds</span>
+
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">prepare_for_training</span><span class="p">(</span><span class="n">train_raw</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+<span class="n">val_ds</span>   <span class="o">=</span> <span class="n">prepare_for_training</span><span class="p">(</span><span class="n">val_raw</span><span class="p">,</span>   <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+
+<span class="c1"># Verificar shapes</span>
+<span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Batch imágenes:&quot;</span><span class="p">,</span> <span class="n">images</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Batch etiquetas:&quot;</span><span class="p">,</span> <span class="n">labels</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El resultado del código anterior es:</p>
+<ul class="simple">
+<li><p>Dataset eurosat downloaded and prepared to /root/tensorflow_datasets/eurosat/rgb/2.0.0. Subsequent calls will reuse this data.</p></li>
+<li><p>Clases: [‘AnnualCrop’, ‘Forest’, ‘HerbaceousVegetation’, ‘Highway’, ‘Industrial’, ‘Pasture’, ‘PermanentCrop’, ‘Residential’, ‘River’, ‘SeaLake’]</p></li>
+<li><p>Número de clases: 10</p></li>
+<li><p>Total de ejemplos: 27000</p></li>
+</ul>
+<p>“En este bloque definimos la arquitectura de la CNN que va a aprender a clasificar parches “EuroSAT” de 64×64 píxeles con 3 canales (RGB). El modelo está armado como una secuencia de ‘bloques’ repetidos: en cada bloque aparece una capa convolucional que aprende filtros (patrones) y a continuación un max pooling que reduce el tamaño espacial para concentrar la información más relevante y hacer el modelo más eficiente. A medida que avanzamos, el número de filtros crece de 32 → 64 → 128 → 256, lo cual significa que la red va construyendo representaciones cada vez más ricas: menos resolución espacial, pero más ‘profundidad’ semántica en forma de feature maps.”
+“Si miramos el “summary”, se ve esa compresión progresiva: empezamos en (64, 64, 32) y, tras el pooling, bajamos a (32, 32, 32); luego (16, 16, 64); después (8, 8, 128); y finalmente (4, 4, 256). En ese punto, Flatten convierte esos mapas en un vector de 4096 valores, que pasa por una capa densa de 128 neuronas (y “Dropout” para reducir sobreajuste). La última capa tiene 10 salidas con “softmax”, una por cada clase de “EuroSAT”, y devuelve una distribución de probabilidades: el modelo elige la clase con mayor probabilidad como predicción final.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+
+<span class="c1"># Las imágenes de EuroSAT son de 64x64x3</span>
+<span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">),</span>
+
+    <span class="c1"># Bloque 1</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+
+    <span class="c1"># Bloque 2</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+
+    <span class="c1"># Bloque 3</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+
+    <span class="c1"># Bloque 4 (opcional para más capacidad)</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+
+    <span class="c1"># Aplano y paso a densas</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
+
+    <span class="c1"># Capa final de clasificación: num_classes viene del dataset (EuroSAT)</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">,</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los resultados son:</p>
+<ul class="simple">
+<li><p>Batch imágenes: (64, 64, 64, 3)</p></li>
+<li><p>Batch etiquetas: (64, 10)</p></li>
+</ul>
+</section>
+<section id="entrenar-la-cnn">
+<h3><span class="section-number">10.1.4. </span>Entrenar la CNN<a class="headerlink" href="#entrenar-la-cnn" title="Link to this heading">#</a></h3>
+<p>En este bloque pasamos del diseño del modelo al entrenamiento propiamente dicho. Primero definimos cuántos ejemplos tiene el dataset “EuroSAT” y cómo se reparten en entrenamiento y validación: 60 % para entrenar y 20 % para validar. Como los datasets de entrenamiento y validación están definidos con la función “repeat”, es necesario indicar explícitamente cuántos pasos por época debe ejecutar el modelo, que se calculan dividiendo la cantidad de ejemplos por el tamaño del batch.</p>
+<p>Luego comienza el proceso de entrenamiento con “model dot fit”. En cada época, la red ve todos los parches de entrenamiento en batches de 64 imágenes, ajusta sus pesos y luego se evalúa sobre el conjunto de validación. La salida muestra cómo el modelo aprende progresivamente: la exactitud de entrenamiento sube de forma constante y la exactitud de validación pasa de alrededor del 57 % a más del 80 % en solo cinco épocas. Esto indica que la CNN está logrando capturar patrones espaciales relevantes en las imágenes satelitales y generaliza razonablemente bien a datos que no vio durante el entrenamiento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tamaño del batch (el mismo que usaste para train_ds / val_ds)</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
+
+<span class="c1"># Número total de ejemplos en el split &quot;train&quot; de EuroSAT</span>
+<span class="n">num_examples</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">splits</span><span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">num_examples</span>
+
+<span class="c1"># 60% train, 20% val, 20% test (como definimos antes)</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_examples</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>
+<span class="n">val_size</span>   <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num_examples</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Como usamos .repeat() en train_ds y val_ds, definimos steps por epoch</span>
+<span class="n">n_train_steps</span> <span class="o">=</span> <span class="n">train_size</span> <span class="o">//</span> <span class="n">batch_size</span>
+<span class="n">n_val_steps</span>   <span class="o">=</span> <span class="n">val_size</span>   <span class="o">//</span> <span class="n">batch_size</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ejemplos train:&quot;</span><span class="p">,</span> <span class="n">train_size</span><span class="p">,</span> <span class="s2">&quot;→ steps/epoch:&quot;</span><span class="p">,</span> <span class="n">n_train_steps</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ejemplos val:  &quot;</span><span class="p">,</span> <span class="n">val_size</span><span class="p">,</span>   <span class="s2">&quot;→ val_steps:&quot;</span><span class="p">,</span>   <span class="n">n_val_steps</span><span class="p">)</span>
+
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_ds</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+    <span class="n">steps_per_epoch</span><span class="o">=</span><span class="n">n_train_steps</span><span class="p">,</span>
+    <span class="n">validation_steps</span><span class="o">=</span><span class="n">n_val_steps</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>        <span class="c1"># podés subirlo después a 10–20</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="fig-models">
+<a class="reference internal image-reference" href="_images/ModelS.png"><img alt="_images/ModelS.png" src="_images/ModelS.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Entrenamiento: Model “Sequential”</span><a class="headerlink" href="#fig-models" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Los resultados son:</p>
+<ul class="simple">
+<li><p>Ejemplos train: 16200 → steps/epoch: 253</p></li>
+<li><p>Ejemplos val:   5400 → val_steps: 84</p></li>
+<li><p>Epoch 1/5</p></li>
+<li><p>253/253 ━━━━━━━━━━━━━━━━━━━━ 190s 743ms/step - accuracy: 0.2756 - loss: 1.8497 - val_accuracy: 0.6057 - val_loss: 1.1115</p></li>
+<li><p>Epoch 2/5</p></li>
+<li><p>253/253 ━━━━━━━━━━━━━━━━━━━━ 202s 799ms/step - accuracy: 0.5811 - loss: 1.1704 - val_accuracy: 0.7031 - val_loss: 0.8460</p></li>
+<li><p>Epoch 3/5</p></li>
+<li><p>253/253 ━━━━━━━━━━━━━━━━━━━━ 183s 724ms/step - accuracy: 0.6720 - loss: 0.9405 - val_accuracy: 0.7539 - val_loss: 0.6718</p></li>
+<li><p>Epoch 4/5</p></li>
+<li><p>253/253 ━━━━━━━━━━━━━━━━━━━━ 180s 712ms/step - accuracy: 0.7300 - loss: 0.7888 - val_accuracy: 0.7532 - val_loss: 0.6427</p></li>
+<li><p>Epoch 5/5</p></li>
+<li><p>253/253 ━━━━━━━━━━━━━━━━━━━━ 202s 798ms/step - accuracy: 0.7639 - loss: 0.6902 - val_accuracy: 0.8047 - val_loss: 0.5272</p></li>
+</ul>
+</section>
+<section id="curva-de-perdida-y-exactitud">
+<h3><span class="section-number">10.1.5. </span>Curva de Pérdida y Exactitud<a class="headerlink" href="#curva-de-perdida-y-exactitud" title="Link to this heading">#</a></h3>
+<p>“En este bloque analizamos cómo se comportó el entrenamiento de la red a lo largo del tiempo. A partir del objeto “history”, que guarda los resultados de cada época, se grafican dos curvas clave: la pérdida (“loss”) y la exactitud (“accuracy”), tanto para el conjunto de entrenamiento como para el de validación. Estas curvas nos permiten ver si la red realmente está aprendiendo y si ese aprendizaje se mantiene cuando se enfrenta a datos que no vio durante el entrenamiento.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Pérdida</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;train loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;val loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Pérdida&#39;</span><span class="p">)</span>
+
+<span class="c1"># Exactitud</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;train acc&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;val acc&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Exactitud&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ============================</span>
+<span class="c1"># Imprimir valores numéricos</span>
+<span class="c1"># ============================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Resultados por época:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">num_epochs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+    <span class="n">train_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">][</span><span class="n">epoch</span><span class="p">]</span>
+    <span class="n">val_loss</span>   <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">][</span><span class="n">epoch</span><span class="p">]</span>
+    <span class="n">train_acc</span>  <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">][</span><span class="n">epoch</span><span class="p">]</span>
+    <span class="n">val_acc</span>    <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">][</span><span class="n">epoch</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Época </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;loss=</span><span class="si">{</span><span class="n">train_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, val_loss=</span><span class="si">{</span><span class="n">val_loss</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, &quot;</span>
+          <span class="sa">f</span><span class="s2">&quot;acc=</span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, val_acc=</span><span class="si">{</span><span class="n">val_acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>“En el gráfico de pérdida observamos una tendencia descendente en “train” y “validation”, lo que indica que el modelo reduce progresivamente el error. En el gráfico de exactitud ocurre lo inverso: la “accuracy” aumenta con cada época, alcanzando en validación un valor cercano al 81 %. El listado numérico por época refuerza esta lectura y permite detectar señales importantes, como pequeñas oscilaciones en “validation loss”, que son normales y ayudan a evaluar si el modelo empieza a sobreajustarse o si todavía puede seguir entrenándose. En conjunto, estos resultados muestran un entrenamiento estable y consistente para una CNN aplicada a imágenes satelitales.”</p>
+<p>Los gráficos obtenidos son:</p>
+<figure class="align-default" id="fig-perdida-exactitud">
+<a class="reference internal image-reference" href="_images/Perdida_Exactitud.png"><img alt="_images/Perdida_Exactitud.png" src="_images/Perdida_Exactitud.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10.2 </span><span class="caption-text">Gráficos de Perdida (Loss) y Exactitud (Accuracy)</span><a class="headerlink" href="#fig-perdida-exactitud" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Los <strong>Resultados por época:</strong></p>
+<ul class="simple">
+<li><p>Época 1: loss=1.6027, val_loss=1.1115, acc=0.3689, val_acc=0.6057</p></li>
+<li><p>Época 2: loss=1.1294, val_loss=0.8460, acc=0.6006, val_acc=0.7031</p></li>
+<li><p>Época 3: loss=0.9102, val_loss=0.6718, acc=0.6812, val_acc=0.7539</p></li>
+<li><p>Época 4: loss=0.7781, val_loss=0.6427, acc=0.7339, val_acc=0.7532</p></li>
+<li><p>Época 5: loss=0.6816, val_loss=0.5272, acc=0.7676, val_acc=0.8047</p></li>
+</ul>
+</section>
+<section id="evaluar-el-split-de-test">
+<h3><span class="section-number">10.1.6. </span>Evaluar el split de test<a class="headerlink" href="#evaluar-el-split-de-test" title="Link to this heading">#</a></h3>
+<p>“En este bloque el código prepara el conjunto de prueba (test) para evaluar el modelo entrenado. A diferencia del entrenamiento, acá no se aplican transformaciones como “repeat” o “shuffle”: las imágenes simplemente se normalizan y se agrupan en lotes. El objetivo es evaluar el modelo de forma ordenada y reproducible, usando datos que la red nunca vio durante el entrenamiento.”</p>
+<p>“Luego, el script recorre todo el dataset de test y acumula las imágenes y sus etiquetas reales en arreglos “NumPy”. Esto permite pasar el conjunto completo al modelo de una sola vez para obtener las predicciones. Finalmente, la CNN devuelve para cada imagen un vector de probabilidades —una por clase— y se selecciona la clase con mayor probabilidad como predicción final. Este paso marca la transición desde el entrenamiento hacia la evaluación del desempeño real del modelo, comparando lo que predice la red con las etiquetas verdaderas del dataset.”</p>
+<p>“En este caso, el conjunto de test está compuesto por 5.400 imágenes de 64×64 píxeles, cada una con su etiqueta original. El modelo procesa ese conjunto completo en lotes y genera las predicciones en unos pocos segundos, lo que muestra que, una vez entrenada, una CNN puede clasificar miles de parches satelitales de manera eficiente.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">prepare_for_eval</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="p">(</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">],</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+        <span class="p">),</span>
+        <span class="n">num_parallel_calls</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">batch</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+
+<span class="n">test_ds</span> <span class="o">=</span> <span class="n">prepare_for_eval</span><span class="p">(</span><span class="n">test_raw</span><span class="p">)</span>
+
+<span class="c1"># Acumulamos todas las imágenes y etiquetas del test</span>
+<span class="n">all_images</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">imgs</span><span class="p">,</span> <span class="n">lbls</span> <span class="ow">in</span> <span class="n">test_ds</span><span class="p">:</span>
+    <span class="n">all_images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imgs</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+    <span class="n">all_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lbls</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+
+<span class="n">all_images</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">all_images</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">all_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;all_images:&quot;</span><span class="p">,</span> <span class="n">all_images</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;all_labels:&quot;</span><span class="p">,</span> <span class="n">all_labels</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Predicciones del modelo</span>
+<span class="n">probs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">all_images</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los resultados de la ejecución de este chunk de código son:</p>
+<ul class="simple">
+<li><p>all_images: (5400, 64, 64, 3)</p></li>
+<li><p>all_labels: (5400,)</p></li>
+<li><p>85/85 ━━━━━━━━━━━━━━━━━━━━ 20s 229ms/step</p></li>
+</ul>
+</section>
+<section id="metricas-clasicas">
+<h3><span class="section-number">10.1.7. </span>Métricas clásicas<a class="headerlink" href="#metricas-clasicas" title="Link to this heading">#</a></h3>
+<p>“En este bloque el código evalúa formalmente el desempeño del modelo sobre el conjunto de prueba usando dos métricas clave: “accuracy” y “F1 macro”. La “accuracy” indica el porcentaje total de parches correctamente clasificados, que en este caso ronda el 79,5 %, dando una medida general del rendimiento del modelo.”</p>
+<p>“La métrica “F1 macro” complementa esa visión porque promedia el desempeño por clase, dándole el mismo peso a todas, incluso a las menos representadas. Un valor cercano a 0,78 indica que la CNN no solo acierta en promedio, sino que mantiene un comportamiento relativamente equilibrado entre los distintos tipos de cobertura del suelo. En problemas geoespaciales, esta métrica es especialmente importante porque evita que el modelo ‘parezca bueno’ solo por acertar las clases dominantes.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span>
+
+<span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
+<span class="n">f1_macro</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy en test:&quot;</span><span class="p">,</span> <span class="n">acc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F1 macro en test:&quot;</span><span class="p">,</span> <span class="n">f1_macro</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los resultados obtenidos se transcriben aca:</p>
+<ul class="simple">
+<li><p>Accuracy en test: 0.789074074074074</p></li>
+<li><p>F1 macro en test: 0.7843040463560427</p></li>
+</ul>
+</section>
+<section id="matriz-de-confusion">
+<h3><span class="section-number">10.1.8. </span>Matriz de Confusión<a class="headerlink" href="#matriz-de-confusion" title="Link to this heading">#</a></h3>
+<p>“En este último bloque se construye la matriz de confusión, que permite entender cómo se equivoca el modelo, no solo cuánto acierta. Cada fila representa la clase real del parche y cada columna la clase que el modelo predijo. Al normalizar por filas, cada fila suma 1, lo que facilita ver, para cada tipo de cobertura, qué proporción fue correctamente clasificada y hacia qué otras clases se confunde.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
+
+<span class="c1"># Normalizamos por filas (clase real)</span>
+<span class="n">cm_norm</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">cm</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">cm_norm</span><span class="p">,</span>
+    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Blues&quot;</span><span class="p">,</span>
+    <span class="n">xticklabels</span><span class="o">=</span><span class="n">class_names</span><span class="p">,</span>
+    <span class="n">yticklabels</span><span class="o">=</span><span class="n">class_names</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Clase real&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Clase predicha&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Matriz de confusión (normalizada por clase real)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>“El mapa de calor hace visible la estructura de los errores: una diagonal intensa indica buen desempeño, mientras que valores fuera de la diagonal revelan confusiones sistemáticas, por ejemplo entre zonas urbanas similares o entre cultivos y pasturas. En aplicaciones geoespaciales, esta matriz es clave porque permite evaluar si los errores del modelo son aceptables desde el punto de vista territorial o si afectan clases críticas para el análisis.”
+Este resultado muestra que el modelo funciona bien en clases visualmente consistentes y extensas, como “Forest”, “Residential” y “SeaLake”, donde la diagonal es alta (≈0.9 o más). Eso indica que la CNN aprendió patrones espaciales claros y repetibles en parches de 64×64, algo típico en cubiertas homogéneas. En particular, “Residential” y “SeaLake” están casi perfectamente clasificadas, lo cual es un muy buen indicador de separación semántica.
+Las mayores confusiones aparecen en clases más heterogéneas o mixtas, como “Highway”, “PermanentCrop” y “HerbaceousVegetation”. Por ejemplo, “Highway” se confunde con “Residential” y “River”, lo cual es razonable desde lo visual (infraestructura lineal, bordes, materiales similares). “PermanentCrop” se mezcla con “AnnualCrop” y “HerbaceousVegetation”, algo esperado porque esas coberturas comparten textura y color a la escala del parche. En conjunto, la matriz confirma que el modelo es sólido para un demo educativo y que las limitaciones vienen más por la escala del parche y la ambigüedad semántica que por fallas del entrenamiento.</p>
+<figure class="align-default" id="fig-mc-cnn">
+<a class="reference internal image-reference" href="_images/mc_CNN.png"><img alt="_images/mc_CNN.png" src="_images/mc_CNN.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 10.3 </span><span class="caption-text">Matriz de confusión (normalizada por clase)</span><a class="headerlink" href="#fig-mc-cnn" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="la-importancia-de-los-datasets-de-entrenamiento">
+<h3><span class="section-number">10.1.9. </span>La importancia de los datasets de entrenamiento<a class="headerlink" href="#la-importancia-de-los-datasets-de-entrenamiento" title="Link to this heading">#</a></h3>
+<p>Para finalizar este ejemplo basado en EuroSAT, resulta esencial destacar la importancia de contar con conjuntos de datos satelitales etiquetados, curados y de alcance regional, ya que su construcción sistemática garantiza coherencia entre las imágenes, las clases y el territorio representado, permitiendo entrenar y evaluar modelos de aprendizaje profundo con mayor validez y capacidad de generalización en tareas de clasificación de cobertura y uso del suelo.
+En el contexto europeo, además de EuroSAT —desarrollado a partir de imágenes Sentinel-2— se dispone de <strong>BigEarthNet</strong>, un conjunto de datos curado con anotaciones multietiqueta de cobertura del suelo a escala continental.
+De manera complementaria, en América del Sur existen datasets regionales curados como <strong>LandCoverNet South America</strong>, que proporciona chips satelitales etiquetados de cobertura del suelo distribuidos a lo largo del continente, así como el <strong>Sentinel-1/2 Multisensor Dataset for Brazil</strong>, orientado al territorio brasileño, y <strong>Brazilian Coffee Scenes</strong>, enfocado en la identificación de cultivos de café a partir de imágenes satelitales.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdg-idera/geosemantica",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conceptosIntroductoriosCNN.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">8. </span>Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ApendiceA.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eurosat">10.1. EuroSAT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-librerias">10.1.1. Carga de Librerías</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-eurosat-y-particion">10.1.2. Carga de Eurosat y Partición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-preparacion-del-dataset">10.1.3. Función de preparación del dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-la-cnn">10.1.4. Entrenar la CNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-de-perdida-y-exactitud">10.1.5. Curva de Pérdida y Exactitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-split-de-test">10.1.6. Evaluar el split de test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-clasicas">10.1.7. Métricas clásicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">10.1.8. Matriz de Confusión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-importancia-de-los-datasets-de-entrenamiento">10.1.9. La importancia de los datasets de entrenamiento</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Luis Reynoso (IDERA-GTT CDG)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
