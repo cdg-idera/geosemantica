@@ -1687,29 +1687,37 @@ Se aplana por “bloques” o regiones, manteniendo <strong>algo</strong> de est
 <h3><span class="section-number">8.22.1. </span>Capa Fully Connected (Dense): explicación paso a paso (con matrices)<a class="headerlink" href="#capa-fully-connected-dense-explicacion-paso-a-paso-con-matrices" title="Link to this heading">#</a></h3>
 <p>En esta sección vamoss a poder acompañar el GIF del ejemplo <strong>Flatten → Dense(10) → Dense(7) → Dense(3)</strong> y entender qué está pasando en términos de <strong>vectores</strong>, <strong>matrices de pesos</strong> y <strong>bias</strong>.</p>
 <p><strong>Idea clave:</strong> una capa fully connected toma un vector de entrada y calcula una combinación lineal:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{z} = \mathbf{W}\mathbf{x} + \mathbf{b}
+\]</div>
 <p>y luego (típicamente) aplica una función de activación:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{a} = f(\mathbf{z})\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{a} = f(\mathbf{z})
+\]</div>
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es una capa <em>Fully Connected</em>?</p>
 <p>Una capa <strong>fully connected</strong> (o <strong>dense</strong>) conecta <strong>todas</strong> las neuronas de entrada con <strong>todas</strong> las neuronas de salida. Matemáticamente, es una transformación lineal del tipo</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{z}=\mathbf{W}\mathbf{x}+\mathbf{b}\]</div>
 <p>seguida (normalmente) por una función de activación</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{a}=f(\mathbf{z})\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a}=f(\mathbf{z})\]</div>
 <p>En el GIF, las conexiones dibujadas representan <strong>la topología</strong> (todas con todas), mientras que los valores en las matrices muestran los <strong>pesos reales</strong> usados en los productos.</p>
 </div>
 <section id="vector-de-entrada-el-flatten">
 <h4><span class="section-number">8.22.1.1. </span>1) Vector de entrada: el <em>Flatten</em><a class="headerlink" href="#vector-de-entrada-el-flatten" title="Link to this heading">#</a></h4>
 <p>En visión por computadora, antes de una capa densa solemos tener un tensor (por ejemplo una feature map). Para conectarlo a una capa densa, lo convertimos en un vector columna:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{x}=
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{x}=
 \begin{bmatrix}
 x_1\\
 x_2\\
 \vdots\\
 x_{n}
 \end{bmatrix}
-\quad\text{(en el ejemplo, }n=10\text{)}\)</span></p>
+\quad\text{(en el ejemplo, }n=10\text{)}\end{split}\]</div>
 <p>En el GIF, este vector aparece como la <strong>primera columna</strong> (Flatten).</p>
 </section>
 <section id="matriz-de-pesos-mathbf-w-y-bias-mathbf-b">
@@ -1719,7 +1727,8 @@ x_{n}
 <li><p><span class="math notranslate nohighlight">\(\mathbf{W}\in\mathbb{R}^{m\times n}\)</span>  (una <strong>fila</strong> por neurona de salida)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbf{b}\in\mathbb{R}^{m\times 1}\)</span></p></li>
 </ul>
-<p><span class="math notranslate nohighlight">\(\mathbf{W}=
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{W}=
 \begin{bmatrix}
 w_{1,1} &amp; w_{1,2} &amp; \cdots &amp; w_{1,n}\\
 w_{2,1} &amp; w_{2,2} &amp; \cdots &amp; w_{2,n}\\
@@ -1733,15 +1742,17 @@ b_1\\
 b_2\\
 \vdots\\
 b_m
-\end{bmatrix}\)</span></p>
+\end{bmatrix}\end{split}\]</div>
 <p>En el GIF se agregó una columna extra a la izquierda mostrando la matriz <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> completa para que se vea <strong>de dónde sale</strong> el vector de pesos <span class="math notranslate nohighlight">\(\mathbf{w}_j\)</span> (la fila resaltada).</p>
 </section>
 <section id="calculo-de-una-neurona-fila-j-de-mathbf-w">
 <h4><span class="section-number">8.22.1.3. </span>3) Cálculo de una neurona (fila <span class="math notranslate nohighlight">\(j\)</span> de <span class="math notranslate nohighlight">\(\mathbf{W}\)</span>)<a class="headerlink" href="#calculo-de-una-neurona-fila-j-de-mathbf-w" title="Link to this heading">#</a></h4>
 <p>La neurona <span class="math notranslate nohighlight">\(j\)</span> toma la <strong>fila</strong> <span class="math notranslate nohighlight">\(j\)</span> de <span class="math notranslate nohighlight">\(\mathbf{W}\)</span> (la llamamos <span class="math notranslate nohighlight">\(\mathbf{w}_j^\top\)</span> ) y calcula:</p>
-<p><span class="math notranslate nohighlight">\(z_j = \sum_{i=1}^{n} x_i\; w_{j,i} + b_j\)</span></p>
+<div class="math notranslate nohighlight">
+\[z_j = \sum_{i=1}^{n} x_i\; w_{j,i} + b_j\]</div>
 <p>En forma vectorial:</p>
-<p><span class="math notranslate nohighlight">\(z_j = \mathbf{w}_j^\top \mathbf{x} + b_j\)</span></p>
+<div class="math notranslate nohighlight">
+\[z_j = \mathbf{w}_j^\top \mathbf{x} + b_j\]</div>
 <section id="desglose-que-ves-en-el-panel-inferior-del-gif">
 <h5><span class="section-number">8.22.1.3.1. </span>Desglose que ves en el panel inferior del GIF<a class="headerlink" href="#desglose-que-ves-en-el-panel-inferior-del-gif" title="Link to this heading">#</a></h5>
 <ol class="arabic simple">
@@ -1757,7 +1768,8 @@ b_m
 <section id="vector-de-salida-de-la-capa">
 <h4><span class="section-number">8.22.1.4. </span>4) Vector de salida de la capa<a class="headerlink" href="#vector-de-salida-de-la-capa" title="Link to this heading">#</a></h4>
 <p>La capa calcula <strong>todas</strong> las neuronas de salida, por eso el resultado es un vector:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z}\)</span> = <span class="math notranslate nohighlight">\(\begin{bmatrix}  z_1\\ z_2\\ \vdots\\  z_m \end{bmatrix}\)</span> = <span class="math notranslate nohighlight">\(\mathbf{W}\mathbf{x}+\mathbf{b}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{z}$ = $\begin{bmatrix}  z_1\\ z_2\\ \vdots\\  z_m \end{bmatrix}$ = $\mathbf{W}\mathbf{x}+\mathbf{b}\end{split}\]</div>
 <p>En el ejemplo:</p>
 <ul class="simple">
 <li><p>Primera capa densa: <span class="math notranslate nohighlight">\(m=10\)</span>, <span class="math notranslate nohighlight">\(n=10\)</span>  <span class="math notranslate nohighlight">\(\Rightarrow \mathbf{W}_1\in\mathbb{R}^{10\times 10}\)</span></p></li>
@@ -1769,34 +1781,43 @@ b_m
 <section id="donde-entra-la-activacion-por-ejemplo-relu">
 <h4><span class="section-number">8.22.1.5. </span>5) ¿Dónde entra la activación (por ejemplo ReLU)?<a class="headerlink" href="#donde-entra-la-activacion-por-ejemplo-relu" title="Link to this heading">#</a></h4>
 <p>Luego de calcular <span class="math notranslate nohighlight">\(\mathbf{z}\)</span>, se aplica una función <span class="math notranslate nohighlight">\(f\)</span> <strong>elemento a elemento</strong>:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{a}=f(\mathbf{z})\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a}=f(\mathbf{z})\]</div>
 <p>Para ReLU:</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{ReLU}(z)=\max(0,z)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathrm{ReLU}(z)=\max(0,z)\]</div>
 <p>Entonces:</p>
-<p><span class="math notranslate nohighlight">\(a_j = \max(0, z_j)\)</span></p>
+<div class="math notranslate nohighlight">
+\[a_j = \max(0, z_j)\]</div>
 <p>En el ejemplo del GIF, las primeras dos capas usan ReLU:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{a}_1=\mathrm{ReLU}(\mathbf{z}_1),\qquad \mathbf{a}_2=\mathrm{ReLU}(\mathbf{z}_2)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a}_1=\mathrm{ReLU}(\mathbf{z}_1),\qquad \mathbf{a}_2=\mathrm{ReLU}(\mathbf{z}_2)\]</div>
 <p>y la última capa muestra típicamente los <strong>logits</strong> (sin activación) antes de softmax en clasificación:</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z}_3 = \mathbf{W}_3\mathbf{a}_2+\mathbf{b}_3\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}_3 = \mathbf{W}_3\mathbf{a}_2+\mathbf{b}_3\]</div>
 </section>
 <section id="resumen-del-flujo-completo-el-del-gif">
 <h4><span class="section-number">8.22.1.6. </span>6) Resumen del flujo completo (el del GIF)<a class="headerlink" href="#resumen-del-flujo-completo-el-del-gif" title="Link to this heading">#</a></h4>
 <ol class="arabic">
 <li><p><strong>Flatten</strong> <span class="math notranslate nohighlight">\(\to \mathbf{x}=\mathbf{a}_0\)</span></p></li>
 <li><p><strong>Dense(10)</strong></p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z}_1=\mathbf{W}_1\mathbf{a}_0+\mathbf{b}_1,\quad
- \mathbf{a}_1=\mathrm{ReLU}(\mathbf{z}_1)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}_1=\mathbf{W}_1\mathbf{a}_0+\mathbf{b}_1,\quad
+    \mathbf{a}_1=\mathrm{ReLU}(\mathbf{z}_1)\]</div>
 </li>
 <li><p><strong>Dense(7)</strong></p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z}_2=\mathbf{W}_2\mathbf{a}_1+\mathbf{b}_2,\quad
- \mathbf{a}_2=\mathrm{ReLU}(\mathbf{z}_2)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}_2=\mathbf{W}_2\mathbf{a}_1+\mathbf{b}_2,\quad
+    \mathbf{a}_2=\mathrm{ReLU}(\mathbf{z}_2)\]</div>
 </li>
 <li><p><strong>Dense(3)</strong></p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z}_3=\mathbf{W}_3\mathbf{a}_2+\mathbf{b}_3\)</span></p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}_3=\mathbf{W}_3\mathbf{a}_2+\mathbf{b}_3\]</div>
 </li>
 </ol>
 <p>Si este fuera un problema de clasificación, normalmente después aplicarías:</p>
-<p><span class="math notranslate nohighlight">\(\hat{\mathbf{p}}=\mathrm{softmax}(\mathbf{z}_3)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\hat{\mathbf{p}}=\mathrm{softmax}(\mathbf{z}_3)\]</div>
 </section>
 </section>
 <section id="paso-a-paso-fully-connected-demo-with-w">
@@ -1884,11 +1905,12 @@ $<span class="math notranslate nohighlight">\(
 <p><strong>Fila superior: <code class="docutils literal notranslate"><span class="pre">Σ(x·w)</span></code></strong></p>
 <ul class="simple">
 <li><p>Es la <strong>suma</strong> de todos los productos de la columna 4.</p></li>
-<li><p>Es el <strong>producto punto</strong> clásico:
-$<span class="math notranslate nohighlight">\(
-\sum_{i=0}^{9} x_i \cdot W_1[j,i]
-\)</span>$</p></li>
+<li><p>Es el <strong>producto punto</strong> clásico:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=0}^{9} x_i \cdot W_1[j,i]
+\]</div>
 <p><strong>Fila inferior: <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">b</span></code></strong></p>
 <ul class="simple">
 <li><p>Es el <strong>bias</strong> de la neurona <code class="docutils literal notranslate"><span class="pre">j</span></code>:</p></li>
@@ -1910,8 +1932,11 @@ $<span class="math notranslate nohighlight">\(
 <li><p>Es la entrada a ReLU.</p></li>
 <li><p>Determina si la neurona “se enciende” o queda en 0 (por ReLU).</p></li>
 </ul>
-<p>Luego:
-$<span class="math notranslate nohighlight">\( a_1[j] = \max(0, z_1[j]) \)</span>$</p>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+a_1[j] = \max(0, z_1[j]) 
+\]</div>
 </section>
 <section id="resumen-rapido">
 <h4><span class="section-number">8.22.2.7. </span>Resumen rápido<a class="headerlink" href="#resumen-rapido" title="Link to this heading">#</a></h4>
@@ -2082,10 +2107,11 @@ $<span class="math notranslate nohighlight">\(
 \[
 z_2[j] = \sum_i a1_i \cdot W_2[j,i] + b_2[j]
 \]</div>
-<p>Luego se aplica ReLU:
-$<span class="math notranslate nohighlight">\(
+<p>Luego se aplica ReLU:</p>
+<div class="math notranslate nohighlight">
+\[
 a_2[j] = \max(0, z_2[j])
-\)</span>$</p>
+\]</div>
 <p><strong>Qué cambia respecto a antes:</strong></p>
 <ul class="simple">
 <li><p>Antes terminabas en <code class="docutils literal notranslate"><span class="pre">z1[j]</span></code>.</p></li>
