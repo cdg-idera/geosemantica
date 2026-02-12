@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Capítulo: Ejemplos con Redes Neuronales Convolucionales (CNN) &#8212; Geosemántica y GeoAI</title>
+    <title>9. Capítulo: Ejemplos con Redes Neuronales Convolucionales (CNN) &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'CNN_ejemplos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
+    <link rel="next" title="10. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
     <link rel="prev" title="8. Capítulo: Redes Neuronales Convolucionales (CNN)" href="conceptosIntroductoriosCNN.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -187,13 +187,12 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddings.html">5. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Clustering.html">6. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong></a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">11. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">12. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">13. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">14. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">10. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">11. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">12. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">13. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -438,16 +437,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eurosat">10.1. EuroSAT</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-librerias">10.1.1. Carga de Librerías</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-eurosat-y-particion">10.1.2. Carga de Eurosat y Partición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-preparacion-del-dataset">10.1.3. Función de preparación del dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-la-cnn">10.1.4. Entrenar la CNN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-de-perdida-y-exactitud">10.1.5. Curva de Pérdida y Exactitud</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-split-de-test">10.1.6. Evaluar el split de test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-clasicas">10.1.7. Métricas clásicas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">10.1.8. Matriz de Confusión</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-importancia-de-los-datasets-de-entrenamiento">10.1.9. La importancia de los datasets de entrenamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eurosat">9.1. EuroSAT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-librerias">9.1.1. Carga de Librerías</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-eurosat-y-particion">9.1.2. Carga de Eurosat y Partición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-preparacion-del-dataset">9.1.3. Función de preparación del dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-la-cnn">9.1.4. Entrenar la CNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-de-perdida-y-exactitud">9.1.5. Curva de Pérdida y Exactitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-split-de-test">9.1.6. Evaluar el split de test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-clasicas">9.1.7. Métricas clásicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">9.1.8. Matriz de Confusión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-importancia-de-los-datasets-de-entrenamiento">9.1.9. La importancia de los datasets de entrenamiento</a></li>
 </ul>
 </li>
 </ul>
@@ -462,13 +461,13 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="capitulo-ejemplos-con-redes-neuronales-convolucionales-cnn">
-<h1><span class="section-number">10. </span>Capítulo: Ejemplos con <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-ejemplos-con-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">9. </span>Capítulo: Ejemplos con <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-ejemplos-con-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
 <section id="eurosat">
-<h2><span class="section-number">10.1. </span>EuroSAT<a class="headerlink" href="#eurosat" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">9.1. </span>EuroSAT<a class="headerlink" href="#eurosat" title="Link to this heading">#</a></h2>
 <p>Este ejemplo está basado en un tutorial de The Python Code y muestra cómo entrenar una red neuronal convolucional utilizando imágenes satelitales del conjunto de datos EuroSAT <span id="id1">[<a class="reference internal" href="Referencias.html#id2" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2019.">Helber <em>et al.</em>, 2019</a>]</span>, <span id="id2">[<a class="reference internal" href="Referencias.html#id3" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Introducing eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. In IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium, 204–207. IEEE, 2018.">Helber <em>et al.</em>, 2018</a>]</span>, el cual se encuentra disponible para su descarga en el repositorio abierto (Zenodo) [<a class="reference external" href="https://zenodo.org/records/7711810#.ZAm3k-zMKEA">https://zenodo.org/records/7711810#.ZAm3k-zMKEA</a>]. El dataset contiene escenas <em>Sentinel-2</em> de <em>64×64</em> píxeles en tres bandas RGB, etiquetadas en distintas clases de cobertura del suelo, lo que permite su uso en tareas de clasificación supervisada.</p>
 <p>El código que vemos en pantalla fue desarrollado y ejecutado en <strong>Google Colab</strong>, un entorno en la nube que nos permite trabajar con Python y deep learning sin necesidad de instalar nada localmente. En esta primera sección se cargan las librerías fundamentales del experimento. Por un lado, <strong>TensorFlow</strong>, que es el framework de deep learning que vamos a usar para construir y entrenar la red neuronal convolucional. Luego, <em>tensorflow datasets</em>, que nos facilita el acceso a conjuntos de datos estandarizados como <strong>EuroSAT</strong>. También se importa <em>tensorflow hub</em>, que permite reutilizar modelos y arquitecturas preentrenadas. Finalmente, se cargan librerías auxiliares como <strong>NumPy</strong>, <strong>Matplotlib</strong> y <strong>Seaborn</strong>, que se utilizan para el manejo de datos y la visualización de resultados. Esta preparación inicial define el entorno sobre el cual se va a construir toda la CNN.</p>
 <section id="carga-de-librerias">
-<h3><span class="section-number">10.1.1. </span>Carga de Librerías<a class="headerlink" href="#carga-de-librerias" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.1. </span>Carga de Librerías<a class="headerlink" href="#carga-de-librerias" title="Link to this heading">#</a></h3>
 <p>“En este bloque se descarga y carga el dataset <strong>EuroSAT (versión RGB)</strong> usando <strong>tensorflow_datasets</strong>. Primero, la función <em>tfds.load</em> no solo trae las imágenes, sino también la información descriptiva del dataset (por ejemplo, sus clases y cantidad total de muestras). En la salida se observa el proceso de descarga, extracción y preparación, quedando almacenado localmente en Colab en la carpeta indicada…; por eso, en ejecuciones posteriores se reutiliza sin volver a descargar. El mensaje WARNING… es una advertencia interna de TFDS sobre un archivo de metadatos, pero no impide que el dataset se prepare correctamente, como confirma la línea ‘Dataset “EuroSAT” downloaded and prepared…’.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,7 +490,7 @@ document.write(`
 </div>
 </section>
 <section id="carga-de-eurosat-y-particion">
-<h3><span class="section-number">10.1.2. </span>Carga de Eurosat y Partición<a class="headerlink" href="#carga-de-eurosat-y-particion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.2. </span>Carga de Eurosat y Partición<a class="headerlink" href="#carga-de-eurosat-y-particion" title="Link to this heading">#</a></h3>
 <p>Luego, el código define una partición simple del conjunto: 60% para entrenamiento, 20% para test y 20% para validación, todo a partir del split original llamado train. Finalmente, se imprimen los elementos centrales del problema de clasificación que va a resolver la CNN: las 10 clases (“AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, Pasture, PermanentCrop, Residential, River, SeaLake”) y el total de 27.000 ejemplos. En otras palabras, a partir de aquí el modelo aprenderá a asignar a cada parche satelital RGB una de estas diez categorías de cobertura/uso del suelo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,7 +535,7 @@ document.write(`
 </div>
 </section>
 <section id="funcion-de-preparacion-del-dataset">
-<h3><span class="section-number">10.1.3. </span>Función de preparación del dataset<a class="headerlink" href="#funcion-de-preparacion-del-dataset" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.3. </span>Función de preparación del dataset<a class="headerlink" href="#funcion-de-preparacion-del-dataset" title="Link to this heading">#</a></h3>
 <p>En este bloque el código prepara los datos para que puedan ser consumidos eficientemente por la red neuronal convolucional. La función “prepare for training” toma el dataset original y realiza una serie de transformaciones típicas en flujos de entrenamiento con CNN: primero normaliza las imágenes, y luego convierte las etiquetas de clase en vectores one-hot, que es el formato que espera el modelo para un problema de clasificación multiclase.</p>
 <p>Además, el dataset se optimiza para el entrenamiento: se mezcla aleatoriamente para evitar sesgos, se agrupa en lotes (en inglés “batches”) de 64 imágenes, y se configura el “prefetch” para que la carga de datos no frene a la GPU. El resultado que vemos en pantalla confirma esto: cada lote contiene 64 parches de 64×64 píxeles con 3 canales (RGB) y, para cada imagen, un vector de 10 valores, uno por cada clase de “EuroSAT”. A partir de aquí, la CNN ya no trabaja con imágenes sueltas, sino con bloques de datos listos para aprender patrones espaciales.</p>
 <div class="cell docutils container">
@@ -640,7 +639,7 @@ document.write(`
 </ul>
 </section>
 <section id="entrenar-la-cnn">
-<h3><span class="section-number">10.1.4. </span>Entrenar la CNN<a class="headerlink" href="#entrenar-la-cnn" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.4. </span>Entrenar la CNN<a class="headerlink" href="#entrenar-la-cnn" title="Link to this heading">#</a></h3>
 <p>En este bloque pasamos del diseño del modelo al entrenamiento propiamente dicho. Primero definimos cuántos ejemplos tiene el dataset “EuroSAT” y cómo se reparten en entrenamiento y validación: 60 % para entrenar y 20 % para validar. Como los datasets de entrenamiento y validación están definidos con la función “repeat”, es necesario indicar explícitamente cuántos pasos por época debe ejecutar el modelo, que se calculan dividiendo la cantidad de ejemplos por el tamaño del batch.</p>
 <p>Luego comienza el proceso de entrenamiento con “model dot fit”. En cada época, la red ve todos los parches de entrenamiento en batches de 64 imágenes, ajusta sus pesos y luego se evalúa sobre el conjunto de validación. La salida muestra cómo el modelo aprende progresivamente: la exactitud de entrenamiento sube de forma constante y la exactitud de validación pasa de alrededor del 57 % a más del 80 % en solo cinco épocas. Esto indica que la CNN está logrando capturar patrones espaciales relevantes en las imágenes satelitales y generaliza razonablemente bien a datos que no vio durante el entrenamiento.</p>
 <div class="cell docutils container">
@@ -677,7 +676,7 @@ document.write(`
 <figure class="align-default" id="fig-models">
 <a class="reference internal image-reference" href="_images/ModelS.png"><img alt="_images/ModelS.png" src="_images/ModelS.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Entrenamiento: Model “Sequential”</span><a class="headerlink" href="#fig-models" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Entrenamiento: Model “Sequential”</span><a class="headerlink" href="#fig-models" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Los resultados son:</p>
@@ -697,7 +696,7 @@ document.write(`
 </ul>
 </section>
 <section id="curva-de-perdida-y-exactitud">
-<h3><span class="section-number">10.1.5. </span>Curva de Pérdida y Exactitud<a class="headerlink" href="#curva-de-perdida-y-exactitud" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.5. </span>Curva de Pérdida y Exactitud<a class="headerlink" href="#curva-de-perdida-y-exactitud" title="Link to this heading">#</a></h3>
 <p>“En este bloque analizamos cómo se comportó el entrenamiento de la red a lo largo del tiempo. A partir del objeto “history”, que guarda los resultados de cada época, se grafican dos curvas clave: la pérdida (“loss”) y la exactitud (“accuracy”), tanto para el conjunto de entrenamiento como para el de validación. Estas curvas nos permiten ver si la red realmente está aprendiendo y si ese aprendizaje se mantiene cuando se enfrenta a datos que no vio durante el entrenamiento.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -748,7 +747,7 @@ document.write(`
 <figure class="align-default" id="fig-perdida-exactitud">
 <a class="reference internal image-reference" href="_images/Perdida_Exactitud.png"><img alt="_images/Perdida_Exactitud.png" src="_images/Perdida_Exactitud.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10.2 </span><span class="caption-text">Gráficos de Perdida (Loss) y Exactitud (Accuracy)</span><a class="headerlink" href="#fig-perdida-exactitud" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Gráficos de Perdida (Loss) y Exactitud (Accuracy)</span><a class="headerlink" href="#fig-perdida-exactitud" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Los <strong>Resultados por época:</strong></p>
@@ -761,7 +760,7 @@ document.write(`
 </ul>
 </section>
 <section id="evaluar-el-split-de-test">
-<h3><span class="section-number">10.1.6. </span>Evaluar el split de test<a class="headerlink" href="#evaluar-el-split-de-test" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.6. </span>Evaluar el split de test<a class="headerlink" href="#evaluar-el-split-de-test" title="Link to this heading">#</a></h3>
 <p>“En este bloque el código prepara el conjunto de prueba (test) para evaluar el modelo entrenado. A diferencia del entrenamiento, acá no se aplican transformaciones como “repeat” o “shuffle”: las imágenes simplemente se normalizan y se agrupan en lotes. El objetivo es evaluar el modelo de forma ordenada y reproducible, usando datos que la red nunca vio durante el entrenamiento.”</p>
 <p>“Luego, el script recorre todo el dataset de test y acumula las imágenes y sus etiquetas reales en arreglos “NumPy”. Esto permite pasar el conjunto completo al modelo de una sola vez para obtener las predicciones. Finalmente, la CNN devuelve para cada imagen un vector de probabilidades —una por clase— y se selecciona la clase con mayor probabilidad como predicción final. Este paso marca la transición desde el entrenamiento hacia la evaluación del desempeño real del modelo, comparando lo que predice la red con las etiquetas verdaderas del dataset.”</p>
 <p>“En este caso, el conjunto de test está compuesto por 5.400 imágenes de 64×64 píxeles, cada una con su etiqueta original. El modelo procesa ese conjunto completo en lotes y genera las predicciones en unos pocos segundos, lo que muestra que, una vez entrenada, una CNN puede clasificar miles de parches satelitales de manera eficiente.”</p>
@@ -810,7 +809,7 @@ document.write(`
 </ul>
 </section>
 <section id="metricas-clasicas">
-<h3><span class="section-number">10.1.7. </span>Métricas clásicas<a class="headerlink" href="#metricas-clasicas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.7. </span>Métricas clásicas<a class="headerlink" href="#metricas-clasicas" title="Link to this heading">#</a></h3>
 <p>“En este bloque el código evalúa formalmente el desempeño del modelo sobre el conjunto de prueba usando dos métricas clave: “accuracy” y “F1 macro”. La “accuracy” indica el porcentaje total de parches correctamente clasificados, que en este caso ronda el 79,5 %, dando una medida general del rendimiento del modelo.”</p>
 <p>“La métrica “F1 macro” complementa esa visión porque promedia el desempeño por clase, dándole el mismo peso a todas, incluso a las menos representadas. Un valor cercano a 0,78 indica que la CNN no solo acierta en promedio, sino que mantiene un comportamiento relativamente equilibrado entre los distintos tipos de cobertura del suelo. En problemas geoespaciales, esta métrica es especialmente importante porque evita que el modelo ‘parezca bueno’ solo por acertar las clases dominantes.”</p>
 <div class="cell docutils container">
@@ -833,7 +832,7 @@ document.write(`
 </ul>
 </section>
 <section id="matriz-de-confusion">
-<h3><span class="section-number">10.1.8. </span>Matriz de Confusión<a class="headerlink" href="#matriz-de-confusion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.8. </span>Matriz de Confusión<a class="headerlink" href="#matriz-de-confusion" title="Link to this heading">#</a></h3>
 <p>“En este último bloque se construye la matriz de confusión, que permite entender cómo se equivoca el modelo, no solo cuánto acierta. Cada fila representa la clase real del parche y cada columna la clase que el modelo predijo. Al normalizar por filas, cada fila suma 1, lo que facilita ver, para cada tipo de cobertura, qué proporción fue correctamente clasificada y hacia qué otras clases se confunde.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -870,12 +869,12 @@ Las mayores confusiones aparecen en clases más heterogéneas o mixtas, como “
 <figure class="align-default" id="fig-mc-cnn">
 <a class="reference internal image-reference" href="_images/mc_CNN.png"><img alt="_images/mc_CNN.png" src="_images/mc_CNN.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10.3 </span><span class="caption-text">Matriz de confusión (normalizada por clase)</span><a class="headerlink" href="#fig-mc-cnn" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 9.3 </span><span class="caption-text">Matriz de confusión (normalizada por clase)</span><a class="headerlink" href="#fig-mc-cnn" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="la-importancia-de-los-datasets-de-entrenamiento">
-<h3><span class="section-number">10.1.9. </span>La importancia de los datasets de entrenamiento<a class="headerlink" href="#la-importancia-de-los-datasets-de-entrenamiento" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">9.1.9. </span>La importancia de los datasets de entrenamiento<a class="headerlink" href="#la-importancia-de-los-datasets-de-entrenamiento" title="Link to this heading">#</a></h3>
 <p>Para finalizar este ejemplo basado en EuroSAT, resulta esencial destacar la importancia de contar con conjuntos de datos satelitales etiquetados, curados y de alcance regional, ya que su construcción sistemática garantiza coherencia entre las imágenes, las clases y el territorio representado, permitiendo entrenar y evaluar modelos de aprendizaje profundo con mayor validez y capacidad de generalización en tareas de clasificación de cobertura y uso del suelo.
 En el contexto europeo, además de EuroSAT —desarrollado a partir de imágenes Sentinel-2— se dispone de <strong>BigEarthNet</strong>, un conjunto de datos curado con anotaciones multietiqueta de cobertura del suelo a escala continental.
 De manera complementaria, en América del Sur existen datasets regionales curados como <strong>LandCoverNet South America</strong>, que proporciona chips satelitales etiquetados de cobertura del suelo distribuidos a lo largo del continente, así como el <strong>Sentinel-1/2 Multisensor Dataset for Brazil</strong>, orientado al territorio brasileño, y <strong>Brazilian Coffee Scenes</strong>, enfocado en la identificación de cultivos de café a partir de imágenes satelitales.</p>
@@ -927,7 +926,7 @@ De manera complementaria, en América del Sur existen datasets regionales curado
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
+        <p class="prev-next-title"><span class="section-number">10. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -947,16 +946,16 @@ De manera complementaria, en América del Sur existen datasets regionales curado
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eurosat">10.1. EuroSAT</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-librerias">10.1.1. Carga de Librerías</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-eurosat-y-particion">10.1.2. Carga de Eurosat y Partición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-preparacion-del-dataset">10.1.3. Función de preparación del dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-la-cnn">10.1.4. Entrenar la CNN</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-de-perdida-y-exactitud">10.1.5. Curva de Pérdida y Exactitud</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-split-de-test">10.1.6. Evaluar el split de test</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-clasicas">10.1.7. Métricas clásicas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">10.1.8. Matriz de Confusión</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-importancia-de-los-datasets-de-entrenamiento">10.1.9. La importancia de los datasets de entrenamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eurosat">9.1. EuroSAT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-librerias">9.1.1. Carga de Librerías</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#carga-de-eurosat-y-particion">9.1.2. Carga de Eurosat y Partición</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-de-preparacion-del-dataset">9.1.3. Función de preparación del dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrenar-la-cnn">9.1.4. Entrenar la CNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#curva-de-perdida-y-exactitud">9.1.5. Curva de Pérdida y Exactitud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluar-el-split-de-test">9.1.6. Evaluar el split de test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-clasicas">9.1.7. Métricas clásicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion">9.1.8. Matriz de Confusión</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-importancia-de-los-datasets-de-entrenamiento">9.1.9. La importancia de los datasets de entrenamiento</a></li>
 </ul>
 </li>
 </ul>
