@@ -1105,13 +1105,13 @@ La numeración de los filtros es un índice interno y no implica orden temporal 
 <h2><span class="section-number">8.17. </span>Funciones de Activación<a class="headerlink" href="#funciones-de-activacion" title="Link to this heading">#</a></h2>
 <p>En esta sección presentaremos ejemplos de distintas funciones de activación:</p>
 <ul class="simple">
-<li><p>ReLu</p></li>
-<li><p>Leaky ReLU</p></li>
-<li><p>Tanh</p></li>
-<li><p>ELU</p></li>
-<li><p>GELU</p></li>
-<li><p>Swish</p></li>
-<li><p>Softmax (especial)</p></li>
+<li><p><strong>ReLu</strong></p></li>
+<li><p><strong>Leaky ReLU</strong></p></li>
+<li><p><strong>Tanh</strong></p></li>
+<li><p><strong>ELU</strong></p></li>
+<li><p><strong>GELU</strong></p></li>
+<li><p><strong>Swish</strong></p></li>
+<li><p><strong>Softmax</strong></p></li>
 </ul>
 <section id="funcion-de-activacion-relu-sobre-un-feature-map">
 <h3><span class="section-number">8.17.1. </span>Función de activación (ReLU) sobre un <em>feature map</em><a class="headerlink" href="#funcion-de-activacion-relu-sobre-un-feature-map" title="Link to this heading">#</a></h3>
@@ -1145,12 +1145,18 @@ No mezcla celdas ni mezcla canales: toma un número <span class="math notranslat
 <div class="tip admonition">
 <p class="admonition-title">Definición de ReLU</p>
 <p>La función <strong>ReLU</strong> (Rectified Linear Unit) se define como:</p>
-<p><span class="math notranslate nohighlight">\(\text{ReLU}(x) = \max(0, x)\)</span></p>
-<p><span class="math notranslate nohighlight">\(\mathrm{ReLU}(x) =
+<div class="math notranslate nohighlight">
+\[
+\text{ReLU}(x) = \max(0, x)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{ReLU}(x) =
 \begin{cases}
 0, &amp; \text{si } x &lt; 0 \\
 x, &amp; \text{si } x \ge 0
-\end{cases}\)</span></p>
+\end{cases}
+\end{split}\]</div>
 </div>
 </section>
 <section id="explicacion">
@@ -1175,11 +1181,13 @@ En CNNs esto suele mejorar estabilidad de entrenamiento y resaltar activaciones 
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es Leaky ReLU?</p>
 <p><strong>Leaky ReLU</strong> es una variante de ReLU que evita “apagar” por completo los valores negativos.</p>
-<p><span class="math notranslate nohighlight">\(\text{LeakyReLU}(x)=\begin{cases}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text{LeakyReLU}(x)=\begin{cases}
 x &amp; \text{si } x\ge 0 \\
 \alpha x &amp; \text{si } x&lt;0
 \end{cases}
-\)</span></p>
+\end{split}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\alpha\)</span> es un número pequeño (por ejemplo <span class="math notranslate nohighlight">\(0.1\)</span>).</p>
 </div>
 <figure class="align-default" id="fig-output-leakyrelu-with-graph">
@@ -1209,7 +1217,10 @@ Eso ayuda a evitar el problema de <em>neuronas muertas</em> que puede ocurrir co
 <div class="tip admonition">
 <p class="admonition-title">¿Qué es Sigmoid?</p>
 <p>La función <strong>Sigmoid</strong> transforma cualquier valor real en un valor entre <strong>0 y 1</strong>:</p>
-<p><span class="math notranslate nohighlight">\(\sigma(x) = \frac{1}{1 + e^{-x}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x) = \frac{1}{1 + e^{-x}}
+\]</div>
 <p>Por eso se interpreta fácilmente como <strong>probabilidad</strong> (especialmente en salidas binarias).</p>
 </div>
 <figure class="align-default" id="fig-output-sigmoid-with-graph">
@@ -1236,11 +1247,16 @@ Esto es útil para probabilidades, pero en capas profundas puede causar <em>vani
 </section>
 <section id="funcion-de-activacion-tanh">
 <h3><span class="section-number">8.17.4. </span>Función de activación Tanh<a class="headerlink" href="#funcion-de-activacion-tanh" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">¿Qué es Tanh?</p>
 <p>La función <strong>Tangente Hiperbólica (Tanh)</strong> está definida como:</p>
-<p><span class="math notranslate nohighlight">\(\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\)</span></p>
-<p>Su salida está acotada en el rango:</p>
-<p><span class="math notranslate nohighlight">\((-1, 1)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</div>
+<p>Su salida está acotada en el rango: <span class="math notranslate nohighlight">\((-1, 1)\)</span></p>
 <p>Esto la convierte en una función <strong>simétrica respecto del origen</strong>, a diferencia de Sigmoid.</p>
+</div>
 <figure class="align-default" id="fig-output-tanh-with-graph">
 <a class="reference internal image-reference" href="_images/output_tanh_with_graph.gif"><img alt="_images/output_tanh_with_graph.gif" src="_images/output_tanh_with_graph.gif" style="width: 100%;" /></a>
 <figcaption>
@@ -1295,11 +1311,14 @@ Esto ayuda a mantener activaciones más estables y cercanas a cero.</p>
 <section id="definicion">
 <h4><span class="section-number">8.17.5.1. </span>Definición<a class="headerlink" href="#definicion" title="Link to this heading">#</a></h4>
 <p>Para un parámetro <span class="math notranslate nohighlight">\(\alpha\)</span> <span class="math notranslate nohighlight">\(&gt;\)</span> <span class="math notranslate nohighlight">\(0\)</span>, ELU se define como:</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{ELU}(x) =
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{ELU}(x) =
 \begin{cases}
 x &amp; \text{si } x \ge 0\\
 \alpha\,(e^x - 1) &amp; \text{si } x &lt; 0
-\end{cases}\)</span></p>
+\end{cases}
+\end{split}\]</div>
 <p>Propiedades rápidas:</p>
 <ul class="simple">
 <li><p>En positivos: salida lineal (como identidad).</p></li>
@@ -1351,7 +1370,10 @@ no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hac
 <section id="definicion-idea-matematica">
 <h4><span class="section-number">8.17.6.1. </span>Definición (idea matemática)<a class="headerlink" href="#definicion-idea-matematica" title="Link to this heading">#</a></h4>
 <p>Una forma común de escribir GELU es:</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{GELU}(x) = x\,\Phi(x)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{GELU}(x) = x\,\Phi(x)
+\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\Phi(x)\)</span> es la <strong>CDF de una normal estándar</strong> (la probabilidad de que una variable gaussiana sea <span class="math notranslate nohighlight">\(\le x\)</span>).</p>
 <p>Interpretación simple:</p>
 <ul class="simple">
@@ -1363,9 +1385,15 @@ no los elimina de golpe, sino que los <strong>comprime</strong> gradualmente hac
 <section id="formula-exacta-y-aproximacion-practica">
 <h4><span class="section-number">8.17.6.2. </span>Fórmula exacta y aproximación práctica<a class="headerlink" href="#formula-exacta-y-aproximacion-practica" title="Link to this heading">#</a></h4>
 <p>La forma exacta también se expresa con la función error:</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{GELU}(x) = \frac{x}{2}\left(1 + \mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{GELU}(x) = \frac{x}{2}\left(1 + \mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right)
+\]</div>
 <p>En implementaciones suele usarse esta aproximación (muy habitual en deep learning):</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{GELU}(x) \approx 0.5x\left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}\,(x + 0.044715x^3)\right)\right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{GELU}(x) \approx 0.5x\left(1 + \tanh\left(\sqrt{\frac{2}{\pi}}\,(x + 0.044715x^3)\right)\right)
+\]</div>
 </section>
 <section id="id14">
 <h4><span class="section-number">8.17.6.3. </span>Interpretación del GIF<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
@@ -1408,9 +1436,15 @@ A diferencia de ReLU, no corta los negativos de golpe: los deja pasar atenuados.
 <section id="id15">
 <h4><span class="section-number">8.17.7.1. </span>Definición<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <p>Swish se define como:</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{Swish}(x) = x \cdot \sigma(x)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{Swish}(x) = x \cdot \sigma(x)
+\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\sigma(x)\)</span> es la función sigmoide:</p>
-<p><span class="math notranslate nohighlight">\(\sigma(x) = \frac{1}{1+e^{-x}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x) = \frac{1}{1+e^{-x}}
+\]</div>
 <p>Intuición simple:</p>
 <ul class="simple">
 <li><p>Si <span class="math notranslate nohighlight">\(x\)</span> es muy negativo, <span class="math notranslate nohighlight">\(\sigma(x)\approx 0\)</span> → Swish <span class="math notranslate nohighlight">\(\approx 0\)</span> (pero suave).</p></li>
@@ -1451,11 +1485,20 @@ Convierte ese vector en <strong>probabilidades</strong> que suman 1.</p>
 <section id="id17">
 <h4><span class="section-number">8.17.8.1. </span>Definición<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <p>Dado un vector</p>
-<p><span class="math notranslate nohighlight">\(\mathbf{z} = [z_1, z_2, \dots, z_K]\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{z} = [z_1, z_2, \dots, z_K]
+\]</div>
 <p>la función <strong>Softmax</strong> se define para cada componente (i) como</p>
-<p><span class="math notranslate nohighlight">\(\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}} \qquad i \in \{1,\dots,K\} \)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}} \qquad i \in \{1,\dots,K\}
+\]</div>
 <p><strong>Propiedad clave:</strong></p>
-<p><span class="math notranslate nohighlight">\(\sum_{i=1}^{K} \mathrm{Softmax}(z_i)=1 \)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{i=1}^{K} \mathrm{Softmax}(z_i)=1
+\]</div>
 <p>por lo que sus salidas pueden interpretarse como probabilidades.</p>
 </section>
 <section id="como-leer-el-gif-guion-de-voz">
