@@ -2146,24 +2146,24 @@ a_2[j] = \max(0, z_2[j])
 <section id="tips-integradores">
 <h4><span class="section-number">8.14.3.1. </span>Tips integradores<a class="headerlink" href="#tips-integradores" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>Una CNN puede operar sobre imágenes con múltiples canales, donde cada canal puede representar una banda espectral distinta (por ejemplo, en imágenes satelitales) o cualquier otra dimensión informativa.</p></li>
-<li><p>En la primera capa convolucional se aplican múltiples filtros en forma simultánea sobre todos los canales de la imagen de entrada.</p></li>
-<li><p>Cada filtro genera un mapa de respuesta espacial. Tras aplicar la función de activación correspondiente, ese resultado se denomina mapa de activación.</p></li>
-<li><p>Como los filtros se aplican en paralelo, la salida de una capa convolucional es un conjunto de mapas de características, uno por cada filtro.</p></li>
-<li><p>A cada mapa resultante de la convolución se le aplica normalmente una función de activación. El pooling, en cambio, es una operación adicional que puede o no aplicarse según la arquitectura.</p></li>
-<li><p>Una función de activación introduce no linealidad en la red, permitiendo que el modelo aprenda relaciones complejas y no solo combinaciones lineales.</p></li>
-<li><p>Ejemplos comunes de funciones de activación en capas intermedias son ReLU o variantes similares. Funciones como sigmoid o softmax suelen utilizarse en la capa de salida, según la tarea (clasificación binaria, multiclase, etc.).</p></li>
-<li><p>El conjunto de mapas de activación se organiza como un tensor cuya profundidad coincide con la cantidad de filtros de la capa.</p></li>
-<li><p>A partir de la segunda capa convolucional, los filtros ya no se aplican sobre bandas físicas (como RGB), sino sobre el conjunto completo de mapas de activación producido por la capa anterior.</p></li>
-<li><p>Un filtro convolucional tiene tantos canales como la profundidad de la entrada sobre la que opera, ya sea una imagen multicanal o un tensor de activaciones internas.</p></li>
+<li><p>Una CNN puede operar sobre imágenes con <em>múltiples canales</em>, donde cada canal puede representar una <em>banda espectral</em> distinta (por ejemplo, en imágenes satelitales) o cualquier otra dimensión informativa.</p></li>
+<li><p>En la primera capa convolucional se aplican <em>múltiples filtros</em> en forma simultánea sobre todos los canales de la imagen de entrada.</p></li>
+<li><p>Cada filtro genera un <em>mapa de respuesta espacial</em>. Tras aplicar la <em>función de activación</em> correspondiente, ese resultado se denomina <em>mapa de activación</em>.</p></li>
+<li><p>Como los filtros se aplican en paralelo, la salida de una capa convolucional es un <em>conjunto de mapas de características</em>, uno por cada filtro.</p></li>
+<li><p>A cada mapa resultante de la convolución se le aplica normalmente una función de activación. El <em>pooling</em>, en cambio, es <em>una operación adicional que puede o no aplicarse según la arquitectura</em>.</p></li>
+<li><p>Una función de activación <em>introduce no linealidad en la red</em>, permitiendo que el modelo aprenda relaciones complejas y no solo combinaciones lineales.</p></li>
+<li><p>Ejemplos comunes de funciones de activación en capas intermedias son ReLU o variantes similares. Funciones como <em>sigmoid o softmax</em> suelen utilizarse en la <em>capa de salida</em>, según la tarea (clasificación binaria, multiclase, etc.).</p></li>
+<li><p>El conjunto de mapas de activación se organiza como un <em>tensor cuya profundidad coincide con la cantidad de filtros de la capa</em>.</p></li>
+<li><p>A partir de la segunda capa convolucional, los filtros ya no se aplican sobre bandas físicas (como RGB), sino sobre el <em>conjunto completo de mapas de activación producido por la capa anterior</em>.</p></li>
+<li><p>Un filtro convolucional es un <em>tensor</em> cuya <em>profundidad</em> coincide con la <em>profundidad del tensor de entrada</em>.</p></li>
 <li><p>La operación de convolución consiste en multiplicaciones elemento a elemento entre el filtro y una ventana local de la entrada en cada canal, seguidas de una suma sobre todos los canales para producir un único valor espacial.</p></li>
 <li><p>Por este motivo, un filtro produce un único mapa de características, integrando simultáneamente la información de todos los canales de entrada.</p></li>
 <li><p>Una capa convolucional no selecciona un filtro: aplica todos sus filtros en paralelo sobre la misma entrada.</p></li>
-<li><p>Los filtros no se reutilizan entre capas; cada capa aprende su propio conjunto de filtros durante el entrenamiento.</p></li>
+<li><p>Los filtros no se reutilizan entre capas; <em>cada capa aprende su propio conjunto de filtros</em> durante el entrenamiento.</p></li>
 <li><p>Lo que se propaga entre capas no son los filtros, sino las representaciones, es decir, los mapas de activación producidos por la capa anterior.</p></li>
-<li><p>En una CNN, el término “canal” no siempre representa una banda física. En las capas internas, los canales representan características aprendidas por la red.</p></li>
+<li><p>En una CNN, el término <em>“canal”</em> no siempre representa una banda física. En las capas internas, los canales representan características aprendidas por la red.</p></li>
 <li><p>Cada capa convolucional construye una nueva representación de la entrada, combinando y transformando los mapas de activación anteriores.</p></li>
-<li><p>Las capas convolucionales generan una jerarquía de representaciones: las primeras capturan patrones simples (bordes, texturas), y las posteriores combinan esos patrones en estructuras más complejas.</p></li>
+<li><p><em>Las capas convolucionales generan una jerarquía de representaciones</em>: las primeras capturan patrones simples (bordes, texturas), y las posteriores combinan esos patrones en estructuras más complejas.</p></li>
 <li><p>Aunque los mapas de activación pueden visualizarse como imágenes, no representan imágenes reales, sino respuestas internas del modelo ante ciertos patrones.</p></li>
 <li><p>Cada mapa de activación conserva estructura espacial (salvo reducción por stride o pooling), lo que permite mantener información de posición a lo largo de la red.</p></li>
 <li><p>La combinación de convoluciones y no linealidades permite a la CNN construir representaciones jerárquicas cada vez más abstractas.</p></li>
