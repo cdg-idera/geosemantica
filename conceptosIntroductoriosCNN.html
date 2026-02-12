@@ -815,11 +815,14 @@ O_{4,4} =
 \end{split}\]</div>
 <p>Cada número indica cuán intensa es la variación horizontal en ese vecindario.</p>
 <p>Valores de gran magnitud revelan <strong>bordes marcados</strong>; valores cercanos a cero indican transiciones suaves en la dirección horizontal.</p>
+<div class="tip admonition">
+<p class="admonition-title">¿Qué es el <em>stride</em>?</p>
 <p>En general, el <strong>stride</strong> define cuántos píxeles avanza el filtro en cada desplazamiento:</p>
 <ul class="simple">
 <li><p>Con <em>stride = 1</em> se examinan todas las posiciones posibles.</p></li>
 <li><p>Con <em>stride &gt; 1</em> se descartan posiciones intermedias y se obtienen mapas más pequeños y más compactos.</p></li>
 </ul>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">```</span><span class="n">pyton</span>
@@ -847,12 +850,15 @@ O_{4,4} =
 <section id="el-papel-del-padding">
 <h3><span class="section-number">8.6.2. </span>El papel del <em>padding</em><a class="headerlink" href="#el-papel-del-padding" title="Link to this heading">#</a></h3>
 <p>En nuestro ejemplo hemos utilizado una convolución <strong>válida</strong>, sin padding: sólo ubicamos el kernel en posiciones donde cabe completamente dentro del parche.</p>
-<p>Sin embargo, muchas arquitecturas modernas utilizan <strong>padding</strong>, que consiste en agregar un borde artificial —usualmente de ceros— alrededor de la imagen antes de aplicar la convolución. Esto permite que las capas convolucionales:</p>
+<div class="tip admonition">
+<p class="admonition-title">¿Qué es el <em>padding</em>?</p>
+<p>;uchas arquitecturas modernas utilizan <strong>padding</strong> que consiste en agregar un borde artificial —usualmente de ceros— alrededor de la imagen antes de aplicar la convolución. Esto permite que las capas convolucionales:</p>
 <ul class="simple">
 <li><p>no reduzcan el tamaño espacial de la imagen en cada paso,</p></li>
 <li><p>preserven mejor la información de los bordes,</p></li>
 <li><p>y mantengan dimensiones constantes cuando así se desea (lo que a menudo se denomina <em>same padding</em>).</p></li>
 </ul>
+</div>
 <figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="_images/I_stride1_same.gif"><img alt="_images/I_stride1_same.gif" src="_images/I_stride1_same.gif" style="width: 50%;" /></a>
 <figcaption>
