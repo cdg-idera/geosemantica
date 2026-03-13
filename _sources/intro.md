@@ -9,7 +9,7 @@ Este libro y recursos didácticos han sido desarrollados en el marco del grupo d
 
 # Autor del libro
 
-El autor de libro es el [*Dr. Luis Reynoso*](https://opendata.fi.uncoma.edu.ar/CVitaeReynosoTemporal.html): luis.reynoso@fi.uncoma.edu.ar, . Luis es coordinador del grupo técnico de trabajo de Ciencia de Datos Geoespaciales de la [**Infraestructura de Datos Espaciales de la República Argentina**](https://www.idera.gob.ar/)
+El autor de libro es el [*Dr. Luis Reynoso*](https://opendata.fi.uncoma.edu.ar/CVitaeReynoso.pdf): luis.reynoso@fi.uncoma.edu.ar, . Luis es coordinador del grupo técnico de trabajo de Ciencia de Datos Geoespaciales de la [**Infraestructura de Datos Espaciales de la República Argentina**](https://www.idera.gob.ar/)
 
 
 # Sobre este libro
