@@ -1,4 +1,4 @@
-# **Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE) - Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo**
+# **Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo**
 
 **Resumen:**
 
