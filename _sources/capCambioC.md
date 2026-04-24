@@ -1,6 +1,4 @@
-# **Validación de estimaciones de precipitación satelital mediante
-Google Earth Engine (GEE) - Un análisis comparativo con datos de red de
-estaciones en la Cuenca del Rio Bermejo**
+# **Paisajes estratégicos frente al cambio climático: identificación de áreas prioritarias de carbono y biodiversidad mediante aprendizaje automático**
 
 **Resumen:**
 
