@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>12. Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada? &#8212; Geosemántica y GeoAI</title>
+    <title>14. Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada? &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'embedding_hiperesfera';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13. Bibliografía" href="Referencias.html" />
-    <link rel="prev" title="11. Apéndice B: Tutorial GEE Introduction to the Satellite Embedding Dataset" href="ApendiceB.html" />
+    <link rel="next" title="15. Bibliografía" href="Referencias.html" />
+    <link rel="prev" title="13. Apéndice B: Tutorial GEE Introduction to the Satellite Embedding Dataset" href="ApendiceB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,10 +191,12 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">10. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">11. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">13. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">11. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">12. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">13. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">15. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -390,9 +392,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">12.1. 1) Descripción general (definición y marco geométrico)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">12.2. 2) Flujo práctico para visualizar embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">12.3. 4) Resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">14.1. 1) Descripción general (definición y marco geométrico)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">14.2. 2) Flujo práctico para visualizar embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">14.3. 4) Resumen</a></li>
 </ul>
             </nav>
         </div>
@@ -405,9 +407,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada">
-<h1><span class="section-number">12. </span>Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada?<a class="headerlink" href="#apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">14. </span>Apéndice C: ¿Cómo graficar un embedding en una hiperesfera normalizada?<a class="headerlink" href="#apendice-c-como-graficar-un-embedding-en-una-hiperesfera-normalizada" title="Link to this heading">#</a></h1>
 <section id="descripcion-general-definicion-y-marco-geometrico">
-<h2><span class="section-number">12.1. </span>1) Descripción general (definición y marco geométrico)<a class="headerlink" href="#descripcion-general-definicion-y-marco-geometrico" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.1. </span>1) Descripción general (definición y marco geométrico)<a class="headerlink" href="#descripcion-general-definicion-y-marco-geometrico" title="Link to this heading">#</a></h2>
 <p>Una <strong>hiperesfera unitaria</strong> en dimensión <span class="math notranslate nohighlight">\(n\)</span> es el conjunto de todos los vectores con <strong>norma euclidiana 1</strong>:</p>
 <p><span class="math notranslate nohighlight">\(S^{n-1} = \{\, x \in \mathbb{R}^n \mid \|x\| = 1 \,\}\)</span></p>
 <p>Por ejemplo:</p>
@@ -450,7 +452,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="flujo-practico-para-visualizar-embeddings">
-<h2><span class="section-number">12.2. </span>2) Flujo práctico para visualizar embeddings<a class="headerlink" href="#flujo-practico-para-visualizar-embeddings" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.2. </span>2) Flujo práctico para visualizar embeddings<a class="headerlink" href="#flujo-practico-para-visualizar-embeddings" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><strong>Normalización L2</strong> por vector: <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
 <li><p><strong>Reducción de dimensionalidad</strong> si <span class="math notranslate nohighlight">\(d &gt; 3\)</span> (PCA/UMAP/t-SNE) para obtener <span class="math notranslate nohighlight">\(x_{\text{proj}} \in \mathbb{R}^3\)</span> o <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p></li>
@@ -538,7 +540,7 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
 </section>
 <hr class="docutils" />
 <section id="resumen">
-<h2><span class="section-number">12.3. </span>4) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">14.3. </span>4) Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Un embedding <span class="math notranslate nohighlight">\(x\)</span> se <strong>proyecta</strong> a la hiperesfera unitaria con <span class="math notranslate nohighlight">\(\hat{x} = x/\|x\|\)</span>.</p></li>
 <li><p>Para visualizar embeddings de alta dimensión (<span class="math notranslate nohighlight">\(d&gt;3\)</span>), primero se <strong>reduce</strong> (PCA/UMAP/t-SNE) y luego se <strong>re-normaliza</strong>.</p></li>
@@ -583,7 +585,7 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11. </span><strong>Apéndice B:</strong> Tutorial GEE Introduction to the Satellite Embedding Dataset</p>
+        <p class="prev-next-title"><span class="section-number">13. </span><strong>Apéndice B:</strong> Tutorial GEE Introduction to the Satellite Embedding Dataset</p>
       </div>
     </a>
     <a class="right-next"
@@ -591,7 +593,7 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span><strong>Bibliografía</strong></p>
+        <p class="prev-next-title"><span class="section-number">15. </span><strong>Bibliografía</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -611,9 +613,9 @@ Así, cada punto del gráfico tridimensional es una proyección aproximada de su
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">12.1. 1) Descripción general (definición y marco geométrico)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">12.2. 2) Flujo práctico para visualizar embeddings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">12.3. 4) Resumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general-definicion-y-marco-geometrico">14.1. 1) Descripción general (definición y marco geométrico)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-practico-para-visualizar-embeddings">14.2. 2) Flujo práctico para visualizar embeddings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resumen">14.3. 4) Resumen</a></li>
 </ul>
   </nav></div>
 
