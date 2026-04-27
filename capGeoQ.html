@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>10. Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo &#8212; Geosemántica y GeoAI</title>
+    <title>13. GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica. &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'capRioBermejo';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capGeoQ';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. Paisajes estratégicos frente al cambio climático: identificación de áreas prioritarias de carbono y biodiversidad mediante aprendizaje automático" href="capCambioC.html" />
-    <link rel="prev" title="9. Capítulo: Ejemplos con Redes Neuronales Convolucionales (CNN)" href="CNN_ejemplos.html" />
+    <link rel="next" title="14. Apéndice A: AI-powered pixels: Introducing Google’s Satellite Embedding dataset" href="ApendiceA.html" />
+    <link rel="prev" title="12. Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en Google Earth Engine: una aplicación para la provincia de Buenos Aires." href="capMonitoreo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,10 +189,10 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capCambioC.html">11. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">12. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">13. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">14. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">15. Apéndice B: Tutorial de Google</a></li>
 <li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">16. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FcapRioBermejo.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FcapGeoQ.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +298,7 @@
       
       
       
-      <li><a href="_sources/capRioBermejo.md" target="_blank"
+      <li><a href="_sources/capGeoQ.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo</h1>
+    <h1>GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,30 +394,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="validacion-de-estimaciones-de-precipitacion-satelital-mediante-google-earth-engine-gee-un-analisis-comparativo-con-datos-de-red-de-estaciones-en-la-cuenca-del-rio-bermejo">
-<h1><span class="section-number">10. </span><strong>Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo</strong><a class="headerlink" href="#validacion-de-estimaciones-de-precipitacion-satelital-mediante-google-earth-engine-gee-un-analisis-comparativo-con-datos-de-red-de-estaciones-en-la-cuenca-del-rio-bermejo" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="geoq-un-modelo-hidrologico-automatizado-con-sistemas-de-informacion-geografica">
+<h1><span class="section-number">13. </span><strong>GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica.</strong><a class="headerlink" href="#geoq-un-modelo-hidrologico-automatizado-con-sistemas-de-informacion-geografica" title="Link to this heading">#</a></h1>
+<p><strong>Autores:</strong> Fabio Alejandro Montealegre Medina, Fernanda Julia Gaspari.</p>
 <p><strong>Resumen:</strong></p>
-<p>La cuantificación precisa de la precipitación es un pilar fundamental para la
-gestión de recursos hídricos, aunque en muchas regiones de Latinoamérica la
-densidad de estaciones meteorológicas es insuficiente. Este trabajo evalúa la
-precisión de diversos catálogos de datos climáticos disponibles en Google
-Earth Engine (GEE), específicamente CHIRPS y ERA5-Land, para la
-estimación de lluvias mensuales y anuales. La metodología consistió en la
-extracción automatizada de series temporales mediante scripts en GEE, las
-cuales fueron contrastadas con registros observados en estaciones de
-superficie. Para determinar la fiabilidad de los productos satelitales, se
-calcularon métricas de error robustas, incluyendo el Error Cuadrático Medio
-(RMSE), el Sesgo (Bias) y el Coeficiente de Correlación de Pearson. Los
-resultados preliminares indican que, si bien existen discrepancias en eventos
-extremos, los productos satelitales representan fielmente la estacionalidad
-regional. Este estudio demuestra que la integración de sensores remotos y
-procesamiento en la nube constituye una alternativa técnica viable y de bajo
-costo para fortalecer el monitoreo hidrológico en cuencas con escasa
-instrumentación.
-Palabras Claves: GEE, CHIRPS, ERAS5-Land, precipitación, precipitación
-satelital.</p>
-<p><strong>Scripts:</strong>
-<a class="reference external" href="https://code.earthengine.google.com/a02ee1b32f322419f723da106844e94d">https://code.earthengine.google.com/a02ee1b32f322419f723da106844e94d</a></p>
+<p>Se presenta la aplicación paso a paso del complemento GeoQ versión 2.8 para QGIS, una herramienta de
+código abierto que automatiza el cálculo espacial de variables hidrológicas mediante el método del
+Número de Curva (NC). Como caso de estudio, se utiliza la cuenca A1 del río Salado, ubicada en el
+noroeste de la provincia de Buenos Aires, Argentina, que abarca una superficie de 17.737,63 km² y
+representa un ambiente de llanura con características distintivas: pendientes extremadamente bajas,
+densidad de drenaje reducida y alta susceptibilidad a anegamientos. El análisis hidrológico se desarrolla
+integrando tres capas de información geoespacial fundamentales: (1) la clasificación de grupos
+hidrológicos de suelo (GH), donde predomina el grupo A (franco-arenoso); (2) la cobertura y uso del
+suelo, dominada por cultivos de herbáceas graminoides y vegetación de pastizales que ocupan la mayor
+parte de la cuenca; y (3) tres escenarios de precipitación modal derivados del análisis de datos
+pluviométricos históricos (1990-2020) de las estaciones meteorológicas del Servicio Meteorológico
+Nacional de Junín, Laboulaye y Venado Tuerto. Los escenarios corresponden a los siguientes eventos
+pluviales: 33 mm (evento I, de cuartil 3, representando lluvias frecuentes), 89 mm (evento II, condición
+media entre lluvias moderadas), y 145 mm (evento III, precipitación máxima registrada, representando
+lluvias extremas). A través de GeoQ, se modeliza la cuenca para generar cartografía temática que
+zonifica el coeficiente de escorrentía (CE), la capacidad de infiltración (CF), las abstracciones iniciales y la
+capacidad de campo (CIo), considerando una condición de humedad antecedente media. Los resultados
+permiten visualizar cómo la interacción entre el complejo suelo-vegetación y la intensidad de la
+tormenta determina la respuesta hidrológica de la cuenca, identificando zonas críticas donde
+precipitaciones intensas pueden generar escorrentía significativa y potenciales problemas de
+anegamiento. Este capítulo interactivo demuestra cómo GeoQ facilita el análisis hidrológico distribuido
+en cuencas de llanura, proporcionando información cuantitativa y espacialmente explícita relevante
+para la planificación territorial, la evaluación de vulnerabilidad hidrológica y la gestión del riesgo de
+inundaciones en la región pampeana.</p>
+<p><strong>Palabras clave:</strong>
+Modelación hidrológica, QGis, escorrentía, infiltración</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -451,20 +457,20 @@ satelital.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="CNN_ejemplos.html"
+       href="capMonitoreo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>Capítulo: Ejemplos con <strong>Redes Neuronales Convolucionales (CNN)</strong></p>
+        <p class="prev-next-title"><span class="section-number">12. </span><strong>Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en Google Earth Engine: una aplicación para la provincia de Buenos Aires.</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="capCambioC.html"
+       href="ApendiceA.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span><strong>Paisajes estratégicos frente al cambio climático: identificación de áreas prioritarias de carbono y biodiversidad mediante aprendizaje automático</strong></p>
+        <p class="prev-next-title"><span class="section-number">14. </span><strong>Apéndice A:</strong> AI-powered pixels: Introducing Google’s Satellite Embedding dataset</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
