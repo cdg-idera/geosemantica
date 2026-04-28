@@ -1,34 +1,10 @@
 # **GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica.**
 
-**Autores:** Fabio Alejandro Montealegre Medina, Fernanda Julia Gaspari.
++ **Autores:** Fabio Alejandro Montealegre Medina, Fernanda Julia Gaspari.
 
 
-**Resumen:**
-
-Se presenta la aplicación paso a paso del complemento GeoQ versión 2.8 para QGIS, una herramienta de
-código abierto que automatiza el cálculo espacial de variables hidrológicas mediante el método del
-Número de Curva (NC). Como caso de estudio, se utiliza la cuenca A1 del río Salado, ubicada en el
-noroeste de la provincia de Buenos Aires, Argentina, que abarca una superficie de 17.737,63 km² y
-representa un ambiente de llanura con características distintivas: pendientes extremadamente bajas,
-densidad de drenaje reducida y alta susceptibilidad a anegamientos. El análisis hidrológico se desarrolla
-integrando tres capas de información geoespacial fundamentales: (1) la clasificación de grupos
-hidrológicos de suelo (GH), donde predomina el grupo A (franco-arenoso); (2) la cobertura y uso del
-suelo, dominada por cultivos de herbáceas graminoides y vegetación de pastizales que ocupan la mayor
-parte de la cuenca; y (3) tres escenarios de precipitación modal derivados del análisis de datos
-pluviométricos históricos (1990-2020) de las estaciones meteorológicas del Servicio Meteorológico
-Nacional de Junín, Laboulaye y Venado Tuerto. Los escenarios corresponden a los siguientes eventos
-pluviales: 33 mm (evento I, de cuartil 3, representando lluvias frecuentes), 89 mm (evento II, condición
-media entre lluvias moderadas), y 145 mm (evento III, precipitación máxima registrada, representando
-lluvias extremas). A través de GeoQ, se modeliza la cuenca para generar cartografía temática que
++ **Resumen:** Se presenta la aplicación paso a paso del complemento GeoQ versión 2.8 para QGIS, una herramienta de código abierto que automatiza el cálculo espacial de variables hidrológicas mediante el método del Número de Curva (NC). Como caso de estudio, se utiliza la cuenca A1 del río Salado, ubicada en el noroeste de la provincia de Buenos Aires, Argentina, que abarca una superficie de 17.737,63 km² y representa un ambiente de llanura con características distintivas: pendientes extremadamente bajas, densidad de drenaje reducida y alta susceptibilidad a anegamientos. El análisis hidrológico se desarrolla integrando tres capas de información geoespacial fundamentales: (1) la clasificación de grupos hidrológicos de suelo (GH), donde predomina el grupo A (franco-arenoso); (2) la cobertura y uso del suelo, dominada por cultivos de herbáceas graminoides y vegetación de pastizales que ocupan la mayor parte de la cuenca; y (3) tres escenarios de precipitación modal derivados del análisis de datos pluviométricos históricos (1990-2020) de las estaciones meteorológicas del Servicio Meteorológico Nacional de Junín, Laboulaye y Venado Tuerto. Los escenarios corresponden a los siguientes eventos pluviales: 33 mm (evento I, de cuartil 3, representando lluvias frecuentes), 89 mm (evento II, condición media entre lluvias moderadas), y 145 mm (evento III, precipitación máxima registrada, representando lluvias extremas). A través de GeoQ, se modeliza la cuenca para generar cartografía temática que
 zonifica el coeficiente de escorrentía (CE), la capacidad de infiltración (CF), las abstracciones iniciales y la
-capacidad de campo (CIo), considerando una condición de humedad antecedente media. Los resultados
-permiten visualizar cómo la interacción entre el complejo suelo-vegetación y la intensidad de la
-tormenta determina la respuesta hidrológica de la cuenca, identificando zonas críticas donde
-precipitaciones intensas pueden generar escorrentía significativa y potenciales problemas de
-anegamiento. Este capítulo interactivo demuestra cómo GeoQ facilita el análisis hidrológico distribuido
-en cuencas de llanura, proporcionando información cuantitativa y espacialmente explícita relevante
-para la planificación territorial, la evaluación de vulnerabilidad hidrológica y la gestión del riesgo de
-inundaciones en la región pampeana.
+capacidad de campo (CIo), considerando una condición de humedad antecedente media. Los resultados permiten visualizar cómo la interacción entre el complejo suelo-vegetación y la intensidad de la tormenta determina la respuesta hidrológica de la cuenca, identificando zonas críticas donde precipitaciones intensas pueden generar escorrentía significativa y potenciales problemas de anegamiento. Este capítulo interactivo demuestra cómo GeoQ facilita el análisis hidrológico distribuido en cuencas de llanura, proporcionando información cuantitativa y espacialmente explícita relevante para la planificación territorial, la evaluación de vulnerabilidad hidrológica y la gestión del riesgo de inundaciones en la región pampeana.
 
-**Palabras clave:**
- Modelación hidrológica, QGis, escorrentía, infiltración
++ **Palabras clave:** Modelación hidrológica, QGis, escorrentía, infiltración.

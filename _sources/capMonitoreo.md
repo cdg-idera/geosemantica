@@ -1,37 +1,12 @@
 # **Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en Google Earth Engine: una aplicación para la provincia de Buenos Aires.**
 
-**Autores:** Fabio Alejandro Montealegre Medina.
++ **Autores:** Fabio Alejandro Montealegre Medina.
 
++ **Resumen:** Se presenta el desarrollo paso a paso de un flujo de trabajo automatizado en Google
+Earth Engine (GEE) para el monitoreo semanal de la humedad del suelo superficial (0–5 cm) y la clasificación del riesgo hídrico asociado en la provincia de Buenos Aires, Argentina. El capítulo describe la consulta, procesamiento y visualización del producto satelital SMAP Level 3 (SPL3SMP_E, versiones 005 y 006), con resolución espacial nativa de 9 km y cobertura diaria, integrando ambas colecciones históricas y recientes
+para garantizar continuidad temporal en el análisis. El área de estudio abarca la totalidad de la provincia de Buenos Aires, caracterizada por su régimen hídrico complejo, con sectores propensos a la saturación, especialmente en el centro-oeste provincial, y amplias zonas agrícolas vulnerables a condiciones de exceso o déficit hídrico. El análisis se estructura en torno a composites semanales que permiten comparar condiciones previas y posteriores a eventos de precipitación relevantes, generando dos productos cartográficos complementarios: (1) la distribución espacial de la humedad del suelo, clasificada en cinco categorías desde condiciones muy secas (&lt; 15%) hasta suelo saturado (&gt; 45%), representadas mediante una escala
+cromática de rojo a azul; y (2) la clasificación del riesgo por saturación hídrica en cuatro niveles —bajo, normal, alto y crítico—, identificados mediante una escala de marrón a rojo. El script integra además capas vectoriales administrativas e hídricas de la provincia, incluyendo los partidos bonaerenses y las regiones hídricas, para contextualizar espacialmente los resultados. Los productos generados son insumos
+directos para informes hidrometeorológicos semanales destinados a tomadores de decisiones en gestión de recursos hídricos, planificación agrícola y respuesta a emergencias por inundaciones. El capítulo demuestra cómo la combinación de sensores remotos de microondas pasivas, plataformas de cómputo en la nube y
+herramientas de visualización cartográfica interactiva constituye una metodología eficiente, reproducible y de bajo costo para el seguimiento operacional de la condición hídrica del suelo a escala provincial.
 
-**Resumen:**
-
-Se presenta el desarrollo paso a paso de un flujo de trabajo automatizado en Google
-Earth Engine (GEE) para el monitoreo semanal de la humedad del suelo superficial
-(0–5 cm) y la clasificación del riesgo hídrico asociado en la provincia de Buenos Aires,
-Argentina. El capítulo describe la consulta, procesamiento y visualización del producto
-satelital SMAP Level 3 (SPL3SMP_E, versiones 005 y 006), con resolución espacial
-nativa de 9 km y cobertura diaria, integrando ambas colecciones históricas y recientes
-para garantizar continuidad temporal en el análisis. El área de estudio abarca la
-totalidad de la provincia de Buenos Aires, caracterizada por su régimen hídrico
-complejo, con sectores propensos a la saturación, especialmente en el centro-oeste
-provincial, y amplias zonas agrícolas vulnerables a condiciones de exceso o déficit
-hídrico. El análisis se estructura en torno a composites semanales que permiten
-comparar condiciones previas y posteriores a eventos de precipitación relevantes,
-generando dos productos cartográficos complementarios: (1) la distribución espacial
-de la humedad del suelo, clasificada en cinco categorías desde condiciones muy
-secas (&lt; 15%) hasta suelo saturado (&gt; 45%), representadas mediante una escala
-cromática de rojo a azul; y (2) la clasificación del riesgo por saturación hídrica en
-cuatro niveles —bajo, normal, alto y crítico—, identificados mediante una escala de
-marrón a rojo. El script integra además capas vectoriales administrativas e hídricas de
-la provincia, incluyendo los partidos bonaerenses y las regiones hídricas, para
-contextualizar espacialmente los resultados. Los productos generados son insumos
-directos para informes hidrometeorológicos semanales destinados a tomadores de
-decisiones en gestión de recursos hídricos, planificación agrícola y respuesta a
-emergencias por inundaciones. El capítulo demuestra cómo la combinación de
-sensores remotos de microondas pasivas, plataformas de cómputo en la nube y
-herramientas de visualización cartográfica interactiva constituye una metodología
-eficiente, reproducible y de bajo costo para el seguimiento operacional de la condición
-hídrica del suelo a escala provincial.
-
-**Palabras clave:**
-Humedad del suelo, SMAP, Google Earth Engine, riesgo hídrico, teledetección, provincia de Buenos Aires.
++ **Palabras clave:** Humedad del suelo, SMAP, Google Earth Engine, riesgo hídrico, teledetección.
