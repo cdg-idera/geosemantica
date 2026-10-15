@@ -189,14 +189,15 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">11. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">12. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">13. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">14. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">15. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">16. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">17. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. <strong>Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">12. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">13. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">14. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">15. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">16. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">17. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">18. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -509,15 +510,15 @@ Autores como <strong>Zellig Harris (1954)</strong> y <strong>J. R. Firth (1957)<
 <blockquote>
 <div><p><em>El significado de un píxel o región puede inferirse del contexto espectral, temporal y espacial que lo rodea.</em></p>
 </div></blockquote>
-<p>Los modelos modernos de embeddings —como <strong>Google Satellite Embedding V1</strong> <span id="id1">[<a class="reference internal" href="Referencias.html#id52" title="C. F. Brown, M. R. Kazmierski, V. J. Pasquarella, W. J. Rucklidge, M. Samsikova, C. Zhang, E. Shelhamer, E. Lahera, O. Wiles, S. Ilyushchenko, N. Gorelick, L. L. Zhang, S. Alj, E. Schechter, S. Askay, O. Guinan, R. Moore, A. Boukouvalas, and P. Kohli. Alphaearth foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv preprint, 2025. URL: https://doi.org/10.48550/arXiv.2507.22291, arXiv:2507.22291, doi:10.48550/arXiv.2507.22291.">Brown <em>et al.</em>, 2025</a>]</span>, <strong>AlphaHertz</strong> o <strong>OneVision</strong>— aprenden precisamente ese contexto.<br />
+<p>Los modelos modernos de embeddings —como <strong>Google Satellite Embedding V1</strong> <span id="id1">[<a class="reference internal" href="Referencias.html#id68" title="C. F. Brown, M. R. Kazmierski, V. J. Pasquarella, W. J. Rucklidge, M. Samsikova, C. Zhang, E. Shelhamer, E. Lahera, O. Wiles, S. Ilyushchenko, N. Gorelick, L. L. Zhang, S. Alj, E. Schechter, S. Askay, O. Guinan, R. Moore, A. Boukouvalas, and P. Kohli. Alphaearth foundations: an embedding field model for accurate and efficient global mapping from sparse label data. arXiv preprint, 2025. URL: https://doi.org/10.48550/arXiv.2507.22291, arXiv:2507.22291, doi:10.48550/arXiv.2507.22291.">Brown <em>et al.</em>, 2025</a>]</span>, <strong>AlphaHertz</strong> o <strong>OneVision</strong>— aprenden precisamente ese contexto.<br />
 Cada vector no representa ya un valor físico, sino una <strong>posición semántica</strong> en un espacio n-dimensional que captura similitudes de paisaje, uso, textura y dinámica ambiental.</p>
 <p>La noción de semántica estadística tiene su origen en la lingüística computacional,
-particularmente en los trabajos pioneros de <span id="id2">[<a class="reference internal" href="Referencias.html#id94" title="Zellig Harris. Distributional structure. Word, 10(2-3):146–162, 1954. doi:10.1080/00437956.1954.11659520.">Harris, 1954</a>]</span> y <span id="id3">[<a class="reference internal" href="Referencias.html#id95" title="John Rupert Firth. A synopsis of linguistic theory 1930–1955. In Studies in Linguistic Analysis. Philological Society, Oxford, 1957.">Firth, 1957</a>]</span>.<br />
-En el campo geoespacial, esta idea ha sido retomada recientemente por <span id="id4">[<a class="reference internal" href="Referencias.html#id96" title="Michael F. Goodchild. Reimagining the semantic geography of the earth. International Journal of Geographical Information Science, 35(6):1181–1197, 2021. doi:10.1080/13658816.2021.1893331.">Goodchild, 2021</a>]</span>
+particularmente en los trabajos pioneros de <span id="id2">[<a class="reference internal" href="Referencias.html#id7" title="Zellig S. Harris. Distributional structure. Word, 10(2-3):146–162, 1954. doi:10.1080/00437956.1954.11659520.">Harris, 1954</a>]</span> y <span id="id3">[<a class="reference internal" href="Referencias.html#id8" title="John R. Firth. A synopsis of linguistic theory, 1930–1955. In Studies in Linguistic Analysis, pages 1–32. Basil Blackwell, Oxford, 1957.">Firth, 1957</a>]</span>.<br />
+En el campo geoespacial, esta idea ha sido retomada recientemente por <span id="id4">[<a class="reference internal" href="Referencias.html#id9" title="Michael F. Goodchild and Paul A. Longley. Geographic information science. In Handbook of Regional Science, pages 1597–1614. Springer, 2021. doi:10.1007/978-3-662-60723-7_61.">Goodchild and Longley, 2021</a>]</span>
 para conceptualizar una “geografía semántica” de la Tierra.</p>
 <p>Los modelos de representación latente basados en observación satelital,
-como <span id="id5">[<a class="reference internal" href="Referencias.html#id97" title="Google Research. Satellite embeddings v1: a global, multimodal representation of the planet. Technical Report, 2024. Available at: https://research.google/.">Google Research, 2024</a>]</span>, materializan esa visión en la práctica contemporánea.<br />
-En la comunidad latinoamericana, enfoques emergentes como <span id="id6">[<a class="reference internal" href="Referencias.html#id56" title="L. Reynoso. Geoia. 2025. (En preparación).">Reynoso, 2025</a>]</span>
+como <span id="id5">[<a class="reference internal" href="Referencias.html#id10" title="Google Earth Engine and Google DeepMind. Satellite embedding v1. Google Earth Engine Data Catalog. Documentacion del conjunto de datos Google Satellite Embedding. La clave BibTeX conserva 2024, pero no representa el ano de publicacion. URL: https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL.">Google Earth Engine and Google DeepMind, n.d.</a>]</span>, materializan esa visión en la práctica contemporánea.<br />
+En la comunidad latinoamericana, enfoques emergentes como <span id="id6">[<a class="reference internal" href="Referencias.html#id72" title="L. Reynoso. Geoia. 2025. (En preparación).">Reynoso, 2025</a>]</span>
 proponen una integración conceptual entre geoAI y aprendizaje automático, lo cual se puede ver fortalecido empleando modelos fundacionales en Observación
 de la tierra (FM4EO).</p>
 </section>

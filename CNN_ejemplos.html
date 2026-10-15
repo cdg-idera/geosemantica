@@ -189,14 +189,15 @@
 <li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">11. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">12. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">13. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">14. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">15. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">16. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">17. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. <strong>Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">12. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">13. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">14. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">15. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">16. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">17. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">18. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -468,17 +469,17 @@ document.write(`
 <h1><span class="section-number">9. </span>Capítulo: Ejemplos con <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-ejemplos-con-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
 <section id="eurosat">
 <h2><span class="section-number">9.1. </span>EuroSAT<a class="headerlink" href="#eurosat" title="Link to this heading">#</a></h2>
-<p>Este ejemplo está basado en un tutorial de The Python Code y muestra cómo entrenar una red neuronal convolucional utilizando imágenes satelitales del conjunto de datos EuroSAT <span id="id1">[<a class="reference internal" href="Referencias.html#id2" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2019.">Helber <em>et al.</em>, 2019</a>]</span>, <span id="id2">[<a class="reference internal" href="Referencias.html#id3" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Introducing eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. In IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium, 204–207. IEEE, 2018.">Helber <em>et al.</em>, 2018</a>]</span>, el cual se encuentra disponible para su descarga en el repositorio abierto (Zenodo) [<a class="reference external" href="https://zenodo.org/records/7711810#.ZAm3k-zMKEA">https://zenodo.org/records/7711810#.ZAm3k-zMKEA</a>]. El dataset contiene escenas <em>Sentinel-2</em> de <em>64×64</em> píxeles en tres bandas RGB, etiquetadas en distintas clases de cobertura del suelo, lo que permite su uso en tareas de clasificación supervisada.</p>
+<p>Este ejemplo está basado en un tutorial de The Python Code y muestra cómo entrenar una red neuronal convolucional utilizando imágenes satelitales del conjunto de datos EuroSAT <span id="id1">[<a class="reference internal" href="Referencias.html#id18" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2019.">Helber <em>et al.</em>, 2019</a>]</span>, <span id="id2">[<a class="reference internal" href="Referencias.html#id19" title="Patrick Helber, Benjamin Bischke, Andreas Dengel, and Damian Borth. Introducing eurosat: a novel dataset and deep learning benchmark for land use and land cover classification. In IGARSS 2018-2018 IEEE International Geoscience and Remote Sensing Symposium, 204–207. IEEE, 2018.">Helber <em>et al.</em>, 2018</a>]</span>, el cual se encuentra disponible para su descarga en el repositorio abierto (Zenodo) [<a class="reference external" href="https://zenodo.org/records/7711810#.ZAm3k-zMKEA">https://zenodo.org/records/7711810#.ZAm3k-zMKEA</a>]. El dataset contiene escenas <em>Sentinel-2</em> de <em>64×64</em> píxeles en tres bandas RGB, etiquetadas en distintas clases de cobertura del suelo, lo que permite su uso en tareas de clasificación supervisada.</p>
 <p>El código que vemos en pantalla fue desarrollado y ejecutado en <strong>Google Colab</strong>, un entorno en la nube que nos permite trabajar con Python y deep learning sin necesidad de instalar nada localmente. En esta primera sección se cargan las librerías fundamentales del experimento. Por un lado, <strong>TensorFlow</strong>, que es el framework de deep learning que vamos a usar para construir y entrenar la red neuronal convolucional. Luego, <em>tensorflow datasets</em>, que nos facilita el acceso a conjuntos de datos estandarizados como <strong>EuroSAT</strong>. También se importa <em>tensorflow hub</em>, que permite reutilizar modelos y arquitecturas preentrenadas. Finalmente, se cargan librerías auxiliares como <strong>NumPy</strong>, <strong>Matplotlib</strong> y <strong>Seaborn</strong>, que se utilizan para el manejo de datos y la visualización de resultados. Esta preparación inicial define el entorno sobre el cual se va a construir toda la CNN.</p>
 <section id="carga-de-librerias">
 <h3><span class="section-number">9.1.1. </span>Carga de Librerías<a class="headerlink" href="#carga-de-librerias" title="Link to this heading">#</a></h3>
 <p>“En este bloque se descarga y carga el dataset <strong>EuroSAT (versión RGB)</strong> usando <strong>tensorflow_datasets</strong>. Primero, la función <em>tfds.load</em> no solo trae las imágenes, sino también la información descriptiva del dataset (por ejemplo, sus clases y cantidad total de muestras). En la salida se observa el proceso de descarga, extracción y preparación, quedando almacenado localmente en Colab en la carpeta indicada…; por eso, en ejecuciones posteriores se reutiliza sin volver a descargar. El mensaje WARNING… es una advertencia interna de TFDS sobre un archivo de metadatos, pero no impide que el dataset se prepare correctamente, como confirma la línea ‘Dataset “EuroSAT” downloaded and prepared…’.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==========================</span>
 <span class="c1"># 1) Instalación de librerías</span>
 <span class="c1"># ==========================</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">tensorflow</span> <span class="n">tensorflow_datasets</span> <span class="n">tensorflow_hub</span> <span class="n">seaborn</span> <span class="n">matplotlib</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>tensorflow<span class="w"> </span>tensorflow_datasets<span class="w"> </span>tensorflow_hub<span class="w"> </span>seaborn<span class="w"> </span>matplotlib
 
 <span class="kn">import</span> <span class="nn">os</span>
 
@@ -491,6 +492,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:From D:\Users\lr826\.conda\envs\gee\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="carga-de-eurosat-y-particion">
@@ -498,7 +504,7 @@ document.write(`
 <p>Luego, el código define una partición simple del conjunto: 60% para entrenamiento, 20% para test y 20% para validación, todo a partir del split original llamado train. Finalmente, se imprimen los elementos centrales del problema de clasificación que va a resolver la CNN: las 10 clases (“AnnualCrop, Forest, HerbaceousVegetation, Highway, Industrial, Pasture, PermanentCrop, Residential, River, SeaLake”) y el total de 27.000 ejemplos. En otras palabras, a partir de aquí el modelo aprenderá a asignar a cada parche satelital RGB una de estas diez categorías de cobertura/uso del suelo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="c1"># Montar Google Drive</span>
@@ -536,6 +542,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Montar Google Drive</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;google.colab&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="funcion-de-preparacion-del-dataset">
@@ -544,7 +562,7 @@ document.write(`
 <p>Además, el dataset se optimiza para el entrenamiento: se mezcla aleatoriamente para evitar sesgos, se agrupa en lotes (en inglés “batches”) de 64 imágenes, y se configura el “prefetch” para que la carga de datos no frene a la GPU. El resultado que vemos en pantalla confirma esto: cada lote contiene 64 parches de 64×64 píxeles con 3 canales (RGB) y, para cada imagen, un vector de 10 valores, uno por cada clase de “EuroSAT”. A partir de aquí, la CNN ya no trabaja con imágenes sueltas, sino con bloques de datos listos para aprender patrones espaciales.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_for_training</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_for_training</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span>
                          <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
                          <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                          <span class="n">shuffle_buffer_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -592,7 +610,7 @@ document.write(`
 “Si miramos el “summary”, se ve esa compresión progresiva: empezamos en (64, 64, 32) y, tras el pooling, bajamos a (32, 32, 32); luego (16, 16, 64); después (8, 8, 128); y finalmente (4, 4, 256). En ese punto, Flatten convierte esos mapas en un vector de 4096 valores, que pasa por una capa densa de 128 neuronas (y “Dropout” para reducir sobreajuste). La última capa tiene 10 salidas con “softmax”, una por cada clase de “EuroSAT”, y devuelve una distribución de probabilidades: el modelo elige la clase con mayor probabilidad como predicción final.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
 
 <span class="c1"># Las imágenes de EuroSAT son de 64x64x3</span>
 <span class="n">input_shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -648,7 +666,7 @@ document.write(`
 <p>Luego comienza el proceso de entrenamiento con “model dot fit”. En cada época, la red ve todos los parches de entrenamiento en batches de 64 imágenes, ajusta sus pesos y luego se evalúa sobre el conjunto de validación. La salida muestra cómo el modelo aprende progresivamente: la exactitud de entrenamiento sube de forma constante y la exactitud de validación pasa de alrededor del 57 % a más del 80 % en solo cinco épocas. Esto indica que la CNN está logrando capturar patrones espaciales relevantes en las imágenes satelitales y generaliza razonablemente bien a datos que no vio durante el entrenamiento.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tamaño del batch (el mismo que usaste para train_ds / val_ds)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tamaño del batch (el mismo que usaste para train_ds / val_ds)</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">64</span>
 
 <span class="c1"># Número total de ejemplos en el split &quot;train&quot; de EuroSAT</span>
@@ -704,7 +722,7 @@ document.write(`
 <p>“En este bloque analizamos cómo se comportó el entrenamiento de la red a lo largo del tiempo. A partir del objeto “history”, que guarda los resultados de cada época, se grafican dos curvas clave: la pérdida (“loss”) y la exactitud (“accuracy”), tanto para el conjunto de entrenamiento como para el de validación. Estas curvas nos permiten ver si la red realmente está aprendiendo y si ese aprendizaje se mantiene cuando se enfrenta a datos que no vio durante el entrenamiento.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
@@ -770,7 +788,7 @@ document.write(`
 <p>“En este caso, el conjunto de test está compuesto por 5.400 imágenes de 64×64 píxeles, cada una con su etiqueta original. El modelo procesa ese conjunto completo en lotes y genera las predicciones en unos pocos segundos, lo que muestra que, una vez entrenada, una CNN puede clasificar miles de parches satelitales de manera eficiente.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">prepare_for_eval</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
@@ -818,7 +836,7 @@ document.write(`
 <p>“La métrica “F1 macro” complementa esa visión porque promedia el desempeño por clase, dándole el mismo peso a todas, incluso a las menos representadas. Un valor cercano a 0,78 indica que la CNN no solo acierta en promedio, sino que mantiene un comportamiento relativamente equilibrado entre los distintos tipos de cobertura del suelo. En problemas geoespaciales, esta métrica es especialmente importante porque evita que el modelo ‘parezca bueno’ solo por acertar las clases dominantes.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span>
 
 <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
 <span class="n">f1_macro</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">preds</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">)</span>
@@ -840,7 +858,7 @@ document.write(`
 <p>“En este último bloque se construye la matriz de confusión, que permite entender cómo se equivoca el modelo, no solo cuánto acierta. Cada fila representa la clase real del parche y cada columna la clase que el modelo predijo. Al normalizar por filas, cada fila suma 1, lo que facilita ver, para cada tipo de cobertura, qué proporción fue correctamente clasificada y hacia qué otras clases se confunde.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
