@@ -21,9 +21,6 @@ satelital.
 
 
 
-# Evaluación de precipitaciones en la cuenca del río Bermejo
-
-
 ## Introducción
 
 La cuenca del Río Bermejo, compartida por Argentina y Bolivia, es un área clave en el sistema hídrico para el desarrollo de la región de la Cuenca del Plata. Abarca alrededor de $123.162\text{ Km}^2$, de los cuales unos $11.900\text{ km}^2$, equivalentes a un $10\%$, pertenecen a Bolivia, y el $90\%$ restante corresponde al área argentina.
