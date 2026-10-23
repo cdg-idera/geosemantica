@@ -14,11 +14,14 @@ title: "Modelo predictivo de inundaciones en Sarandí del Yí mediante Inteligen
 
 La cuenca del río Yí, afluente principal de la margen izquierda del río Negro, exhibe en su tramo superior y medio —a la altura de la ciudad de Sarandí del Yí ($33^\circ 20'\text{ S}, 55^\circ 38'\text{ O}$; Departamento de Durazno, Uruguay)— una respuesta hidrológica marcadamente torrencial frente a eventos convectivos severos y sistemas frontales estacionarios. El área de drenaje aportante hasta la sección de control urbano comprende aproximadamente $4.200\text{ km}^2$, caracterizados por suelos de baja permeabilidad relativa sobre basamento cristalino y lomadas sedimentarias. Históricamente, la escasa densidad espacial de estaciones pluviográficas telemétricas en las nacientes de la Cuchilla Grande ha limitado la capacidad de anticipación del Sistema Nacional de Emergencias (SINAE) y del Comité Departamental de Emergencias (CECOED Durazno), dado que el tiempo de concentración ($T_c$) de esta subcuenca oscila entre 24 y 36 horas.
 
-Las citas bibliográficas se incorporan desde el archivo `referencias.bib`. Por ejemplo, el aprendizaje profundo ha tenido un papel relevante en el análisis de imágenes de observación de la Tierra [@zhu2017] y en el desarrollo de la Inteligencia Artificial Geoespacial (GeoAI) [@janowicz2020geoai], impulsando recientemente modelos fundacionales meteorológicos e hidrológicos globales [@lam2023learning; @nearing2024global; @price2025gencast].
-
 La **Figura 1** presenta la localización geográfica de la subcuenca alta y media del río Yí y la sección de control urbano.
 
-![Figura 1. Localización geográfica de la subcuenca alta y media del río Yí (4.200 km²) y sección de control hidrométrico en Sarandí del Yí. Fuente: Elaboración propia.](images/fig_area_estudio.png)
+```{figure} imagenes/fig_area_estudio.png
+:name: fig-flujo
+:align: center
+
+Figura 1. Localización geográfica de la subcuenca alta y media del río Yí (4.200 km²) y sección de control hidrométrico en Sarandí del Yí. Fuente: Elaboración propia
+```
 
 Como se observa en la **Figura 1**, la red de drenaje aguas arriba converge sobre el puente nuevo de Sarandí del Yí, donde opera la estación telemétrica de validación.
 
@@ -26,7 +29,13 @@ Como se observa en la **Figura 1**, la red de drenaje aguas arriba converge sobr
 
 La **Figura 2** presenta el esquema conceptual de la arquitectura hidroinformática GeoAI implementada.
 
-![Figura 2. Esquema de la arquitectura hidroinformática acoplada de Google WeatherNext 3, Flood Hub Engine, validación cruzada TWC, telemetría DINAGUA y Agente Determinista Gems. Fuente: Elaboración propia.](images/fig_arquitectura_geoai.png)
+
+```{figure} imagenes/Arquitectura.png
+:name: fig-flujo2
+:align: center
+
+Figura 2.  Esquema de la arquitectura hidroinformática acoplada de Google WeatherNext 3, Flood Hub Engine, validación cruzada TWC, telemetría DINAGUA y Agente Determinista Gems. Fuente: Elaboración propia
+```
 
 Como se observa en la **Figura 2**, los datos geoespaciales, meteorológicos, gravimétricos y limnimétricos constituyen la entrada para la aplicación acoplada de técnicas de GeoAI.
 
