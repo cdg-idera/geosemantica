@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>11. Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ &#8212; Geosemántica y GeoAI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'capitulo_girona';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="17. Paisajes estratégicos frente al cambio climático: identificación de áreas prioritarias de carbono y biodiversidad mediante aprendizaje automático" href="capCambioC.html" />
+    <link rel="prev" title="10. Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo" href="capRioBermejo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logoAgua.png" class="logo__image only-light" alt="Geosemántica y GeoAI - Home"/>
+    <script>document.write(`<img src="_static/logoAgua.png" class="logo__image only-dark" alt="Geosemántica y GeoAI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Geosemántica y GeoAI
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">1. Introducción · Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">2. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geosemantica.html">3. Capítulo · Geosemántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">4. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">5. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">6. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">7. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. <strong>Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">17. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">18. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">19. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">20. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">21. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">22. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">23. Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2Fcapitulo_girona.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/capitulo_girona.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. <strong>Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">12. Introducción</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-y-metodologia">13. Materiales y metodología</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forzante-atmosferico-arquitectura-google-weathernext-3">13.1. Forzante atmosférico: Arquitectura Google WeatherNext 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-hidrologica-e-hidrodinamica-flood-hub-y-copernicus-glo-30">13.2. Transformación hidrológica e hidrodinámica: Flood Hub y Copernicus GLO-30</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-pluviometrica-cruzada-y-asimilacion-hidrometrica-in-situ-dinagua">13.3. Validación pluviométrica cruzada y asimilación hidrométrica in situ (DINAGUA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gobernanza-algoritmica-e-integridad-de-datos-agente-especializado-gems">13.4. Gobernanza algorítmica e integridad de datos (Agente Especializado Gems)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-operativos-y-verificacion-de-caso-de-estudio">14. Resultados operativos y verificación de caso de estudio</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-finales">15. Consideraciones finales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">16. Referencias</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modelo-predictivo-de-inundaciones-en-sarandi-del-yi-mediante-geoai-y-telemetria-hidrometrica-in-situ">
+<h1><span class="section-number">11. </span><strong>Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</strong><a class="headerlink" href="#modelo-predictivo-de-inundaciones-en-sarandi-del-yi-mediante-geoai-y-telemetria-hidrometrica-in-situ" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><em><em>Autor:</em> Mario Federico Girona | Fire Behavior Analyst (FBAN)</em></p></li>
+<li><p><strong>Resumen:</strong> Las inundaciones repentinas en cuencas fluviales de respuesta rápida representan un desafío crítico para la gestión del riesgo de desastres en centros urbanos vulnerables de Uruguay. Este capítulo presenta la formulación matemática, la arquitectura computacional y el protocolo de validación operativa de un sistema hidroinformático basado en <strong>GeoAI</strong> aplicado a la cuenca alta y media del río Yí en la ciudad de Sarandí del Yí (Departamento de Durazno). La metodología integra pronósticos atmosféricos estocásticos de alta resolución generados por Google WeatherNext 3 con el motor hidrológico regional Google Flood Hub Engine, fundamentado en redes neuronales recurrentes Long Short-Term Memory (LSTM) condicionadas por anomalías gravimétricas de almacenamiento de agua terrestre (misión satelital GRACE/GRACE-FO). Los caudales simulados se acoplan dinámicamente a un modelo hidrodinámico apoyado en el Modelo Digital de Elevación Copernicus GLO-30 con un horizonte de anticipación de hasta 72 horas, incorporando validación pluviométrica cruzada con The Weather Channel (TWC), asimilación en tiempo real mediante la estación limnimétrica de DINAGUA y síntesis operativa gobernada por un agente determinista (Gems). Finalmente, se documenta la verificación del sistema durante el escenario basal del 9 de octubre de 2026, confirmando un estado operativo VERDE (<span class="math notranslate nohighlight">\(H_{obs} &lt; 3,50\text{ m}\)</span>; precipitación proyectada <span class="math notranslate nohighlight">\(&lt; 5,0\text{ mm}/72\text{ h}\)</span>).</p></li>
+</ul>
+<p><strong>Palabras clave:</strong> GeoAI; Google WeatherNext 3; Google Flood Hub; DINAGUA; inundaciones urbanas; Sarandí del Yí; redes neuronales LSTM; Copernicus GLO-30.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion">
+<h1><span class="section-number">12. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h1>
+<p>La cuenca del río Yí, afluente principal de la margen izquierda del río Negro, exhibe en su tramo superior y medio —a la altura de la ciudad de Sarandí del Yí (<span class="math notranslate nohighlight">\(33^\circ 20'\text{ S}, 55^\circ 38'\text{ O}\)</span>; Departamento de Durazno, Uruguay)— una respuesta hidrológica marcadamente torrencial frente a eventos convectivos severos y sistemas frontales estacionarios. El área de drenaje aportante hasta la sección de control urbano comprende aproximadamente <span class="math notranslate nohighlight">\(4.200\text{ km}^2\)</span>, caracterizados por suelos de baja permeabilidad relativa sobre basamento cristalino y lomadas sedimentarias. Históricamente, la escasa densidad espacial de estaciones pluviográficas telemétricas en las nacientes de la Cuchilla Grande ha limitado la capacidad de anticipación del Sistema Nacional de Emergencias (SINAE) y del Comité Departamental de Emergencias (CECOED Durazno), dado que el tiempo de concentración (<span class="math notranslate nohighlight">\(T_c\)</span>) de esta subcuenca oscila entre 24 y 36 horas.</p>
+<p>Las citas bibliográficas se incorporan desde el archivo <code class="docutils literal notranslate"><span class="pre">referencias.bib</span></code>. Por ejemplo, el aprendizaje profundo ha tenido un papel relevante en el análisis de imágenes de observación de la Tierra [&#64;zhu2017] y en el desarrollo de la Inteligencia Artificial Geoespacial (GeoAI) [&#64;janowicz2020geoai], impulsando recientemente modelos fundacionales meteorológicos e hidrológicos globales [&#64;lam2023learning; &#64;nearing2024global; &#64;price2025gencast].</p>
+<p>La <strong>Figura 1</strong> presenta la localización geográfica de la subcuenca alta y media del río Yí y la sección de control urbano.</p>
+<p><img alt="Figura 1. Localización geográfica de la subcuenca alta y media del río Yí (4.200 km²) y sección de control hidrométrico en Sarandí del Yí. Fuente: Elaboración propia." src="images/fig_area_estudio.png" /></p>
+<p>Como se observa en la <strong>Figura 1</strong>, la red de drenaje aguas arriba converge sobre el puente nuevo de Sarandí del Yí, donde opera la estación telemétrica de validación.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="materiales-y-metodologia">
+<h1><span class="section-number">13. </span>Materiales y metodología<a class="headerlink" href="#materiales-y-metodologia" title="Link to this heading">#</a></h1>
+<p>La <strong>Figura 2</strong> presenta el esquema conceptual de la arquitectura hidroinformática GeoAI implementada.</p>
+<p><img alt="Figura 2. Esquema de la arquitectura hidroinformática acoplada de Google WeatherNext 3, Flood Hub Engine, validación cruzada TWC, telemetría DINAGUA y Agente Determinista Gems. Fuente: Elaboración propia." src="images/fig_arquitectura_geoai.png" /></p>
+<p>Como se observa en la <strong>Figura 2</strong>, los datos geoespaciales, meteorológicos, gravimétricos y limnimétricos constituyen la entrada para la aplicación acoplada de técnicas de GeoAI.</p>
+<p>La <strong>Tabla 1</strong> resume los subsistemas y familias de técnicas que forman parte del modelo.</p>
+<p><strong>Tabla 1. Subsistemas y técnicas vinculadas con GeoAI aplicadas en la cuenca del río Yí. Fuente: Elaboración propia.</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Subsistema</p></th>
+<th class="head text-left"><p>Modelo / Sensor</p></th>
+<th class="head text-left"><p>Técnica GeoAI / Resolución</p></th>
+<th class="head text-left"><p>Aplicación geoespacial e hidrológica</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Forzante atmosférico</p></td>
+<td class="text-left"><p>Google WeatherNext 3</p></td>
+<td class="text-left"><p>GNN + Difusión (<span class="math notranslate nohighlight">\(0,1^\circ \times 0,1^\circ\)</span>)</p></td>
+<td class="text-left"><p>Ensambles de precipitación acumulada (24, 48 y 72 h)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Validación sinóptica</p></td>
+<td class="text-left"><p>The Weather Channel (TWC)</p></td>
+<td class="text-left"><p>Modelo numérico GRAF</p></td>
+<td class="text-left"><p>Contraste volumétrico y control de divergencia (<span class="math notranslate nohighlight">\(\Delta P\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Motor hidrológico</p></td>
+<td class="text-left"><p>Google Flood Hub + GRACE</p></td>
+<td class="text-left"><p>Redes LSTM + Gravimetría TWS</p></td>
+<td class="text-left"><p>Simulación de caudal <span class="math notranslate nohighlight">\(Q_{sim}(t)\)</span> y humedad antecedente</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Hidrodinámica</p></td>
+<td class="text-left"><p>Copernicus GLO-30</p></td>
+<td class="text-left"><p>DEM 30 m + Saint-Venant / Manning</p></td>
+<td class="text-left"><p>Cota simulada <span class="math notranslate nohighlight">\(H_{sim}(t)\)</span> y mancha de inundación urbana</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Asimilación in situ</p></td>
+<td class="text-left"><p>Estación DINAGUA</p></td>
+<td class="text-left"><p>Telemetría limnimétrica</p></td>
+<td class="text-left"><p>Cota observada <span class="math notranslate nohighlight">\(H_{obs}(t)\)</span> y calibración de rugosidad (<span class="math notranslate nohighlight">\(n\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gobernanza IA</p></td>
+<td class="text-left"><p>Agente Especializado Gems</p></td>
+<td class="text-left"><p>LLM con RAG determinista</p></td>
+<td class="text-left"><p>Emisión de boletines bajo protocolo CECOED / SINAE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tal como se sintetiza en la <strong>Tabla 1</strong>, GeoAI permite acoplar modelos fundacionales atmosféricos e hidrológicos con telemetría local en tiempo real.</p>
+<section id="forzante-atmosferico-arquitectura-google-weathernext-3">
+<h2><span class="section-number">13.1. </span>Forzante atmosférico: Arquitectura Google WeatherNext 3<a class="headerlink" href="#forzante-atmosferico-arquitectura-google-weathernext-3" title="Link to this heading">#</a></h2>
+<p>El forzante meteorológico primario proviene de Google WeatherNext 3, que combina Redes Neuronales Basadas en Grafos (GNN) sobre una malla icosaédrica multiescala con modelos probabilísticos de difusión generativa en el espacio latente [&#64;lam2023learning; &#64;price2025gencast], generando ensambles estocásticos de precipitación para 24 h, 48 h y 72 h con resolución espacial de <span class="math notranslate nohighlight">\(0,1^\circ \times 0,1^\circ\)</span> (<span class="math notranslate nohighlight">\(\sim 11\text{ km}\)</span>). La partición entre infiltración edáfica y precipitación efectiva se parametriza mediante la formulación exponencial de Horton [&#64;horton1933role]:</p>
+<div class="math notranslate nohighlight">
+\[f(t) = f_c + (f_0 - f_c) \cdot e^{-k \cdot t}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(f(t)\)</span> representa la tasa instantánea de infiltración (<span class="math notranslate nohighlight">\(\text{mm}\cdot\text{h}^{-1}\)</span>) en el tiempo <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(f_0\)</span> es la capacidad de infiltración máxima inicial en suelo seco, <span class="math notranslate nohighlight">\(f_c\)</span> constituye la tasa de infiltración básica con el perfil saturado y <span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(\text{h}^{-1}\)</span>) es la constante de decaimiento asociada a la textura franco-arcillosa de la cuenca.</p>
+</section>
+<section id="transformacion-hidrologica-e-hidrodinamica-flood-hub-y-copernicus-glo-30">
+<h2><span class="section-number">13.2. </span>Transformación hidrológica e hidrodinámica: Flood Hub y Copernicus GLO-30<a class="headerlink" href="#transformacion-hidrologica-e-hidrodinamica-flood-hub-y-copernicus-glo-30" title="Link to this heading">#</a></h2>
+<p>Los hietogramas distribuidos alimentan el núcleo Google Flood Hub Engine, estructurado sobre redes neuronales recurrentes Long Short-Term Memory (LSTM) de aprendizaje regionalizado [&#64;kratzert2018rainfall; &#64;kratzert2019toward; &#64;nearing2024global], cuyo estado oculto asimila mediante downscaling las anomalías regionales de almacenamiento total de agua terrestre (TWS) derivadas de las misiones gravimétricas satelitales GRACE y GRACE-FO [&#64;tapley2004grace]. El caudal líquido simulado <span class="math notranslate nohighlight">\(Q_{sim}(t)\)</span> (<span class="math notranslate nohighlight">\(\text{m}^3\cdot\text{s}^{-1}\)</span>) se propaga mediante las ecuaciones de aguas someras de Saint-Venant bajo aproximación difusiva sobre el Modelo Digital de Elevación Copernicus GLO-30 (<span class="math notranslate nohighlight">\(30\text{ m}\)</span>; <span class="math notranslate nohighlight">\(LE90 &lt; 4\text{ m}\)</span>), convirtiéndose en nivel hidrométrico simulado <span class="math notranslate nohighlight">\(H_{sim}(t)\)</span> mediante la curva de gasto <span class="math notranslate nohighlight">\(Q = f(H)\)</span> y la ecuación de resistencia de Manning:</p>
+<div class="math notranslate nohighlight">
+\[Q_{sim}(t) = \frac{1}{n} \cdot A(H) \cdot R_h(H)^{2/3} \cdot S_f^{1/2}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(A(H)\)</span> es el área mojada transversal (<span class="math notranslate nohighlight">\(\text{m}^2\)</span>), <span class="math notranslate nohighlight">\(R_h(H)\)</span> es el radio hidráulico (<span class="math notranslate nohighlight">\(\text{m}\)</span>), <span class="math notranslate nohighlight">\(S_f\)</span> es la pendiente motriz de la línea de energía y <span class="math notranslate nohighlight">\(n\)</span> (<span class="math notranslate nohighlight">\(\text{s}\cdot\text{m}^{-1/3}\)</span>) constituye el coeficiente de rugosidad de Manning.</p>
+</section>
+<section id="validacion-pluviometrica-cruzada-y-asimilacion-hidrometrica-in-situ-dinagua">
+<h2><span class="section-number">13.3. </span>Validación pluviométrica cruzada y asimilación hidrométrica in situ (DINAGUA)<a class="headerlink" href="#validacion-pluviometrica-cruzada-y-asimilacion-hidrometrica-in-situ-dinagua" title="Link to this heading">#</a></h2>
+<p>Para mitigar falsas alarmas convectivas, se ejecuta una validación cruzada frente a los pronósticos sinópticos de The Weather Channel (TWC / GRAF). Si la divergencia relativa <span class="math notranslate nohighlight">\(\Delta P = |P_{WN3} - P_{TWC}| / P_{media}\)</span> supera el 35 % en la cuenca alta, el sistema declara estado de incertidumbre meteorológica. En el dominio hidráulico, la validación y el ajuste dinámico se realizan mediante la estación telemétrica automática de DINAGUA en el puente nuevo de Sarandí del Yí, evaluando el error cuadrático medio (<span class="math notranslate nohighlight">\(RMSE\)</span>) y el coeficiente de eficiencia de Nash-Sutcliffe (<span class="math notranslate nohighlight">\(NSE\)</span>) [&#64;nash1970river]:</p>
+<div class="math notranslate nohighlight">
+\[RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left( H_{obs}(t_i) - H_{sim}(t_i) \right)^2} \quad ; \quad NSE = 1 - \frac{\sum_{i=1}^{N} \left( H_{obs}(t_i) - H_{sim}(t_i) \right)^2}{\sum_{i=1}^{N} \left( H_{obs}(t_i) - \overline{H_{obs}} \right)^2}\]</div>
+<p>La asimilación de los registros de DINAGUA permite recalibrar dinámicamente el coeficiente de rugosidad de Manning dentro del intervalo físicamente admisible (<span class="math notranslate nohighlight">\(n \in [0,028; 0,065]\text{ s}\cdot\text{m}^{-1/3}\)</span>).</p>
+</section>
+<section id="gobernanza-algoritmica-e-integridad-de-datos-agente-especializado-gems">
+<h2><span class="section-number">13.4. </span>Gobernanza algorítmica e integridad de datos (Agente Especializado Gems)<a class="headerlink" href="#gobernanza-algoritmica-e-integridad-de-datos-agente-especializado-gems" title="Link to this heading">#</a></h2>
+<p>La integración de flujos de telemetría y la compilación de boletines técnicos están gobernadas por un agente determinista de Inteligencia Artificial (arquitectura Gems) asistido por Generación Aumentada por Recuperación Determinista (RAG) y Restricciones Simbólicas [&#64;mai2024opportunities]: (1) Prohibición absoluta de extrapolación subjetiva fuera de los registros validados por WeatherNext 3, Flood Hub, TWC y DINAGUA; (2) Transparencia ante discontinuidades telemétricas conservando la última cota certificada con su marca temporal; y (3) Estandarización léxica hacia los protocolos del SINAE.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="resultados-operativos-y-verificacion-de-caso-de-estudio">
+<h1><span class="section-number">14. </span>Resultados operativos y verificación de caso de estudio<a class="headerlink" href="#resultados-operativos-y-verificacion-de-caso-de-estudio" title="Link to this heading">#</a></h1>
+<p>El acoplamiento predictivo extiende la ventana de alerta temprana hasta 72 horas antes del impacto urbano. La <strong>Tabla 2</strong> resume la matriz de umbrales operativos armonizada con el CECOED Durazno y el SINAE.</p>
+<p><strong>Tabla 2. Matriz de umbrales hidrométricos, horizontes de anticipación y protocolos de respuesta operativa (CECOED Durazno / SINAE). Fuente: Elaboración propia.</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nivel de alerta</p></th>
+<th class="head text-left"><p>Cota hidrométrica (<span class="math notranslate nohighlight">\(H\)</span>)</p></th>
+<th class="head text-left"><p>Horizonte prev.</p></th>
+<th class="head text-left"><p>Protocolo de acción operativa y gestión territorial</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>VERDE (Normal)</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(&lt; 3,50\text{ m}\)</span></p></td>
+<td class="text-left"><p>72 h</p></td>
+<td class="text-left"><p>Monitoreo telemétrico continuo automatizado; flujo confinado en el cauce ordinario menor sin afectación ribereña.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>AMARILLO (Atención)</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3,50 - 4,80\text{ m}\)</span></p></td>
+<td class="text-left"><p>48 h</p></td>
+<td class="text-left"><p>Vigilancia activa en zonas bajas costeras y parques ribereños; notificación preventiva a cuadrillas municipales.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>NARANJA (Alerta)</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(4,80 - 6,00\text{ m}\)</span></p></td>
+<td class="text-left"><p>24 h</p></td>
+<td class="text-left"><p>Aprestamiento logístico de centros de evacuación, corte preventivo de pasarelas inundables y alerta a población ribereña.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ROJO (Emergencia)</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(&gt; 6,00\text{ m}\)</span></p></td>
+<td class="text-left"><p>12 - 24 h</p></td>
+<td class="text-left"><p>Activación integral del protocolo de evacuación preventiva asistida por CECOED/SINAE y relocalización de damnificados.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tal como se sintetiza en la <strong>Tabla 2</strong>, la corrida de verificación ejecutada el 9 de octubre de 2026 determinó un <strong>Estado de Riesgo VERDE (Normal)</strong>. La telemetría del sensor DINAGUA en el puente nuevo registró niveles estacionarios dentro del cauce menor (<span class="math notranslate nohighlight">\(H_{obs} &lt; 3,50\text{ m}\)</span>). El pronóstico acoplado WeatherNext 3 validado con TWC (<span class="math notranslate nohighlight">\(\Delta P &lt; 12\%\)</span>) proyectó precipitaciones marginales (<span class="math notranslate nohighlight">\(0,0\text{ a }1,5\text{ mm}\)</span> en 24 h, <span class="math notranslate nohighlight">\(0,5\text{ a }2,0\text{ mm}\)</span> en 48 h y <span class="math notranslate nohighlight">\(&lt; 1,0\text{ mm}\)</span> en 72 h; acumulado <span class="math notranslate nohighlight">\(&lt; 5,0\text{ mm}\)</span>). Debido a la condición antecedente seca del suelo (<span class="math notranslate nohighlight">\(f(t) &gt; P(t)\)</span>), la escorrentía directa estimada resultó nula (<span class="math notranslate nohighlight">\(0,0\text{ mm}\)</span>), descartando riesgos de anegamiento en Sarandí del Yí.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="consideraciones-finales">
+<h1><span class="section-number">15. </span>Consideraciones finales<a class="headerlink" href="#consideraciones-finales" title="Link to this heading">#</a></h1>
+<p>El marco hidroinformático desarrollado demuestra que la integración sinérgica de modelos meteorológicos generativos (GNN y difusión), redes hidrológicas recurrentes (LSTM calibradas con gravimetría satelital GRACE), topografía satelital Copernicus GLO-30 y telemetría oficial in situ (DINAGUA) subsana eficazmente la escasez de instrumental denso en cuencas uruguayas de escala intermedia. Como limitación metodológica, dado que el modelo Copernicus GLO-30 representa un modelo de superficie (DSM) que puede sobreestimar cotas en zonas de monte ribereño, se prevé incorporar relevamientos con VANT/LiDAR en futuras etapas operativas.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1><span class="section-number">16. </span>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdg-idera/geosemantica",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="capRioBermejo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">10. </span><strong>Validación de estimaciones de precipitación satelital mediante Google Earth Engine (GEE): Un análisis comparativo con datos de red de estaciones en la Cuenca del Rio Bermejo</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="capCambioC.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">17. </span><strong>Paisajes estratégicos frente al cambio climático: identificación de áreas prioritarias de carbono y biodiversidad mediante aprendizaje automático</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. <strong>Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">12. Introducción</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-y-metodologia">13. Materiales y metodología</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forzante-atmosferico-arquitectura-google-weathernext-3">13.1. Forzante atmosférico: Arquitectura Google WeatherNext 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformacion-hidrologica-e-hidrodinamica-flood-hub-y-copernicus-glo-30">13.2. Transformación hidrológica e hidrodinámica: Flood Hub y Copernicus GLO-30</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validacion-pluviometrica-cruzada-y-asimilacion-hidrometrica-in-situ-dinagua">13.3. Validación pluviométrica cruzada y asimilación hidrométrica in situ (DINAGUA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gobernanza-algoritmica-e-integridad-de-datos-agente-especializado-gems">13.4. Gobernanza algorítmica e integridad de datos (Agente Especializado Gems)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados-operativos-y-verificacion-de-caso-de-estudio">14. Resultados operativos y verificación de caso de estudio</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-finales">15. Consideraciones finales</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">16. Referencias</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Luis Reynoso (IDERA-GTT CDG)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -228,7 +228,9 @@ Si bien en Google Earth Engine (GEE) existen varios catálogos para la estimaci�
 
 ## Metodología (Materiales y Métodos)
 
-Para cumplir con los objetivos planteados se utilizaron como información de validación los registros pluviométricos mensuales de las estaciones mencionadas en la Tabla 1 los cuales fueron obtenidos a través del portal web del Sistema Nacional de Información.
+Para cumplir con los objetivos planteados se utilizaron como información de validación los
+registros pluviométricos mensuales de las estaciones mencionadas en la Tabla 1 los cuales
+fueron obtenidos a través del portal web del [Sistema Nacional de Información Hídrica](https://snih.hidricosargentina.gob.ar/).
 
 Para homogeneizar el estudio se evaluaron los registros mensuales de enero de 2009 a diciembre de 2025 en todas las estaciones.
 
@@ -274,7 +276,8 @@ El script inicia conectándose a los servidores de Google Earth Engine para busc
 Como en la base de datos de Google no existen tus estaciones por defecto, el código define manualmente una lista con las coordenadas geográficas exactas de cada una. Para cada una de las 7 estaciones (Balapuca, Aguas Blancas, San Telmo, San José, Cuatro Cedros, Pozo Sarmiento y Caimancito), el script toma su longitud y su latitud y crea un "punto espacial". Además, a cada punto le adhiere una etiqueta de texto con su nombre real. Al final, junta estos 7 puntos individuales en un solo grupo unificado llamado estaciones.
 
 **3. Conexión al catálogo satelital de lluvias**
-El script define un periodo de tiempo de interés, configurando una fecha de inicio (1 de enero de 2009) y una fecha de finalización (31 de diciembre de 2025). Con este rango establecido, el código hace un llamado al catálogo global de Google Earth Engine para traer la colección de imágenes de CHIRPS. CHIRPS es un modelo satelital internacional que registra la precipitación diaria en todo el planeta. El script le ordena al sistema filtrar esta gigantesca base de datos para quedarse únicamente con los días que caen dentro de tus 4 años de interés y seleccionar exclusivamente la banda de datos que mide los milímetros de lluvia (precipitation), descartando cualquier otra variable.
+El script define un periodo de tiempo de interés, configurando una fecha de inicio (1 de enero de 2009) y una fecha de finalización (31 de diciembre de 2025). Con este rango establecido, el código hace un llamado al catálogo global de Google Earth Engine para traer la colección de imágenes de CHIRPS. CHIRPS es un modelo satelital internacional que registra la precipitación diaria en todo el planeta. El script le ordena al sistema filtrar esta gigantesca base de datos para quedarse únicamente con los días que caen dentro de los 17 años de interés y seleccionar exclusivamente la banda de datos que mide los milímetros de lluvia (precipitación), descartando cualquier otra variable.
+
 
 **4. Procesamiento matemático: De días a meses (Agregación Temporal)**
 Las imágenes satelitales de CHIRPS vienen con la lluvia que cayó por cada día individual. Como tú necesitas datos mensuales, el script ejecuta un proceso automatizado de consulta (un bucle virtual):
@@ -289,14 +292,12 @@ Para que puedas ver los resultados en la pantalla de tu computadora, el script c
 •	Superpone sobre el mapa los 7 puntos de tus estaciones meteorológicas pintados como círculos de color rojo brillante.
 
 **6. Extracción estadística en la Cuenca y creación del gráfico**
-Aquí es donde ocurre la magia de los datos espaciales. El código le pide a Google Earth Engine que calcule estadísticas zonales. Toma las imágenes de lluvia mensual que calculó en el paso 4 y analiza el área encerrada por el polígono de la cuenca. El sistema calcula el promedio de lluvia de todos los píxeles satelitales que caen dentro de la Cuenca del Bermejo para cada mes. Con esos valores históricos mensuales, el script construye un gráfico de barras vertical interactivo y lo despliega automáticamente en la consola derecha de RStudio o GEE, permitiéndote ver visualmente las épocas secas y las épocas húmedas a lo largo de los años.
+Aquí es donde ocurre la magia de los datos espaciales. El código le pide a Google Earth Engine que calcule estadísticas. Toma las imágenes de lluvia mensual que calculó en el paso 4 y analiza cada uno de los 7 puntos donde están ubicadas las estaciones. El sistema calcula la lluvia mensual en todos los puntos correspondientes a las ubicaciones de las estaciones. Con esos valores históricos mensuales, el script construye un gráfico de barras vertical interactivo y lo despliega automáticamente en la consola derecha de GEE, permitiéndote ver visualmente las épocas secas y las épocas húmedas a lo largo de los años.
 
 **7. Extracción de datos puntuales por estación y exportación a Excel/CSV**
-Por último, el script realiza un cruce geométrico directo de tipo "punto-píxel". Revisa la ubicación exacta de cada una de tus 7 estaciones meteorológicas sobre las imágenes mensuales de lluvia y extrae el valor numérico exacto de milímetros de precipitación que tocó a esa coordenada en cada mes de la serie temporal. El programa organiza esta información en una tabla estructurada con tres columnas claras: el nombre de la estación, la fecha (mes/año) y el valor de lluvia acumulada. Finalmente, el script activa una orden de exportación para enviar de manera directa esa tabla final a tu cuenta personal de Google Drive en un archivo de formato .csv, listo para que lo descargues y lo abras en Excel.
-Si lo deseas, decime y podemos trabajar en:
-•	Modificar el rango de años o meses para el análisis de lluvias.
-•	Cambiar el satélite a uno de mayor resolución como GPM de la NASA.
-•	Agregar líneas de código para calcular las lluvias anuales completas en lugar de mensuales.
+Por último, el script realiza un cruce geométrico directo de tipo 'punto-píxel'. Revisa la ubicación exacta de cada una de tus 7 estaciones meteorológicas sobre las imágenes mensuales de lluvia y extrae el valor numérico exacto de milímetros de precipitación que tocó a esa coordenada en cada mes de la serie temporal. El programa organiza esta información en una tabla estructurada con tres columnas claras: el nombre de la estación, la fecha (mes/año) y el valor de lluvia acumulada. 
+Desde el gráfico podes acceder a la tabla en un archivo de formato .csv, listo para que lo descargues y lo abras en Excel.
+
 
 La **Figura 1** presenta un esquema conceptual simplificado del diagrama de flujo.
 

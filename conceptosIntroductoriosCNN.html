@@ -192,13 +192,19 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">9. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">10. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">11. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">12. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">13. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">14. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">15. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">16. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Referencias.html">17. Bibliografía</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capitulo_girona.html">11. <strong>Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</strong></a></li>
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">17. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">18. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">19. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">20. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">21. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">22. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Referencias.html">23. Bibliografía</a></li>
 </ul>
 
     </div>
@@ -619,7 +625,7 @@ document.write(`
 <h1><span class="section-number">8. </span>Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
 <p>Las <strong>redes neuronales convolucionales</strong> (<em>Convolutional Neural Networks</em>, CNN) constituyen una clase fundamental de modelos de deep learning diseñados específicamente para procesar datos con <strong>estructura espacial</strong>, como las imágenes. Su funcionamiento se basa en la operación matemática de <strong>convolución</strong>, que puede entenderse intuitivamente como la aplicación sistemática de filtros o máscaras sobre una grilla de datos, permitiendo detectar patrones locales como bordes, texturas y formas. Tal como señalan OpenStax:</p>
 <blockquote>
-<div><p>“Las redes neuronales convolucionales (CNN) son una poderosa clase de modelos de redes neuronales desarrolladas para procesar datos estructurados en forma de grilla, como las imágenes, haciendo uso de la operación matemática de convolución (que es similar a aplicar un filtro o una máscara a una imagen).”— Principles of Data Science, OpenStax (2025) <span id="id1">[<a class="reference internal" href="Referencias.html#id48" title="OpenStax. Principles of Data Science. OpenStax, 2025. Section 7.4: Convolutional Neural Networks. URL: https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks.">OpenStax, 2025</a>]</span></p>
+<div><p>“Las redes neuronales convolucionales (CNN) son una poderosa clase de modelos de redes neuronales desarrolladas para procesar datos estructurados en forma de grilla, como las imágenes, haciendo uso de la operación matemática de convolución (que es similar a aplicar un filtro o una máscara a una imagen).”— Principles of Data Science, OpenStax (2025) <span id="id1">[]</span></p>
 </div></blockquote>
 <p>Desde una perspectiva conceptual, una CNN puede entenderse como un modelo compuesto por <strong>dos grandes etapas funcionales</strong>, claramente diferenciadas y complementarias, como se ilustra en la Figura <a class="reference internal" href="#fig-cnn-feature-learning-plus-fully-connected"><span class="std std-numref">Fig. 8.1</span></a>.</p>
 <p>La primera etapa, conocida como <strong>feature learning stage</strong> o <em>convolutional backbone</em>, está formada por capas convolucionales, funciones de activación y operaciones de <em>pooling</em>. Su objetivo principal es <strong>extraer representaciones jerárquicas</strong> de la entrada: a partir de la imagen original, la red aprende progresivamente <em>features</em> cada vez más abstractas, pasando de patrones simples (como bordes o contrastes) a estructuras más complejas y semánticamente relevantes. En esta fase, la red explota explícitamente la estructura espacial de los datos.</p>
