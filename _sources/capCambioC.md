@@ -11,3 +11,9 @@ procesamiento en la nube constituye una alternativa técnica viable y de bajo co
 + **Palabras Claves:** GEE, CHIRPS, ERAS5-Land, precipitación, precipitación satelital.
 
 + **Scripts:** https://code.earthengine.google.com/a02ee1b32f322419f723da106844e94d
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

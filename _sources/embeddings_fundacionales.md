@@ -244,3 +244,9 @@ Tanto los LLM como los modelos fundacionales tienden hacia la multimodalidad:
 * EO foundation models → radar + óptico + elevación + clima + series temporales
 
 Ambos buscan una representación unificada del conocimiento, ya sea del lenguaje o del planeta.
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

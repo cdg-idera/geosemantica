@@ -118,4 +118,8 @@ El lanzamiento del conjunto de datos de incrustación de satélites en el Catál
 ¿Quieres saber más sobre cómo usar el conjunto de datos de incrustación de satélites, tienes preguntas o te interesa compartir un caso práctico? Contáctanos en aefrequests-external@google.com.
 
 
+## Referencias bibliográficas
 
+```{bibliography}
+:filter: docname in docnames
+```

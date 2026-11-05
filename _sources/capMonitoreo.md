@@ -10,3 +10,10 @@ directos para informes hidrometeorológicos semanales destinados a tomadores de 
 herramientas de visualización cartográfica interactiva constituye una metodología eficiente, reproducible y de bajo costo para el seguimiento operacional de la condición hídrica del suelo a escala provincial.
 
 + **Palabras clave:** Humedad del suelo, SMAP, Google Earth Engine, riesgo hídrico, teledetección.
+
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

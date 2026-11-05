@@ -1966,3 +1966,9 @@ from google.colab import files
 files.download("/content/drive/MyDrive/S2_Parches_AOI/CNN_classification_10x10_stride1_suave.tif")
 
 ```
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

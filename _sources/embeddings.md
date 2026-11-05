@@ -431,3 +431,8 @@ El modelo **no “ve” colores o bandas**, sino que **razona en términos de pa
 Sin embargo, la potencia de esta representación no radica en sustituir los índices o modelos clásicos, sino en **integrarse con ellos**.  
 La sinergia entre *semántica latente (embeddings)* y *semántica explícita (índices, capas temáticas, reglas físicas)* define el camino hacia una **GeoIA robusta, explicativa y transferible** para la gestión del territorio, la observación ambiental y la toma de decisiones basadas en evidencia.
 
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

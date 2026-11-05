@@ -1716,3 +1716,9 @@ dataDict.evaluate(function(obj){
 });
 
 ```
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

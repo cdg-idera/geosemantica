@@ -56,7 +56,7 @@ Tal como se sintetiza en la **Tabla 1**, GeoAI permite acoplar modelos fundacion
 
 ### Forzante atmosférico: Arquitectura Google WeatherNext 3
 
-El forzante meteorológico primario proviene de Google WeatherNext 3, que combina Redes Neuronales Basadas en Grafos (GNN) sobre una malla icosaédrica multiescala con modelos probabilísticos de difusión generativa en el espacio latente [@lam2023learning; @price2025gencast], generando ensambles estocásticos de precipitación para 24 h, 48 h y 72 h con resolución espacial de $0,1^\circ \times 0,1^\circ$ ($\sim 11\text{ km}$). La partición entre infiltración edáfica y precipitación efectiva se parametriza mediante la formulación exponencial de Horton [@horton1933role]:
+El forzante meteorológico primario proviene de Google WeatherNext 3, que combina Redes Neuronales Basadas en Grafos (GNN) sobre una malla icosaédrica multiescala con modelos probabilísticos de difusión generativa en el espacio latente {cite:p}`lam2023learning,price2025gencast`, generando ensambles estocásticos de precipitación para 24 h, 48 h y 72 h con resolución espacial de $0,1^\circ \times 0,1^\circ$ ($\sim 11\text{ km}$). La partición entre infiltración edáfica y precipitación efectiva se parametriza mediante la formulación exponencial de Horton {cite:p}`horton1933role`:
 
 $$f(t) = f_c + (f_0 - f_c) \cdot e^{-k \cdot t}$$
 
@@ -64,7 +64,7 @@ donde $f(t)$ representa la tasa instantánea de infiltración ($\text{mm}\cdot\t
 
 ### Transformación hidrológica e hidrodinámica: Flood Hub y Copernicus GLO-30
 
-Los hietogramas distribuidos alimentan el núcleo Google Flood Hub Engine, estructurado sobre redes neuronales recurrentes Long Short-Term Memory (LSTM) de aprendizaje regionalizado [@kratzert2018rainfall; @kratzert2019toward; @nearing2024global], cuyo estado oculto asimila mediante downscaling las anomalías regionales de almacenamiento total de agua terrestre (TWS) derivadas de las misiones gravimétricas satelitales GRACE y GRACE-FO [@tapley2004grace]. El caudal líquido simulado $Q_{sim}(t)$ ($\text{m}^3\cdot\text{s}^{-1}$) se propaga mediante las ecuaciones de aguas someras de Saint-Venant bajo aproximación difusiva sobre el Modelo Digital de Elevación Copernicus GLO-30 ($30\text{ m}$; $LE90 < 4\text{ m}$), convirtiéndose en nivel hidrométrico simulado $H_{sim}(t)$ mediante la curva de gasto $Q = f(H)$ y la ecuación de resistencia de Manning:
+Los hietogramas distribuidos alimentan el núcleo Google Flood Hub Engine, estructurado sobre redes neuronales recurrentes Long Short-Term Memory (LSTM) de aprendizaje regionalizado {cite:p}`kratzert2018rainfall,kratzert2019toward,nearing2024global`, cuyo estado oculto asimila mediante downscaling las anomalías regionales de almacenamiento total de agua terrestre (TWS) derivadas de las misiones gravimétricas satelitales GRACE y GRACE-FO {cite:p}`tapley2004grace`. El caudal líquido simulado $Q_{sim}(t)$ ($\text{m}^3\cdot\text{s}^{-1}$) se propaga mediante las ecuaciones de aguas someras de Saint-Venant bajo aproximación difusiva sobre el Modelo Digital de Elevación Copernicus GLO-30 ($30\text{ m}$; $LE90 < 4\text{ m}$), convirtiéndose en nivel hidrométrico simulado $H_{sim}(t)$ mediante la curva de gasto $Q = f(H)$ y la ecuación de resistencia de Manning:
 
 $$Q_{sim}(t) = \frac{1}{n} \cdot A(H) \cdot R_h(H)^{2/3} \cdot S_f^{1/2}$$
 
@@ -72,7 +72,7 @@ donde $A(H)$ es el área mojada transversal ($\text{m}^2$), $R_h(H)$ es el radio
 
 ### Validación pluviométrica cruzada y asimilación hidrométrica in situ (DINAGUA)
 
-Para mitigar falsas alarmas convectivas, se ejecuta una validación cruzada frente a los pronósticos sinópticos de The Weather Channel (TWC / GRAF). Si la divergencia relativa $\Delta P = |P_{WN3} - P_{TWC}| / P_{media}$ supera el 35 % en la cuenca alta, el sistema declara estado de incertidumbre meteorológica. En el dominio hidráulico, la validación y el ajuste dinámico se realizan mediante la estación telemétrica automática de DINAGUA en el puente nuevo de Sarandí del Yí, evaluando el error cuadrático medio ($RMSE$) y el coeficiente de eficiencia de Nash-Sutcliffe ($NSE$) [@nash1970river]:
+Para mitigar falsas alarmas convectivas, se ejecuta una validación cruzada frente a los pronósticos sinópticos de The Weather Channel (TWC / GRAF). Si la divergencia relativa $\Delta P = |P_{WN3} - P_{TWC}| / P_{media}$ supera el 35 % en la cuenca alta, el sistema declara estado de incertidumbre meteorológica. En el dominio hidráulico, la validación y el ajuste dinámico se realizan mediante la estación telemétrica automática de DINAGUA en el puente nuevo de Sarandí del Yí, evaluando el error cuadrático medio ($RMSE$) y el coeficiente de eficiencia de Nash-Sutcliffe ($NSE$) {cite:p}`nash1970river`:
 
 $$RMSE = \sqrt{\frac{1}{N} \sum_{i=1}^{N} \left( H_{obs}(t_i) - H_{sim}(t_i) \right)^2} \quad ; \quad NSE = 1 - \frac{\sum_{i=1}^{N} \left( H_{obs}(t_i) - H_{sim}(t_i) \right)^2}{\sum_{i=1}^{N} \left( H_{obs}(t_i) - \overline{H_{obs}} \right)^2}$$
 
@@ -80,7 +80,7 @@ La asimilación de los registros de DINAGUA permite recalibrar dinámicamente el
 
 ### Gobernanza algorítmica e integridad de datos (Agente Especializado Gems)
 
-La integración de flujos de telemetría y la compilación de boletines técnicos están gobernadas por un agente determinista de Inteligencia Artificial (arquitectura Gems) asistido por Generación Aumentada por Recuperación Determinista (RAG) y Restricciones Simbólicas [@mai2024opportunities]: (1) Prohibición absoluta de extrapolación subjetiva fuera de los registros validados por WeatherNext 3, Flood Hub, TWC y DINAGUA; (2) Transparencia ante discontinuidades telemétricas conservando la última cota certificada con su marca temporal; y (3) Estandarización léxica hacia los protocolos del SINAE.
+La integración de flujos de telemetría y la compilación de boletines técnicos están gobernadas por un agente determinista de Inteligencia Artificial (arquitectura Gems) asistido por Generación Aumentada por Recuperación Determinista (RAG) y Restricciones Simbólicas {cite:p}`mai2024opportunities`: (1) Prohibición absoluta de extrapolación subjetiva fuera de los registros validados por WeatherNext 3, Flood Hub, TWC y DINAGUA; (2) Transparencia ante discontinuidades telemétricas conservando la última cota certificada con su marca temporal; y (3) Estandarización léxica hacia los protocolos del SINAE.
 
 ## Resultados operativos y verificación de caso de estudio
 
@@ -101,4 +101,8 @@ Tal como se sintetiza en la **Tabla 2**, la corrida de verificación ejecutada e
 
 El marco hidroinformático desarrollado demuestra que la integración sinérgica de modelos meteorológicos generativos (GNN y difusión), redes hidrológicas recurrentes (LSTM calibradas con gravimetría satelital GRACE), topografía satelital Copernicus GLO-30 y telemetría oficial in situ (DINAGUA) subsana eficazmente la escasez de instrumental denso en cuencas uruguayas de escala intermedia. Como limitación metodológica, dado que el modelo Copernicus GLO-30 representa un modelo de superficie (DSM) que puede sobreestimar cotas en zonas de monte ribereño, se prevé incorporar relevamientos con VANT/LiDAR en futuras etapas operativas.
 
-## Referencias
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

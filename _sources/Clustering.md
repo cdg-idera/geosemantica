@@ -300,3 +300,9 @@ y donde $\mathcal{D}$ y de $\mathcal{C}$ significan:
 
 El algoritmo mostrado en este capítulo, en esencia, una **demostración de análisis geosemántico estadístico**, donde el modelo fundacional ya *“comprende”* el territorio y el clustering revela su estructura interna sin etiquetas humanas.
 A su vez, la **representación formal del pipeline subyacente** aporta un componente metodológico clave: permite **visualizar y modelar la secuencia lógica del algoritmo**, conectar sus etapas con los objetos matemáticos intermedios y establecer un marco reproducible que *fortalece la comprensión conceptual* del *proceso de aprendizaje no supervisado en Observación de la Tierra (EO)*.
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. De las torres de Babel a la construcción colectiva del conocimiento. &#8212; Geosemántica y GeoAI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TorresDeBabelAlCG';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Transformación Digital en Geociencias" href="Geociencias.html" />
+    <link rel="prev" title="Geosemántica y GeoAI" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logoAgua.png" class="logo__image only-light" alt="Geosemántica y GeoAI - Home"/>
+    <script>document.write(`<img src="_static/logoAgua.png" class="logo__image only-dark" alt="Geosemántica y GeoAI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Geosemántica y GeoAI
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Capítulo · De las torres de Babel a la construcción colectiva del conocimiento geoespacial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">2. Capítulo · Introducción · Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">3. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geosemantica.html">4. Capítulo · Geosemántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">5. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">6. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">7. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">8. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">9. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">10. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">11. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capitulo_girona.html">12. Capítulo · Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">13. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">14. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">15. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capDinamicaSalta.html">16. Capítulo · Dinámica espacio-temporal de las Islas de Calor Urbano y efecto de enfriamiento en el Aglomerado del Gran Salta, Argentina (2013–2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">17. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">18. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">19. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FTorresDeBabelAlCG.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/TorresDeBabelAlCG.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>De las torres de Babel a la construcción colectiva del conocimiento.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-territorio-que-no-se-detiene">1.1. Un territorio que no se detiene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-lenguajes-para-comprender-una-misma-realidad">1.2. Tres lenguajes para comprender una misma realidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-de-construir-modelos-integrados">1.3. El valor de construir modelos integrados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-las-infraestructuras-de-datos-a-las-infraestructuras-de-conocimiento">1.4. De las infraestructuras de datos a las infraestructuras de conocimiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#educar-para-conocer-hacer-crear-y-ser">1.5. Educar para conocer, hacer, crear y ser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-babel-a-la-construccion-colectiva-del-conocimiento">1.6. De Babel a la construcción colectiva del conocimiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">1.7. Agradecimientos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-bibliograficas">1.8. Referencias bibliográficas</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="de-las-torres-de-babel-a-la-construccion-colectiva-del-conocimiento">
+<h1><span class="section-number">1. </span><strong>De las torres de Babel a la construcción colectiva del conocimiento.</strong><a class="headerlink" href="#de-las-torres-de-babel-a-la-construccion-colectiva-del-conocimiento" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Autor:</strong> Luis Reynoso</p></li>
+</ul>
+<p><strong>Resumen:</strong></p>
+<p>Este capítulo surge de las reflexiones de un conversatorio sobre inteligencia artificial y tecnologías disruptivas en geografía y arquitectura, realizado en la Facultad de Arte y Arquitectura de la Universidad del Salvador, sede Pilar, el 2 de noviembre de 2026. A partir de la metáfora de la <strong>Torre de Babel</strong>, se examinan las limitaciones de las <strong>representaciones fragmentadas</strong> de un territorio dinámico y la necesidad de <strong>integrar conocimientos, modelos y escalas espaciales</strong>.</p>
+<p>Se propone articular tres lenguajes —<em>natural, espacial y simbólico</em>— y explorar las oportunidades que ofrecen los <strong>modelos fundacionales lingüísticos y geoespaciales</strong>, las <strong>ontologías y la interoperabilidad semántica</strong>. Se destaca la construcción de <strong>modelos integrados de activos constructivos</strong>, ciudades y territorios, así como el avance desde las <strong>Infraestructuras de Datos Espaciales</strong> hacia <strong>Infraestructuras de Conocimiento Geoespacial</strong>, con <strong>modelos consultables, inferibles y explicables</strong>.</p>
+<p>Finalmente, se propone promover proyectos educativos <strong>STEAM</strong> que articulen ciencias, tecnologías, ingeniería, artes y matemáticas, integrando <em>creatividad, innovación, pensamiento crítico</em> y <strong>competencias conceptuales, procedimentales y actitudinales</strong>. La <strong>construcción colectiva del conocimiento geoespacial</strong> se plantea como un camino de <strong>cooperación interdisciplinaria e institucional</strong>, respetuoso de la diversidad y orientado al bien común.</p>
+<section id="un-territorio-que-no-se-detiene">
+<h2><span class="section-number">1.1. </span>Un territorio que no se detiene<a class="headerlink" href="#un-territorio-que-no-se-detiene" title="Link to this heading">#</a></h2>
+<p>La <em>geografía, las geociencias, la arquitectura y el urbanismo</em> comparten una preocupación fundamental: comprender el <strong>espacio en el que se desarrollan procesos naturales y sociales</strong>, reconocer sus transformaciones y actuar sobre él con información suficiente, actualizada y confiable. Sus preguntas y escalas no son idénticas. <em>Una cuenca, un paisaje, una ciudad, una parcela y un edificio</em> requieren métodos y <strong>modelos diferentes</strong>. Sin embargo, todos forman parte de un territorio que no se detiene mientras lo observamos y representamos. Durante décadas ampliamos extraordinariamente nuestra capacidad para producir cartografía digital, construir inventarios, desarrollar sistemas de información geográfica (SIG) e intercambiar datos mediante infraestructuras de datos espaciales (IDE). Ese progreso es decisivo, pero no resuelve por sí solo la distancia entre lo que registran nuestros sistemas y lo que ocurre efectivamente en el territorio. <strong>Un mapa, un inventario o un modelo no son la realidad</strong>: son representaciones construidas en una fecha, con determinadas definiciones, resoluciones, métodos y propósitos. Hoy esa distancia puede examinarse de nuevas maneras. La <em>observación de la Tierra (OT), los sensores terrestres, los relevamientos de campo, las bases vectoriales, los modelos del entorno construido y las infraestructuras digitales</em> permiten reunir evidencias de naturaleza muy diversa. A su vez, los avances en interoperabilidad, almacenamiento y procesamiento remoto facilitan trabajar con conjuntos de datos que antes resultaban difíciles de integrar. <strong>El desafío no es simplemente disponer de más información</strong>, sino convertirla en <strong>conocimiento territorial contrastable, compartido y útil</strong> para diferentes disciplinas.</p>
+<p>Esta realidad nos invita a superar miradas aisladas. Como plantea <span id="id1">Massey [<a class="reference internal" href="#id29" title="Doreen Massey. For Space. SAGE, 2005.">2005</a>]</span>, el espacio puede comprenderse como <strong>producto de interrelaciones</strong> y como algo siempre en construcción. Desde una habitación hasta una ciudad, desde un edificio hasta una cuenca, cada intervención participa de relaciones que se manifiestan en escalas <em>próximas, locales y regionales</em>, pero también en procesos de alcance más amplio. <strong>Integrar modelos</strong> exige atender simultáneamente a sus contextos y a los vínculos entre ellos.</p>
+</section>
+<section id="tres-lenguajes-para-comprender-una-misma-realidad">
+<h2><span class="section-number">1.2. </span>Tres lenguajes para comprender una misma realidad<a class="headerlink" href="#tres-lenguajes-para-comprender-una-misma-realidad" title="Link to this heading">#</a></h2>
+<p>Vivimos una época en la que la inteligencia artificial ha revalorizado extraordinariamente el <strong>lenguaje humano</strong>. Los <strong>grandes modelos de lenguaje</strong> permiten dialogar con asistentes y agentes, formular preguntas, explorar ideas y proponer soluciones. Michel Foucault, en su conferencia «Nietzsche, Freud, Marx» <span id="id2">[<a class="reference internal" href="#id25" title="Michel Foucault. Nietzsche, freud, marx. In Cahiers de Royaumont: Philosophie, volume 6, pages 183–200. 1967.">Foucault, 1967</a>]</span>, imaginó la posibilidad de reunir un corpus de técnicas de interpretación. Hoy disponemos de sistemas capaces de producir respuestas e interpretaciones expresadas en lenguaje natural, a partir de modelos entrenados con enormes conjuntos de información. Sin embargo, <strong>generar una respuesta plausible no equivale a comprender el mundo</strong> ni a ofrecer una explicación verdadera. De allí la importancia del <strong>pensamiento crítico</strong> y de las habilidades de <em>interpretar, analizar, evaluar, inferir, explicar y autorregularse</em>, sistematizadas por <span id="id3">Facione [<a class="reference internal" href="#id24" title="Peter A. Facione. Critical thinking: a statement of expert consensus for purposes of educational assessment and instruction. Technical Report, American Philosophical Association, 1990.">1990</a>]</span>.</p>
+<p>Existe también un <strong>lenguaje espacial</strong>. Michel Foucault, en Nietzsche, Freud, Marx, nos recordaba que el mundo comunica significados más allá de las palabras: la naturaleza, los árboles y los paisajes también hablan <span id="id4">[<a class="reference internal" href="#id25" title="Michel Foucault. Nietzsche, freud, marx. In Cahiers de Royaumont: Philosophie, volume 6, pages 183–200. 1967.">Foucault, 1967</a>]</span>. Desde esta perspectiva, el territorio no constituye simplemente un soporte físico. Su organización, patrones y relaciones expresan procesos naturales, históricos y sociales que necesitamos interpretar. Esta lectura encuentra puntos de diálogo con los estudios sobre los significados de los lugares <span id="id5">[<a class="reference internal" href="#id33" title="Yi-Fu Tuan. Space and Place: The Perspective of Experience. University of Minnesota Press, 1977.">Tuan, 1977</a>]</span> y con la interpretación cultural del paisaje <span id="id6">[<a class="reference internal" href="#id22" title="Denis Cosgrove. Social Formation and Symbolic Landscape. Croom Helm, 1984.">Cosgrove, 1984</a>]</span>. En la actualidad ya disponemos de <strong>modelos fundacionales geoespaciales</strong>, como Prithvi, desarrollado por NASA e IBM <span id="id7">[<a class="reference internal" href="#id26" title="IBM Research. Ibm and nasa release a new version of prithvi. 2024. URL: https://research.ibm.com/blog/prithvi2-geospatial.">IBM Research, 2024</a>, <a class="reference internal" href="#id30" title="NASA. Expanded ai model with global data enhances earth science applications. 2024. URL: https://science.nasa.gov/science-research/ai-geospatial-model-earth/.">NASA, 2024</a>]</span>, que aprenden regularidades espaciales y temporales a partir de datos de observación de la Tierra. Estos modelos permiten explorar computacionalmente el territorio como fuente de patrones y relaciones, aunque su estudio y aprovechamiento aún no alcanzan la difusión de los modelos fundacionales lingüísticos. <strong>Reconocer patrones no equivale</strong>, por sí solo, a comprender las particularidades históricas, sociales y ambientales de cada territorio.</p>
+<p>Un tercer lenguaje es el de las <strong>representaciones formales y simbólicas</strong>, presente en la <em>matemática, la lógica, la estadística y la computación</em>. <em>Ecuaciones, algoritmos, modelos probabilísticos, lenguajes de programación y sistemas de reglas</em> permiten describir estructuras, expresar relaciones y estudiar fenómenos desde distintos enfoques. Dentro de este universo, la <strong>inteligencia artificial simbólica</strong> aporta formas explícitas de representar conceptos y razonar sobre ellos; las ontologías y los <strong>grafos de conocimiento</strong> constituyen herramientas relevantes, aunque de ningún modo las únicas. Los lenguajes verbal, espacial y formal tienen alcances diferentes. Precisamente por eso, su articulación puede ampliar las preguntas que formulamos y las maneras de construir y contrastar conocimiento.</p>
+</section>
+<section id="el-valor-de-construir-modelos-integrados">
+<h2><span class="section-number">1.3. </span>El valor de construir modelos integrados<a class="headerlink" href="#el-valor-de-construir-modelos-integrados" title="Link to this heading">#</a></h2>
+<p>Vivimos una época de posibilidades extraordinarias para <strong>construir modelos del territorio</strong>, de las ciudades, de los edificios y de sus procesos naturales, sociales y técnicos. <strong>Los modelos permiten organizar evidencias</strong>, formular hipótesis, experimentar, simular escenarios y anticipar consecuencias. Pero toda representación selecciona aspectos de una realidad más compleja y cambiante; esta precaución resulta especialmente relevante si concebimos el espacio como un entramado de relaciones en transformación <span id="id8">[<a class="reference internal" href="#id29" title="Doreen Massey. For Space. SAGE, 2005.">Massey, 2005</a>]</span>. La velocidad con que hoy podemos producir modelos no garantiza que comprendamos sus supuestos, que reflejen adecuadamente los procesos que estudiamos ni que podamos apropiarnos críticamente de sus resultados.</p>
+<p>Por ejemplo, los modelos asociados a <strong>activos constructivos</strong> —edificios, hospitales, puentes o aeropuertos— necesitan articular aportes de <em>arquitectura, estructuras, instalaciones eléctricas, mecánicas, sanitarias, plomería y automatización, instrumentación y control</em>, entre otras disciplinas. La sensorización permite incorporar evidencias de su funcionamiento y evolución durante la operación. <strong>BIM</strong> y estándares como <strong>IFC</strong> <span id="id9">[<a class="reference internal" href="#id27" title="International Organization for Standardization. Iso 16739-1:2024: industry foundation classes (ifc). 2024.">International Organization for Standardization, 2024</a>]</span>, <strong>CityGML</strong> <span id="id10">[<a class="reference internal" href="#id32" title="Open Geospatial Consortium. Citygml 3.0 conceptual model standard. 2021.">Open Geospatial Consortium, 2021</a>]</span> e <strong>IndoorGML</strong> <span id="id11">[<a class="reference internal" href="#id31" title="Open Geospatial Consortium. Indoorgml 1.1 standard. 2020.">Open Geospatial Consortium, 2020</a>]</span> ofrecen distintas posibilidades para relacionar componentes constructivos, espacios interiores, entornos urbanos y territorio, siempre que se expliciten las correspondencias entre sus modelos. En particular, <span id="id12">Li <em>et al.</em> [<a class="reference internal" href="#id28" title="Ki-Joune Li, Sisi Zlatanova, Joaquín Torres-Sospedra, Antoni Pérez-Navarro, Christos Laoudias, and Adriano Moreira. Survey on indoor map standards and formats. In 2019 International Conference on Indoor Positioning and Indoor Navigation (IPIN). 2019. doi:10.1109/IPIN.2019.8911796.">2019</a>]</span> examinan estándares y formatos de mapas interiores; <span id="id13">Chen and Clarke [<a class="reference internal" href="#id21" title="J. Chen and Keith C. Clarke. Indoor cartography. Cartography and Geographic Information Science, 2020. doi:10.1080/15230406.2019.1619482.">2020</a>]</span> analizan las posibilidades y desafíos de la cartografía de interiores; y <span id="id14">Villarreal <em>et al.</em> [<a class="reference internal" href="#id34" title="M. Villarreal, T. D. Baird, P. A. Tarazaga, D. J. Kniola, T. J. Pingel, and R. Sarlo. Shared space and resource use within a building environment: an indoor geography. The Geographical Journal, 191(1):e12604, 2025. doi:10.1111/geoj.12604.">2025</a>]</span> investigan los usos y recursos compartidos de espacios interiores desde una perspectiva geográfica.</p>
+<p><strong>Integrar modelos no consiste solamente en conectar geometrías o intercambiar archivos</strong>. Implica relacionar <em>conceptos, escalas, temporalidades y criterios</em> de diferentes disciplinas. La arquitectura aporta preguntas sobre el diseño y la habitabilidad; la geografía permite examinar las relaciones con el barrio, la ciudad y el territorio; la ingeniería incorpora el comportamiento y funcionamiento de los sistemas construidos. Estas miradas se complementan cuando las decisiones sobre un edificio se estudian también en su contexto natural, social, cultural y urbano. Una obra puede ser técnicamente sofisticada y, sin embargo, responder insuficientemente a las necesidades de quienes la habitan o a las condiciones de su entorno.</p>
+</section>
+<section id="de-las-infraestructuras-de-datos-a-las-infraestructuras-de-conocimiento">
+<h2><span class="section-number">1.4. </span>De las infraestructuras de datos a las infraestructuras de conocimiento<a class="headerlink" href="#de-las-infraestructuras-de-datos-a-las-infraestructuras-de-conocimiento" title="Link to this heading">#</a></h2>
+<p>Las infraestructuras de datos espaciales (IDE) han hecho posible descubrir, compartir y utilizar información procedente de múltiples instituciones. Su consolidación constituye una base, no un obstáculo, para avanzar hacia infraestructuras de conocimiento geoespacial (GKI) capaces de relacionar datos, servicios, ontologías, modelos y agentes de IA. A los <strong>principios FAIR</strong> —<em>localizables, accesibles, interoperables y reutilizables</em>— <span id="id15">[<a class="reference internal" href="#id36" title="Mark D. Wilkinson and others. The fair guiding principles for scientific data management and stewardship. Scientific Data, 3:160018, 2016. doi:10.1038/sdata.2016.18.">Wilkinson and others, 2016</a>]</span> podemos añadir una aspiración: que los modelos sean también <em>consultables, inferibles y explicables</em>.</p>
+<p>En esta época, <strong>la palabra puede convertirse en una puerta de acceso a los modelos</strong>: preguntar por sus objetos, interpelar sus conceptos, recorrer sus relaciones y pedir explicaciones de los resultados. No basta con que los datos estén disponibles para descarga: aspiramos a que puedan «hablar» a través de preguntas significativas, sin renunciar a verificar su procedencia y validez. Sensores, modelos digitales y sistemas de IA pueden contribuir a edificios y ciudades inteligentes, siempre que la <strong>integración sea tanto técnica como semántica, institucional y humana</strong>.</p>
+</section>
+<section id="educar-para-conocer-hacer-crear-y-ser">
+<h2><span class="section-number">1.5. </span>Educar para conocer, hacer, crear y ser<a class="headerlink" href="#educar-para-conocer-hacer-crear-y-ser" title="Link to this heading">#</a></h2>
+<p>Este horizonte plantea desafíos educativos. En diálogo con la zona de desarrollo próximo de <span id="id16">Vygotsky [<a class="reference internal" href="#id35" title="Lev S. Vygotsky. Mind in Society: The Development of Higher Psychological Processes. Harvard University Press, 1978.">1978</a>]</span>, podemos considerar a los asistentes de IA como posibles instrumentos de mediación para explorar conocimientos y contrastar ideas, sin confundir la asistencia de una máquina con la relación educativa entre personas. Su valor formativo dependerá de las preguntas que seamos capaces de formular, de la calidad de las fuentes que consultemos y de nuestra disposición a revisar críticamente las respuestas. La IA puede ampliar oportunidades de aprendizaje, pero no reemplaza el <strong>conocimiento disciplinar</strong> ni el <strong>juicio de docentes y estudiantes</strong>.</p>
+<p>Por eso la formación necesita articular <strong>competencias conceptuales, procedimentales y actitudinales</strong>. Las primeras remiten al <strong>saber</strong>: <em>comprender conceptos, principios y significados</em>. Las segundas se vinculan con el <strong>saber hacer</strong>: <em>investigar, representar, diseñar, modelar, experimentar y evaluar</em>. Las terceras comprenden el <strong>saber ser</strong>: <em>responsabilidad, cooperación, pensamiento crítico y compromiso con las consecuencias de nuestras acciones</em>. Estos componentes no son etapas independientes, sino dimensiones que deben desarrollarse conjuntamente en las actividades educativas y profesionales.</p>
+<p>Una vía concreta para promover esa articulación es desarrollar proyectos educativos <strong>STEM</strong> —<em>ciencia, tecnología, ingeniería y matemática</em>— y, cuando resulte pertinente, <strong>STEAM</strong>, incorporando las artes. La investigadora Fei-Fei Li ha destacado la importancia de avanzar más allá de los modelos centrados exclusivamente en palabras, hacia la <strong>inteligencia espacial y los modelos del mundo</strong>, como explica en su entrevista para The Circuit <span id="id17">[<a class="reference internal" href="#id20" title="Bloomberg Originals. ¿qué hay más allá de chatgpt? la «madrina de la ia» tiene un plan: entrevista a fei-fei li en the circuit. 2026. Entrevista audiovisual. URL: https://www.youtube.com/watch?v=mHyAONuPBYw.">Bloomberg Originals, 2026</a>]</span>. Esa perspectiva puede inspirar experiencias educativas en las que estudiantes de arquitectura, geografía, ingeniería e informática construyan, integren y evalúen modelos de un edificio y su contexto: <em>accesibilidad, movilidad, consumos, condiciones ambientales y relaciones con el entorno</em>. El propósito no es sumar tareas de disciplinas aisladas, sino <strong>construir un problema compartido</strong>, trabajar sobre múltiples escalas y debatir también las consecuencias humanas y ambientales de las soluciones.</p>
+</section>
+<section id="de-babel-a-la-construccion-colectiva-del-conocimiento">
+<h2><span class="section-number">1.6. </span>De Babel a la construcción colectiva del conocimiento<a class="headerlink" href="#de-babel-a-la-construccion-colectiva-del-conocimiento" title="Link to this heading">#</a></h2>
+<p>Sin ánimo de hablar desde una confesión religiosa, la imagen de la <strong>Torre de Babel</strong> resulta fértil para pensar estos desafíos. Babel evoca la fragmentación de las lenguas y la dificultad de comprenderse. Como contrapunto, podemos imaginar una ciudad de encuentro —Jerusalén, por su densidad histórica y simbólica, u otras tantas ciudades plurales— como aspiración de convivencia entre tradiciones, culturas y lenguajes. No se trata de idealizar una ciudad concreta, atravesada también por conflictos, sino de defender un horizonte de <strong>diálogo en la diversidad</strong>. La integración no requiere una lengua única ni la desaparición de las identidades.</p>
+<p>En este sentido, las torres de Babel que deberíamos evitar son <strong>las disciplinas que trabajan sin escucharse</strong>; los modelos cuyos significados no llegamos a comprender; las respuestas de IA que aceptamos sin examinarlas; los proyectos que ignoran su entorno; y las tecnologías que subordinan las necesidades humanas y los valores sociales, culturales y ambientales a la rentabilidad inmediata. La nota vaticana Antiqua et nova <span id="id18">[<a class="reference internal" href="#id23" title="Dicasterio para la Doctrina de la Fe and Dicasterio para la Cultura y la Educación. Antiqua et nova: nota sobre la relación entre la inteligencia artificial y la inteligencia humana. Technical Report, Santa Sede, 2025.">Dicasterio para la Doctrina de la Fe and Dicasterio para la Cultura y la Educación, 2025</a>]</span>, sobre la relación entre inteligencia humana y artificial, aporta una reflexión ética pertinente más allá de las creencias religiosas: el desarrollo tecnológico debe considerar la <strong>dignidad humana y el bien común</strong>.</p>
+<p>La integración es una tarea ambiciosa, pero contamos con experiencias sobre las cuales avanzar. Las infraestructuras de datos espaciales muestran que organismos, instituciones y comunidades diferentes pueden construir mecanismos de cooperación y sostener recursos compartidos. El paso siguiente es profundizar esa articulación en <strong>enfoques interdisciplinarios, interjurisdiccionales y multiescalares</strong>, donde las decisiones sobre los <strong>activos constructivos</strong> dialoguen con la planificación urbana y territorial. Esto exige acuerdos institucionales, <strong>modelos interoperables</strong> y espacios de trabajo donde <em>arquitectos, geógrafos, artistas, ingenieros, informáticos y especialistas de las geociencias</em> puedan compartir conocimientos sin perder sus perspectivas particulares.</p>
+<p>¿Y si iniciamos un nuevo camino o, mejor aún, unimos caminos que ya existen? <strong>Integrar no significa uniformar</strong>: significa reconocer diferencias, hacerlas dialogar y orientar nuestras producciones hacia propósitos compartidos. Quizás haya llegado el momento de dejar de construir nuevas torres de Babel y avanzar, juntos, en la <strong>construcción colectiva del conocimiento geoespacial</strong>.</p>
+</section>
+<section id="agradecimientos">
+<h2><span class="section-number">1.7. </span>Agradecimientos<a class="headerlink" href="#agradecimientos" title="Link to this heading">#</a></h2>
+<p>Este capítulo surge de las reflexiones compartidas durante el conversatorio «La IA y las tecnologías disruptivas en la geografía», realizado el 2 de noviembre de 2026 en la Facultad de Arte y Arquitectura de la Universidad del Salvador (USAL). Agradezco especialmente la participación y el acompañamiento de Marcelo Salvador De Simone, decano de la Facultad; Alfredo Grassi, director del Doctorado en Geografía; la Dra. María Carmen Pereyra Barrancos; y el Dr. Julio Benedetti, docente de la USAL y organizador del conversatorio. Sus aportes y el intercambio con los asistentes contribuyeron a dar origen a las ideas desarrolladas en estas páginas.</p>
+</section>
+<section id="referencias-bibliograficas">
+<h2><span class="section-number">1.8. </span>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id19">
+<div role="list" class="citation-list">
+<div class="citation" id="id21" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">CC20</a><span class="fn-bracket">]</span></span>
+<p>J. Chen and Keith C. Clarke. Indoor cartography. <em>Cartography and Geographic Information Science</em>, 2020. <a class="reference external" href="https://doi.org/10.1080/15230406.2019.1619482">doi:10.1080/15230406.2019.1619482</a>.</p>
+</div>
+<div class="citation" id="id22" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">Cos84</a><span class="fn-bracket">]</span></span>
+<p>Denis Cosgrove. <em>Social Formation and Symbolic Landscape</em>. Croom Helm, 1984.</p>
+</div>
+<div class="citation" id="id24" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Fac90</a><span class="fn-bracket">]</span></span>
+<p>Peter A. Facione. Critical thinking: a statement of expert consensus for purposes of educational assessment and instruction. Technical Report, American Philosophical Association, 1990.</p>
+</div>
+<div class="citation" id="id25" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Fou67<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
+<p>Michel Foucault. Nietzsche, freud, marx. In <em>Cahiers de Royaumont: Philosophie</em>, volume 6, pages 183–200. 1967.</p>
+</div>
+<div class="citation" id="id28" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">LZTS+19</a><span class="fn-bracket">]</span></span>
+<p>Ki-Joune Li, Sisi Zlatanova, Joaquín Torres-Sospedra, Antoni Pérez-Navarro, Christos Laoudias, and Adriano Moreira. Survey on indoor map standards and formats. In <em>2019 International Conference on Indoor Positioning and Indoor Navigation (IPIN)</em>. 2019. <a class="reference external" href="https://doi.org/10.1109/IPIN.2019.8911796">doi:10.1109/IPIN.2019.8911796</a>.</p>
+</div>
+<div class="citation" id="id29" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Mas05<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id8">2</a>)</span>
+<p>Doreen Massey. <em>For Space</em>. SAGE, 2005.</p>
+</div>
+<div class="citation" id="id33" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">Tua77</a><span class="fn-bracket">]</span></span>
+<p>Yi-Fu Tuan. <em>Space and Place: The Perspective of Experience</em>. University of Minnesota Press, 1977.</p>
+</div>
+<div class="citation" id="id34" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">VBT+25</a><span class="fn-bracket">]</span></span>
+<p>M. Villarreal, T. D. Baird, P. A. Tarazaga, D. J. Kniola, T. J. Pingel, and R. Sarlo. Shared space and resource use within a building environment: an indoor geography. <em>The Geographical Journal</em>, 191(1):e12604, 2025. <a class="reference external" href="https://doi.org/10.1111/geoj.12604">doi:10.1111/geoj.12604</a>.</p>
+</div>
+<div class="citation" id="id35" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">Vyg78</a><span class="fn-bracket">]</span></span>
+<p>Lev S. Vygotsky. <em>Mind in Society: The Development of Higher Psychological Processes</em>. Harvard University Press, 1978.</p>
+</div>
+<div class="citation" id="id36" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">W+16</a><span class="fn-bracket">]</span></span>
+<p>Mark D. Wilkinson and others. The fair guiding principles for scientific data management and stewardship. <em>Scientific Data</em>, 3:160018, 2016. <a class="reference external" href="https://doi.org/10.1038/sdata.2016.18">doi:10.1038/sdata.2016.18</a>.</p>
+</div>
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">BloombergOriginals26</a><span class="fn-bracket">]</span></span>
+<p>Bloomberg Originals. ¿qué hay más allá de chatgpt? la «madrina de la ia» tiene un plan: entrevista a fei-fei li en the circuit. 2026. Entrevista audiovisual. URL: <a class="reference external" href="https://www.youtube.com/watch?v=mHyAONuPBYw">https://www.youtube.com/watch?v=mHyAONuPBYw</a>.</p>
+</div>
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">DicasterioplDdlFeDicasterioplCylEducacion25</a><span class="fn-bracket">]</span></span>
+<p>Dicasterio para la Doctrina de la Fe and Dicasterio para la Cultura y la Educación. Antiqua et nova: nota sobre la relación entre la inteligencia artificial y la inteligencia humana. Technical Report, Santa Sede, 2025.</p>
+</div>
+<div class="citation" id="id26" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">IBMResearch24</a><span class="fn-bracket">]</span></span>
+<p>IBM Research. Ibm and nasa release a new version of prithvi. 2024. URL: <a class="reference external" href="https://research.ibm.com/blog/prithvi2-geospatial">https://research.ibm.com/blog/prithvi2-geospatial</a>.</p>
+</div>
+<div class="citation" id="id27" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">InternationalOfStandardization24</a><span class="fn-bracket">]</span></span>
+<p>International Organization for Standardization. Iso 16739-1:2024: industry foundation classes (ifc). 2024.</p>
+</div>
+<div class="citation" id="id30" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">NASA24</a><span class="fn-bracket">]</span></span>
+<p>NASA. Expanded ai model with global data enhances earth science applications. 2024. URL: <a class="reference external" href="https://science.nasa.gov/science-research/ai-geospatial-model-earth/">https://science.nasa.gov/science-research/ai-geospatial-model-earth/</a>.</p>
+</div>
+<div class="citation" id="id31" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">OpenGConsortium20</a><span class="fn-bracket">]</span></span>
+<p>Open Geospatial Consortium. Indoorgml 1.1 standard. 2020.</p>
+</div>
+<div class="citation" id="id32" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">OpenGConsortium21</a><span class="fn-bracket">]</span></span>
+<p>Open Geospatial Consortium. Citygml 3.0 conceptual model standard. 2021.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdg-idera/geosemantica",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>Geosemántica y GeoAI</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Geociencias.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Transformación Digital en Geociencias</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-territorio-que-no-se-detiene">1.1. Un territorio que no se detiene</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tres-lenguajes-para-comprender-una-misma-realidad">1.2. Tres lenguajes para comprender una misma realidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-de-construir-modelos-integrados">1.3. El valor de construir modelos integrados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-las-infraestructuras-de-datos-a-las-infraestructuras-de-conocimiento">1.4. De las infraestructuras de datos a las infraestructuras de conocimiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#educar-para-conocer-hacer-crear-y-ser">1.5. Educar para conocer, hacer, crear y ser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#de-babel-a-la-construccion-colectiva-del-conocimiento">1.6. De Babel a la construcción colectiva del conocimiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#agradecimientos">1.7. Agradecimientos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-bibliograficas">1.8. Referencias bibliográficas</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Luis Reynoso (IDERA-GTT CDG)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

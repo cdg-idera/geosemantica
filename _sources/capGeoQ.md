@@ -8,3 +8,10 @@ zonifica el coeficiente de escorrentía (CE), la capacidad de infiltración (CF)
 capacidad de campo (CIo), considerando una condición de humedad antecedente media. Los resultados permiten visualizar cómo la interacción entre el complejo suelo-vegetación y la intensidad de la tormenta determina la respuesta hidrológica de la cuenca, identificando zonas críticas donde precipitaciones intensas pueden generar escorrentía significativa y potenciales problemas de anegamiento. Este capítulo interactivo demuestra cómo GeoQ facilita el análisis hidrológico distribuido en cuencas de llanura, proporcionando información cuantitativa y espacialmente explícita relevante para la planificación territorial, la evaluación de vulnerabilidad hidrológica y la gestión del riesgo de inundaciones en la región pampeana.
 
 + **Palabras clave:** Modelación hidrológica, QGis, escorrentía, infiltración.
+
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```

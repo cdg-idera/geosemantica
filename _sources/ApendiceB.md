@@ -188,3 +188,9 @@ Figure: Satellite Embedding image with 10 clusters
 ```
 
 Se están revelando muchos detalles y podemos ver diferentes tipos de cultivos agrupados en diferentes grupos. Dado que la Integración Satelital captura la fenología del cultivo junto con las variables climáticas, es ideal para el mapeo de tipos de cultivos. En el siguiente tutorial (Clasificación No Supervisada), veremos cómo crear un mapa de tipos de cultivos con datos de Integración Satelital con pocas o ninguna etiqueta a nivel de campo.
+
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```
