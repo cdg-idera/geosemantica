@@ -1,4 +1,5 @@
 # **De las torres de Babel a la construcción colectiva del conocimiento.**
+*Reflexiones sobre arquitectura, geografía, inteligencia artificial y construcción colectiva del conocimiento.*
 
 + **Autor:** Luis Reynoso
 
@@ -6,7 +7,7 @@
 
 Este capítulo surge de las reflexiones de un conversatorio sobre inteligencia artificial y tecnologías disruptivas en geografía y arquitectura, realizado en la Facultad de Arte y Arquitectura de la Universidad del Salvador, sede Pilar, el 2 de noviembre de 2026. A partir de la metáfora de la **Torre de Babel**, se examinan las limitaciones de las **representaciones fragmentadas** de un territorio dinámico y la necesidad de **integrar conocimientos, modelos y escalas espaciales**.
 
-Se propone articular tres lenguajes —*natural, espacial y simbólico*— y explorar las oportunidades que ofrecen los **modelos fundacionales lingüísticos y geoespaciales**, las **ontologías y la interoperabilidad semántica**. Se destaca la construcción de **modelos integrados de activos constructivos**, ciudades y territorios, así como el avance desde las **Infraestructuras de Datos Espaciales** hacia **Infraestructuras de Conocimiento Geoespacial**, con **modelos consultables, inferibles y explicables**.
+Se propone articular tres lenguajes —*natural, espacial y simbólico*— y explorar las oportunidades que ofrecen los **modelos fundacionales lingüísticos y geoespaciales**, las **ontologías y la interoperabilidad semántica**. Se destaca la construcción de *modelos integrados de activos constructivos, ciudades y territorios*, así como el avance desde las **Infraestructuras de Datos Espaciales** hacia **Infraestructuras de Conocimiento Geoespacial**, con **modelos consultables, inferibles y explicables**.
 
 Finalmente, se propone promover proyectos educativos **STEAM** que articulen ciencias, tecnologías, ingeniería, artes y matemáticas, integrando *creatividad, innovación, pensamiento crítico* y **competencias conceptuales, procedimentales y actitudinales**. La **construcción colectiva del conocimiento geoespacial** se plantea como un camino de **cooperación interdisciplinaria e institucional**, respetuoso de la diversidad y orientado al bien común.
 
@@ -60,7 +61,9 @@ La integración es una tarea ambiciosa, pero contamos con experiencias sobre las
 
 ## Agradecimientos
 
-Este capítulo surge de las reflexiones compartidas durante el conversatorio «La IA y las tecnologías disruptivas en la geografía», realizado el 2 de noviembre de 2026 en la Facultad de Arte y Arquitectura de la Universidad del Salvador (USAL). Agradezco especialmente la participación y el acompañamiento de Marcelo Salvador De Simone, decano de la Facultad; Alfredo Grassi, director del Doctorado en Geografía; la Dra. María Carmen Pereyra Barrancos; y el Dr. Julio Benedetti, docente de la USAL y organizador del conversatorio. Sus aportes y el intercambio con los asistentes contribuyeron a dar origen a las ideas desarrolladas en estas páginas.
+Este capítulo surge de las reflexiones compartidas durante el conversatorio «La IA y las tecnologías disruptivas en la geografía y arquitectura», realizado el 2 de noviembre de 2026 en la Facultad de Arte y Arquitectura de la Universidad del Salvador (USAL). Agradezco especialmente la participación y el acompañamiento de *Marcelo Salvador De Simone*, decano de la Facultad; *Alfredo Grassi*, director del Doctorado en Geografía; la *Dra. María Carmen Pereyra Barrancos*; el *Arq. Luis Alberto Novoa* y el *Dr. Julio Benedetti*, docente de la USAL y organizador del conversatorio. 
+
+El encuentro permitió conocer proyectos situados y producciones artísticas y arquitectónicas, entre ellas un valioso *acervo de maquetas realizadas por los estudiantes*, que el decano tuvo la gentileza de compartir y que reflejan una concepción de la arquitectura en diálogo con su entorno urbano. Estas experiencias inspiraron nuevas reflexiones y permitieron reconocer puntos de encuentro entre la arquitectura, la geografía y la construcción colectiva del conocimiento geoespacial.
 
 ## Referencias bibliográficas
 
