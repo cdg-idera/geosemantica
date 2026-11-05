@@ -1,4 +1,4 @@
-# **De las torres de Babel a la construcción colectiva del conocimiento.**
+# **De las torres de Babel a la construcción colectiva del conocimiento geoespacial.**
 *Reflexiones sobre arquitectura, geografía, inteligencia artificial y construcción colectiva del conocimiento.*
 
 + **Autor:** Luis Reynoso
