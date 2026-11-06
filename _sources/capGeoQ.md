@@ -1,23 +1,3 @@
-<!--
-=====================================================================
-Capítulo 14 · GeoQ (libro "Geosemántica y GeoAI", IDERA-GTT CDG)
-Formato: MyST Markdown para Jupyter Book.
-Fuente: capitulo_GeoQ_04-nov.docx
-
-Convenciones usadas en este archivo:
-- Citas:   {cite:p}`clave`        → cita entre corchetes: [Autor, año]
-           Autor {cite:yearpar}`clave` → cita narrativa: Autor [año]
-             (los nombres se escriben a mano para usar "y" en lugar de "and")
-           Las claves están en referencias_geoq.bib (prefijo "geoq-").
-- Ecuaciones: bloques $$ ... $$ con \tag{n}; numeradas 14.1-14.7 (número del capítulo en el libro).
-- Figuras y tablas: numeradas a mano con el número del capítulo (Figura 14.n, Tabla 14.n), en orden de aparición.
-  Figuras: bloques ```{figure}``` (sin :name:, para que el libro no agregue su propia etiqueta "Fig.") con imágenes en imagenes/geoq/.
-  Las tablas 14.12 a 14.14 son HTML con barras de datos ({raw} html).
-- Los comentarios como este (<!- - ... - ->) NO se muestran en el libro.
-  Las marcas "TODO" señalan lo que falta completar o decidir.
-=====================================================================
--->
-
 # **GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica**
 
 + **Autores:** Fabio Alejandro Montealegre Medina[^af1] y Fernanda Julia Gaspari[^af2].
@@ -901,9 +881,8 @@ La Tabla 14.16 reúne los trabajos que han aplicado GeoQ, según el registro de 
 
 *Fuente: Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2024a`, adaptado de Mockus {cite:yearpar}`geoq-mockus1972`.*
 
-<!--
-Bibliografía: como en los demás capítulos del libro, las referencias se muestran
-en la página global "Bibliografía" (Referencias.md). El coordinador debe agregar
-referencias_geoq.bib a la lista bibtex_bibfiles del archivo _config.yml del libro
-(o copiar sus entradas en el .bib general).
--->
+## Referencias bibliográficas
+
+```{bibliography}
+:filter: docname in docnames
+```
