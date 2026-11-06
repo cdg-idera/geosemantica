@@ -1,0 +1,1284 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ontologías: fundamentos y aplicaciones en las geociencias &#8212; Geosemántica y GeoAI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Introduccion_a_las_ontologias_en_geociencias';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logoAgua.png" class="logo__image only-light" alt="Geosemántica y GeoAI - Home"/>
+    <script>document.write(`<img src="_static/logoAgua.png" class="logo__image only-dark" alt="Geosemántica y GeoAI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Geosemántica y GeoAI
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="TorresDeBabelAlCG.html">1. Capítulo · De las torres de Babel a la construcción colectiva del conocimiento geoespacial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geociencias.html">2. Capítulo · Principios de alfabetización de la Tierra y para la transformación digital en Geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion.html">3. Capítulo · Introducción a GeoAI y Cartografía Inteligente y Semántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Geosemantica.html">4. Capítulo · Geosemántica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings_fundacionales.html">5. Capítulo · Modelos Fundacionales para Observación de la Tierra FM4EO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddings.html">6. Capítulo · Embeddings satelitales: una nueva semántica del territorio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Clustering.html">7. Capítulo · Entrenamiento no-supervisado con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embeddingsEjemplos.html">8. Capítulo · Entrenamientos Supervisados con Embeddings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conceptosIntroductoriosCNN.html">9. Capítulo · Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">10. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">11. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capitulo_girona.html">12. Capítulo · Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologias.html">13. Capítulo · Ontologías: fundamentos y aplicaciones en las geociencias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">14. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">15. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capDinamicaSalta.html">16. Capítulo · Dinámica espacio-temporal de las Islas de Calor Urbano y efecto de enfriamiento en el Aglomerado del Gran Salta, Argentina (2013–2025)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">17. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">18. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">19. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">20. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/cdg-idera/geosemantica/issues/new?title=Issue%20on%20page%20%2FIntroduccion_a_las_ontologias_en_geociencias.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Introduccion_a_las_ontologias_en_geociencias.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ontologías: fundamentos y aplicaciones en las geociencias</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-muchos-datos-distintos-significados">1. El problema: muchos datos, distintos significados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-ontologia">2. ¿Qué es una ontología?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-intuitivo">Ejemplo intuitivo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-componentes-de-una-ontologia">3. Los componentes de una ontología</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clases">3.1 Clases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individuos-o-instancias">3.2 Individuos o instancias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-y-relaciones">3.3 Propiedades y relaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomas-y-restricciones">3.4 Axiomas y restricciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontologia-taxonomia-tesauro-y-base-de-datos">4. Ontología, taxonomía, tesauro y base de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdf-expresar-conocimiento-mediante-tripletas">5. RDF: expresar conocimiento mediante tripletas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-iri">¿Qué es una IRI?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdfs-owl-skos-shacl-y-geosparql">6. RDFS, OWL, SKOS, SHACL y GeoSPARQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nuestro-caso-de-estudio-neuquen-y-sus-rios">7. Nuestro caso de estudio: Neuquén y sus ríos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-grafo-conceptual">7.1. El grafo conceptual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-ejemplo-completo-en-turtle">7.2. El ejemplo completo en Turtle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desarmar-el-ejemplo-en-tripletas-rdf">7.3. Desarmar el ejemplo en tripletas RDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iri-completas-prefijos-y-dereferenciacion">7.4. IRI completas, prefijos y dereferenciación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-ontologias-y-vocabularios-reutilizamos">7.5. Qué ontologías y vocabularios reutilizamos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-esta-la-ontologia-y-donde-estan-los-datos">8. ¿Dónde está la ontología y dónde están los datos?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferir-no-solo-recuperar">8.1. Inferir, no solo recuperar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relaciones-generales-y-especificas">8.2. Relaciones generales y específicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#un-detalle-geodesico-importante">8.3. Un detalle geodésico importante</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consultar-el-caso-neuquen-mediante-sparql">9. Consultar el caso Neuquén mediante SPARQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-1-que-nombre-y-coordenadas-tiene-la-ciudad">Consulta 1. ¿Qué nombre y coordenadas tiene la ciudad?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-2-cual-es-la-entidad-administrativa-superior-vinculada-a-la-ciudad">Consulta 2. ¿Cuál es la entidad administrativa superior vinculada a la ciudad?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-3-con-que-recursos-esta-relacionada-la-ciudad">Consulta 3. ¿Con qué recursos está relacionada la ciudad?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-4-cuales-de-las-entidades-relacionadas-son-cursos-de-agua-segun-geonames">Consulta 4. ¿Cuáles de las entidades relacionadas son cursos de agua según GeoNames?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-5-que-puede-inferirse-con-la-extension-ontologica">Consulta 5. ¿Qué puede inferirse con la extensión ontológica?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-competencia">9.1. Preguntas de competencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mundo-abierto-y-calidad-de-las-afirmaciones">9.2. Mundo abierto y calidad de las afirmaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aporta-geosparql">10. ¿Qué aporta GeoSPARQL?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-aplicado-un-catastro-interoperable">11. Ejemplo aplicado: un catastro interoperable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontologias-ide-y-servicios-ogc">12. Ontologías, IDE y servicios OGC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontologias-y-sistemas-de-inteligencia-artificial">13. Ontologías y sistemas de inteligencia artificial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-construye-una-ontologia-geografica">14. ¿Cómo se construye una ontología geográfica?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-habituales">Herramientas habituales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-conceptuales-frecuentes">15. Errores conceptuales frecuentes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-practica-propuesta">16. Actividad práctica propuesta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis">17. Síntesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos-para-profundizar">18. Referencias y recursos para profundizar</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ontologias-fundamentos-y-aplicaciones-en-las-geociencias">
+<h1>Ontologías: fundamentos y aplicaciones en las geociencias<a class="headerlink" href="#ontologias-fundamentos-y-aplicaciones-en-las-geociencias" title="Link to this heading">#</a></h1>
+<p><strong>Material introductorio para estudiantes y profesionales de las geociencias</strong><br />
+<strong>Nivel:</strong> inicial–intermedio<br />
+<strong>Propósito:</strong> comprender qué es una ontología, cómo representa conocimiento y qué problemas ayuda a resolver en el ámbito geoespacial.</p>
+<section id="objetivos-de-aprendizaje">
+<h2>Objetivos de aprendizaje<a class="headerlink" href="#objetivos-de-aprendizaje" title="Link to this heading">#</a></h2>
+<p>Al finalizar la lectura, se espera que el lector pueda:</p>
+<ul class="simple">
+<li><p>Distinguir una ontología de una base de datos, una taxonomía y un vocabulario controlado.</p></li>
+<li><p>Reconocer clases, individuos, propiedades, axiomas e identificadores IRI.</p></li>
+<li><p>Interpretar tripletas RDF y ejemplos sencillos en Turtle y SPARQL.</p></li>
+<li><p>Explicar la utilidad de las ontologías para integrar fuentes geográficas heterogéneas.</p></li>
+<li><p>Identificar posibilidades y límites del razonamiento semántico y de su combinación con IA.</p></li>
+</ul>
+</section>
+<section id="el-problema-muchos-datos-distintos-significados">
+<h2>1. El problema: muchos datos, distintos significados<a class="headerlink" href="#el-problema-muchos-datos-distintos-significados" title="Link to this heading">#</a></h2>
+<p>Imaginemos tres organismos que publican información sobre un río. Una autoridad hídrica registra su nombre, caudal y cuenca; un municipio lo representa como una línea en un servicio de entidades geográficas; y una oficina ambiental publica áreas de protección asociadas. Los tres conjuntos de datos pueden referirse al <strong>mismo río</strong>, pero utilizar nombres de campos, identificadores, unidades y criterios distintos.</p>
+<p>La interoperabilidad técnica permite acceder e intercambiar datos. Sin embargo, <strong>poder intercambiar datos no garantiza que los sistemas interpreten su significado de la misma manera</strong>. Por ejemplo, <code class="docutils literal notranslate"><span class="pre">curso_agua</span></code>, <code class="docutils literal notranslate"><span class="pre">watercourse</span></code> y <code class="docutils literal notranslate"><span class="pre">rio</span></code> podrían designar conceptos equivalentes, relacionados o parcialmente diferentes, según cómo se definan.</p>
+<p>Las ontologías ayudan a explicitar esos significados y relaciones. También permiten formular preguntas que atraviesan diferentes fuentes: «¿Qué ciudades están próximas a ríos que pertenecen a determinada cuenca?» o «¿Qué áreas protegidas se vinculan con cursos de agua de una provincia?».</p>
+</section>
+<section id="que-es-una-ontologia">
+<h2>2. ¿Qué es una ontología?<a class="headerlink" href="#que-es-una-ontologia" title="Link to this heading">#</a></h2>
+<p>En informática y representación del conocimiento, una <strong>ontología</strong> es una especificación explícita y formal de una conceptualización compartida de un dominio. Esta formulación, asociada a trabajos de Gruber y Borst, reúne cuatro ideas:</p>
+<ol class="arabic simple">
+<li><p><strong>Conceptualización:</strong> se identifican entidades y relaciones relevantes de un ámbito, por ejemplo ríos, cuencas, provincias y ciudades.</p></li>
+<li><p><strong>Explícita:</strong> los conceptos y sus relaciones se definen y documentan, en vez de quedar implícitos en el conocimiento de una persona.</p></li>
+<li><p><strong>Formal:</strong> se emplean lenguajes interpretables por máquinas, como RDFS u OWL.</p></li>
+<li><p><strong>Compartida:</strong> se procura establecer un significado consensuado y reutilizable, aunque siempre puede haber distintas ontologías para un mismo dominio.</p></li>
+</ol>
+<p>Una ontología <strong>no es el territorio</strong> ni una copia completa de la realidad. Es un <strong>modelo</strong> que selecciona ciertos aspectos de un dominio para responder preguntas y realizar tareas concretas. Su calidad depende, entre otras cosas, de la claridad de sus definiciones, su coherencia, su adecuación a los usos previstos y su mantenimiento.</p>
+<section id="ejemplo-intuitivo">
+<h3>Ejemplo intuitivo<a class="headerlink" href="#ejemplo-intuitivo" title="Link to this heading">#</a></h3>
+<p>Una descripción informal podría afirmar:</p>
+<blockquote>
+<div><p>«El río Limay es un río relacionado con la provincia del Neuquén».</p>
+</div></blockquote>
+<p>Un modelo semántico permite separar los elementos de esa afirmación:</p>
+<ul class="simple">
+<li><p><strong>Concepto o clase:</strong> <code class="docutils literal notranslate"><span class="pre">Río</span></code>.</p></li>
+<li><p><strong>Individuo:</strong> <code class="docutils literal notranslate"><span class="pre">Río</span> <span class="pre">Limay</span></code>.</p></li>
+<li><p><strong>Relación:</strong> <code class="docutils literal notranslate"><span class="pre">atraviesa</span></code> o <code class="docutils literal notranslate"><span class="pre">limitaCon</span></code>, según la afirmación geográfica precisa que se quiera modelar.</p></li>
+<li><p><strong>Otro individuo:</strong> <code class="docutils literal notranslate"><span class="pre">Provincia</span> <span class="pre">del</span> <span class="pre">Neuquén</span></code>.</p></li>
+</ul>
+<p>La elección de la relación importa: <strong>«atraviesa», «limita con» y «está cerca de» no significan lo mismo</strong>. Una ontología obliga a aclarar esas diferencias.</p>
+</section>
+</section>
+<section id="los-componentes-de-una-ontologia">
+<h2>3. Los componentes de una ontología<a class="headerlink" href="#los-componentes-de-una-ontologia" title="Link to this heading">#</a></h2>
+<section id="clases">
+<h3>3.1 Clases<a class="headerlink" href="#clases" title="Link to this heading">#</a></h3>
+<p>Una <strong>clase</strong> agrupa entidades que comparten una caracterización conceptual. Ejemplos: <code class="docutils literal notranslate"><span class="pre">Río</span></code>, <code class="docutils literal notranslate"><span class="pre">Lago</span></code>, <code class="docutils literal notranslate"><span class="pre">CuencaHidrográfica</span></code>, <code class="docutils literal notranslate"><span class="pre">Ciudad</span></code>, <code class="docutils literal notranslate"><span class="pre">Provincia</span></code>, <code class="docutils literal notranslate"><span class="pre">ParcelaCatastral</span></code>.</p>
+<p>Una jerarquía posible sería:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>EntidadGeográfica
+├── ElementoHidrográfico
+│   ├── Río
+│   └── Lago
+└── UnidadAdministrativa
+    ├── Provincia
+    └── Municipio
+</pre></div>
+</div>
+<p>Este árbol es solo una representación didáctica: una ontología real puede tener múltiples jerarquías y relaciones que no se reducen a un árbol.</p>
+</section>
+<section id="individuos-o-instancias">
+<h3>3.2 Individuos o instancias<a class="headerlink" href="#individuos-o-instancias" title="Link to this heading">#</a></h3>
+<p>Un <strong>individuo</strong> es una entidad particular representada en el modelo: el río Limay, la ciudad de Neuquén o una parcela con identificador determinado. La clase <code class="docutils literal notranslate"><span class="pre">Río</span></code> no es un río particular: describe el tipo de entidad al que puede pertenecer el individuo <code class="docutils literal notranslate"><span class="pre">RioLimay</span></code>.</p>
+</section>
+<section id="propiedades-y-relaciones">
+<h3>3.3 Propiedades y relaciones<a class="headerlink" href="#propiedades-y-relaciones" title="Link to this heading">#</a></h3>
+<p>Las <strong>propiedades de objeto</strong> relacionan individuos entre sí: <code class="docutils literal notranslate"><span class="pre">desembocaEn</span></code>, <code class="docutils literal notranslate"><span class="pre">perteneceACuenca</span></code>, <code class="docutils literal notranslate"><span class="pre">limitaCon</span></code>, <code class="docutils literal notranslate"><span class="pre">seUbicaEn</span></code>.</p>
+<p>Las <strong>propiedades de datos</strong> vinculan individuos con valores literales: <code class="docutils literal notranslate"><span class="pre">nombre</span></code>, <code class="docutils literal notranslate"><span class="pre">superficieKm2</span></code>, <code class="docutils literal notranslate"><span class="pre">codigoCatastral</span></code>.</p>
+<p>Ejemplos:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>RioLimay --perteneceACuenca--&gt; CuencaDelRioNegro
+RioLimay --nombre--&gt; &quot;Limay&quot;
+</pre></div>
+</div>
+<p>La primera relación conecta dos recursos; la segunda conecta un recurso con un texto.</p>
+</section>
+<section id="axiomas-y-restricciones">
+<h3>3.4 Axiomas y restricciones<a class="headerlink" href="#axiomas-y-restricciones" title="Link to this heading">#</a></h3>
+<p>Los <strong>axiomas</strong> expresan afirmaciones formales que permiten derivar consecuencias. Por ejemplo:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Río</span></code> es una subclase de <code class="docutils literal notranslate"><span class="pre">ElementoHidrográfico</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">desembocaEn</span></code> relaciona cursos de agua con cuerpos de agua, si esa es la definición adoptada.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">esAfluenteDe</span></code> puede definirse como una relación transitiva <strong>solo si</strong> su significado y el caso de uso justifican esa decisión.</p></li>
+</ul>
+<p>También pueden declararse clases disjuntas, equivalencias, dominios, rangos y otras restricciones. <strong>Importante:</strong> en OWL, las restricciones no funcionan necesariamente como controles de validación de formularios. Para validar datos según condiciones cerradas suele utilizarse <strong>SHACL</strong>.</p>
+</section>
+</section>
+<section id="ontologia-taxonomia-tesauro-y-base-de-datos">
+<h2>4. Ontología, taxonomía, tesauro y base de datos<a class="headerlink" href="#ontologia-taxonomia-tesauro-y-base-de-datos" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Recurso</p></th>
+<th class="head"><p>Qué representa principalmente</p></th>
+<th class="head"><p>Ejemplo geográfico</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Taxonomía</p></td>
+<td><p>Clasificación jerárquica</p></td>
+<td><p>Río es un tipo de elemento hidrográfico</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tesauro / SKOS</p></td>
+<td><p>Conceptos, etiquetas y relaciones terminológicas</p></td>
+<td><p>«Curso de agua» como término preferido y sus términos relacionados</p></td>
+</tr>
+<tr class="row-even"><td><p>Ontología</p></td>
+<td><p>Conceptos, relaciones y axiomas formalizados</p></td>
+<td><p>Un río pertenece a una cuenca y desemboca en otro cuerpo de agua</p></td>
+</tr>
+<tr class="row-odd"><td><p>Base de datos</p></td>
+<td><p>Datos almacenados y operaciones para gestionarlos</p></td>
+<td><p>Tabla de ríos con nombre, código y geometría</p></td>
+</tr>
+<tr class="row-even"><td><p>Grafo de conocimiento</p></td>
+<td><p>Entidades y relaciones representadas como grafo, frecuentemente apoyadas en ontologías</p></td>
+<td><p>Río Limay → pertenece a → Cuenca del río Negro</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Estas tecnologías <strong>se complementan</strong>. Una base de datos puede almacenar instancias; una ontología puede definir su significado; un grafo de conocimiento puede vincularlas; SKOS puede ayudar a armonizar términos de distintos catálogos.</p>
+</section>
+<section id="rdf-expresar-conocimiento-mediante-tripletas">
+<h2>5. RDF: expresar conocimiento mediante tripletas<a class="headerlink" href="#rdf-expresar-conocimiento-mediante-tripletas" title="Link to this heading">#</a></h2>
+<p><strong>RDF (Resource Description Framework)</strong> es un modelo estándar del W3C para representar afirmaciones como tripletas:</p>
+<p><strong>Sujeto → Predicado → Objeto</strong></p>
+<p>Por ejemplo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>RioLimay → rdf:type → Rio
+RioLimay → nombre → &quot;Limay&quot;
+RioLimay → perteneceACuenca → CuencaDelRioNegro
+</pre></div>
+</div>
+<p>Cada tripleta expresa una afirmación. Al conectar muchas tripletas se obtiene un grafo de recursos y relaciones.</p>
+<section id="que-es-una-iri">
+<h3>¿Qué es una IRI?<a class="headerlink" href="#que-es-una-iri" title="Link to this heading">#</a></h3>
+<p>Una <strong>IRI (Internationalized Resource Identifier)</strong> es un identificador que permite nombrar inequívocamente un recurso en el contexto de un sistema de identificación. Por ejemplo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://ejemplo.org/geo/ontologia#Rio
+https://ejemplo.org/geo/recurso/RioLimay
+https://ejemplo.org/geo/propiedad/perteneceACuenca
+</pre></div>
+</div>
+<p><strong>Estas direcciones son ilustrativas y no identifican un servicio publicado.</strong> En una ontología, clases, propiedades e individuos suelen tener IRI propias. Una IRI puede ser <strong>dereferenciable</strong>, es decir, diseñada para que una consulta web devuelva una descripción útil del recurso, por ejemplo HTML para personas o RDF para aplicaciones. <strong>No toda IRI tiene necesariamente una página web accesible</strong>, ni una IRI debe confundirse con la ubicación física de un objeto geográfico.</p>
+</section>
+</section>
+<section id="rdfs-owl-skos-shacl-y-geosparql">
+<h2>6. RDFS, OWL, SKOS, SHACL y GeoSPARQL<a class="headerlink" href="#rdfs-owl-skos-shacl-y-geosparql" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Estándar</p></th>
+<th class="head"><p>Función principal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>RDF</strong></p></td>
+<td><p>Representar afirmaciones como tripletas</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>RDFS</strong></p></td>
+<td><p>Definir vocabularios básicos, clases, subclases y propiedades</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>OWL</strong></p></td>
+<td><p>Expresar axiomas y restricciones semánticas más elaboradas</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SKOS</strong></p></td>
+<td><p>Representar sistemas de organización del conocimiento: tesauros, clasificaciones y vocabularios controlados</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>SHACL</strong></p></td>
+<td><p>Validar grafos RDF frente a formas y restricciones declaradas</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>SPARQL</strong></p></td>
+<td><p>Consultar y transformar datos RDF</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>GeoSPARQL</strong></p></td>
+<td><p>Representar y consultar información geoespacial en RDF, incluyendo geometrías y relaciones espaciales</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Una distinción útil: <strong>RDF es el modelo de datos; OWL es un lenguaje para definir ontologías; SPARQL es un lenguaje de consulta</strong>. No son tecnologías intercambiables.</p>
+</section>
+<section id="nuestro-caso-de-estudio-neuquen-y-sus-rios">
+<h2>7. Nuestro caso de estudio: Neuquén y sus ríos<a class="headerlink" href="#nuestro-caso-de-estudio-neuquen-y-sus-rios" title="Link to this heading">#</a></h2>
+<p>A partir de aquí utilizaremos <strong>un único ejemplo conductor</strong>, referido a cinco recursos: la <strong>ciudad de Neuquén</strong>, la <strong>provincia del Neuquén</strong>, el <strong>río Limay</strong>, el <strong>río Neuquén</strong> y el <strong>sistema de referencia WGS 84 (EPSG:4326)</strong>. El objetivo no es hacer un inventario geográfico exhaustivo, sino aprender a representar y consultar conocimiento.</p>
+<p>Una persona puede leer la siguiente frase sin dificultad:</p>
+<blockquote>
+<div><p>«La ciudad de Neuquén se encuentra en la provincia del Neuquén, está relacionada con los ríos Limay y Neuquén y tiene coordenadas geográficas».</p>
+</div></blockquote>
+<p>Pero una computadora necesita <strong>identificadores estables</strong>, <strong>relaciones explícitas</strong> y <strong>vocabularios con significados documentados</strong> para procesar esa información sin depender solamente de interpretar una frase.</p>
+<section id="el-grafo-conceptual">
+<h3>7.1. El grafo conceptual<a class="headerlink" href="#el-grafo-conceptual" title="Link to this heading">#</a></h3>
+<p>El diagrama resume las relaciones <strong>expresadas en el RDF del ejemplo</strong>. Las flechas etiquetadas <code class="docutils literal notranslate"><span class="pre">dcterms:relation</span></code> indican una asociación genérica: <strong>no equivalen automáticamente a «limita con», «atraviesa» o «está cerca de»</strong>.</p>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>flowchart LR
+  C[&quot;Ciudad de Neuquén\n3843123&quot;] --&gt;|&quot;gn:parentFeature&quot;| P[&quot;Provincia del Neuquén\n3843122&quot;]
+  C --&gt;|&quot;dcterms:relation&quot;| L[&quot;Río Limay\n3846883&quot;]
+  C --&gt;|&quot;dcterms:relation&quot;| N[&quot;Río Neuquén\n3843121&quot;]
+  C --&gt;|&quot;dcterms:relation&quot;| S[&quot;WGS 84 / EPSG:4326&quot;]
+  C --&gt;|&quot;wgs84:lat / wgs84:long&quot;| V[&quot;Coordenadas decimales&quot;]
+  L --&gt;|&quot;gn:featureCode&quot;| H[&quot;gn:H.STM — curso de agua&quot;]
+  N --&gt;|&quot;gn:featureCode&quot;| H
+</pre></div>
+</div>
+<p><strong>Para leer el diagrama:</strong> los rectángulos corresponden a recursos o valores, y las flechas a propiedades. En el grafo RDF, además, los cuatro lugares se declaran como instancias de <code class="docutils literal notranslate"><span class="pre">gn:Feature</span></code>; el CRS se declara instancia de <code class="docutils literal notranslate"><span class="pre">ignf:GeodeticCRS</span></code>.</p>
+</section>
+<section id="el-ejemplo-completo-en-turtle">
+<h3>7.2. El ejemplo completo en Turtle<a class="headerlink" href="#el-ejemplo-completo-en-turtle" title="Link to this heading">#</a></h3>
+<p>Se reproduce el ejemplo propuesto, respetando sus identificadores, coordenadas y relaciones. Es un <strong>grafo didáctico</strong> que combina recursos de vocabularios conocidos con afirmaciones de datos; no debe interpretarse como una transcripción certificada e íntegra de los registros originales.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">gn:</span><span class="w"> </span><span class="nv">&lt;https://www.geonames.org/ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">wgs84:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">ignf:</span><span class="w"> </span><span class="nv">&lt;http://data.ign.fr/def/ignf#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="c"># 1. CIUDAD DE NEUQUÉN</span>
+<span class="nv">&lt;https://sws.geonames.org/3843123/&gt;</span>
+    <span class="kt">a</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Neuquén&quot;</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">countryCode</span> <span class="s">&quot;AR&quot;</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">parentFeature</span> <span class="nv">&lt;https://sws.geonames.org/3843122/&gt;</span> <span class="p">;</span>
+    <span class="nn">wgs84</span><span class="p">:</span><span class="nt">lat</span> <span class="s">&quot;-38.95078&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+    <span class="nn">wgs84</span><span class="p">:</span><span class="nt">long</span> <span class="s">&quot;-68.05920&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">relation</span>
+        <span class="nv">&lt;https://sws.geonames.org/3846883/&gt;</span> <span class="p">,</span>
+        <span class="nv">&lt;https://sws.geonames.org/3843121/&gt;</span> <span class="p">,</span>
+        <span class="nv">&lt;https://epsg.io/4326&gt;</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span>
+        <span class="s">&quot;Los ríos Limay y Neuquén constituyen límites naturales de la ciudad.&quot;</span><span class="o">@</span><span class="ge">es</span> <span class="p">.</span>
+
+<span class="c"># 2. PROVINCIA DEL NEUQUÉN</span>
+<span class="nv">&lt;https://sws.geonames.org/3843122/&gt;</span>
+    <span class="kt">a</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Provincia del Neuquén&quot;</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">countryCode</span> <span class="s">&quot;AR&quot;</span> <span class="p">.</span>
+
+<span class="c"># 3. RÍO LIMAY</span>
+<span class="nv">&lt;https://sws.geonames.org/3846883/&gt;</span>
+    <span class="kt">a</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Río Limay&quot;</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">featureClass</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">H</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">featureCode</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">H.STM</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">countryCode</span> <span class="s">&quot;AR&quot;</span> <span class="p">.</span>
+
+<span class="c"># 4. RÍO NEUQUÉN</span>
+<span class="nv">&lt;https://sws.geonames.org/3843121/&gt;</span>
+    <span class="kt">a</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Río Neuquén&quot;</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">featureClass</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">H</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">featureCode</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">H.STM</span> <span class="p">;</span>
+    <span class="nn">gn</span><span class="p">:</span><span class="nt">countryCode</span> <span class="s">&quot;AR&quot;</span> <span class="p">.</span>
+
+<span class="c"># 5. SISTEMA DE REFERENCIA WGS 84</span>
+<span class="nv">&lt;https://epsg.io/4326&gt;</span>
+    <span class="kt">a</span> <span class="nn">ignf</span><span class="p">:</span><span class="nt">GeodeticCRS</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;WGS 84 — EPSG:4326&quot;</span><span class="o">@</span><span class="ge">es</span> <span class="p">;</span>
+    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">identifier</span> <span class="s">&quot;EPSG:4326&quot;</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p><strong>Qué significan los símbolos:</strong> <code class="docutils literal notranslate"><span class="pre">&#64;prefix</span></code> declara abreviaturas de IRI; <code class="docutils literal notranslate"><span class="pre">a</span></code> es la abreviatura de <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code>; <code class="docutils literal notranslate"><span class="pre">;</span></code> conserva el sujeto; <code class="docutils literal notranslate"><span class="pre">,</span></code> permite varios objetos para el mismo predicado; <code class="docutils literal notranslate"><span class="pre">.</span></code> finaliza el conjunto de afirmaciones de un sujeto. Las cadenas entre comillas son <strong>literales</strong>, <code class="docutils literal notranslate"><span class="pre">&#64;es</span></code> indica idioma español, y <code class="docutils literal notranslate"><span class="pre">^^xsd:decimal</span></code> declara el tipo numérico decimal.</p>
+</section>
+<section id="desarmar-el-ejemplo-en-tripletas-rdf">
+<h3>7.3. Desarmar el ejemplo en tripletas RDF<a class="headerlink" href="#desarmar-el-ejemplo-en-tripletas-rdf" title="Link to this heading">#</a></h3>
+<p>Una tripleta tiene la estructura <strong>sujeto → predicado → objeto</strong>. Por ejemplo:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sujeto</p></th>
+<th class="head"><p>Predicado</p></th>
+<th class="head"><p>Objeto</p></th>
+<th class="head"><p>Qué expresa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ciudad de Neuquén</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rdf:type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gn:Feature</span></code></p></td>
+<td><p>La ciudad se describe como entidad geográfica GeoNames.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ciudad de Neuquén</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gn:name</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Neuquén&quot;</span></code></p></td>
+<td><p>Su nombre es un literal textual.</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciudad de Neuquén</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gn:parentFeature</span></code></p></td>
+<td><p>Provincia del Neuquén</p></td>
+<td><p>Se declara una relación jerárquica con la provincia.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ciudad de Neuquén</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wgs84:lat</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-38.95078</span></code></p></td>
+<td><p>Tiene un valor de latitud.</p></td>
+</tr>
+<tr class="row-even"><td><p>Ciudad de Neuquén</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dcterms:relation</span></code></p></td>
+<td><p>Río Limay</p></td>
+<td><p>Se establece una relación genérica entre recursos.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Río Limay</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gn:featureCode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gn:H.STM</span></code></p></td>
+<td><p>Se categoriza como curso de agua según GeoNames.</p></td>
+</tr>
+<tr class="row-even"><td><p>EPSG:4326</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rdf:type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ignf:GeodeticCRS</span></code></p></td>
+<td><p>Se clasifica el recurso del CRS mediante el vocabulario IGNF.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La distinción es decisiva: <strong>los sujetos y objetos que son recursos se identifican mediante IRI</strong>, mientras que nombres, comentarios y coordenadas son literales. Un literal como <code class="docutils literal notranslate"><span class="pre">&quot;Neuquén&quot;</span></code> no es la propia ciudad: es un valor que la describe.</p>
+</section>
+<section id="iri-completas-prefijos-y-dereferenciacion">
+<h3>7.4. IRI completas, prefijos y dereferenciación<a class="headerlink" href="#iri-completas-prefijos-y-dereferenciacion" title="Link to this heading">#</a></h3>
+<p>Por ejemplo, <code class="docutils literal notranslate"><span class="pre">gn:Feature</span></code> abrevia la IRI <code class="docutils literal notranslate"><span class="pre">https://www.geonames.org/ontology#Feature</span></code>; <code class="docutils literal notranslate"><span class="pre">gn:parentFeature</span></code> abrevia <code class="docutils literal notranslate"><span class="pre">https://www.geonames.org/ontology#parentFeature</span></code>.</p>
+<p>Para la ciudad utilizamos la IRI <strong><a class="reference external" href="https://sws.geonames.org/3843123/">https://sws.geonames.org/3843123/</a></strong>. Para el río Limay, <strong><a class="reference external" href="https://sws.geonames.org/3846883/">https://sws.geonames.org/3846883/</a></strong>. Los identificadores son distintos de sus etiquetas legibles: dos recursos pueden compartir nombre sin ser la misma entidad.</p>
+<p>Una <strong>IRI dereferenciable</strong> permite intentar recuperar por HTTP una descripción del recurso. Según la configuración del servidor y la negociación de contenido, esa descripción puede ofrecerse en HTML, RDF u otros formatos. <strong>La IRI no equivale obligatoriamente a una página HTML ni garantiza que siempre responda</strong>.</p>
+</section>
+<section id="que-ontologias-y-vocabularios-reutilizamos">
+<h3>7.5. Qué ontologías y vocabularios reutilizamos<a class="headerlink" href="#que-ontologias-y-vocabularios-reutilizamos" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Prefijo</p></th>
+<th class="head"><p>Procedencia o función</p></th>
+<th class="head"><p>Elementos usados</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gn:</span></code></p></td>
+<td><p>Ontología de GeoNames, para entidades geográficas y su clasificación.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Feature</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">parentFeature</span></code>, <code class="docutils literal notranslate"><span class="pre">featureClass</span></code>, <code class="docutils literal notranslate"><span class="pre">featureCode</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dcterms:</span></code></p></td>
+<td><p>Dublin Core Terms, vocabulario general de metadatos.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">relation</span></code>, <code class="docutils literal notranslate"><span class="pre">identifier</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wgs84:</span></code></p></td>
+<td><p>Vocabulario WGS84 Geo Positioning, para coordenadas geográficas.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ignf:</span></code></p></td>
+<td><p>Ontología de sistemas de referencia del IGN francés.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">GeodeticCRS</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">rdfs:</span></code></p></td>
+<td><p>RDF Schema, para etiquetas y comentarios, entre otras construcciones.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">label</span></code>, <code class="docutils literal notranslate"><span class="pre">comment</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">xsd:</span></code></p></td>
+<td><p>Tipos de datos XML Schema.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">decimal</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Observación sobre GeoNames:</strong> <code class="docutils literal notranslate"><span class="pre">gn:H</span></code> corresponde a la clase de accidentes hidrográficos y <code class="docutils literal notranslate"><span class="pre">gn:H.STM</span></code> a la categoría <em>stream</em> (curso de agua). La ontología de GeoNames es un vocabulario reutilizable; cada registro de la ciudad o del río es una <strong>instancia</strong> documentada con sus propiedades.</p>
+</section>
+</section>
+<section id="donde-esta-la-ontologia-y-donde-estan-los-datos">
+<h2>8. ¿Dónde está la ontología y dónde están los datos?<a class="headerlink" href="#donde-esta-la-ontologia-y-donde-estan-los-datos" title="Link to this heading">#</a></h2>
+<p>Este es uno de los puntos más importantes de la introducción. <strong>Escribir datos en Turtle no significa, por sí solo, haber definido una ontología nueva.</strong> Nuestro archivo representa principalmente un <strong>grafo de datos RDF</strong> construido con términos definidos en ontologías y vocabularios externos.</p>
+<ul class="simple">
+<li><p><strong>Nivel de vocabulario / ontología:</strong> <code class="docutils literal notranslate"><span class="pre">gn:Feature</span></code>, <code class="docutils literal notranslate"><span class="pre">gn:parentFeature</span></code>, <code class="docutils literal notranslate"><span class="pre">gn:featureCode</span></code> e <code class="docutils literal notranslate"><span class="pre">ignf:GeodeticCRS</span></code> tienen definiciones publicadas en sus respectivos vocabularios.</p></li>
+<li><p><strong>Nivel de instancias:</strong> la ciudad y los dos ríos tienen IRI concretas, nombres, coordenadas y relaciones.</p></li>
+<li><p><strong>Nivel de axiomas:</strong> mediante RDFS u OWL se pueden declarar clases, subclases, dominios, rangos y relaciones con semántica formal que permitan algunas inferencias.</p></li>
+</ul>
+<p>Por ejemplo, podemos <strong>extender el modelo de manera didáctica</strong> con términos propios. El siguiente fragmento es una propuesta <strong>adicional</strong> al grafo original, no forma parte de la ontología oficial de GeoNames:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ex:</span><span class="w">   </span><span class="nv">&lt;https://ejemplo.org/ontologia/neuquen#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w">  </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">gn:</span><span class="w">   </span><span class="nv">&lt;https://www.geonames.org/ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">CursoDeAgua</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Curso de agua&quot;</span><span class="o">@</span><span class="ge">es</span> <span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">Rio</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">CursoDeAgua</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Río&quot;</span><span class="o">@</span><span class="ge">es</span> <span class="p">.</span>
+
+<span class="nv">&lt;https://sws.geonames.org/3846883/&gt;</span> <span class="kt">a</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Rio</span> <span class="p">.</span>
+<span class="nv">&lt;https://sws.geonames.org/3843121/&gt;</span> <span class="kt">a</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Rio</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>Ahora sí existe <strong>una pequeña conceptualización formal adicional</strong>: <code class="docutils literal notranslate"><span class="pre">ex:Rio</span></code> es subclase de <code class="docutils literal notranslate"><span class="pre">ex:CursoDeAgua</span></code>, que a su vez es subclase de <code class="docutils literal notranslate"><span class="pre">gn:Feature</span></code>. El dominio <code class="docutils literal notranslate"><span class="pre">ejemplo.org</span></code> es <strong>ilustrativo</strong>, no corresponde a una ontología publicada.</p>
+<section id="inferir-no-solo-recuperar">
+<h3>8.1. Inferir, no solo recuperar<a class="headerlink" href="#inferir-no-solo-recuperar" title="Link to this heading">#</a></h3>
+<p>Con las tripletas adicionales y un razonador que interprete <code class="docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code>, podemos concluir:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Río Limay → rdf:type → ex:Rio                       (declarado)
+ex:Rio → rdfs:subClassOf → ex:CursoDeAgua           (axioma)
+------------------------------------------------------------
+Río Limay → rdf:type → ex:CursoDeAgua              (inferido)
+</pre></div>
+</div>
+<p>En forma similar puede deducirse que el río Limay es un <code class="docutils literal notranslate"><span class="pre">gn:Feature</span></code>, aunque esa clasificación también aparezca explícita en el grafo inicial. Esto es <strong>razonamiento deductivo</strong>; no depende de que un modelo de lenguaje adivine una relación.</p>
+<p><strong>Lo que no podemos inferir:</strong> que el río Limay delimita una porción determinada de la jurisdicción de Neuquén solamente porque exista <code class="docutils literal notranslate"><span class="pre">dcterms:relation</span></code>. Esa propiedad no expresa el tipo preciso de relación geográfica. El comentario humano sobre «límites naturales» es información textual, pero <strong>no crea automáticamente una relación formal <code class="docutils literal notranslate"><span class="pre">limitaCon</span></code></strong>.</p>
+</section>
+<section id="relaciones-generales-y-especificas">
+<h3>8.2. Relaciones generales y específicas<a class="headerlink" href="#relaciones-generales-y-especificas" title="Link to this heading">#</a></h3>
+<p>Para una consulta temática más rigurosa se podría agregar una propiedad específica, con una definición documentada y evidencia territorial que la respalde:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ex:</span><span class="w"> </span><span class="nv">&lt;https://ejemplo.org/ontologia/neuquen#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">tieneLimiteNaturalCon</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;tiene límite natural con&quot;</span><span class="o">@</span><span class="ge">es</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Relaciona una entidad territorial con un elemento natural que integra parte de su límite, según una fuente definida.&quot;</span><span class="o">@</span><span class="ge">es</span> <span class="p">.</span>
+
+<span class="nv">&lt;https://sws.geonames.org/3843123/&gt;</span>
+    <span class="nn">ex</span><span class="p">:</span><span class="nt">tieneLimiteNaturalCon</span> <span class="nv">&lt;https://sws.geonames.org/3846883/&gt;</span> <span class="p">,</span>
+                             <span class="nv">&lt;https://sws.geonames.org/3843121/&gt;</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>Estas últimas dos afirmaciones son <strong>datos adicionales propuestos para fines didácticos</strong> y deben revisarse frente a las fuentes cartográficas y la definición exacta de «ciudad», «ejido» o jurisdicción. Definir una propiedad no basta para demostrar que su utilización en un caso es verdadera.</p>
+</section>
+<section id="un-detalle-geodesico-importante">
+<h3>8.3. Un detalle geodésico importante<a class="headerlink" href="#un-detalle-geodesico-importante" title="Link to this heading">#</a></h3>
+<p>En el archivo original se usa <code class="docutils literal notranslate"><span class="pre">dcterms:relation</span></code> para conectar la ciudad con <code class="docutils literal notranslate"><span class="pre">https://epsg.io/4326</span></code>. <strong>Esa relación genérica no equivale a una declaración formal de que las coordenadas <code class="docutils literal notranslate"><span class="pre">wgs84:lat</span></code> y <code class="docutils literal notranslate"><span class="pre">wgs84:long</span></code> están expresadas en EPSG:4326</strong>. Aunque estas propiedades se basan en WGS84, para documentar sistemas de referencia con rigor conviene emplear propiedades o representaciones espaciales apropiadas, como geometrías GeoSPARQL con IRI de CRS explícita.</p>
+<p>Además, debe diferenciarse el sistema <strong>EPSG:4326</strong>, cuyo orden de ejes según EPSG es latitud-longitud, de <strong>OGC:CRS84</strong>, utilizado habitualmente con longitud-latitud en WKT. No debe intercambiarse el orden sin examinar el formato y el CRS.</p>
+</section>
+</section>
+<section id="consultar-el-caso-neuquen-mediante-sparql">
+<h2>9. Consultar el caso Neuquén mediante SPARQL<a class="headerlink" href="#consultar-el-caso-neuquen-mediante-sparql" title="Link to this heading">#</a></h2>
+<p>SPARQL sirve para convertir las preguntas de los estudiantes en patrones de tripletas. Las siguientes consultas están escritas para el <strong>grafo original de la sección 7</strong>. No requieren incorporar la extensión opcional de la sección 8.</p>
+<section id="consulta-1-que-nombre-y-coordenadas-tiene-la-ciudad">
+<h3>Consulta 1. ¿Qué nombre y coordenadas tiene la ciudad?<a class="headerlink" href="#consulta-1-que-nombre-y-coordenadas-tiene-la-ciudad" title="Link to this heading">#</a></h3>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;https://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">wgs84</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2003/01/geo/wgs84_pos#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?nombre</span> <span class="nv">?latitud</span> <span class="nv">?longitud</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nl">&lt;https://sws.geonames.org/3843123/&gt;</span>
+      <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?nombre</span> <span class="p">;</span>
+      <span class="nn">wgs84</span><span class="p">:</span><span class="nt">lat</span> <span class="nv">?latitud</span> <span class="p">;</span>
+      <span class="nn">wgs84</span><span class="p">:</span><span class="nt">long</span> <span class="nv">?longitud</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Resultado esperado:</strong> <code class="docutils literal notranslate"><span class="pre">Neuquén</span></code>, <code class="docutils literal notranslate"><span class="pre">-38.95078</span></code>, <code class="docutils literal notranslate"><span class="pre">-68.05920</span></code>.</p>
+</section>
+<section id="consulta-2-cual-es-la-entidad-administrativa-superior-vinculada-a-la-ciudad">
+<h3>Consulta 2. ¿Cuál es la entidad administrativa superior vinculada a la ciudad?<a class="headerlink" href="#consulta-2-cual-es-la-entidad-administrativa-superior-vinculada-a-la-ciudad" title="Link to this heading">#</a></h3>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;https://www.geonames.org/ontology#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?provincia</span> <span class="nv">?nombre</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nl">&lt;https://sws.geonames.org/3843123/&gt;</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">parentFeature</span> <span class="nv">?provincia</span> <span class="p">.</span>
+  <span class="nv">?provincia</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?nombre</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Resultado esperado:</strong> recurso <code class="docutils literal notranslate"><span class="pre">https://sws.geonames.org/3843122/</span></code>, con nombre «Provincia del Neuquén». La interpretación precisa de <code class="docutils literal notranslate"><span class="pre">gn:parentFeature</span></code> está dada por GeoNames.</p>
+</section>
+<section id="consulta-3-con-que-recursos-esta-relacionada-la-ciudad">
+<h3>Consulta 3. ¿Con qué recursos está relacionada la ciudad?<a class="headerlink" href="#consulta-3-con-que-recursos-esta-relacionada-la-ciudad" title="Link to this heading">#</a></h3>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">dcterms</span><span class="p">:</span> <span class="nl">&lt;http://purl.org/dc/terms/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;https://www.geonames.org/ontology#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?recurso</span> <span class="p">(</span><span class="nf">COALESCE</span><span class="p">(</span><span class="nv">?nombre</span><span class="p">,</span> <span class="nv">?etiqueta</span><span class="p">,</span> <span class="nf">STR</span><span class="p">(</span><span class="nv">?recurso</span><span class="p">))</span> <span class="k">AS</span> <span class="nv">?descripcion</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nl">&lt;https://sws.geonames.org/3843123/&gt;</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">relation</span> <span class="nv">?recurso</span> <span class="p">.</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?recurso</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?nombre</span> <span class="p">.</span> <span class="p">}</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?recurso</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="nv">?etiqueta</span> <span class="p">.</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Resultado esperado:</strong> tres recursos: río Limay, río Neuquén y EPSG:4326. Nótese que el resultado se interpreta como <strong>relaciones genéricas</strong>, sin atribuirles significado espacial específico.</p>
+</section>
+<section id="consulta-4-cuales-de-las-entidades-relacionadas-son-cursos-de-agua-segun-geonames">
+<h3>Consulta 4. ¿Cuáles de las entidades relacionadas son cursos de agua según GeoNames?<a class="headerlink" href="#consulta-4-cuales-de-las-entidades-relacionadas-son-cursos-de-agua-segun-geonames" title="Link to this heading">#</a></h3>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">dcterms</span><span class="p">:</span> <span class="nl">&lt;http://purl.org/dc/terms/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;https://www.geonames.org/ontology#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?rio</span> <span class="nv">?nombre</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nl">&lt;https://sws.geonames.org/3843123/&gt;</span> <span class="nn">dcterms</span><span class="p">:</span><span class="nt">relation</span> <span class="nv">?rio</span> <span class="p">.</span>
+  <span class="nv">?rio</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">featureCode</span> <span class="nn">gn</span><span class="p">:</span><span class="nt">H.STM</span> <span class="p">;</span>
+       <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?nombre</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?nombre</span>
+</pre></div>
+</div>
+<p><strong>Resultado esperado:</strong> río Limay y río Neuquén. Esta consulta <strong>combina dos patrones explícitos</strong>: la relación con la ciudad y el código de accidente hidrográfico. No necesita razonamiento OWL para funcionar.</p>
+</section>
+<section id="consulta-5-que-puede-inferirse-con-la-extension-ontologica">
+<h3>Consulta 5. ¿Qué puede inferirse con la extensión ontológica?<a class="headerlink" href="#consulta-5-que-puede-inferirse-con-la-extension-ontologica" title="Link to this heading">#</a></h3>
+<p>Si se han cargado además los axiomas e individuos de la sección 8 y se ha habilitado un razonador RDFS/OWL compatible:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">ex</span><span class="p">:</span> <span class="nl">&lt;https://ejemplo.org/ontologia/neuquen#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">gn</span><span class="p">:</span> <span class="nl">&lt;https://www.geonames.org/ontology#&gt;</span>
+
+<span class="k">SELECT</span> <span class="nv">?rio</span> <span class="nv">?nombre</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?rio</span> <span class="k">a</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">CursoDeAgua</span> <span class="p">;</span>
+       <span class="nn">gn</span><span class="p">:</span><span class="nt">name</span> <span class="nv">?nombre</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Resultado esperado bajo inferencia:</strong> río Limay y río Neuquén. Sin inferencia habilitada, el motor puede no encontrar tripletas explícitas <code class="docutils literal notranslate"><span class="pre">rdf:type</span> <span class="pre">ex:CursoDeAgua</span></code>. Una alternativa sin razonamiento automático es utilizar una ruta de clases o consultar directamente <code class="docutils literal notranslate"><span class="pre">ex:Rio</span></code>.</p>
+</section>
+<section id="preguntas-de-competencia">
+<h3>9.1. Preguntas de competencia<a class="headerlink" href="#preguntas-de-competencia" title="Link to this heading">#</a></h3>
+<p>Las preguntas de competencia orientan tanto el diseño del vocabulario como la evaluación de las consultas:</p>
+<ol class="arabic simple">
+<li><p>¿Qué provincia se vincula jerárquicamente con la ciudad de Neuquén?</p></li>
+<li><p>¿Qué objetos hidrográficos están relacionados explícitamente con la ciudad?</p></li>
+<li><p>¿Cuáles son las coordenadas registradas y cuál es su tipo de dato?</p></li>
+<li><p>¿Cómo distinguir un comentario humano de una relación geográfica formal?</p></li>
+<li><p>¿Qué axiomas permitirían inferir que el río Limay es un curso de agua?</p></li>
+<li><p>¿Qué datos adicionales se necesitarían para demostrar que un río constituye un límite administrativo?</p></li>
+</ol>
+<p><strong>Regla pedagógica:</strong> diferenciar siempre <strong>datos declarados</strong>, <strong>resultados recuperados mediante consulta</strong>, <strong>inferencias justificadas</strong> y <strong>afirmaciones que necesitan validación externa</strong>.</p>
+</section>
+<section id="mundo-abierto-y-calidad-de-las-afirmaciones">
+<h3>9.2. Mundo abierto y calidad de las afirmaciones<a class="headerlink" href="#mundo-abierto-y-calidad-de-las-afirmaciones" title="Link to this heading">#</a></h3>
+<p>La ausencia de una relación en un grafo no permite concluir automáticamente que sea falsa: bajo la <strong>suposición de mundo abierto</strong>, puede tratarse de información no registrada. Del mismo modo, que una herramienta infiera correctamente una consecuencia lógica no garantiza que las premisas sean correctas geográficamente. La interpretación crítica del dominio sigue siendo imprescindible.</p>
+</section>
+</section>
+<section id="que-aporta-geosparql">
+<h2>10. ¿Qué aporta GeoSPARQL?<a class="headerlink" href="#que-aporta-geosparql" title="Link to this heading">#</a></h2>
+<p>Una ontología territorial necesita con frecuencia algo más que nombres y relaciones conceptuales: necesita <strong>geometrías</strong> y <strong>relaciones espaciales</strong>. GeoSPARQL, estándar del Open Geospatial Consortium (OGC), proporciona un vocabulario y funciones para representar y consultar información espacial en RDF.</p>
+<p>Por ejemplo, permite modelar una entidad como <code class="docutils literal notranslate"><span class="pre">geo:Feature</span></code>, asociarle una geometría <code class="docutils literal notranslate"><span class="pre">geo:Geometry</span></code> mediante <code class="docutils literal notranslate"><span class="pre">geo:hasGeometry</span></code>, y utilizar funciones espaciales para consultar intersecciones, contenciones o distancias, según el soporte del motor.</p>
+<p>Ejemplo esquemático con coordenadas <strong>ficticias</strong>:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">ex:</span><span class="w">  </span><span class="nv">&lt;https://ejemplo.org/geo/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">geo:</span><span class="w"> </span><span class="nv">&lt;http://www.opengis.net/ont/geosparql#&gt;</span><span class="w"> </span><span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">SitioA</span> <span class="kt">a</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">Feature</span> <span class="p">;</span>
+    <span class="nn">geo</span><span class="p">:</span><span class="nt">hasGeometry</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">GeomSitioA</span> <span class="p">.</span>
+
+<span class="nn">ex</span><span class="p">:</span><span class="nt">GeomSitioA</span> <span class="kt">a</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">Geometry</span> <span class="p">;</span>
+    <span class="nn">geo</span><span class="p">:</span><span class="nt">asWKT</span> <span class="s">&quot;&lt;http://www.opengis.net/def/crs/OGC/1.3/CRS84&gt; POINT(-68.0 -39.0)&quot;</span><span class="p">^^</span><span class="nn">geo</span><span class="p">:</span><span class="nt">wktLiteral</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>La IRI del CRS declara el sistema de referencia. En CRS84, las coordenadas del punto se expresan como longitud y latitud. <strong>El punto del ejemplo no debe interpretarse como la ubicación de un lugar real identificado.</strong></p>
+<p>GeoSPARQL no reemplaza a los sistemas de información geográfica: los complementa, permitiendo combinar preguntas semánticas y espaciales sobre recursos identificados.</p>
+</section>
+<section id="ejemplo-aplicado-un-catastro-interoperable">
+<h2>11. Ejemplo aplicado: un catastro interoperable<a class="headerlink" href="#ejemplo-aplicado-un-catastro-interoperable" title="Link to this heading">#</a></h2>
+<p>Un catastro puede modelar conceptos como <code class="docutils literal notranslate"><span class="pre">Parcela</span></code>, <code class="docutils literal notranslate"><span class="pre">UnidadAdministrativa</span></code>, <code class="docutils literal notranslate"><span class="pre">Edificación</span></code>, <code class="docutils literal notranslate"><span class="pre">UsoDelSuelo</span></code> y <code class="docutils literal notranslate"><span class="pre">IdentificadorCatastral</span></code>, así como relaciones como <code class="docutils literal notranslate"><span class="pre">seUbicaEn</span></code>, <code class="docutils literal notranslate"><span class="pre">tieneEdificacion</span></code> y <code class="docutils literal notranslate"><span class="pre">tieneUso</span></code>.</p>
+<p>Consideremos una pregunta: <strong>«¿Qué parcelas residenciales se encuentran dentro de un área susceptible a inundación?»</strong></p>
+<p>Para responderla podrían integrarse:</p>
+<ol class="arabic simple">
+<li><p>Un registro catastral con identificadores y geometrías parcelarias.</p></li>
+<li><p>Un vocabulario de usos del suelo que armonice categorías de diferentes municipios.</p></li>
+<li><p>Una capa de amenaza o susceptibilidad a inundaciones.</p></li>
+<li><p>Una relación espacial de intersección, evaluada con un motor geoespacial.</p></li>
+</ol>
+<p>La ontología aclara qué se entiende por parcela, uso residencial y zona de amenaza; las geometrías permiten efectuar el cálculo espacial. <strong>La intersección geométrica no implica automáticamente riesgo real</strong>, porque el riesgo depende también de exposición, vulnerabilidad y otros factores, y la capa puede expresar susceptibilidad en lugar de una inundación observada.</p>
+<p>Este ejemplo muestra que el razonamiento ontológico, el análisis espacial y el conocimiento disciplinar cumplen funciones distintas y complementarias.</p>
+</section>
+<section id="ontologias-ide-y-servicios-ogc">
+<h2>12. Ontologías, IDE y servicios OGC<a class="headerlink" href="#ontologias-ide-y-servicios-ogc" title="Link to this heading">#</a></h2>
+<p>Las <strong>Infraestructuras de Datos Espaciales (IDE)</strong> organizan la publicación, descubrimiento y acceso a información geográfica mediante catálogos, metadatos, políticas y servicios interoperables. Entre los servicios OGC utilizados históricamente están WMS, WFS y WCS; también existen estándares y APIs más recientes, como OGC API – Features.</p>
+<p>Una ontología puede contribuir a la <strong>interoperabilidad semántica</strong> entre datos ofrecidos por esos servicios. Por ejemplo:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Servicio WFS / OGC API – Features
+          ↓
+Entidades y atributos geográficos
+          ↓
+Mapeo semántico (identificadores, clases y propiedades)
+          ↓
+Grafo RDF consultable con SPARQL
+          ↓
+Consultas que combinan conceptos y relaciones
+</pre></div>
+</div>
+<p>Este esquema <strong>no exige necesariamente duplicar todos los datos</strong>. Algunas arquitecturas materializan las tripletas RDF en un repositorio; otras utilizan <strong>virtualización</strong>, generando vistas RDF a partir de las fuentes originales mediante mapeos.</p>
+<p>Sin embargo, la virtualización depende del tipo de fuente y de las capacidades de las herramientas. Por ejemplo, <strong>Ontop</strong> se utiliza principalmente para acceso virtual RDF sobre fuentes relacionales compatibles. <strong>No debe suponerse que consume directamente cualquier servicio WFS como si fuera una tabla SQL</strong>: puede requerirse un adaptador, una capa de federación, un motor intermediario o una solución de mapeo específica.</p>
+<p>Las ontologías no sustituyen a las IDE. Pueden ayudar a evolucionar hacia <strong>infraestructuras de conocimiento geoespacial</strong>, en las que, además de descubrir y acceder a datos, se relacionan conceptos, se consultan hechos y se obtienen inferencias trazables.</p>
+</section>
+<section id="ontologias-y-sistemas-de-inteligencia-artificial">
+<h2>13. Ontologías y sistemas de inteligencia artificial<a class="headerlink" href="#ontologias-y-sistemas-de-inteligencia-artificial" title="Link to this heading">#</a></h2>
+<p>Las ontologías pertenecen al campo de la <strong>representación del conocimiento</strong> y son especialmente relevantes para enfoques de <strong>IA simbólica</strong>, que trabajan con entidades, relaciones y reglas explícitas.</p>
+<p>Los modelos de lenguaje, por su parte, pueden interpretar preguntas en lenguaje natural y ayudar a construir consultas o navegar herramientas. Una arquitectura posible sería:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Pregunta en lenguaje natural
+           ↓
+Asistente o agente de IA
+           ↓
+Herramienta (por ejemplo, expuesta mediante MCP)
+           ↓
+Consulta SPARQL a un grafo de conocimiento
+           ↓
+Resultados con identificadores y relaciones
+           ↓
+Respuesta explicada al usuario
+</pre></div>
+</div>
+<p><strong>MCP (Model Context Protocol)</strong> es un protocolo de integración de herramientas y recursos para aplicaciones de IA; <strong>no es un lenguaje de ontologías ni un motor de inferencia</strong>. La precisión de las respuestas depende de la calidad del modelo semántico, de los datos, de las consultas y de la interpretación del asistente.</p>
+<p>La combinación permite que una respuesta esté apoyada en relaciones verificables, pero <strong>no elimina las alucinaciones, los errores de consulta ni las interpretaciones incorrectas</strong>. Conviene conservar las IRI de los recursos, las fuentes y las consultas para facilitar la revisión humana.</p>
+</section>
+<section id="como-se-construye-una-ontologia-geografica">
+<h2>14. ¿Cómo se construye una ontología geográfica?<a class="headerlink" href="#como-se-construye-una-ontologia-geografica" title="Link to this heading">#</a></h2>
+<p>Un procedimiento inicial razonable es:</p>
+<ol class="arabic simple">
+<li><p><strong>Delimitar el dominio y el propósito.</strong> Por ejemplo, hidrografía superficial para integración de datos de cuencas.</p></li>
+<li><p><strong>Identificar usuarios y preguntas de competencia.</strong> ¿Qué se quiere consultar, integrar o inferir?</p></li>
+<li><p><strong>Revisar estándares y vocabularios existentes.</strong> Evitar redefinir conceptos ya estabilizados sin necesidad.</p></li>
+<li><p><strong>Definir clases, propiedades e individuos.</strong> Distinguir tipos de entidades de casos particulares.</p></li>
+<li><p><strong>Asignar IRI estables y documentar definiciones.</strong> Prever políticas de publicación y mantenimiento.</p></li>
+<li><p><strong>Formalizar axiomas con prudencia.</strong> Evitar declarar equivalencias o restricciones no justificadas.</p></li>
+<li><p><strong>Incorporar o vincular instancias de datos.</strong> Mediante transformación RDF, mapeos o virtualización.</p></li>
+<li><p><strong>Validar la estructura y los datos.</strong> Utilizar herramientas apropiadas, por ejemplo razonadores OWL y SHACL para tareas diferentes.</p></li>
+<li><p><strong>Probar las preguntas de competencia.</strong> Comprobar si las consultas recuperan las respuestas esperadas.</p></li>
+<li><p><strong>Publicar, versionar y mantener.</strong> Documentar procedencia, cambios, responsables y límites de uso.</p></li>
+</ol>
+<section id="herramientas-habituales">
+<h3>Herramientas habituales<a class="headerlink" href="#herramientas-habituales" title="Link to this heading">#</a></h3>
+<p><strong>Protégé</strong> facilita la edición de ontologías OWL; <strong>Apache Jena</strong> y <strong>RDF4J</strong> proporcionan herramientas para RDF y SPARQL; <strong>GraphDB</strong> es una plataforma de repositorios RDF; y <strong>Ontop</strong> permite escenarios de acceso virtual a datos relacionales mediante mapeos semánticos. Las capacidades exactas dependen de versiones, configuraciones y extensiones.</p>
+</section>
+</section>
+<section id="errores-conceptuales-frecuentes">
+<h2>15. Errores conceptuales frecuentes<a class="headerlink" href="#errores-conceptuales-frecuentes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>«Una ontología es una lista de palabras».</strong> No: una lista puede ser útil, pero una ontología formaliza conceptos, propiedades y axiomas.</p></li>
+<li><p><strong>«Una ontología es un mapa».</strong> No: puede describir objetos y relaciones espaciales, pero no equivale a su representación cartográfica.</p></li>
+<li><p><strong>«Toda IRI abre una página web».</strong> No: la dereferenciabilidad es una buena práctica frecuente, no una propiedad garantizada.</p></li>
+<li><p><strong>«RDF y OWL son sinónimos».</strong> No: RDF representa afirmaciones; OWL permite expresar una semántica ontológica más rica.</p></li>
+<li><p><strong>«Si no está en el grafo, es falso».</strong> No necesariamente: bajo la suposición de mundo abierto, ausencia de información no equivale a negación.</p></li>
+<li><p><strong>«El razonador descubre hechos verdaderos por sí solo».</strong> No: deriva consecuencias de premisas y axiomas, que deben ser correctos y pertinentes.</p></li>
+<li><p><strong>«La ontología reemplaza el análisis espacial».</strong> No: las consultas espaciales requieren geometrías, relaciones o cálculos apropiados.</p></li>
+<li><p><strong>«Toda integración semántica exige copiar los datos».</strong> No: pueden existir arquitecturas virtualizadas o híbridas.</p></li>
+</ul>
+</section>
+<section id="actividad-practica-propuesta">
+<h2>16. Actividad práctica propuesta<a class="headerlink" href="#actividad-practica-propuesta" title="Link to this heading">#</a></h2>
+<p><strong>Primera parte: el grafo de Neuquén.</strong> Importar el Turtle de la sección 7 en un editor o repositorio RDF y resolver las consultas de la sección 9. Identificar los recursos enlazados por <code class="docutils literal notranslate"><span class="pre">dcterms:relation</span></code> y explicar por qué no es correcto traducir automáticamente esa propiedad como «limita con». Añadir la extensión de la sección 8, activar un razonador si está disponible y comparar resultados explícitos e inferidos.</p>
+<p><strong>Segunda parte: interoperabilidad.</strong> Dos organismos publican capas de cursos de agua. Uno usa el atributo <code class="docutils literal notranslate"><span class="pre">tipo</span> <span class="pre">=</span> <span class="pre">&quot;rio&quot;</span></code> y otro <code class="docutils literal notranslate"><span class="pre">categoria</span> <span class="pre">=</span> <span class="pre">&quot;curso</span> <span class="pre">permanente&quot;</span></code>.</p>
+<p><strong>Consignas:</strong></p>
+<ol class="arabic simple">
+<li><p>Explicar por qué no es correcto declarar automáticamente que ambas categorías son equivalentes.</p></li>
+<li><p>Proponer tres clases y dos propiedades para una ontología hidrográfica mínima.</p></li>
+<li><p>Crear dos individuos y escribir al menos cuatro tripletas RDF.</p></li>
+<li><p>Formular una pregunta de competencia y escribir una consulta SPARQL que la responda.</p></li>
+<li><p>Indicar qué información adicional sería necesaria para determinar si un curso de agua atraviesa un área protegida.</p></li>
+</ol>
+<p><strong>Orientación:</strong> se deben revisar las definiciones de ambos organismos, la temporalidad de los cursos de agua, la disponibilidad de geometrías y la compatibilidad de sus sistemas de referencia. Una equivalencia semántica no debe inferirse únicamente por similitud de etiquetas.</p>
+</section>
+<section id="sintesis">
+<h2>17. Síntesis<a class="headerlink" href="#sintesis" title="Link to this heading">#</a></h2>
+<p>Una ontología permite <strong>hacer explícito cómo conceptualizamos un dominio</strong>: qué entidades reconocemos, cómo las distinguimos y qué relaciones podemos afirmar entre ellas. En geociencias, su principal contribución es facilitar que información producida por distintos actores pueda <strong>interpretarse, vincularse, consultarse y, cuando los axiomas lo permiten, utilizarse para obtener inferencias</strong>.</p>
+<p>Su utilidad no consiste solamente en agregar vocabulario técnico a los datos. Consiste en construir <strong>modelos de conocimiento compartidos</strong>, capaces de conectar el significado de los objetos geográficos con los servicios, bases de datos, análisis espaciales y aplicaciones de inteligencia artificial. Todo ello exige mantener el juicio disciplinar, la documentación de las fuentes y una evaluación crítica de las respuestas.</p>
+</section>
+<section id="referencias-y-recursos-para-profundizar">
+<h2>18. Referencias y recursos para profundizar<a class="headerlink" href="#referencias-y-recursos-para-profundizar" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Gruber, T. R. (1993). <em>A Translation Approach to Portable Ontology Specifications</em>. Knowledge Acquisition, 5(2), 199–220. DOI: <a class="reference external" href="https://doi.org/10.1006/knac.1993.1008">10.1006/knac.1993.1008</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/rdf-schema/">RDF Schema 1.1</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/owl2-overview/">OWL 2 Web Ontology Language — Document Overview</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1 Query Language</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/skos-reference/">SKOS Simple Knowledge Organization System Reference</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/shacl/">Shapes Constraint Language (SHACL)</a>.</p></li>
+<li><p>GeoNames. <a class="reference external" href="https://www.geonames.org/ontology/documentation.html">Documentación de la ontología</a> y <a class="reference external" href="https://www.geonames.org/export/codes.html">códigos de entidades geográficas</a>.</p></li>
+<li><p>IGN France. <a class="reference external" href="https://data.ign.fr/def/ignf/20190213.en.htm">Ontología de sistemas de referencia IGNF</a>.</p></li>
+<li><p>OGC. <a class="reference external" href="https://www.ogc.org/standard/geosparql/">GeoSPARQL</a>.</p></li>
+<li><p>W3C. <a class="reference external" href="https://www.w3.org/TR/ld-bp/">Best Practices for Publishing Linked Data</a>.</p></li>
+<li><p><a class="reference external" href="https://protege.stanford.edu/">Protégé</a>: entorno de edición de ontologías.</p></li>
+<li><p><a class="reference external" href="https://ontop-vkg.org/">Ontop</a>: acceso virtual a grafos de conocimiento.</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Nota didáctica: las IRI de GeoNames, Dublin Core e IGNF referencian recursos y vocabularios publicados; las IRI bajo <code class="docutils literal notranslate"><span class="pre">ejemplo.org</span></code> son propuestas de modelado ficticias. Las relaciones específicas añadidas para fines pedagógicos y las afirmaciones territoriales deben contrastarse con fuentes oficiales antes de incorporarlas a un grafo operativo.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cdg-idera/geosemantica",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-problema-muchos-datos-distintos-significados">1. El problema: muchos datos, distintos significados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-ontologia">2. ¿Qué es una ontología?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-intuitivo">Ejemplo intuitivo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#los-componentes-de-una-ontologia">3. Los componentes de una ontología</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clases">3.1 Clases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individuos-o-instancias">3.2 Individuos o instancias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-y-relaciones">3.3 Propiedades y relaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axiomas-y-restricciones">3.4 Axiomas y restricciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontologia-taxonomia-tesauro-y-base-de-datos">4. Ontología, taxonomía, tesauro y base de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdf-expresar-conocimiento-mediante-tripletas">5. RDF: expresar conocimiento mediante tripletas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-una-iri">¿Qué es una IRI?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rdfs-owl-skos-shacl-y-geosparql">6. RDFS, OWL, SKOS, SHACL y GeoSPARQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nuestro-caso-de-estudio-neuquen-y-sus-rios">7. Nuestro caso de estudio: Neuquén y sus ríos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-grafo-conceptual">7.1. El grafo conceptual</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-ejemplo-completo-en-turtle">7.2. El ejemplo completo en Turtle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desarmar-el-ejemplo-en-tripletas-rdf">7.3. Desarmar el ejemplo en tripletas RDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iri-completas-prefijos-y-dereferenciacion">7.4. IRI completas, prefijos y dereferenciación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-ontologias-y-vocabularios-reutilizamos">7.5. Qué ontologías y vocabularios reutilizamos</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#donde-esta-la-ontologia-y-donde-estan-los-datos">8. ¿Dónde está la ontología y dónde están los datos?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inferir-no-solo-recuperar">8.1. Inferir, no solo recuperar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relaciones-generales-y-especificas">8.2. Relaciones generales y específicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#un-detalle-geodesico-importante">8.3. Un detalle geodésico importante</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consultar-el-caso-neuquen-mediante-sparql">9. Consultar el caso Neuquén mediante SPARQL</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-1-que-nombre-y-coordenadas-tiene-la-ciudad">Consulta 1. ¿Qué nombre y coordenadas tiene la ciudad?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-2-cual-es-la-entidad-administrativa-superior-vinculada-a-la-ciudad">Consulta 2. ¿Cuál es la entidad administrativa superior vinculada a la ciudad?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-3-con-que-recursos-esta-relacionada-la-ciudad">Consulta 3. ¿Con qué recursos está relacionada la ciudad?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-4-cuales-de-las-entidades-relacionadas-son-cursos-de-agua-segun-geonames">Consulta 4. ¿Cuáles de las entidades relacionadas son cursos de agua según GeoNames?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consulta-5-que-puede-inferirse-con-la-extension-ontologica">Consulta 5. ¿Qué puede inferirse con la extensión ontológica?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preguntas-de-competencia">9.1. Preguntas de competencia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mundo-abierto-y-calidad-de-las-afirmaciones">9.2. Mundo abierto y calidad de las afirmaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#que-aporta-geosparql">10. ¿Qué aporta GeoSPARQL?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-aplicado-un-catastro-interoperable">11. Ejemplo aplicado: un catastro interoperable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontologias-ide-y-servicios-ogc">12. Ontologías, IDE y servicios OGC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ontologias-y-sistemas-de-inteligencia-artificial">13. Ontologías y sistemas de inteligencia artificial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-se-construye-una-ontologia-geografica">14. ¿Cómo se construye una ontología geográfica?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#herramientas-habituales">Herramientas habituales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-conceptuales-frecuentes">15. Errores conceptuales frecuentes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actividad-practica-propuesta">16. Actividad práctica propuesta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sintesis">17. Síntesis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-y-recursos-para-profundizar">18. Referencias y recursos para profundizar</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Luis Reynoso (IDERA-GTT CDG)
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

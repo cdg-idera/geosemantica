@@ -194,13 +194,14 @@
 <li class="toctree-l1"><a class="reference internal" href="CNN_ejemplos.html">10. Capítulo · Ejemplos con Redes Neuronales Convolucionales CNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capRioBermejo.html">11. Capítulo · Validación de estimaciones de precipitación satelital mediante GEE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capitulo_girona.html">12. Capítulo · Modelo predictivo de inundaciones en Sarandí del Yí mediante GeoAI y telemetría hidrométrica in situ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">13. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologias.html">13. Capítulo · Ontologías: fundamentos y aplicaciones en las geociencias</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capGeoQ.html">14. Capítulo · GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capMonitoreo.html">15. Capítulo ·Monitoreo semanal de humedad del suelo y riesgo hídrico mediante imágenes SMAP en GEE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capDinamicaSalta.html">16. Capítulo · Dinámica espacio-temporal de las Islas de Calor Urbano y efecto de enfriamiento en el Aglomerado del Gran Salta, Argentina (2013–2025)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">17. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">18. Apéndice B: Tutorial de Google</a></li>
-<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">19. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="capCambioC.html">17. Capítulo · Paisajes estratégicos frente al cambio climático</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceA.html">18. Apéndice A: AI-powered pixels: Introducing Embedding dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApendiceB.html">19. Apéndice B: Tutorial de Google</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding_hiperesfera.html">20. Apéndice C: ¿Como graficar un embedding en una hiperesfera unitaria?</a></li>
 </ul>
 
     </div>
@@ -622,7 +623,7 @@ document.write(`
 <h1><span class="section-number">9. </span>Capítulo: <strong>Redes Neuronales Convolucionales (CNN)</strong><a class="headerlink" href="#capitulo-redes-neuronales-convolucionales-cnn" title="Link to this heading">#</a></h1>
 <p>Las <strong>redes neuronales convolucionales</strong> (<em>Convolutional Neural Networks</em>, CNN) constituyen una clase fundamental de modelos de deep learning diseñados específicamente para procesar datos con <strong>estructura espacial</strong>, como las imágenes. Su funcionamiento se basa en la operación matemática de <strong>convolución</strong>, que puede entenderse intuitivamente como la aplicación sistemática de filtros o máscaras sobre una grilla de datos, permitiendo detectar patrones locales como bordes, texturas y formas. Tal como señalan OpenStax:</p>
 <blockquote>
-<div><p>“Las redes neuronales convolucionales (CNN) son una poderosa clase de modelos de redes neuronales desarrolladas para procesar datos estructurados en forma de grilla, como las imágenes, haciendo uso de la operación matemática de convolución (que es similar a aplicar un filtro o una máscara a una imagen).”— Principles of Data Science, OpenStax (2025) <span id="id1">[<a class="reference internal" href="#id143" title="OpenStax. Principles of Data Science. OpenStax, 2025. Section 7.4: Convolutional Neural Networks. URL: https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks.">OpenStax, 2025</a>]</span></p>
+<div><p>“Las redes neuronales convolucionales (CNN) son una poderosa clase de modelos de redes neuronales desarrolladas para procesar datos estructurados en forma de grilla, como las imágenes, haciendo uso de la operación matemática de convolución (que es similar a aplicar un filtro o una máscara a una imagen).”— Principles of Data Science, OpenStax (2025) <span id="id1">[<a class="reference internal" href="#id157" title="OpenStax. Principles of Data Science. OpenStax, 2025. Section 7.4: Convolutional Neural Networks. URL: https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks.">OpenStax, 2025</a>]</span></p>
 </div></blockquote>
 <p>Desde una perspectiva conceptual, una CNN puede entenderse como un modelo compuesto por <strong>dos grandes etapas funcionales</strong>, claramente diferenciadas y complementarias, como se ilustra en la Figura <a class="reference internal" href="#fig-cnn-feature-learning-plus-fully-connected"><span class="std std-numref">Fig. 9.1</span></a>.</p>
 <p>La primera etapa, conocida como <strong>feature learning stage</strong> o <em>convolutional backbone</em>, está formada por capas convolucionales, funciones de activación y operaciones de <em>pooling</em>. Su objetivo principal es <strong>extraer representaciones jerárquicas</strong> de la entrada: a partir de la imagen original, la red aprende progresivamente <em>features</em> cada vez más abstractas, pasando de patrones simples (como bordes o contrastes) a estructuras más complejas y semánticamente relevantes. En esta fase, la red explota explícitamente la estructura espacial de los datos.</p>
@@ -2279,7 +2280,7 @@ La visualización es cualitativa: no muestra derivadas ni valores numéricos, si
 <h2><span class="section-number">9.15. </span>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id19">
 <div role="list" class="citation-list">
-<div class="citation" id="id143" role="doc-biblioentry">
+<div class="citation" id="id157" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">OpenStax25</a><span class="fn-bracket">]</span></span>
 <p>OpenStax. <em>Principles of Data Science</em>. OpenStax, 2025. Section 7.4: Convolutional Neural Networks. URL: <a class="reference external" href="https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks">https://openstax.org/books/principles-data-science/pages/7-4-convolutional-neural-networks</a>.</p>
 </div>
