@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>15. GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica. &#8212; Geosemántica y GeoAI</title>
+    <title>15. GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica &#8212; Geosemántica y GeoAI</title>
   
   
   
@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'capGeoQ';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -384,7 +386,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica.</h1>
+    <h1>GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,7 +396,49 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-bibliograficas">15.1. Referencias bibliográficas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">15.1. Introducción</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelizacion-hidrologica-y-sistemas-de-informacion-geografica">15.1.1. Modelización hidrológica y sistemas de información geográfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-respuesta-hidrologica-de-las-llanuras">15.1.2. La respuesta hidrológica de las llanuras</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-formulacion-hidrologica-a-la-representacion-espacial">15.1.3. De la formulación hidrológica a la representación espacial</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-del-metodo-del-numero-de-curva">15.2. Fundamentos del método del Número de Curva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulacion-matematica">15.2.1. Formulación matemática</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupos-hidrologicos-de-suelo">15.2.2. Grupos hidrológicos de suelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cobertura-y-uso-del-suelo">15.2.3. Cobertura y uso del suelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condicion-de-humedad-antecedente">15.2.4. Condición de humedad antecedente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-alcance-y-limitaciones">15.2.5. Supuestos, alcance y limitaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-complemento-geoq-2-8">15.3. El complemento GeoQ 2.8</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-y-flujo-de-procesamiento">15.3.1. Arquitectura y flujo de procesamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion">15.3.2. Instalación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparacion-de-los-insumos">15.3.3. Preparación de los insumos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-del-modelo">15.3.4. Ejecución del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#productos-del-modelo">15.3.5. Productos del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advertencias-y-buenas-practicas">15.3.6. Advertencias y buenas prácticas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion-cuenca-a1-del-rio-salado">15.4. Ejemplo de aplicación: cuenca A1 del río Salado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-de-estudio">15.4.1. Área de estudio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insumos-cartograficos">15.4.2. Insumos cartográficos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escenarios-pluviales">15.4.3. Escenarios pluviales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizacion-hidrologica">15.4.4. Parametrización hidrológica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonificacion-del-coeficiente-de-escorrentia">15.4.5. Zonificación del Coeficiente de escorrentía</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonificacion-del-coeficiente-de-infiltracion">15.4.6. Zonificación del Coeficiente de infiltración</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonificacion-del-coeficiente-de-abstracciones-iniciales">15.4.7. Zonificación del Coeficiente de abstracciones iniciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantificacion-del-nc-critico">15.4.8. Cuantificación del NC crítico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-finales">15.4.9. Consideraciones finales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-y-recomendaciones-de-uso">15.5. Conclusiones y recomendaciones de uso</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">15.5.1. Conclusiones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-de-uso">15.5.2. Recomendaciones de uso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspectivas">15.5.3. Perspectivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-complementarios">15.5.4. Recursos complementarios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anexo">15.6. Anexo</a></li>
 </ul>
             </nav>
         </div>
@@ -406,18 +450,2351 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="geoq-un-modelo-hidrologico-automatizado-con-sistemas-de-informacion-geografica">
-<h1><span class="section-number">15. </span><strong>GeoQ : un modelo hidrológico automatizado con sistemas de información geográfica.</strong><a class="headerlink" href="#geoq-un-modelo-hidrologico-automatizado-con-sistemas-de-informacion-geografica" title="Link to this heading">#</a></h1>
+  <!--
+=====================================================================
+Capítulo 14 · GeoQ (libro "Geosemántica y GeoAI", IDERA-GTT CDG)
+Formato: MyST Markdown para Jupyter Book.
+Fuente: capitulo_GeoQ_04-nov.docx
+
+Convenciones usadas en este archivo:
+- Citas:   {cite:p}`clave`        → cita entre corchetes: [Autor, año]
+           Autor {cite:yearpar}`clave` → cita narrativa: Autor [año]
+             (los nombres se escriben a mano para usar "y" en lugar de "and")
+           Las claves están en referencias_geoq.bib (prefijo "geoq-").
+- Ecuaciones: bloques $$ ... $$ con \tag{n}; numeradas 14.1-14.7 (número del capítulo en el libro).
+- Figuras y tablas: numeradas a mano con el número del capítulo (Figura 14.n, Tabla 14.n), en orden de aparición.
+  Figuras: bloques ```{figure}``` (sin :name:, para que el libro no agregue su propia etiqueta "Fig.") con imágenes en imagenes/geoq/.
+  Las tablas 14.12 a 14.14 son HTML con barras de datos ({raw} html).
+- Los comentarios como este (<!- - ... - ->) NO se muestran en el libro.
+  Las marcas "TODO" señalan lo que falta completar o decidir.
+=====================================================================
+-->
+<section class="tex2jax_ignore mathjax_ignore" id="geoq-un-modelo-hidrologico-automatizado-con-sistemas-de-informacion-geografica">
+<h1><span class="section-number">15. </span><strong>GeoQ: un modelo hidrológico automatizado con sistemas de información geográfica</strong><a class="headerlink" href="#geoq-un-modelo-hidrologico-automatizado-con-sistemas-de-informacion-geografica" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><strong>Autores:</strong> Fabio Alejandro Montealegre Medina, Fernanda Julia Gaspari.</p></li>
-<li><p><strong>Resumen:</strong> Se presenta la aplicación paso a paso del complemento GeoQ versión 2.8 para QGIS, una herramienta de código abierto que automatiza el cálculo espacial de variables hidrológicas mediante el método del Número de Curva (NC). Como caso de estudio, se utiliza la cuenca A1 del río Salado, ubicada en el noroeste de la provincia de Buenos Aires, Argentina, que abarca una superficie de 17.737,63 km² y representa un ambiente de llanura con características distintivas: pendientes extremadamente bajas, densidad de drenaje reducida y alta susceptibilidad a anegamientos. El análisis hidrológico se desarrolla integrando tres capas de información geoespacial fundamentales: (1) la clasificación de grupos hidrológicos de suelo (GH), donde predomina el grupo A (franco-arenoso); (2) la cobertura y uso del suelo, dominada por cultivos de herbáceas graminoides y vegetación de pastizales que ocupan la mayor parte de la cuenca; y (3) tres escenarios de precipitación modal derivados del análisis de datos pluviométricos históricos (1990-2020) de las estaciones meteorológicas del Servicio Meteorológico Nacional de Junín, Laboulaye y Venado Tuerto. Los escenarios corresponden a los siguientes eventos pluviales: 33 mm (evento I, de cuartil 3, representando lluvias frecuentes), 89 mm (evento II, condición media entre lluvias moderadas), y 145 mm (evento III, precipitación máxima registrada, representando lluvias extremas). A través de GeoQ, se modeliza la cuenca para generar cartografía temática que
-zonifica el coeficiente de escorrentía (CE), la capacidad de infiltración (CF), las abstracciones iniciales y la
-capacidad de campo (CIo), considerando una condición de humedad antecedente media. Los resultados permiten visualizar cómo la interacción entre el complejo suelo-vegetación y la intensidad de la tormenta determina la respuesta hidrológica de la cuenca, identificando zonas críticas donde precipitaciones intensas pueden generar escorrentía significativa y potenciales problemas de anegamiento. Este capítulo interactivo demuestra cómo GeoQ facilita el análisis hidrológico distribuido en cuencas de llanura, proporcionando información cuantitativa y espacialmente explícita relevante para la planificación territorial, la evaluación de vulnerabilidad hidrológica y la gestión del riesgo de inundaciones en la región pampeana.</p></li>
+<li><p><strong>Autores:</strong> Fabio Alejandro Montealegre Medina<a class="footnote-reference brackets" href="#af1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> y Fernanda Julia Gaspari<a class="footnote-reference brackets" href="#af2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p></li>
+<li><p><strong>Resumen:</strong> El análisis espacial de la respuesta de una cuenca frente a una precipitación requiere integrar información hidrológica, edáfica, de cobertura y uso del suelo en una estructura que permita representar la variabilidad territorial del proceso lluvia–escorrentía. El complemento GeoQ, desarrollado para QGIS, automatiza la aplicación espacial del método del Número de Curva (NC) y transforma dos capas vectoriales estandarizadas (grupos hidrológicos de suelo y cobertura/uso del suelo) junto con una condición de humedad antecedente y un evento de precipitación, en una cartografía distribuida de variables hidrológicas. Para ello, se presenta la aplicación paso a paso del complemento GeoQ versión 2.8 para QGIS, una herramienta de código abierto que automatiza el cálculo espacial de variables hidrológicas mediante el método del Número de Curva (NC). Como caso de estudio, se utiliza la cuenca A1 del río Salado, ubicada en el noroeste de la provincia de Buenos Aires, Argentina, que abarca una superficie de 17.737,63 km² y representa un ambiente de llanura con características distintivas: pendientes extremadamente bajas, densidad de drenaje reducida y alta susceptibilidad a anegamientos. El análisis hidrológico GeoQ se desarrolla con capas de información geoespacial fundamentales: (1) la clasificación de grupos hidrológicos de suelo (GH), donde predomina el grupo A (franco-arenoso); (2) la cobertura y uso del suelo, dominada por cultivos de herbáceas graminoides y vegetación de pastizales que ocupan la mayor parte de la cuenca; y tres escenarios de precipitación modal derivados del análisis de datos pluviométricos históricos (1990-2020) de las estaciones meteorológicas del Servicio Meteorológico Nacional de Junín, Laboulaye y Venado Tuerto y un cuarto escenario con un mapa de una tormenta extrema con valores a nivel geoespacial. Los escenarios corresponden a los siguientes eventos pluviales: 33 mm (evento I, de cuartil 3, representando lluvias frecuentes), 89 mm (evento II, condición media entre lluvias moderadas), y 145 mm (evento III, precipitación máxima registrada, representando lluvias extremas) y una tormenta adquirida en el Portal CHRS, que aporta datos e información global sobre precipitaciones obtenidos por satélite. A través de GeoQ, se modeliza la cuenca para generar cartografía temática que zonifica el coeficiente de escorrentía (CE), la capacidad de infiltración (CF), las abstracciones iniciales y la capacidad de campo (CIo), considerando una condición de humedad antecedente media. Los resultados permiten visualizar cómo la interacción entre el complejo suelo-vegetación y la intensidad de la tormenta determina la respuesta hidrológica de la cuenca, identificando zonas críticas donde precipitaciones intensas pueden generar escorrentía significativa y potenciales problemas de anegamiento. Este capítulo demuestra cómo GeoQ facilita el análisis hidrológico distribuido en cuencas de llanura, proporcionando información cuantitativa y espacialmente explícita relevante para la planificación territorial, la evaluación de vulnerabilidad hidrológica y la gestión del riesgo de inundaciones en la región pampeana.</p></li>
 <li><p><strong>Palabras clave:</strong> Modelación hidrológica, QGis, escorrentía, infiltración.</p></li>
 </ul>
-<section id="referencias-bibliograficas">
-<h2><span class="section-number">15.1. </span>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Link to this heading">#</a></h2>
-<span class="target" id="id1"></span></section>
+<hr class="docutils" />
+<section id="introduccion">
+<span id="geoq-introduccion"></span><h2><span class="section-number">15.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<section id="modelizacion-hidrologica-y-sistemas-de-informacion-geografica">
+<span id="geoq-modelizacion-sig"></span><h3><span class="section-number">15.1.1. </span>Modelización hidrológica y sistemas de información geográfica<a class="headerlink" href="#modelizacion-hidrologica-y-sistemas-de-informacion-geografica" title="Link to this heading">#</a></h3>
+<p>La cuantificación del excedente superficial de una lluvia constituye la base de la planificación del recurso hídrico, debido a que permite diseñar acciones orientadas tanto a favorecer la infiltración, para mantener el agua disponible para los cultivos, como a reducir los caudales pico que originan inundaciones por desborde de los cauces <span id="id3">[]</span>. En ese marco, la modelización hidrológica se ha consolidado como una herramienta clave para comparar escenarios de gestión y de cambio de uso del suelo en cuencas hidrográficas <span id="id4">[]</span>. Esta transformación de la cobertura modifica de manera sustancial la dinámica del agua superficial y subterránea, por ejemplo, mediante el aumento de las superficies impermeables, la eliminación de una cubierta vegetal absorbente o la intensificación de la extracción de agua subterránea para riego <span id="id5">[]</span>.</p>
+<p>La integración de modelos hidrológicos con la cartografía de uso del suelo alcanza un grado de fiabilidad aceptable gracias a la eficacia y la exactitud espacial que aportan las bases de datos geográficas gestionadas en un sistema de información geográfica (SIG) <span id="id6">[]</span>. El almacenamiento y el procesamiento de información georreferenciada en un SIG permiten, además, derivar nueva información para el análisis de la hidrología de superficie de manera coherente y sistemática, tanto en el espacio como en el tiempo <span id="id7">[]</span>. Diversos autores señalan que los modelos de simulación espacial aplicados a evaluar los cambios provocados sobre la escorrentía superficial constituyen una aproximación metodológica útil para comprender el comportamiento de las variables hidrológicas y mejorar la gestión de la información territorial <span id="id8">[]</span>.</p>
+<p>No obstante, la implementación de los métodos hidrológicos tradicionales que simulan el proceso precipitación-escorrentía, enfrenta dos dificultades recurrentes. La primera es la escasez de datos meteorológicos y la segunda son las incompatibilidades entre la estructura de los modelos y las características geográficas y digitales de los datos generados con SIG <span id="id9">[]</span>. Frente a ello, los métodos paramétricos basados en relaciones empíricas ofrecen una alternativa pragmática y simple, pero se debe considerar que cuantos menos parámetros intervienen, más sencilla resulta la aplicación, pero menores son las garantías. Por ello, sus resultados tienen un valor orientativo <span id="id10">[]</span>. Entre estos métodos, el del Número de Curva (NC), desarrollado por el Soil Conservation Service (SCS) de los Estados Unidos, es el de mayor difusión cuando se busca una aproximación adecuada a la lámina de escorrentía <span id="id11">[]</span>, cuyos fundamentos se desarrollan en la <a class="reference internal" href="#geoq-fundamentos"><span class="std std-numref">sección 15.2</span></a>.</p>
+<p>A la disponibilidad de SIG para la implementación de estos modelos, se suma la de productos satelitales de precipitación de acceso abierto. Su cobertura sinóptica permite observar de manera simultánea grandes extensiones, incluidas áreas remotas o con baja densidad de estaciones. Su alta frecuencia temporal, del orden de minutos a horas, posibilita registrar eventos de corta duración y alta intensidad. Estas características los convierten en insumos valiosos para alimentar, calibrar y validar modelos hidrológicos, así como para el monitoreo y la anticipación de eventos extremos <span id="id12">[]</span>. La incorporación de este tipo de información como dato de entrada espacialmente distribuido constituye, precisamente, una de las innovaciones de la última versión de GeoQ.</p>
+</section>
+<section id="la-respuesta-hidrologica-de-las-llanuras">
+<span id="geoq-llanuras"></span><h3><span class="section-number">15.1.2. </span>La respuesta hidrológica de las llanuras<a class="headerlink" href="#la-respuesta-hidrologica-de-las-llanuras" title="Link to this heading">#</a></h3>
+<p>La región pampeana argentina ha gestionado históricamente sus excesos hídricos mediante obras de saneamiento y canalización, como el dragado de cauces y la construcción de canales que desvían cursos de agua o drenan áreas anegables. En menor medida, ha recurrido a prácticas culturales de manejo y uso del suelo <span id="id13">[]</span>. Desde la perspectiva del manejo de cuencas hidrográficas, estas actuaciones pueden sintetizarse en dos líneas compatibles y complementarias, que son la utilización racional de las áreas de cultivo, que ocupan los sectores de menor pendiente y suelos más fértiles y el establecimiento de una cubierta vegetal protectora en el resto del territorio, bajo formas de praderas, humedales y matorrales hasta bosques naturales o implantados <span id="id14">[]</span>. Rodríguez Vagaría y Gaspari <span id="id15">[]</span> expresan que la restauración agrohidrológica es una práctica que procura englobar esta problemática común, que pretende aplicar en suelos, agua y vegetación, un plan unificado de acción, que combina la organización espacial de la producción con la modelización hidrológica, como fuente de la variable hídrica.</p>
+<p>En particular en las llanuras, este enfoque adquiere una relevancia particular. Los ambientes de la Pampa Deprimida en Argentina presentan un relieve muy suave, casi horizontal, salpicado de depresiones locales en las que la precipitación que alcanza la superficie se almacena en encharcamientos someros y bañados <span id="id16">[]</span>. La escasa pendiente y la reducida densidad de drenaje limitan la evacuación del agua. En consecuencia, la capacidad del complejo suelo-vegetación para interceptar, retener e infiltrar la lluvia adquiere un peso decisivo en la generación de excedentes y en la ocurrencia de anegamientos. Gómez et al. <span id="id17">[]</span> indican que a ello se suma una dificultad de que los modelos digitales de elevación disponibles requieren correcciones altimétricas específicas para su uso hidrológico en áreas de llanura.</p>
+<p>Estas limitaciones refuerzan el interés por métodos que, como el NC, estiman la respuesta de la cuenca a partir de la textura del suelo y de la cobertura vegetal, variables cuya cartografía es, en general, de fácil disponibilidad <span id="id18">[]</span>.</p>
+</section>
+<section id="de-la-formulacion-hidrologica-a-la-representacion-espacial">
+<span id="geoq-formulacion-espacial"></span><h3><span class="section-number">15.1.3. </span>De la formulación hidrológica a la representación espacial<a class="headerlink" href="#de-la-formulacion-hidrologica-a-la-representacion-espacial" title="Link to this heading">#</a></h3>
+<p>En su forma convencional, el procesamiento del método del NC en un SIG consiste en una tabulación cruzada de la cartografía de grupos hidrológicos de suelo y de cobertura vegetal. A continuación, se asigna el NC a cada combinación y se aplica un modelo algebraico cartográfico que resuelve la ecuación de la escorrentía <span id="id19">[]</span>. Este procedimiento, descrito paso a paso en la literatura de cátedra <span id="id20">[]</span>, exige una secuencia de operaciones manuales: disolución de polígonos, intersección de capas, edición de la tabla de atributos para cargar el NC de cada combinación y cálculo de campos. Repetir esta secuencia para distintas tormentas o condiciones de humedad resulta laborioso y propenso a errores de transcripción, lo que justifica su automatización.</p>
+<p>Zhan y Huang <span id="id21">[]</span> desarrollaron ArcCN-Runoff, una extensión de ESRI ArcGIS® que genera mapas de NC y de escorrentía a escala de cuenca. En el ámbito regional, Rodríguez Vagaría y Gaspari <span id="id22">[]</span> crearon la primera versión de GeoQ para Idrisi Andes®. Esta versión estaba orientada a estimar descargas y a predecir la respuesta hidrológica de una cuenca ante cambios de uso del suelo, como la implementación de medidas de conservación, las modificaciones de la cubierta vegetal o el avance de la urbanización, que se aplicó, entre otros casos, a la evaluación del efecto de la restauración agrohidrológica sobre el escurrimiento superficial <span id="id23">[]</span>. Como señala Eastman <span id="id24">[]</span>, herramientas de este tipo constituyen modelos geoespaciales automatizados que generan nueva información útil para el análisis de la hidrología de superficie.</p>
+<p>El paso siguiente fue la reimplementación de GeoQ en QGIS®, una aplicación SIG de código abierto distribuida bajo la licencia pública general GNU. QGIS amplía sus capacidades mediante complementos escritos en Python y dispone de un entorno gráfico para construir y ejecutar modelos de pasos múltiples que procesan capas temáticas en formato tabular, vectorial o ráster <span id="id25">[]</span>. Sobre esa base se desarrollaron las versiones que se sintetizan en la Tabla 14.1.</p>
+<p><strong>Tabla 14.1.</strong> Evolución de la herramienta GeoQ.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Versión</p></th>
+<th class="head"><p>Plataforma</p></th>
+<th class="head"><p>Año</p></th>
+<th class="head"><p>Entrada de precipitación</p></th>
+<th class="head"><p>Capacidades principales</p></th>
+<th class="head"><p>Referencia</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GeoQ para Idrisi</p></td>
+<td><p>Idrisi Andes®</p></td>
+<td><p>2010</p></td>
+<td><p>Valor único</p></td>
+<td><p>Determinación del NC y de la escorrentía por complejo suelo-vegetación</p></td>
+<td><p>Rodríguez Vagaría y Gaspari <span id="id26">[]</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>GeoQ 1.x</p></td>
+<td><p>QGIS 3.x (desarrollada en 3.18)</p></td>
+<td><p>2021-2022</p></td>
+<td><p>Valor único para toda la cuenca</p></td>
+<td><p>Tablas de NC por CHA cargadas por el usuario en formato CSV; capas de resultados GeoQ, CE, CF y CIo</p></td>
+<td><p>Montealegre Medina y Gaspari <span id="id27">[]</span></p></td>
+</tr>
+<tr class="row-even"><td><p>GeoQ 2.8</p></td>
+<td><p>QGIS 3.x</p></td>
+<td><p>2024</p></td>
+<td><p>Valor numérico o capa ráster</p></td>
+<td><p>Límite del área de estudio como insumo; tablas de NC integradas y CHA seleccionable; simbología automática de NC, CE, CF y CIo</p></td>
+<td><p>Montealegre Medina y Gaspari <span id="id28">[]</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia con base en Rodríguez Vagaría y Gaspari <span id="id29">[]</span> y Montealegre Medina y Gaspari <span id="id30">[]</span>.</em></p>
+<p>Desde su publicación en el repositorio oficial de complementos de QGIS, GeoQ se ha aplicado en cuencas serranas de los sistemas de Ventania y Tandilia y en la cuenca alta del río Reconquista. También se ha utilizado en estudios comparativos de áreas urbanas y rurales y en la evaluación de la respuesta hidrológica ante la invasión de especies leñosas exóticas. Además, ha dado soporte a tesis de grado y de posgrado en la Facultad de Ciencias Agrarias y Forestales de la Universidad Nacional de La Plata <span id="id31">[]</span>. El detalle de estos trabajos se ofrece en la sección de <a class="reference internal" href="#geoq-recursos"><span class="std std-ref">recursos complementarios</span></a>.</p>
+<p>El objetivo del capítulo es presentar, de manera aplicada y paso a paso, el complemento GeoQ 2.8 para QGIS, y demostrar su utilidad para el análisis hidrológico distribuido en cuencas de llanura a partir del caso de la cuenca A1 del río Salado. Específicamente, se propone sintetizar los fundamentos del método del NC y los supuestos que condicionan la interpretación de sus resultados, describir la arquitectura del complemento, la preparación de sus insumos y su ejecución, modelizar la respuesta hidrológica de la cuenca A1 ante tres escenarios pluviales en condición de humedad antecedente media y formular recomendaciones de uso orientadas a la planificación territorial y a la gestión del riesgo hídrico.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="fundamentos-del-metodo-del-numero-de-curva">
+<span id="geoq-fundamentos"></span><h2><span class="section-number">15.2. </span>Fundamentos del método del Número de Curva<a class="headerlink" href="#fundamentos-del-metodo-del-numero-de-curva" title="Link to this heading">#</a></h2>
+<p>El método del Número de Curva fue desarrollado en 1954 por el Servicio de Conservación de Suelos del Departamento de Agricultura de los Estados Unidos (USDA-SCS), actual Servicio de Conservación de Recursos Naturales (NRCS). Se trata de un procedimiento empírico para estimar la escorrentía directa producida por una lluvia aislada <span id="id32">[]</span>, que surgió de la observación del fenómeno hidrológico en distintos tipos de suelo, estados de la cobertura vegetal y condiciones de humedad antecedente <span id="id33">[]</span>.</p>
+<p>El método parte de un balance según el cual la precipitación total de una tormenta (<span class="math notranslate nohighlight">\(P\)</span>) se reparte en tres componentes, según la ecuación 14.1:</p>
+<div class="math notranslate nohighlight">
+\[
+P = I_0 + F + Q \tag{14.1}
+\]</div>
+<p>Cada componente tiene una definición precisa:</p>
+<ul class="simple">
+<li><p><strong>Abstracción inicial (<span class="math notranslate nohighlight">\(I_0\)</span>):</strong> comprende la interceptación por la vegetación, la infiltración durante los primeros momentos de la tormenta y el almacenamiento superficial en pequeñas depresiones del terreno <span id="id34">[]</span>.</p></li>
+<li><p><strong>Infiltración (<span class="math notranslate nohighlight">\(F\)</span>):</strong> es la proporción de la lluvia que penetra en el suelo una vez satisfecha la abstracción inicial. Por ello se la considera una abstracción continuada.</p></li>
+<li><p><strong>Escorrentía superficial o precipitación efectiva (<span class="math notranslate nohighlight">\(Q\)</span>):</strong> es la lluvia que no se retiene ni se infiltra <span id="id35">[]</span>. Su valor es nulo hasta que la precipitación acumulada supera la abstracción inicial <span id="id36">[]</span>.</p></li>
+</ul>
+<p>La base del método es que cada complejo suelo-vegetación se comporta de la misma forma frente a la infiltración bajo una condición de humedad antecedente dada <span id="id37">[]</span>, que se sintetiza en un único parámetro adimensional, el Número de Curva (NC), que varía entre 0 y 100. Cuanto mayor es el NC, más predomina la escorrentía y menor es la infiltración <span id="id38">[]</span>.</p>
+<section id="formulacion-matematica">
+<span id="geoq-formulacion"></span><h3><span class="section-number">15.2.1. </span>Formulación matemática<a class="headerlink" href="#formulacion-matematica" title="Link to this heading">#</a></h3>
+<p>El procedimiento de cálculo se inicia con la retención potencial máxima (<span class="math notranslate nohighlight">\(S\)</span>), expresada en milímetros, que representa la capacidad máxima del complejo suelo-vegetación para retener agua ante una tormenta, y se obtiene a partir del NC <span id="id39">[]</span> según la ecuación 14.2.</p>
+<div class="math notranslate nohighlight">
+\[
+S = \frac{25\,400}{NC} - 254 \tag{14.2}
+\]</div>
+<p>La abstracción inicial (<span class="math notranslate nohighlight">\(I_0\)</span>) se estima como una fracción fija de <span class="math notranslate nohighlight">\(S\)</span> (ecuación 14.3):</p>
+<div class="math notranslate nohighlight">
+\[
+I_0 = 0{,}2\,S \tag{14.3}
+\]</div>
+<p>La escorrentía superficial (<span class="math notranslate nohighlight">\(Q\)</span>) se calcula según la ecuación 14.4:</p>
+<div class="math notranslate nohighlight">
+\[
+Q = \frac{(P - I_0)^2}{P + 4\,I_0} \quad \text{si } P &gt; I_0; \qquad Q = 0 \quad \text{si } P \le I_0 \tag{14.4}
+\]</div>
+<p>El denominador <span class="math notranslate nohighlight">\(P + 4\,I_0\)</span> equivale a la expresión clásica <span class="math notranslate nohighlight">\((P - I_0 + S)\)</span>, dado que <span class="math notranslate nohighlight">\(S = 5\,I_0\)</span>.</p>
+<p>La infiltración se obtiene por diferencia <span id="id40">[]</span> según la ecuación 14.5:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{S\,(P - I_0)}{P - I_0 + S} \tag{14.5}
+\]</div>
+<p>Para comparar complejos y escenarios con independencia de la magnitud de la tormenta, cada componente se expresa como proporción de la precipitación total. Así se definen el coeficiente de escorrentía (CE), el coeficiente de infiltración (CF) y el coeficiente de abstracciones iniciales (CIo), cuya suma es igual al 100 % <span id="id41">[]</span> y se muestran en la ecuación 14.6:</p>
+<div class="math notranslate nohighlight">
+\[
+CE = \frac{Q}{P}\cdot 100 \qquad CF = \frac{F}{P}\cdot 100 \qquad CI_0 = \frac{I_0}{P}\cdot 100 \tag{14.6}
+\]</div>
+<p>La Figura 14.1 muestra el comportamiento de los tres coeficientes en función del NC para tres magnitudes de tormenta. Para una precipitación dada, el CE crece de manera monótona con el NC, mientras que el CIo decrece. El CF, en cambio, presenta un máximo en valores intermedios de NC: se anula tanto en superficies impermeables (NC = 100, <span class="math notranslate nohighlight">\(S = 0\)</span>) como en los complejos cuya abstracción inicial absorbe toda la lluvia. Al aumentar la precipitación, el dominio de la escorrentía se extiende hacia NC progresivamente menores.</p>
+<figure class="align-center" id="id105">
+<a class="reference internal image-reference" href="_images/fig_14-01_particion_nc.png"><img alt="_images/fig_14-01_particion_nc.png" src="_images/fig_14-01_particion_nc.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.1 </span><span class="caption-text"><strong>Figura 14.1.</strong> Partición de la precipitación en CE, CF y CIo en función del NC para tormentas de 33, 89 y 145 mm. La línea discontinua indica el NC crítico (Ec. 14.7). Fuente: elaboración propia a partir de las ecuaciones 14.2 a 14.6.</span><a class="headerlink" href="#id105" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="grupos-hidrologicos-de-suelo">
+<span id="geoq-grupos-hidrologicos"></span><h3><span class="section-number">15.2.2. </span>Grupos hidrológicos de suelo<a class="headerlink" href="#grupos-hidrologicos-de-suelo" title="Link to this heading">#</a></h3>
+<p>La información edáfica se estructura en cuatro categorías de textura y permeabilidad, denominadas grupos hidrológicos (GH), que expresan el potencial de escorrentía del suelo <span id="id42">[]</span>. La asignación de cada unidad cartográfica de suelos a un GH se basa en la textura.</p>
+<p>En GeoQ, cada GH se identifica mediante un código numérico entero denominado <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code>, que debe consignarse en la tabla de atributos de la capa vectorial de suelos según la Tabla 14.2.</p>
+<p><strong>Tabla 14.2.</strong> Grupos hidrológicos de suelo y códigos requeridos por GeoQ.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>GH</p></th>
+<th class="head"><p>Potencial de escorrentía</p></th>
+<th class="head"><p>Características</p></th>
+<th class="head"><p>Texturas asociadas</p></th>
+<th class="head"><p>Cod_Sue</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>Mínimo</p></td>
+<td><p>Arenas profundas con poco limo y arcilla; loess muy permeables</p></td>
+<td><p>Arenosa, arenosa franca, franco arenosa</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>Moderadamente bajo</p></td>
+<td><p>Suelos mayormente francos, menos profundos y compactos que los del grupo A</p></td>
+<td><p>Franco limosa, franca, limosa</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>Moderadamente alto</p></td>
+<td><p>Suelos poco profundos con abundante arcilla y coloides</p></td>
+<td><p>Franco arcillo arenosa, franco arcillo limosa, franco arcillosa</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>Máximo</p></td>
+<td><p>Suelos arcillosos poco profundos, con subhorizontes casi impermeables cerca de la superficie</p></td>
+<td><p>Arcillo arenosa, arcillo limosa, arcillosa</p></td>
+<td><p>4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: adaptado de Gaspari et al. <span id="id43">[]</span> y Montealegre Medina y Gaspari <span id="id44">[]</span>.</em></p>
+</section>
+<section id="cobertura-y-uso-del-suelo">
+<span id="geoq-cobertura"></span><h3><span class="section-number">15.2.3. </span>Cobertura y uso del suelo<a class="headerlink" href="#cobertura-y-uso-del-suelo" title="Link to this heading">#</a></h3>
+<p>El segundo componente del complejo es la vegetación o el uso del suelo, incluido el tratamiento cultural que recibe <span id="id45">[]</span>. La clasificación de Mintegui Aguirre y López Unzú <span id="id46">[]</span> combina tres criterios: el tipo de cobertura; la práctica de manejo, que puede consistir en laboreo sin prácticas de conservación, cultivo en curvas de nivel o curvas de nivel con terrazas, y la condición hidrológica, desde muy pobre hasta muy buena.</p>
+<p>Para facilitar su aplicación en la Argentina, GeoQ armoniza esa clasificación con las clases de la cartografía nacional de cobertura del suelo elaborada con el sistema LCCS <span id="id47">[]</span>. El resultado es una tipología de 58 clases codificadas, en intervalos de diez, en el campo <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code> en el archivo vectorial (Anexo, Tabla 14.17).</p>
+</section>
+<section id="condicion-de-humedad-antecedente">
+<span id="geoq-cha"></span><h3><span class="section-number">15.2.4. </span>Condición de humedad antecedente<a class="headerlink" href="#condicion-de-humedad-antecedente" title="Link to this heading">#</a></h3>
+<p>La respuesta de un mismo complejo suelo-vegetación varía según el contenido de humedad del suelo al inicio de la tormenta. El método la representa mediante tres condiciones de humedad antecedente (CHA), definidas a partir de la lluvia acumulada en los 5 a 10 días previos al evento (Tabla 14.3) <span id="id48">[]</span>.</p>
+<p><strong>Tabla 14.3.</strong> Condiciones de humedad antecedente en función de la lluvia previa.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>CHA</p></th>
+<th class="head"><p>Estado de humedad del suelo</p></th>
+<th class="head"><p>Lluvia antecedente en los 5 a 10 días previos (mm)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>Seco</p></td>
+<td><p>Menor de 12,7</p></td>
+</tr>
+<tr class="row-odd"><td><p>II</p></td>
+<td><p>Medio</p></td>
+<td><p>12,7 a 38,1</p></td>
+</tr>
+<tr class="row-even"><td><p>III</p></td>
+<td><p>Húmedo o saturado</p></td>
+<td><p>Mayor de 38,1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: adaptado de Gaspari et al. <span id="id49">[]</span>.</em></p>
+<p>El efecto de la CHA sobre el NC es considerable, el cual aumenta con el mayor estado de humedad del suelo.</p>
+<p>La elección de la CHA constituye una decisión de modelización que debe fundamentarse en el registro pluviométrico previo al evento analizado. La condición II es la referencia habitual - normal para escenarios de diseño; la condición III es la adecuada para evaluar tormentas que se producen sobre suelos húmedos tras períodos lluviosos; y la CHA I se considera en estado de sequedad edáfica.</p>
+</section>
+<section id="supuestos-alcance-y-limitaciones">
+<span id="geoq-supuestos"></span><h3><span class="section-number">15.2.5. </span>Supuestos, alcance y limitaciones<a class="headerlink" href="#supuestos-alcance-y-limitaciones" title="Link to this heading">#</a></h3>
+<p>La interpretación de los resultados exige tener presentes los supuestos del método.</p>
+<p>En primer lugar, se trata de un modelo de evento, por lo cual opera con la lámina total de una tormenta aislada, sin considerar su intensidad, su duración ni su distribución temporal, y no incluye el tránsito del agua por la cuenca. Por ello estima volúmenes de escorrentía, pero no caudales pico ni hidrogramas.</p>
+<p>En segundo lugar, no incorpora de manera explícita la topografía. La pendiente solo interviene de forma indirecta a través de la clasificación de la cobertura, y el almacenamiento en depresiones queda subsumido en la abstracción inicial. En cuencas serranas, este aspecto puede complementarse con el cruce entre el NC y la pendiente, como en la determinación del potencial erosivo cualitativo <span id="id50">[]</span>.</p>
+<p>En tercer lugar, la relación <span class="math notranslate nohighlight">\(I_0 = 0{,}2\,S\)</span> (Ec. 14.3) es una simplificación empírica que ha sido objeto de revisión, reconociendo que hay diversos análisis sugieren coeficientes menores para numerosas cuencas <span id="id51">[]</span>.</p>
+<p>Por último, como todo método paramétrico, sus resultados tienen un valor orientativo y se desaconseja su uso con series meteorológicas cortas o incompletas <span id="id52">[]</span>.</p>
+<p>Un caso particular merece atención. Cuando la abstracción inicial iguala o supera la precipitación, la escorrentía y la infiltración son nulas, y toda la lluvia se retiene en superficie. Al reemplazar <span class="math notranslate nohighlight">\(I_0 = P\)</span> en las ecuaciones 14.2 y 14.3 (es decir, <span class="math notranslate nohighlight">\(S = 5\,P\)</span>) se obtiene el NC crítico por debajo del cual no se genera escorrentía:</p>
+<div class="math notranslate nohighlight">
+\[
+NC_{crit} = \frac{25\,400}{254 + 5\,P} \tag{14.7}
+\]</div>
+<p>El número de curva crítico (frecuentemente asociado al umbral de escorrentía) es la cantidad mínima de lluvia acumulada (en milímetros) que debe precipitar sobre una cuenca hidrográfica para que empiece a generarse escorrentía superficial, es decir, para que el agua deje de abstraerse por la vegetación y/o infiltrarse por completo, y empiece a fluir por la superficie.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="el-complemento-geoq-2-8">
+<span id="geoq-complemento"></span><h2><span class="section-number">15.3. </span>El complemento GeoQ 2.8<a class="headerlink" href="#el-complemento-geoq-2-8" title="Link to this heading">#</a></h2>
+<section id="arquitectura-y-flujo-de-procesamiento">
+<span id="geoq-arquitectura"></span><h3><span class="section-number">15.3.1. </span>Arquitectura y flujo de procesamiento<a class="headerlink" href="#arquitectura-y-flujo-de-procesamiento" title="Link to this heading">#</a></h3>
+<p>GeoQ se construyó con el Diseñador de modelos de QGIS como un modelo gráfico de pasos múltiples. El modelo encadena geoprocesos vectoriales, asignación automática de valores, operaciones matemáticas entre capas y reclasificación de categorías en un procedimiento interconectado <span id="id53">[]</span>. La versión 2.8 conserva esa lógica e incorpora el límite del área de estudio y la precipitación ráster como insumos. El flujo resultante comprende ocho etapas y se sintetiza en la Figura 14.2.</p>
+<ol class="arabic simple">
+<li><p>Reproyección de las capas de entrada al sistema de referencia de coordenadas (SRC) del límite del área de estudio.</p></li>
+<li><p>Incorporación de las columnas de <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code> y <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code> a los mapas de suelos y vegetación, respectivamente.</p></li>
+<li><p>Intersección de las capas de GH y de cobertura, que produce las unidades homogéneas o complejos suelo-vegetación.</p></li>
+<li><p>Construcción de la clave <code class="docutils literal notranslate"><span class="pre">Cod_NC</span></code> como suma de <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code> y <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code>.</p></li>
+<li><p>Unión con la tabla de NC correspondiente a la CHA seleccionada, integrada en el complemento.</p></li>
+<li><p>Asignación de la precipitación a cada complejo, ya sea como valor único o a partir de la capa ráster.</p></li>
+<li><p>Cálculo de <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(I_0\)</span>, <span class="math notranslate nohighlight">\(Q\)</span> y <span class="math notranslate nohighlight">\(F\)</span> (Ec. 14.2 a 14.5) y de los coeficientes (Ec. 14.6), con el tratamiento del caso <span class="math notranslate nohighlight">\(I_0 \ge P\)</span>.</p></li>
+<li><p>Generación de la capa de resultados y de las capas temáticas simbolizadas.</p></li>
+</ol>
+<figure class="align-center" id="id106">
+<a class="reference internal image-reference" href="_images/fig_14-02_flujo_geoq.png"><img alt="_images/fig_14-02_flujo_geoq.png" src="_images/fig_14-02_flujo_geoq.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.2 </span><span class="caption-text"><strong>Figura 14.2.</strong> Flujo de procesamiento del complemento GeoQ 2.8. Fuente: elaboración propia con base en Montealegre Medina y Gaspari <span id="id54">[]</span>.</span><a class="headerlink" href="#id106" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>La codificación de <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code> y <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code> permite que la suma de ambos códigos identifique de manera unívoca cada complejo suelo-vegetación, puesto que los GH ocupan las unidades (1 a 4) y las coberturas, las decenas y centenas.</p>
+<p>El código resultante (<code class="docutils literal notranslate"><span class="pre">Cod_NC</span> <span class="pre">=</span> <span class="pre">Cod_Veg</span> <span class="pre">+</span> <span class="pre">Cod_Sue</span></code>) es la clave con la que el complemento recupera el NC correspondiente.</p>
+<p>Por ejemplo, el código 31 designa un cultivo de herbáceas graminoides sobre un suelo del grupo A. La Tabla 14.4 ilustra la construcción de la clave para un uso en barbecho.</p>
+<p><strong>Tabla 14.4.</strong> Ejemplo de construcción de la clave Cod_NC para un uso en barbecho (CHA II).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>GH</p></th>
+<th class="head"><p>Cod_Sue</p></th>
+<th class="head"><p>Vegetación y/o uso del suelo</p></th>
+<th class="head"><p>Cod_Veg</p></th>
+<th class="head"><p>Cod_NC</p></th>
+<th class="head"><p>NC</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>1</p></td>
+<td><p>Barbecho</p></td>
+<td><p>10</p></td>
+<td><p>11</p></td>
+<td><p>77</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>2</p></td>
+<td><p>Barbecho</p></td>
+<td><p>10</p></td>
+<td><p>12</p></td>
+<td><p>86</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>3</p></td>
+<td><p>Barbecho</p></td>
+<td><p>10</p></td>
+<td><p>13</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>4</p></td>
+<td><p>Barbecho</p></td>
+<td><p>10</p></td>
+<td><p>14</p></td>
+<td><p>94</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: Montealegre Medina y Gaspari <span id="id55">[]</span>.</em></p>
+<p>Los valores de NC para todas las combinaciones, adaptados de las tablas del SCS <span id="id56">[]</span>, se presentan en el Anexo (Tabla 14.18).</p>
+</section>
+<section id="instalacion">
+<span id="geoq-instalacion"></span><h3><span class="section-number">15.3.2. </span>Instalación<a class="headerlink" href="#instalacion" title="Link to this heading">#</a></h3>
+<p>GeoQ se distribuye a través del repositorio oficial de complementos de QGIS <span id="id57">[]</span>. Para instalarlo, se accede al menú <em>Complementos &gt; Administrar e instalar complementos</em>, se busca “GeoQ” en la pestaña <em>Todos</em> y se selecciona <em>Instalar complemento</em> (Figura 14.3, superior).</p>
+<p>Como alternativa, el código se encuentra en el repositorio <a class="github reference external" href="https://github.com/fabalmon/GeoQ">fabalmon/GeoQ</a>.</p>
+<p>Desde allí puede descargarse en formato ZIP mediante la opción <em>Code &gt; Download ZIP</em> e instalarse con la opción <em>Instalar a partir de ZIP</em> del mismo administrador de complementos. Una vez instalado, el complemento aparece en el panel <em>Caja de herramientas de Procesos</em> con el nombre GeoQ (Figura 14.3, inferior).</p>
+<p>El repositorio declara compatibilidad con QGIS 3.0 y posteriores, aunque el manual recomienda emplear versiones iguales o superiores a la 3.18 <span id="id58">[]</span>.</p>
+<figure class="align-center" id="id107">
+<a class="reference internal image-reference" href="_images/fig_14-03_instalacion.png"><img alt="_images/fig_14-03_instalacion.png" src="_images/fig_14-03_instalacion.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.3 </span><span class="caption-text"><strong>Figura 14.3.</strong> Instalación de GeoQ desde el administrador de complementos de QGIS. Superior: instalación del complemento desde el repositorio de QGIS; inferior: instalación por medio de archivo comprimido ZIP.</span><a class="headerlink" href="#id107" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="preparacion-de-los-insumos">
+<span id="geoq-insumos"></span><h3><span class="section-number">15.3.3. </span>Preparación de los insumos<a class="headerlink" href="#preparacion-de-los-insumos" title="Link to this heading">#</a></h3>
+<p>La calidad de los resultados depende directamente de la preparación de los insumos, que deben adecuarse previamente al formato que se resume en la Tabla 14.5.</p>
+<p><strong>Tabla 14.5.</strong> Insumos de GeoQ 2.8 y requisitos de formato.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Insumo</p></th>
+<th class="head"><p>Formato</p></th>
+<th class="head"><p>Requisito</p></th>
+<th class="head"><p>Observaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Límite del área de estudio</p></td>
+<td><p>Vector de polígonos</p></td>
+<td><p>Georreferenciado, en coordenadas planas o geográficas</p></td>
+<td><p>Su SRC define el de todos los resultados</p></td>
+</tr>
+<tr class="row-odd"><td><p>Precipitación</p></td>
+<td><p>Valor numérico (mm) o ráster (mm por píxel)</p></td>
+<td><p>Un único evento pluvial</p></td>
+<td><p>El valor numérico es opcional si se ingresa el ráster, y viceversa</p></td>
+</tr>
+<tr class="row-even"><td><p>Grupos hidrológicos</p></td>
+<td><p>Vector de polígonos</p></td>
+<td><p>Campo <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code> de tipo entero (1 a 4)</p></td>
+<td><p>Codificación según la Tabla 14.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cobertura y uso del suelo</p></td>
+<td><p>Vector de polígonos</p></td>
+<td><p>Campo <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code> de tipo entero (10 a 580)</p></td>
+<td><p>Codificación según el Anexo, Tabla 14.17</p></td>
+</tr>
+<tr class="row-even"><td><p>Condición de humedad antecedente</p></td>
+<td><p>Lista desplegable</p></td>
+<td><p>I, II o III</p></td>
+<td><p>Tablas de NC integradas en el complemento</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia con base en Montealegre Medina y Gaspari <span id="id59">[]</span>.</em></p>
+<p><strong>Límite del área de estudio.</strong> Puede representar una cuenca hidrográfica, una parcela o cualquier polígono de interés. Su SRC es determinante, porque el complemento reproyecta a él todas las demás capas y lo transfiere a los productos. Se recomienda adoptar un SRC proyectado, por ejemplo, una faja POSGAR 2007 en el caso de la Argentina, para que las superficies de los resultados puedan calcularse directamente en unidades métricas.</p>
+<p><strong>Precipitación.</strong> La tormenta puede ingresarse de dos maneras.</p>
+<ul class="simple">
+<li><p>Con un valor numérico representativo o un evento pluvial, que se aplica de manera uniforme.</p></li>
+<li><p>Con un ráster en el que cada píxel contiene la lámina precipitada del evento, lo cual permite representar su variabilidad espacial. Para esta opción se recomienda utilizar el portal de datos del Center for Hydrometeorology and Remote Sensing (CHRS) de la Universidad de California en Irvine, que distribuye los productos de la familia PERSIANN. Entre ellos, se aconseja el producto PDIR-Now, que es una estimación casi en tiempo real basada en información infrarroja con una relación dinámica entre la temperatura de tope de nube y la tasa de lluvia <span id="id60">[]</span>. El ráster debe corresponder al acumulado del evento que se desea modelizar y cubrir la totalidad del área de estudio. <em>Es importante mencionar que los píxeles donde no se registró precipitación tienen valor nulo, reconocido como “sin dato”.</em></p></li>
+</ul>
+<p><strong>Grupos hidrológicos de suelo.</strong> La capa se deriva de la cartografía edáfica disponible, por ejemplo, las cartas de suelos, asignando a cada unidad cartográfica su GH según la textura del horizonte superficial y las características descritas en la Tabla 14.2. El código se registra en un campo nuevo denominado <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code>, de tipo entero.</p>
+<p><strong>Cobertura y uso del suelo.</strong> Las clases de la cartografía de origen deben reclasificarse según la tipología estandarizada del Anexo (Tabla 14.17) y registrarse en un campo entero denominado <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code>. Cuando la leyenda local no coincide exactamente con esa tipología, se asigna la clase de comportamiento hidrológico más próximo. Es recomendable documentar la tabla de correspondencias utilizada, dado que constituye una de las principales fuentes de incertidumbre del modelo <span id="id61">[]</span>.</p>
+<p><strong>Control geométrico.</strong> Para ambas capas vectoriales se recomienda corregir la geometría, convertir los registros a partes simples y revisar la topología antes de la ejecución <span id="id62">[]</span>. Además, puede recortar previamente las capas de GH y cobertura y uso del suelo con el límite del área de estudio, porque reduce el tiempo de procesamiento <span id="id63">[]</span>.</p>
+</section>
+<section id="ejecucion-del-modelo">
+<span id="geoq-ejecucion"></span><h3><span class="section-number">15.3.4. </span>Ejecución del modelo<a class="headerlink" href="#ejecucion-del-modelo" title="Link to this heading">#</a></h3>
+<p>El complemento se ejecuta desde el panel <em>Caja de herramientas de Procesos</em>. La interfaz solicita los parámetros que se detallan en la Tabla 14.6, en el orden en que aparecen en pantalla (Figura 14.4). Las capas de entrada pueden seleccionarse de la lista desplegable, si ya están cargadas en el proyecto, o buscarse en el equipo.</p>
+<p><strong>Tabla 14.6.</strong> Parámetros de la interfaz de GeoQ 2.8.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>N.º</p></th>
+<th class="head"><p>Parámetro</p></th>
+<th class="head"><p>Acción requerida</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Límite del área de estudio</p></td>
+<td><p>Seleccionar la capa vectorial del límite</p></td>
+</tr>
+<tr class="row-odd"><td><p>2a</p></td>
+<td><p>Precipitación (mm)</p></td>
+<td><p>Ingresar el valor numérico del evento (opcional si se usa ráster)</p></td>
+</tr>
+<tr class="row-even"><td><p>2b</p></td>
+<td><p>Precipitación ráster (mm)</p></td>
+<td><p>Seleccionar el ráster del evento (opcional si se usa valor numérico)</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Grupo hidrológico de suelo</p></td>
+<td><p>Seleccionar la capa codificada con <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Cobertura vegetal y uso del suelo</p></td>
+<td><p>Seleccionar la capa codificada con <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Condición de humedad antecedente</p></td>
+<td><p>Elegir I, II o III en la lista desplegable</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>GeoQ</p></td>
+<td><p>Definir la ruta y el nombre de la capa de resultados, o dejarla como temporal</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>NC</p></td>
+<td><p>Definir la ruta y el nombre de la capa de NC</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>CE</p></td>
+<td><p>Definir la ruta y el nombre de la capa de CE</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>CF</p></td>
+<td><p>Definir la ruta y el nombre de las capas de CF</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>CIo</p></td>
+<td><p>Definir la ruta y el nombre de las capas de CIo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia con base en Montealegre Medina y Gaspari <span id="id64">[]</span>.</em></p>
+<p>Si no se define una ruta de salida, los resultados se generan como capas temporales en la carpeta de procesamiento del perfil de usuario de QGIS. Se recomienda guardarlos con nombres explícitos, ya que las capas temporales se cargan con denominaciones genéricas que dificultan su identificación.</p>
+<figure class="align-center" id="id108">
+<a class="reference internal image-reference" href="_images/fig_14-04_interfaz.png"><img alt="_images/fig_14-04_interfaz.png" src="_images/fig_14-04_interfaz.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.4 </span><span class="caption-text"><strong>Figura 14.4.</strong> Interfaz de GeoQ 2.8 con los parámetros de entrada y salida numerados.</span><a class="headerlink" href="#id108" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="productos-del-modelo">
+<span id="geoq-productos"></span><h3><span class="section-number">15.3.5. </span>Productos del modelo<a class="headerlink" href="#productos-del-modelo" title="Link to this heading">#</a></h3>
+<p>Al finalizar la ejecución, GeoQ carga automáticamente cinco nuevas capas en el proyecto abierto de QGIS.</p>
+<p>La primera, denominada GeoQ, no tiene simbología y contiene en su tabla de atributos, para cada complejo, los resultados de todas las etapas del cálculo (Tabla 14.7, Figura 14.5). Las otras cuatro corresponden a la zonificación del NC, el CE, el CF y el CIo, y se presentan con simbología predefinida por clases.</p>
+<p>La versión 2.8 no calcula la superficie de cada registro. Por ello, para cuantificar la extensión de cada clase debe agregarse un campo con la expresión <code class="docutils literal notranslate"><span class="pre">$area</span></code> en un SRC proyectado.</p>
+<p><strong>Tabla 14.7.</strong> Variables de la tabla de atributos de la capa GeoQ.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Descripción</p></th>
+<th class="head"><p>Unidad</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NC</p></td>
+<td><p>Número de curva del complejo para la CHA seleccionada</p></td>
+<td><p>Adimensional</p></td>
+</tr>
+<tr class="row-odd"><td><p>S</p></td>
+<td><p>Retención potencial máxima (Ec. 14.2)</p></td>
+<td><p>mm</p></td>
+</tr>
+<tr class="row-even"><td><p>I₀</p></td>
+<td><p>Abstracción inicial (Ec. 14.3)</p></td>
+<td><p>mm</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q</p></td>
+<td><p>Escorrentía superficial (Ec. 14.4)</p></td>
+<td><p>mm</p></td>
+</tr>
+<tr class="row-even"><td><p>F</p></td>
+<td><p>Infiltración (Ec. 14.5)</p></td>
+<td><p>mm</p></td>
+</tr>
+<tr class="row-odd"><td><p>CE, CF, CIo</p></td>
+<td><p>Coeficientes de escorrentía, infiltración y abstracciones iniciales (Ec. 14.6)</p></td>
+<td><p>%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia con base en Montealegre Medina y Gaspari <span id="id65">[]</span>.</em></p>
+<p>Cuando en un complejo la abstracción inicial resulta mayor que la precipitación, GeoQ asigna un CIo del 100 % y valores nulos a CE y CF <span id="id66">[]</span>. Esta regla es coherente con la ecuación 14.4 y con el NC crítico (Ec. 14.7): esos complejos retienen en superficie la totalidad de la tormenta y no generan escorrentía.</p>
+<figure class="align-center" id="id109">
+<a class="reference internal image-reference" href="_images/fig_14-05_tabla_atributos.png"><img alt="_images/fig_14-05_tabla_atributos.png" src="_images/fig_14-05_tabla_atributos.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.5 </span><span class="caption-text"><strong>Figura 14.5.</strong> Tabla de atributos de la capa de resultados GeoQ.</span><a class="headerlink" href="#id109" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="advertencias-y-buenas-practicas">
+<span id="geoq-advertencias"></span><h3><span class="section-number">15.3.6. </span>Advertencias y buenas prácticas<a class="headerlink" href="#advertencias-y-buenas-practicas" title="Link to this heading">#</a></h3>
+<p>Durante la ejecución pueden aparecer advertencias en color rojo que no afectan a los resultados. Se deben a la inserción de geometrías de tipo POLYGON en capas de tipo MULTIPOLYGON, una operación que la especificación GeoPackage no admite formalmente pero que el controlador resuelve. Si se desea un GeoPackage estrictamente conforme, puede utilizarse la opción <code class="docutils literal notranslate"><span class="pre">-nlt</span></code> de <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> para forzar el tipo de geometría.</p>
+<p>El complemento no sobrescribe resultados previos. Antes de una nueva ejecución deben cerrarse las capas generadas en la corrida anterior o indicarse un directorio de salida diferente <span id="id67">[]</span>.</p>
+<p>Por último, se recomiendan dos controles de calidad sencillos. El primero consiste en recalcular manualmente, con las ecuaciones 14.2 a 14.6, los valores de al menos un registro por cobertura dominante. El segundo consiste en verificar que la suma de CE, CF y CIo sea igual al 100 % en todos los registros.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="ejemplo-de-aplicacion-cuenca-a1-del-rio-salado">
+<span id="geoq-aplicacion"></span><h2><span class="section-number">15.4. </span>Ejemplo de aplicación: cuenca A1 del río Salado<a class="headerlink" href="#ejemplo-de-aplicacion-cuenca-a1-del-rio-salado" title="Link to this heading">#</a></h2>
+<section id="area-de-estudio">
+<span id="geoq-area-estudio"></span><h3><span class="section-number">15.4.1. </span>Área de estudio<a class="headerlink" href="#area-de-estudio" title="Link to this heading">#</a></h3>
+<p>La cuenca A1 es una de las subregiones en que se divide la cuenca del río Salado. Se localiza en el noroeste de la provincia de Buenos Aires y limita con las provincias de Córdoba y Santa Fe (Figura 14.6), ubicada en la Pampa Deprimida, cuyos rasgos fisiográficos de llanura se describieron en la <a class="reference internal" href="#geoq-llanuras"><span class="std std-numref">sección 15.1.2</span></a>.</p>
+<p>Su límite se obtuvo a partir de un modelo digital de elevación SRTM corregido altimétricamente para uso hidrológico en áreas de llanura <span id="id68">[]</span>. La A1 abarca una superficie de 17.737,63 km², con cotas comprendidas entre aproximadamente 170 y 50 m s. n. m. y un relieve en el que predominan las superficies casi horizontales <span id="id69">[]</span>.</p>
+<figure class="align-center" id="id110">
+<a class="reference internal image-reference" href="_images/fig_14-06_localizacion.png"><img alt="_images/fig_14-06_localizacion.png" src="_images/fig_14-06_localizacion.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.6 </span><span class="caption-text"><strong>Figura 14.6.</strong> Localización de la cuenca A1 en la cuenca del río Salado, provincia de Buenos Aires, Argentina.</span><a class="headerlink" href="#id110" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="insumos-cartograficos">
+<span id="geoq-insumos-a1"></span><h3><span class="section-number">15.4.2. </span>Insumos cartográficos<a class="headerlink" href="#insumos-cartograficos" title="Link to this heading">#</a></h3>
+<p>La capa de grupos hidrológicos se elaboró asignando los códigos de la Tabla 14.2 a las unidades edáficas de la cuenca (Tabla 14.8). Predomina el grupo A, que ocupa el 78,8 % del área, con suelos de textura gruesa, que transmiten el agua con fluidez a través del perfil y presentan un bajo potencial de escorrentía <span id="id70">[]</span>. Luego el grupo D, con el 14,3 %, y por último, los grupos C y B tienen una participación menor.</p>
+<p><strong>Tabla 14.8.</strong> Superficie ocupada por los grupos hidrológicos de suelo en la cuenca A1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>GH</p></th>
+<th class="head"><p>Cod_Sue</p></th>
+<th class="head"><p>Superficie (km²)</p></th>
+<th class="head"><p>Proporción (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>1</p></td>
+<td><p>13.971,46</p></td>
+<td><p>78,8</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>2</p></td>
+<td><p>112,94</p></td>
+<td><p>0,6</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>3</p></td>
+<td><p>1.115,38</p></td>
+<td><p>6,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>4</p></td>
+<td><p>2.537,85</p></td>
+<td><p>14,3</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total</strong></p></td>
+<td><p></p></td>
+<td><p><strong>17.737,63</strong></p></td>
+<td><p><strong>100,0</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia con base en Montealegre Medina y Gaspari <span id="id71">[]</span>.</em></p>
+<p>La capa de cobertura y uso del suelo se adaptó de la cartografía de cobertura del suelo de la República Argentina <span id="id72">[]</span>. En la cuenca se identificaron siete clases, que se codificaron según la tipología de GeoQ (Tabla 14.9). Los cultivos de herbáceas graminoides (código 30) y las herbáceas cerradas en áreas regularmente anegadas (código 20) ocupan en conjunto el 88,8 % de la superficie. Los cuerpos de agua (código 410), correspondientes a cañadas y bañados, representan el 5,2 %.</p>
+<p><strong>Tabla 14.9.</strong> Superficie ocupada por las clases de cobertura y uso del suelo en la cuenca A1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cod_Veg</p></th>
+<th class="head"><p>Cobertura y uso del suelo</p></th>
+<th class="head"><p>Superficie (km²)</p></th>
+<th class="head"><p>Proporción (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>Herbáceas cerradas en áreas anegables</p></td>
+<td><p>4.816,33</p></td>
+<td><p>27,2</p></td>
+</tr>
+<tr class="row-odd"><td><p>30</p></td>
+<td><p>Cultivos de herbáceas graminoides</p></td>
+<td><p>10.927,87</p></td>
+<td><p>61,6</p></td>
+</tr>
+<tr class="row-even"><td><p>300</p></td>
+<td><p>Bosques cerrados</p></td>
+<td><p>151,26</p></td>
+<td><p>0,9</p></td>
+</tr>
+<tr class="row-odd"><td><p>390</p></td>
+<td><p>Áreas urbanas densamente pobladas</p></td>
+<td><p>77,16</p></td>
+<td><p>0,4</p></td>
+</tr>
+<tr class="row-even"><td><p>410</p></td>
+<td><p>Cuerpos de agua (cañadas y bañados)</p></td>
+<td><p>923,36</p></td>
+<td><p>5,2</p></td>
+</tr>
+<tr class="row-odd"><td><p>490</p></td>
+<td><p>Cultivos de especies arbóreas</p></td>
+<td><p>456,09</p></td>
+<td><p>2,6</p></td>
+</tr>
+<tr class="row-even"><td><p>580</p></td>
+<td><p>Vegas de ríos</p></td>
+<td><p>385,56</p></td>
+<td><p>2,2</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p><strong>Total</strong></p></td>
+<td><p><strong>17.737,63</strong></p></td>
+<td><p><strong>100,0</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia con base en Montealegre Medina y Gaspari <span id="id73">[]</span>.</em></p>
+<p>La distribución espacial de ambas capas y del NC resultante se presenta en la Figura 14.7.</p>
+<figure class="align-center" id="id111">
+<a class="reference internal image-reference" href="_images/fig_14-07_cobertura_gh_nc.png"><img alt="_images/fig_14-07_cobertura_gh_nc.png" src="_images/fig_14-07_cobertura_gh_nc.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.7 </span><span class="caption-text"><strong>Figura 14.7.</strong> Distribución de la cobertura y el uso del suelo (a), de los grupos hidrológicos (b) y del número de curva en CHA II (c) en la cuenca A1.</span><a class="headerlink" href="#id111" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="escenarios-pluviales">
+<span id="geoq-escenarios"></span><h3><span class="section-number">15.4.3. </span>Escenarios pluviales<a class="headerlink" href="#escenarios-pluviales" title="Link to this heading">#</a></h3>
+<p>Los escenarios de precipitación se definieron a partir de los registros pluviométricos del período 1990-2020 de tres estaciones del Servicio Meteorológico Nacional (SMN): Junín Aero, Laboulaye Aero y Venado Tuerto Aero. Estas estaciones se ubican en el interior y en los extremos de la cuenca (Figura 14.8). Además, se incorporó un cuarto registro a nivel geoespacial, perteneciente a una imagen satelital de la misión Persiann, obtenido de CHRS, de un evento extremo registrado en la estación meteorológica de Junin.</p>
+<p>Los eventos de precipitación diaria del SMN, superiores a 12,7 mm (con base a CHA), se procesaron y ordenaron de forma ascendente para obtener sus cuartiles. Posteriormente, a partir del promedio de los datos de las tres estaciones se definieron tres escenarios (Tabla 14.10):</p>
+<ul class="simple">
+<li><p><strong>Escenario I (33 mm):</strong> corresponde al tercer cuartil y representa lluvias frecuentes.</p></li>
+<li><p><strong>Escenario III (145 mm):</strong> corresponde al máximo de la serie, equivalente al cuarto cuartil, y representa lluvias extremas.</p></li>
+<li><p><strong>Escenario II (89 mm):</strong> es el valor intermedio entre ambos y representa lluvias moderadas.</p></li>
+<li><p><strong>Escenario IV (ráster de precipitación del 31 de marzo de 2013).</strong></p></li>
+</ul>
+<p><strong>Tabla 14.10.</strong> Cuartiles de precipitación (mm) de las estaciones de referencia de la cuenca A1, período 1990-2020.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cuartil</p></th>
+<th class="head"><p>Junín</p></th>
+<th class="head"><p>Laboulaye</p></th>
+<th class="head"><p>Venado Tuerto</p></th>
+<th class="head"><p>Promedio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Q1</p></td>
+<td><p>14,3</p></td>
+<td><p>14,1</p></td>
+<td><p>13,5</p></td>
+<td><p>14,0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Q2</p></td>
+<td><p>21,6</p></td>
+<td><p>21,3</p></td>
+<td><p>20,0</p></td>
+<td><p>21,0</p></td>
+</tr>
+<tr class="row-even"><td><p>Q3 (escenario I)</p></td>
+<td><p>35,0</p></td>
+<td><p>33,0</p></td>
+<td><p>32,0</p></td>
+<td><p><strong>33,3</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Promedio de Q3 y Q4 (escenario II)</p></td>
+<td><p>98,2</p></td>
+<td><p>85,0</p></td>
+<td><p>84,3</p></td>
+<td><p><strong>89,2</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Q4, máximo (escenario III)</p></td>
+<td><p>161,4</p></td>
+<td><p>137,0</p></td>
+<td><p>136,5</p></td>
+<td><p><strong>145,0</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: Montealegre Medina y Gaspari <span id="id74">[]</span>, con datos del SMN.</em></p>
+<p>La diferencia de 25 mm entre los máximos de Junín y de Venado Tuerto anticipa una variabilidad espacial de la lluvia que no puede representarse con un valor único, por ello, es que creo el cuatro escenario de un evento pluvial a nivel ráster que cubra toda el área en estudio. Este aspecto se retoma en la discusión.</p>
+<figure class="align-center" id="id112">
+<a class="reference internal image-reference" href="_images/fig_14-08_estaciones_raster.png"><img alt="_images/fig_14-08_estaciones_raster.png" src="_images/fig_14-08_estaciones_raster.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.8 </span><span class="caption-text"><strong>Figura 14.8.</strong> Localización de las estaciones meteorológicas de referencia para la cuenca A1 y la imagen satelital del evento pluvial.</span><a class="headerlink" href="#id112" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="parametrizacion-hidrologica">
+<span id="geoq-parametrizacion"></span><h3><span class="section-number">15.4.4. </span>Parametrización hidrológica<a class="headerlink" href="#parametrizacion-hidrologica" title="Link to this heading">#</a></h3>
+<p>GeoQ se ejecutó en condición de humedad antecedente media (CHA II), una vez para cada escenario, con la precipitación ingresada como valor numérico.</p>
+<p>La intersección de las capas de cobertura y de GH generó 24 complejos suelo-vegetación. Sus NC oscilan entre 15, en los bosques cerrados sobre suelos del grupo A, y 100, en los cuerpos de agua. El NC medio ponderado por superficie es de 72,2. Los dos complejos dominantes concentran el 71,9 % de la cuenca: el 31 (cultivos de herbáceas graminoides sobre GH A), con un NC de 67, y el 21 (herbáceas en áreas anegables sobre GH A), con un NC de 72.</p>
+<p>La Tabla 14.11 reúne los parámetros de cada complejo y el CE resultante en los tres escenarios.</p>
+<p><strong>Tabla 14.11.</strong> Parámetros hidrológicos y coeficiente de escorrentía por complejo suelo-vegetación en la cuenca A1 (CHA II).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cod_NC</p></th>
+<th class="head"><p>Cobertura</p></th>
+<th class="head"><p>GH</p></th>
+<th class="head"><p>Superficie (km²)</p></th>
+<th class="head"><p>NC</p></th>
+<th class="head"><p>I₀ (mm)</p></th>
+<th class="head"><p>CE Esc. I (%)</p></th>
+<th class="head"><p>CE Esc. II (%)</p></th>
+<th class="head"><p>CE Esc. III (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>Herbáceas cerradas en áreas anegables</p></td>
+<td><p>A</p></td>
+<td><p>3.262,57</p></td>
+<td><p>72</p></td>
+<td><p>19,8</p></td>
+<td><p>4,7</p></td>
+<td><p>32,1</p></td>
+<td><p>48,3</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>Herbáceas cerradas en áreas anegables</p></td>
+<td><p>B</p></td>
+<td><p>38,47</p></td>
+<td><p>81</p></td>
+<td><p>11,9</p></td>
+<td><p>16,7</p></td>
+<td><p>48,9</p></td>
+<td><p>63,4</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>Herbáceas cerradas en áreas anegables</p></td>
+<td><p>C</p></td>
+<td><p>649,53</p></td>
+<td><p>88</p></td>
+<td><p>6,9</p></td>
+<td><p>33,9</p></td>
+<td><p>64,8</p></td>
+<td><p>76,1</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>Herbáceas cerradas en áreas anegables</p></td>
+<td><p>D</p></td>
+<td><p>865,76</p></td>
+<td><p>91</p></td>
+<td><p>5,0</p></td>
+<td><p>44,7</p></td>
+<td><p>72,6</p></td>
+<td><p>81,8</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>Cultivos de herbáceas graminoides</p></td>
+<td><p>A</p></td>
+<td><p>9.485,75</p></td>
+<td><p>67</p></td>
+<td><p>25,0</p></td>
+<td><p>1,4</p></td>
+<td><p>24,3</p></td>
+<td><p>40,5</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>Cultivos de herbáceas graminoides</p></td>
+<td><p>B</p></td>
+<td><p>63,86</p></td>
+<td><p>78</p></td>
+<td><p>14,3</p></td>
+<td><p>11,7</p></td>
+<td><p>42,8</p></td>
+<td><p>58,2</p></td>
+</tr>
+<tr class="row-even"><td><p>33</p></td>
+<td><p>Cultivos de herbáceas graminoides</p></td>
+<td><p>C</p></td>
+<td><p>317,16</p></td>
+<td><p>85</p></td>
+<td><p>9,0</p></td>
+<td><p>25,4</p></td>
+<td><p>57,6</p></td>
+<td><p>70,6</p></td>
+</tr>
+<tr class="row-odd"><td><p>34</p></td>
+<td><p>Cultivos de herbáceas graminoides</p></td>
+<td><p>D</p></td>
+<td><p>1.061,10</p></td>
+<td><p>89</p></td>
+<td><p>6,3</p></td>
+<td><p>37,2</p></td>
+<td><p>67,4</p></td>
+<td><p>78,0</p></td>
+</tr>
+<tr class="row-even"><td><p>301</p></td>
+<td><p>Bosques cerrados</p></td>
+<td><p>A</p></td>
+<td><p>132,75</p></td>
+<td><p>15</p></td>
+<td><p>287,9</p></td>
+<td><p>0,0</p></td>
+<td><p>0,0</p></td>
+<td><p>0,0</p></td>
+</tr>
+<tr class="row-odd"><td><p>304</p></td>
+<td><p>Bosques cerrados</p></td>
+<td><p>D</p></td>
+<td><p>18,51</p></td>
+<td><p>61</p></td>
+<td><p>32,5</p></td>
+<td><p>0,0</p></td>
+<td><p>16,4</p></td>
+<td><p>31,8</p></td>
+</tr>
+<tr class="row-even"><td><p>391</p></td>
+<td><p>Áreas urbanas densamente pobladas</p></td>
+<td><p>A</p></td>
+<td><p>71,35</p></td>
+<td><p>77</p></td>
+<td><p>15,2</p></td>
+<td><p>10,3</p></td>
+<td><p>40,9</p></td>
+<td><p>56,5</p></td>
+</tr>
+<tr class="row-odd"><td><p>393</p></td>
+<td><p>Áreas urbanas densamente pobladas</p></td>
+<td><p>C</p></td>
+<td><p>0,78</p></td>
+<td><p>90</p></td>
+<td><p>5,6</p></td>
+<td><p>40,8</p></td>
+<td><p>70,0</p></td>
+<td><p>79,9</p></td>
+</tr>
+<tr class="row-even"><td><p>394</p></td>
+<td><p>Áreas urbanas densamente pobladas</p></td>
+<td><p>D</p></td>
+<td><p>5,03</p></td>
+<td><p>92</p></td>
+<td><p>4,4</p></td>
+<td><p>48,9</p></td>
+<td><p>75,4</p></td>
+<td><p>83,8</p></td>
+</tr>
+<tr class="row-odd"><td><p>411</p></td>
+<td><p>Cuerpos de agua (cañadas y bañados)</p></td>
+<td><p>A</p></td>
+<td><p>410,45</p></td>
+<td><p>100</p></td>
+<td><p>0,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+</tr>
+<tr class="row-even"><td><p>412</p></td>
+<td><p>Cuerpos de agua (cañadas y bañados)</p></td>
+<td><p>B</p></td>
+<td><p>4,45</p></td>
+<td><p>100</p></td>
+<td><p>0,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+</tr>
+<tr class="row-odd"><td><p>413</p></td>
+<td><p>Cuerpos de agua (cañadas y bañados)</p></td>
+<td><p>C</p></td>
+<td><p>121,80</p></td>
+<td><p>100</p></td>
+<td><p>0,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+</tr>
+<tr class="row-even"><td><p>414</p></td>
+<td><p>Cuerpos de agua (cañadas y bañados)</p></td>
+<td><p>D</p></td>
+<td><p>386,66</p></td>
+<td><p>100</p></td>
+<td><p>0,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+<td><p>100,0</p></td>
+</tr>
+<tr class="row-odd"><td><p>491</p></td>
+<td><p>Cultivos de especies arbóreas</p></td>
+<td><p>A</p></td>
+<td><p>408,47</p></td>
+<td><p>49</p></td>
+<td><p>52,9</p></td>
+<td><p>0,0</p></td>
+<td><p>4,9</p></td>
+<td><p>16,4</p></td>
+</tr>
+<tr class="row-even"><td><p>493</p></td>
+<td><p>Cultivos de especies arbóreas</p></td>
+<td><p>C</p></td>
+<td><p>7,52</p></td>
+<td><p>75</p></td>
+<td><p>16,9</p></td>
+<td><p>7,8</p></td>
+<td><p>37,2</p></td>
+<td><p>53,2</p></td>
+</tr>
+<tr class="row-odd"><td><p>494</p></td>
+<td><p>Cultivos de especies arbóreas</p></td>
+<td><p>D</p></td>
+<td><p>40,10</p></td>
+<td><p>79</p></td>
+<td><p>13,5</p></td>
+<td><p>13,2</p></td>
+<td><p>44,8</p></td>
+<td><p>59,9</p></td>
+</tr>
+<tr class="row-even"><td><p>581</p></td>
+<td><p>Vegas de ríos</p></td>
+<td><p>A</p></td>
+<td><p>200,12</p></td>
+<td><p>30</p></td>
+<td><p>118,5</p></td>
+<td><p>0,0</p></td>
+<td><p>0,0</p></td>
+<td><p>0,8</p></td>
+</tr>
+<tr class="row-odd"><td><p>582</p></td>
+<td><p>Vegas de ríos</p></td>
+<td><p>B</p></td>
+<td><p>6,16</p></td>
+<td><p>58</p></td>
+<td><p>36,8</p></td>
+<td><p>0,0</p></td>
+<td><p>13,0</p></td>
+<td><p>27,6</p></td>
+</tr>
+<tr class="row-even"><td><p>583</p></td>
+<td><p>Vegas de ríos</p></td>
+<td><p>C</p></td>
+<td><p>18,59</p></td>
+<td><p>71</p></td>
+<td><p>20,7</p></td>
+<td><p>3,9</p></td>
+<td><p>30,4</p></td>
+<td><p>46,7</p></td>
+</tr>
+<tr class="row-odd"><td><p>584</p></td>
+<td><p>Vegas de ríos</p></td>
+<td><p>D</p></td>
+<td><p>160,69</p></td>
+<td><p>78</p></td>
+<td><p>14,3</p></td>
+<td><p>11,7</p></td>
+<td><p>42,8</p></td>
+<td><p>58,2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia.</em></p>
+</section>
+<section id="zonificacion-del-coeficiente-de-escorrentia">
+<span id="geoq-zonificacion-ce"></span><h3><span class="section-number">15.4.5. </span>Zonificación del Coeficiente de escorrentía<a class="headerlink" href="#zonificacion-del-coeficiente-de-escorrentia" title="Link to this heading">#</a></h3>
+<p>La distribución espacial del coeficiente de escorrentía (CE), expresada en clases porcentuales y en función de la superficie ocupada por cada una de ellas, se presenta en la Tabla 14.12 y la Figura 14.9.</p>
+<p>A partir de la tabla se identifican diferencias en la distribución del CE entre los escenarios analizados.</p>
+<p><strong>Tabla 14.12.</strong> Clases de escorrentía por unidad de superficie de la cuenca A1 (km²).</p>
+<div style="overflow-x:auto;margin:1em 0;">
+<table style="border-collapse:collapse;margin:0 auto;font-size:0.95em;">
+<thead>
+<tr><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;"></th><th colspan="4" style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">Superficie de ocupación por escenario (km²)</th></tr>
+<tr><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">Clase de CE (%)</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">I</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">II</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">III</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">IV</th></tr>
+</thead>
+<tbody>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">0–20</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 78.45%,transparent 78.45%);">13.914,91</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 4.32%,transparent 4.32%);">766,01</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 4.18%,transparent 4.18%);">741,34</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 71.38%,transparent 71.38%);">12.661,07</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">20–40</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 11.43%,transparent 11.43%);">2.027,79</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 72.02%,transparent 72.02%);">12.774,43</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 0.14%,transparent 0.14%);">24,67</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 11.43%,transparent 11.43%);">2.028,29</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">40–60</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 4.91%,transparent 4.91%);">871,57</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 3.90%,transparent 3.90%);">691,63</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 73.91%,transparent 73.91%);">13.110,43</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 9.08%,transparent 9.08%);">1.610,76</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">60–80</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 14.56%,transparent 14.56%);">2.582,20</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 11.65%,transparent 11.65%);">2.067,04</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 2.34%,transparent 2.34%);">415,27</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">80–100</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 5.21%,transparent 5.21%);">923,36</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 5.21%,transparent 5.21%);">923,36</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 10.11%,transparent 10.11%);">1.794,15</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 5.20%,transparent 5.20%);">923,11</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">Sin dato</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(31,119,180,.55) 0%,rgba(31,119,180,.55) 0.56%,transparent 0.56%);">99,15</td></tr>
+</tbody>
+</table>
+</div><p><em>Fuente: elaboración propia. La longitud de la barra de cada celda es proporcional a la superficie respecto del total de la cuenca (17.737,63 km²).</em></p>
+<p>En el <strong>escenario I</strong> (33 mm), el 78 % de la cuenca presenta un CE inferior al 20 %. La respuesta queda dominada por las abstracciones iniciales. Solo generan escorrentía relevante los complejos con suelos de los grupos C y D, con un CE de entre 25 % y 49 %, y los cuerpos de agua, que transfieren íntegramente la lluvia (CE = 100 %).</p>
+<p>En el <strong>escenario II</strong> (89 mm), la distribución se desplaza hacia la clase de 20 % a 40 %, que pasa a abarcar el 72 % de la cuenca por el cambio de clase de los dos complejos dominantes. En paralelo, los complejos de herbáceas y cultivos sobre suelos de los grupos C y D, que suman 2.893,55 km² (16,3 % del área), alcanzan un CE superior al 57 %.</p>
+<p>En el <strong>escenario III</strong> (145 mm), el 74 % de la superficie se ubica en la clase de 40 % a 60 % y el 22 % supera el 60 %.</p>
+<p>En el <strong>escenario IV</strong>, el ráster correspondiente al evento pluvial refleja de manera más ajustada la distribución espacial de la tormenta, evidenciando su carácter heterogéneo. Se observa una precipitación mínima o incluso la ausencia de registros en el sector norte del área de estudio, mientras que los mayores valores de precipitación se concentran en el sector sureste. En cuanto al CE, este escenario pone de manifiesto la heterogeneidad espacial del escurrimiento, asociada tanto a las características particulares del evento pluvial como a la influencia del complejo suelo-vegetación.</p>
+<p>En la cartografía de resultados (Figura 14.9), la escorrentía se concentra en las zonas bajas y de escasa pendiente, donde la baja capacidad de evacuación de la llanura favorece la acumulación del agua <span id="id75">[]</span>.</p>
+<figure class="align-center" id="id113">
+<a class="reference internal image-reference" href="_images/fig_14-09_ce_escenarios.png"><img alt="_images/fig_14-09_ce_escenarios.png" src="_images/fig_14-09_ce_escenarios.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.9 </span><span class="caption-text"><strong>Figura 14.9.</strong> Distribución espacial del coeficiente de escorrentía en la cuenca A1 para todos los escenarios en CHA II.</span><a class="headerlink" href="#id113" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="zonificacion-del-coeficiente-de-infiltracion">
+<span id="geoq-zonificacion-cf"></span><h3><span class="section-number">15.4.6. </span>Zonificación del Coeficiente de infiltración<a class="headerlink" href="#zonificacion-del-coeficiente-de-infiltracion" title="Link to this heading">#</a></h3>
+<p>La distribución del coeficiente de infiltración que refleja la lectura de la respuesta hidrológica por el suelo se presenta en la Tabla 14.13 y Figura 14.10.</p>
+<p>Con relación al CF, este alcanza su máximo relativo en el escenario II (39,8 %) y desciende en el escenario III (34,6 %), aunque la lámina infiltrada continúa creciendo en términos absolutos, de 35,5 a 50,1 mm en promedio. Este comportamiento reproduce, a escala de cuenca, el máximo del CF en función del NC y de la precipitación. A medida que la tormenta aumenta, la retención del complejo se aproxima a su valor potencial y el excedente se deriva de manera creciente a la escorrentía. El escenario IV muestra la carga hídrica del suelo por el evento pluvial hacia el sur de la cuenca y al norte, el efecto de nulidad de la precipitación se expresa con nula a baja infiltración.</p>
+<p><strong>Tabla 14.13.</strong> Clases de infiltración por unidad de superficie de la cuenca A1 (km²).</p>
+<div style="overflow-x:auto;margin:1em 0;">
+<table style="border-collapse:collapse;margin:0 auto;font-size:0.95em;">
+<thead>
+<tr><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;"></th><th colspan="4" style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">Superficie de ocupación por escenario (km²)</th></tr>
+<tr><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">Clase de CF (%)</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">I</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">II</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">III</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">IV</th></tr>
+</thead>
+<tbody>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">0–20</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 9.52%,transparent 9.52%);">1.689,37</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 7.11%,transparent 7.11%);">1.261,26</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 21.64%,transparent 21.64%);">3.838,43</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 30.49%,transparent 30.49%);">5.409,06</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">20–40</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 72.00%,transparent 72.00%);">12.771,94</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 18.84%,transparent 18.84%);">3.341,27</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 22.44%,transparent 22.44%);">3.980,31</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 30.27%,transparent 30.27%);">5.368,34</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">40–60</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 18.47%,transparent 18.47%);">3.276,32</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 74.05%,transparent 74.05%);">13.135,10</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 55.92%,transparent 55.92%);">9.918,89</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 38.68%,transparent 38.68%);">6.861,08</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">60–80</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">80–100</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">Sin dato</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(255,127,14,.55) 0%,rgba(255,127,14,.55) 0.56%,transparent 0.56%);">99,15</td></tr>
+</tbody>
+</table>
+</div><p><em>Fuente: elaboración propia. La longitud de la barra de cada celda es proporcional a la superficie respecto del total de la cuenca (17.737,63 km²).</em></p>
+<p>El mapa resultante de la zonificación de CF se muestra en la Figura 14.10, donde la infiltración se distribuye según la textura edáfica superficial, conformada en el grupo hidrológico.</p>
+<figure class="align-center" id="id114">
+<a class="reference internal image-reference" href="_images/fig_14-10_cf.png"><img alt="_images/fig_14-10_cf.png" src="_images/fig_14-10_cf.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.10 </span><span class="caption-text"><strong>Figura 14.10.</strong> Distribución espacial del coeficiente de infiltración en la cuenca A1 para los escenarios I a IV (CHA II).</span><a class="headerlink" href="#id114" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="zonificacion-del-coeficiente-de-abstracciones-iniciales">
+<span id="geoq-zonificacion-cio"></span><h3><span class="section-number">15.4.7. </span>Zonificación del Coeficiente de abstracciones iniciales<a class="headerlink" href="#zonificacion-del-coeficiente-de-abstracciones-iniciales" title="Link to this heading">#</a></h3>
+<p>La distribución espacial del coeficiente de abstracciones iniciales (CIo), que expresa la influencia de las distintas coberturas vegetales y usos del suelo sobre la respuesta hidrológica de la cuenca, se presenta en la Tabla 14.14 y la Figura 14.11.</p>
+<p>A partir de la Tabla 14.14 se observa que, a medida que aumenta la magnitud de la tormenta, la distribución del CIo tiende a desplazarse hacia las clases de menores porcentajes. Este comportamiento se evidencia en la disminución de su media ponderada, que pasa del 60,0 % en el escenario I al 23,9 % en el escenario II y al 15,2 % en el escenario III. Esta tendencia responde a que la abstracción inicial constituye una lámina asociada a las características de cada tipo de cobertura vegetal y uso del suelo, cuya proporción respecto de la precipitación total disminuye a medida que aumenta la magnitud de la tormenta.</p>
+<p>Por su parte, el escenario IV presenta una distribución espacial más heterogénea del CIo, con superficies representadas en las distintas clases, desde los valores más bajos hasta los más elevados. Este comportamiento puede relacionarse con la distribución espacial no uniforme de la precipitación durante el evento, caracterizada por mayores registros en el sector sur de la cuenca respecto del norte, lo que condiciona una respuesta hidrológica diferenciada en función de la interacción entre la precipitación y las características del complejo suelo-vegetación.</p>
+<p><strong>Tabla 14.14.</strong> Clases de abstracciones iniciales por unidad de superficie de la cuenca A1 (km²).</p>
+<div style="overflow-x:auto;margin:1em 0;">
+<table style="border-collapse:collapse;margin:0 auto;font-size:0.95em;">
+<thead>
+<tr><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;"></th><th colspan="4" style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">Superficie de ocupación por escenario (km²)</th></tr>
+<tr><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">Clase de CIo (%)</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">I</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">II</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">III</th><th style="padding:4px 8px;border:1px solid rgba(127,127,127,.45);background:rgba(127,127,127,.18);text-align:center;font-weight:bold;">IV</th></tr>
+</thead>
+<tbody>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">0–20</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 16.10%,transparent 16.10%);">2.856,03</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 23.71%,transparent 23.71%);">4.204,71</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 95.68%,transparent 95.68%);">16.971,62</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 17.72%,transparent 17.72%);">3.143,15</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">20–40</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 5.67%,transparent 5.67%);">1.005,16</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 72.08%,transparent 72.08%);">12.785,42</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 2.44%,transparent 2.44%);">433,14</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 20.26%,transparent 20.26%);">3.593,43</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">40–60</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 20.33%,transparent 20.33%);">3.606,09</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 2.34%,transparent 2.34%);">414,63</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 22.68%,transparent 22.68%);">4.023,02</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">60–80</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 53.58%,transparent 53.58%);">9.504,34</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 13.50%,transparent 13.50%);">2.394,02</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">80–100</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 4.32%,transparent 4.32%);">766,01</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 1.88%,transparent 1.88%);">332,87</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 1.88%,transparent 1.88%);">332,87</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 25.28%,transparent 25.28%);">4.484,85</td></tr>
+<tr><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center;font-weight:bold;">Sin dato</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.00%,transparent 0.00%);">0,00</td><td style="padding:3px 8px;border:1px solid rgba(127,127,127,.35);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;background:linear-gradient(90deg,rgba(44,160,44,.55) 0%,rgba(44,160,44,.55) 0.56%,transparent 0.56%);">99,15</td></tr>
+</tbody>
+</table>
+</div><p><em>Fuente: elaboración propia. La longitud de la barra de cada celda es proporcional a la superficie respecto del total de la cuenca (17.737,63 km²).</em></p>
+<figure class="align-center" id="id115">
+<a class="reference internal image-reference" href="_images/fig_14-11_cio.png"><img alt="_images/fig_14-11_cio.png" src="_images/fig_14-11_cio.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.11 </span><span class="caption-text"><strong>Figura 14.11.</strong> Distribución espacial del coeficiente de abstracciones iniciales en la cuenca A1 para los escenarios I a IV (CHA II).</span><a class="headerlink" href="#id115" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="cuantificacion-del-nc-critico">
+<span id="geoq-nc-critico"></span><h3><span class="section-number">15.4.8. </span>Cuantificación del NC crítico<a class="headerlink" href="#cuantificacion-del-nc-critico" title="Link to this heading">#</a></h3>
+<p>Considerando que número de curva crítico (<span class="math notranslate nohighlight">\(NC_{crit}\)</span>) es el que representa el punto de quiebre hidrológico, por debajo de este valor, toda el agua de lluvia es retenida o infiltrada en el suelo, se refleja diferente en cada uno de los escenarios estudiados.</p>
+<p>En relación con los complejos suelo-vegetación que no generan escorrentía, para el <strong>escenario I</strong> el <span class="math notranslate nohighlight">\(NC_{crit}\)</span> es de 60,6. Los complejos cuyo NC es inferior a este valor retienen la totalidad de la precipitación, sin generar escurrimiento. Estos corresponden a los bosques cerrados y cultivos arbóreos sobre grupos hidrológicos (GH) A, así como a las vegas de ríos sobre GH A y B, que en conjunto ocupan una superficie de 747,50 km².</p>
+<p>Para el <strong>escenario II</strong>, con una precipitación de 89 mm, el <span class="math notranslate nohighlight">\(NC_{crit}\)</span> desciende a 36,3 y la superficie que no genera escorrentía se reduce a 332,87 km².</p>
+<p>Finalmente, para el <strong>escenario III</strong>, con una precipitación de 145 mm, el <span class="math notranslate nohighlight">\(NC_{crit}\)</span> alcanza un valor de 25,9, por lo que únicamente los bosques cerrados sobre GH A mantienen la capacidad de retener la totalidad de la lluvia, ocupando una superficie de 132,75 km².</p>
+<p>Por su parte, el <strong>escenario IV</strong> presenta un comportamiento espacial diferenciado, condicionado por la distribución heterogénea de la precipitación. El ráster del evento pluvial refleja una marcada variabilidad espacial, con registros mínimos o ausencia de precipitación en el sector norte del área de estudio y una mayor concentración de los valores de precipitación en el sector sureste. Esta distribución se traduce en una respuesta espacialmente heterogénea del coeficiente de escorrentía (CE), que expresa tanto la variabilidad del evento como la influencia de las características del complejo suelo-vegetación en la generación de escurrimiento.</p>
+<p>La Tabla 14.15 y la Figura 14.12 sintetizan la partición media de la precipitación en los tres escenarios de tormenta analizados, expresada como proporción de la lámina precipitada destinada al escurrimiento (CE), al flujo de infiltración (CF) y a las abstracciones iniciales (CIo). Se observa una modificación progresiva de esta distribución a medida que aumenta la magnitud de la precipitación. En el escenario I (33 mm), predominan las abstracciones iniciales, que representan el 60,0 % de la precipitación, mientras que el CE alcanza el 13,2 %. En el escenario II (89 mm), se incrementa la proporción destinada al escurrimiento (36,2 %) y al CF (39,8 %), mientras que el CIo disminuye al 23,9 %. Esta tendencia se acentúa en el escenario III (145 mm), donde el escurrimiento representa el 50,2 % de la precipitación, superando tanto al CF (34,6 %) como al CIo (15,2 %).</p>
+<p>Este comportamiento evidencia que, ante eventos pluviales de mayor magnitud, las abstracciones iniciales representan una proporción cada vez menor de la precipitación total, mientras que aumenta la fracción que contribuye al escurrimiento superficial. En términos de lámina, los valores de escurrimiento (Q) pasan de 4,4 mm en el escenario I a 32,2 mm en el escenario II y 72,8 mm en el escenario III. En consecuencia, los volúmenes escurridos estimados alcanzan los 77, 572 y 1.292 hm³, respectivamente. Estos valores se obtienen como producto de la lámina media de escurrimiento por la superficie de la cuenca y deben interpretarse como estimaciones del volumen de excedente generado, dado que el método aplicado no contempla los procesos de tránsito ni el almacenamiento del agua en la red de drenaje.</p>
+<p><strong>Tabla 14.15.</strong> Valores medios ponderados por superficie de los componentes del balance en la cuenca A1.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Escenario</p></th>
+<th class="head"><p>P (mm)</p></th>
+<th class="head"><p>CE (%)</p></th>
+<th class="head"><p>CF (%)</p></th>
+<th class="head"><p>CIo (%)</p></th>
+<th class="head"><p>Q (mm)</p></th>
+<th class="head"><p>F (mm)</p></th>
+<th class="head"><p>I₀ (mm)</p></th>
+<th class="head"><p>Volumen escurrido (hm³)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>I</p></td>
+<td><p>33</p></td>
+<td><p>13,2</p></td>
+<td><p>26,8</p></td>
+<td><p>60,0</p></td>
+<td><p>4,4</p></td>
+<td><p>8,8</p></td>
+<td><p>19,8</p></td>
+<td><p>77</p></td>
+</tr>
+<tr class="row-odd"><td><p>II</p></td>
+<td><p>89</p></td>
+<td><p>36,2</p></td>
+<td><p>39,8</p></td>
+<td><p>23,9</p></td>
+<td><p>32,2</p></td>
+<td><p>35,5</p></td>
+<td><p>21,3</p></td>
+<td><p>572</p></td>
+</tr>
+<tr class="row-even"><td><p>III</p></td>
+<td><p>145</p></td>
+<td><p>50,2</p></td>
+<td><p>34,6</p></td>
+<td><p>15,2</p></td>
+<td><p>72,8</p></td>
+<td><p>50,1</p></td>
+<td><p>22,1</p></td>
+<td><p>1.292</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: elaboración propia. En los complejos con I₀ ≥ P, la abstracción se limita al valor de P.</em></p>
+<figure class="align-center" id="id116">
+<a class="reference internal image-reference" href="_images/fig_14-12_particion_media.png"><img alt="_images/fig_14-12_particion_media.png" src="_images/fig_14-12_particion_media.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15.12 </span><span class="caption-text"><strong>Figura 14.12.</strong> Proporción media ponderada de la precipitación destinada al escurrimiento (CE), al flujo de infiltración (CF) y a las abstracciones iniciales (CIo) para los escenarios I, II y III. Fuente: elaboración propia.</span><a class="headerlink" href="#id116" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="consideraciones-finales">
+<span id="geoq-consideraciones"></span><h3><span class="section-number">15.4.9. </span>Consideraciones finales<a class="headerlink" href="#consideraciones-finales" title="Link to this heading">#</a></h3>
+<p>Los resultados muestran que, aun en una cuenca dominada por suelos de alta permeabilidad, la respuesta hidrológica cambia de manera sustancial con la magnitud de la tormenta. Por ejemplo, con lluvias frecuentes, la cuenca retiene la mayor parte del agua en abstracciones e infiltración, y con lluvias extremas, la mitad de la precipitación se transforma en escorrentía directa.</p>
+<p>Los complejos de herbáceas y cultivos sobre suelos de los grupos C y D, y los cuerpos de agua, constituyen las zonas críticas de la cuenca. En ellos, los eventos moderados ya producen coeficientes superiores al 57 %, y en una llanura con capacidad de evacuación limitada esa escorrentía tiende a acumularse y a prolongar los anegamientos <span id="id76">[]</span>.</p>
+<p>La sensibilidad a la condición de humedad antecedente es igualmente determinante. Los resultados de este ejemplo corresponden a la CHA II (Tabla 14.3). Sin embargo, el NC de cada complejo suelo-vegetación aumenta con el estado de humedad del suelo (Tabla 14.18) y, con él, la proporción de la lluvia que se convierte en escorrentía. Es decir, la misma tormenta produce algo más del doble de escorrentía sobre un suelo húmedo o saturado que sobre un suelo en condición media. En consecuencia, los coeficientes presentados en esta sección no deben extrapolarse a otras condiciones de humedad: si el evento ocurre después de un período lluvioso (más de 38,1 mm en los 5 a 10 días previos) el CE será mayor, y si ocurre después de un período seco (menos de 12,7 mm) será menor.</p>
+<p>El análisis presenta dos limitaciones principales.</p>
+<ul class="simple">
+<li><p>El uso de un valor único de precipitación para una superficie de más de 17.000 km². La dispersión entre las estaciones (Tabla 14.10) indica que la lluvia no es homogénea en la cuenca <span id="id77">[]</span>. La incorporación de precipitación ráster (en la versión 2.8 de GeoQ) permite superar esta restricción mediante productos satelitales como PDIR-Now, cuya representación de la variabilidad espacial de eventos concretos constituye la línea de continuidad natural de este caso de estudio.</p></li>
+<li><p>La segunda es la ausencia de validación con observaciones. Los coeficientes obtenidos no se contrastaron con aforos ni con superficies anegadas observadas. La comparación con la extensión de agua superficial derivada de imágenes de radar u ópticas posteriores a un evento permitiría evaluar la capacidad predictiva del modelo en la llanura.</p></li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+<section id="conclusiones-y-recomendaciones-de-uso">
+<span id="geoq-conclusiones"></span><h2><span class="section-number">15.5. </span>Conclusiones y recomendaciones de uso<a class="headerlink" href="#conclusiones-y-recomendaciones-de-uso" title="Link to this heading">#</a></h2>
+<section id="conclusiones">
+<h3><span class="section-number">15.5.1. </span>Conclusiones<a class="headerlink" href="#conclusiones" title="Link to this heading">#</a></h3>
+<p>GeoQ 2.8 automatiza en el entorno de QGIS la secuencia completa del método del Número de Curva, que se inicia con el cruce de la cartografía edáfica y de cobertura vegetal, la asignación del NC según la condición de humedad antecedente, el cálculo del balance del evento y la zonificación de sus componentes.</p>
+<p>La estandarización de los insumos mediante los códigos <code class="docutils literal notranslate"><span class="pre">Cod_Sue</span></code> y <code class="docutils literal notranslate"><span class="pre">Cod_Veg</span></code> transforma un procedimiento manual extenso y propenso a errores en una operación reproducible y a nivel geoespacial. Esa misma estandarización permite repetir el análisis para distintas tormentas, condiciones de humedad o configuraciones de uso del suelo con un esfuerzo mínimo.</p>
+<p>El ejemplo de aplicación en la cuenca A1 del río Salado demuestra la utilidad de la herramienta en una cuenca de llanura de gran extensión, que permitió cuantificar cómo una cuenca dominada por suelos permeables pasa de retener la mayor parte de las lluvias frecuentes a transformar en escorrentía directa la mitad de una lluvia extrema. También procedió a identificar los complejos suelo-vegetación que concentran la generación de excedentes, como es el de las herbáceas y los cultivos sobre suelos de los grupos C y D, y los cuerpos de agua.</p>
+<p>Es importante mencionar, que la determinación de los coeficientes de infiltración y de abstracciones iniciales aportan información complementaria sobre la capacidad de regulación del territorio, que no se obtiene del coeficiente de escorrentía por sí solo.</p>
+<p>El análisis confirma, asimismo, que la condición de humedad antecedente es un factor tan determinante como la magnitud de la tormenta y su elección debe responder al propósito de la evaluación. La interpretación de los resultados debe considerar los supuestos del método: modelo de evento, ausencia de tránsito y de topografía explícita, y valor orientativo de sus estimaciones.</p>
+</section>
+<section id="recomendaciones-de-uso">
+<h3><span class="section-number">15.5.2. </span>Recomendaciones de uso<a class="headerlink" href="#recomendaciones-de-uso" title="Link to this heading">#</a></h3>
+<p>Por su carácter libre, su bajo requerimiento de datos y la claridad de sus productos, GeoQ resulta adecuado para los siguientes ámbitos de aplicación:</p>
+<ul class="simple">
+<li><p><strong>Planificación territorial y ordenamiento agrohidrológico.</strong> La zonificación del CE y del CF permite identificar los sectores en los que conviene conservar o ampliar coberturas con mayor capacidad de retención y aquellos en los que deben priorizarse prácticas de manejo del suelo <span id="id78">[]</span>.</p></li>
+<li><p><strong>Evaluación de la vulnerabilidad hidrológica y gestión del riesgo de inundaciones.</strong> La cartografía de escenarios, en particular en CHA III, delimita las zonas críticas de generación de excedentes y aporta una base espacialmente explícita para priorizar intervenciones.</p></li>
+<li><p><strong>Análisis de escenarios de cambio de uso del suelo.</strong> La sustitución de la capa de cobertura permite comparar la respuesta de la cuenca ante la expansión agrícola, la urbanización, la forestación o la invasión de especies leñosas <span id="id79">[]</span>.</p></li>
+<li><p><strong>Evaluación de servicios ecosistémicos.</strong> La proporción de lluvia infiltrada frente a tormentas modales o de recurrencia conocida constituye un indicador de regulación hídrica <span id="id80">[]</span>. En ámbitos urbanos, permite valorar el papel de los espacios verdes en la mitigación de las precipitaciones intensas <span id="id81">[]</span>.</p></li>
+<li><p><strong>Docencia y transferencia.</strong> La transparencia del cálculo y la disponibilidad de la herramienta la convierten en un recurso didáctico para la enseñanza de la hidrología de superficie y del manejo de cuencas.</p></li>
+</ul>
+<p>En cuanto a su aplicación operativa, se recomienda:</p>
+<ul class="simple">
+<li><p><strong>Adecuar la escala de los insumos a la del análisis.</strong> El nivel de detalle de las capas de suelo y de cobertura condiciona el de los resultados, y la reclasificación de las leyendas locales a la tipología de GeoQ debe documentarse.</p></li>
+<li><p><strong>Fundamentar la elección de la CHA</strong> en el registro pluviométrico de los días previos al evento y, en estudios de riesgo, evaluar como mínimo las condiciones II y III.</p></li>
+<li><p><strong>Utilizar precipitación ráster en áreas extensas o con alta variabilidad pluvial.</strong> Productos como PDIR-Now permiten modelizar eventos concretos con su distribución espacial.</p></li>
+<li><p><strong>Contrastar los resultados con observaciones</strong> siempre que sea posible, como aforos, marcas de inundación o superficies anegadas detectadas mediante teledetección, y tratar las estimaciones como orientativas cuando no se disponga de ellas.</p></li>
+<li><p><strong>Complementar el análisis con la topografía</strong> en cuencas con relieve marcado, por ejemplo, mediante el cruce del NC con la pendiente para evaluar el potencial erosivo <span id="id82">[]</span>.</p></li>
+</ul>
+</section>
+<section id="perspectivas">
+<h3><span class="section-number">15.5.3. </span>Perspectivas<a class="headerlink" href="#perspectivas" title="Link to this heading">#</a></h3>
+<p>El desarrollo de GeoQ prevé la incorporación de modelos digitales de elevación para considerar la influencia de la pendiente en la respuesta hidrológica <span id="id83">[]</span>. Junto con la precipitación distribuida ya disponible, este avance permitiría acercar la herramienta a una modelización plenamente distribuida del proceso de precipitación-escorrentía.</p>
+<p>El repositorio del complemento permanece abierto a comentarios y sugerencias de la comunidad de usuarios. Esta apertura constituye el principal mecanismo para su mejora continua y para su adopción en la gestión de los recursos suelo, agua y vegetación.</p>
+</section>
+<section id="recursos-complementarios">
+<span id="geoq-recursos"></span><h3><span class="section-number">15.5.4. </span>Recursos complementarios<a class="headerlink" href="#recursos-complementarios" title="Link to this heading">#</a></h3>
+<p>Los siguientes recursos permiten reproducir el procedimiento descrito en este capítulo:</p>
+<ul class="simple">
+<li><p><strong>Complemento GeoQ en el repositorio oficial de QGIS:</strong> <a class="reference external" href="https://plugins.qgis.org/plugins/GeoQ-main/">https://plugins.qgis.org/plugins/GeoQ-main/</a></p></li>
+<li><p><strong>Código fuente, manual de usuario y documentación:</strong> <a class="github reference external" href="https://github.com/fabalmon/GeoQ">fabalmon/GeoQ</a></p></li>
+<li><p><strong>Videotutorial de la versión 2.8:</strong> <a class="reference external" href="https://youtu.be/iXmaXzW4_aQ">https://youtu.be/iXmaXzW4_aQ</a></p></li>
+<li><p><strong>Portal de datos de precipitación satelital del CHRS:</strong> <a class="reference external" href="https://chrs.web.uci.edu">https://chrs.web.uci.edu</a> y <a class="reference external" href="https://chrsdata.eng.uci.edu/">https://chrsdata.eng.uci.edu/</a></p></li>
+<li><p><strong>Repositorio institucional SEDICI (UNLP), con trabajos que aplican GeoQ:</strong> <a class="reference external" href="http://sedici.unlp.edu.ar">http://sedici.unlp.edu.ar</a></p></li>
+</ul>
+<p>La Tabla 14.16 reúne los trabajos que han aplicado GeoQ, según el registro de Montealegre Medina y Gaspari <span id="id84">[]</span>.</p>
+<p><strong>Tabla 14.16.</strong> Trabajos de aplicación de GeoQ.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo</p></th>
+<th class="head"><p>Autores y año</p></th>
+<th class="head"><p>Tema o ámbito de aplicación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Artículo</p></td>
+<td><p>Rodríguez Vagaría y Gaspari <span id="id85">[]</span></p></td>
+<td><p>Primera versión de GeoQ en Idrisi Andes®</p></td>
+</tr>
+<tr class="row-odd"><td><p>Artículo</p></td>
+<td><p>Rodríguez Vagaría et al. <span id="id86">[]</span></p></td>
+<td><p>Efecto de la restauración agrohidrológica</p></td>
+</tr>
+<tr class="row-even"><td><p>Artículo</p></td>
+<td><p>Montealegre Medina y Gaspari <span id="id87">[]</span></p></td>
+<td><p>GeoQ en QGIS; cuatro cuencas testigo bonaerenses</p></td>
+</tr>
+<tr class="row-odd"><td><p>Congreso</p></td>
+<td><p>Montealegre Medina y Gaspari <span id="id88">[]</span></p></td>
+<td><p>Cuenca A1 del río Salado; escenarios pluviales</p></td>
+</tr>
+<tr class="row-even"><td><p>Congreso</p></td>
+<td><p>Botán, Delgado y Gaspari <span id="id89">[]</span></p></td>
+<td><p>Cuenca serrana bonaerense ante eventos pluviales y cambio de uso</p></td>
+</tr>
+<tr class="row-odd"><td><p>Congreso</p></td>
+<td><p>Anselmino, de Antueno y Gaspari <span id="id90">[]</span></p></td>
+<td><p>Cuenca alta del arroyo Napaleofú</p></td>
+</tr>
+<tr class="row-even"><td><p>Congreso</p></td>
+<td><p>Gaspari, Montealegre Medina, Besteiro, Velázquez y Delgado <span id="id91">[]</span></p></td>
+<td><p>Procesos hidrológicos en áreas urbanas y rurales</p></td>
+</tr>
+<tr class="row-odd"><td><p>Congreso</p></td>
+<td><p>Mondelo, Mazzucchelli, Jelinski y Gaspari <span id="id92">[]</span></p></td>
+<td><p>Escenarios pluviales extremos en la cuenca alta del río Reconquista</p></td>
+</tr>
+<tr class="row-even"><td><p>Congreso</p></td>
+<td><p>Sáenz, de Antueno y Gaspari <span id="id93">[]</span></p></td>
+<td><p>Cuenca alta del arroyo Napaleofú</p></td>
+</tr>
+<tr class="row-odd"><td><p>Congreso</p></td>
+<td><p>Besteiro et al. <span id="id94">[]</span></p></td>
+<td><p>Precipitación-escorrentía en el sistema serrano de Ventania</p></td>
+</tr>
+<tr class="row-even"><td><p>Congreso</p></td>
+<td><p>Gaspari et al. <span id="id95">[]</span></p></td>
+<td><p>Análisis geohidrológico de la cuenca del arroyo Las Piedras</p></td>
+</tr>
+<tr class="row-odd"><td><p>Congreso</p></td>
+<td><p>Anselmino, Giovenale, Galarco y Gaspari <span id="id96">[]</span></p></td>
+<td><p>Respuesta hidrológica ante la invasión de <em>Gleditsia triacanthos</em> L.</p></td>
+</tr>
+<tr class="row-even"><td><p>Tesis de posgrado</p></td>
+<td><p>Guzmán Guaraca (doctorado)</p></td>
+<td><p>Vulnerabilidad hídrica por cambio de uso en cuencas serranas</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tesis de posgrado</p></td>
+<td><p>Rodríguez Vagaría (maestría)</p></td>
+<td><p>Restauración agrohidrológica en la sierra de Pillahuinco</p></td>
+</tr>
+<tr class="row-even"><td><p>Tesis de posgrado</p></td>
+<td><p>Senisterra (maestría)</p></td>
+<td><p>Cambio de uso del suelo en la cuenca del arroyo Napaleofú</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tesis de grado</p></td>
+<td><p>Anselmino</p></td>
+<td><p>Servicios hidrológicos ecosistémicos en la cuenca alta del arroyo Napaleofú</p></td>
+</tr>
+<tr class="row-even"><td><p>Tesis de grado</p></td>
+<td><p>Giovenale</p></td>
+<td><p>Servicios hidrológicos ambientales en Pinamar</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tesis de grado</p></td>
+<td><p>Puigdemasa</p></td>
+<td><p>Avance de especies exóticas y dinámica hídrica en la cuenca del arroyo Ventana</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: Montealegre Medina y Gaspari <span id="id97">[]</span>.</em></p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="anexo">
+<span id="geoq-anexo"></span><h2><span class="section-number">15.6. </span>Anexo<a class="headerlink" href="#anexo" title="Link to this heading">#</a></h2>
+<p><strong>Tabla 14.17.</strong> Códigos de vegetación y/o uso del suelo (Cod_Veg) utilizados por GeoQ.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cod_Veg</p></th>
+<th class="head"><p>Cobertura del suelo (LCCS, PNECO 1643)</p></th>
+<th class="head"><p>Vegetación y/o uso del suelo (Mintegui Aguirre y López Unzú <span id="id98">[]</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>Áreas naturales desnudas consolidadas</p></td>
+<td><p>Barbecho</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>Herbáceas cerradas en áreas regularmente inundadas/anegadas o acuáticas</p></td>
+<td><p>Cultivos alineados R P</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>Cultivos de herbáceas graminoides</p></td>
+<td><p>Cultivos alineados R B</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos alineados C P</p></td>
+</tr>
+<tr class="row-even"><td><p>50</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos alineados C B</p></td>
+</tr>
+<tr class="row-odd"><td><p>60</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos alineados C-T P</p></td>
+</tr>
+<tr class="row-even"><td><p>70</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos alineados C-T B</p></td>
+</tr>
+<tr class="row-odd"><td><p>80</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos no alineados o surcos pequeños R P</p></td>
+</tr>
+<tr class="row-even"><td><p>90</p></td>
+<td><p>Cultivos de herbáceas (no determinado)</p></td>
+<td><p>Cultivos no alineados o surcos pequeños R B</p></td>
+</tr>
+<tr class="row-odd"><td><p>100</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos no alineados o surcos pequeños C P</p></td>
+</tr>
+<tr class="row-even"><td><p>110</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos no alineados o surcos pequeños C B</p></td>
+</tr>
+<tr class="row-odd"><td><p>120</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos no alineados o surcos pequeños C-T P</p></td>
+</tr>
+<tr class="row-even"><td><p>130</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos no alineados o surcos pequeños C-T B</p></td>
+</tr>
+<tr class="row-odd"><td><p>140</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos densos leguminosas R P</p></td>
+</tr>
+<tr class="row-even"><td><p>150</p></td>
+<td><p>Cultivos de herbáceas no graminoides</p></td>
+<td><p>Cultivos densos leguminosas R B</p></td>
+</tr>
+<tr class="row-odd"><td><p>160</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos densos leguminosas C P</p></td>
+</tr>
+<tr class="row-even"><td><p>170</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos densos leguminosas C B</p></td>
+</tr>
+<tr class="row-odd"><td><p>180</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos densos leguminosas C-T P</p></td>
+</tr>
+<tr class="row-even"><td><p>190</p></td>
+<td><p>—</p></td>
+<td><p>Cultivos densos leguminosas C-T B</p></td>
+</tr>
+<tr class="row-odd"><td><p>200</p></td>
+<td><p>—</p></td>
+<td><p>Matorral, mezcla matorral y maleza Cubierta 50%</p></td>
+</tr>
+<tr class="row-even"><td><p>210</p></td>
+<td><p>—</p></td>
+<td><p>Matorral, mezcla matorral y maleza Cubierta 50-75%</p></td>
+</tr>
+<tr class="row-odd"><td><p>220</p></td>
+<td><p>—</p></td>
+<td><p>Matorral, mezcla matorral y maleza Cubierta &gt;75%</p></td>
+</tr>
+<tr class="row-even"><td><p>230</p></td>
+<td><p>Arbustal abierto</p></td>
+<td><p>Montes con pastos P</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>Arbustal disperso</p></td>
+<td><p>Montes con pastos R</p></td>
+</tr>
+<tr class="row-even"><td><p>250</p></td>
+<td><p>Arbustal cerrado</p></td>
+<td><p>Montes con pastos B</p></td>
+</tr>
+<tr class="row-odd"><td><p>260</p></td>
+<td><p>Bosques abiertos en áreas regularmente inundadas/anegadas o acuáticas</p></td>
+<td><p>Bosques MP</p></td>
+</tr>
+<tr class="row-even"><td><p>270</p></td>
+<td><p>Bosques abiertos</p></td>
+<td><p>Bosques P</p></td>
+</tr>
+<tr class="row-odd"><td><p>280</p></td>
+<td><p>Bosques abiertos, con arbustos</p></td>
+<td><p>Bosques R</p></td>
+</tr>
+<tr class="row-even"><td><p>290</p></td>
+<td><p>Bosques cerrados en áreas regularmente inundadas/anegadas o acuáticas</p></td>
+<td><p>Bosques B</p></td>
+</tr>
+<tr class="row-odd"><td><p>300</p></td>
+<td><p>Bosques cerrados</p></td>
+<td><p>Bosques MB</p></td>
+</tr>
+<tr class="row-even"><td><p>310</p></td>
+<td><p>Áreas terrestres cultivadas y/o manejadas</p></td>
+<td><p>Prados permanentes</p></td>
+</tr>
+<tr class="row-odd"><td><p>320</p></td>
+<td><p>Pastizal abierto (herbáceas graminoides)</p></td>
+<td><p>Pastizal P</p></td>
+</tr>
+<tr class="row-even"><td><p>330</p></td>
+<td><p>Pastizal disperso</p></td>
+<td><p>Pastizal R</p></td>
+</tr>
+<tr class="row-odd"><td><p>340</p></td>
+<td><p>Pastizal cerrado (herbáceas graminoides)</p></td>
+<td><p>Pastizal B</p></td>
+</tr>
+<tr class="row-even"><td><p>350</p></td>
+<td><p>—</p></td>
+<td><p>Pastizal C P</p></td>
+</tr>
+<tr class="row-odd"><td><p>360</p></td>
+<td><p>—</p></td>
+<td><p>Pastizal C R</p></td>
+</tr>
+<tr class="row-even"><td><p>370</p></td>
+<td><p>—</p></td>
+<td><p>Pastizal C B</p></td>
+</tr>
+<tr class="row-odd"><td><p>380</p></td>
+<td><p>Áreas urbanas de baja densidad</p></td>
+<td><p>Residencial baja densidad</p></td>
+</tr>
+<tr class="row-even"><td><p>390</p></td>
+<td><p>Áreas urbanas densamente pobladas</p></td>
+<td><p>Residencial alta densidad</p></td>
+</tr>
+<tr class="row-odd"><td><p>400</p></td>
+<td><p>Rocas, fragmentos</p></td>
+<td><p>Superficies impermeables</p></td>
+</tr>
+<tr class="row-even"><td><p>410</p></td>
+<td><p>Cuerpos de agua en movimiento - cañadas; Cuerpos de agua estacionario - bañado; Nieve o hielo</p></td>
+<td><p>Espejos de agua - humedales</p></td>
+</tr>
+<tr class="row-odd"><td><p>420</p></td>
+<td><p>Árboles dispersos en áreas regularmente inundadas/anegadas o acuáticas</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>430</p></td>
+<td><p>Arbustal cerrado a abierto en áreas regularmente inundadas/anegadas o acuáticas</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>440</p></td>
+<td><p>Áreas urbanas de densidad media</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>450</p></td>
+<td><p>Áreas urbanas dispersas - semiurbanas</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>460</p></td>
+<td><p>Áreas urbanas vegetadas</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>470</p></td>
+<td><p>Cultivos de arbustos bajo riego</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>480</p></td>
+<td><p>Cultivos de arbustos en secano</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>490</p></td>
+<td><p>Cultivos de especies arbóreas (no determinado)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>500</p></td>
+<td><p>Cultivos de especies arbóreas bajo riego</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>510</p></td>
+<td><p>Cultivos de especies arbóreas en secano</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>520</p></td>
+<td><p>Dunas / desiertos naturales</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>530</p></td>
+<td><p>Salares (GH D - áreas/rocas impermeables)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>540</p></td>
+<td><p>Salinas (GH D - áreas/rocas impermeables)</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>550</p></td>
+<td><p>Suelos pedregosos</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>560</p></td>
+<td><p>Superficies artificiales y áreas asociadas. Superficies construidas (no determinado) - Distritos urbanos comerciales</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>570</p></td>
+<td><p>Superficies no construidas</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>580</p></td>
+<td><p>Vegas de ríos en condiciones óptimas</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Referencias: R, laboreo sin prácticas de conservación; C, curvas de nivel; C-T, curvas de nivel y terrazas abiertas. Condición de infiltración: MP, muy pobre; P, pobre; M, mala; B, buena; MB, muy buena. Fuente: Montealegre Medina y Gaspari <span id="id99">[]</span>, adaptado de Volante <span id="id100">[]</span>, INTA <span id="id101">[]</span> y Mintegui Aguirre y López Unzú <span id="id102">[]</span>.</em></p>
+<p><strong>Tabla 14.18.</strong> Número de curva por clase de cobertura (Cod_Veg), grupo hidrológico (A a D) y condición de humedad antecedente (I, II y III). El Cod_NC de cada celda es la suma del Cod_Veg y el código del GH (A = 1, B = 2, C = 3, D = 4).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cod_Veg</p></th>
+<th class="head"><p>A-I</p></th>
+<th class="head"><p>A-II</p></th>
+<th class="head"><p>A-III</p></th>
+<th class="head"><p>B-I</p></th>
+<th class="head"><p>B-II</p></th>
+<th class="head"><p>B-III</p></th>
+<th class="head"><p>C-I</p></th>
+<th class="head"><p>C-II</p></th>
+<th class="head"><p>C-III</p></th>
+<th class="head"><p>D-I</p></th>
+<th class="head"><p>D-II</p></th>
+<th class="head"><p>D-III</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>93</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>96</p></td>
+<td><p>87</p></td>
+<td><p>94</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-odd"><td><p>20</p></td>
+<td><p>52</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>75</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>96</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>46</p></td>
+<td><p>67</p></td>
+<td><p>82</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>95</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+<td><p>75</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-even"><td><p>50</p></td>
+<td><p>44</p></td>
+<td><p>65</p></td>
+<td><p>81</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>91</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-odd"><td><p>60</p></td>
+<td><p>45</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>54</p></td>
+<td><p>74</p></td>
+<td><p>87</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>90</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-even"><td><p>70</p></td>
+<td><p>41</p></td>
+<td><p>62</p></td>
+<td><p>79</p></td>
+<td><p>51</p></td>
+<td><p>71</p></td>
+<td><p>85</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-odd"><td><p>80</p></td>
+<td><p>44</p></td>
+<td><p>65</p></td>
+<td><p>81</p></td>
+<td><p>57</p></td>
+<td><p>76</p></td>
+<td><p>88</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+<td><p>75</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-even"><td><p>90</p></td>
+<td><p>42</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+<td><p>74</p></td>
+<td><p>87</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-odd"><td><p>100</p></td>
+<td><p>42</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>54</p></td>
+<td><p>74</p></td>
+<td><p>87</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>91</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-even"><td><p>110</p></td>
+<td><p>40</p></td>
+<td><p>61</p></td>
+<td><p>78</p></td>
+<td><p>53</p></td>
+<td><p>73</p></td>
+<td><p>86</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>120</p></td>
+<td><p>40</p></td>
+<td><p>61</p></td>
+<td><p>78</p></td>
+<td><p>52</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-even"><td><p>130</p></td>
+<td><p>38</p></td>
+<td><p>59</p></td>
+<td><p>77</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-odd"><td><p>140</p></td>
+<td><p>45</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+<td><p>75</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-even"><td><p>150</p></td>
+<td><p>37</p></td>
+<td><p>58</p></td>
+<td><p>76</p></td>
+<td><p>52</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-odd"><td><p>160</p></td>
+<td><p>43</p></td>
+<td><p>64</p></td>
+<td><p>80</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-even"><td><p>170</p></td>
+<td><p>34</p></td>
+<td><p>55</p></td>
+<td><p>74</p></td>
+<td><p>48</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>180</p></td>
+<td><p>42</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>53</p></td>
+<td><p>73</p></td>
+<td><p>86</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>90</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-even"><td><p>190</p></td>
+<td><p>30</p></td>
+<td><p>51</p></td>
+<td><p>71</p></td>
+<td><p>46</p></td>
+<td><p>67</p></td>
+<td><p>82</p></td>
+<td><p>57</p></td>
+<td><p>76</p></td>
+<td><p>88</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-odd"><td><p>200</p></td>
+<td><p>28</p></td>
+<td><p>48</p></td>
+<td><p>68</p></td>
+<td><p>46</p></td>
+<td><p>67</p></td>
+<td><p>82</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-even"><td><p>210</p></td>
+<td><p>18</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td><p>35</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+</tr>
+<tr class="row-odd"><td><p>220</p></td>
+<td><p>15</p></td>
+<td><p>30</p></td>
+<td><p>50</p></td>
+<td><p>28</p></td>
+<td><p>48</p></td>
+<td><p>68</p></td>
+<td><p>44</p></td>
+<td><p>65</p></td>
+<td><p>81</p></td>
+<td><p>53</p></td>
+<td><p>73</p></td>
+<td><p>86</p></td>
+</tr>
+<tr class="row-even"><td><p>230</p></td>
+<td><p>26</p></td>
+<td><p>45</p></td>
+<td><p>65</p></td>
+<td><p>45</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>19</p></td>
+<td><p>36</p></td>
+<td><p>56</p></td>
+<td><p>39</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>53</p></td>
+<td><p>73</p></td>
+<td><p>86</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-even"><td><p>250</p></td>
+<td><p>12</p></td>
+<td><p>25</p></td>
+<td><p>43</p></td>
+<td><p>34</p></td>
+<td><p>55</p></td>
+<td><p>74</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+</tr>
+<tr class="row-odd"><td><p>260</p></td>
+<td><p>35</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>93</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>96</p></td>
+</tr>
+<tr class="row-even"><td><p>270</p></td>
+<td><p>26</p></td>
+<td><p>46</p></td>
+<td><p>66</p></td>
+<td><p>47</p></td>
+<td><p>68</p></td>
+<td><p>83</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>280</p></td>
+<td><p>19</p></td>
+<td><p>36</p></td>
+<td><p>56</p></td>
+<td><p>39</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>57</p></td>
+<td><p>76</p></td>
+<td><p>88</p></td>
+</tr>
+<tr class="row-even"><td><p>290</p></td>
+<td><p>13</p></td>
+<td><p>26</p></td>
+<td><p>45</p></td>
+<td><p>31</p></td>
+<td><p>52</p></td>
+<td><p>71</p></td>
+<td><p>42</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>48</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+</tr>
+<tr class="row-odd"><td><p>300</p></td>
+<td><p>7</p></td>
+<td><p>15</p></td>
+<td><p>29</p></td>
+<td><p>25</p></td>
+<td><p>44</p></td>
+<td><p>64</p></td>
+<td><p>33</p></td>
+<td><p>54</p></td>
+<td><p>73</p></td>
+<td><p>40</p></td>
+<td><p>61</p></td>
+<td><p>78</p></td>
+</tr>
+<tr class="row-even"><td><p>310</p></td>
+<td><p>15</p></td>
+<td><p>30</p></td>
+<td><p>50</p></td>
+<td><p>37</p></td>
+<td><p>58</p></td>
+<td><p>76</p></td>
+<td><p>51</p></td>
+<td><p>71</p></td>
+<td><p>85</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+</tr>
+<tr class="row-odd"><td><p>320</p></td>
+<td><p>47</p></td>
+<td><p>68</p></td>
+<td><p>83</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>93</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>95</p></td>
+</tr>
+<tr class="row-even"><td><p>330</p></td>
+<td><p>29</p></td>
+<td><p>49</p></td>
+<td><p>69</p></td>
+<td><p>48</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>340</p></td>
+<td><p>21</p></td>
+<td><p>39</p></td>
+<td><p>60</p></td>
+<td><p>40</p></td>
+<td><p>61</p></td>
+<td><p>78</p></td>
+<td><p>54</p></td>
+<td><p>74</p></td>
+<td><p>87</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-even"><td><p>350</p></td>
+<td><p>27</p></td>
+<td><p>47</p></td>
+<td><p>67</p></td>
+<td><p>46</p></td>
+<td><p>67</p></td>
+<td><p>82</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>75</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-odd"><td><p>360</p></td>
+<td><p>12</p></td>
+<td><p>25</p></td>
+<td><p>43</p></td>
+<td><p>38</p></td>
+<td><p>59</p></td>
+<td><p>77</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-even"><td><p>370</p></td>
+<td><p>3</p></td>
+<td><p>6</p></td>
+<td><p>13</p></td>
+<td><p>18</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-odd"><td><p>380</p></td>
+<td><p>33</p></td>
+<td><p>54</p></td>
+<td><p>73</p></td>
+<td><p>49</p></td>
+<td><p>70</p></td>
+<td><p>84</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>90</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-even"><td><p>390</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>95</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+<td><p>96</p></td>
+</tr>
+<tr class="row-odd"><td><p>400</p></td>
+<td><p>95</p></td>
+<td><p>98</p></td>
+<td><p>99</p></td>
+<td><p>95</p></td>
+<td><p>98</p></td>
+<td><p>99</p></td>
+<td><p>95</p></td>
+<td><p>98</p></td>
+<td><p>99</p></td>
+<td><p>95</p></td>
+<td><p>98</p></td>
+<td><p>99</p></td>
+</tr>
+<tr class="row-even"><td><p>410</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+<td><p>100</p></td>
+</tr>
+<tr class="row-odd"><td><p>420</p></td>
+<td><p>27</p></td>
+<td><p>47</p></td>
+<td><p>67</p></td>
+<td><p>45</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>67</p></td>
+<td><p>83</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-even"><td><p>430</p></td>
+<td><p>37</p></td>
+<td><p>57</p></td>
+<td><p>73</p></td>
+<td><p>52</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>66</p></td>
+<td><p>82</p></td>
+<td><p>91</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-odd"><td><p>440</p></td>
+<td><p>40</p></td>
+<td><p>61</p></td>
+<td><p>78</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>67</p></td>
+<td><p>77</p></td>
+<td><p>84</p></td>
+<td><p>74</p></td>
+<td><p>83</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-even"><td><p>450</p></td>
+<td><p>37</p></td>
+<td><p>57</p></td>
+<td><p>73</p></td>
+<td><p>52</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>93</p></td>
+</tr>
+<tr class="row-odd"><td><p>460</p></td>
+<td><p>30</p></td>
+<td><p>51</p></td>
+<td><p>71</p></td>
+<td><p>47</p></td>
+<td><p>68</p></td>
+<td><p>83</p></td>
+<td><p>63</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-even"><td><p>470</p></td>
+<td><p>20</p></td>
+<td><p>37</p></td>
+<td><p>57</p></td>
+<td><p>39</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>53</p></td>
+<td><p>73</p></td>
+<td><p>86</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-odd"><td><p>480</p></td>
+<td><p>22</p></td>
+<td><p>42</p></td>
+<td><p>61</p></td>
+<td><p>40</p></td>
+<td><p>62</p></td>
+<td><p>78</p></td>
+<td><p>57</p></td>
+<td><p>75</p></td>
+<td><p>91</p></td>
+<td><p>64</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+</tr>
+<tr class="row-even"><td><p>490</p></td>
+<td><p>29</p></td>
+<td><p>49</p></td>
+<td><p>69</p></td>
+<td><p>45</p></td>
+<td><p>65</p></td>
+<td><p>83</p></td>
+<td><p>56</p></td>
+<td><p>75</p></td>
+<td><p>87</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-odd"><td><p>500</p></td>
+<td><p>18</p></td>
+<td><p>35</p></td>
+<td><p>55</p></td>
+<td><p>38</p></td>
+<td><p>59</p></td>
+<td><p>77</p></td>
+<td><p>52</p></td>
+<td><p>72</p></td>
+<td><p>86</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-even"><td><p>510</p></td>
+<td><p>29</p></td>
+<td><p>49</p></td>
+<td><p>69</p></td>
+<td><p>47</p></td>
+<td><p>68</p></td>
+<td><p>83</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>520</p></td>
+<td><p>42</p></td>
+<td><p>63</p></td>
+<td><p>80</p></td>
+<td><p>58</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>70</p></td>
+<td><p>85</p></td>
+<td><p>93</p></td>
+<td><p>75</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+</tr>
+<tr class="row-even"><td><p>530</p></td>
+<td><p>65</p></td>
+<td><p>83</p></td>
+<td><p>95</p></td>
+<td><p>84</p></td>
+<td><p>93</p></td>
+<td><p>97</p></td>
+<td><p>84</p></td>
+<td><p>93</p></td>
+<td><p>97</p></td>
+<td><p>84</p></td>
+<td><p>93</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-odd"><td><p>540</p></td>
+<td><p>65</p></td>
+<td><p>83</p></td>
+<td><p>95</p></td>
+<td><p>84</p></td>
+<td><p>93</p></td>
+<td><p>97</p></td>
+<td><p>84</p></td>
+<td><p>93</p></td>
+<td><p>97</p></td>
+<td><p>84</p></td>
+<td><p>93</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-even"><td><p>550</p></td>
+<td><p>80</p></td>
+<td><p>91</p></td>
+<td><p>96</p></td>
+<td><p>80</p></td>
+<td><p>91</p></td>
+<td><p>96</p></td>
+<td><p>81</p></td>
+<td><p>91</p></td>
+<td><p>96</p></td>
+<td><p>82</p></td>
+<td><p>92</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-odd"><td><p>560</p></td>
+<td><p>77</p></td>
+<td><p>89</p></td>
+<td><p>97</p></td>
+<td><p>82</p></td>
+<td><p>92</p></td>
+<td><p>98</p></td>
+<td><p>88</p></td>
+<td><p>94</p></td>
+<td><p>98</p></td>
+<td><p>87</p></td>
+<td><p>95</p></td>
+<td><p>99</p></td>
+</tr>
+<tr class="row-even"><td><p>570</p></td>
+<td><p>29</p></td>
+<td><p>49</p></td>
+<td><p>69</p></td>
+<td><p>48</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>61</p></td>
+<td><p>79</p></td>
+<td><p>90</p></td>
+<td><p>69</p></td>
+<td><p>84</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>580</p></td>
+<td><p>15</p></td>
+<td><p>30</p></td>
+<td><p>50</p></td>
+<td><p>37</p></td>
+<td><p>58</p></td>
+<td><p>76</p></td>
+<td><p>51</p></td>
+<td><p>71</p></td>
+<td><p>85</p></td>
+<td><p>60</p></td>
+<td><p>78</p></td>
+<td><p>89</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Fuente: Montealegre Medina y Gaspari <span id="id103">[]</span>, adaptado de Mockus <span id="id104">[]</span>.</em></p>
+<!--
+Bibliografía: como en los demás capítulos del libro, las referencias se muestran
+en la página global "Bibliografía" (Referencias.md). El coordinador debe agregar
+referencias_geoq.bib a la lista bibtex_bibfiles del archivo _config.yml del libro
+(o copiar sus entradas en el .bib general).
+-->
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="af1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Ingeniero Catastral y Geodesta. Magíster en Manejo Integral de Cuencas Hidrográficas. Doctor de la FCAyF, UNLP. Centro de Estudios Integrales de la Dinámica Exógena (CEIDE), Facultad de Ciencias Agrarias y Forestales, Universidad Nacional de La Plata. Profesional de Apoyo de la Comisión de Investigaciones Cientificas de la Provincia de Buenos Aires CIC PBA. <a class="reference external" href="mailto:fabio&#46;montealegre&#37;&#52;&#48;agro&#46;unlp&#46;edu&#46;ar">fabio<span>&#46;</span>montealegre<span>&#64;</span>agro<span>&#46;</span>unlp<span>&#46;</span>edu<span>&#46;</span>ar</a></p>
+</aside>
+<aside class="footnote brackets" id="af2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Ingeniera Forestal. Magíster en Conservación y Gestión del Medio Natural. Doctora en Ingeniería. Profesora Titular de la Cátedra de Manejo de Cuencas Hidrográficas Directora del Centro de Estudios Integrales de la Dinámica Exógena (CEIDE), Facultad de Ciencias Agrarias y Forestales y Facultad de Ciencias Naturales y Museo, Universidad Nacional de La Plata. Asociado al Comisión de Investigaciones Cientificas de la Provincia de Buenos Aires CIC PBA. <a class="reference external" href="mailto:fgaspari&#37;&#52;&#48;agro&#46;unlp&#46;edu&#46;ar">fgaspari<span>&#64;</span>agro<span>&#46;</span>unlp<span>&#46;</span>edu<span>&#46;</span>ar</a></p>
+</aside>
+</aside>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -484,7 +2861,49 @@ capacidad de campo (CIo), considerando una condición de humedad antecedente med
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias-bibliograficas">15.1. Referencias bibliográficas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">15.1. Introducción</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelizacion-hidrologica-y-sistemas-de-informacion-geografica">15.1.1. Modelización hidrológica y sistemas de información geográfica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-respuesta-hidrologica-de-las-llanuras">15.1.2. La respuesta hidrológica de las llanuras</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#de-la-formulacion-hidrologica-a-la-representacion-espacial">15.1.3. De la formulación hidrológica a la representación espacial</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-del-metodo-del-numero-de-curva">15.2. Fundamentos del método del Número de Curva</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulacion-matematica">15.2.1. Formulación matemática</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupos-hidrologicos-de-suelo">15.2.2. Grupos hidrológicos de suelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cobertura-y-uso-del-suelo">15.2.3. Cobertura y uso del suelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condicion-de-humedad-antecedente">15.2.4. Condición de humedad antecedente</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos-alcance-y-limitaciones">15.2.5. Supuestos, alcance y limitaciones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-complemento-geoq-2-8">15.3. El complemento GeoQ 2.8</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arquitectura-y-flujo-de-procesamiento">15.3.1. Arquitectura y flujo de procesamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion">15.3.2. Instalación</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparacion-de-los-insumos">15.3.3. Preparación de los insumos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecucion-del-modelo">15.3.4. Ejecución del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#productos-del-modelo">15.3.5. Productos del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advertencias-y-buenas-practicas">15.3.6. Advertencias y buenas prácticas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion-cuenca-a1-del-rio-salado">15.4. Ejemplo de aplicación: cuenca A1 del río Salado</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-de-estudio">15.4.1. Área de estudio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insumos-cartograficos">15.4.2. Insumos cartográficos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escenarios-pluviales">15.4.3. Escenarios pluviales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizacion-hidrologica">15.4.4. Parametrización hidrológica</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonificacion-del-coeficiente-de-escorrentia">15.4.5. Zonificación del Coeficiente de escorrentía</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonificacion-del-coeficiente-de-infiltracion">15.4.6. Zonificación del Coeficiente de infiltración</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zonificacion-del-coeficiente-de-abstracciones-iniciales">15.4.7. Zonificación del Coeficiente de abstracciones iniciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuantificacion-del-nc-critico">15.4.8. Cuantificación del NC crítico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consideraciones-finales">15.4.9. Consideraciones finales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones-y-recomendaciones-de-uso">15.5. Conclusiones y recomendaciones de uso</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusiones">15.5.1. Conclusiones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recomendaciones-de-uso">15.5.2. Recomendaciones de uso</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perspectivas">15.5.3. Perspectivas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recursos-complementarios">15.5.4. Recursos complementarios</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anexo">15.6. Anexo</a></li>
 </ul>
   </nav></div>
 
