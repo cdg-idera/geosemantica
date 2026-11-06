@@ -708,19 +708,7 @@ Un procedimiento inicial razonable es:
 
 ## Actividad práctica propuesta
 
-**Primera parte: el grafo de Neuquén.** Importar el Turtle de la sección 7 en un editor o repositorio RDF y resolver las consultas de la sección 9. Identificar los recursos enlazados por `dcterms:relation` y explicar por qué no es correcto traducir automáticamente esa propiedad como «limita con». Añadir la extensión de la sección 8, activar un razonador si está disponible y comparar resultados explícitos e inferidos.
-
-**Segunda parte: interoperabilidad.** Dos organismos publican capas de cursos de agua. Uno usa el atributo `tipo = "rio"` y otro `categoria = "curso permanente"`.
-
-**Consignas:**
-
-1. Explicar por qué no es correcto declarar automáticamente que ambas categorías son equivalentes.
-2. Proponer tres clases y dos propiedades para una ontología hidrográfica mínima.
-3. Crear dos individuos y escribir al menos cuatro tripletas RDF.
-4. Formular una pregunta de competencia y escribir una consulta SPARQL que la responda.
-5. Indicar qué información adicional sería necesaria para determinar si un curso de agua atraviesa un área protegida.
-
-**Orientación:** se deben revisar las definiciones de ambos organismos, la temporalidad de los cursos de agua, la disponibilidad de geometrías y la compatibilidad de sus sistemas de referencia. Una equivalencia semántica no debe inferirse únicamente por similitud de etiquetas.
+**El grafo ejemplo de Neuquén.** Importar el Turtle de la sección 7 en un editor o repositorio RDF y resolver las consultas de la sección 9. Identificar los recursos enlazados por `dcterms:relation` y explicar por qué no es correcto traducir automáticamente esa propiedad como «limita con». Añadir la extensión de la sección 8, activar un razonador si está disponible y comparar resultados explícitos e inferidos.
 
 ## Síntesis
 
@@ -729,8 +717,6 @@ Una ontología permite **hacer explícito cómo conceptualizamos un dominio**: q
 Su utilidad no consiste solamente en agregar vocabulario técnico a los datos. Consiste en construir **modelos de conocimiento compartidos**, capaces de conectar el significado de los objetos geográficos con los servicios, bases de datos, análisis espaciales y aplicaciones de inteligencia artificial. Todo ello exige mantener el juicio disciplinar, la documentación de las fuentes y una evaluación crítica de las respuestas.
 
 ## Referencias bibliográficas
-
-Las referencias citadas en el texto se generan automáticamente mediante MyST/Sphinx y `sphinxcontrib-bibtex`, utilizando el archivo BibTeX configurado en el proyecto.
 
 ```{bibliography}
 :filter: docname in docnames
