@@ -43,9 +43,9 @@ En su forma convencional, el procesamiento del método del NC en un SIG consiste
 
 Zhan y Huang {cite:yearpar}`geoq-zhan2004` desarrollaron ArcCN-Runoff, una extensión de ESRI ArcGIS® que genera mapas de NC y de escorrentía a escala de cuenca. En el ámbito regional, Rodríguez Vagaría y Gaspari {cite:yearpar}`geoq-rodriguez2010` crearon la primera versión de GeoQ para Idrisi Andes®. Esta versión estaba orientada a estimar descargas y a predecir la respuesta hidrológica de una cuenca ante cambios de uso del suelo, como la implementación de medidas de conservación, las modificaciones de la cubierta vegetal o el avance de la urbanización, que se aplicó, entre otros casos, a la evaluación del efecto de la restauración agrohidrológica sobre el escurrimiento superficial {cite:p}`geoq-rodriguez2012`. Como señala Eastman {cite:yearpar}`geoq-eastman2006`, herramientas de este tipo constituyen modelos geoespaciales automatizados que generan nueva información útil para el análisis de la hidrología de superficie.
 
-El paso siguiente fue la reimplementación de GeoQ en QGIS®, una aplicación SIG de código abierto distribuida bajo la licencia pública general GNU. QGIS amplía sus capacidades mediante complementos escritos en Python y dispone de un entorno gráfico para construir y ejecutar modelos de pasos múltiples que procesan capas temáticas en formato tabular, vectorial o ráster {cite:p}`geoq-montealegre2021a`. Sobre esa base se desarrollaron las versiones que se sintetizan en la Tabla 14.1.
+El paso siguiente fue la reimplementación de GeoQ en QGIS®, una aplicación SIG de código abierto distribuida bajo la licencia pública general GNU. QGIS amplía sus capacidades mediante complementos escritos en Python y dispone de un entorno gráfico para construir y ejecutar modelos de pasos múltiples que procesan capas temáticas en formato tabular, vectorial o ráster {cite:p}`geoq-montealegre2021a`. Sobre esa base se desarrollaron las versiones que se sintetizan en la Tabla 15.1.
 
-**Tabla 14.1.** Evolución de la herramienta GeoQ.
+**Tabla 15.1.** Evolución de la herramienta GeoQ.
 
 | Versión | Plataforma | Año | Entrada de precipitación | Capacidades principales | Referencia |
 |---|---|---|---|---|---|
@@ -115,13 +115,13 @@ $$
 CE = \frac{Q}{P}\cdot 100 \qquad CF = \frac{F}{P}\cdot 100 \qquad CI_0 = \frac{I_0}{P}\cdot 100 \tag{14.6}
 $$
 
-La Figura 14.1 muestra el comportamiento de los tres coeficientes en función del NC para tres magnitudes de tormenta. Para una precipitación dada, el CE crece de manera monótona con el NC, mientras que el CIo decrece. El CF, en cambio, presenta un máximo en valores intermedios de NC: se anula tanto en superficies impermeables (NC = 100, $S = 0$) como en los complejos cuya abstracción inicial absorbe toda la lluvia. Al aumentar la precipitación, el dominio de la escorrentía se extiende hacia NC progresivamente menores.
+La Figura 15.1 muestra el comportamiento de los tres coeficientes en función del NC para tres magnitudes de tormenta. Para una precipitación dada, el CE crece de manera monótona con el NC, mientras que el CIo decrece. El CF, en cambio, presenta un máximo en valores intermedios de NC: se anula tanto en superficies impermeables (NC = 100, $S = 0$) como en los complejos cuya abstracción inicial absorbe toda la lluvia. Al aumentar la precipitación, el dominio de la escorrentía se extiende hacia NC progresivamente menores.
 
 ```{figure} imagenes/geoq/fig_14-01_particion_nc.png
 :align: center
 :width: 90%
 
-**Figura 14.1.** Partición de la precipitación en CE, CF y CIo en función del NC para tormentas de 33, 89 y 145 mm. La línea discontinua indica el NC crítico (Ec. 14.7). Fuente: elaboración propia a partir de las ecuaciones 14.2 a 14.6.
+Partición de la precipitación en CE, CF y CIo en función del NC para tormentas de 33, 89 y 145 mm. La línea discontinua indica el NC crítico (Ec. 14.7). Fuente: elaboración propia a partir de las ecuaciones 14.2 a 14.6.
 ```
 
 (geoq-grupos-hidrologicos)=
@@ -129,9 +129,9 @@ La Figura 14.1 muestra el comportamiento de los tres coeficientes en función de
 
 La información edáfica se estructura en cuatro categorías de textura y permeabilidad, denominadas grupos hidrológicos (GH), que expresan el potencial de escorrentía del suelo {cite:p}`geoq-mintegui1990,geoq-chow1994,geoq-lopezcadenas1998,geoq-neilsen1998,geoq-gaspari2009,geoq-mishra2013`. La asignación de cada unidad cartográfica de suelos a un GH se basa en la textura.
 
-En GeoQ, cada GH se identifica mediante un código numérico entero denominado `Cod_Sue`, que debe consignarse en la tabla de atributos de la capa vectorial de suelos según la Tabla 14.2.
+En GeoQ, cada GH se identifica mediante un código numérico entero denominado `Cod_Sue`, que debe consignarse en la tabla de atributos de la capa vectorial de suelos según la Tabla 15.2.
 
-**Tabla 14.2.** Grupos hidrológicos de suelo y códigos requeridos por GeoQ.
+**Tabla 15.2.** Grupos hidrológicos de suelo y códigos requeridos por GeoQ.
 
 | GH | Potencial de escorrentía | Características | Texturas asociadas | Cod_Sue |
 |---|---|---|---|---|
@@ -147,14 +147,14 @@ En GeoQ, cada GH se identifica mediante un código numérico entero denominado `
 
 El segundo componente del complejo es la vegetación o el uso del suelo, incluido el tratamiento cultural que recibe {cite:p}`geoq-gaspari2006`. La clasificación de Mintegui Aguirre y López Unzú {cite:yearpar}`geoq-mintegui1990` combina tres criterios: el tipo de cobertura; la práctica de manejo, que puede consistir en laboreo sin prácticas de conservación, cultivo en curvas de nivel o curvas de nivel con terrazas, y la condición hidrológica, desde muy pobre hasta muy buena.
 
-Para facilitar su aplicación en la Argentina, GeoQ armoniza esa clasificación con las clases de la cartografía nacional de cobertura del suelo elaborada con el sistema LCCS {cite:p}`geoq-volante2006,geoq-inta2009`. El resultado es una tipología de 58 clases codificadas, en intervalos de diez, en el campo `Cod_Veg` en el archivo vectorial (Anexo, Tabla 14.17).
+Para facilitar su aplicación en la Argentina, GeoQ armoniza esa clasificación con las clases de la cartografía nacional de cobertura del suelo elaborada con el sistema LCCS {cite:p}`geoq-volante2006,geoq-inta2009`. El resultado es una tipología de 58 clases codificadas, en intervalos de diez, en el campo `Cod_Veg` en el archivo vectorial (Anexo, Tabla 15.17).
 
 (geoq-cha)=
 ### Condición de humedad antecedente
 
-La respuesta de un mismo complejo suelo-vegetación varía según el contenido de humedad del suelo al inicio de la tormenta. El método la representa mediante tres condiciones de humedad antecedente (CHA), definidas a partir de la lluvia acumulada en los 5 a 10 días previos al evento (Tabla 14.3) {cite:p}`geoq-mintegui1990,geoq-chow1994,geoq-lopezcadenas1998,geoq-gaspari2009,geoq-gaspari2013`.
+La respuesta de un mismo complejo suelo-vegetación varía según el contenido de humedad del suelo al inicio de la tormenta. El método la representa mediante tres condiciones de humedad antecedente (CHA), definidas a partir de la lluvia acumulada en los 5 a 10 días previos al evento (Tabla 15.3) {cite:p}`geoq-mintegui1990,geoq-chow1994,geoq-lopezcadenas1998,geoq-gaspari2009,geoq-gaspari2013`.
 
-**Tabla 14.3.** Condiciones de humedad antecedente en función de la lluvia previa.
+**Tabla 15.3.** Condiciones de humedad antecedente en función de la lluvia previa.
 
 | CHA | Estado de humedad del suelo | Lluvia antecedente en los 5 a 10 días previos (mm) |
 |---|---|---|
@@ -197,7 +197,7 @@ El número de curva crítico (frecuentemente asociado al umbral de escorrentía)
 (geoq-arquitectura)=
 ### Arquitectura y flujo de procesamiento
 
-GeoQ se construyó con el Diseñador de modelos de QGIS como un modelo gráfico de pasos múltiples. El modelo encadena geoprocesos vectoriales, asignación automática de valores, operaciones matemáticas entre capas y reclasificación de categorías en un procedimiento interconectado {cite:p}`geoq-montealegre2021a`. La versión 2.8 conserva esa lógica e incorpora el límite del área de estudio y la precipitación ráster como insumos. El flujo resultante comprende ocho etapas y se sintetiza en la Figura 14.2.
+GeoQ se construyó con el Diseñador de modelos de QGIS como un modelo gráfico de pasos múltiples. El modelo encadena geoprocesos vectoriales, asignación automática de valores, operaciones matemáticas entre capas y reclasificación de categorías en un procedimiento interconectado {cite:p}`geoq-montealegre2021a`. La versión 2.8 conserva esa lógica e incorpora el límite del área de estudio y la precipitación ráster como insumos. El flujo resultante comprende ocho etapas y se sintetiza en la Figura 15.2.
 
 
 1. Reproyección de las capas de entrada al sistema de referencia de coordenadas (SRC) del límite del área de estudio.
@@ -213,16 +213,16 @@ GeoQ se construyó con el Diseñador de modelos de QGIS como un modelo gráfico 
 :align: center
 :width: 90%
 
-**Figura 14.2.** Flujo de procesamiento del complemento GeoQ 2.8. Fuente: elaboración propia con base en Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2021a,geoq-montealegre2024a`.
+Flujo de procesamiento del complemento GeoQ 2.8. Fuente: elaboración propia con base en Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2021a,geoq-montealegre2024a`.
 ```
 
 La codificación de `Cod_Sue` y `Cod_Veg` permite que la suma de ambos códigos identifique de manera unívoca cada complejo suelo-vegetación, puesto que los GH ocupan las unidades (1 a 4) y las coberturas, las decenas y centenas.
 
 El código resultante (`Cod_NC = Cod_Veg + Cod_Sue`) es la clave con la que el complemento recupera el NC correspondiente.
 
-Por ejemplo, el código 31 designa un cultivo de herbáceas graminoides sobre un suelo del grupo A. La Tabla 14.4 ilustra la construcción de la clave para un uso en barbecho.
+Por ejemplo, el código 31 designa un cultivo de herbáceas graminoides sobre un suelo del grupo A. La Tabla 15.4 ilustra la construcción de la clave para un uso en barbecho.
 
-**Tabla 14.4.** Ejemplo de construcción de la clave Cod_NC para un uso en barbecho (CHA II).
+**Tabla 15.4.** Ejemplo de construcción de la clave Cod_NC para un uso en barbecho (CHA II).
 
 | GH | Cod_Sue | Vegetación y/o uso del suelo | Cod_Veg | Cod_NC | NC |
 |---|---|---|---|---|---|
@@ -233,16 +233,16 @@ Por ejemplo, el código 31 designa un cultivo de herbáceas graminoides sobre un
 
 *Fuente: Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2024a`.*
 
-Los valores de NC para todas las combinaciones, adaptados de las tablas del SCS {cite:p}`geoq-mockus1972`, se presentan en el Anexo (Tabla 14.18).
+Los valores de NC para todas las combinaciones, adaptados de las tablas del SCS {cite:p}`geoq-mockus1972`, se presentan en el Anexo (Tabla 15.18).
 
 (geoq-instalacion)=
 ### Instalación
 
-GeoQ se distribuye a través del repositorio oficial de complementos de QGIS {cite:p}`geoq-montealegre2024b`. Para instalarlo, se accede al menú *Complementos > Administrar e instalar complementos*, se busca "GeoQ" en la pestaña *Todos* y se selecciona *Instalar complemento* (Figura 14.3, superior).
+GeoQ se distribuye a través del repositorio oficial de complementos de QGIS {cite:p}`geoq-montealegre2024b`. Para instalarlo, se accede al menú *Complementos > Administrar e instalar complementos*, se busca "GeoQ" en la pestaña *Todos* y se selecciona *Instalar complemento* (Figura 15.3, superior).
 
 Como alternativa, el código se encuentra en el repositorio <https://github.com/fabalmon/GeoQ>.
 
-Desde allí puede descargarse en formato ZIP mediante la opción *Code > Download ZIP* e instalarse con la opción *Instalar a partir de ZIP* del mismo administrador de complementos. Una vez instalado, el complemento aparece en el panel *Caja de herramientas de Procesos* con el nombre GeoQ (Figura 14.3, inferior).
+Desde allí puede descargarse en formato ZIP mediante la opción *Code > Download ZIP* e instalarse con la opción *Instalar a partir de ZIP* del mismo administrador de complementos. Una vez instalado, el complemento aparece en el panel *Caja de herramientas de Procesos* con el nombre GeoQ (Figura 15.3, inferior).
 
 El repositorio declara compatibilidad con QGIS 3.0 y posteriores, aunque el manual recomienda emplear versiones iguales o superiores a la 3.18 {cite:p}`geoq-montealegre2024a`.
 
@@ -250,22 +250,22 @@ El repositorio declara compatibilidad con QGIS 3.0 y posteriores, aunque el manu
 :align: center
 :width: 90%
 
-**Figura 14.3.** Instalación de GeoQ desde el administrador de complementos de QGIS. Superior: instalación del complemento desde el repositorio de QGIS; inferior: instalación por medio de archivo comprimido ZIP.
+Instalación de GeoQ desde el administrador de complementos de QGIS. Superior: instalación del complemento desde el repositorio de QGIS; inferior: instalación por medio de archivo comprimido ZIP.
 ```
 
 (geoq-insumos)=
 ### Preparación de los insumos
 
-La calidad de los resultados depende directamente de la preparación de los insumos, que deben adecuarse previamente al formato que se resume en la Tabla 14.5.
+La calidad de los resultados depende directamente de la preparación de los insumos, que deben adecuarse previamente al formato que se resume en la Tabla 15.5.
 
-**Tabla 14.5.** Insumos de GeoQ 2.8 y requisitos de formato.
+**Tabla 15.5.** Insumos de GeoQ 2.8 y requisitos de formato.
 
 | Insumo | Formato | Requisito | Observaciones |
 |---|---|---|---|
 | Límite del área de estudio | Vector de polígonos | Georreferenciado, en coordenadas planas o geográficas | Su SRC define el de todos los resultados |
 | Precipitación | Valor numérico (mm) o ráster (mm por píxel) | Un único evento pluvial | El valor numérico es opcional si se ingresa el ráster, y viceversa |
-| Grupos hidrológicos | Vector de polígonos | Campo `Cod_Sue` de tipo entero (1 a 4) | Codificación según la Tabla 14.2 |
-| Cobertura y uso del suelo | Vector de polígonos | Campo `Cod_Veg` de tipo entero (10 a 580) | Codificación según el Anexo, Tabla 14.17 |
+| Grupos hidrológicos | Vector de polígonos | Campo `Cod_Sue` de tipo entero (1 a 4) | Codificación según la Tabla 15.2 |
+| Cobertura y uso del suelo | Vector de polígonos | Campo `Cod_Veg` de tipo entero (10 a 580) | Codificación según el Anexo, Tabla 15.17 |
 | Condición de humedad antecedente | Lista desplegable | I, II o III | Tablas de NC integradas en el complemento |
 
 *Fuente: elaboración propia con base en Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2024a`.*
@@ -277,18 +277,18 @@ La calidad de los resultados depende directamente de la preparación de los insu
 - Con un valor numérico representativo o un evento pluvial, que se aplica de manera uniforme.
 - Con un ráster en el que cada píxel contiene la lámina precipitada del evento, lo cual permite representar su variabilidad espacial. Para esta opción se recomienda utilizar el portal de datos del Center for Hydrometeorology and Remote Sensing (CHRS) de la Universidad de California en Irvine, que distribuye los productos de la familia PERSIANN. Entre ellos, se aconseja el producto PDIR-Now, que es una estimación casi en tiempo real basada en información infrarroja con una relación dinámica entre la temperatura de tope de nube y la tasa de lluvia {cite:p}`geoq-nguyen2020`. El ráster debe corresponder al acumulado del evento que se desea modelizar y cubrir la totalidad del área de estudio. *Es importante mencionar que los píxeles donde no se registró precipitación tienen valor nulo, reconocido como "sin dato".*
 
-**Grupos hidrológicos de suelo.** La capa se deriva de la cartografía edáfica disponible, por ejemplo, las cartas de suelos, asignando a cada unidad cartográfica su GH según la textura del horizonte superficial y las características descritas en la Tabla 14.2. El código se registra en un campo nuevo denominado `Cod_Sue`, de tipo entero.
+**Grupos hidrológicos de suelo.** La capa se deriva de la cartografía edáfica disponible, por ejemplo, las cartas de suelos, asignando a cada unidad cartográfica su GH según la textura del horizonte superficial y las características descritas en la Tabla 15.2. El código se registra en un campo nuevo denominado `Cod_Sue`, de tipo entero.
 
-**Cobertura y uso del suelo.** Las clases de la cartografía de origen deben reclasificarse según la tipología estandarizada del Anexo (Tabla 14.17) y registrarse en un campo entero denominado `Cod_Veg`. Cuando la leyenda local no coincide exactamente con esa tipología, se asigna la clase de comportamiento hidrológico más próximo. Es recomendable documentar la tabla de correspondencias utilizada, dado que constituye una de las principales fuentes de incertidumbre del modelo {cite:p}`geoq-montealegre2021a`.
+**Cobertura y uso del suelo.** Las clases de la cartografía de origen deben reclasificarse según la tipología estandarizada del Anexo (Tabla 15.17) y registrarse en un campo entero denominado `Cod_Veg`. Cuando la leyenda local no coincide exactamente con esa tipología, se asigna la clase de comportamiento hidrológico más próximo. Es recomendable documentar la tabla de correspondencias utilizada, dado que constituye una de las principales fuentes de incertidumbre del modelo {cite:p}`geoq-montealegre2021a`.
 
 **Control geométrico.** Para ambas capas vectoriales se recomienda corregir la geometría, convertir los registros a partes simples y revisar la topología antes de la ejecución {cite:p}`geoq-montealegre2024a`. Además, puede recortar previamente las capas de GH y cobertura y uso del suelo con el límite del área de estudio, porque reduce el tiempo de procesamiento {cite:p}`geoq-gaspari2025`.
 
 (geoq-ejecucion)=
 ### Ejecución del modelo
 
-El complemento se ejecuta desde el panel *Caja de herramientas de Procesos*. La interfaz solicita los parámetros que se detallan en la Tabla 14.6, en el orden en que aparecen en pantalla (Figura 14.4). Las capas de entrada pueden seleccionarse de la lista desplegable, si ya están cargadas en el proyecto, o buscarse en el equipo.
+El complemento se ejecuta desde el panel *Caja de herramientas de Procesos*. La interfaz solicita los parámetros que se detallan en la Tabla 15.6, en el orden en que aparecen en pantalla (Figura 15.4). Las capas de entrada pueden seleccionarse de la lista desplegable, si ya están cargadas en el proyecto, o buscarse en el equipo.
 
-**Tabla 14.6.** Parámetros de la interfaz de GeoQ 2.8.
+**Tabla 15.6.** Parámetros de la interfaz de GeoQ 2.8.
 
 | N.º | Parámetro | Acción requerida |
 |---|---|---|
@@ -312,7 +312,7 @@ Si no se define una ruta de salida, los resultados se generan como capas tempora
 :align: center
 :width: 80%
 
-**Figura 14.4.** Interfaz de GeoQ 2.8 con los parámetros de entrada y salida numerados.
+Interfaz de GeoQ 2.8 con los parámetros de entrada y salida numerados.
 ```
 
 (geoq-productos)=
@@ -320,12 +320,12 @@ Si no se define una ruta de salida, los resultados se generan como capas tempora
 
 Al finalizar la ejecución, GeoQ carga automáticamente cinco nuevas capas en el proyecto abierto de QGIS.
 
-La primera, denominada GeoQ, no tiene simbología y contiene en su tabla de atributos, para cada complejo, los resultados de todas las etapas del cálculo (Tabla 14.7, Figura 14.5). Las otras cuatro corresponden a la zonificación del NC, el CE, el CF y el CIo, y se presentan con simbología predefinida por clases.
+La primera, denominada GeoQ, no tiene simbología y contiene en su tabla de atributos, para cada complejo, los resultados de todas las etapas del cálculo (Tabla 15.7, Figura 15.5). Las otras cuatro corresponden a la zonificación del NC, el CE, el CF y el CIo, y se presentan con simbología predefinida por clases.
 
 La versión 2.8 no calcula la superficie de cada registro. Por ello, para cuantificar la extensión de cada clase debe agregarse un campo con la expresión `$area` en un SRC proyectado.
 
 
-**Tabla 14.7.** Variables de la tabla de atributos de la capa GeoQ.
+**Tabla 15.7.** Variables de la tabla de atributos de la capa GeoQ.
 
 | Variable | Descripción | Unidad |
 |---|---|---|
@@ -344,7 +344,7 @@ Cuando en un complejo la abstracción inicial resulta mayor que la precipitació
 :align: center
 :width: 90%
 
-**Figura 14.5.** Tabla de atributos de la capa de resultados GeoQ.
+Tabla de atributos de la capa de resultados GeoQ.
 ```
 
 (geoq-advertencias)=
@@ -364,7 +364,7 @@ Por último, se recomiendan dos controles de calidad sencillos. El primero consi
 (geoq-area-estudio)=
 ### Área de estudio
 
-La cuenca A1 es una de las subregiones en que se divide la cuenca del río Salado. Se localiza en el noroeste de la provincia de Buenos Aires y limita con las provincias de Córdoba y Santa Fe (Figura 14.6), ubicada en la Pampa Deprimida, cuyos rasgos fisiográficos de llanura se describieron en la {numref}`sección %s <geoq-llanuras>`.
+La cuenca A1 es una de las subregiones en que se divide la cuenca del río Salado. Se localiza en el noroeste de la provincia de Buenos Aires y limita con las provincias de Córdoba y Santa Fe (Figura 15.6), ubicada en la Pampa Deprimida, cuyos rasgos fisiográficos de llanura se describieron en la {numref}`sección %s <geoq-llanuras>`.
 
 Su límite se obtuvo a partir de un modelo digital de elevación SRTM corregido altimétricamente para uso hidrológico en áreas de llanura {cite:p}`geoq-gomez2017`. La A1 abarca una superficie de 17.737,63 km², con cotas comprendidas entre aproximadamente 170 y 50 m s. n. m. y un relieve en el que predominan las superficies casi horizontales {cite:p}`geoq-montealegre2021b`.
 
@@ -372,15 +372,15 @@ Su límite se obtuvo a partir de un modelo digital de elevación SRTM corregido 
 :align: center
 :width: 90%
 
-**Figura 14.6.** Localización de la cuenca A1 en la cuenca del río Salado, provincia de Buenos Aires, Argentina.
+Localización de la cuenca A1 en la cuenca del río Salado, provincia de Buenos Aires, Argentina.
 ```
 
 (geoq-insumos-a1)=
 ### Insumos cartográficos
 
-La capa de grupos hidrológicos se elaboró asignando los códigos de la Tabla 14.2 a las unidades edáficas de la cuenca (Tabla 14.8). Predomina el grupo A, que ocupa el 78,8 % del área, con suelos de textura gruesa, que transmiten el agua con fluidez a través del perfil y presentan un bajo potencial de escorrentía {cite:p}`geoq-diazcarvajal2017`. Luego el grupo D, con el 14,3 %, y por último, los grupos C y B tienen una participación menor.
+La capa de grupos hidrológicos se elaboró asignando los códigos de la Tabla 15.2 a las unidades edáficas de la cuenca (Tabla 15.8). Predomina el grupo A, que ocupa el 78,8 % del área, con suelos de textura gruesa, que transmiten el agua con fluidez a través del perfil y presentan un bajo potencial de escorrentía {cite:p}`geoq-diazcarvajal2017`. Luego el grupo D, con el 14,3 %, y por último, los grupos C y B tienen una participación menor.
 
-**Tabla 14.8.** Superficie ocupada por los grupos hidrológicos de suelo en la cuenca A1.
+**Tabla 15.8.** Superficie ocupada por los grupos hidrológicos de suelo en la cuenca A1.
 
 | GH | Cod_Sue | Superficie (km²) | Proporción (%) |
 |---|---|---|---|
@@ -392,9 +392,9 @@ La capa de grupos hidrológicos se elaboró asignando los códigos de la Tabla 1
 
 *Fuente: elaboración propia con base en Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2021b`.*
 
-La capa de cobertura y uso del suelo se adaptó de la cartografía de cobertura del suelo de la República Argentina {cite:p}`geoq-volante2006`. En la cuenca se identificaron siete clases, que se codificaron según la tipología de GeoQ (Tabla 14.9). Los cultivos de herbáceas graminoides (código 30) y las herbáceas cerradas en áreas regularmente anegadas (código 20) ocupan en conjunto el 88,8 % de la superficie. Los cuerpos de agua (código 410), correspondientes a cañadas y bañados, representan el 5,2 %.
+La capa de cobertura y uso del suelo se adaptó de la cartografía de cobertura del suelo de la República Argentina {cite:p}`geoq-volante2006`. En la cuenca se identificaron siete clases, que se codificaron según la tipología de GeoQ (Tabla 15.9). Los cultivos de herbáceas graminoides (código 30) y las herbáceas cerradas en áreas regularmente anegadas (código 20) ocupan en conjunto el 88,8 % de la superficie. Los cuerpos de agua (código 410), correspondientes a cañadas y bañados, representan el 5,2 %.
 
-**Tabla 14.9.** Superficie ocupada por las clases de cobertura y uso del suelo en la cuenca A1.
+**Tabla 15.9.** Superficie ocupada por las clases de cobertura y uso del suelo en la cuenca A1.
 
 | Cod_Veg | Cobertura y uso del suelo | Superficie (km²) | Proporción (%) |
 |---|---|---|---|
@@ -409,29 +409,29 @@ La capa de cobertura y uso del suelo se adaptó de la cartografía de cobertura 
 
 *Fuente: elaboración propia con base en Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2021b`.*
 
-La distribución espacial de ambas capas y del NC resultante se presenta en la Figura 14.7.
+La distribución espacial de ambas capas y del NC resultante se presenta en la Figura 15.7.
 
 
 ```{figure} imagenes/geoq/fig_14-07_cobertura_gh_nc.png
 :align: center
 :width: 100%
 
-**Figura 14.7.** Distribución de la cobertura y el uso del suelo (a), de los grupos hidrológicos (b) y del número de curva en CHA II (c) en la cuenca A1.
+Distribución de la cobertura y el uso del suelo (a), de los grupos hidrológicos (b) y del número de curva en CHA II (c) en la cuenca A1.
 ```
 
 (geoq-escenarios)=
 ### Escenarios pluviales
 
-Los escenarios de precipitación se definieron a partir de los registros pluviométricos del período 1990-2020 de tres estaciones del Servicio Meteorológico Nacional (SMN): Junín Aero, Laboulaye Aero y Venado Tuerto Aero. Estas estaciones se ubican en el interior y en los extremos de la cuenca (Figura 14.8). Además, se incorporó un cuarto registro a nivel geoespacial, perteneciente a una imagen satelital de la misión Persiann, obtenido de CHRS, de un evento extremo registrado en la estación meteorológica de Junin.
+Los escenarios de precipitación se definieron a partir de los registros pluviométricos del período 1990-2020 de tres estaciones del Servicio Meteorológico Nacional (SMN): Junín Aero, Laboulaye Aero y Venado Tuerto Aero. Estas estaciones se ubican en el interior y en los extremos de la cuenca (Figura 15.8). Además, se incorporó un cuarto registro a nivel geoespacial, perteneciente a una imagen satelital de la misión Persiann, obtenido de CHRS, de un evento extremo registrado en la estación meteorológica de Junin.
 
-Los eventos de precipitación diaria del SMN, superiores a 12,7 mm (con base a CHA), se procesaron y ordenaron de forma ascendente para obtener sus cuartiles. Posteriormente, a partir del promedio de los datos de las tres estaciones se definieron tres escenarios (Tabla 14.10):
+Los eventos de precipitación diaria del SMN, superiores a 12,7 mm (con base a CHA), se procesaron y ordenaron de forma ascendente para obtener sus cuartiles. Posteriormente, a partir del promedio de los datos de las tres estaciones se definieron tres escenarios (Tabla 15.10):
 
 - **Escenario I (33 mm):** corresponde al tercer cuartil y representa lluvias frecuentes.
 - **Escenario III (145 mm):** corresponde al máximo de la serie, equivalente al cuarto cuartil, y representa lluvias extremas.
 - **Escenario II (89 mm):** es el valor intermedio entre ambos y representa lluvias moderadas.
 - **Escenario IV (ráster de precipitación del 31 de marzo de 2013).**
 
-**Tabla 14.10.** Cuartiles de precipitación (mm) de las estaciones de referencia de la cuenca A1, período 1990-2020.
+**Tabla 15.10.** Cuartiles de precipitación (mm) de las estaciones de referencia de la cuenca A1, período 1990-2020.
 
 | Cuartil | Junín | Laboulaye | Venado Tuerto | Promedio |
 |---|---|---|---|---|
@@ -449,7 +449,7 @@ La diferencia de 25 mm entre los máximos de Junín y de Venado Tuerto anticipa 
 :align: center
 :width: 90%
 
-**Figura 14.8.** Localización de las estaciones meteorológicas de referencia para la cuenca A1 y la imagen satelital del evento pluvial.
+Localización de las estaciones meteorológicas de referencia para la cuenca A1 y la imagen satelital del evento pluvial.
 ```
 
 (geoq-parametrizacion)=
@@ -459,9 +459,9 @@ GeoQ se ejecutó en condición de humedad antecedente media (CHA II), una vez pa
 
 La intersección de las capas de cobertura y de GH generó 24 complejos suelo-vegetación. Sus NC oscilan entre 15, en los bosques cerrados sobre suelos del grupo A, y 100, en los cuerpos de agua. El NC medio ponderado por superficie es de 72,2. Los dos complejos dominantes concentran el 71,9 % de la cuenca: el 31 (cultivos de herbáceas graminoides sobre GH A), con un NC de 67, y el 21 (herbáceas en áreas anegables sobre GH A), con un NC de 72.
 
-La Tabla 14.11 reúne los parámetros de cada complejo y el CE resultante en los tres escenarios.
+La Tabla 15.11 reúne los parámetros de cada complejo y el CE resultante en los tres escenarios.
 
-**Tabla 14.11.** Parámetros hidrológicos y coeficiente de escorrentía por complejo suelo-vegetación en la cuenca A1 (CHA II).
+**Tabla 15.11.** Parámetros hidrológicos y coeficiente de escorrentía por complejo suelo-vegetación en la cuenca A1 (CHA II).
 
 | Cod_NC | Cobertura | GH | Superficie (km²) | NC | I₀ (mm) | CE Esc. I (%) | CE Esc. II (%) | CE Esc. III (%) |
 |---|---|---|---|---|---|---|---|---|
@@ -495,11 +495,11 @@ La Tabla 14.11 reúne los parámetros de cada complejo y el CE resultante en los
 (geoq-zonificacion-ce)=
 ### Zonificación del Coeficiente de escorrentía
 
-La distribución espacial del coeficiente de escorrentía (CE), expresada en clases porcentuales y en función de la superficie ocupada por cada una de ellas, se presenta en la Tabla 14.12 y la Figura 14.9.
+La distribución espacial del coeficiente de escorrentía (CE), expresada en clases porcentuales y en función de la superficie ocupada por cada una de ellas, se presenta en la Tabla 15.12 y la Figura 15.9.
 
 A partir de la tabla se identifican diferencias en la distribución del CE entre los escenarios analizados.
 
-**Tabla 14.12.** Clases de escorrentía por unidad de superficie de la cuenca A1 (km²).
+**Tabla 15.12.** Clases de escorrentía por unidad de superficie de la cuenca A1 (km²).
 
 ```{raw} html
 <div style="overflow-x:auto;margin:1em 0;">
@@ -530,23 +530,23 @@ En el **escenario III** (145 mm), el 74 % de la superficie se ubica en la clase 
 
 En el **escenario IV**, el ráster correspondiente al evento pluvial refleja de manera más ajustada la distribución espacial de la tormenta, evidenciando su carácter heterogéneo. Se observa una precipitación mínima o incluso la ausencia de registros en el sector norte del área de estudio, mientras que los mayores valores de precipitación se concentran en el sector sureste. En cuanto al CE, este escenario pone de manifiesto la heterogeneidad espacial del escurrimiento, asociada tanto a las características particulares del evento pluvial como a la influencia del complejo suelo-vegetación.
 
-En la cartografía de resultados (Figura 14.9), la escorrentía se concentra en las zonas bajas y de escasa pendiente, donde la baja capacidad de evacuación de la llanura favorece la acumulación del agua {cite:p}`geoq-montealegre2021b`.
+En la cartografía de resultados (Figura 15.9), la escorrentía se concentra en las zonas bajas y de escasa pendiente, donde la baja capacidad de evacuación de la llanura favorece la acumulación del agua {cite:p}`geoq-montealegre2021b`.
 
 ```{figure} imagenes/geoq/fig_14-09_ce_escenarios.png
 :align: center
 :width: 100%
 
-**Figura 14.9.** Distribución espacial del coeficiente de escorrentía en la cuenca A1 para todos los escenarios en CHA II.
+Distribución espacial del coeficiente de escorrentía en la cuenca A1 para todos los escenarios en CHA II.
 ```
 
 (geoq-zonificacion-cf)=
 ### Zonificación del Coeficiente de infiltración
 
-La distribución del coeficiente de infiltración que refleja la lectura de la respuesta hidrológica por el suelo se presenta en la Tabla 14.13 y Figura 14.10.
+La distribución del coeficiente de infiltración que refleja la lectura de la respuesta hidrológica por el suelo se presenta en la Tabla 15.13 y Figura 15.10.
 
 Con relación al CF, este alcanza su máximo relativo en el escenario II (39,8 %) y desciende en el escenario III (34,6 %), aunque la lámina infiltrada continúa creciendo en términos absolutos, de 35,5 a 50,1 mm en promedio. Este comportamiento reproduce, a escala de cuenca, el máximo del CF en función del NC y de la precipitación. A medida que la tormenta aumenta, la retención del complejo se aproxima a su valor potencial y el excedente se deriva de manera creciente a la escorrentía. El escenario IV muestra la carga hídrica del suelo por el evento pluvial hacia el sur de la cuenca y al norte, el efecto de nulidad de la precipitación se expresa con nula a baja infiltración.
 
-**Tabla 14.13.** Clases de infiltración por unidad de superficie de la cuenca A1 (km²).
+**Tabla 15.13.** Clases de infiltración por unidad de superficie de la cuenca A1 (km²).
 
 ```{raw} html
 <div style="overflow-x:auto;margin:1em 0;">
@@ -569,25 +569,25 @@ Con relación al CF, este alcanza su máximo relativo en el escenario II (39,8 %
 
 *Fuente: elaboración propia. La longitud de la barra de cada celda es proporcional a la superficie respecto del total de la cuenca (17.737,63 km²).*
 
-El mapa resultante de la zonificación de CF se muestra en la Figura 14.10, donde la infiltración se distribuye según la textura edáfica superficial, conformada en el grupo hidrológico.
+El mapa resultante de la zonificación de CF se muestra en la Figura 15.10, donde la infiltración se distribuye según la textura edáfica superficial, conformada en el grupo hidrológico.
 
 ```{figure} imagenes/geoq/fig_14-10_cf.png
 :align: center
 :width: 100%
 
-**Figura 14.10.** Distribución espacial del coeficiente de infiltración en la cuenca A1 para los escenarios I a IV (CHA II).
+Distribución espacial del coeficiente de infiltración en la cuenca A1 para los escenarios I a IV (CHA II).
 ```
 
 (geoq-zonificacion-cio)=
 ### Zonificación del Coeficiente de abstracciones iniciales
 
-La distribución espacial del coeficiente de abstracciones iniciales (CIo), que expresa la influencia de las distintas coberturas vegetales y usos del suelo sobre la respuesta hidrológica de la cuenca, se presenta en la Tabla 14.14 y la Figura 14.11.
+La distribución espacial del coeficiente de abstracciones iniciales (CIo), que expresa la influencia de las distintas coberturas vegetales y usos del suelo sobre la respuesta hidrológica de la cuenca, se presenta en la Tabla 15.14 y la Figura 15.11.
 
-A partir de la Tabla 14.14 se observa que, a medida que aumenta la magnitud de la tormenta, la distribución del CIo tiende a desplazarse hacia las clases de menores porcentajes. Este comportamiento se evidencia en la disminución de su media ponderada, que pasa del 60,0 % en el escenario I al 23,9 % en el escenario II y al 15,2 % en el escenario III. Esta tendencia responde a que la abstracción inicial constituye una lámina asociada a las características de cada tipo de cobertura vegetal y uso del suelo, cuya proporción respecto de la precipitación total disminuye a medida que aumenta la magnitud de la tormenta.
+A partir de la Tabla 15.14 se observa que, a medida que aumenta la magnitud de la tormenta, la distribución del CIo tiende a desplazarse hacia las clases de menores porcentajes. Este comportamiento se evidencia en la disminución de su media ponderada, que pasa del 60,0 % en el escenario I al 23,9 % en el escenario II y al 15,2 % en el escenario III. Esta tendencia responde a que la abstracción inicial constituye una lámina asociada a las características de cada tipo de cobertura vegetal y uso del suelo, cuya proporción respecto de la precipitación total disminuye a medida que aumenta la magnitud de la tormenta.
 
 Por su parte, el escenario IV presenta una distribución espacial más heterogénea del CIo, con superficies representadas en las distintas clases, desde los valores más bajos hasta los más elevados. Este comportamiento puede relacionarse con la distribución espacial no uniforme de la precipitación durante el evento, caracterizada por mayores registros en el sector sur de la cuenca respecto del norte, lo que condiciona una respuesta hidrológica diferenciada en función de la interacción entre la precipitación y las características del complejo suelo-vegetación.
 
-**Tabla 14.14.** Clases de abstracciones iniciales por unidad de superficie de la cuenca A1 (km²).
+**Tabla 15.14.** Clases de abstracciones iniciales por unidad de superficie de la cuenca A1 (km²).
 
 ```{raw} html
 <div style="overflow-x:auto;margin:1em 0;">
@@ -614,7 +614,7 @@ Por su parte, el escenario IV presenta una distribución espacial más heterogé
 :align: center
 :width: 100%
 
-**Figura 14.11.** Distribución espacial del coeficiente de abstracciones iniciales en la cuenca A1 para los escenarios I a IV (CHA II).
+Distribución espacial del coeficiente de abstracciones iniciales en la cuenca A1 para los escenarios I a IV (CHA II).
 ```
 
 (geoq-nc-critico)=
@@ -630,11 +630,11 @@ Finalmente, para el **escenario III**, con una precipitación de 145 mm, el $NC_
 
 Por su parte, el **escenario IV** presenta un comportamiento espacial diferenciado, condicionado por la distribución heterogénea de la precipitación. El ráster del evento pluvial refleja una marcada variabilidad espacial, con registros mínimos o ausencia de precipitación en el sector norte del área de estudio y una mayor concentración de los valores de precipitación en el sector sureste. Esta distribución se traduce en una respuesta espacialmente heterogénea del coeficiente de escorrentía (CE), que expresa tanto la variabilidad del evento como la influencia de las características del complejo suelo-vegetación en la generación de escurrimiento.
 
-La Tabla 14.15 y la Figura 14.12 sintetizan la partición media de la precipitación en los tres escenarios de tormenta analizados, expresada como proporción de la lámina precipitada destinada al escurrimiento (CE), al flujo de infiltración (CF) y a las abstracciones iniciales (CIo). Se observa una modificación progresiva de esta distribución a medida que aumenta la magnitud de la precipitación. En el escenario I (33 mm), predominan las abstracciones iniciales, que representan el 60,0 % de la precipitación, mientras que el CE alcanza el 13,2 %. En el escenario II (89 mm), se incrementa la proporción destinada al escurrimiento (36,2 %) y al CF (39,8 %), mientras que el CIo disminuye al 23,9 %. Esta tendencia se acentúa en el escenario III (145 mm), donde el escurrimiento representa el 50,2 % de la precipitación, superando tanto al CF (34,6 %) como al CIo (15,2 %).
+La Tabla 15.15 y la Figura 15.12 sintetizan la partición media de la precipitación en los tres escenarios de tormenta analizados, expresada como proporción de la lámina precipitada destinada al escurrimiento (CE), al flujo de infiltración (CF) y a las abstracciones iniciales (CIo). Se observa una modificación progresiva de esta distribución a medida que aumenta la magnitud de la precipitación. En el escenario I (33 mm), predominan las abstracciones iniciales, que representan el 60,0 % de la precipitación, mientras que el CE alcanza el 13,2 %. En el escenario II (89 mm), se incrementa la proporción destinada al escurrimiento (36,2 %) y al CF (39,8 %), mientras que el CIo disminuye al 23,9 %. Esta tendencia se acentúa en el escenario III (145 mm), donde el escurrimiento representa el 50,2 % de la precipitación, superando tanto al CF (34,6 %) como al CIo (15,2 %).
 
 Este comportamiento evidencia que, ante eventos pluviales de mayor magnitud, las abstracciones iniciales representan una proporción cada vez menor de la precipitación total, mientras que aumenta la fracción que contribuye al escurrimiento superficial. En términos de lámina, los valores de escurrimiento (Q) pasan de 4,4 mm en el escenario I a 32,2 mm en el escenario II y 72,8 mm en el escenario III. En consecuencia, los volúmenes escurridos estimados alcanzan los 77, 572 y 1.292 hm³, respectivamente. Estos valores se obtienen como producto de la lámina media de escurrimiento por la superficie de la cuenca y deben interpretarse como estimaciones del volumen de excedente generado, dado que el método aplicado no contempla los procesos de tránsito ni el almacenamiento del agua en la red de drenaje.
 
-**Tabla 14.15.** Valores medios ponderados por superficie de los componentes del balance en la cuenca A1.
+**Tabla 15.15.** Valores medios ponderados por superficie de los componentes del balance en la cuenca A1.
 
 | Escenario | P (mm) | CE (%) | CF (%) | CIo (%) | Q (mm) | F (mm) | I₀ (mm) | Volumen escurrido (hm³) |
 |---|---|---|---|---|---|---|---|---|
@@ -648,7 +648,7 @@ Este comportamiento evidencia que, ante eventos pluviales de mayor magnitud, las
 :align: center
 :width: 80%
 
-**Figura 14.12.** Proporción media ponderada de la precipitación destinada al escurrimiento (CE), al flujo de infiltración (CF) y a las abstracciones iniciales (CIo) para los escenarios I, II y III. Fuente: elaboración propia.
+Proporción media ponderada de la precipitación destinada al escurrimiento (CE), al flujo de infiltración (CF) y a las abstracciones iniciales (CIo) para los escenarios I, II y III. Fuente: elaboración propia.
 ```
 
 (geoq-consideraciones)=
@@ -658,12 +658,12 @@ Los resultados muestran que, aun en una cuenca dominada por suelos de alta perme
 
 Los complejos de herbáceas y cultivos sobre suelos de los grupos C y D, y los cuerpos de agua, constituyen las zonas críticas de la cuenca. En ellos, los eventos moderados ya producen coeficientes superiores al 57 %, y en una llanura con capacidad de evacuación limitada esa escorrentía tiende a acumularse y a prolongar los anegamientos {cite:p}`geoq-montealegre2021b`.
 
-La sensibilidad a la condición de humedad antecedente es igualmente determinante. Los resultados de este ejemplo corresponden a la CHA II (Tabla 14.3). Sin embargo, el NC de cada complejo suelo-vegetación aumenta con el estado de humedad del suelo (Tabla 14.18) y, con él, la proporción de la lluvia que se convierte en escorrentía. Es decir, la misma tormenta produce algo más del doble de escorrentía sobre un suelo húmedo o saturado que sobre un suelo en condición media. En consecuencia, los coeficientes presentados en esta sección no deben extrapolarse a otras condiciones de humedad: si el evento ocurre después de un período lluvioso (más de 38,1 mm en los 5 a 10 días previos) el CE será mayor, y si ocurre después de un período seco (menos de 12,7 mm) será menor.
+La sensibilidad a la condición de humedad antecedente es igualmente determinante. Los resultados de este ejemplo corresponden a la CHA II (Tabla 15.3). Sin embargo, el NC de cada complejo suelo-vegetación aumenta con el estado de humedad del suelo (Tabla 15.18) y, con él, la proporción de la lluvia que se convierte en escorrentía. Es decir, la misma tormenta produce algo más del doble de escorrentía sobre un suelo húmedo o saturado que sobre un suelo en condición media. En consecuencia, los coeficientes presentados en esta sección no deben extrapolarse a otras condiciones de humedad: si el evento ocurre después de un período lluvioso (más de 38,1 mm en los 5 a 10 días previos) el CE será mayor, y si ocurre después de un período seco (menos de 12,7 mm) será menor.
 
 
 El análisis presenta dos limitaciones principales.
 
-- El uso de un valor único de precipitación para una superficie de más de 17.000 km². La dispersión entre las estaciones (Tabla 14.10) indica que la lluvia no es homogénea en la cuenca {cite:p}`geoq-montealegre2021b`. La incorporación de precipitación ráster (en la versión 2.8 de GeoQ) permite superar esta restricción mediante productos satelitales como PDIR-Now, cuya representación de la variabilidad espacial de eventos concretos constituye la línea de continuidad natural de este caso de estudio.
+- El uso de un valor único de precipitación para una superficie de más de 17.000 km². La dispersión entre las estaciones (Tabla 15.10) indica que la lluvia no es homogénea en la cuenca {cite:p}`geoq-montealegre2021b`. La incorporación de precipitación ráster (en la versión 2.8 de GeoQ) permite superar esta restricción mediante productos satelitales como PDIR-Now, cuya representación de la variabilidad espacial de eventos concretos constituye la línea de continuidad natural de este caso de estudio.
 - La segunda es la ausencia de validación con observaciones. Los coeficientes obtenidos no se contrastaron con aforos ni con superficies anegadas observadas. La comparación con la extensión de agua superficial derivada de imágenes de radar u ópticas posteriores a un evento permitiría evaluar la capacidad predictiva del modelo en la llanura.
 
 ---
@@ -718,9 +718,9 @@ Los siguientes recursos permiten reproducir el procedimiento descrito en este ca
 - **Portal de datos de precipitación satelital del CHRS:** <https://chrs.web.uci.edu> y <https://chrsdata.eng.uci.edu/>
 - **Repositorio institucional SEDICI (UNLP), con trabajos que aplican GeoQ:** <http://sedici.unlp.edu.ar>
 
-La Tabla 14.16 reúne los trabajos que han aplicado GeoQ, según el registro de Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2024a`.
+La Tabla 15.16 reúne los trabajos que han aplicado GeoQ, según el registro de Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2024a`.
 
-**Tabla 14.16.** Trabajos de aplicación de GeoQ.
+**Tabla 15.16.** Trabajos de aplicación de GeoQ.
 
 | Tipo | Autores y año | Tema o ámbito de aplicación |
 |---|---|---|
@@ -750,7 +750,7 @@ La Tabla 14.16 reúne los trabajos que han aplicado GeoQ, según el registro de 
 (geoq-anexo)=
 ## Anexo
 
-**Tabla 14.17.** Códigos de vegetación y/o uso del suelo (Cod_Veg) utilizados por GeoQ.
+**Tabla 15.17.** Códigos de vegetación y/o uso del suelo (Cod_Veg) utilizados por GeoQ.
 
 | Cod_Veg | Cobertura del suelo (LCCS, PNECO 1643) | Vegetación y/o uso del suelo (Mintegui Aguirre y López Unzú {cite:yearpar}`geoq-mintegui1990`) |
 |---|---|---|
@@ -815,7 +815,7 @@ La Tabla 14.16 reúne los trabajos que han aplicado GeoQ, según el registro de 
 
 *Referencias: R, laboreo sin prácticas de conservación; C, curvas de nivel; C-T, curvas de nivel y terrazas abiertas. Condición de infiltración: MP, muy pobre; P, pobre; M, mala; B, buena; MB, muy buena. Fuente: Montealegre Medina y Gaspari {cite:yearpar}`geoq-montealegre2024a`, adaptado de Volante {cite:yearpar}`geoq-volante2006`, INTA {cite:yearpar}`geoq-inta2009` y Mintegui Aguirre y López Unzú {cite:yearpar}`geoq-mintegui1990`.*
 
-**Tabla 14.18.** Número de curva por clase de cobertura (Cod_Veg), grupo hidrológico (A a D) y condición de humedad antecedente (I, II y III). El Cod_NC de cada celda es la suma del Cod_Veg y el código del GH (A = 1, B = 2, C = 3, D = 4).
+**Tabla 15.18.** Número de curva por clase de cobertura (Cod_Veg), grupo hidrológico (A a D) y condición de humedad antecedente (I, II y III). El Cod_NC de cada celda es la suma del Cod_Veg y el código del GH (A = 1, B = 2, C = 3, D = 4).
 
 
 | Cod_Veg | A-I | A-II | A-III | B-I | B-II | B-III | C-I | C-II | C-III | D-I | D-II | D-III |
