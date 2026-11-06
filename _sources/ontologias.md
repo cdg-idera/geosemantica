@@ -14,7 +14,7 @@ Al finalizar la lectura, se espera que el lector pueda:
 - Explicar la utilidad de las ontologías para integrar fuentes geográficas heterogéneas.
 - Identificar posibilidades y límites del razonamiento semántico y de su combinación con IA.
 
-## 1. El problema: muchos datos, distintos significados
+## El problema: muchos datos, distintos significados
 
 Imaginemos tres organismos que publican información sobre un río. Una autoridad hídrica registra su nombre, caudal y cuenca; un municipio lo representa como una línea en un servicio de entidades geográficas; y una oficina ambiental publica áreas de protección asociadas. Los tres conjuntos de datos pueden referirse al **mismo río**, pero utilizar nombres de campos, identificadores, unidades y criterios distintos.
 
@@ -22,7 +22,7 @@ La interoperabilidad técnica permite acceder e intercambiar datos. Sin embargo,
 
 Las ontologías ayudan a explicitar esos significados y relaciones. También permiten formular preguntas que atraviesan diferentes fuentes: «¿Qué ciudades están próximas a ríos que pertenecen a determinada cuenca?» o «¿Qué áreas protegidas se vinculan con cursos de agua de una provincia?».
 
-## 2. ¿Qué es una ontología?
+## ¿Qué es una ontología?
 
 En informática y representación del conocimiento, una **ontología** es una especificación explícita y formal de una conceptualización compartida de un dominio. Esta formulación, inspirada en la definición de Gruber y en la literatura de ingeniería ontológica {cite:p}`gruber1993,noy2001`, reúne cuatro ideas:
 
@@ -48,9 +48,9 @@ Un modelo semántico permite separar los elementos de esa afirmación:
 
 La elección de la relación importa: **«atraviesa», «limita con» y «está cerca de» no significan lo mismo**. Una ontología obliga a aclarar esas diferencias.
 
-## 3. Los componentes de una ontología
+## Los componentes de una ontología
 
-### 3.1 Clases
+### Clases
 
 Una **clase** agrupa entidades que comparten una caracterización conceptual. Ejemplos: `Río`, `Lago`, `CuencaHidrográfica`, `Ciudad`, `Provincia`, `ParcelaCatastral`.
 
@@ -68,11 +68,11 @@ EntidadGeográfica
 
 Este árbol es solo una representación didáctica: una ontología real puede tener múltiples jerarquías y relaciones que no se reducen a un árbol.
 
-### 3.2 Individuos o instancias
+### Individuos o instancias
 
 Un **individuo** es una entidad particular representada en el modelo: el río Limay, la ciudad de Neuquén o una parcela con identificador determinado. La clase `Río` no es un río particular: describe el tipo de entidad al que puede pertenecer el individuo `RioLimay`.
 
-### 3.3 Propiedades y relaciones
+### Propiedades y relaciones
 
 Las **propiedades de objeto** relacionan individuos entre sí: `desembocaEn`, `perteneceACuenca`, `limitaCon`, `seUbicaEn`.
 
@@ -87,7 +87,7 @@ RioLimay --nombre--> "Limay"
 
 La primera relación conecta dos recursos; la segunda conecta un recurso con un texto.
 
-### 3.4 Axiomas y restricciones
+### Axiomas y restricciones
 
 Los **axiomas** expresan afirmaciones formales que permiten derivar consecuencias. Por ejemplo:
 
@@ -97,7 +97,7 @@ Los **axiomas** expresan afirmaciones formales que permiten derivar consecuencia
 
 También pueden declararse clases disjuntas, equivalencias, dominios, rangos y otras restricciones. **Importante:** en OWL, las restricciones no funcionan necesariamente como controles de validación de formularios. Para validar datos según condiciones cerradas suele utilizarse **SHACL** {cite:p}`w3cOWL2012,w3cSHACL2017`.
 
-## 4. Ontología, taxonomía, tesauro y base de datos
+## Ontología, taxonomía, tesauro y base de datos
 
 | Recurso | Qué representa principalmente | Ejemplo geográfico |
 |---|---|---|
@@ -109,7 +109,7 @@ También pueden declararse clases disjuntas, equivalencias, dominios, rangos y o
 
 Estas tecnologías **se complementan**. Una base de datos puede almacenar instancias; una ontología puede definir su significado; un grafo de conocimiento puede vincularlas; SKOS puede ayudar a armonizar términos de distintos catálogos {cite:p}`w3cSKOS2009`.
 
-## 5. RDF: expresar conocimiento mediante tripletas
+## RDF: expresar conocimiento mediante tripletas
 
 **RDF (Resource Description Framework)** es un modelo estándar del W3C para representar afirmaciones como tripletas {cite:p}`w3cRDF2014`:
 
@@ -137,7 +137,7 @@ https://ejemplo.org/geo/propiedad/perteneceACuenca
 
 **Estas direcciones son ilustrativas y no identifican un servicio publicado.** En una ontología, clases, propiedades e individuos suelen tener IRI propias. Una IRI puede ser **dereferenciable**, es decir, diseñada para que una consulta web devuelva una descripción útil del recurso, por ejemplo HTML para personas o RDF para aplicaciones. **No toda IRI tiene necesariamente una página web accesible**, ni una IRI debe confundirse con la ubicación física de un objeto geográfico.
 
-## 6. RDFS, OWL, SKOS, SHACL y GeoSPARQL
+## RDFS, OWL, SKOS, SHACL y GeoSPARQL
 
 | Estándar | Función principal |
 |---|---|
@@ -149,9 +149,9 @@ https://ejemplo.org/geo/propiedad/perteneceACuenca
 | **SPARQL** | Consultar y transformar datos RDF |
 | **GeoSPARQL** | Representar y consultar información geoespacial en RDF, incluyendo geometrías y relaciones espaciales |
 
-Una distinción útil: **RDF es el modelo de datos; OWL es un lenguaje para definir ontologías; SPARQL es un lenguaje de consulta**. No son tecnologías intercambiables {cite:p}`w3cRDFS2014,w3cOWL2012,w3cSPARQL2013,w3cSKOS2009,w3cSHACL2017,ogcGeoSPARQL2024`.
+Una distinción útil: **RDF es el modelo de datos; OWL es un lenguaje para definir ontologías; SPARQL es un lenguaje de consulta**. No son tecnologías intercambiables {cite:p}`w3cRDFS2014,w3cOWL2012,w3cSPARQL2013,w3cSKOS2009,w3cSHACL2017`.
 
-## 7. Nuestro caso de estudio: Neuquén y sus ríos
+## Nuestro caso de estudio: Neuquén y sus ríos
 
 A partir de aquí utilizaremos **un único ejemplo conductor**, referido a cinco recursos: la **ciudad de Neuquén**, la **provincia del Neuquén**, el **río Limay**, el **río Neuquén** y el **sistema de referencia WGS 84 (EPSG:4326)**. El objetivo no es hacer un inventario geográfico exhaustivo, sino aprender a representar y consultar conocimiento.
 
@@ -162,7 +162,7 @@ Una persona puede leer la siguiente frase sin dificultad:
 Pero una computadora necesita **identificadores estables**, **relaciones explícitas** y **vocabularios con significados documentados** para procesar esa información sin depender solamente de interpretar una frase.
 
 
-### 7.1. El grafo conceptual
+### El grafo conceptual
 
 El siguiente diagrama representa las principales relaciones expresadas en el Turtle del ejemplo de Neuquén. Se trata de una **representación didáctica del grafo RDF**, que permite reconocer las entidades geográficas, sus propiedades y las relaciones que las vinculan.
 
@@ -172,14 +172,15 @@ flowchart LR
   C -->|"dcterms:relation"| L["Río Limay<br/>3846883"]
   C -->|"dcterms:relation"| N["Río Neuquén<br/>3843121"]
   C -->|"dcterms:relation"| S["WGS 84 / EPSG:4326"]
-  C -->|"wgs84:lat / wgs84:long"| V["Coordenadas decimales"]
+  C -->|"wgs84:lat"| LAT["-38.95078 (decimal)"]
+  C -->|"wgs84:long"| LON["-68.05920 (decimal)"]
   L -->|"gn:featureClass"| HC["gn:H — elemento hidrográfico"]
   N -->|"gn:featureClass"| HC
   L -->|"gn:featureCode"| H["gn:H.STM — curso de agua"]
   N -->|"gn:featureCode"| H
 ```
 
-**Cómo leer el diagrama.** Los rectángulos representan recursos o valores relevantes y las flechas representan propiedades RDF. La ciudad de Neuquén se vincula con la provincia mediante `gn:parentFeature`, y con los ríos Limay, Neuquén y el sistema de referencia WGS 84 mediante `dcterms:relation`.
+**Cómo leer el diagrama.** Los rectángulos representan recursos o valores relevantes y las flechas representan propiedades RDF. Las coordenadas aparecen separadas porque `wgs84:lat` y `wgs84:long` son dos tripletas diferentes; el gráfico resume otras propiedades literales para favorecer su lectura. La ciudad de Neuquén se vincula con la provincia mediante `gn:parentFeature`, y con los ríos Limay, Neuquén y el sistema de referencia WGS 84 mediante `dcterms:relation`.
 
 En este ejemplo, `dcterms:relation` expresa una **relación genérica** entre recursos. Por lo tanto, no debe interpretarse automáticamente como «limita con», «atraviesa» o «está cerca de». Para representar estas relaciones espaciales específicas sería necesario utilizar propiedades con significados más precisos.
 
@@ -196,7 +197,7 @@ Además, el Turtle establece que la ciudad, la provincia y ambos ríos son insta
 
 El mismo conjunto de recursos y relaciones puede explorarse mediante **GraphDB**, una plataforma para almacenar, consultar y visualizar grafos RDF.
 
-La siguiente figura presenta el resultado de una consulta SPARQL `CONSTRUCT` realizada sobre los recursos del ejemplo.
+La {numref}`fig-grafo-neuquen-graphdb` presenta el resultado de una consulta SPARQL `CONSTRUCT` realizada sobre los recursos del ejemplo.
 
 ```{figure} imagenes/GraphDB_ejemplo.png
 ---
@@ -221,7 +222,108 @@ Por esta razón, el diagrama Mermaid y la visualización de GraphDB son **comple
 Este ejemplo ilustra uno de los principios fundamentales de las tecnologías semánticas: **los datos dejan de considerarse registros aislados y pasan a formar parte de una red de recursos identificables, relacionados mediante propiedades cuyo significado está definido por vocabularios y ontologías compartidos**.
 
 
-### 7.2. El ejemplo completo en Turtle
+
+### Exploración de recursos, identificadores IRI y acceso al conocimiento geográfico
+
+Como vimos al introducir RDF, una **IRI (*Internationalized Resource Identifier*)** permite identificar un recurso y referenciarlo en diferentes sistemas. Veamos cómo se utiliza concretamente al explorar el río Limay en GraphDB.
+
+En nuestro ejemplo, el río Limay está identificado mediante la siguiente IRI:
+
+`https://sws.geonames.org/3846883/`
+
+Esta IRI corresponde a un recurso del sistema GeoNames. A diferencia del nombre «Río Limay», que es una denominación comprensible para las personas, la IRI constituye un **identificador único que permite a diferentes sistemas informáticos referirse al mismo recurso geográfico**.
+
+#### Identificación y exploración del recurso en GraphDB
+
+GraphDB permite explorar interactivamente los recursos que forman parte de un grafo de conocimiento. Al seleccionar el nodo correspondiente al río Limay, se despliega un panel con información asociada al recurso, incluyendo sus tipos y propiedades.
+
+En este ejemplo, el río Limay está declarado como una instancia de `gn:Feature`, clase utilizada por GeoNames para representar entidades geográficas. También se observan propiedades como `gn:name`, cuyo valor es «Río Limay», y `gn:countryCode`, cuyo valor es «AR».
+
+Estas afirmaciones forman parte del grafo RDF y se representan mediante tripletas de **sujeto, predicado y objeto**.
+
+Como se observa en la {numref}`fig-graphdb-iri-limay`, GraphDB permite consultar y copiar la IRI completa de un recurso mediante el ícono de enlace situado junto a su nombre.
+
+```{figure} imagenes/GraphDB_ejemplo2.png
+---
+name: fig-graphdb-iri-limay
+alt: Identificación y copia de la IRI del río Limay desde GraphDB.
+width: 95%
+---
+Identificación del recurso río Limay en GraphDB y obtención de su IRI completa: `https://sws.geonames.org/3846883/`.
+```
+
+#### De la IRI al recurso publicado en GeoNames
+
+Una propiedad importante de las IRI utilizadas en el contexto de los datos enlazados (*Linked Data*) es que pueden ser **dereferenciables**. Esto significa que, al utilizar una IRI HTTP como dirección de consulta, un cliente puede obtener información acerca del recurso identificado.
+
+En nuestro ejemplo, la IRI del río Limay permite acceder a información publicada por GeoNames. La representación obtenida puede depender de la negociación de contenido y del comportamiento del servidor: puede consistir en una página HTML destinada a personas o en una representación estructurada destinada a aplicaciones informáticas.
+
+Esto permite distinguir dos conceptos:
+
+- **Identificar un recurso:** la IRI proporciona una referencia inequívoca a una entidad del mundo real, en este caso el río Limay.
+- **Describir un recurso:** una representación accesible mediante la Web proporciona información sobre esa entidad, como su nombre, clasificación, ubicación y otras propiedades.
+
+La {numref}`fig-geonames-limay` presenta la página de GeoNames correspondiente al río Limay, accesible desde:
+
+`https://www.geonames.org/3846883/rio-limay.html`
+
+```{figure} imagenes/genames1.png
+---
+name: fig-geonames-limay
+alt: Ficha geográfica del río Limay publicada en GeoNames.
+width: 90%
+---
+Ficha del río Limay en GeoNames, donde se muestran su identificador GeoNames, coordenadas geográficas, elevación aproximada, zona horaria y clasificación como curso de agua.
+```
+
+En esta página se observa que el recurso tiene asignado el identificador **3846883**, que coincide con el utilizado en su IRI. También presenta coordenadas geográficas, información de elevación, zona horaria y la clasificación `H.STM`.
+
+Esta clasificación utiliza dos componentes del vocabulario GeoNames:
+
+- `H`: categoría general de **elementos hidrográficos** (*Hydrographic features*).
+- `STM`: código correspondiente a **curso de agua** (*Stream*).
+
+En el grafo RDF, estos valores se representan mediante las propiedades `gn:featureClass` y `gn:featureCode`, respectivamente.
+
+#### Los nombres geográficos en diferentes idiomas
+
+Otro aspecto interesante es que **un mismo recurso geográfico puede tener diferentes denominaciones según el idioma**, sin que ello implique identificar entidades geográficas distintas.
+
+La página de GeoNames incluye una sección denominada *Alternate names*, donde pueden consultarse nombres alternativos y denominaciones del río Limay en diferentes idiomas.
+
+La {numref}`fig-geonames-limay-nombres` muestra algunos ejemplos, como «Río Limay», «Riu Limay» en catalán, «Limay River» en inglés y otras denominaciones representadas en distintos sistemas de escritura.
+
+```{figure} imagenes/genames2.png
+---
+name: fig-geonames-limay-nombres
+alt: Nombres alternativos del río Limay en diferentes idiomas registrados en GeoNames.
+width: 90%
+---
+Nombres alternativos del río Limay registrados en GeoNames, con denominaciones en diferentes idiomas y sistemas de escritura.
+```
+
+Este ejemplo permite comprender una ventaja fundamental de los identificadores semánticos: **el recurso geográfico conserva su identidad independientemente del idioma utilizado para nombrarlo**.
+
+Así, distintas denominaciones lingüísticas pueden asociarse a una misma entidad mediante propiedades de etiquetado y vocabularios apropiados, como SKOS, que contempla etiquetas preferidas y alternativas, así como etiquetas con identificación de idioma.
+
+Por ejemplo, un sistema podría asociar varias etiquetas lingüísticas a un mismo recurso sin crear una entidad diferente para cada nombre.
+
+La distinción entre **identidad del recurso y denominación lingüística** resulta especialmente importante en las geociencias, donde existen topónimos históricos, nombres oficiales, denominaciones locales y variantes utilizadas por diferentes comunidades.
+
+#### Síntesis
+
+Las tres figuras permiten recorrer una secuencia conceptual:
+
+1. **GraphDB:** identifica al río Limay como un recurso de un grafo de conocimiento y permite obtener su IRI.
+2. **GeoNames:** ofrece información geográfica sobre el recurso identificado, incluyendo atributos y clasificaciones.
+3. **GeoNames — nombres alternativos:** muestra que un mismo recurso puede reconocerse mediante diferentes denominaciones lingüísticas.
+
+En conjunto, este ejemplo ilustra tres principios fundamentales de las tecnologías semánticas: **la identificación inequívoca de recursos mediante IRI, su descripción mediante propiedades RDF y la posibilidad de relacionar información publicada por diferentes sistemas a través de identificadores compartidos**.
+
+De esta manera, las ontologías y los vocabularios semánticos contribuyen a construir representaciones del conocimiento geográfico que pueden ser interpretadas tanto por personas como por sistemas informáticos, favoreciendo la interoperabilidad semántica.
+
+
+### El ejemplo completo en Turtle
 
 Se reproduce el ejemplo propuesto, respetando sus identificadores, coordenadas y relaciones. La sintaxis sigue la especificación Turtle del W3C {cite:p}`w3cTurtle2014`. Es un **grafo didáctico** que combina recursos de vocabularios conocidos con afirmaciones de datos; no debe interpretarse como una transcripción certificada e íntegra de los registros originales.
 
@@ -279,7 +381,7 @@ Se reproduce el ejemplo propuesto, respetando sus identificadores, coordenadas y
 
 **Qué significan los símbolos:** `@prefix` declara abreviaturas de IRI; `a` es la abreviatura de `rdf:type`; `;` conserva el sujeto; `,` permite varios objetos para el mismo predicado; `.` finaliza el conjunto de afirmaciones de un sujeto. Las cadenas entre comillas son **literales**, `@es` indica idioma español, y `^^xsd:decimal` declara el tipo numérico decimal.
 
-### 7.3. Desarmar el ejemplo en tripletas RDF
+### Desarmar el ejemplo en tripletas RDF
 
 Una tripleta tiene la estructura **sujeto → predicado → objeto**. Por ejemplo:
 
@@ -295,15 +397,15 @@ Una tripleta tiene la estructura **sujeto → predicado → objeto**. Por ejempl
 
 La distinción es decisiva: **los sujetos y objetos que son recursos se identifican mediante IRI**, mientras que nombres, comentarios y coordenadas son literales. Un literal como `"Neuquén"` no es la propia ciudad: es un valor que la describe.
 
-### 7.4. IRI completas, prefijos y dereferenciación
+### IRI completas, prefijos y dereferenciación
 
 Por ejemplo, `gn:Feature` abrevia la IRI `https://www.geonames.org/ontology#Feature`; `gn:parentFeature` abrevia `https://www.geonames.org/ontology#parentFeature`.
 
 Para la ciudad utilizamos la IRI **[https://sws.geonames.org/3843123/](https://sws.geonames.org/3843123/)**. Para el río Limay, **[https://sws.geonames.org/3846883/](https://sws.geonames.org/3846883/)**. Los identificadores son distintos de sus etiquetas legibles: dos recursos pueden compartir nombre sin ser la misma entidad.
 
-Una **IRI dereferenciable** permite intentar recuperar por HTTP una descripción del recurso. Según la configuración del servidor y la negociación de contenido, esa descripción puede ofrecerse en HTML, RDF u otros formatos. **La IRI no equivale obligatoriamente a una página HTML ni garantiza que siempre responda** {cite:p}`w3cLinkedData2014`.
+En la exploración del río Limay vimos un caso concreto de **dereferenciación**. En general, una IRI HTTP puede permitir recuperar una descripción en HTML, RDF u otros formatos, según la configuración del servidor. **La IRI no equivale obligatoriamente a una página HTML ni garantiza que siempre responda** {cite:p}`w3cLinkedData2014`.
 
-### 7.5. Qué ontologías y vocabularios reutilizamos
+### Qué ontologías y vocabularios reutilizamos
 
 | Prefijo | Procedencia o función | Elementos usados |
 |---|---|---|
@@ -314,9 +416,9 @@ Una **IRI dereferenciable** permite intentar recuperar por HTTP una descripción
 | `rdfs:` | RDF Schema, para etiquetas y comentarios, entre otras construcciones. | `label`, `comment`. |
 | `xsd:` | Tipos de datos XML Schema. | `decimal`. |
 
-**Observación sobre GeoNames:** `gn:H` corresponde a la clase de accidentes hidrográficos y `gn:H.STM` a la categoría *stream* (curso de agua). La ontología de GeoNames es un vocabulario reutilizable {cite:p}`geonamesOntology`; cada registro de la ciudad o del río es una **instancia** documentada con sus propiedades.
+**Observación sobre GeoNames:** `gn:H` identifica una **categoría general de elementos hidrográficos** (*feature class*) y `gn:H.STM` identifica un **código específico de curso de agua** (*feature code: stream*). Estos códigos de clasificación de GeoNames no deben confundirse con clases OWL definidas mediante `owl:Class`. La ontología de GeoNames es un vocabulario reutilizable {cite:p}`geonamesOntology`; cada registro de la ciudad o del río es una **instancia** documentada con sus propiedades.
 
-## 8. ¿Dónde está la ontología y dónde están los datos?
+## ¿Dónde está la ontología y dónde están los datos?
 
 Este es uno de los puntos más importantes de la introducción. **Escribir datos en Turtle no significa, por sí solo, haber definido una ontología nueva.** Nuestro archivo representa principalmente un **grafo de datos RDF** construido con términos definidos en ontologías y vocabularios externos.
 
@@ -346,7 +448,7 @@ ex:Rio a owl:Class ;
 
 Ahora sí existe **una pequeña conceptualización formal adicional**: `ex:Rio` es subclase de `ex:CursoDeAgua`, que a su vez es subclase de `gn:Feature`. El dominio `ejemplo.org` es **ilustrativo**, no corresponde a una ontología publicada. La distinción entre clases, instancias y axiomas sigue los principios de diseño de ontologías {cite:p}`noy2001,w3cRDFS2014`.
 
-### 8.1. Inferir, no solo recuperar
+### Inferir, no solo recuperar
 
 Con las tripletas adicionales y un razonador que interprete `rdfs:subClassOf`, podemos concluir:
 
@@ -361,7 +463,7 @@ En forma similar puede deducirse que el río Limay es un `gn:Feature`, aunque es
 
 **Lo que no podemos inferir:** que el río Limay delimita una porción determinada de la jurisdicción de Neuquén solamente porque exista `dcterms:relation`. Esa propiedad no expresa el tipo preciso de relación geográfica. El comentario humano sobre «límites naturales» es información textual, pero **no crea automáticamente una relación formal `limitaCon`**.
 
-### 8.2. Relaciones generales y específicas
+### Relaciones generales y específicas
 
 Para una consulta temática más rigurosa se podría agregar una propiedad específica, con una definición documentada y evidencia territorial que la respalde:
 
@@ -381,13 +483,13 @@ ex:tieneLimiteNaturalCon a owl:ObjectProperty ;
 
 Estas últimas dos afirmaciones son **datos adicionales propuestos para fines didácticos** y deben revisarse frente a las fuentes cartográficas y la definición exacta de «ciudad», «ejido» o jurisdicción. Definir una propiedad no basta para demostrar que su utilización en un caso es verdadera.
 
-### 8.3. Un detalle geodésico importante
+### Un detalle geodésico importante
 
 En el archivo original se usa `dcterms:relation` para conectar la ciudad con `https://epsg.io/4326`. **Esa relación genérica no equivale a una declaración formal de que las coordenadas `wgs84:lat` y `wgs84:long` están expresadas en EPSG:4326**. Aunque estas propiedades se basan en WGS84, para documentar sistemas de referencia con rigor conviene emplear propiedades o representaciones espaciales apropiadas, como geometrías GeoSPARQL con IRI de CRS explícita.
 
 Además, debe diferenciarse el sistema **EPSG:4326**, cuyo orden de ejes según EPSG es latitud-longitud, de **OGC:CRS84**, utilizado habitualmente con longitud-latitud en WKT. No debe intercambiarse el orden sin examinar el formato y el CRS.
 
-## 9. Consultar el caso Neuquén mediante SPARQL
+## Consultar el caso Neuquén mediante SPARQL
 
 Las consultas se basan en SPARQL 1.1 {cite:p}`w3cSPARQL2013`.
 
@@ -475,7 +577,7 @@ WHERE {
 
 **Resultado esperado bajo inferencia:** río Limay y río Neuquén. Sin inferencia habilitada, el motor puede no encontrar tripletas explícitas `rdf:type ex:CursoDeAgua`. Una alternativa sin razonamiento automático es utilizar una ruta de clases o consultar directamente `ex:Rio`.
 
-### 9.1. Preguntas de competencia
+### Preguntas de competencia
 
 Las preguntas de competencia orientan tanto el diseño del vocabulario como la evaluación de las consultas:
 
@@ -488,13 +590,13 @@ Las preguntas de competencia orientan tanto el diseño del vocabulario como la e
 
 **Regla pedagógica:** diferenciar siempre **datos declarados**, **resultados recuperados mediante consulta**, **inferencias justificadas** y **afirmaciones que necesitan validación externa**.
 
-### 9.2. Mundo abierto y calidad de las afirmaciones
+### Mundo abierto y calidad de las afirmaciones
 
 La ausencia de una relación en un grafo no permite concluir automáticamente que sea falsa: bajo la **suposición de mundo abierto**, puede tratarse de información no registrada. Del mismo modo, que una herramienta infiera correctamente una consecuencia lógica no garantiza que las premisas sean correctas geográficamente. La interpretación crítica del dominio sigue siendo imprescindible.
 
-## 10. ¿Qué aporta GeoSPARQL?
+## ¿Qué aporta GeoSPARQL?
 
-GeoSPARQL 1.1 es un estándar del OGC para describir y consultar información geoespacial en RDF {cite:p}`ogcGeoSPARQL2024`.
+GeoSPARQL 1.1 es un estándar del OGC para describir y consultar información geoespacial en RDF ([especificación OGC GeoSPARQL](https://www.ogc.org/standard/geosparql/)).
 
 Una ontología territorial necesita con frecuencia algo más que nombres y relaciones conceptuales: necesita **geometrías** y **relaciones espaciales**. GeoSPARQL, estándar del Open Geospatial Consortium (OGC), proporciona un vocabulario y funciones para representar y consultar información espacial en RDF.
 
@@ -517,7 +619,7 @@ La IRI del CRS declara el sistema de referencia. En CRS84, las coordenadas del p
 
 GeoSPARQL no reemplaza a los sistemas de información geográfica: los complementa, permitiendo combinar preguntas semánticas y espaciales sobre recursos identificados.
 
-## 11. Ejemplo aplicado: un catastro interoperable
+## Ejemplo aplicado: un catastro interoperable
 
 Un catastro puede modelar conceptos como `Parcela`, `UnidadAdministrativa`, `Edificación`, `UsoDelSuelo` y `IdentificadorCatastral`, así como relaciones como `seUbicaEn`, `tieneEdificacion` y `tieneUso`.
 
@@ -534,7 +636,7 @@ La ontología aclara qué se entiende por parcela, uso residencial y zona de ame
 
 Este ejemplo muestra que el razonamiento ontológico, el análisis espacial y el conocimiento disciplinar cumplen funciones distintas y complementarias.
 
-## 12. Ontologías, IDE y servicios OGC
+## Ontologías, IDE y servicios OGC
 
 Las **Infraestructuras de Datos Espaciales (IDE)** organizan la publicación, descubrimiento y acceso a información geográfica mediante catálogos, metadatos, políticas y servicios interoperables. Entre los servicios OGC utilizados históricamente están WMS, WFS y WCS; también existen estándares y APIs más recientes, como OGC API – Features.
 
@@ -558,7 +660,7 @@ Sin embargo, la virtualización depende del tipo de fuente y de las capacidades 
 
 Las ontologías no sustituyen a las IDE. Pueden ayudar a evolucionar hacia **infraestructuras de conocimiento geoespacial**, en las que, además de descubrir y acceder a datos, se relacionan conceptos, se consultan hechos y se obtienen inferencias trazables.
 
-## 13. Ontologías y sistemas de inteligencia artificial
+## Ontologías y sistemas de inteligencia artificial
 
 Las ontologías pertenecen al campo de la **representación del conocimiento** y son especialmente relevantes para enfoques de **IA simbólica**, que trabajan con entidades, relaciones y reglas explícitas.
 
@@ -582,7 +684,7 @@ Respuesta explicada al usuario
 
 La combinación permite que una respuesta esté apoyada en relaciones verificables, pero **no elimina las alucinaciones, los errores de consulta ni las interpretaciones incorrectas**. Conviene conservar las IRI de los recursos, las fuentes y las consultas para facilitar la revisión humana.
 
-## 14. ¿Cómo se construye una ontología geográfica?
+## ¿Cómo se construye una ontología geográfica?
 
 El proceso que sigue es una adaptación didáctica de recomendaciones clásicas de ingeniería ontológica {cite:p}`noy2001`.
 
@@ -603,18 +705,8 @@ Un procedimiento inicial razonable es:
 
 **Protégé** facilita la edición de ontologías OWL; **Apache Jena** y **RDF4J** proporcionan herramientas para RDF y SPARQL; **GraphDB** es una plataforma de repositorios RDF; y **Ontop** permite escenarios de acceso virtual a datos relacionales mediante mapeos semánticos {cite:p}`ontop`. Las capacidades exactas dependen de versiones, configuraciones y extensiones.
 
-## 15. Errores conceptuales frecuentes
 
-- **«Una ontología es una lista de palabras».** No: una lista puede ser útil, pero una ontología formaliza conceptos, propiedades y axiomas.
-- **«Una ontología es un mapa».** No: puede describir objetos y relaciones espaciales, pero no equivale a su representación cartográfica.
-- **«Toda IRI abre una página web».** No: la dereferenciabilidad es una buena práctica frecuente, no una propiedad garantizada.
-- **«RDF y OWL son sinónimos».** No: RDF representa afirmaciones; OWL permite expresar una semántica ontológica más rica.
-- **«Si no está en el grafo, es falso».** No necesariamente: bajo la suposición de mundo abierto, ausencia de información no equivale a negación.
-- **«El razonador descubre hechos verdaderos por sí solo».** No: deriva consecuencias de premisas y axiomas, que deben ser correctos y pertinentes.
-- **«La ontología reemplaza el análisis espacial».** No: las consultas espaciales requieren geometrías, relaciones o cálculos apropiados.
-- **«Toda integración semántica exige copiar los datos».** No: pueden existir arquitecturas virtualizadas o híbridas.
-
-## 16. Actividad práctica propuesta
+## Actividad práctica propuesta
 
 **Primera parte: el grafo de Neuquén.** Importar el Turtle de la sección 7 en un editor o repositorio RDF y resolver las consultas de la sección 9. Identificar los recursos enlazados por `dcterms:relation` y explicar por qué no es correcto traducir automáticamente esa propiedad como «limita con». Añadir la extensión de la sección 8, activar un razonador si está disponible y comparar resultados explícitos e inferidos.
 
@@ -630,7 +722,7 @@ Un procedimiento inicial razonable es:
 
 **Orientación:** se deben revisar las definiciones de ambos organismos, la temporalidad de los cursos de agua, la disponibilidad de geometrías y la compatibilidad de sus sistemas de referencia. Una equivalencia semántica no debe inferirse únicamente por similitud de etiquetas.
 
-## 17. Síntesis
+## Síntesis
 
 Una ontología permite **hacer explícito cómo conceptualizamos un dominio**: qué entidades reconocemos, cómo las distinguimos y qué relaciones podemos afirmar entre ellas. En geociencias, su principal contribución es facilitar que información producida por distintos actores pueda **interpretarse, vincularse, consultarse y, cuando los axiomas lo permiten, utilizarse para obtener inferencias**.
 
@@ -638,7 +730,7 @@ Su utilidad no consiste solamente en agregar vocabulario técnico a los datos. C
 
 ## Referencias bibliográficas
 
-Las referencias citadas en el texto se generan automáticamente a partir del archivo `ontologias.bib`, mediante la extensión `sphinxcontrib-bibtex` de Sphinx y MyST Markdown.
+Las referencias citadas en el texto se generan automáticamente mediante MyST/Sphinx y `sphinxcontrib-bibtex`, utilizando el archivo BibTeX configurado en el proyecto.
 
 ```{bibliography}
 :filter: docname in docnames
@@ -646,4 +738,3 @@ Las referencias citadas en el texto se generan automáticamente a partir del arc
 
 ---
 
-*Nota didáctica: las IRI de GeoNames, Dublin Core e IGNF referencian recursos y vocabularios publicados; las IRI bajo `ejemplo.org` son propuestas de modelado ficticias. Las relaciones específicas añadidas para fines pedagógicos y las afirmaciones territoriales deben contrastarse con fuentes oficiales antes de incorporarlas a un grafo operativo.*
